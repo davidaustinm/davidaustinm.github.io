@@ -1,0 +1,128 @@
+<html>
+<head>
+<link rel=stylesheet type="text/css" href="main.css">
+<title>
+  Spherical Easel Applet
+</title>
+
+<center>
+<table>
+<tr>
+<td>
+<img src="sphere.gif" align=left> 
+</td>
+<td valign=center>
+<h1> Spherical Easel </h1>
+<p style="text-indent:0pt"> 
+<h3> A spherical drawing program </h3>
+</td>
+</tr></table>
+</center>
+
+<br>
+<p>To view <b>Spherical Easel</b> as an applet, you must have the 
+<a 
+href="http://java.sun.com/products/plugin/"> Java Plug-in </a>
+installed.  Installation is generally a simple step on most operating
+systems.  Please see the <a href="#notes"> notes </a> at the bottom of this
+page for installation instructions and information.
+
+<br>
+<br>
+<center>
+<applet code=ui.SphereApplet width=400 height=120
+archive=applet.jar>
+</applet>
+
+</center>
+<br>
+<br>
+<a name="notes">
+<p style="text-indent:0pt"><b> Notes on the Java Plug-In </b>
+
+<ol style="text-indent:0pt; font-style:plain">
+<p>
+<li>
+<p style="text-indent:0pt">
+
+You will first need to download and install the <a
+href="http://java.sun.com/products/plugin/"> Java Plug-In</a>.  This
+usually means installing a Java Runtime Environment (JRE) appropriate
+for your operating system.  Microsoft Windows users should note that
+installation generally registers the Plug-In with Internet Explorer.</p>
+
+<li> 
+<p style="text-indent:0pt">
+Make sure that your browser has Java enabled.  If you are using
+<ul><li>
+<p style="text-indent:0pt"><b> Internet Explorer:</b></b>select the appropriate box under
+the Advanced tab of the
+Internet Options menu item.
+<li>
+<p style="text-indent:0pt">
+<b>Mozilla</b> or <b>Netscape</b>: select the Enable Java box in the
+Advanced category of the Preferences menu item. 
+</ul>
+<p><li> 
+<p style="text-indent:0pt">
+Finally, if you are running Mozilla or Netscape on a Linux platform, you
+will need to follow these additional steps. Begin by locating the Java
+Plug-In under the Java Runtime Environment (JRE) directory tree. For
+example, it could be in
+<center>
+<p style="text-indent:0pt">
+<code>
+/usr/java/j2sdk1.4.2_02/jre/plugin/i386/ns610/libjavaplugin_oji.so
+</code>
+</center>
+
+<p style="text-indent:0pt"> Now follow the following steps:
+
+<ul>
+<li>
+<p style="text-indent:0pt">
+<b> Mozilla:</b> First, close any open Mozilla sessions. Then
+perform
+
+<pre>
+    cd ~/.mozilla
+    mkdir plugins
+    cd plugins
+    ln -s /usr/java/j2sdk1.4.1_02/jre/plugin/i386/ns610/libjavaplugin_oji.so
+</pre>
+<p style="text-indent:0pt">
+You should now see the plug-in registered if you look at About
+Plug-ins under the Help Menu.
+<li>
+<p style="text-indent:0pt">
+<b> Netscape:</b> First, set the environment variable:
+<center>
+<pre style="font-style:plain">
+    export NPX_PLUGIN_PATH=/usr/java/j2sdk1.4.1_02/jre/plugin/i386/ns610/libjavaplugin_oji.so
+</pre>
+</center>
+<p style="text-indent:0pt">
+Now start a
+Netscape session, close it and restart Netscape again. 
+</ul>
+</ol>
+
+
+<br>
+<br>
+<hr width=50%>
+<br>
+<center>
+<a href="index.html"> Spherical Easel Home Page </a>
+<p style="text-indent:0pt">
+&#169 2002-2009 David Austin and William Dickinson
+</center>
+
+</body>
+</html>
+
+
+
+
+
+

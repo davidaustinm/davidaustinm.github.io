@@ -1,0 +1,94 @@
+<html>
+<head>
+<link rel=stylesheet type="text/css" href="main.css">
+<title>
+  Spherical Easel
+</title>
+
+<body>
+<center>
+<table>
+<tr>
+<td>
+<img src="sphere.gif" align=left> 
+</td>
+<td valign=center>
+<h1> Spherical Easel </h1>
+<p style="text-indent:0pt"> 
+<h3> A spherical drawing program </h3>
+</td>
+</tr></table>
+</center>
+
+<p> <b>Spherical Easel</b> is a program for creating interactive
+diagrams in spherical geometry.  It may be viewed as a companion to 
+<a href="http://www.keypress.com/sketchpad/"> The Geometer's
+Sketchpad</a> and <a href="http://cs.unm.edu/~joel/NonEuclid/NonEuclid.html">
+Non-Euclid</a>, programs for studying Euclidean and hyperbolic geometry,
+respectively.  
+
+<br>
+<br>
+<center>
+<table cellpadding=20 border=2 rules=all>
+<tr>
+<td width=300> <img src="flag.us.gif" width=114 height = 60 hspace=10 align=left> 
+Run Spherical Easel as an <a href="applet.html"> applet in your web
+browser.  
+</td>
+<td width=300><img src="flag.us.gif" width=114 height=60 hspace=10 align=left> 
+<a href="download.html"> 
+Download </a> Spherical Easel and install on
+your own machine.
+</td>
+</tr>
+
+<tr>
+<td width=300>
+<table><td> <img src="germanFlag.gif" hspace=10> </td>
+<td> <a href="applet.de.html"> German version of the applet</a></td>
+</table>
+</td>
+
+<td width=300>
+<table><td> <img src="germanFlag.gif" hspace=10> </td>
+<td> <a href="download.de.html"> Download the German version</a></td>
+</table>
+</td>
+
+</tr>
+
+<tr>
+<td colspan=2>
+<center>
+<a href="docs/index.html"> Documentation </a>
+</center>
+</td>
+</tr>
+</table>
+</center>
+
+<br>
+<br>
+<p> <b>Spherical Easel</b> is created by <a
+href="mailto:austind@gvsu.edu">David Austin</a> and 
+<a href="mailto:dickinsw@gvsu.edu">Will Dickinson</a>.
+Please send us any comments you have about <b>Spherical Easel</b>.  We
+are particularly interested in hearing about how you are using
+<b>Spherical Easel</b> as well as any improvements you feel could be made.
+
+<br>
+<hr width=50%>
+<br>
+<center>
+<h4> Spherical Easel</h4>
+&#169 2002-2008 David Austin and William Dickinson
+
+</body>
+</html>
+
+
+
+
+
+
