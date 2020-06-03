@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.3.3</span>.</h6>
+<p>This activity demonstrates how to determine the orthogonal projection of a vector onto a subspace of \(\real^n\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Let's begin by considering a line \(L\) and vector \(\bvec\) not on \(L\text{,}\) as illustrated in <a data-knowl="./knowl/fig-projection-line-c.html" title="Figure 1.3.12">Figure 1.3.12</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/projection-line-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/projection-line-2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.12.</span> To determine the vector \(\bhat\text{,}\) we write \(\bhat=s\wvec\text{.}\)</figcaption></figure><ol class="lower-roman">
+<li>
+<p>To find \(\bhat\text{,}\) first notice that \(\bhat =
+s\wvec\) for some scalar \(s\text{.}\) Since \(\bvec-\bhat = \bvec -
+s\wvec\) is orthogonal to \(\wvec\text{,}\) what do we know about the dot product</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec\cdot(\bvec-s\wvec)\text{?}
+\end{equation*}
+</div>
+</li>
+<li><p>Apply the distributive property of dot products to find the scalar \(s\text{.}\)  What is the vector \(\bhat\) that is the orthogonal projection of \(\bvec\) onto \(L\text{?}\)</p></li>
+<li>
+<p>More generally, explain why the orthogonal projection of \(\bvec\) onto the line defined by \(\wvec\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\wvec\cdot\bvec}{\wvec\cdot\wvec}~\wvec\text{.} 
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>The same ideas apply more generally.  Suppose we have two orthogonal vectors \(\wvec_1\) and \(\wvec_2\) that define a plane \(W\) in \(\real^3\text{.}\)  If \(\bvec\) is another vector in \(\real^3\text{,}\) we seek the vector \(\bhat\) on the plane \(W\) closest to \(\bvec\text{.}\) As before, the vector \(\bvec-\bhat\) will be orthogonal to \(P\text{,}\) as illustrated in <a data-knowl="./knowl/fig-3d-orthog.html" title="Figure 1.3.13">Figure 1.3.13</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-orthog-proj-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-orthog-proj-2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.13.</span> Given a plane \(W\) defined by the orthogonal vectors \(\wvec_1\) and \(\wvec_2\) and another vector \(\bvec\text{,}\) we seek the vector \(\bhat\) on \(W\) closest to \(\bvec\text{.}\)</figcaption></figure><ol class="lower-roman">
+<li><p>The vector \(\bvec-\bhat\) is orthogonal to \(P\text{.}\) What does this say about the dot products: \(\wvec_1\cdot(\bvec-\bhat)\) and \(\wvec_2\cdot(\bvec-\bhat)\text{?}\)</p></li>
+<li>
+<p>Suppose that the orthogonal vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1=\threevec22{-1},\hspace{24pt}
+\wvec_2=\threevec102
+\end{equation*}
+</div>
+<p>define the plane \(W\) and that \(\bvec =
+\threevec322\text{.}\)  Since \(\bhat\) is in the plane \(W\text{,}\) we can write it as a linear combination \(\bhat = c_1\vvec_1 + c_2\vvec_2\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec-\bhat = \bhat - (c_1\wvec_1+c_2\wvec_2)\text{.}
+\end{equation*}
+</div>
+<p>Find the weight \(c_1\) by dotting \(\bvec-\bhat\) with \(\wvec_1\) and applying the distributive property of dot products.  Find the weight \(c_2\) in the same way.</p>
+</li>
+<li><p>What is the vector \(\bhat\text{,}\) the orthogonal projection of \(\wvec\) onto the plane \(P\text{?}\)</p></li>
+</ol>
+</li>
+<li>
+<p>Suppose that \(W\) is a subspace of \(\real^n\) with orthogonal basis \(\wvec_1,\wvec_2,\ldots,\wvec_m\) and that \(\bvec\) is a vector in \(\real^n\text{.}\)  Explain why the orthogonal projection of \(\bvec\) onto \(W\) is the vector</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_m\cdot\bvec}{\wvec_m\cdot\wvec_m}~\wvec_m\text{.} 
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Suppose that \(\uvec_1,\uvec_2,\ldots,\uvec_m\) is an <em class="emphasis">orthonormal</em> basis for \(W\text{;}\)  that is, the vectors are orthogonal to one another and have unit length.  Explain why the orthogonal projection is</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat=
+(\uvec_1\cdot\bvec)~\uvec_1 + 
+(\uvec_2\cdot\bvec)~\uvec_2 +
+\ldots +
+(\uvec_m\cdot\bvec)~\uvec_m\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><span class="incontext"><a href="sec-orthogonal-bases.html#activity-10">in-context</a></span>
+</body>
+</html>

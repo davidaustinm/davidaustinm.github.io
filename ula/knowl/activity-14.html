@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:52-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.2.3</span>.</h6>
+<p>In addition, Sage can find the product of a matrix and vector using the <code class="code-inline tex2jax_ignore">*</code> operator.  For example, <div class="sagecell-sage" id="sage-37"><script type="text/x-sage">A = matrix(2,2,[1,2,2,1])
+v = vector([3,-1])
+A*v
+</script></div></p>
+<ol class="lower-alpha">
+<li><p>Use Sage to evaluate the product <a data-knowl="./knowl/li-example-product.html" title="Item a">Item a</a> yet again. <div class="sagecell-sage" id="sage-38"><script type="text/x-sage">
+</script></div></p></li>
+<li>
+<p>In Sage, define the matrix and vectors</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[
+\begin{array}{rrr}
+-2 \amp 0 \\
+3 \amp 1 \\
+4 \amp 2 \\
+\end{array}
+\right],
+\zerovec = \left[
+\begin{array}{r} 0 \\ 0 \end{array}
+\right],
+\vvec = \left[
+\begin{array}{r} -2 \\ 3 \end{array}
+\right],
+\wvec = \left[
+\begin{array}{r} 1 \\ 2 \end{array}
+\right]\text{.}
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-39"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>What do you find when you evaluate \(A\zerovec\text{?}\)</p></li>
+<li><p>What do you find when you evaluate \(A(3\vvec)\) and \(3(A\vvec)\) and compare your results?</p></li>
+<li><p>What do you find when you evaluate \(A(\vvec+\wvec)\) and \(A\vvec + A\wvec\) and compare your results?</p></li>
+<li><p>If \(I=\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\) is the \(3\times3\) identity matrix, what is the product \(IA\text{?}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-matrices-lin-combs.html#activity-14">in-context</a></span>
+</body>
+</html>

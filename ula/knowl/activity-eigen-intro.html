@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:19-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">4.1.3</span>.</h6>
+<p>Let's consider an example that illustrates how we can put these ideas to use.</p>
+<p>Suppose that we work for a car rental company that has two locations, \(P\) and \(Q\text{.}\)  When a customer rents a car at one location, they have the option to return it to either location at the end of the day.  After doing some market research, we determine:</p>
+<ul class="disc">
+<li><p>80% of the cars rented at location \(P\) are returned to \(P\) and 20% are returned to \(Q\text{.}\)</p></li>
+<li><p>40% of the cars rented at location \(Q\) are returned to \(Q\) and 60% are returned to \(P\text{.}\)</p></li>
+</ul>
+<ol class="lower-alpha">
+<li><p>Suppose that there are 1000 cars at location \(P\) and no cars at location \(Q\) on Monday morning.  How many cars are there are locations \(P\) and \(Q\) at the end of the day on Monday?</p></li>
+<li><p>How many are at locations \(P\) and \(Q\) at end of the day on Tuesday?</p></li>
+<li>
+<p>If we let \(P_k\) and \(Q_k\) be the number of cars at locations \(P\) and \(Q\text{,}\) respectively, at the end of day \(k\text{,}\) we then have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+P_{k+1}\amp {}={} 0.8P_k + 0.6Q_k \\
+Q_{k+1}\amp {}={} 0.2P_k + 0.4Q_k\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>We can write the vector \(\xvec_k = \twovec{P_k}{Q_k}\) to reflect the number of cars at the two locations at the end of day \(k\text{,}\) which says that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\xvec_{k+1} \amp {}={}
+\left[\begin{array}{rr}
+0.8 \amp 0.6 \\
+0.2 \amp 0.4 \\
+\end{array}\right]
+\xvec_k \\
+\\
+\text{or}\qquad
+\xvec_{k+1} \amp {}={}
+A\xvec_k
+\end{aligned}
+\end{equation*}
+</div>
+<p>where \(A=\left[\begin{array}{rr}0.8 \amp 0.6 \\ 0.2 \amp 0.4
+\end{array}\right]\text{.}\)</p>
+<p>Suppose that</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \twovec{3}{1},
+\qquad
+\vvec_2 = \twovec{-1}{1}\text{.}
+\end{equation*}
+</div>
+<p>Compute \(A\vvec_1\) and \(A\vvec_2\) to demonstrate that \(\vvec_1\) and \(\vvec_2\) are eigenvectors of \(A\text{.}\) What are the associated eigenvalues \(\lambda_1\) and \(\lambda_2\text{?}\)</p>
+</li>
+<li><p>We said that 1000 cars are initially at location \(P\) and none at location \(Q\text{.}\)  This means that the initial vector describing the number of cars is \(\xvec_0 =
+\twovec{1000}{0}\text{.}\)  Write \(\xvec_0\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
+<li><p>Remember that \(\vvec_1\) and \(\vvec_2\) are eigenvectors of \(A\text{.}\)  Use the linearity of matrix multiplicaiton to write the vector \(\xvec_1 =
+A\xvec_0\text{,}\) describing the number of cars at the two locations at the end of the first day, as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
+<li>
+<p>Write the vector \(\xvec_2 = A\xvec_1\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  Then write the next few vectors as linear combinations of \(\vvec_1\) and \(\vvec_2\text{:}\)</p>
+<ol class="lower-alpha">
+<li><p>\(\xvec_3 = A\xvec_2\text{.}\)</p></li>
+<li><p>\(\xvec_4 = A\xvec_3\text{.}\)</p></li>
+<li><p>\(\xvec_5 = A\xvec_4\text{.}\)</p></li>
+<li><p>\(\xvec_6 = A\xvec_5\text{.}\)</p></li>
+</ol>
+</li>
+<li><p>What will happen to the number of cars at the two locations after a very long time?  Explain how writing \(\xvec_0\) as a linear combination of eigenvectors helps you determine the long-term behavior.</p></li>
+</ol></article><span class="incontext"><a href="sec-eigen-intro.html#activity-eigen-intro">in-context</a></span>
+</body>
+</html>

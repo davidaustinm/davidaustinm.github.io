@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We'll now use the objective to compare clusterings and to choose an appropriate value of \(k\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>In the previous activity, our algorithm found the clustering:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+C_1 \amp {}={} \amp \{\vvec_1\} \\
+C_2 \amp {}={} \amp \{\vvec_2, \vvec_3,\vvec_4\}
+\end{array}
+\end{equation*}
+</div>
+<p>with centroids \(c_1=\vvec_1\) and \(c_2=\twovec{5/3}{5/3}\text{.}\) Find the objective of this clustering.</p>
+</li>
+<li><p>We have now seen two clusterings and computed their objectives.  Recall that our data set is shown in <a data-knowl="./knowl/fig-clustering-ex.html" title="Figure 1.1.12">Figure 1.1.12</a>.  Which of clusterings feels like the better fit?  How is this fit reflected in the values of the objectives?</p></li>
+<li><p>Evaluating the following cell will load and display a data set consisting of 177 data points.  This data set has the name <code class="code-inline tex2jax_ignore">data</code>. <div class="sagecell-sage" id="sage-9"><script type="text/x-sage">sage.repl.load.load("http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/k-means.py", globals())
+list_plot(data, color='blue', size=20, aspect_ratio=1)
+</script></div> Given this plot of the data, what would seem like a reasonable number of clusters?</p></li>
+<li><p>In the following cell, you may choose a value of \(k\) and then run the algorithm to determine and display a clustering and its objective.  If you run the algorithm a few times with the same value of \(k\text{,}\) you will likely see different clusterings having different objectives. Choose a value of \(k\) and run the algorithm a few times.  Notice that clusterings having lower objectives seem to fit the data better.  Repeat this experiment with a few different values of \(k\text{.}\) <div class="sagecell-sage" id="sage-10"><script type="text/x-sage">k = 2  # you may change the value of k here
+clusters, centroids, objective = kmeans(data, k)
+print('Objective =', objective)
+plotclusters(clusters, centroids)
+</script></div></p></li>
+<li>
+<p>For a given value of \(k\text{,}\) our strategy is to run the algorithm several times and choose the clustering with the smallest objective.  After choosing a value of \(k\text{,}\) evaluating the following cell runs the algorithm 10 times and displays the clustering havig the smallest objective. <div class="sagecell-sage" id="sage-11"><script type="text/x-sage">k = 2  # you may change the value of k here
+clusters, centroids, objective = minimalobjective(data, k)
+print('Objective =', objective)
+plotclusters(clusters, centroids)
+</script></div></p>
+<p>For each value of \(k\) between 2 and 9, find the clustering having the smallest objective and plot your findings in <a data-knowl="./knowl/fig-clustering-elbow.html" title="Figure 1.1.15">Figure 1.1.15</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/clustering-elbow.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.1.15.</span> Construct a plot of the minimal objective as it depends on the choice of \(k\text{.}\)</figcaption></figure><p>This plot is called an <em class="emphasis">elbow plot</em> due to its shape.  Notice how the objective decreases sharply when \(k\) is small, but then flattens out. This leads to a location, called the elbow, where the objective transitions from being sharply decreasing to relatively flat.  This means that increasing \(k\) beyond the elbow does not significantly decrease the objective, which makes the elbow a good choice for \(k\text{.}\)</p>
+<p>Where does the elbow occur in your plot above?  How does this compare to the best value of \(k\) that you estimated by simply looking at the data in <a data-knowl="./knowl/li-guess-clusters.html" title="Item c">Item c</a>.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-dot-product.html#p-78">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:50-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">e</span>.</h6>
+<p>The following Sage cell defines a command called <code class="code-inline tex2jax_ignore">inverse_power</code> that applies the power method to \(A^{-1}\text{.}\)  That is, <code class="code-inline tex2jax_ignore">inverse_power(A, x0, N)</code> prints the vectors \(\xvec_k\text{,}\) where \(\xvec_{k+1} =
+A^{-1}\xvec_k\text{,}\) and multipliers \(\frac{1}{m_k}\text{,}\) which approximate the eigenvalue of \(A\text{.}\)  Use it to find the eigenvalue of \(A=\left[\begin{array}{rr}
+-5.1 \amp 5.7 \\
+-3.8 \amp 4.4 \\
+\end{array}\right]\) having the smallest absolute value. <div class="sagecell-sage" id="sage-137"><script type="text/x-sage">def inverse_power(A, x, N):
+    for i in range(N):
+        x = A \ x
+        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
+        x = 1/float(m)*x
+        print (1/float(m), x)
+### define the matrix A and vector x0
+A =
+x0 =
+inverse_power(A, x0, 20)
+</script></div></p></article><span class="incontext"><a href="sec-power-method.html#li-3467">in-context</a></span>
+</body>
+</html>

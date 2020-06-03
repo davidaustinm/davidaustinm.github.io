@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.4</span>.</h6>
+<p>Suppose that \(A\) is the \(4\times3\) matrix whose columns are</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fourvec1111,\hspace{24pt}
+\vvec_2 = \fourvec1322,\hspace{24pt}
+\vvec_3 = \fourvec1{-3}{-3}{-3}\text{.}
+\end{equation*}
+</div>
+<p>These vectors form a basis for \(W\text{,}\) the subspace of \(\real^4\) that we encountered in <a data-knowl="./knowl/activity-gram-schmidt.html" title="Activity 1.4.2">Activity 1.4.2</a>.  Since these vectors are the columns of \(A\text{,}\) we have \(\col(A) = W\text{.}\) <div class="sagecell-sage" id="sage-24"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li>
+<p>When we implemented Gram-Schmidt, we first found an orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) using</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\wvec_1 \amp = \vvec_1 \\
+\wvec_2 \amp = \vvec_2 -
+\frac{\wvec_1\cdot\vvec_2}{\wvec_1\cdot\wvec_1}\wvec_1 \\
+\wvec_3 \amp = \vvec_3 -
+\frac{\wvec_1\cdot\vvec_3}{\wvec_1\cdot\wvec_2}\wvec_1 -
+\frac{\wvec_2\cdot\vvec_3}{\wvec_2\cdot\wvec_2}\wvec_2\text{.}
+\\
+\end{aligned}
+\end{equation*}
+</div>
+<p>Use these expressions to write \(\vvec_1\text{,}\) \(\vvec_1\text{,}\) and \(\vvec_3\) as linear combinations of \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\text{.}\)</p>
+</li>
+<li>
+<p>We next normalized the orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) to obtain an orthonormal basis \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{.}\)</p>
+<p>Write the vectors \(\wvec_i\) as scalar multiples of \(\uvec_i\text{.}\) Then use these expressions to write \(\vvec_1\text{,}\) \(\vvec_1\text{,}\) and \(\vvec_3\) as linear combinations of \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{.}\)</p>
+</li>
+<li><p>Suppose that \(Q =
+\left[
+\begin{array}{ccc}
+\uvec_1 \amp \uvec_2 \amp \uvec_3
+\end{array}
+\right]\text{.}\)  Use the result of the previous part to find a vector \(\rvec_1\) so that \(Q\rvec_1 = \vvec_1\text{.}\)</p></li>
+<li><p>Then find vectors \(\rvec_2\) and \(\rvec_3\) such that \(Q\rvec_2 = \vvec_2\) and \(Q\rvec_3 =
+\vvec_3\text{.}\)</p></li>
+<li><p>Construct the matrix \(R =
+\left[
+\begin{array}{ccc}
+\rvec_1 \amp \rvec_2 \amp \rvec_3
+\end{array}
+\right]\text{.}\)  Remembering that \(A =
+\left[
+\begin{array}{ccc}
+\vvec_1 \amp \vvec_2 \amp \vvec_3
+\end{array}
+\right]\text{,}\) explain why \(A = QR\text{.}\)</p></li>
+<li><p>What is special about the shape of \(R\text{?}\)</p></li>
+<li><p>Suppose that \(A\) is a \(10\times 6\) matrix whose columns are linearly independent.  This means that the columns of \(A\) form a basis for a 6-dimensional subspace of \(\real^{10}\text{.}\)  Suppose that we apply Gram-Schmidt orthogonalization to create an orthonormal basis whose vectors form the columns of \(Q\text{.}\)  If \(A=QR\text{,}\) what are the dimensions of \(Q\) and what are the dimensions of \(R\text{?}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-gram-schmidt.html#activity-14">in-context</a></span>
+</body>
+</html>

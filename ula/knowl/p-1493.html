@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:56-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>By now, it shouldn't be too surprising that the pivot positions play an important role in determining whether the columns of a matrix are linearly dependent.  Let's discuss the previous activity to make this clear.</p>
+<ul class="disc">
+<li>
+<p>Let's consider the first example from the activity in which we have vectors in \(\real^4\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrrrr}
+\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 \amp
+\vvec_4 \amp	  \vvec_5 
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrrr}
+1 \amp 0 \amp -1 \amp 0 \amp 2 \\
+0 \amp 1 \amp 2 \amp 0 \amp 3 \\
+0 \amp 0 \amp 0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Notice that the third column does not contain a pivot position. Let's focus on the first three columns and consider them as an augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp -1 \\
+0 \amp 1 \amp 2 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>There is not a pivot in the rightmost column so we know that \(\vvec_3\) can be written as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  In fact, we can read the weights from the augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_3 = -\vvec_1 + 2\vvec_2\text{.}
+\end{equation*}
+</div>
+<p>This says that the set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_5\) is linearly dependent.</p>
+<p>This points to the general observation that a set of vectors is linearly dependent if the matrix they form has a column without a pivot.</p>
+<p>In addition, the fifth column of this matrix does not contain a pivot meaning that \(\vvec_5\) can be written as a linear combination:</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_5 = 2\vvec_1 + 3\vvec_2 -\vvec_4\text{.}
+\end{equation*}
+</div>
+<p>This example shows that vectors in columns that do not contain a pivot may be expressed as a linear combination of the vectors in columns that do contain pivots.  In this case, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\span{\vvec_1,\vvec_2,\vvec_3,\vvec_4,\vvec_5}
+=\span{\vvec_1,\vvec_2,\vvec_4}\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Conversely, the second set of vectors we studied produces a matrix with a pivot in every column.</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+\wvec_1 \amp 	  \wvec_2 \amp 	  \wvec_3 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>If we interpret this as an augmented matrix again, we see that the linear system is inconsistent since there is a pivot in the rightmost column.  This means that \(\wvec_3\) cannot be expressed as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)</p>
+<p>Similarly, \(\wvec_2\) cannot be expressed as a linear combination of \(\wvec_1\text{.}\) In addition, if \(\wvec_2\) could be expressed as a linear combination of \(\wvec_1\) and \(\wvec_3\text{,}\) we could rearrange that expression to write \(\wvec_3\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{,}\) which we know is impossible.</p>
+<p>We can therefore conclude that \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) form a linearly indpendent set of vectors.</p>
+</li>
+</ul>
+<span class="incontext"><a href="sec-linear-dep.html#p-1493">in-context</a></span>
+</body>
+</html>

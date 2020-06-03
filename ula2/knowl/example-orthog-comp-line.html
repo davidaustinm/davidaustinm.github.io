@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.2.6</span>.</h6>
+<p>If \(L\) is the line defined by \(\vvec=\threevec1{-2}3\) in \(\real^3\text{,}\) we will describe \(L^\perp\text{,}\) the set of vectors orthogonal to \(L\text{.}\)</p>
+<p>We define the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{c} \vvec \\ \end{array}\right] =
+\threevec1{-2}3\text{,} 
+\end{equation*}
+</div>
+<p>so that the line defined by \(\vvec\) is \(L=\col(A)\text{.}\) This means that the vectors orthogonal to the line satisfy \(L^\perp=\col(A)^\perp
+= \nul(A^T)\text{,}\) as <a data-knowl="./knowl/prop-col-orthog.html" title="Proposition 1.2.5">Proposition 1.2.5</a> reminds us.</p>
+<p>We can describe the null space \(\nul(A^T)\) as the vectors \(\xvec\) such that \(A^T\xvec = \zerovec\text{.}\) That is, we have</p>
+<div class="displaymath">
+\begin{equation*}
+A^T\xvec =
+\left[\begin{array}{r} 1 \amp -2 \amp 3 \\ \end{array}\right]
+\threevec xyz = x - 2y + 3z = 0\text{.}
+\end{equation*}
+</div>
+<p>In other words, the vectors \(\xvec=\threevec xyz\) that are orthogonal to the line satisfy the equation \(x-2y+3z=0\text{,}\) which is the equation of a plane in \(\real^3\text{.}\)  Parametrically, we describe the null space \(\nul(A^T)\) as</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec=\threevec xyz = \threevec{2y-3z}yz =
+y\threevec210+z\threevec{-3}01\text{.}
+\end{equation*}
+</div>
+<p>Therefore, the plane \(L^\perp\) is spanned by the vectors \(\threevec210\) and \(\threevec{-3}01\text{.}\)</p>
+<p>Notice how our formulation \(\col(A)^\perp=\nul(A^T)\) allows us to describe the orthogonal complement as the solution set of \(A^T\xvec=\zerovec\text{,}\) and we have considerable experience solving equations like this.</p></article><span class="incontext"><a href="sec-transpose.html#example-orthog-comp-line">in-context</a></span>
+</body>
+</html>

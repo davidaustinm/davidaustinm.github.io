@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li>
+<p>Evaluating the following Sage cell loads a dataset consisting of 100 demeaned data points and provides a plot of them.  It also provides a demeaned data matrix \(A\text{.}\) <div class="sagecell-sage" id="sage-47"><script type="text/x-sage">import pandas as pd
+df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/variance-data.csv', header=None)
+data = [vector(row) for row in df.values]
+A = matrix(data).T
+list_plot(data, size=20, color='blue', aspect_ratio=1)
+</script></div></p>
+<p>What are the dimensions of the covariance matrix \(C\text{?}\)  Find \(C\) and verify your response. <div class="sagecell-sage" id="sage-48"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>By visually inspecting the data, determine which is larger, \(V_x\) or \(V_y\text{.}\)  Then compute both of these quantities to verify your response.</p></li>
+<li><p>What is the total variance \(V\text{?}\)</p></li>
+<li><p>In approximately what direction is the variance greatest?  Choose a reasonable vector \(\uvec\) that points in approximately that direction and find \(V_{\uvec}\text{.}\)</p></li>
+<li><p>In approximately what direction is the variance smallest?  Choose a reasonable vector \(\wvec\) that points in approximately that direction and find \(V_{\wvec}\text{.}\)</p></li>
+<li><p>How are the directions \(\uvec\) and \(\wvec\) in the last two parts of this problem related to one another?  Why does this relationship hold?</p></li>
+</ol>
+<span class="incontext"><a href="sec-symmetric-matrices.html#p-563">in-context</a></span>
+</body>
+</html>

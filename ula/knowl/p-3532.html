@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:19-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>By the linearity of matrix matrix multiplication, we have</p>
+<div class="displaymath">
+\begin{equation*}
+A(c_1\vvec_1 + c_2\vvec_2) = c_1\vvec_1 + 0.2c_2\vvec_2\text{.}
+\end{equation*}
+</div>
+<p>Therefore, we will write the vector describing the initial distribution of cars \(\xvec_0=\twovec{1000}{0}\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{;}\)  that is, \(\xvec_0 =
+c_1\vvec_2 + c_2 \vvec_2\text{.}\)  To do, we form the augmented matrix and row reduce:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+\vvec_1 \amp \vvec_2 \amp \xvec_0
+\end{array}\right]
+=
+\left[\begin{array}{rr|r}
+3 \amp -1 \amp 1000 \\
+1 \amp 1 \amp 0 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 250 \\
+0 \amp 1 \amp -250 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Therefore, \(\xvec_0 = 250\vvec_1 -250\vvec_2\text{.}\)</p>
+<span class="incontext"><a href="sec-eigen-intro.html#p-3532">in-context</a></span>
+</body>
+</html>

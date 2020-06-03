@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:41-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Subspaces of \(\real^p\)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline">David Austin</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-determinants.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap4.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-determinants.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces" class="active">Subspaces of \(\real^p\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-subspaces"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Subspaces of \(\real^p\)</span>
+</h2>
+<a href="sec-subspaces.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-3183">In this chapter, we have been looking at bases for \(\real^p\text{,}\) sets of vectors that are linearly independent and span \(\real^p\text{.}\)  We saw that vectors in a basis for \(\real^p\) form the columns of an invertible matrix, which is necessarily a square matrix.</p>
+<p id="p-3184">A basis for \(\real^p\) can be useful for it creates a coordinate system that helps us effectively navigate in \(\real^p\text{.}\)  Sometimes, however, we find ourselves dealing with only a subset of \(\real^p\text{.}\)  In particular, if we are given an \(m\times n\) matrix \(A\text{,}\) we have been interested in both the span of the columns of \(A\) and the solution space to the homogeneous equation \(A\xvec = \zerovec\text{.}\) In this section, we will expand the concept of basis to describe sets like these.</p>
+<article class="project-like" id="exploration-13"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">3.5.1</span>.</h6>
+<p id="p-3185">Let's consider the following matrix \(A\) and its reduced row echelon form.</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrrr}
+2 \amp -1 \amp 2 \amp 3 \\
+1 \amp 0 \amp 0 \amp 2 \\
+-2 \amp 2 \amp -4 \amp -2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrr}
+1 \amp 0 \amp 0 \amp 2 \\
+0 \amp 1 \amp -2 \amp 1 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-2153"><p id="p-3186">Are the columns of \(A\) linearly independent?  Do they span \(\real^3\text{?}\)</p></li>
+<li id="li-2154"><p id="p-3187">Give a parametric description of the solution space to the homogeneous equation \(A\xvec = \zerovec\text{.}\)</p></li>
+<li id="li-2155"><p id="p-3188">Explain how this parametric description produces two vectors \(\wvec_1\) and \(\wvec_2\) whose span is the solution space to the equation \(A\xvec = \zerovec\text{.}\)</p></li>
+<li id="li-2156"><p id="p-3189">What can you say about the linear independence of the set of vectors \(\wvec_1\) and \(\wvec_2\text{?}\)</p></li>
+<li id="li-2157"><p id="p-3190">Let's denote the columns of \(A\) as \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\text{,}\)  and \(\vvec_4\text{.}\) Explain why \(\vvec_3\) and \(\vvec_4\) can be written as linear combinations of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
+<li id="li-2158"><p id="p-3191">Explain why \(\vvec_1\) and \(\vvec_2\) are linearly independent and \(\span{\vvec_1,\vvec_2} =
+\span{\vvec_1, \vvec_2, \vvec_3, \vvec_4}\text{.}\)</p></li>
+</ol></article></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Subspaces of \(\real^p\)</span>
+</h3>
+<p id="p-3199">In the preview activity, we considered a \(3\times4\) matrix \(A\) and described two familiar sets of vectors. FIrst, we described the solution space to the homogeneous equation \(A\xvec = \zerovec\text{,}\) which is a set of vectors in \(\real^4\text{.}\)  Next, we described the span of the columns of \(A\text{,}\) which is a set of vectors in \(\real^3\text{.}\)  As we will see shortly, each of these sets has a common feature that we would like to study further: if we choose some vectors in one of these sets, any linear combination of those vectors is also in the set.  This observation motivates the following definition.</p>
+<article class="definition-like" id="definition-12"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.5.1</span>.</h6>
+<p id="p-3200">A <em class="emphasis">subspace</em> of \(\real^p\) is a subset of \(\real^p\) such that any linear combination of vectors in that set is also in the set.</p></article><p id="p-3201">Without mentioning it explicitly, we have frequently encountered and worked with subspaces earlier in our investigations.  Let's look at some examples to get comfortable with this concept.</p>
+<article class="example-like" id="example-15"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.5.2</span>. <span class="title">Subsets that are not subspaces.</span>
+</h6>
+<p id="p-3202">It will be helpful to first look at some examples of subsets of \(\real^2\) that are not subspaces.  First, consider the set of vectors in the first quadrant of \(\real^2\text{;}\)  that is, vectors of the form \(\twovec{x}{y}\) where both \(x,y \geq 0\text{.}\)  This subset is illustrated on the left of <a data-knowl="./knowl/fig-subspace-quadrant.html" title="Figure 3.5.3">Figure 3.5.3</a>.</p>
+<figure class="figure-like" id="fig-subspace-quadrant"><div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;">
+<div class="sbspanel" style="width:41.1764705882353%;justify-content:flex-start;"><img src="images/subspace-quadrant.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:41.1764705882353%;justify-content:flex-start;"><img src="images/subspace-quadrant-vector.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">3.5.3.</span> The set of vectors in the first quadrant is not a subspace of \(\real^2\text{.}\)</figcaption></figure><p id="p-3203">If this subset were a subspace of \(\real^2\text{,}\) any linear combination of vectors in the first quadrant must also be in the first quadrant.  If we consider the vector \(\vvec=\twovec{3}{2}\text{,}\) however, we can form the linear combination \(-\vvec=\twovec{-3}{-2}\text{,}\) which is not in the first quadrant, as seen on the right of <a data-knowl="./knowl/fig-subspace-quadrant.html" title="Figure 3.5.3">Figure 3.5.3</a>.  Therefore, the set of vectors in the first quadrant is not a subspace.</p>
+<p id="p-3204">This shows something important, however.  Suppose that \(S\) is a subspace and \(\vvec\) is a vector in \(S\text{.}\)  Any scalar multiple of \(\vvec\) is a linear combination of \(\vvec\) and so must be in \(S\) as well. This means that the line containing \(\vvec\) must be in \(S\text{.}\)</p>
+<p id="p-3205">With this in mind, let's consider another example where we look at vectors that are in either the first or third quadrant;  that is, we will consider vectors of the form \(\twovec{x}{y}\) where either \(x,y\geq 0\) or \(x,y\leq 0\text{,}\) as seen on the left of <a data-knowl="./knowl/fig-subspace-quadrant-2.html" title="Figure 3.5.4">Figure 3.5.4</a>.</p>
+<figure class="figure-like" id="fig-subspace-quadrant-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;">
+<div class="sbspanel" style="width:41.1764705882353%;justify-content:flex-start;"><img src="images/subspace-quadrant-2.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:41.1764705882353%;justify-content:flex-start;"><img src="images/subspace-quadrant-2-vectors.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">3.5.4.</span> The set of vectors in the first and third quadrant is not a subspace of \(\real^2\text{.}\)</figcaption></figure><p id="p-3206">If \(\vvec\) is a vector in this set, then the line containing \(\vvec\) is in the set.  However, if we consider the vectors \(\vvec = \twovec{0}{3}\) and \(\wvec=\twovec{-2}{0}\text{,}\) then their sum \(\vvec+\wvec =
+\twovec{-2}{3}\) is not in the subset, as seen on the right of <a data-knowl="./knowl/fig-subspace-quadrant-2.html" title="Figure 3.5.4">Figure 3.5.4</a>.  This subset is also not a subspace.</p></article><article class="example-like" id="example-16"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.5.5</span>. <span class="title">Subsets that are subspaces.</span>
+</h6>
+<p id="p-3207">Let's look in \(\real^2\) and consider \(S\text{,}\) the set of vectors lying on the \(x\) axis;  that is, vectors having the form \(\twovec{x}{0}\text{,}\) as shown on the left of <a data-knowl="./knowl/fig-subspaces-r2.html" title="Figure 3.5.6">Figure 3.5.6</a>.  Any scalar multiple of a vector lying on the \(x\) axis also lies on the \(x\) axis.  Also, any sum of vectors lying on the \(x\) axis also lies on the \(x\) axis.  Therefore, \(S\) is a subspace of \(\real^2\text{.}\)  Notice that \(S\) is the span of the vector \(\twovec{1}{0}\text{.}\)</p>
+<figure class="figure-like" id="fig-subspaces-r2"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/subspace-xaxis.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/subspace-line.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">3.5.6.</span> Lines through the origin form subspaces of \(\real^2\text{.}\)</figcaption></figure><p id="p-3208">In fact, any line through the origin forms a subspace, as seen on the right of <a data-knowl="./knowl/fig-subspaces-r2.html" title="Figure 3.5.6">Figure 3.5.6</a>.  Indeed, any such line is the span of a nonzero vector on the line.</p></article><article class="project-like" id="activity-38"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.5.2</span>.</h6>
+<p id="p-3209">We will look at some more subspaces of \(\real^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-2165"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:61.5384615384615%;justify-content:flex-start;"><p id="p-3210">Explain why a line that does not pass through the origin, as seen to the right, is not a subspace of \(\real^2\text{.}\)</p></div>
+<div class="sbspanel" style="width:35.8974358974359%;justify-content:flex-start;"><img src="images/subspace-line-skew.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+<li id="li-2166"><p id="p-3211">Explain why any subspace of \(\real^2\) must contain the zero vector \(\zerovec\text{.}\)</p></li>
+<li id="li-2167"><p id="p-3212">Explain why the subset \(S\) of \(\real^2\) that consists of only the zero vector \(\zerovec\) is a subspace of \(\real^2\text{.}\)</p></li>
+<li id="li-2168"><p id="p-3213">Explain why the subspace \(S=\real^2\) is itself a subspace of \(\real^2\text{.}\)</p></li>
+<li id="li-2169"><p id="p-3214">If \(\vvec\) and \(\wvec\) are two vectors in a subspace \(S\text{,}\) explain why \(\span{\vvec,\wvec}\) is contained in the subspace \(S\) as well.</p></li>
+<li id="li-2170"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:61.5384615384615%;justify-content:flex-start;"><p id="p-3215">Suppose that \(S\) is a subspace of \(\real^2\) containing two vectors \(\vvec\) and \(\wvec\) that are not scalar multiples of one another.  What is the subspace \(S\) in this case?</p></div>
+<div class="sbspanel" style="width:35.8974358974359%;justify-content:flex-start;"><img src="images/subspace-all-r2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+</ol></article><p id="p-3223">This activity introduces an important idea.  Suppose that we have a subspace \(S\) of \(\real^p\) and that vectors \(\vvec_1, \vvec_2, \ldots, \vvec_n\) are in \(S\text{.}\)  We know that any linear combination of these vectors must also be in the subspace \(S\text{.}\)  Since the span of these vectors is the set of all linear commbinations of the vectors, it must be the case that \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\) is in the subspace \(S\) as well.</p>
+<p id="p-3224">With this in mind, we can list all the subspaces of \(\real^2\text{.}\)  If a subspace \(S\) contains a nonzero vector, then it must contain the line containing that vector.  If \(S\) contains two vectors \(\vvec\) and \(\wvec\) that are not scalar multiples of one another, then \(\span{\vvec,\wvec} =
+\real^2\) so the subspace \(S\) must be all of \(\real^2\text{.}\)  These are the only possibilities:</p>
+<ul class="disc">
+<li id="li-2177"><p id="p-3225">The subspace \(S=\{\zerovec\}\) consisting of only the zero vector .</p></li>
+<li id="li-2178"><p id="p-3226">A line through the origin.</p></li>
+<li id="li-2179"><p id="p-3227">The subspace \(S=\real^2\text{.}\)</p></li>
+</ul>
+<p id="p-3228">Subspaces are the simplest subsets of \(\real^p\text{;}\)  they are subsets in which we can perform the usual operations of scalar multiplication and vector addition without leaving the subset.  Just as we can create bases for \(\real^p\text{,}\) we can create bases for subspaces as well.</p>
+<article class="definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.5.7</span>.</h6>
+<p id="p-3229">A <em class="emphasis">basis</em> for a subspace \(S\) of \(\real^p\) is a set of vectors in \(S\) that are linearly independent and span \(S\text{.}\)  It can be seen that any two bases have the same number of vectors.  Therefore, we say that the <em class="emphasis">dimension</em> of the subspace \(S\text{,}\) denoted \(\dim
+S\text{,}\) is the number of vectors in any basis.</p></article><p id="p-3230">With this in mind, we can describe the possible spaces of \(\real^3\text{.}\)</p>
+<ul class="disc">
+<li id="li-2180"><p id="p-3231">The subspace \(S=\{\zerovec\}\) is a subspace whose dimension is 0.</p></li>
+<li id="li-2181"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><p id="p-3232">A line through the origin is a subspace whose dimension is 1.  Any nonzero vector on the line forms a basis.</p></div>
+<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><img src="images/3d-line.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+<li id="li-2182"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><p id="p-3233">A plane through the origin is a subspace whose dimension is 2.  For instance, the vectors \(\vvec_1\) and \(\vvec_2\) form a basis for the subspace shown here.</p></div>
+<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><img src="images/3d-plane-nonstd.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+<li id="li-2183"><p id="p-3234">Finally, the subspace \(S=\real^3\) is a subspace of \(\real^3\) whose dimension is 3.</p></li>
+</ul>
+<p id="p-3235">Of course, there cannot be a subspace of \(\real^3\) whose dimension is four or higher since any set of four vectors in \(\real^3\) cannot be linearly independent.</p>
+<p id="p-3236">We are most interested in two subspaces that are naturally associated with a matrix.  With this background, we are now ready to introduce them.</p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.2</span> <span class="title">The null space of \(A\)</span>
+</h3>
+<p id="p-3237">When we looked at the linear independence of the columns of a matrix \(A\) in <a href="sec-linear-dep.html" class="internal" title="Section 2.4: Linear independence">Section 2.4</a>, we were led to consider the homogeneous equation \(A\xvec = \zerovec\text{.}\)  We note that this solution space forms a subspace that we call the null space of \(A\text{.}\)</p>
+<article class="definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.5.8</span>.</h6>
+<p id="p-3238">If \(A\) is an \(m\times n\) matrix, we call the subset of vectors \(\xvec\) in \(\real^n\) satisfying \(A\xvec = \zerovec\) the <em class="emphasis">null space</em> of \(A\text{.}\)  We denote it as \(\nul(A)\text{.}\)</p></article><p id="p-3239">The linearity of matrix multiplication, expressed in <a data-knowl="./knowl/prop-matrix-mult-prop.html" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a>, tells us that \(\nul(A)\) is a subspace of \(\real^n\text{.}\) If \(\xvec_1\) and \(\xvec_2\) are both vectors in \(\nul(A)\text{,}\) we know that \(A\xvec_1 = \zerovec\) and \(A\xvec_2 = \zerovec\text{.}\)  A linear combination of \(\xvec_1\) and \(\xvec_2\) can be written as \(c_1\xvec_1 + c_2\xvec_2\text{.}\)  This linear combination is in \(\nul(A)\) because</p>
+<div class="displaymath">
+\begin{equation*}
+A(c_1\xvec_1 + c_2\xvec_2) =
+c_1A\xvec_1 + c_2A\xvec_2 = c_1\zerovec + c_2\zerovec = \zerovec\text{.}
+\end{equation*}
+</div>
+<article class="project-like" id="activity-39"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.5.3</span>.</h6>
+<p id="p-3240">We will explore some null spaces in this activity.</p>
+<ol class="lower-alpha">
+<li id="li-2184">
+<p id="p-3241">Consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A=\left[\begin{array}{rrr}
+1 \amp 3 \amp -1 \\
+-2 \amp 0 \amp -4 \\
+1 \amp 2 \amp 0 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>and give a parametric description of the null space \(\nul(A)\text{.}\)</p>
+</li>
+<li id="li-2185"><p id="p-3242">Give a basis for and state the dimension of \(\nul(A)\text{.}\)</p></li>
+<li id="li-2186"><p id="p-3243">The null space \(\nul(A)\) is a subspace of \(\real^p\) for which \(p\text{?}\)</p></li>
+<li id="li-2187">
+<p id="p-3244">Now consider the matrix \(A\) whose reduced row echelon form is given:</p>
+<div class="displaymath">
+\begin{equation*}
+A \sim
+\left[\begin{array}{rrrr}
+1 \amp 2 \amp 0 \amp -3 \\
+0 \amp 0 \amp 1 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Give a parametric description of \(\nul(A)\text{.}\)</p>
+</li>
+<li id="li-2188"><p id="p-3245">Notice that the parametric description gives a set of vectors that span \(\nul(A)\text{.}\)  Explain why this set of vectors is linearly independent and hence forms a basis.  What is the dimension of \(\nul(A)\text{?}\)</p></li>
+<li id="li-2189"><p id="p-3246">For this matrix, \(\nul(A)\) is a subspace of \(\real^p\) for what \(p\text{?}\)</p></li>
+<li id="li-2190"><p id="p-3247">What is the relationship between the dimensions of the matrix \(A\text{,}\) the number of pivot positions of \(A\) and the dimension of \(\nul(A)\text{?}\)</p></li>
+<li id="li-2191"><p id="p-3248">Suppose that the columns of a matrix \(A\) are linearly independent.  What can you say about \(\nul(A)\text{?}\)</p></li>
+<li id="li-2192"><p id="p-3249">If \(A\) is an invertible \(n\times n\) matrix, what can you say about \(\nul(A)\text{?}\)</p></li>
+<li id="li-2193"><p id="p-3250">Suppose that \(A\) is a \(5\times 10\) matrix and that \(\nul(A) = \real^{10}\text{.}\)  What can you say about the matrix \(A\text{?}\)</p></li>
+</ol></article><p id="p-3262">Let's consider an example of our own.  Suppose we have a matrix \(A\) and its reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\left[\begin{array}{rrrrr}
+2 \amp 0 \amp -4 \amp -6 \amp 0 \\
+-4 \amp -1 \amp 7 \amp 11 \amp 2 \\
+0 \amp -1 \amp -1 \amp -1 \amp 2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrrr}
+1 \amp 0 \amp -2 \amp -3 \amp 0 \\
+0 \amp 1 \amp 1 \amp 1 \amp -2 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p id="p-3263">To find a parametric description of the solution space to \(A\xvec=\zerovec\text{,}\) imagine that we augment both \(A\) and its reduced row echelon form by a column of zeroes, which leads to the equations</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{6}
+x_1 \amp  \amp  \amp  {}-{}  \amp 2x_3 \amp  {}-{}  \amp 3x_4 \amp
+\amp  \amp  {}={}  \amp 0 \\ 
+\amp  \amp x_2 \amp  {}+{}  \amp x_3 \amp  {}+{}  \amp x_4 \amp
+{}-{}  \amp 2x_5 \amp  {}={}  \amp -2 \\ 
+\end{alignedat}\text{.}
+\end{equation*}
+</div>
+<p>Notice that \(x_3\text{,}\) \(x_4\text{,}\) and \(x_5\) are free variables so we rewrite these equations as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+x_1 \amp {}={} 2x_3 + 3x_4 \\
+x_2 \amp {}={} -x_3 - x_4 + 2x_5 \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>Writing this as a vector, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\xvec \amp {}={} \fivevec{x_1}{x_2}{x_3}{x_4}{x_5} =
+\fivevec{2x_3 + 3x_4}{-x_3-x_4+2x_5}{x_3}{x_4}{x_5}
+\\
+\\
+\amp {}={}
+x_3\fivevec{2}{-1}{1}{0}{0}
++x_4\fivevec{3}{-1}{0}{1}{0}
++x_5\fivevec{0}{2}{0}{0}{1}
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p id="p-3264">This expression says that any vector \(\xvec\) satisfying \(A\xvec= \zerovec\) is a linear combination of the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fivevec{2}{-1}{1}{0}{0},
+\vvec_2 = \fivevec{3}{-1}{0}{1}{0},
+\vvec_3 = \fivevec{0}{2}{0}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p>It is easy to see that these vectors are linearly independent. Remember that we saw in <a href="sec-linear-dep.html" class="internal" title="Section 2.4: Linear independence">Section 2.4</a> that this set of vectors is linearly dependent if any linear combination \(c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 =
+\zerovec\) implies that \(c_1=c_2=c_3 = 0\text{.}\)  But this linear combination would be</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 \amp {}={}
+c_1\fivevec{2}{-1}{1}{0}{0}
++c_2\fivevec{3}{-1}{0}{1}{0}
++c_3\fivevec{0}{2}{0}{0}{1} \\
+\\
+\amp
+{}={} \fivevec{2c_1 + 3c_2}{-c_1-c_2+2c_3}{c_1}{c_2}{c_3}
+= \fivevec{0}{0}{0}{0}{0}
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>This expression shows that \(c_1=c_2=c_3=0\) so the vectors are linearly independent.</p>
+<p id="p-3265">Therefore, we see that the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fivevec{2}{-1}{1}{0}{0},
+\vvec_2 = \fivevec{3}{-1}{0}{1}{0},
+\vvec_3 = \fivevec{0}{2}{0}{0}{1}
+\end{equation*}
+</div>
+<p>form a basis for \(\nul(A)\) showing that \(\nul(A)\) is a three-dimensional subspace of \(\real^5\text{.}\)</p>
+<p id="p-3266">Notice that the dimension of \(\nul(A)\) is equal to the number of free variables, which equals the number of columns of \(A\) minus the number of pivot positions.  This example illustrates a general principle that motivates the following dimension.</p>
+<article class="definition-like" id="definition-15"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.5.9</span>.</h6>
+<p id="p-3267">The \(rank\) of a matrix \(A\text{,}\) denoted \(\rank(A)\text{,}\) is the number of pivot positions of \(A\text{.}\)</p></article><p id="p-3268">As illustrated by the previous example, if \(A\) is an \(m\times n\) matrix, then \(\nul(A)\) is a subspace of \(\real^n\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\dim~\nul(A) = n - \rank(A)
+\end{equation*}
+</div>
+<p>or</p>
+<div class="displaymath">
+\begin{equation*}
+\dim~\nul(A) + \rank(A) = n\text{.}
+\end{equation*}
+</div>
+<p id="p-3269">We may consider two extreme cases.  If \(\nul(A)=\{\zerovec\}\text{,}\) then \(\dim~\nul(A) = 0\) so that \(\rank(A) = n\text{.}\)  This means that the number of pivot positions is equal to the number of columns. In this case, there are no free variables in the description of the solutions to the homogeneous equation \(A\xvec = \zerovec\) so there is only the trivial solution.  This is exactly what we are saying when we say that \(\nul(A) = \{\zerovec\}\text{.}\)</p>
+<p id="p-3270">Similarly, if \(\nul(A) = \real^n\text{,}\) then \(\dim~\nul(A)
+= n\text{,}\) which implies that \(\rank(A) = 0\text{.}\)  This means that \(A\) does not have any pivot positions and so \(A\) must be the zero matrix \(0\text{.}\)  This is also consistent with what we already know:  if \(\nul(A)=\real^n\text{,}\) then \(A\xvec = \zerovec\) for any vector \(\xvec\text{.}\)  This can only be true if \(A =
+0\text{.}\)</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.3</span> <span class="title">The column space of \(A\)</span>
+</h3>
+<p id="p-3271">Besides the null space, the other subspace that is naturally associated to a matrix \(A\) is its column space.</p>
+<article class="definition-like" id="definition-16"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.5.10</span>.</h6>
+<p id="p-3272">If \(A\) is an \(m\times n\) matrix, we call the span of its columns the <em class="emphasis">column space</em> of \(A\) and denote it as \(\col(A)\text{.}\)</p></article><p id="p-3273">Notice that the columns of \(A\) are vectors in \(\real^m\text{,}\) which means that any linear combination of the columns is also in \(\real^m\text{.}\)  The column space is therefore a subset of \(\real^m\text{.}\)</p>
+<p id="p-3274">We can also see \(\col(A)\) is a subspace of \(\real^m\text{.}\)  First, notice that a vector is in \(\col(A)\) if it is a linear combination of the columns of \(A\text{.}\)  This means that \(\bvec\) is in \(\col(A)\) if there is a vector \(\xvec\) such that \(A\xvec = \bvec\text{.}\) To see that \(\col(A)\) is a subspace of \(\real^m\text{,}\) we need to check that any linear combination of vectors in \(\col(A)\) is also in \(\col(A)\text{.}\)  This follows, once again, from the linearity of matrix multiplicaiton expressed in <a data-knowl="./knowl/prop-matrix-mult-prop.html" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a>.</p>
+<p id="p-3275">If vectors \(\bvec_1\) and \(\bvec_2\) are in \(\col(A)\text{,}\) then there are vectors \(\xvec_1\) and \(\xvec_2\) such that \(A\xvec_1 = \bvec_1\) and \(A\xvec_2 = \bvec_2\text{.}\) Therefore, if we have a linear combination of \(\bvec_1\) and \(\bvec_2\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+c_1\bvec_1+c_2\bvec_2 = c_1A\xvec_1 + c_2A\xvec_2
+= A(c_1\xvec_1+c_2\xvec_2)\text{,}
+\end{equation*}
+</div>
+<p>which shows that the linear combination is itself in the column space of \(A\text{.}\)  Therefore, \(\col(A)\) is a subspace of \(\real^m\text{.}\)</p>
+<article class="project-like" id="activity-40"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.5.4</span>.</h6>
+<p id="p-3276">We will explore some column spaces in this activity.</p>
+<ol class="lower-alpha">
+<li id="li-2204">
+<p id="p-3277">Consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{rrr}
+\vvec_1 \amp \vvec_2 \amp \vvec_3
+\end{array}\right]
+=
+\left[\begin{array}{rrr}
+1 \amp 3 \amp -1 \\
+-2 \amp 0 \amp -4 \\
+1 \amp 2 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Since \(\col(A)\) is the span of the columns, the vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) naturally span \(\col(A)\text{.}\)  Are these vectors linearly independent?</p>
+</li>
+<li id="li-2205"><p id="p-3278">Show that \(\vvec_3\) can be written as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  Then explain why \(\col(A)=\span{\vvec_1,\vvec_2}\text{.}\)</p></li>
+<li id="li-2206"><p id="p-3279">Explain why the vectors \(\vvec_1\) and \(\vvec_2\) form a basis for \(\col(A)\text{.}\)  This shows that \(\col(A)\) is a 2-dimensional subspace of \(\real^2\) and is therefore a plane.</p></li>
+<li id="li-2207">
+<p id="p-3280">Now consider the matrix \(A\) and its reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrrr}
+-2 \amp -4 \amp 0 \amp 6 \\
+1 \amp 2 \amp 0 \amp -3 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrr}
+1 \amp 2 \amp 0 \amp -3 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We will call the columns \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\text{,}\) and \(\vvec_4\text{.}\) Explain why \(\vvec_2\text{,}\) \(\vvec_3\text{,}\) and \(\vvec_4\) can be written as a linear combination of \(\vvec_1\text{.}\)</p>
+</li>
+<li id="li-2208"><p id="p-3281">Explain why \(\col(A)\) is a 1-dimensional subspace of \(\real^2\) and is therefore a line.</p></li>
+<li id="li-2209"><p id="p-3282">What is the relationship between the dimension \(\dim~\col(A)\) and the rank \(\rank(A)\text{?}\)</p></li>
+<li id="li-2210"><p id="p-3283">What is the relationship between the dimension of the column space \(\col(A)\) and the null space \(\nul(A)\text{?}\)</p></li>
+<li id="li-2211"><p id="p-3284">If \(A\) is an invertible \(9\times9\) matrix, what can you say about the column space \(\col(A)\text{?}\)</p></li>
+<li id="li-2212"><p id="p-3285">If \(\col(A)=\{\zerovec\}\text{,}\) what can you say about the matrix \(A\text{?}\)</p></li>
+</ol></article><p id="p-3296">Once again, we will consider the matrix \(A\) and its reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\left[\begin{array}{rrrrr}
+2 \amp 0 \amp -4 \amp -6 \amp 0 \\
+-4 \amp -1 \amp 7 \amp 11 \amp 2 \\
+0 \amp -1 \amp -1 \amp -1 \amp 2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrrr}
+1 \amp 0 \amp 2 \amp -3 \amp 0 \\
+0 \amp 1 \amp 1 \amp 1 \amp -2 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We will denote the columns as \(\vvec_1,\vvec_2,\ldots,\vvec_5\text{.}\)</p>
+<p id="p-3297">It is certainly true that \(\col(A) =
+\span{\vvec_1,\vvec_2,\ldots,\vvec_5}\) by the definition of the column space.  However, the reduced row echelon form of the matrix shows us that the vectors are not linearly independent so \(\vvec_1,\vvec_2,\ldots,\vvec_5\) do not form a basis for \(\col(A)\text{.}\)</p>
+<p id="p-3298">From the reduced row echelon form, however, we can see that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\vvec_3 \amp {}={} -2\vvec_1 + \vvec_2 \\
+\vvec_4 \amp {}={} -3\vvec_1 + \vvec_2 \\
+\vvec_5 \amp {}={} -2\vvec_2 \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>This means that any linear combination of \(\vvec_1,\vvec_2,\ldots,\vvec_5\) can be written as a linear combination of just \(\vvec_1\) and \(\vvec_2\text{.}\)  Therefore, we see that \(\col(A) = \span{\vvec_1,\vvec_2}\text{.}\)  Moreover, the reduced row echelon form shows that \(\vvec_1\) and \(\vvec_2\) are linearly independent, which implies that they form a basis for \(\col(A)\text{.}\)  Therefore, \(\col(A)\) is a 2-dimensional subspace of \(\real^3\text{,}\) which is a plane in \(\real^3\text{,}\) having basis</p>
+<div class="displaymath">
+\begin{equation*}
+\threevec{2}{-4}{0},
+\qquad
+\threevec{0}{-1}{1}\text{.}
+\end{equation*}
+</div>
+<p id="p-3299">In general, a column without a pivot position can be written as a linear combination of the columns that have pivot positions. This means that a basis for \(\col(A)\) will always be given by the columns of \(A\) having pivot positions.  Therefore, the dimension of the column space \(\col(A)\) equals the rank \(\rank(A)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\dim~\col(A) = \rank(A)\text{.}
+\end{equation*}
+</div>
+<p>If \(A\) is an \(m\times n\) matrix, this also says that</p>
+<div class="displaymath">
+\begin{equation*}
+\dim~\nul(A) + \dim~\col(A) = n\text{.}
+\end{equation*}
+</div>
+<p id="p-3300">If \(A\) has a pivot position in every row, then \(\dim~\col(A) = 
+\rank(A) = m\text{.}\)  This implies that \(\col(A)\) is an \(m\)-dimensional subspace of \(\real^m\) and therefore, \(\col(A) = \real^m\text{.}\)  This agrees with our earlier explorations in which we found that the columns of a matrix span \(\real^m\) if there is a pivot in every row.</p>
+<p id="p-3301">At the other extreme, suppose that \(\dim~\col(A) = 0\text{.}\) The matrix \(A\) then has no pivots, which means that \(A\) must be the zero matrix \(0\text{.}\)</p></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.4</span> <span class="title">Summary</span>
+</h3>
+<p id="p-3302">Once again, we find ourselves revisiting our two fundamental questions, expressed in <a data-knowl="./knowl/fundamental-questions.html" title="Question 1.4.2">Question 1.4.2</a>, concerning the existence and uniqueness of solutions to linear systems.  The column space \(\col(A)\) contains all the vectors \(\bvec\) for which the equation \(A\xvec = \bvec\) is consistent. The null space \(\nul(A)\) describes the solution space to the equation \(A\xvec = \zerovec\text{,}\) and its dimension tells us whether this equation has a unique solution.</p>
+<ul id="p-3303" class="disc">
+<li id="li-2222"><p id="p-3304">A subset \(S\) of \(\real^p\) is a subspace of \(\real^p\) if any linear combination of vectors in \(S\) is also in \(S\text{.}\)  This essentially means that we can perform the usual vector operations of scalar multiplication and vector addition without leaving \(S\text{.}\)  A basis of a subspace \(S\) is a linearly indepedent set of vectors in \(S\) whose span is \(S\text{.}\)</p></li>
+<li id="li-2223"><p id="p-3305">If \(A\) is an \(m\times n\) matrix, then its null space \(\nul(A)\) is the solution space to the homogeneous equation \(A\xvec = \zerovec\text{.}\)  It is a subspace of \(\real^n\text{.}\)</p></li>
+<li id="li-2224"><p id="p-3306">A basis for \(\nul(A)\) is found through a parametric description of the solution space of \(A\xvec =
+\zerovec\text{.}\)  We see that \(\dim~\nul(A) = n -
+\rank(A)\text{.}\)</p></li>
+<li id="li-2225"><p id="p-3307">The column space \(\col(A)\) is the span of the columns of \(A\) and forms a subspace of \(\real^m\text{.}\)</p></li>
+<li id="li-2226"><p id="p-3308">A basis for \(\col(A)\) is found from the columns of \(A\) that have pivot positions.  The dimension is therefore \(\dim~\col(A) = \rank(A)\text{.}\)</p></li>
+</ul></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.5.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise-like" id="exercise-114"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-3309">Suppose that \(A\) and its reduced row echelon form are</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\left[\begin{array}{rrrrrr}
+0 \amp 2 \amp 0 \amp -4 \amp 0 \amp 6 \\
+0 \amp -4 \amp -1 \amp 7 \amp 0 \amp -16 \\
+0 \amp 6 \amp 0 \amp -12 \amp 3 \amp 15 \\
+0 \amp 4 \amp -1 \amp -9 \amp 0 \amp 8 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrrrr}
+0 \amp 1 \amp 0 \amp -2 \amp 0 \amp 3 \\
+0 \amp 0 \amp 1 \amp 1 \amp 0 \amp 4 \\
+0 \amp 0 \amp 0 \amp 0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-2227"><p id="p-3310">The null space \(\nul(A)\) is a subspace of \(\real^p\) for what \(p\text{?}\)  The column space \(\col(A)\) is a subspace of \(\real^p\) for what \(p\text{?}\)</p></li>
+<li id="li-2228"><p id="p-3311">What are the dimensions \(\dim~\nul(A)\) and \(\dim~\col(A)\text{?}\)</p></li>
+<li id="li-2229"><p id="p-3312">Find a basis for the column space \(\col(A)\text{.}\)</p></li>
+<li id="li-2230"><p id="p-3313">Find a basis for the null space \(\nul(A)\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-115"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-3324">Suppose that</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrrr}
+2 \amp 0 \amp -2 \amp -4 \\
+-2 \amp -1 \amp 1 \amp 2 \\
+0 \amp -1 \amp -1 \amp -2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-2239"><p id="p-3325">Is the vector \(\threevec{0}{-1}{-1}\) in \(\col(A)\text{?}\)</p></li>
+<li id="li-2240"><p id="p-3326">Is the vector \(\fourvec{2}{1}{0}{2}\) in \(\col(A)\text{?}\)</p></li>
+<li id="li-2241"><p id="p-3327">Is the vector \(\threevec{2}{-2}{0}\) in \(\nul(A)\text{?}\)</p></li>
+<li id="li-2242"><p id="p-3328">Is the vector \(\fourvec{1}{-1}{3}{-1}\) in \(\nul(A)\text{?}\)</p></li>
+<li id="li-2243"><p id="p-3329">Is the vector \(\fourvec{1}{0}{1}{-1}\) in \(\nul(A)\text{?}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-116"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-3342">Determine whether the following statements are true or false and provide a justification for your response.  Unless otherwise stated, assume that \(A\) is an \(m\times n\) matrix.</p>
+<ol class="lower-alpha">
+<li id="li-2254"><p id="p-3343">If \(A\) is a \(127\times 341\) matrix, then \(\nul(A)\) is a subspace of \(\real^{127}\text{.}\)</p></li>
+<li id="li-2255"><p id="p-3344">If \(\dim~\nul(A) = 0\text{,}\) then the columns of \(A\) are linearly independent.</p></li>
+<li id="li-2256"><p id="p-3345">If \(\col(A) = \real^m\text{,}\) then \(A\) is invertible.</p></li>
+<li id="li-2257"><p id="p-3346">If \(A\) has a pivot position in every column, then \(\nul(A) = \real^m\text{.}\)</p></li>
+<li id="li-2258"><p id="p-3347">If \(\col(A) = \real^m\) and \(\nul(A) =
+\{\zerovec\}\text{,}\) then \(A\) is invertible.</p></li>
+</ol></article><article class="exercise-like" id="exercise-117"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-3360">Explain why the following statements are true.</p>
+<ol class="lower-alpha">
+<li id="li-2269"><p id="p-3361">If \(B\) is invertible, then \(\nul(BA) =
+\nul(A)\text{.}\)</p></li>
+<li id="li-2270"><p id="p-3362">If \(B\) is invertible, then \(\col(AB) =
+\col(A)\text{.}\)</p></li>
+<li id="li-2271"><p id="p-3363">If \(A\sim A'\text{,}\) then \(\nul(A) = \nul(A')\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-118"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-3372">For each of the following conditions, construct a \(3\times
+3\) matrix having the given properties.</p>
+<ol class="lower-alpha">
+<li id="li-2278"><p id="p-3373">\(\dim~\nul(A) = 0\text{.}\)</p></li>
+<li id="li-2279"><p id="p-3374">\(\dim~\nul(A) = 1\text{.}\)</p></li>
+<li id="li-2280"><p id="p-3375">\(\dim~\nul(A) = 2\text{.}\)</p></li>
+<li id="li-2281"><p id="p-3376">\(\dim~\nul(A) = 3\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-119"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-3387">Suppose that \(A\) is a \(3\times 4\) matrix.</p>
+<ol class="lower-alpha">
+<li id="li-2290"><p id="p-3388">Is it possible that \(\dim~\nul(A) = 0\text{?}\)</p></li>
+<li id="li-2291"><p id="p-3389">If \(\dim~\nul(A) = 1\text{,}\) what can you say about \(\col(A)\text{?}\)</p></li>
+<li id="li-2292"><p id="p-3390">If \(\dim~\nul(A) = 2\text{,}\) what can you say about \(\col(A)\text{?}\)</p></li>
+<li id="li-2293"><p id="p-3391">If \(\dim~\nul(A) = 3\text{,}\) what can you say about \(\col(A)\text{?}\)</p></li>
+<li id="li-2294"><p id="p-3392">If \(\dim~\nul(A) = 4\text{,}\) what can you say about \(\col(A)\text{?}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-120"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-3405">Consider the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \threevec{2}{3}{-1},
+\vvec_2 = \threevec{-1}{2}{4},
+\wvec_1 = \fourvec{3}{-1}{1}{0},
+\wvec_2 = \fourvec{-2}{4}{0}{1}
+\end{equation*}
+</div>
+<p>and suppose that \(A\) is a matrix such that \(\col(A)=\span{\vvec_1,\vvec_2}\) and \(\nul(A) = 
+\span{\wvec_1,\wvec_2}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-2305"><p id="p-3406">What are the dimensions of \(A\text{?}\)</p></li>
+<li id="li-2306"><p id="p-3407">Find such a matrix \(A\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-121"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-3414">Suppose that \(A\) is an \(8\times 8\) matrix and that \(\det A = 14\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-2311"><p id="p-3415">What can you conclude about \(\nul(A)\text{?}\)</p></li>
+<li id="li-2312"><p id="p-3416">What can you conclude about \(\col(A)\text{?}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-122"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-3419">Suppose that \(A\) is a matrix and there is an invertible matrix \(P\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+A = P~\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp -3 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]~P^{-1}\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-2313"><p id="p-3420">What can you conclude about \(\nul(A)\text{?}\)</p></li>
+<li id="li-2314"><p id="p-3421">What can you conclude about \(\col(A)\text{?}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-123"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-3424">In this section, we saw that the solution space to the homogeneous equation \(A\xvec = \zerovec\) is a subspace of \(\real^p\) for some \(p\text{.}\)  In this exercise, we will investigate whether the solution space to another equation \(A\xvec = \bvec\) can form a subspace.</p>
+<p id="p-3425">Let's consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+2 \amp -4 \\
+-1 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-2315"><p id="p-3426">Find a parametric description of the solution space to the homogeneous equation \(A\xvec = \zerovec\text{.}\)</p></li>
+<li id="li-2316"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><p id="p-3427">Graph the solution space to the homogeneous equation to the right.</p></div>
+<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+<li id="li-2317"><p id="p-3428">Find a parametric description of the solution space to the equation \(A\xvec = \twovec{4}{-2}\) and graph it above.</p></li>
+<li id="li-2318"><p id="p-3429">Is the solution space to the equation \(A\xvec =
+\twovec{4}{-2}\) a subspace of \(\real^2\text{?}\)</p></li>
+<li id="li-2319"><p id="p-3430">Find a parametric description of the solution space to the equation \(A\xvec=\twovec{-8}{4}\) and graph it above.</p></li>
+<li id="li-2320"><p id="p-3431">What can you say about all the solution spaces to equations of the form \(A\xvec = \bvec\) when \(\bvec\) is a vector in \(\col(A)\text{?}\)</p></li>
+<li id="li-2321"><p id="p-3432">Suppose that the solution space to the equation \(A\xvec = \bvec\) forms a subspace.  Explain why it must be true that \(\bvec = \zerovec\text{.}\)</p></li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

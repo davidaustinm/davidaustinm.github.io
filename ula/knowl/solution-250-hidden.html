@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:46-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution"><ol class="lower-alpha">
+<li>
+<p>We have</p>
+<div class="displaymath">
+\begin{equation*}
+E_1 =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{array}\right],
+E_2 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+-3 \amp 0 \amp 1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The third row replacement is performed by</p>
+<div class="displaymath">
+\begin{equation*}
+E_3 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp -1 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The inverse matrices are easily found to be</p>
+<div class="displaymath">
+\begin{equation*}
+E_1^{-1}=
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right],
+E_2^{-1}=
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+3 \amp 0 \amp 1 \\
+\end{array}\right],
+E_3^{-1}=
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>giving \(L = E_1^{-1}E_2^{-1}E_3^{-1} =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+3 \amp 1 \amp 1
+\end{array}\right]\) so that \(A = LU\text{.}\)</p>
+</li>
+<li><p>Noting that \(L\cvec=\bvec\text{,}\) we find \(\cvec=\threevec41{-1}\text{.}\)</p></li>
+<li><p>To find \(\xvec\text{,}\) we solve the equation \(U\xvec=\cvec\) to obtain \(\xvec=\threevec31{-1}\text{.}\)</p></li>
+<li><p>We solve \(L\cvec=\threevec{2}{-2}{7}\) to find \(\cvec=\threevec22{-1}\) and \(U\xvec=\cvec\) to find \(\xvec=\threevec{-1}{2}{-1}\text{.}\)</p></li>
+</ol></div></body>
+</html>

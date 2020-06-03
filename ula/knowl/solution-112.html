@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:02-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">3.1.3.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>Solving these two equations shows that</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec_1=\twovec{3}{-1}, \bvec_2=\twovec{-2}{1}\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>Since the vectors \(\bvec_1\) and \(\bvec_2\) form the columns of \(B\text{,}\) we have \(B=\left[\begin{array}{rr}
+3 \amp -2 \\
+-1 \amp 1 \\
+\end{array}\right]
+\text{.}\) We can then verify by multiplying that \(AB=BA=I\text{.}\)</p></li>
+<li>
+<p>We construct the augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|rr}
+1 \amp 2 \amp 1 \amp 0 \\
+1 \amp 3 \amp 0 \amp 1
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|rr}
+1 \amp 0 \amp 3 \amp -2 \\
+0 \amp 1 \amp -1 \amp 1
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p>which shows that \(A^{-1}=\left[\begin{array}{rr}
+3 \amp -2 \\
+-1 \amp 1 \\
+\end{array}\right]
+\text{.}\)</p>
+</li>
+<li><p>Using Sage, we find that \(A^{-1}=
+\left[\begin{array}{rrr}
+-\frac{18}{35} \amp -\frac{16}{105} \amp \frac{1}{15} \\
+-\frac{12}{35} \amp \frac{1}{105} \amp -\frac{1}{15} \\
+\frac{1}{5} \amp \frac{2}{15} \amp \frac{1}{15}
+\end{array}\right]
+\text{.}\)</p></li>
+<li><p>This matrix does not have an inverse because its reduced row echelon form is not the identity \(I\text{.}\)</p></li>
+<li><p>We find that \((D^{-1}C^{-1})(CD) = I\) so \((CD)^{-1}
+= D^{-1}C^{-1}\text{.}\)</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-matrix-inverse.html#solution-112">in-context</a></span>
+</body>
+</html>

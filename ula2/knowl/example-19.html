@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.4.3</span>.</h6>
+<p>Let's now look at the matrix \(A=\begin{bmatrix}
+1 \amp 2 \\
+-1 \amp 2
+\end{bmatrix}
+\text{.}\)  The eigenvalues of this matrix are not real so \(A\) is not diagonalizable, much less orthogonally diagonalizable. However, the previous activity shows that we have singular values and vectors:</p>
+<div class="displaymath">
+\begin{align*}
+\sigma_1 = \sqrt{8}, \hspace{24pt}\amp \vvec_1 =
+\twovec01
+\amp \uvec_1 = \twovec{1/\sqrt{2}}{1/\sqrt{2}}\\
+\sigma_2 = \sqrt{2}, \hspace{24pt}\amp \vvec_2 =
+\twovec10
+\amp \uvec_2 = \twovec{1/\sqrt{2}}{-1/\sqrt{2}}
+\end{align*}
+</div>
+<p>Notice that there is a connection between a singular value and its associated singular vectors.  Because</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_j = l_A(\vvec_j) = \len{A\vvec_j},
+\end{equation*}
+</div>
+<p>we see that \(\sigma_j\) equals the length of \(A\vvec_j\text{.}\)  Since \(\uvec_j\) is a unit vector whose direction is the same as \(A\vvec_j\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+A\vvec_j = \sigma_j\uvec_j,
+\end{equation*}
+</div>
+<p>a key fact we'll soon use when we find singular value decompositions algebraically.</p>
+<p>Once again, we construct the matrices \(U\text{,}\) \(V\text{,}\) and \(\Sigma\) as before,</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix},
+\Sigma = \begin{bmatrix}
+\sqrt{8} \amp 0 \\
+0 \amp \sqrt{2}
+\end{bmatrix},
+V = \begin{bmatrix}
+0 \amp 1 \\
+1 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>and see that \(A=U\Sigma V^T\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp 2 \\
+-1 \amp 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{8} \amp 0 \\
+0 \amp \sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+0 \amp 1 \\
+1 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Notice that the right singular vectors \(\vvec_1\) and \(\vvec_2\) are orthgonal to one another and that the left singular vectors \(\uvec_1\) and \(\uvec_2\) are orthogonal.  We will soon verify that the orthogonality of the right and left singular vectors is a general principle. For now, however, notice that this means that \(U\) and \(V\) are orthogonal matrices as their columns form orthonormal bases of \(\real^2\text{.}\)</p>
+<p>To summarize, we see that, even though \(A\) is not diagonalizable, it still has a singular value decomposition \(A=U\Sigma V^T\) where \(\Sigma\) is diagonal and \(U\) and \(V\) are orthogonal.  In fact, we will see that <em class="emphasis">every</em> matrix, even those that are not square, has a singular value decomposition, and we can apply these decompositions to study general matrices in the same way we used orthogonal diagonalizations to study symmetric matrices.</p></article><span class="incontext"><a href="sec-svd-intro.html#example-19">in-context</a></span>
+</body>
+</html>

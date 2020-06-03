@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:59-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">e</span>.</h6>
+<p>Let's revisit the iris data set that we studied in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>.  Remember that there are four measurements given for each of 150 irises.  The irises are grouped into three species of which there are 50 each.</p>
+<p>Evaluating the following cell will load the demeaned data matrix \(A\) whose shape is \(4\times150\text{.}\) <div class="sagecell-sage" id="sage-81"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/pca-iris.py', globals())
+df.head()
+</script></div></p>
+<p>Find the singular values of \(A\) using the command <code class="code-inline tex2jax_ignore">A.singular_values()</code> and use them to determine the fraction of variance explained by the first two principal components. <div class="sagecell-sage" id="sage-82"><script type="text/x-sage">
+</script></div></p></article><span class="incontext"><a href="sec-svd-uses.html#li-471">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:59-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We will first explain the approximations and then explore how they can be used.  First, imagine that we have a singular value decomposition of the \(m\times n\) matrix \(A=U\Sigma V^T\) and that the rank of \(A\) is \(r\text{.}\)  If we write an \(n\)-dimensional vector \(\xvec\) as a linear combination of right singular vectors, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec=c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n.
+\end{equation*}
+</div>
+<p>Notice that \(c_j = \vvec_n\cdot\xvec = \vvec_n^T\xvec\text{.}\) We then have</p>
+<div class="displaymath">
+\begin{align*}
+A \xvec \amp = A(c_1\vvec_1 + c_2\vvec_2 + \ldots +
+c_n\vvec_n)\\
+\amp = c_1A\vvec_1 + c_2A\vvec_2 + \ldots + c_nA\vvec_n\\
+\amp = c_1\sigma_1\uvec_1 + c_2\sigma_2\uvec_2 + \ldots
+c_r\sigma_r\uvec_r\\
+\amp = \sigma_1\uvec_1\vvec_1^T\xvec +
+\sigma_2\uvec_2\vvec_2^T\xvec + \ldots +
+\sigma_r\uvec_r\vvec_r^T\xvec.
+\end{align*}
+</div>
+<p>We therefore have</p>
+<div class="displaymath">
+\begin{equation*}
+A = \sigma_1\uvec_1\vvec_1^T +
+\sigma_2\uvec_2\vvec_2^T + \ldots +
+\sigma_r\uvec_r\vvec_r^T.
+\end{equation*}
+</div>
+<p>In other words, we can write \(A\) as a sum of matrices each of which has the form \(\sigma_j\uvec_j\vvec_j^T\text{.}\)</p>
+<span class="incontext"><a href="sec-svd-uses.html#p-878">in-context</a></span>
+</body>
+</html>

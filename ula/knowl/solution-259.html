@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:48-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">5.1.4.8.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>We have</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\left[\begin{array}{rrr}
+3 \amp 1 \amp 1 \\
+-6 \amp -4 \amp -1 \\
+0 \amp -4 \amp 1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+3 \amp 1 \amp 1 \\
+0 \amp -2 \amp -1 \\
+0 \amp -4 \amp 1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+3 \amp 1 \amp 1 \\
+0 \amp -2 \amp -1 \\
+0 \amp 0 \amp -1 \\
+\end{array}\right]=U\text{.}
+\end{equation*}
+</div>
+<p>This leads to \(A=LU\) where</p>
+<div class="displaymath">
+\begin{equation*}
+L =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+0 \amp 2 \amp 1 \\
+\end{array}\right],
+U = \left[\begin{array}{rrr}
+3 \amp 1 \amp 1 \\
+0 \amp -2 \amp -1 \\
+0 \amp 0 \amp -1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>Because the diagonal entries of \(L\) are \(1\text{,}\) we have \(\det L = 1\text{.}\)  Therefore, \(\det A = \det L \det
+U = \det U\text{,}\) which equals the product of the pivots.</p></li>
+<li><p>\(\det A = \det U = 6\)</p></li>
+<li><p>More generally, if we have \(PA=LU\text{,}\) we can rewrite as \(A=PLU\) so that \(\det A = \det P \det L \det
+U = \pm\det U\text{,}\) which is plus or minus the product of the pivots.</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-gaussian-revisited.html#solution-259">in-context</a></span>
+</body>
+</html>

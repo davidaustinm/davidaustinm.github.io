@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:53-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="exercise-like"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">8.</span>
+</h6>
+<p>In this exercise, you will construct the <em class="emphasis">inverse</em> of a matrix, a subject that we will investigate more fully in the next chapter. Suppose that \(A\) is the \(2\times2\) matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+3 \amp -2 \\
+-2 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li>
+<p>Find the vectors \(\bvec_1\) and \(\bvec_2\) such that the matrix \(B=\left[\begin{array}{rr} \bvec_1 \amp \bvec_2
+\end{array}\right]\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+AB = I =
+\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-49"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>In general, it is not true that \(AB = BA\text{.}\)  Check that it is true, however, for the specific \(A\) and \(B\) that appear in this problem. <div class="sagecell-sage" id="sage-50"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Suppose that \(\xvec = \twovec{x_1}{x_2}\text{.}\)  What do you find when you evaluate \(I\xvec\text{?}\)</p></li>
+<li>
+<p>Suppose that we want to solve the equation \(A\xvec =
+\bvec\text{.}\)  We know how to do this using Gaussian elimination; let's use our matrix \(B\) to find a different way:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+A\xvec \amp {}={} \bvec \\
+B(A\xvec) \amp {}={} B\bvec \\
+(BA)\xvec \amp {}={} B\bvec \\
+I\xvec \amp {}={} B\bvec \\
+\xvec \amp {}={} B\bvec \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>In other words, the solution to the equation \(A\xvec=\bvec\) is \(\xvec = B\bvec\text{.}\)</p>
+<p>Consider the equation \(A\xvec = \twovec{5}{-2}\text{.}\) Find the solution in two different ways, first using Gaussian elimination and then as \(\xvec = B\bvec\text{,}\) and verify that you have found the same result.</p>
+<div class="sagecell-sage" id="sage-51"><script type="text/x-sage">
+</script></div>
+</li>
+</ol></article><span class="incontext"><a href="sec-matrices-lin-combs.html#exercise-34">in-context</a></span>
+</body>
+</html>

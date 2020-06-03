@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:55-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Finding orthogonal bases</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-orthogonal-bases.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap6.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-least-squares.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-orthogonal-bases.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap6.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-least-squares.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt" class="active">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-gram-schmidt"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Finding orthogonal bases</span>
+</h2>
+<a href="sec-gram-schmidt.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-294">The last section demonstrated the value of working with orthogonal, and especially orthonormal, bases.  If we have an orthogonal basis \(\wvec_1,\wvec_2,\ldots,\wvec_m\) for a subspace \(W\text{,}\) the projection formula of <a data-knowl="./knowl/prop-proj-formula.html" title="Proposition 1.3.14: Projection formula">Proposition 1.3.14</a> tells us that the orthogonal projection of a vector \(\bvec\) onto \(W\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_m\cdot\bvec}{\wvec_m\cdot\wvec_m}~\wvec_m\text{.}
+\end{equation*}
+</div>
+<p>An orthonormal basis \(\uvec_1,\uvec_2,\ldots,\uvec_m\text{,}\) is even more convenient:  we form the matrix \(Q=\begin{bmatrix} \uvec_1 \amp \uvec_2 \amp \ldots \amp
+\uvec_m
+\end{bmatrix}\) and then \(\bhat = QQ^T\bvec\text{.}\)</p>
+<p id="p-295">In the examples we've seen so far, however, orthogonal bases were given to us.  What we need now is a way to find orthogonal bases.  In this section, we'll explore an algorithm that begins with a basis for a subspace and uses it to find an orthogonal basis. Once we have an orthogonal basis, we can scale each of the vectors appropriately to produce an orthonormal basis.</p>
+<article class="project-like" id="exploration-4"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">1.4.1</span>.</h6>
+<p id="p-296">Suppose we have a basis for \(\real^2\) consisting of the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1=\twovec11,\hspace{24pt}
+\vvec_1=\twovec02
+\end{equation*}
+</div>
+<p>as shown in <a data-knowl="./knowl/fig-gs-intro.html" title="Figure 1.4.1">Figure 1.4.1</a>.  Notice that this basis is not orthogonal.</p>
+<figure class="figure-like" id="fig-gs-intro"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/gram-schmidt-intro.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.4.1.</span> A basis for \(\real^2\text{.}\)</figcaption></figure><ol id="p-297" class="lower-alpha">
+<li id="li-150"><p id="p-298">Find the vector \(\vhat_2\) that is the orthogonal projection of \(\vvec_2\) onto the line defined by \(\vvec_1\text{.}\)</p></li>
+<li id="li-151"><p id="p-299">Explain why \(\vvec_2 - \vhat_2\) is orthogonal to \(\vvec_1\text{.}\)</p></li>
+<li id="li-152">
+<p id="p-300">Define the new vectors \(\wvec_1=\vvec_1\) and \(\wvec_2=\vvec_2-\vhat_2\) and sketch them in <a data-knowl="./knowl/fig-gs-empty.html" title="Figure 1.4.2">Figure 1.4.2</a>.  Explain why \(\wvec_1\) and \(\wvec_2\) define an orthogonal basis for \(\real^2\text{.}\)</p>
+<figure class="figure-like" id="fig-gs-empty"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-3.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.4.2.</span> Sketch the new basis \(\wvec_1\) and \(\wvec_2\text{.}\)</figcaption></figure>
+</li>
+<li id="li-153"><p id="p-301">Write the vector \(\bvec=\twovec8{-10}\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)</p></li>
+<li id="li-154"><p id="p-302">Scale the vectors \(\wvec_1\) and \(\wvec_2\) to produce an orthonormal basis \(\uvec_1\) and \(\uvec_2\) for \(\real^2\text{.}\)</p></li>
+</ol></article></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Gram-Schmidt orthogonalization</span>
+</h3>
+<p id="p-303"> The preview activity illustrates the main idea behind an algorithm, known as <em class="emphasis">Gram-Schmidt orthogonalization</em>, that begins with a basis for some subspace of \(\real^n\) and produces an orthogonal or orthonormal basis. The algorithm relies on our construction of the orthogonal projection.  Remember that we formed the orthogonal projection \(\bhat\) of \(\bvec\) onto a subspace \(W\) by requiring that \(\bvec-\bhat\) is orthogonal to \(W\) as shown in <a data-knowl="./knowl/fig-proj-orthog.html" title="Figure 1.4.3">Figure 1.4.3</a>.</p>
+<figure class="figure-like" id="fig-proj-orthog"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/3d-orthog-proj-2.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.4.3.</span> If \(\bhat\) is the orthogonal projection of \(\bvec\) onto \(W\text{,}\) then \(\bvec-\bhat\) is orthogonal to \(W\text{.}\)</figcaption></figure><p id="p-304">This observation guides our construction of an orthogonal basis for it allows us to create a vector that is orthogonal to a given subspace.  Let's see how the algorithm works.</p>
+<article class="project-like" id="activity-gram-schmidt"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.2</span>.</h6>
+<p id="p-305">Suppose that \(W\) is a three-dimensional subspace of \(\real^4\) with basis:</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fourvec1111,\hspace{24pt}
+\vvec_2 = \fourvec1322,\hspace{24pt}
+\vvec_3 = \fourvec1{-3}{-3}{-3}\text{.}
+\end{equation*}
+</div>
+<p>Our goal is to create an orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) for the subspace \(W\text{.}\) <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-155"><p id="p-306">First, notice that the original basis \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) is not orthogonal by computing \(\vvec_1\cdot\vvec_2\text{.}\)</p></li>
+<li id="li-156">
+<p id="p-307">We will now begin to create our new basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) by declaring \(\wvec_1=\vvec_1\text{.}\)  We call \(W_1\) the line defined by \(\wvec_1\text{.}\)</p>
+<p id="p-308">Find the vector \(\vhat_2\) that is the orthogonal projection of \(\vvec_2\) onto \(W_1\text{,}\) the line defined by \(\wvec_1\text{.}\)</p>
+</li>
+<li id="li-157"><p id="p-309">Form the vector \(\wvec_2 = \vvec_2-\vhat_2\) and verify that it is orthogonal to \(\wvec_1\text{.}\)</p></li>
+<li id="li-158"><p id="p-310">Explain why \(\span{\wvec_1,\wvec_2} =
+\span{\vvec_1,\vvec_2}\) by showing that any linear combination of \(\vvec_1\) and \(\vvec_2\) can be written as a linear combination of \(\wvec_1\) and \(\wvec_2\) and vice versa.</p></li>
+<li id="li-159"><p id="p-311">The vectors \(\wvec_1\) and \(\wvec_2\) are an orthogonal basis for a two-dimensional subspace \(W_2\) of \(\real^4\text{.}\)  Find the vector \(\vhat_3\) that is the orthogonal projection of \(\vvec_3\) onto \(W_2\text{.}\)</p></li>
+<li id="li-160"><p id="p-312">Verify that \(\wvec_3 = \vvec_3-\vhat_3\) is orthogonal to both \(\wvec_1\) and \(\wvec_2\text{.}\)</p></li>
+<li id="li-161"><p id="p-313">Explain why \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) form an orthogonal basis for \(W\text{.}\)</p></li>
+<li id="li-162"><p id="p-314">Now find an orthonormal basis for \(W\text{.}\)</p></li>
+</ol></article><p id="p-315">As this activity illustrates, Gram-Schmidt orthogonalization begins with a basis \(\vvec_1\vvec_2,\ldots,\vvec_m\) for a subspace \(W\) of \(\real^n\) and creates an orthogonal basis for \(W\text{.}\)  We begin by declaring \(\wvec_1\) to be \(\vvec_1\) and \(W_1\) the line defined by \(\wvec_1\text{.}\)</p>
+<p id="p-316">We form \(\wvec_2 = \vvec_2-\vhat_2\) where \(\vhat_2\) is the orthogonal projection of \(\vvec_2\) onto \(W_1\text{.}\) By the construction of the orthogonal projection, we know that \(\wvec_2\) is orthogonal to the line \(W_1\) and hence to the vector \(\wvec_1\text{.}\)</p>
+<p id="p-317">In our example, we find that \(\vhat_2 = 2\wvec_1\) so that</p>
+<div class="displaymath">
+\begin{align*}
+\wvec_1 \amp = \vvec_1\\
+\wvec_2 \amp = \vvec_2 - 2\wvec_1,
+\end{align*}
+</div>
+<p>which may also be expressed by writing</p>
+<div class="displaymath">
+\begin{align*}
+\vvec_1 \amp = \wvec_1\\
+\vvec_2 \amp = 2\wvec_1 + \wvec_2 
+\end{align*}
+</div>
+<p>Therefore, the vectors \(\vvec_1\) and \(\vvec_2\) are linear combinations of \(\wvec_1\) and \(\wvec_2\text{.}\)  This means that any linear combination of \(\vvec_1\) and \(\vvec_2\) can be written as a linear combination of \(\wvec_1\) and \(\wvec_2\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+c_1\vvec_1 + c_2\vvec_2 = c_1\wvec_1 + c_2(2\wvec_1+\wvec_2)
+= (c_1+2c_2)\wvec_1 + c_2\wvec_2.
+\end{equation*}
+</div>
+<p>Similarly, any linear combination of \(\wvec_1\) and \(\wvec_2\) can be rewritten as a linear combination of \(\vvec_1\) and \(\vvec_2\) so we have the two-dimensional subspace</p>
+<div class="displaymath">
+\begin{equation*}
+W_2 = \span{\vvec_1,\vvec_2} =
+\span{\wvec_1,\wvec_2},
+\end{equation*}
+</div>
+<p>and \(\wvec_1\) and \(\wvec_2\) form an orthogonal basis for \(W_2\text{.}\)</p>
+<p id="p-318">We continue using the same idea to expand the list of orthogonal vectors.  We form \(\vhat_3\text{,}\) the orthogonal projection of \(\vvec_3\) onto \(W_2\) and define \(\wvec_3 = \vvec_3 - \vhat_3\text{,}\) which we know will be orthogonal to \(W_2\) and hence to both \(\wvec_1\) and \(\wvec_2\text{.}\)</p>
+<p id="p-319">Continuing in this way by applying the projection formula at each step, we find</p>
+<div class="displaymath">
+\begin{align*}
+\wvec_1 \amp = \vvec_1\\
+\wvec_2 \amp = \vvec_2 -
+\frac{\wvec_1\cdot\vvec_2}{\wvec_1\cdot\wvec_1}\wvec_1\\
+\wvec_3 \amp = \vvec_3 -
+\frac{\wvec_1\cdot\vvec_3}{\wvec_1\cdot\wvec_2}\wvec_1 -
+\frac{\wvec_2\cdot\vvec_3}{\wvec_2\cdot\wvec_2}\wvec_2\\
+\amp \vdots\\
+\wvec_m \amp = \vvec_m -
+\frac{\wvec_1\cdot\vvec_m}{\wvec_1\cdot\wvec_1}\wvec_1 -
+\frac{\wvec_2\cdot\vvec_m}{\wvec_2\cdot\wvec_2}\wvec_2 -
+\ldots - 
+\frac{\wvec_{m-1}\cdot\vvec_m}
+{\wvec_{m-1}\cdot\wvec_{m-1}}\wvec_{m-1}
+\text{.} 
+\end{align*}
+</div>
+<p id="p-320">From here, we may form an orthonormal basis by multiplying each orthogonal basis vector \(\wvec_j\) by a scalar to obtain a unit vector \(\uvec_j\text{.}\)  In particular, we have \(\uvec_j = 1/\len{\wvec_j}~\wvec_j\text{.}\)</p>
+<article class="project-like" id="activity-13"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.3</span>.</h6>
+<p id="p-321">Sage can automate these computations for us.  Before we begin, however, it will be helpful to understand how we can combine things using a <code class="code-inline tex2jax_ignore">list</code> in Python.  For instance, if the vectors <code class="code-inline tex2jax_ignore">v1</code>, <code class="code-inline tex2jax_ignore">v2</code>, and <code class="code-inline tex2jax_ignore">v3</code> form a basis for a subspace, we can bundle them together using square brackets: <code class="code-inline tex2jax_ignore">[v1, v2, v3]</code>.  Furthermore, we could assign this to a variable, such as, <code class="code-inline tex2jax_ignore">basis = [v1, v2, v3]</code>.</p>
+<p id="p-322">Evaluating the following cell will load in some special commands. <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">sage.repl.load.load("http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py", globals())
+</script></div></p>
+<ul class="disc">
+<li id="li-163"><p id="p-323">There is a command to apply the projection formula: <code class="code-inline tex2jax_ignore">projection(b, basis)</code> returns the orthogonal projection of <code class="code-inline tex2jax_ignore">b</code> onto the subspace spanned by <code class="code-inline tex2jax_ignore">basis</code>, which is a list of vectors.</p></li>
+<li id="li-164"><p id="p-324">The command <code class="code-inline tex2jax_ignore">unit(w)</code> returns a unit vector parallel to <code class="code-inline tex2jax_ignore">w</code>.</p></li>
+<li id="li-165"><p id="p-325">Given a collection of vectors, say, <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code>, we can form the matrix whose columns are <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code> using <code class="code-inline tex2jax_ignore">matrix([v1, v2]).T</code>.  When given a <code class="code-inline tex2jax_ignore">list</code> of vectors, Sage constructs a matrix whose <em class="emphasis">rows</em> are the given vectors.  For this reason, we need to apply the tranpose.</p></li>
+</ul>
+<p id="p-326">Let's now consider the subspace \(W\) whose basis is</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fivevec{14}{-6}{8}2{-6},\hspace{24pt}
+\vvec_2 = \fivevec{5}{-3}{4}3{-7},\hspace{24pt}
+\vvec_3 = \fivevec{2}30{-2}1.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-166">
+<p id="p-327">Apply the Gram-Schmidt algorithm to find an orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) for \(W\text{.}\)</p>
+<div class="sagecell-sage" id="sage-22"><script type="text/x-sage">
+</script></div>
+</li>
+<li id="li-167"><p id="p-328">Find \(\bhat\text{,}\) the orthogonal projection of \(\bvec = 
+\fivevec{-5}{11}0{-1}5\) onto \(W\text{.}\)</p></li>
+<li id="li-168">
+<p id="p-329">Explain why we know that \(\bhat\) is a linear combination of the original vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) and then find weights so that</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat = c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3.
+\end{equation*}
+</div>
+</li>
+<li id="li-169">
+<p id="p-330">Find an orthonormal basis \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) for \(\uvec_3\) for \(W\) and form the matrix \(Q\) whose columns are these vectors.</p>
+<div class="sagecell-sage" id="sage-23"><script type="text/x-sage">
+</script></div>
+</li>
+<li id="li-170"><p id="p-331">Find the product \(Q^TQ\) and explain the result.</p></li>
+<li id="li-171"><p id="p-332">Find the matrix \(P\) that projects vectors orthogonally onto \(W\) and verify that \(P\bvec\) gives \(\bhat\text{,}\) the orthogonal projection that you found earlier.</p></li>
+<li id="li-172"><p id="p-333">Find a basis for the orthogonal complement \(W^\perp\text{.}\)</p></li>
+</ol></article></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">\(QR\) factorizations</span>
+</h3>
+<p id="p-334">We have seen that orthonormal bases provide a convenient way to find orthogonal projections and that the Gram-Schmidt algorithm will produce an orthonormal basis for a given subspace.  We will now see how to express the Gram-Schmidt algorithm using matrices and matrix factorizations.</p>
+<article class="project-like" id="activity-14"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.4</span>.</h6>
+<p id="p-335">Suppose that \(A\) is the \(4\times3\) matrix whose columns are</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fourvec1111,\hspace{24pt}
+\vvec_2 = \fourvec1322,\hspace{24pt}
+\vvec_3 = \fourvec1{-3}{-3}{-3}\text{.}
+\end{equation*}
+</div>
+<p>These vectors form a basis for \(W\text{,}\) the subspace of \(\real^4\) that we encountered in <a data-knowl="./knowl/activity-gram-schmidt.html" title="Activity 1.4.2">Activity 1.4.2</a>.  Since these vectors are the columns of \(A\text{,}\) we have \(\col(A) = W\text{.}\) <div class="sagecell-sage" id="sage-24"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-173">
+<p id="p-336">When we implemented Gram-Schmidt, we first found an orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) using</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\wvec_1 \amp = \vvec_1 \\
+\wvec_2 \amp = \vvec_2 -
+\frac{\wvec_1\cdot\vvec_2}{\wvec_1\cdot\wvec_1}\wvec_1 \\
+\wvec_3 \amp = \vvec_3 -
+\frac{\wvec_1\cdot\vvec_3}{\wvec_1\cdot\wvec_2}\wvec_1 -
+\frac{\wvec_2\cdot\vvec_3}{\wvec_2\cdot\wvec_2}\wvec_2\text{.}
+\\
+\end{aligned}
+\end{equation*}
+</div>
+<p>Use these expressions to write \(\vvec_1\text{,}\) \(\vvec_1\text{,}\) and \(\vvec_3\) as linear combinations of \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\text{.}\)</p>
+</li>
+<li id="li-174">
+<p id="p-337">We next normalized the orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) to obtain an orthonormal basis \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{.}\)</p>
+<p id="p-338">Write the vectors \(\wvec_i\) as scalar multiples of \(\uvec_i\text{.}\) Then use these expressions to write \(\vvec_1\text{,}\) \(\vvec_1\text{,}\) and \(\vvec_3\) as linear combinations of \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{.}\)</p>
+</li>
+<li id="li-175"><p id="p-339">Suppose that \(Q =
+\left[
+\begin{array}{ccc}
+\uvec_1 \amp \uvec_2 \amp \uvec_3
+\end{array}
+\right]\text{.}\)  Use the result of the previous part to find a vector \(\rvec_1\) so that \(Q\rvec_1 = \vvec_1\text{.}\)</p></li>
+<li id="li-176"><p id="p-340">Then find vectors \(\rvec_2\) and \(\rvec_3\) such that \(Q\rvec_2 = \vvec_2\) and \(Q\rvec_3 =
+\vvec_3\text{.}\)</p></li>
+<li id="li-177"><p id="p-341">Construct the matrix \(R =
+\left[
+\begin{array}{ccc}
+\rvec_1 \amp \rvec_2 \amp \rvec_3
+\end{array}
+\right]\text{.}\)  Remembering that \(A =
+\left[
+\begin{array}{ccc}
+\vvec_1 \amp \vvec_2 \amp \vvec_3
+\end{array}
+\right]\text{,}\) explain why \(A = QR\text{.}\)</p></li>
+<li id="li-178"><p id="p-342">What is special about the shape of \(R\text{?}\)</p></li>
+<li id="li-179"><p id="p-343">Suppose that \(A\) is a \(10\times 6\) matrix whose columns are linearly independent.  This means that the columns of \(A\) form a basis for a 6-dimensional subspace of \(\real^{10}\text{.}\)  Suppose that we apply Gram-Schmidt orthogonalization to create an orthonormal basis whose vectors form the columns of \(Q\text{.}\)  If \(A=QR\text{,}\) what are the dimensions of \(Q\) and what are the dimensions of \(R\text{?}\)</p></li>
+</ol></article><p id="p-344">To summarize the results of this activity, we see that the Gram-Schmidt algorithm produces the orthogonal basis for \(\col(A)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\wvec_1 \amp = \vvec_1 \\
+\wvec_2 \amp = \vvec_2 - 2\wvec_1 \\
+\wvec_3 \amp = \vvec_3 + 2\wvec_1 + 2\wvec_2\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>Rearranging these expressions allows us to write \(\vvec_i\) in terms of this orthogonal basis.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\vvec_1 \amp = \wvec_1 \\
+\vvec_2 \amp = 2\wvec_1 + \wvec_2 \\
+\vvec_3 \amp = -2\wvec_1 -2\wvec_2 + \wvec_3\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>Once we normalize the vectors, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = 2\uvec_1,\hspace{24pt} 
+\wvec_2 = \sqrt{2}\uvec_2,\hspace{24pt} 
+\wvec_3 = 2\uvec_2\text{,}
+\end{equation*}
+</div>
+<p>which leads to</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\vvec_1 \amp = 2\uvec_1 \\
+\vvec_2 \amp = 4\uvec_1 + \sqrt{2}\uvec_2 \\
+\vvec_3 \amp = -4\uvec_1 -2\sqrt{2}\uvec_2 + 2\uvec_3\text{.} \\ 
+\end{aligned}
+\end{equation*}
+</div>
+<p>If we call \(Q\) the matrix whose columns are \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = Q\threevec200,\hspace{24pt}
+\vvec_2 = Q\threevec4{\sqrt{2}}0,\hspace{24pt}
+\vvec_3 = Q\threevec{-4}{-2\sqrt{2}}2\text{.}
+\end{equation*}
+</div>
+<p>Expressing this in matrix form, we have</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\left[
+\begin{array}{ccc}
+\vvec_1 \amp \vvec_2 \amp \vvec_3 \\
+\end{array}
+\right] =
+\left[
+\begin{array}{ccc}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \\
+\end{array}
+\right]
+\begin{bmatrix}
+2 \amp 4 \amp -4 \\
+0 \amp \sqrt{2} \amp -2\sqrt{2} \\
+0 \amp 0 \amp 2
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>or \(A=QR\) where \(R =
+\begin{bmatrix}
+2 \amp 4 \amp -4 \\
+0 \amp \sqrt{2} \amp -2\sqrt{2} \\
+0 \amp 0 \amp 2
+\end{bmatrix}\) is a \(3\times3\) upper triangular matrix.</p>
+<p id="p-345">We may apply the same thinking to any matrix whose columns are linearly independent and therefore form a basis for \(\col(A)\text{.}\)</p>
+<article class="theorem-like" id="prop-qr"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.4.4</span>. <span class="title">\(QR\) factorization.</span>
+</h6>If \(A\) is an \(n\times m\) matrix whose columns are linearly independent, we may write \(A=QR\) where \(Q\) is an \(n\times m\) matrix whose columns form an orthonormal basis for \(\col(A)\) and \(R\) is an \(m\times m\) upper triangular matrix.</article><article class="project-like" id="activity-15"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.5</span>.</h6>
+<p id="p-346">As before, we would like to use Sage to automate the process of finding and using the \(QR\) factorization of a matrix \(A\text{.}\) Evaluating the following cell provides a command <code class="code-inline tex2jax_ignore">QR(A)</code> that returns the factorization, which may be stored using, say, <code class="code-inline tex2jax_ignore">Q, R = QR(A)</code>. <div class="sagecell-sage" id="sage-25"><script type="text/x-sage">sage.repl.load.load("http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py", globals())
+</script></div></p>
+<p id="p-347">Suppose that \(A\) is the following matrix whose columns are linearly independent.</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\begin{bmatrix}
+1 \amp 0 \amp -3 \\
+0 \amp 2 \amp -1 \\
+1 \amp 0 \amp 1 \\
+1 \amp 3 \amp 5 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-180"><p id="p-348">If \(A=QR\text{,}\) what are the dimensions of \(Q\) and \(R\text{?}\)  What is special about the shape of \(R\text{?}\)</p></li>
+<li id="li-181"><p id="p-349">Find the \(QR\) factorization using <code class="code-inline tex2jax_ignore">Q, R =
+	      QR(A)</code> and verify that \(R\) has the predicted shape and that \(A=QR\text{.}\) <div class="sagecell-sage" id="sage-26"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-182"><p id="p-350">Find the matrix \(P\) that orthogonally projects vectors onto \(\col(A)\text{.}\)</p></li>
+<li id="li-183"><p id="p-351">Find \(\bhat\text{,}\) the orthogonal projection of \(\bvec=\fourvec4{-17}{-14}{22}\) onto \(\col(A)\text{.}\)</p></li>
+<li id="li-184"><p id="p-352">Explain why we know that the equation \(A\xvec=\bhat\) is consistent and then find \(\xvec\text{.}\)</p></li>
+</ol></article><p id="p-353">In fact, Sage provides its own version of the \(QR\) factorization, but its use requires a little care.  For instance, if the entries in \(A\) are all integers, the Sage algorithm will often be unable to compute the factorization that we want.  When Sage does return a factorization, columns are added to the matrix \(Q\) to make it square. For this reason, we have provided our own version of the factorization here.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-354">This section explored the Gram-Schmidt orthogonalization algorithm and how it leads to the matrix factorization \(A=QR\) when the columns of \(A\) are linearly independent.</p>
+<ul class="disc">
+<li id="li-185">
+<p id="p-355">Beginning with a basis \(\vvec_1,
+\vvec_2,\ldots,\vvec_m\) for a subspace \(W\) of \(\real^n\text{,}\) the vectors</p>
+<div class="displaymath">
+\begin{align*}
+\wvec_1 \amp = \vvec_1\\
+\wvec_2 \amp = \vvec_2 -
+\frac{\wvec_1\cdot\vvec_2}{\wvec_1\cdot\wvec_1}\wvec_1\\
+\wvec_3 \amp = \vvec_3 -
+\frac{\wvec_1\cdot\vvec_3}{\wvec_1\cdot\wvec_2}\wvec_1 -
+\frac{\wvec_2\cdot\vvec_3}{\wvec_2\cdot\wvec_2}\wvec_2\\
+\amp \vdots\\
+\wvec_m \amp = \vvec_m -
+\frac{\wvec_1\cdot\vvec_m}{\wvec_1\cdot\wvec_1}\wvec_1 -
+\frac{\wvec_2\cdot\vvec_m}{\wvec_2\cdot\wvec_2}\wvec_2 -
+\ldots - 
+\frac{\wvec_{m-1}\cdot\vvec_m}
+{\wvec_{m-1}\cdot\wvec_{m-1}}\wvec_{m-1}
+\end{align*}
+</div>
+<p>form an orthogonal basis for \(W\text{.}\)</p>
+</li>
+<li id="li-186"><p id="p-356">We may scale each vector \(\wvec_i\) appropriately to obtain an orthonormal basis \(\uvec_1,\uvec_2,\ldots,\uvec_m\text{.}\)</p></li>
+<li id="li-187"><p id="p-357">Expressing the Gram-Schmidt algorithm using matrices shows us that, if the columns of \(A\) are linearly independent, then we can write \(A=QR\text{,}\) where the columns of \(Q\) form an orthonormal basis for \(\col(A)\) and \(R\) is upper triangular.</p></li>
+</ul></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

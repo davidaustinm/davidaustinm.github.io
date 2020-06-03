@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>To begin, form the demeaned data matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+\dtil_1 \amp \dtil_2 \amp \dtil_3
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>and suppose that \(\uvec\) is a unit vector.</p>
+<ol class="lower-alpha">
+<li><p>Write the vector \(A^T\uvec\) in terms of the dot products \(\dtil_j\cdot\uvec\text{.}\)</p></li>
+<li><p>Explain why \(V_{\uvec} = \frac13\len{A^T\uvec}^2\text{.}\)</p></li>
+<li>
+<p>Apply <a data-knowl="./knowl/prop-symmetric-dot.html" title="Proposition 2.1.9">Proposition 2.1.9</a> to explain why</p>
+<div class="displaymath">
+\begin{equation*}
+V_{\uvec} =
+\frac13\len{A^T\uvec}^2 = 
+\frac13 (A^T\uvec)\cdot(A^T\uvec) =
+\uvec^T\left(\frac13 AA^T\right)\uvec.
+\end{equation*}
+</div>
+</li>
+<li><p>In general, the matrix \(C=\frac1N~AA^T\) is called the <em class="emphasis">covariance</em> matrix of the dataset.  Find the matrix \(C\) for our dataset with three points. <div class="sagecell-sage" id="sage-46"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Use the covariance matrix to find the variance \(V_{\uvec}\) when \(\uvec=\twovec{1/\sqrt{5}}{2/\sqrt{5}}\text{.}\)</p></li>
+<li><p>Use the covariance matrix to find the variance \(V_{\uvec}\) when \(\uvec=\twovec{-2/\sqrt{5}}{1/\sqrt{5}}\) and verify that the sum of these two variances add to the total variance.</p></li>
+<li><p>Explain why the covariance matrix \(C\) is a symmetric matrix.</p></li>
+</ol>
+<span class="incontext"><a href="sec-symmetric-matrices.html#p-550">in-context</a></span>
+</body>
+</html>

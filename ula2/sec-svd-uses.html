@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Using Singular Value Decompositions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-svd-intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-svd-intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses" class="active">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-svd-uses"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Using Singular Value Decompositions</span>
+</h2>
+<a href="sec-svd-uses.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-868">We've now seen what singular value decompositions are, how to construct them, and how they provide orthonormal bases for the four fundamental subspaces associated to a matrix.  This puts us in a good position to begin using singular value decompositions to solve a wide variety of problems.</p>
+<p id="p-869">In this section, we'll revisit some familiar situations, such as least squares problems and principal component analysis, from the perspective of singular value decompositions.  Later, we will see how a singular value decomposition of \(A\) provides a sequence of matrices \(A_k\) that approximate \(A\text{,}\) an observation that will unlock some new and important applications.</p>
+<article class="project-like" id="exploration-10"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">2.5.1</span>.</h6>
+<p id="p-870">Suppose that \(A = U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \begin{bmatrix}
+13 \amp 0 \amp 0 \amp 0 \\
+0 \amp 8 \amp 0 \amp 0 \\
+0 \amp 0 \amp 2 \amp 0 \\
+0 \amp0 \amp 0 \amp 0 \\
+0 \amp0 \amp 0 \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>and vectors \(\uvec_j\) form the columns of \(U\) and \(\uvec_j\) form the columns of \(V\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-443"><p id="p-871">What is the shape of the matrices \(A\text{,}\) \(U\text{,}\) and \(V\text{?}\)</p></li>
+<li id="li-444"><p id="p-872">What is the rank of \(A\text{?}\)</p></li>
+<li id="li-445"><p id="p-873">Describe how to find an orthonormal basis for \(\col(A)\text{.}\)</p></li>
+<li id="li-446"><p id="p-874">Describe how to find an orthonormal basis for \(\nul(A)\text{.}\)</p></li>
+<li id="li-447"><p id="p-875">If the columns of \(Q\) form an orthonormal basis for \(\col(A)\text{,}\) what is \(Q^TQ\text{?}\)</p></li>
+<li id="li-448"><p id="p-876">How would you form a matrix that projects vectors orthogonally onto \(\col(A)\text{?}\)</p></li>
+</ol></article></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Rank \(\) approximations</span>
+</h3>
+<p id="p-877">If we have a singular value decomposition for a matrix \(A\text{,}\) we can form a series of matrices \(A_k\) that approximate \(A\text{.}\)  Readers who are familiar with calculus will recognize a similarity to the sort of approximations seen there:  a function \(f(x)\) can be approximated by a linear function, a quadratic functions, and so forth.</p>
+<p id="p-878">We will first explain the approximations and then explore how they can be used.  First, imagine that we have a singular value decomposition of the \(m\times n\) matrix \(A=U\Sigma V^T\) and that the rank of \(A\) is \(r\text{.}\)  If we write an \(n\)-dimensional vector \(\xvec\) as a linear combination of right singular vectors, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec=c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n.
+\end{equation*}
+</div>
+<p>Notice that \(c_j = \vvec_n\cdot\xvec = \vvec_n^T\xvec\text{.}\) We then have</p>
+<div class="displaymath">
+\begin{align*}
+A \xvec \amp = A(c_1\vvec_1 + c_2\vvec_2 + \ldots +
+c_n\vvec_n)\\
+\amp = c_1A\vvec_1 + c_2A\vvec_2 + \ldots + c_nA\vvec_n\\
+\amp = c_1\sigma_1\uvec_1 + c_2\sigma_2\uvec_2 + \ldots
+c_r\sigma_r\uvec_r\\
+\amp = \sigma_1\uvec_1\vvec_1^T\xvec +
+\sigma_2\uvec_2\vvec_2^T\xvec + \ldots +
+\sigma_r\uvec_r\vvec_r^T\xvec.
+\end{align*}
+</div>
+<p>We therefore have</p>
+<div class="displaymath">
+\begin{equation*}
+A = \sigma_1\uvec_1\vvec_1^T +
+\sigma_2\uvec_2\vvec_2^T + \ldots +
+\sigma_r\uvec_r\vvec_r^T.
+\end{equation*}
+</div>
+<p>In other words, we can write \(A\) as a sum of matrices each of which has the form \(\sigma_j\uvec_j\vvec_j^T\text{.}\)</p>
+<p id="p-879">Remember that we have ordered the singular values so that \(\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_r\text{.}\)  This means that the first singular value is the largest one so we can expect that the first term in this sum, \(\sigma_1\uvec_1\vvec_1^T\) is the most important, and second term \(\sigma_2\uvec_2\vvec_2^T\) the next most important term and so forth.  This leads us to define the series of approximating matrices</p>
+<div class="displaymath">
+\begin{align*}
+A \approx A_1 \amp = \sigma_1\uvec_1\vvec_1^T\\
+A \approx A_2 \amp = \sigma_1\uvec_1\vvec_1^T +
+\sigma_2\uvec_2\vvec_2^T\\
+A \approx A_3 \amp = \sigma_1\uvec_1\vvec_1^T +
+\sigma_2\uvec_2\vvec_2^T + 
+\sigma_3\uvec_3\vvec_3^T\\
+\vdots \amp\\
+A = A_r \amp = \sigma_1\uvec_1\vvec_1^T +
+\sigma_2\uvec_2\vvec_2^T + \ldots +
+\sigma_r\uvec_r\vvec_r^T
+\end{align*}
+</div>
+<p id="p-880">There is a simple way to form these approximations computationally from a singular value decomposition \(A=U\Sigma
+V^T\text{.}\)  Notice that the approximation \(A_k\) has the same singular vectors as \(A\) and same first \(k\) singular values.  Therefore, we can form \(A_k\) by modifying \(\Sigma\) so that the singular values beyond the first \(k\) are zero.  For instance, if \(\Sigma = \begin{bmatrix}
+22 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 14 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 3 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{bmatrix}
+\text{,}\) we can form \(A_2\) by replacing \(\Sigma\) with \(\begin{bmatrix}
+22 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 14 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{bmatrix}
+\text{.}\)</p>
+<article class="project-like" id="activity-37"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.5.2</span>.</h6>
+<p id="p-881">Let's consider a matrix \(A=U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{align*}
+\amp U = \begin{bmatrix}
+\frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \\
+\frac{1}{2} \amp \frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \\
+\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \amp -\frac{1}{2} \\
+\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \\
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+500 \amp 0 \amp 0 \amp 0 \\
+0 \amp 100 \amp 0 \amp 0 \\
+0 \amp 0 \amp 20 \amp 0  \\
+0 \amp 0 \amp 0 \amp 4
+\end{bmatrix}\\
+\amp V = \begin{bmatrix}
+\frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \\
+\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \\
+-\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \\
+-\frac{1}{2} \amp \frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2}
+\end{bmatrix}
+\end{align*}
+</div>
+<p>Evaluating the following cell will create the matrices <code class="code-inline tex2jax_ignore">U</code>, <code class="code-inline tex2jax_ignore">V</code>, and <code class="code-inline tex2jax_ignore">Sigma</code>.  Notice how the <code class="code-inline tex2jax_ignore">diagonal_matrix</code> command provides a convenient way to form a diagonal matrix. <div class="sagecell-sage" id="sage-72"><script type="text/x-sage">h = 1/2
+U = matrix(4,4,[h,h,h,h,  h,h,-h,-h,  h,-h,h,-h,  h,-h,-h,h])	    
+V = matrix(4,4,[h,h,h,h,  h,-h,-h,h,  -h,-h,h,h,  -h,h,-h,h])
+Sigma = diagonal_matrix([500, 100, 20, 4])
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-449"><p id="p-882">Form the matrix \(A=U\Sigma V^T\text{.}\)  What is \(\rank(A)\text{?}\) <div class="sagecell-sage" id="sage-73"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-450"><p id="p-883">Now form the approximating matrix \(A_1=U\Sigma_1
+V^T\text{.}\)  What is \(\rank(A_1)\text{?}\) <div class="sagecell-sage" id="sage-74"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-451"><p id="p-884">Find the error in the approximation, which may be expressed as \(A-A_1\text{.}\)</p></li>
+<li id="li-452"><p id="p-885">Now find \(A_2 = U\Sigma_2 V^T\) and the error \(A-A_2\text{.}\)  What is \(\rank(A_2)\text{?}\) <div class="sagecell-sage" id="sage-75"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-453"><p id="p-886">Find \(A_3 = U\Sigma_3 V^T\) and the error \(A-A_3\text{.}\)  What is \(\rank(A_3)\text{?}\)</p></li>
+<li id="li-454"><p id="p-887">What would happen if we were to compute \(A_4\text{?}\)</p></li>
+<li id="li-455">
+<p id="p-888">Suppose that another matrix has the singular value decomposition \(U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+5 \amp 0 \\
+0 \amp 3 \\
+0 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Suppose also that we define new matrices by trimming off the last column of \(U\) and the last row of \(\Sigma\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+U_2 = \begin{bmatrix}
+\uvec_1 \amp \uvec_2 
+\end{bmatrix},\hspace{10pt}
+\Sigma_2 = \begin{bmatrix}
+5 \amp 0 \\
+0 \amp 3 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Explain why \(U\Sigma = U_2\Sigma_2\text{.}\)</p>
+</li>
+</ol></article><p id="p-889">In this activity, we saw that the approximation \(A_k\) has rank \(k\) because its singular value decomposition has \(k\) nonzero singular values.  We also saw how the difference between \(A\) and the approximations \(A_k\) decrease as \(k\) increases, which means that \(A_k\) forms a better approximation as \(k\) increases.  In fact, \(A_k\) is the matrix that is closest to \(A\text{,}\) in a sense that can be made precise, among all rank \(k\) matrices.</p>
+<p id="p-890">The last part of this activity indicates how we can represent \(A\) and its approximations \(A_k\) more efficiently.  If we remember that the columns of the matrix product \(U\Sigma\) are formed by multiplying the columns of \(\Sigma\) by \(U\text{,}\) then we have</p>
+<div class="displaymath">
+\begin{equation*}
+U\Sigma =
+\begin{bmatrix}
+\uvec_1\amp\uvec_2\amp\uvec_3
+\end{bmatrix}
+\begin{bmatrix}
+5 \amp 0 \\
+0 \amp 3 \\
+0 \amp 0
+\end{bmatrix}
+= \begin{bmatrix}
+5\uvec_1 \amp 3\uvec_2
+\end{bmatrix}
+= \begin{bmatrix}
+\uvec_1\amp\uvec_2
+\end{bmatrix}
+\begin{bmatrix}
+5 \amp 0 \\
+0 \amp 3 \\
+\end{bmatrix}
+= U_2\Sigma_2.
+\end{equation*}
+</div>
+<p id="p-891">More generally, if we trim columns from \(U\) and \(V\) and form the square matrix \(\Sigma_k\text{,}\) such as</p>
+<div class="displaymath">
+\begin{equation*}
+U_k = \begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \ldots \uvec_k
+\end{bmatrix},\hspace{10pt}
+\Sigma_k = \begin{bmatrix}
+\sigma_1 \amp 0 \amp \ldots \amp 0 \\
+0 \amp \sigma_2 \amp \ldots \amp 0 \\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+0 \amp 0 \amp \ldots \amp \sigma_k
+\end{bmatrix},\hspace{10pt}
+V_k = \begin{bmatrix}
+\vvec_1 \amp \vvec_2 \amp \ldots \vvec_k
+\end{bmatrix},
+\end{equation*}
+</div>
+<p>then we have \(A_k = U_k\Sigma_kV_k^T\text{.}\)  Notice that, if the rank of \(A\) is \(r\text{,}\) then we have \(A=U_r\Sigma_rV_r\text{.}\)  We called this the <em class="emphasis">reduced</em> singular value decomposition of \(A\text{.}\)</p></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Least squares problems</span>
+</h3>
+<p id="p-892">Least squares problems, which we explored in <a href="sec-least-squares.html" class="internal" title="Section 1.5: Least squares problems">Section 1.5</a>, arise when we are confronted with an inconsistent linear system \(A\xvec=\bvec\text{.}\)  Since there is no solution to the system, we instead find the vector \(\xvec\) that minimizes the distance between \(\bvec\) and \(A\xvec\text{.}\) That is, we find the vector \(\xhat\text{,}\) the least squares approximate solution, by solving \(A\xhat=\bhat\) where \(\bhat\) is the orthogonal projection of \(\bvec\) onto the column space of \(A\text{.}\)</p>
+<p id="p-893">If we have a decomposition \(A=U\Sigma V^T\text{,}\) then the number of nonzero singular values \(r\) tells us the rank of \(A\text{,}\) and the first \(r\) columns of \(U\) form an orthonormal basis for \(\col(A)\text{.}\)  This basis may be used to project vectors onto \(\col(A)\) and hence to solve least squares problems.</p>
+<p id="p-894">Before exploring this connection further, we will introduce Sage as a tool for automating the construction of singular value decompositions.  One new feature is that we need to declare our matrix to consist of floating point entries.  We do this by including <code class="code-inline tex2jax_ignore">RDF</code> inside the matrix definition, as illustrated in the following cell. <div class="sagecell-sage" id="sage-76"><script type="text/x-sage">A = matrix(RDF, 3, 2, [1,0,-1,1,1,1])
+U, Sigma, V = A.SVD()	  
+print(U)
+print(Sigma)
+print(V)
+</script></div></p>
+<article class="project-like" id="activity-38"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.5.3</span>.</h6>
+<p id="p-895">Consider the equation \(A\xvec=\bvec\) where</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 0 \\
+1 \amp 1 \\
+1 \amp 2
+\end{bmatrix}
+\xvec = \threevec{-1}36
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-456"><p id="p-896">Find a singular value decomposition for \(A\) using the Sage cell below.  What are singular values of \(A\text{?}\) <div class="sagecell-sage" id="sage-77"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-457"><p id="p-897">What is \(r\text{,}\) the rank of \(A\text{?}\)  How can we identify an orthonormal basis for \(\col(A)\text{?}\)</p></li>
+<li id="li-458">
+<p id="p-898">Suppose we write \(\bvec\) as a linear combination of the columns of \(U\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec = c_1\uvec_1 + c_2\uvec_2 + c_3\uvec_3.
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li id="li-459"><p id="p-899">What condition on the weights \(c_1\text{,}\) \(c_2\text{,}\) and \(c_3\) determine whether \(A\xvec = \bvec\) is consistent?</p></li>
+<li id="li-460"><p id="p-900">Similarly, what condition on \(U^T\bvec\) determines whether \(A\xvec=\bvec\) is consistent.</p></li>
+<li id="li-461"><p id="p-901">Evaluate \(U^T\bvec\) and determine whether \(A\xvec=\bvec\) is consistent. <div class="sagecell-sage" id="sage-78"><script type="text/x-sage">
+</script></div></p></li>
+</ol>
+</li>
+<li id="li-462">
+<p id="p-902">Form the reduced singular value decomposition \(U_r\Sigma_rV_r^T\) by constructing the matrix \(U_r\text{,}\) consisting of the first \(r\) columns of \(U\text{,}\) \(V_r\text{,}\) consisting of the first \(r\) columns of \(V\text{,}\) and \(\Sigma_r\text{,}\) an \(r\times r\) matrix. Verify that \(A=U_r\Sigma_r V_r^T\text{.}\)</p>
+<p id="p-903">You may find it convenient to remember that, if <code class="code-inline tex2jax_ignore">B</code> is a matrix defined in Sage, then <code class="code-inline tex2jax_ignore">B.matrix_from_columns( list )</code> and <code class="code-inline tex2jax_ignore">B.matrix_from_rows( list )</code> can be used to extract columns or rows from <code class="code-inline tex2jax_ignore">B</code>. <div class="sagecell-sage" id="sage-79"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-463"><p id="p-904">How does the reduced singular value decomposition provide a matrix whose columns are an orthonormal basis for \(\col(A)\text{?}\)</p></li>
+<li id="li-464">
+<p id="p-905">Explain why \(\xhat\text{,}\) the least squares approximate solution, satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A\xhat = U_r\Sigma_rV_r^T\xhat = U_rU_r^T\bvec.
+\end{equation*}
+</div>
+</li>
+<li id="li-465"><p id="p-906">What is the product \(U_r^TU_r\text{?}\)  What do you find if you multiply both sides of \(U_r\Sigma_rV_r^T\xhat
+= U_rU_r^T\bvec\) by \(U_r^T\text{?}\)</p></li>
+<li id="li-466">
+<p id="p-907">Explain why</p>
+<div class="displaymath">
+\begin{equation*}
+\xhat = V_r\Sigma_r^{-1}U_r^T\bvec
+\end{equation*}
+</div>
+<p>and use this expression to find \(\xhat\text{.}\) <div class="sagecell-sage" id="sage-80"><script type="text/x-sage">
+</script></div></p>
+</li>
+</ol></article><p id="p-908">Using the singular value decomposition \(A=U\Sigma V^T\) provided by Sage in the activity, we see that \(\rank(A)=2\) because there are two nonzero singular values.  This means that the column space is two-dimensional and that \(\uvec_1\) and \(\uvec_2\text{,}\) the first two columns of \(U\text{,}\) form an orthonormal basis for \(\col(A)\text{.}\)</p>
+<p id="p-909">If we are given a three-dimensional vector \(\bvec\text{,}\) we may write it as a linear cominbation of the columns of \(U\text{;}\) that is, \(\bvec=c_1\uvec_1+c_2\uvec_2+c_3\uvec_3\text{.}\)  Since \(\uvec_1\) and \(\uvec_2\) form a basis for \(\col(A)\text{,}\) we see that \(A\xvec=\bvec\) is only consistent if \(c_3 = 0\text{.}\)  Notice that</p>
+<div class="displaymath">
+\begin{equation*}
+U^T\bvec = \threevec{\uvec_1\cdot\bvec}
+{\uvec_2\cdot\bvec}
+{\uvec_3\cdot\bvec}
+=\threevec{c_1}{c_2}{c_3},
+\end{equation*}
+</div>
+<p>which implies that \(A\xvec = \bvec\) is consistent if and only if the third component of \(U^T\bvec\) is zero.</p>
+<p id="p-910">Since the rank \(r\) of \(A\) is 2, the reduced singular value decomposition is \(A=U_2\Sigma_2V_2^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+U_2=\begin{bmatrix} \uvec_1\amp\uvec_2 \end{bmatrix},
+\hspace{10pt}
+\Sigma_2 = \begin{bmatrix}
+\sigma_1 \amp 0 \\
+0 \amp \sigma_2
+\end{bmatrix},\hspace{10pt}
+V_2 = \begin{bmatrix}
+\vvec_1\amp\vvec_2
+\end{bmatrix} = V.
+\end{equation*}
+</div>
+<p>Notice that the columns of \(U_2\) form an orthonormal basis for \(\col(A)\text{.}\)  Therefore, the vector \(\bhat\) that results from projecting \(\bvec\) onto \(\col(A)\) is \(\bhat = U_2U_2^T\bvec\text{.}\)  In other words, we have</p>
+<div class="displaymath">
+\begin{equation*}
+
+\end{equation*}
+</div>
+<p id="p-911">Remembering that \(U_2^TU_2=I_2\text{,}\) the \(2\times2\) identity, and multiplying by \(U_2^T\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+U_2^T ~U_2\Sigma_2V_2^T\xhat \amp = U_2^T~U_2U_2^T\bvec\\
+\Sigma_2V_2^T\xhat \amp = U_2^T\bvec\\
+V_2^T\xhat\amp = \Sigma_2^{-1} U_2^T\bvec\\
+\xhat\amp = V\Sigma_2^{-1} U_2^T\bvec.
+\end{align*}
+</div>
+<p>Here, we have used the fact that \(V_2=V\text{,}\) an orthogonal matrix, which follows from the fact that the columns of \(A\) are linearly independent so that \(\nul(A)=0\text{.}\)</p>
+<article class="theorem-like" id="prop-svd-ols"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.5.1</span>.</h6>
+<p id="p-912">If the columns of \(A\) are linearly independent and the reduced singular value decomposition of \(A\) is \(A=U_r\Sigma_rV_r^T\text{,}\) then \(\xhat\text{,}\) the least squares approximate solution to \(A\xvec=\bvec\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\xhat = V_r\Sigma_r^{-1}U_r^T\bvec.
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.3</span> <span class="title">Principal component analysis</span>
+</h3>
+<p id="p-913">In <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>, we explored principal component analysis as a technique to reduce the dimension of a data set. In particular, we constructed the covariance matrix \(C\) from a demeaned data matrix and saw that the eigenvectors of \(C\) gave us a way to understand the variance of the data set.  We called these eigenvectors <em class="emphasis">principal components</em> and found that projecting the data onto the principal components having the largest associated eigenvalues frequently gave us a way to visualize the data set.</p>
+<p id="p-914">The approximations \(A_k\) formed from a singular value decomposition of \(A\) give us another means of approaching principal component analysis, as the next activity illustrates.</p>
+<article class="project-like" id="activity-39"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.5.4</span>.</h6>
+<p id="p-915">Suppose that we have a data set with \(N\) points and that \(A\) represents the demeaned data matrix.</p>
+<ol class="lower-alpha">
+<li id="li-467"><p id="p-916">Given a matrix \(B\text{,}\) of what matrix do the right singular vectors of \(B\) appear as eigenvectors?</p></li>
+<li id="li-468"><p id="p-917">If we have \(B=U\Sigma V^T\text{,}\) remember that \(B^T=V\Sigma^T U^T\text{.}\)  In other words, the left singular vectors of \(B\) are the right singular vectors of \(B^T\text{.}\)  Of what matrix do the left singular vectors of \(B\) appear as eigenvectors?</p></li>
+<li id="li-469"><p id="p-918">Consider now our demeaned data matrix and a singular value decomposition \(A=U\Sigma V^T\text{.}\)  Of what matrix do the left singular vectors, the columns of \(U\text{,}\) appear as eigenvectors?  Explain how this matrix is related to the covariance matrix \(C\text{.}\) Then explain why the columns of \(U\) are the principal components of \(A\text{.}\)</p></li>
+<li id="li-470"><p id="p-919">How are the singular values of \(A\) related to the eigenvalues of the covariance matrix \(C\text{.}\)  In particular, how is the variance \(V_{\uvec_j}\) expressed in terms of the singular values of \(A\text{.}\)</p></li>
+<li id="li-471">
+<p id="p-920">Let's revisit the iris data set that we studied in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>.  Remember that there are four measurements given for each of 150 irises.  The irises are grouped into three species of which there are 50 each.</p>
+<p id="p-921">Evaluating the following cell will load the demeaned data matrix \(A\) whose shape is \(4\times150\text{.}\) <div class="sagecell-sage" id="sage-81"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/pca-iris.py', globals())
+df.head()
+</script></div></p>
+<p id="p-922">Find the singular values of \(A\) using the command <code class="code-inline tex2jax_ignore">A.singular_values()</code> and use them to determine the fraction of variance explained by the first two principal components. <div class="sagecell-sage" id="sage-82"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-472">
+<p id="p-923">We will now write the matrix \(\Gamma = \Sigma
+V^T\) so that \(A = U\Gamma\text{.}\)</p>
+<p id="p-924">Suppoe that a demeaned data point, say, the 100th column of \(A\text{,}\) is written as a linear combination of principal components:</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = c_1\uvec_1+c_2\uvec_2+c_3\uvec_3+c_4\uvec_4.
+\end{equation*}
+</div>
+<p>Explain why the vector \(\fourvec{c_1}{c_2}{c_3}{c_4}\) appears as 100th column of \(\Gamma\text{.}\)</p>
+</li>
+<li id="li-473"><p id="p-925">Let's now consider the approximation \(A_2=U_2\Sigma_2V_2^T\) of the demeaned data matrix \(A\text{,}\) which involves the first two principal components.  Explain why the 100th column of \(A_2\) represents the projection of \(\xvec\) onto the two-dimensional subspace spanned by the first two principal components, \(\uvec_1\) and \(\uvec_2\text{.}\)  Then explain why the coefficients in that projection, \(c_1\uvec_1 + c_2\uvec_2\text{,}\) form a two-dimensional vector \(\twovec{c_1}{c_2}\) that is the 100th column of \(\Gamma_2=\Sigma_2
+V_2^T\text{.}\)</p></li>
+<li id="li-474"><p id="p-926">Now we've seen that the columns of \(\Gamma_2 =
+\Sigma_2 V_2^T\) form the coordinates of the demeaned data points projected on the two-dimensional subspace spanned by \(\uvec_1\) and \(\uvec_2\text{.}\) In the cell below, find a singular value decomposition of \(A\) and use it to form the matrix <code class="code-inline tex2jax_ignore">Gamma2</code> below.  When you evaluate this cell, you will see a plot of the projected demeaned data plots, similar to the one we created in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>. <div class="sagecell-sage" id="sage-83"><script type="text/x-sage"># Form the SVD of A and use it to form Gamma2
+
+		    
+Gamma2 = 
+
+# The following will plot the projected demeaned data points
+data = Gamma2.columns()
+(list_plot(data[:50], color='blue', aspect_ratio=1) +
+ list_plot(data[50:100], color='orange') +
+ list_plot(data[100:], color='green'))
+</script></div></p></li>
+</ol></article><p id="p-927">This activity demonstrates the connection between singular value decompositions and principal component analysis.  In particular, we can see that the principal components of a data set are the left singular vectors of the demeaned data matrix \(A\text{.}\)</p>
+<p id="p-928">To begin, remember that the left singular vectors of a matrix \(A\) are the right singular vectors of \(A^T\) and that the right singular vectors of \(A^T\) are the eigenvectors of its Gram matrix \((A^T)^TA^T = AA^T\text{.}\)  Now if there are \(N\) data points, then the covariance matrix has the form \(C=\frac 1N ~AA^T\text{.}\)  This says that the left singular vectors of \(A\) are the eigenvectors of the covariance matrix \(C\text{,}\) and we called those eigenvectors the principal components.</p>
+<p id="p-929">Moreover, if \(\lambda_j\) is an eigenvalue of the covariance matrix \(C=\frac1N~AA^T\text{,}\) then \(N\lambda_j\) is an eigenvalue of \(AA^T\text{,}\) which is \(\sigma_j^2\text{,}\) the square of a singular value of \(A\text{.}\)  Therefore, we find that the variance in the direction of a principal component is</p>
+<div class="displaymath">
+\begin{equation*}
+V_{\uvec_j} = \lambda_j = \frac{\sigma_j^2}{N}.
+\end{equation*}
+</div>
+<p>This shows that the variance is easily expressed in terms of the singular values of the demeaned data matrix.  When we apply this to the iris data set, we see that 97.8% of the variance in the data is explained by the first two components.  This agrees with the result we found in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>.</p>
+<p id="p-930">In addition, we are interested in representing the data points as projected onto the first two principal components.  If a data point \(\xvec\) is represented as a linear combination of principal components</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec=c_1\uvec_1+c_2\uvec_2+c_3\uvec_3+c_4\uvec_4,
+\end{equation*}
+</div>
+<p>then the projection formula tells us that the projection of \(\xvec\) onto the first two principal components is \(c_1\uvec_1 + c_2\uvec_2\text{.}\)  The data point \(\xvec\) appears as a column in the data matrix \(A\) and its projection as the corresponding column in \(A_2\text{.}\)  Since we have</p>
+<div class="displaymath">
+\begin{equation*}
+A_2=U_2\Sigma_2V_2^T = U_2\Gamma_2 =
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2
+\end{bmatrix} \Gamma_2,
+\end{equation*}
+</div>
+<p>then the coordinate vector \(\twovec{c_1}{c_2}\) appears as the corresponding column of \(\Gamma_2\text{.}\)  To construct a plot of the points projected onto the first two principal components, we see that we only need to plot the points represented by the columns of \(\Gamma_2\text{.}\)</p>
+<p id="p-931">To summarize, we see that singular value decompositions give us an alternative way to visualize data sets using principal component analysis.  The variance in the direction of the principal components is related to the singular values through a simple expression, and the coordinates of the projected demeaned data points appear as the columns of \(\Gamma_k =
+\Sigma_kV_k^T\text{.}\)</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.4</span> <span class="title">Image processing</span>
+</h3>
+<p id="p-932">We have seen how the approximations \(A_k\) of a data matrix matrix \(A\) provided by a singular value decomposition can be described in terms of principal components.  Let's now put these approximations to use in a new way by exploring their application to some issues in image processing.</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.5</span> <span class="title">Summary</span>
+</h3></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

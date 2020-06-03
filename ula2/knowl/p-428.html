@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose we have \(A=QR\text{,}\) and we would like to find the least squares approximate solution \(\xhat\) of \(A\xvec=\bvec\text{.}\)  Our first step is to project \(\bvec\) orthogonally onto \(\col(A)\) to obtain \(QQ^T\bvec\text{.}\)  The least square approximate solution is then</p>
+<div class="displaymath">
+\begin{align*}
+A\xhat \amp = QQ^T\bvec\\
+QR\xhat \amp = QQ^T\bvec\text{.}
+\end{align*}
+</div>
+<p>If we multiply both sides of this expression by \(Q^T\) and remember that \(Q^TQ=I\text{,}\) the identity matrix, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+Q^TQR\xhat \amp = Q^TQQ^T\bvec \\
+IR\xhat \amp = IQ^T\bvec \\
+R\xhat \amp = Q^T\bvec\text{.}
+\end{aligned}
+\end{equation*}
+</div>
+<p>This is convenient because, as we recall, \(R\) is an upper triangular matrix so that the equation \(R\xhat = Q^T\bvec\) can be efficiently solved using back substitution.</p>
+<span class="incontext"><a href="sec-least-squares.html#p-428">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:46-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="exercise-like"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">1.</span>
+</h6>
+<p>In this section, we saw that errors made in computer arithmetic can produce approximate solutions that are far from the exact solutions.  Here is another example in which this can happen.  Consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{cc}
+1 \amp 1 \\
+1 \amp 1.0001 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>Find the exact solution to the equation \(A\xvec = \twovec{2}{2}\text{.}\)</p></li>
+<li><p>Suppose that this linear system arises in the midst of a larger computation except that, due to some error in the computation of the right hand side of the equation, our computer thinks we want to solve \(A\xvec = \ctwovec{2}{2.0001}\text{.}\)  Find the solution to this equation and compare it to the solution of the equation in the previous part of this exericse.</p></li>
+</ol>
+<p>Notice how a small change in the right hand side of the equation leads to a large change in the solution.  In this case, we say that the matrix \(A\) is <em class="emphasis">ill-conditioned</em> because the solutions are extremely sensitive to small changes in the right hand side of the equation.  Though we will not do so here, it is possible to create a measure of the matrix that tells us when a matrix is ill-conditioned.  Regrettably, there is not much we can do to remedy this problem.</p></article><span class="incontext"><a href="sec-gaussian-revisited.html#exercise-172">in-context</a></span>
+</body>
+</html>

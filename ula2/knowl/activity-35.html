@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.4.3</span>.</h6>
+<p>In this activity, we will construct the singular value decomposition of \(A=\begin{bmatrix} 1 \amp 0 \amp -1 \\
+1 \amp 1 \amp 1
+\end{bmatrix}
+\text{.}\)  Notice that this matrix is not square so eigenvalues and eigenvectors are not associated to it.</p>
+<ol class="lower-alpha">
+<li><p>Construct the Gram matrix \(G=A^TA\) and explain why it is a symmetric matrix. <div class="sagecell-sage" id="sage-69"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find an orthogonal diagonalization of \(G\text{;}\) that is, find matrices \(Q\) and \(D\) so that \(G
+= QDQ^T\text{.}\)</p></li>
+<li>
+<p>The eigenvalues of \(G\) give the critical values of the quadratic form</p>
+<div class="displaymath">
+\begin{equation*}
+Q_G(\xvec) = \xvec\cdot(G\xvec) = \len{A\xvec}^2
+= \left(l_A(\xvec)\right)^2.
+\end{equation*}
+</div>
+<p>Explain why the singular values of \(A\) are the square roots of the eigenvalues of the Gram matrix and state the singular values of \(A\) taking care of arrange them in decreasing order.</p>
+</li>
+<li><p>Explain why the eigenvectors of \(G\) define the critical directions of \(l_A(\xvec)\) so that the right singular vectors of \(A\) are eigenvectors of \(G\text{.}\)  State the right singular vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{.}\)</p></li>
+<li><p>Explain why this observation tells us that the right singular vectors \(\vvec_j\) are orthogonal to one another.</p></li>
+<li><p>Remembering that \(A\vvec_j = \sigma_j\uvec_j\text{,}\) find the left singular vectors \(\uvec_1\) and \(\uvec_2\text{.}\)  Notice that we can only create two left singular vectors in this way since there are only two nonzero singular values. <div class="sagecell-sage" id="sage-70"><script type="text/x-sage">
+</script></div></p></li>
+<li>
+<p>We can now explain why the left singular vectors are orthogonal.  To do so, first use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+(A\vvec_1)\cdot(A\vvec_2) = \vvec_1
+\cdot(A^TA\vvec_2)
+\end{equation*}
+</div>
+<p>to explain why \(A\vvec_1\) and \(A\vvec_2\) are orthogonal to one another.  Then use the fact that \(A\vvec_j = \sigma_j\uvec_j\) to explain why \(\uvec_1\) and \(\uvec_2\) are orthogonal.</p>
+</li>
+<li>
+<p>As before, form the matrices \(U\) and \(V\) from the left and right singular vectors.  Now form \(\Sigma\) so that it has the same shape as \(A\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \begin{bmatrix}
+\sigma_1 \amp 0 \amp 0 \\
+0 \amp \sigma_2 \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>and verify that \(A = U\Sigma V^T\text{.}\) <div class="sagecell-sage" id="sage-71"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>Suppose that we also would like the singular decomposition of \(A^T = \begin{bmatrix}
+1 \amp 1 \\
+0 \amp 1 \\
+-1 \amp 1
+\end{bmatrix}.\) Explain how knowing the singular value decomposition of \(A=U\Sigma V^T\) gives us the singular value decomposition of \(A^T=(U\Sigma V^T)^T\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-svd-intro.html#activity-35">in-context</a></span>
+</body>
+</html>

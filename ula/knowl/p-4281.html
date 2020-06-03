@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:33-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li>
+<p>With this matrix \(A\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+R_{k+1} \amp = 0.7R_k \\
+S_{k+1} \amp = 1.6S_k\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>This shows that the population of one species does not depend on the other.  This dynamical system is a saddle because we have the eigenvalues \(\lambda_1=0.7\) and \(\lambda_2=1.6\text{.}\)  Eventually, species \(R\) will become extinct while species \(S\) grows by a factor of 1.6.</p>
+</li>
+<li>
+<p>Now we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{3}
+R_{k+1} \amp {}={} \amp 0.7R_k \amp{}+{} \amp 0.3S_k\\
+S_{k+1} \amp {}={} \amp \amp \amp 1.6S_k\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>The population of species \(S\) is not influenced by species \(R\text{.}\)  However, we see that the population of species \(R\) grows in the presence of species \(S\text{.}\) In other words, species \(S\) helps species \(R\) to grow so we say that \(S\) is beneficial for \(R\text{.}\)</p>
+<p>Because the eigenvalues are \(\lambda_1=0.7\) and \(\lambda_2=1.6\text{,}\) this dynamical system is again a saddle.  The associated eigenvectors are \(\vvec_1=\twovec10\) and \(\vvec_2=\twovec13\text{.}\)  After a long time, the population vector \(\xvec_k\approx
+c_1(1.6)^k\vvec_2\) so both populations grow by a factor of 1.6 and with a ratio \(R_k/S_k=1/3.\)</p>
+</li>
+<li>
+<p>Here we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{3}
+R_{k+1} \amp {}={} \amp 0.7R_k \amp{}+{} \amp 0.5S_k\\
+S_{k+1} \amp {}={} \amp -0.4R_k \amp {}+{}\amp 1.6S_k\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>Species \(S\) helps species \(R\) to grow, while species \(R\) inhibits the growth of species \(S\text{.}\) One explanation for this is that species \(R\) preys on species \(S\) as a food source.</p>
+<p>We have eigenvectors \(\vvec_1=\twovec11\) with associated eigenvalue \(\lambda_1=1.2\) and \(\vvec_2=\twovec{5}{4}\) with \(\lambda_2=1.1\text{.}\)  This dynamical system is a repellor so both species will grow arbitrarily large.</p>
+</li>
+<li>
+<p>This example is similar to the previous one, but the coefficients are slightly different.  We see that the growth rate of both species is smaller.  For instance, in the previous problem, we had \(R_{k+1}=0.7R_k+\ldots\) while we now have \(R_{k+1}=0.5R_k+\ldots\text{.}\)  This says that the reproduction rate of species \(R\) has decreased from \(0.7\) to \(0.5\text{.}\)  In the same way, that of species \(S\) has decreased from \(1.6\) to \(1.1\text{.}\)  Also, \(R_{k+1}=\ldots + 0.2S_k\) so the presence of species \(S\) is less beneficial to species \(R\text{.}\)</p>
+<p>We now have the eigenvalues \(\lambda_1=0.9\) and \(\lambda_2=0.7\text{,}\) which means that this dynamical system is an attractor and that both species will become extinct.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-dynamical.html#p-4281">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:26-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">4.3.2</span>.</h6>
+<p>Once again, we will consider the matrices</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+1 \amp 2 \\
+2 \amp 1 \\
+\end{array}\right],\qquad
+D = \left[\begin{array}{rr}
+3 \amp 0 \\
+0 \amp -1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>The matrix \(A\) has eigenvectors \(\vvec_1=\twovec{1}{1}\) and \(\vvec_2=\twovec{-1}{1}\) and eigenvalues \(\lambda_1=3\) and \(\lambda_2=-1\text{.}\)  We will consider the basis of \(\real^2\) consisting of eigenvectors \(\bcal= \{\vvec_1, \vvec_2\}\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>If \(\xvec= 2\vvec_1 - 3\vvec_2\text{,}\) write \(A\xvec\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
+<li><p>If \(\coords{\xvec}{\bcal}=\twovec{2}{-3}\text{,}\) find \(\coords{A\xvec}{\bcal}\text{,}\) the representation of \(A\xvec\) in the coordinate system defined by \(\bcal\text{.}\)</p></li>
+<li><p>If \(\coords{\xvec}{\bcal}=\twovec{c_1}{c_2}\text{,}\) find \(\coords{A\xvec}{\bcal}\text{,}\) the representation of \(A\xvec\) in the coordinate system defined by \(\bcal\text{.}\)</p></li>
+<li><p>Explain why \(\coords{A\xvec}{\bcal} =
+D\coords{\xvec}{\bcal}\text{.}\)</p></li>
+<li>
+<p>Explain why \(C_{\bcal}^{-1}A\xvec =
+DC_{\bcal}^{-1}\xvec\) for all vectors \(\xvec\) and hence</p>
+<div class="displaymath">
+\begin{equation*}
+C_{\bcal}^{-1}A = DC_{\bcal}^{-1}\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Explain why \(A = C_{\bcal}DC_{\bcal}^{-1}\) and verify this relationship by computing \(C_{\bcal}DC_{\bcal}^{-1}\) in the Sage cell below.</p>
+<div class="sagecell-sage" id="sage-107"><script type="text/x-sage"># enter the matrices D and C below	    
+D =
+C =	    
+C*D*C.inverse()
+</script></div>
+</li>
+</ol></article><span class="incontext"><a href="sec-eigen-diag.html#activity-47">in-context</a></span>
+</body>
+</html>

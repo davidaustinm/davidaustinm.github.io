@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.5</span>.</h6>
+<p>As before, we would like to use Sage to automate the process of finding and using the \(QR\) factorization of a matrix \(A\text{.}\) Evaluating the following cell provides a command <code class="code-inline tex2jax_ignore">QR(A)</code> that returns the factorization, which may be stored using, say, <code class="code-inline tex2jax_ignore">Q, R = QR(A)</code>. <div class="sagecell-sage" id="sage-25"><script type="text/x-sage">sage.repl.load.load("http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py", globals())
+</script></div></p>
+<p>Suppose that \(A\) is the following matrix whose columns are linearly independent.</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\begin{bmatrix}
+1 \amp 0 \amp -3 \\
+0 \amp 2 \amp -1 \\
+1 \amp 0 \amp 1 \\
+1 \amp 3 \amp 5 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>If \(A=QR\text{,}\) what are the dimensions of \(Q\) and \(R\text{?}\)  What is special about the shape of \(R\text{?}\)</p></li>
+<li><p>Find the \(QR\) factorization using <code class="code-inline tex2jax_ignore">Q, R =
+	      QR(A)</code> and verify that \(R\) has the predicted shape and that \(A=QR\text{.}\) <div class="sagecell-sage" id="sage-26"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the matrix \(P\) that orthogonally projects vectors onto \(\col(A)\text{.}\)</p></li>
+<li><p>Find \(\bhat\text{,}\) the orthogonal projection of \(\bvec=\fourvec4{-17}{-14}{22}\) onto \(\col(A)\text{.}\)</p></li>
+<li><p>Explain why we know that the equation \(A\xvec=\bhat\) is consistent and then find \(\xvec\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-gram-schmidt.html#activity-15">in-context</a></span>
+</body>
+</html>

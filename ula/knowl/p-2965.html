@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:11-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Though this activity dealt with determinants of \(2\times2\) matrices, the properties that we saw are more generally true for determinants of \(n\times n\) matrices.  Let's review these properties now.</p>
+<ul class="disc">
+<li><p>\(\det I = 1\) as we saw in <a data-knowl="./knowl/example-det-identity.html" title="Example 3.4.4">Example 3.4.4</a>.</p></li>
+<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:66.6666666666667%;justify-content:flex-start;"><p>If \(A\) is a diagonal matrix, then \(\det A\) equals the product of its diagonal entries.  For instance, \(\det\left[\begin{array}{rr} 2 \amp 0 \\
+0 \amp 3 \\ \end{array}\right] = 2\cdot 3 = 6\) since each diagonal entry represents a stretching along one of the axes, as seen in the figure.</p></div>
+<div class="sbspanel" style="width:30.7692307692308%;justify-content:flex-start;"><img src="images/parallelogram-b.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+<li>
+<p>If \(A\) is a triangular matrix, then \(\det A\) is also the product of the entries on the diagonal.  For example,</p>
+<div class="displaymath">
+\begin{equation*}
+\det\left[\begin{array}{rr} 2 \amp 2 \\
+0 \amp 3 \\ \end{array}\right] = 2\cdot 3 = 6\text{,}
+\end{equation*}
+</div>
+<p>since the two parallelograms in <a data-knowl="./knowl/fig-parallelogram-f.html" title="Figure 3.4.6">Figure 3.4.6</a> have equal area.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel" style="width:37.5%;justify-content:flex-start;"><img src="images/parallelogram-f.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.5%;justify-content:flex-start;"><img src="images/parallelogram-b.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.6.</span> The determinant of a triangular matrix equals the product of its diagonal entries.</figcaption></figure>
+</li>
+<li>
+<p>We also saw that</p>
+<div class="displaymath">
+\begin{equation*}
+\det \left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right] = -1
+\end{equation*}
+</div>
+<p>because the vectors are a negatively oriented pair. The matrix transformation defined by this matrix is a reflection in the line \(y=x\text{;}\)  more generally, the determinant of any matrix that defines a reflection is \(-1\text{.}\)</p>
+</li>
+<li>
+<p>We saw that the determinant of a product of matrices equals the product of the determinants; that is, \(\det AB =
+\det A \det B\text{.}\)  Thus far, we have been thinking of the determinant as the area of a parallelogram.  We may also think of it as a factor by which areas are scaled under the matrix transformation defined by the matrix.  As seen in <a data-knowl="./knowl/fig-det-multiplies.html" title="Figure 3.4.7">Figure 3.4.7</a>, applying the transform \(B\) scales the area by a factor of \(\det B\text{.}\)  Next applying the transform \(A\) scales the area by a factor of \(\det
+A\text{.}\)  The total scaling is then \(\det A\det B\text{.}\)</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><img src="images/parallelogram-h.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><img src="images/parallelogram-i.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><img src="images/parallelogram-j.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.7.</span> The first transformation \(B\) scales the area of the unit square by a factor of \(\det B\) and the second transformation \(A\) scales the area by a factor of \(\det
+A\text{.}\)</figcaption></figure>
+</li>
+<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:66.6666666666667%;justify-content:flex-start;"><p>If two vectors are linearly dependent, then \(\det A =
+0\text{.}\)  In this case, the parallelogram is squashed down onto a line so that its area becomes zero.  This property is perhaps the most important of the ones that we have stated here, and it is what motivates us to explore determinants.</p></div>
+<div class="sbspanel" style="width:30.7692307692308%;justify-content:flex-start;"><img src="images/parallelogram-g.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></li>
+</ul>
+<span class="incontext"><a href="sec-determinants.html#p-2965">in-context</a></span>
+</body>
+</html>

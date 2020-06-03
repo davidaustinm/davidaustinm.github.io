@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:55-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Symmetric matrices and variance</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap7.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-quadratic-forms.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap7.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-quadratic-forms.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices" class="active">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-symmetric-matrices"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Symmetric matrices and variance</span>
+</h2>
+<a href="sec-symmetric-matrices.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-469">We have seen that diagonal matrices are relatively easy to work with.  For instance, the matrix transformation represented by a \(2\times2\) diagonal matrix just stretches, and possibly reflects, the plane along the horizontal and vertical axes.  In <span>(((Unresolved xref, reference "chap4"; check spelling or use "provisional" attribute)))</span><a href="" class="internal" title=""> </a>, we explored how eigenvectors and eigenvalues can, in many cases, relate square matrices to diagonal ones and how this observation is useful in some important applications, such as the study of dynamical systems.</p>
+<p id="p-470">Remember that if \(A\) is a square matrix, we say that \(\vvec\) is an eigenvector of \(A\) with associated eigenvalue \(\lambda\) if \(A\vvec=\lambda\vvec\text{.}\)  In other words, for these special vectors, the operation of matrix multiplication simplifies to scalar multiplication.</p>
+<article class="project-like" id="exploration-6"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">2.1.1</span>.</h6>
+<p id="p-471">This preview activity reminds us how a basis of eigenvectors can be used to relate a square matrix to a diagonal one.</p>
+<figure class="figure-like" id="fig-preview-similar"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/empty-5.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/empty-5.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.1.</span> <p id="p-472">Use these plots to sketch the vectors requested in the preview activity.</p></figcaption></figure><ol id="p-473" class="lower-alpha">
+<li id="li-244">
+<p id="p-474">Suppose that \(D=\begin{bmatrix}
+3 \amp 0 \\
+0 \amp -1
+\end{bmatrix}\) and that \(\evec_1 = \twovec10\) and \(\evec_2=\twovec01\text{.}\)</p>
+<ol class="lower-roman">
+<li id="li-245"><p id="p-475">Sketch the vectors \(\evec_1\) and \(D\evec_1\) on the left side of <a data-knowl="./knowl/fig-preview-similar.html" title="Figure 2.1.1">Figure 2.1.1</a>.</p></li>
+<li id="li-246"><p id="p-476">Sketch the vectors \(\evec_2\) and \(D\evec_2\) on the left side of <a data-knowl="./knowl/fig-preview-similar.html" title="Figure 2.1.1">Figure 2.1.1</a>.</p></li>
+<li id="li-247"><p id="p-477">Sketch the vectors \(\evec_1+2\evec_2\) and \(D(\evec_1+2\evec_2)\) on the left side.</p></li>
+<li id="li-248"><p id="p-478">Give a geometric description of the matrix transformation defined by \(D\text{.}\)</p></li>
+</ol>
+</li>
+<li id="li-249">
+<p id="p-479">Now suppose we have vectors \(\vvec_1=\twovec11\) and \(\vvec_2=\twovec{-1}1\) and that \(A\) is a \(2\times2\) matrix such that</p>
+<div class="displaymath">
+\begin{equation*}
+A\vvec_1 = 3\vvec_1, \hspace{24pt}
+A\vvec_2 = -\vvec_2.
+\end{equation*}
+</div>
+<p>That is, \(\vvec_1\) and \(\vvec_2\) are eigenvectors of \(A\text{.}\)</p>
+<ol class="lower-roman">
+<li id="li-250"><p id="p-480">Sketch the vectors \(\vvec_1\) and \(A\vvec_1\) on the right side of <a data-knowl="./knowl/fig-preview-similar.html" title="Figure 2.1.1">Figure 2.1.1</a>.</p></li>
+<li id="li-251"><p id="p-481">Sketch the vectors \(\vvec_2\) and \(A\vvec_2\) on the right side of <a data-knowl="./knowl/fig-preview-similar.html" title="Figure 2.1.1">Figure 2.1.1</a>.</p></li>
+<li id="li-252"><p id="p-482">Sketch the vectors \(\vvec_1+2\vvec_2\) and \(A(\vvec_1+2\vvec_2)\) on the right side.</p></li>
+<li id="li-253"><p id="p-483">Give a geometric description of the matrix transformation defined by \(A\text{.}\)</p></li>
+</ol>
+</li>
+<li id="li-254"><p id="p-484">In what ways are the matrix transformations defined by \(D\) and \(A\) related to one another?</p></li>
+</ol></article><p id="p-485">The preview activity asks us to compare the matrix transformations defined by two matrices, a diagonal matrix \(D\) and a matrix \(A\) whose eigenvectors are given to us.  The transformation defined by \(D\) stretches horizontally by a factor of 3 and reflects in the horizontal axis, as shown in <a data-knowl="./knowl/fig-eigen-diag-D.html" title="Figure 2.1.2">Figure 2.1.2</a></p>
+<figure class="figure-like" id="fig-eigen-diag-D"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-diag-D.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.2.</span> <p id="p-486">The matrix transformation defined by \(D\text{.}\)</p></figcaption></figure><p id="p-487">By contrast, the transformation defined by \(A\) stretches the plane by a factor of 3 in the direction of \(\vvec_1\) and reflects in \(\vvec_1\text{,}\) as seen in <a data-knowl="./knowl/fig-eigen-diag-A.html" title="Figure 2.1.3">Figure 2.1.3</a>.</p>
+<figure class="figure-like" id="fig-eigen-diag-A"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-diag-A.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.3.</span> <p id="p-488">The matrix transformation defined by \(A\text{.}\)</p></figcaption></figure><p id="p-489">In this way, we see that the transformations are equivalent after a \(45^\circ\) rotation.  This notation of equivalence is what we called <em class="emphasis">similarity</em> in <span>(((Unresolved xref, reference "sec-eigen-diag"; check spelling or use "provisional" attribute)))</span><a href="" class="internal" title=""> </a>.  There we considered a square \(n\times n\) matrix \(A\) that provided enough eigenvectors to form a basis of \(\real^n\text{.}\)  For example, suppose we can construct a basis for \(\real^n\) using eigenvectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) having associated eigenvalues \(\lambda_1,\lambda_2,\ldots,\lambda_n\text{.}\)  Forming the matrices,</p>
+<div class="displaymath">
+\begin{equation*}
+P = \begin{bmatrix}
+\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+\end{bmatrix},
+\hspace{24pt}
+D = \begin{bmatrix}
+\lambda_1 \amp 0 \amp \ldots \amp 0 \\
+0 \amp \lambda_2 \amp \ldots \amp 0 \\
+\vdots\amp\vdots\amp\ddots\amp\vdots\\
+0 \amp 0 \amp \ldots \amp \lambda_n
+\end{bmatrix},
+\end{equation*}
+</div>
+<p>gives us \(A = PDP^{-1}\text{.}\)  This is what it means for \(A\) to be diagonalizable.</p>
+<p id="p-490">In the preview activity, we have</p>
+<div class="displaymath">
+\begin{equation*}
+P = \begin{bmatrix}
+1 \amp -1 \\
+1 \amp 1
+\end{bmatrix},
+\hspace{24pt}
+D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp - 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>which tells us that \(A=PDP^{-1} =
+\begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}
+\text{.}\)</p>
+<p id="p-491">Notice that the matrix \(A\) has eigenvectors \(\vvec_1\) and \(\vvec_2\) that form a basis for \(\real^2\text{.}\)  In addition, this basis is orthogonal.  We begin this section by asking when an \(n\times n\) matrix has \(n\) eigenvectors that form an orthogonal basis for \(\real^n\text{.}\)</p></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Symmetric matrices and orthogonal diagonalization</span>
+</h3>
+<p id="p-492">Let's begin by looking at some examples in the first activity.</p>
+<article class="project-like" id="activity-orthog-diag-ex"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.1.2</span>.</h6>
+<p id="p-493">Remember that the Sage command <code class="code-inline tex2jax_ignore">A.right_eigenmatrix()</code> tries to find a basis for \(\real^n\) consisting of eigenvectors of \(A\text{.}\)  In particular, <code class="code-inline tex2jax_ignore">D, P =
+	A.right_eigenmatrix()</code> provides a diagonal matrix \(D\) constructed from the eigenvalues of \(A\) with the columns of \(P\) containing associated eigenvectors. <div class="sagecell-sage" id="sage-45"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-255">
+<p id="p-494">For each of the following matrices, determine whether there is a basis for \(\real^2\) consisting of eigenvectors of \(A\text{.}\)  When there is such a basis, form the matrices \(P\) and \(D\) and verify that \(A=PDP^{-1}\text{.}\)</p>
+<ol class="lower-roman">
+<li id="li-256"><p id="p-495">\(A = \begin{bmatrix}
+3 \amp -4 \\
+4 \amp 3
+\end{bmatrix}
+\text{.}\)</p></li>
+<li id="li-257"><p id="p-496">\(A = \begin{bmatrix}
+1 \amp 1 \\
+-1 \amp 3
+\end{bmatrix}
+\text{.}\)</p></li>
+<li id="li-258"><p id="p-497">\(A = \begin{bmatrix}
+1 \amp 0\\
+-1 \amp 2
+\end{bmatrix}
+\text{.}\)</p></li>
+<li id="li-259"><p id="p-498">\(A = \begin{bmatrix}
+9 \amp 2 \\
+2 \amp 6
+\end{bmatrix}
+\text{.}\)</p></li>
+</ol>
+</li>
+<li id="li-260"><p id="p-499">For which of these examples is it possible to form an orthogonal basis for \(\real^2\) consisting of eigenvectors of \(A\text{?}\)</p></li>
+<li id="li-261"><p id="p-500">For any such matrix, find an orthonormal basis of eigenvectors and explain why \(A = QDQ^{-1}\) where \(Q\) is an orthogonal matrix.</p></li>
+<li id="li-262"><p id="p-501">Finally, explain why \(A=QDQ^T\) in this case.</p></li>
+<li id="li-263"><p id="p-502">When \(A=QDQ^T\text{,}\) what is the relationship between \(A\) and \(A^T\text{?}\)</p></li>
+</ol></article><p id="p-503">The examples in this activity illustrate a range of possibilities.  First, a matrix may have complex eigenvalues, in which case it will not be diagonalizable.  Second, even if all the eigenvalues are real, there may not be a basis of eigenvalues if the dimension of one of the eigenspaces is less than the algebraic multiplicity of the associated eigenvalue.</p>
+<p id="p-504">We will be interested in matrices for which there is an orthogonal basis of eigenvectors.  When this happens, we can create an orthonormal basis of eigenvectors by scaling each eigenvector in the basis appropriately.  Putting these orthonormal vectors into a matrix \(Q\) produces an orthogonal matrix, which means that \(Q^T=Q^{-1}\text{.}\)  We then have</p>
+<div class="displaymath">
+\begin{equation*}
+A = QDQ^{-1} = QDQ^T.
+\end{equation*}
+</div>
+<p>In this case, we say that \(A\) is <em class="emphasis">orthogonally diagonalizable</em>.</p>
+<article class="definition-like" id="def-orthog-diag"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.1.4</span>.</h6>
+<p id="p-505">If there is an orthonormal basis of \(\real^n\) consisting of eigenvectors of the matrix \(A\text{,}\) we say that \(A\) is <em class="emphasis">orthogonally diagonalizable</em>.  In particular, we can write \(A=QDQ^T\) where \(Q\) is an orthogonal matrix.</p></article><p id="p-506">When \(A\) is orthogonally diagonalizable, notice that</p>
+<div class="displaymath">
+\begin{equation*}
+A^T=(QDQ^T)^T = (Q^T)^TD^TQ^T = QDQ^T = A.
+\end{equation*}
+</div>
+<p>That is, when \(A\) is orthogonally diagonalizable, \(A=A^T\) and we say that \(A\) is <em class="emphasis">symmetric</em>.</p>
+<article class="example-like" id="example-12"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.1.5</span>.</h6>
+<p id="p-507">The matrix \(A =
+\begin{bmatrix}
+9 \amp 2 \\
+2 \amp 6
+\end{bmatrix}\) has eigenvectors \(\vvec_1 = \twovec21\text{,}\) with associated eigenvalue \(\lambda_1=10\text{,}\) and \(\vvec_2=\twovec{-1}{2}\text{,}\) with associated eigenvalue \(\lambda_2=5\text{.}\)  Notice that \(\vvec_1\) and \(\vvec_2\) are orthogonal so we can form an orthonormal basis of eigenvectors:</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec_1 = \twovec{2/\sqrt{5}}{1/\sqrt{5}},
+\hspace{24pt}
+\uvec_1 = \twovec{-1/\sqrt{5}}{2/\sqrt{5}}.
+\end{equation*}
+</div>
+<p id="p-508">In this way, we construct the matrices</p>
+<div class="displaymath">
+\begin{equation*}
+Q = \begin{bmatrix}
+2/\sqrt{5} \amp -1/\sqrt{5} \\
+1/\sqrt{5} \amp 2/\sqrt{5}
+\end{bmatrix},
+\hspace{24pt}
+D = \begin{bmatrix}
+10 \amp 0 \\
+0 \amp 5 
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>and note that \(A = QDQ^T\text{.}\)</p>
+<p id="p-509">Notice also that, as expected, \(A\) is symmetric;  that is, \(A=A^T\text{.}\)</p></article><article class="example-like" id="example-13"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.1.6</span>.</h6>
+<p id="p-510">If \(A = \begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1 \\
+\end{bmatrix}
+\text{,}\) then there is an orthogonal basis of eigenvectors \(\vvec_1 = \twovec11\) and \(\vvec_2 =
+\twovec{-1}1\) with eigenvalues \(\lambda_1=3\) and \(\lambda_2=-1\text{.}\)  Using these eigenvectors, we form the orthogonal matrix \(Q\) consisting of eigenvectors and the diagonal matrix \(D\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+Q = \begin{bmatrix}
+1/\sqrt{2} \amp -1/\sqrt{2} \\
+1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix},\hspace{24pt}
+D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp - 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Then we have \(A = QDQ^T\text{.}\)</p>
+<p id="p-511">Notice that the matrix transformation represented by \(Q\) is a \(45^\circ\) rotation while that represented by \(Q^T\) is a \(-45^\circ\) rotation. Therefore, if we multiply a vector \(\xvec\) by \(A\text{,}\) we can decompose the multiplication as</p>
+<div class="displaymath">
+\begin{equation*}
+A\xvec = Q(D(Q^T\xvec)).
+\end{equation*}
+</div>
+<p>That is, we first rotate \(\xvec\) by \(-45^\circ\text{,}\) then apply the diagonal matrix \(D\text{,}\) which stretches and reflects, and finally rotate by \(45^\circ\text{.}\)  We may visualize this factorization as in <a data-knowl="./knowl/fig-diag-factors.html" title="Figure 2.1.7">Figure 2.1.7</a>.</p>
+<figure class="figure-like" id="fig-diag-factors"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-diag.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.7.</span> <p id="p-512">The transformation defined by \(A=QDQ^T\) can be interpreted as a sequence of simple transformations: \(Q^T\) rotates by \(-45^\circ\text{,}\) \(D\) stretches and reflects, and \(Q\) rotates by \(45^\circ\text{.}\)</p></figcaption></figure><p id="p-513">In fact, a similar picture holds any time the matrix \(A\) is orthogonally diagonalizable, and this provides an intuitive understanding of how orthogonally diagonalizable matrices are related to diagonal matrices.</p></article><p id="p-514">We have seen that, if \(A\) is orthogonally diagonalizable, then \(A\) is symmetric.  It turns out, in fact, that if \(A\) is symmetric, then \(A\) is orthogonally diagonalizable.  We record this fact in the next theorem.</p>
+<article class="theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1.8</span>. <span class="title">The Spectral Theorem.</span>
+</h6>
+<p id="p-515">The matrix \(A\) is orthogonally diagonalizable if and only if \(A\) is symmetric.</p></article><article class="project-like" id="activity-22"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.1.3</span>.</h6>
+<p id="p-516">Each of the following matrices \(A\) are symmetric.  For each, find a basis for each eigenspace.  Use this basis to find an orthogonal basis for each eigenspace and then put these together to find an orthogonal basis for \(\real^n\) consisting of eigenvectors of \(A\text{.}\)  Use this basis to write an orthogonal diagonalization of \(A\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-264"><p id="p-517">\(A = \begin{bmatrix}
+0 \amp 2 \\
+2 \amp 3
+\end{bmatrix}
+\text{.}\)</p></li>
+<li id="li-265"><p id="p-518">\(A = \begin{bmatrix}
+28 \amp -8 \amp -4 \\
+-8 \amp -17 \amp 14 \\
+-76 \amp 86 \amp -2
+\end{bmatrix}
+\text{.}\)</p></li>
+<li id="li-266"><p id="p-519">\(A = \begin{bmatrix}
+5 \amp 4 \amp 2 \\
+2 \amp 5 \amp 2 \\
+2 \amp 2 \amp 2
+\end{bmatrix}
+\text{.}\)</p></li>
+<li id="li-267"><p id="p-520">Consider the matrix \(A = B^TB\) where \(B = \begin{bmatrix}
+0 \amp 1 \amp 2 \\
+2 \amp 0 \amp 1 
+\end{bmatrix}
+\text{.}\) Explain how we know that \(A\) is symmetric and then find an orthogonal diagonalization of \(A\text{.}\)</p></li>
+</ol></article><p id="p-521">As the examples in <a data-knowl="./knowl/activity-orthog-diag-ex.html" title="Activity 2.1.2">Activity 2.1.2</a> illustrate, the Spectral Theorem implies a number of things. Namely, if \(A\) is a symmetric \(n\times n\) matrix, then</p>
+<ul class="disc">
+<li id="li-268"><p id="p-522">the eigenvalues of \(A\) are real.</p></li>
+<li id="li-269"><p id="p-523">there is a basis of \(\real^n\) consisting of eigenvectors.</p></li>
+<li id="li-270"><p id="p-524">two eigenvectors that are associated to different eigenvalues are orthogonal.</p></li>
+</ul>
+<p id="p-525">We won't justify those first two facts here.  However, it will be helpful to explain the third fact.  To begin, notice the following:</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec\cdot(A\wvec) = \vvec^TA\wvec = (A^T\vvec)^T\wvec =
+(A^T\vvec)\cdot \wvec.
+\end{equation*}
+</div>
+<p>This is a useful fact to which we will return so let's summarize it in the following proposition.</p>
+<article class="theorem-like" id="prop-symmetric-dot"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.1.9</span>.</h6>
+<p id="p-526">For any matrix \(A\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec\cdot(A\wvec) = (A^T\vvec)\cdot\wvec.
+\end{equation*}
+</div>
+<p>In particular, if \(A\) is symmetric, then</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec\cdot(A\wvec) = (A\vvec)\cdot\wvec.
+\end{equation*}
+</div></article><article class="example-like" id="example-14"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.1.10</span>.</h6>
+<p id="p-527">Suppose that we have a symmetric matrix having eigenvectors \(\vvec_1\text{,}\) with associated eigenvalue \(\lambda_1=3\text{,}\) and \(\vvec_2\text{,}\) with associated eigenvalue \(\lambda_2 = 10\text{.}\)  Notice that</p>
+<div class="displaymath">
+\begin{align*}
+(A\vvec_1)\cdot\vvec_2 \amp = 3\vvec_1\cdot\vvec_2\\
+\vvec_1\cdot(A\vvec_2) \amp = 10\vvec_1\cdot\vvec_2.
+\end{align*}
+</div>
+<p>Since \((A\vvec_1)\cdot\vvec_2 = \vvec_1\cdot(A\vvec_2)\) by <a data-knowl="./knowl/prop-symmetric-dot.html" title="Proposition 2.1.9">Proposition 2.1.9</a>, we have</p>
+<div class="displaymath">
+\begin{equation*}
+3\vvec_1\cdot\vvec_2 = 10 \vvec_1\cdot\vvec_2,
+\end{equation*}
+</div>
+<p>which can only happen if \(\vvec_1\cdot\vvec_2 = 0\text{.}\) Therefore, \(\vvec_1\) and \(\vvec_2\) are orthogonal.</p>
+<p id="p-528">More generally, the same argument shows that two eigenvectors of a symmetric matrix associated to distinct eigenvalues are orthogonal.</p></article></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">Variance</span>
+</h3>
+<p id="p-529">Many of the ideas we'll encounter in this chapter, such as orthogonal diagonalizations, can be applied to the study of data.  Consequently, we need to develop a few statistical ideas, one of which is variance, the subject we'll introduce next. This will provide some motivation for some of the ideas we'll explore later in this chapter.</p>
+<p id="p-530">Given a set of data points, the variance is a measure of how spread out the points are.  This played a role in our discussion of the coefficient of determination \(R^2\) when we looked at least squares problems in the last chapter.</p>
+<article class="project-like" id="activity-23"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.1.4</span>.</h6>
+<p id="p-531">We'll begin with a set of three data points</p>
+<div class="displaymath">
+\begin{equation*}
+\dvec_1=\twovec11, \hspace{24pt}
+\dvec_2=\twovec21, \hspace{24pt}
+\dvec_3=\twovec34.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-271">
+<p id="p-532">Find the centroid, or mean, \(\overline{\dvec} =
+\frac1N\sum_j \dvec_j\text{.}\)  Then plot the data points and their centroid in <a data-knowl="./knowl/fig-variance-data.html" title="Figure 2.1.11">Figure 2.1.11</a>.</p>
+<figure class="figure-like" id="fig-variance-data"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.11.</span> <p id="p-533">Plot the data points and their centroid here.</p></figcaption></figure>
+</li>
+<li id="li-272">
+<p id="p-534">Notice that the centroid lies in the center of the data so that the spread of the data will be measured by how far away the points are from the centroid. To simplify our work, find the demeaned data points</p>
+<div class="displaymath">
+\begin{equation*}
+\dtil_j = \dvec_j - \overline{\dvec}
+\end{equation*}
+</div>
+<p>and plot them in <a data-knowl="./knowl/fig-variance-demeaned.html" title="Figure 2.1.12">Figure 2.1.12</a>.</p>
+<figure class="figure-like" id="fig-variance-demeaned"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.12.</span> <p id="p-535">Plot the data points \(\dtil_j\) here.</p></figcaption></figure>
+</li>
+<li id="li-273">
+<p id="p-536">Now that the data has been demeaned, we will define the total variance as the average of the squares of the distances from the origin; that is, the total variance is</p>
+<div class="displaymath">
+\begin{equation*}
+V = \frac 1N\sum_j~\len{\dtil_j}^2.
+\end{equation*}
+</div>
+<p>Find the total variance \(V\text{.}\)</p>
+</li>
+<li id="li-274">
+<p id="p-537">Now plot the projections of the demeaned data onto the \(x\) and \(y\) axes using <a data-knowl="./knowl/fig-variance-projection.html" title="Figure 2.1.13">Figure 2.1.13</a>.  Then find the variances \(V_x\) and \(V_y\) of the projected points.</p>
+<figure class="figure-like" id="fig-variance-projection"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/x-axis-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/y-axis-4.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.13.</span> <p id="p-538">Plot the projections of the deameaned data onto the \(x\) and \(y\) axes.</p></figcaption></figure>
+</li>
+<li id="li-275"><p id="p-539">Which of the variances, \(V_x\) and \(V_y\text{,}\) is larger and how does the plot of the projected points explain your response?</p></li>
+<li id="li-276"><p id="p-540">What do you notice about the relationship between \(V\text{,}\) \(V_x\text{,}\) and \(V_y\text{?}\)  How does the Pythagorean theorem explain this relationship?</p></li>
+<li id="li-277">
+<p id="p-541">Plot the projections of the demeaned data points onto the lines defined by vectors \(\vvec_1=\twovec11\) and \(\vvec_2=\twovec{-1}1\) using <a data-knowl="./knowl/fig-variance-projection-2.html" title="Figure 2.1.14">Figure 2.1.14</a>.  Then find the variance \(V_{\vvec_1}\) and \(V_{\vvec_2}\) of these projected points.</p>
+<figure class="figure-like" id="fig-variance-projection-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4-diag.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.14.</span> <p id="p-542">Plot the projections of the deameaned data onto the lines defined by \(\vvec_1\) and \(\vvec_2\text{.}\)</p></figcaption></figure>
+</li>
+<li id="li-278"><p id="p-543">What is the relationship between the total variance \(V\) and \(V_{\vvec_1}\) and \(V_{\vvec_2}\text{?}\) How does the Pythagorean theorem explain your response?</p></li>
+</ol></article><p id="p-544">Notice that variance enjoys an additivity property.  Consider, for instance, the situation where our data points are two-dimensional and suppose that the demeaned points are \(\dtil_j=\twovec{\tilde{x}_j}{\tilde{y}_j}\text{.}\)  We have</p>
+<div class="displaymath">
+\begin{equation*}
+\len{\dtil_j}^2 = \tilde{x}_j^2 + \tilde{y}_j^2.
+\end{equation*}
+</div>
+<p>If we take the average over all data points, we find that the total variance \(V\) is the sum of the variances in the \(x\) and \(y\) directions:</p>
+<div class="displaymath">
+\begin{align*}
+\frac1N \sum_j~ \len{\dtil_j}^2 \amp =
+\frac1N \sum_j~ \tilde{x}_j^2 + 
+\frac1N \sum_j~ \tilde{y}_j^2 \\
+V \amp = V_x + V_y.
+\end{align*}
+</div>
+<p id="p-545">More generally, suppose that we have an orthonormal basis \(\uvec_1\) and \(\uvec_2\text{.}\)  If we project the demeaned points onto the line defined by \(\uvec_1\text{,}\) we obtain the points \((\dtil_j\cdot\uvec_1)\uvec_1\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+V_{\uvec_1} = \frac1N\sum_j
+~\len{(\dtil_j\cdot\uvec_1)~\uvec_1}^2 =
+\frac1N~(\dtil_j\cdot\uvec_1)^2.
+\end{equation*}
+</div>
+<p id="p-546">For each of our demeaned data points, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\dtil_j = (\dtil_j\cdot\uvec_1)~\uvec_1 + 
+(\dtil_j\cdot\uvec_2)~\uvec_2.
+\end{equation*}
+</div>
+<p>We then have</p>
+<div class="displaymath">
+\begin{equation*}
+\len{\dtil_j}^2 = \dtil_j\cdot\dtil_j =
+(\dtil_j\cdot\uvec_1)^2 + (\dtil_j\cdot\uvec_2)^2
+\end{equation*}
+</div>
+<p>since \(\uvec_1\cdot\uvec_2 = 0\text{.}\)  When we average over all the data points, we find that the total variance \(V\) is the sum of the variances in the \(\uvec_1\) and \(\uvec_2\) directions.  This leads to the following propositiion, in which this observation is expressed more generally.</p>
+<article class="theorem-like" id="prop-variance-additivity"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.1.15</span>. <span class="title">Additivity of Variance.</span>
+</h6>
+<p id="p-547">If \(W\) is a subspace with orthonormal basis \(\uvec_1,\uvec_2,\ldots, \uvec_n\text{,}\) then the variance of the points projected onto \(W\) is the sum of the variances in the \(\uvec_j\) directions:</p>
+<div class="displaymath">
+\begin{equation*}
+V_W = V_{\uvec_1} + V_{\uvec_2} + \ldots + V_{\uvec_n}.
+\end{equation*}
+</div></article><p id="p-548">The next activity demonstrates an more efficient way to find the variance \(V_{\uvec}\) in a particular direction and connects our discussion of variance with symmetric matrices.</p>
+<article class="project-like" id="activity-24"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.1.5</span>.</h6>
+<p id="p-549">Let's return to the dataset from the previous activity in which we have demeaned data points:</p>
+<div class="displaymath">
+\begin{equation*}
+\dtil_1=\twovec{-1}{-1},\hspace{24pt}
+\dtil_2=\twovec{0}{-1},\hspace{24pt}
+\dtil_3=\twovec{1}{2}.
+\end{equation*}
+</div>
+<p>Our goal is to compute the variance \(V_{\uvec}\) in the direction defined by the unit vector \(\uvec\text{.}\)</p>
+<p id="p-550">To begin, form the demeaned data matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+\dtil_1 \amp \dtil_2 \amp \dtil_3
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>and suppose that \(\uvec\) is a unit vector.</p>
+<ol class="lower-alpha">
+<li id="li-279"><p id="p-551">Write the vector \(A^T\uvec\) in terms of the dot products \(\dtil_j\cdot\uvec\text{.}\)</p></li>
+<li id="li-280"><p id="p-552">Explain why \(V_{\uvec} = \frac13\len{A^T\uvec}^2\text{.}\)</p></li>
+<li id="li-281">
+<p id="p-553">Apply <a data-knowl="./knowl/prop-symmetric-dot.html" title="Proposition 2.1.9">Proposition 2.1.9</a> to explain why</p>
+<div class="displaymath">
+\begin{equation*}
+V_{\uvec} =
+\frac13\len{A^T\uvec}^2 = 
+\frac13 (A^T\uvec)\cdot(A^T\uvec) =
+\uvec^T\left(\frac13 AA^T\right)\uvec.
+\end{equation*}
+</div>
+</li>
+<li id="li-282"><p id="p-554">In general, the matrix \(C=\frac1N~AA^T\) is called the <em class="emphasis">covariance</em> matrix of the dataset.  Find the matrix \(C\) for our dataset with three points. <div class="sagecell-sage" id="sage-46"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-283"><p id="p-555">Use the covariance matrix to find the variance \(V_{\uvec}\) when \(\uvec=\twovec{1/\sqrt{5}}{2/\sqrt{5}}\text{.}\)</p></li>
+<li id="li-284"><p id="p-556">Use the covariance matrix to find the variance \(V_{\uvec}\) when \(\uvec=\twovec{-2/\sqrt{5}}{1/\sqrt{5}}\) and verify that the sum of these two variances add to the total variance.</p></li>
+<li id="li-285"><p id="p-557">Explain why the covariance matrix \(C\) is a symmetric matrix.</p></li>
+</ol></article><p id="p-558">If \(A\) is the demeaned data matrix and \(\uvec\) is a unit vector, we have</p>
+<div class="displaymath">
+\begin{equation*}
+A^T\uvec =
+\threevec{\dtil_1\cdot\uvec}{\dtil_2\cdot\uvec}{\dtil_2\cdot\uvec},
+\end{equation*}
+</div>
+<p>which shows that, in general, \(V_{\uvec} =
+\frac1N~\len{A^T\uvec}^2\text{.}\)</p>
+<p id="p-559">The covariance matrix is then defined to be \(C=\frac1N~AA^T\text{.}\)  Notice that</p>
+<div class="displaymath">
+\begin{equation*}
+C^T = \frac1N~(AA^T)^T = \frac1N~AA^T = C
+\end{equation*}
+</div>
+<p>which tells us that \(C\) is a symmetric matrix.  In particular, we know that it is orthogonally diagonalizable, an observation that will play an important role in the future.</p>
+<p id="p-560">The significance of the covariance matrix is that</p>
+<div class="displaymath">
+\begin{align*}
+\uvec\cdot C\uvec = \amp \frac1N~\uvec^T AA^T\uvec\\
+\amp = \frac
+1N~(A^T\uvec)^T(A^T\uvec)\\
+\amp = \frac1N (A^T\uvec)\cdot(A^T\uvec)\\
+\amp = \frac1N~\len{A^T\uvec}^2\\
+\amp = V_{\uvec}.
+\end{align*}
+</div>
+<p>Let's record this fact in the following proposition.</p>
+<article class="theorem-like" id="prop-covariance"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.1.16</span>.</h6>
+<p id="p-561">If \(C\) is the covariance matrix associated to a demeaned dataset and \(\uvec\) is a unit vector, then the variance of the demeaned points projected onto the line defined by \(\uvec\) is</p>
+<div class="displaymath">
+\begin{equation*}
+V_{\uvec} = \uvec\cdot C\uvec.
+\end{equation*}
+</div></article><p id="p-562">Our goal in the future will be to find directions \(\uvec\) where the variance is as large as possible and directions where it is as small as possible.  The next activity demonstrates why this is useful.</p>
+<article class="project-like" id="activity-25"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.1.6</span>.</h6>
+<ol id="p-563" class="lower-alpha">
+<li id="li-286">
+<p id="p-564">Evaluating the following Sage cell loads a dataset consisting of 100 demeaned data points and provides a plot of them.  It also provides a demeaned data matrix \(A\text{.}\) <div class="sagecell-sage" id="sage-47"><script type="text/x-sage">import pandas as pd
+df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/variance-data.csv', header=None)
+data = [vector(row) for row in df.values]
+A = matrix(data).T
+list_plot(data, size=20, color='blue', aspect_ratio=1)
+</script></div></p>
+<p id="p-565">What are the dimensions of the covariance matrix \(C\text{?}\)  Find \(C\) and verify your response. <div class="sagecell-sage" id="sage-48"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-287"><p id="p-566">By visually inspecting the data, determine which is larger, \(V_x\) or \(V_y\text{.}\)  Then compute both of these quantities to verify your response.</p></li>
+<li id="li-288"><p id="p-567">What is the total variance \(V\text{?}\)</p></li>
+<li id="li-289"><p id="p-568">In approximately what direction is the variance greatest?  Choose a reasonable vector \(\uvec\) that points in approximately that direction and find \(V_{\uvec}\text{.}\)</p></li>
+<li id="li-290"><p id="p-569">In approximately what direction is the variance smallest?  Choose a reasonable vector \(\wvec\) that points in approximately that direction and find \(V_{\wvec}\text{.}\)</p></li>
+<li id="li-291"><p id="p-570">How are the directions \(\uvec\) and \(\wvec\) in the last two parts of this problem related to one another?  Why does this relationship hold?</p></li>
+</ol></article><p id="p-571">This activity illustrates how we can use variance to identify a line along which the data is concentrated.  When the data is almost wholly contained on a line defined by a vector \(\uvec\text{,}\) then the variance in a direction \(\wvec\text{,}\) orthogonal to \(\uvec\text{,}\) is small.</p>
+<p id="p-572">Remember that variance is additive, according to <a data-knowl="./knowl/prop-variance-additivity.html" title="Proposition 2.1.15: Additivity of Variance">Proposition 2.1.15</a>, so that, if \(\uvec\) and \(\wvec\) are orthogonal unit vectors, then the total variance is</p>
+<div class="displaymath">
+\begin{equation*}
+V = V_{\uvec} + V_{\wvec}.
+\end{equation*}
+</div>
+<p>Therefore, if we choose \(\uvec\) to be the direction where \(V_{\uvec}\) is a maximum, then \(V_{\wvec}\) will be a minimum.  This means that the data will be concentrated near a line along which the variance is greatest.</p>
+<p id="p-573">In the next section, we will develop some tools that employ an orthogonal diagonalization of the covariance matrix \(C\) to find the directions having the greatest and smallest variances.</p></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-574">This section explored both symmetric matrices and variance.  In particular, we saw that</p>
+<ul class="disc">
+<li id="li-292"><p id="p-575">A matrix \(A\) is orthogonally diagonalizable if there is an orthonormal basis of eigenvectors.  In particular, we can write \(A=QDQ^T\text{,}\) where \(D\) is a diagonal matrix of eigenvalues and \(Q\) is orthogonal.</p></li>
+<li id="li-293"><p id="p-576">A matrix \(A\) is orthogonally diagonalizable if and only if it is symmetric;  that is, \(A=A^T\text{.}\)</p></li>
+<li id="li-294"><p id="p-577">The variance of a dataset can be computed using the covariance matrix \(C=\frac1N~AA^T\text{,}\) where \(A\) is the matrix of demeaned data points.  In particular, the variance of the demeaned data points projected onto the line defined by the unit vector \(\uvec\) is \(V_{\uvec} = \uvec\cdot C\uvec\text{.}\)</p></li>
+<li id="li-295">
+<p id="p-578">Variance is additive so that if \(W\) is a subspace with orthonormal basis \(\uvec_1,
+\uvec_2,\ldots,\uvec_n\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+V_W = V_{\uvec_1} + V_{\uvec_2} + \ldots + V_{\uvec_n}.
+\end{equation*}
+</div>
+</li>
+</ul></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

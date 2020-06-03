@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:54-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Orthogonal bases and projections</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-transpose.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap6.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-gram-schmidt.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-transpose.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap6.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-gram-schmidt.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases" class="active">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-orthogonal-bases"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Orthogonal bases and projections</span>
+</h2>
+<a href="sec-orthogonal-bases.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-199">Remember that a linear system \(A\xvec=\bvec\) is consistent precisely when \(\bvec\) is in \(\col(A)\text{,}\) the column space of \(A\text{.}\)  When we explore least squares problems in <a href="sec-least-squares.html" class="internal" title="Section 1.5: Least squares problems">Section 1.5</a>, we will frequently encounter systems \(A\xvec = \bvec\) that are inconsistent, meaning \(\bvec\) is not in \(\col(A)\text{.}\)  Our strategy in this situation will be to find \(\bhat\text{,}\) the vector in \(\col(A)\) that is closest to \(\bvec\text{,}\) and then solve the consistent system \(A\xvec=\bhat\text{.}\)</p>
+<p id="p-200">Our goal in this section is to develop some techniques that allow us, when presented with a vector \(\bvec\) and a subspace \(W\text{,}\) to find the vector \(\bhat\) in \(W\) that is closest to \(\bvec\text{.}\)  Our principal tool will be <em class="emphasis">orthogonal bases</em>, bases in which each vector is orthogonal to the others.</p>
+<article class="project-like" id="preview-orthogonal-basis"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">1.3.1</span>.</h6>
+<p id="p-201">For this activity, it will be helpful to recall the distributive property of dot products:</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec\cdot(c_1\wvec_1+c_2\wvec_2) = c_1\vvec\cdot\wvec_1 +
+c_2\vvec\cdot\wvec_2\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-110">
+<p id="p-202">The vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1=\twovec21,\hspace{24pt}
+\vvec_2=\twovec{-1}1
+\end{equation*}
+</div>
+<p>form a basis for \(\real^2\text{.}\)  Find weights \(c_1\) and \(c_2\) such that \(\bvec=\twovec54=c_1\vvec_1+c_2\vvec_2\text{.}\)</p>
+</li>
+<li id="li-111">
+<p id="p-203">Consider now a different basis formed by the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1=\twovec11,\hspace{24pt}
+\wvec_2=\twovec{-1}1\text{.}
+\end{equation*}
+</div>
+<p>Explain how we know that \(\wvec_1\) and \(\wvec_2\) are orthogonal.  We call \(\wvec_1\) and \(\wvec_2\) an orthogonal basis for \(\real^2\text{.}\)</p>
+</li>
+<li id="li-112"><p id="p-204">Suppose that \(\bvec =\twovec62\text{.}\)  Find \(\wvec_1\cdot\bvec\) and \(\wvec_2\cdot\bvec\text{.}\)</p></li>
+<li id="li-113">
+<p id="p-205">Suppose that we would like to express \(\bvec\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)  This means that we need to find weights \(c_1\) and \(c_2\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec = c_1\wvec_1 + c_2\wvec_2\text{.}
+\end{equation*}
+</div>
+<p>To find the weight \(c_1\text{,}\) dot both sides of this expression with \(\wvec_1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1\cdot\bvec = \wvec_1\cdot(c_1\wvec_1 +
+c_2\wvec_2)\text{,}
+\end{equation*}
+</div>
+<p>and apply the distributive property.</p>
+</li>
+<li id="li-114"><p id="p-206">In the same way, find the weight \(c_2\text{.}\)</p></li>
+<li id="li-115"><p id="p-207">Verify that \(\bvec = c_1\wvec_1+c_2\wvec_2\) using the weights you have found.</p></li>
+</ol></article><p id="p-208">The preview activity illustrates an important use of orthogonality.  The first part of the activity asks us to write a vector \(\bvec=\twovec54\) as a linear combination of \(\twovec21\) and \(\twovec{-1}{1}\text{.}\)  This is, by now, a familiar situation;  we form an augmented matrix and row reduce to find the weights:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+2 \amp -1 \amp 5 \\
+1 \amp 1 \amp 4 \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{rr|r}
+1 \amp 0 \amp 3 \\
+0 \amp 1 \amp 1 \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p>showing that \(\twovec54 = 3\twovec21 + \twovec{-1}{1}\text{.}\)</p>
+<p id="p-209">In the next part of the activity, we consider a new basis, \(\wvec_1=\twovec11\) and \(\wvec_2=\twovec{-1}1\text{.}\)  We can check that</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1\cdot\wvec_2 = 1(-1)+1(1) = 0
+\end{equation*}
+</div>
+<p>so that \(\wvec_1\) and \(\wvec_2\) are orthogonal.</p>
+<p id="p-210">If we wish to express \(\bvec=\twovec62\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{,}\) we need to find weights such that \(\bvec=c_1\wvec_1+c_2\wvec_2\text{.}\)  Because the basis vectors are orthogonal, we can find these weights simply using the dot product:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\wvec_1\cdot\bvec \amp = \wvec_1\cdot(c_1\wvec_1 + c_2\wvec_2) \\
+\wvec_1\cdot\bvec \amp = c_1\wvec_1\cdot\wvec_1 +
+c_2\wvec_1\cdot\wvec_2 \\ 
+\wvec_1\cdot\bvec \amp = c_1\wvec_1\cdot\wvec_1 \\
+8 \amp= 2c_1\text{,} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>which leads us with \(c_1=4\text{.}\)  In the same way, we find</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\wvec_2\cdot\bvec \amp = \wvec_2\cdot(c_1\wvec_1 + c_2\wvec_2) \\
+\wvec_2\cdot\bvec \amp = c_1\wvec_2\cdot\wvec_1 +
+c_2\wvec_2\cdot\wvec_2 \\ 
+\wvec_2\cdot\bvec \amp = c_2\wvec_2\cdot\wvec_2 \\
+-4 \amp= 2c_2\text{,} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>so that \(c_2=-2\text{.}\)  We can check that \(\bvec = 4\wvec_1-2\wvec_2\text{.}\)</p>
+<p id="p-211">Notice how the orthogonal basis simplifies this process.  Rather than constructing an augmented matrix and row reducing it, we simply need to compute a few dot products to find the weights.</p></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Orthogonal bases</span>
+</h3>
+<p id="p-212">Throughout this section, we will be looking at orthogonal sets of vectors, that is, sets of nonzero vectors each of which is orthogonal to the others.</p>
+<article class="example-like" id="example-orthogonal-set-2d"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.3.1</span>.</h6>
+<p id="p-213">The vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \twovec12,\hspace{24pt}
+\wvec_2 = \twovec{-2}1
+\end{equation*}
+</div>
+<p>form an orthogonal set of 2-dimensional vectors, as shown in <a data-knowl="./knowl/fig-orthogonal-basis.html" title="Figure 1.3.2">Figure 1.3.2</a>.</p>
+<figure class="figure-like" id="fig-orthogonal-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/orthogonal-basis.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.2.</span> A 2-dimensional orthogonal set.</figcaption></figure></article><article class="example-like" id="example-orthogonal-set"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.3.3</span>.</h6>
+<p id="p-214">The vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \threevec1{-1}1,\hspace{24pt}
+\wvec_2 = \threevec1{1}0,\hspace{24pt}
+\wvec_3 = \threevec1{-1}{-2}
+\end{equation*}
+</div>
+<p>form an orthogonal set as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+\wvec_1\cdot\wvec_2 \amp {}={} \amp 0 \\
+\wvec_1\cdot\wvec_3 \amp {}={} \amp 0 \\
+\wvec_2\cdot\wvec_3 \amp {}={} \amp 0\text{.} \\
+\end{array}
+\end{equation*}
+</div></article><p id="p-215">It's important to note that an orthogonal set of vectors is always linearly independent.  Suppose, for instance, that \(\wvec_1,\wvec_2,\ldots,\wvec_m\) is a set of nonzero orthogonal vectors and that one vector is a linear combination of the others, say,</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_3 = c_1\wvec_1 + c_2\wvec_2\text{.}
+\end{equation*}
+</div>
+<p>Let's dot both sides of this expression with \(\wvec_1\) and apply the fact that \(\wvec_1\) is orthogonal to both \(\wvec_2\) and \(\wvec_3\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\wvec_3\cdot\wvec_1 \amp = (c_1\wvec_1+c_2\wvec_2)\cdot\wvec_1
+\\
+\wvec_3\cdot\wvec_1 \amp = c_1\wvec_1\cdot\wvec_1 +
+c_2\wvec_2\cdot\wvec_1 \\
+0 \amp = c_1\len{\wvec_1}^2\text{,} \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>which tells us that \(c_1=0\text{.}\)  In the same way, dotting with \(\wvec_2\) tells us that \(c_2=0\) from which we conclude that \(\wvec_3=c_1\wvec_1+c_2\wvec_2=\zerovec\text{,}\) which we know is not so.</p>
+<p id="p-216">We record this fact as:</p>
+<article class="theorem-like" id="prop-orthog-lin-indep"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.4</span>.</h6>
+<p id="p-217">An orthogonal set of vectors \(\wvec_1,\wvec_2,\ldots,\wvec_m\) is linearly independent.</p></article><p id="p-218">In particular, if \(\wvec_1,\wvec_2,\ldots,\wvec_n\) is an orthogonal set of \(n\)-dimensional vectors, then this set forms a basis for \(\real^n\text{.}\)  Therefore, any \(n\)-dimensional vector \(\bvec\) can be written as a linear combination of basis vectors:</p>
+<div class="displaymath">
+\begin{equation*}
+c_1\wvec_1 + c_2\wvec_2 + \ldots + c_n\wvec_n = \bvec.
+\end{equation*}
+</div>
+<p>As in the preview activity, we can find the weights \(c_i\) by dotting both sides with \(\wvec_i\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\wvec_i\cdot(c_1\wvec_1 + c_2\wvec_2 + \ldots + c_n\wvec_n)
+\amp = \wvec_i\cdot\bvec\\
+c_i\wvec_i\cdot\wvec_i \amp = \wvec_i\cdot\bvec\\
+c_i \amp = 
+\frac{\wvec_i\cdot\bvec}{\wvec_i\cdot\wvec_i}\text{.}
+\end{align*}
+</div>
+<p>In other words, we have <article class="theorem-like" id="prop-orthog-lincomb"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.5</span>.</h6>
+<p id="p-219">An orthogonal set of \(n\)-dimensional vectors \(\wvec_1,\wvec_2,\ldots,\wvec_n\) is a basis for \(\real^n\) and any \(n\)-dimensional vector \(\bvec\) can be written as</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1} \wvec_1 +
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2} \wvec_2 +
+\ldots +
+\frac{\wvec_n\cdot\bvec}{\wvec_n\cdot\wvec_n} \wvec_n\text{.}
+\end{equation*}
+</div></article></p>
+<p id="p-220">We say that an orthogonal set of \(n\)-dimensional vectors \(\wvec_1,\wvec_2,\ldots,\wvec_n\) is an <em class="emphasis">orthogonal basis</em> for \(\real^n\text{.}\)</p>
+<p id="p-221">Statements about linear combinations can usually be expressed more conveniently in terms of matrix multiplication.  This is the aim of the next activity.</p>
+<article class="project-like" id="activity-9"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.3.2</span>.</h6>
+<p id="p-222">Consider the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \threevec1{-1}1,\hspace{24pt}
+\wvec_2 = \threevec1{1}0,\hspace{24pt}
+\wvec_3 = \threevec1{-1}{-2}
+\end{equation*}
+</div>
+<p>that appeared in <a data-knowl="./knowl/example-orthogonal-set.html" title="Example 1.3.3">Example 1.3.3</a>.  Since this a set of three nonzero orthogonal vectors in \(\real^3\text{,}\) we know it is an orthogonal basis for \(\real^3\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-116">
+<p id="p-223">Suppose that \(\bvec=\threevec24{-4}\text{.}\)  Find the weights \(c_1\text{,}\) \(c_2\text{,}\) and \(c_3\) that express \(\bvec\) as a linear combination \(\bvec=c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3\) using <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a>.</p>
+<div class="sagecell-sage" id="sage-15"><script type="text/x-sage">
+</script></div>
+</li>
+<li id="li-117">
+<p id="p-224">If we multiply a vector \(\vvec\) by a positive scalar \(s\text{,}\) the length of \(\vvec\) is also multiplied by \(s\text{;}\)  that is, \(\len{s\vvec} = s\len{\vvec}\text{.}\)</p>
+<p id="p-225">Using this observation, find a vector \(\uvec_1\) that is parallel to \(\wvec_1\) and has length 1. Such vectors are called <em class="emphasis">unit vectors</em>. <div class="sagecell-sage" id="sage-16"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-118"><p id="p-226">In a similar way, find a unit vector \(\uvec_2\) that is parallel to \(\wvec_2\) and a unit vector \(\uvec_3\) that is parallel to \(\wvec_3\text{.}\)</p></li>
+<li id="li-119"><p id="p-227">Using <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a>, express the vector \(\bvec=\threevec420\) as a linear combination \(c_1\uvec_1+c_2\uvec_2+c_3\uvec_3\text{.}\) <div class="sagecell-sage" id="sage-17"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-120"><p id="p-228">How does the expression for the weights, as given in <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a>, simplify when the basis vectors have unit length?</p></li>
+<li id="li-121"><p id="p-229">Form the matrix \(Q =
+\left[
+\begin{array}{rrr}
+\uvec_1 \amp \uvec_2 \amp \uvec_3
+\end{array}
+\right]
+\text{.}\) For a general 3-dimensional vector \(\xvec\text{,}\) how is \(Q^T\xvec\) expressed in terms of dot products?</p></li>
+<li id="li-122"><p id="p-230">Explain why \(QQ^T\xvec = Q(Q^T\xvec)=\xvec\) for any 3-dimensional vector \(\xvec\text{.}\)</p></li>
+<li id="li-123"><p id="p-231">Explain why \(Q^{-1}=Q^T\) and use this observation to solve the equation \(Q\xvec = \threevec22{-1}\text{.}\)</p></li>
+</ol></article><p id="p-232"><a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a> shows us how to express a vector in terms of an orthogonal basis of \(\real^n\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1} \wvec_1 +
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2} \wvec_2 +
+\ldots +
+\frac{\wvec_n\cdot\bvec}{\wvec_n\cdot\wvec_n} \wvec_n\text{.}
+\end{equation*}
+</div>
+<p>This expression simplifies if the vectors in the orthogonal basis have length 1.</p>
+<p id="p-233">First, notice that we may multiply any nonzero vector \(\wvec\) by a scalar so that the new vector has length 1. For instance, we know that, if \(s\) is a positive scalar, then \(\len{s\wvec} = s\len{\wvec}\text{.}\)  To obtain a vector \(\uvec\) having unit length, we multiply</p>
+<div class="displaymath">
+\begin{equation*}
+\len{\uvec} = \len{s\wvec} = s\len{\wvec} = 1
+\end{equation*}
+</div>
+<p>so that \(s=1/\len{\wvec}\) and hence</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec = \frac{1}{\len{\wvec}}\wvec.
+\end{equation*}
+</div>
+<p id="p-234">Therefore, if we have the orthogonal basis</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \threevec1{-1}1,\hspace{24pt}
+\wvec_2 = \threevec1{1}0,\hspace{24pt}
+\wvec_3 = \threevec1{-1}{-2},
+\end{equation*}
+</div>
+<p>as in the activity, we may obtain a new orthogonal basis</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec_1 = \threevec{1/\sqrt{3}}{-1/\sqrt{3}}{1/\sqrt{3}},
+\hspace{24pt}
+\uvec_2 = \threevec{1/\sqrt{2}}{1/\sqrt{2}}0,\hspace{24pt}
+\uvec_3 = \threevec{1/\sqrt{6}}{-1/\sqrt{6}}{-2/\sqrt{6}}
+\end{equation*}
+</div>
+<p>in which each basis vector has unit length.</p>
+<p id="p-235">The expression in <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a> still holds so that we have, for a general vector \(\xvec\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec =
+\frac{\uvec_1\cdot\xvec}{\uvec_1\cdot\uvec_1} \uvec_1 +
+\frac{\uvec_2\cdot\xvec}{\uvec_2\cdot\uvec_2} \uvec_2 +
+\frac{\uvec_3\cdot\xvec}{\uvec_3\cdot\uvec_3} \uvec_3\text{.}
+\end{equation*}
+</div>
+<p>However, since each \(\uvec_i\) has unit legnth, it follows that</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec_i\cdot\uvec_i = \len{\uvec_i}^2 = 1,
+\end{equation*}
+</div>
+<p>which simplifies the weights in the linear combination:</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec =
+(\uvec_1\cdot\xvec)\ \uvec_1 +
+(\uvec_2\cdot\xvec)\ \uvec_2 +
+(\uvec_3\cdot\xvec)\ \uvec_3\text{.}
+\end{equation*}
+</div>
+<p id="p-236">This may be expressed in matrix form using the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>In particular, remember that</p>
+<div class="displaymath">
+\begin{equation*}
+Q^T\xvec =
+\threevec
+{\uvec_1^T}
+{\uvec_2^T}
+{\uvec_3^T}
+\xvec
+=
+\threevec
+{\uvec_1\cdot\xvec}
+{\uvec_2\cdot\xvec}
+{\uvec_3\cdot\xvec}.
+\end{equation*}
+</div>
+<p>Therefore</p>
+<div class="displaymath">
+\begin{align*}
+QQ^T\xvec = \amp
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3\\
+\end{bmatrix}
+\threevec
+{\uvec_1\cdot\xvec}
+{\uvec_2\cdot\xvec}
+{\uvec_3\cdot\xvec}\\
+= \amp 
+(\uvec_1\cdot\xvec)\ \uvec_1 +
+(\uvec_2\cdot\xvec)\ \uvec_2 +
+(\uvec_3\cdot\xvec)\ \uvec_3\\
+= \amp \xvec.
+\end{align*}
+</div>
+<p id="p-237">This says that \(QQ^T = I\text{,}\) which implies that \(Q^{-1} = Q^T\) since \(Q\) is a square matrix This may be seen in our example, where</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\begin{bmatrix}
+1/\sqrt{3} \amp 1/\sqrt{2} \amp 1/\sqrt{6} \\
+-1/\sqrt{3} \amp 1/\sqrt{2} \amp -1/\sqrt{6} \\
+1/\sqrt{3} \amp 0 \amp -2/\sqrt{6} \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>satisfies \(QQ^T=I\text{.}\)</p>
+<article class="definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.3.6</span>.</h6>
+<p id="p-238">An orthogonal basis in which each vector has unit length is called an <em class="emphasis">orthonormal</em> basis.  A square matrix whose columns form an orthonormal basis is called an <em class="emphasis">orthogonal</em> matrix.</p></article><p id="p-239">This terminology can be a little confusing.  We call a basis orthogonal is the basis vectors are orthogonal to one another. However, a matrix is orthogonal if the columns are orthogonal to one another and have unit length.  It therefore pays to keep this in mind when reading statements about orthogonal bases and orthogonal matrices.</p>
+<p id="p-240">We have verified the following proposition:</p>
+<article class="theorem-like" id="prop-orthog-matrix"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.7</span>.</h6>
+<p id="p-241">An orthogonal matrix \(Q\) satisfies \(QQ^T = I\text{.}\)</p></article><article class="example-like" id="example-10"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.3.8</span>.</h6>
+<p id="p-242">The vectors from <a data-knowl="./knowl/example-orthogonal-set-2d.html" title="Example 1.3.1">Example 1.3.1</a></p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \twovec12,\hspace{24pt}
+\wvec_2 = \twovec{-2}{1}
+\end{equation*}
+</div>
+<p>form an orthogonal basis for \(\real^2\text{.}\)  To form an orthonormal basis, we multiply each vector \(\wvec_i\) by the reciprocal of its length to obtain:</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec_1 = \twovec{1/\sqrt{5}}{2/\sqrt{5}},\hspace{24pt}
+\uvec_2 = \twovec{-2/\sqrt{5}}{1/\sqrt{5}}.
+\end{equation*}
+</div>
+<p>Forming the orthogonal matrix</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1/\sqrt{5} \amp -2/\sqrt{5} \\
+2/\sqrt{5} \amp 1/\sqrt{5}
+\end{bmatrix},
+\end{equation*}
+</div>
+<p>we see that \(QQ^T=I\text{.}\)</p></article><p id="p-243">Here's another way to verify <a data-knowl="./knowl/prop-orthog-matrix.html" title="Proposition 1.3.7">Proposition 1.3.7</a>. Remember that multiplying by the transpose of a matrix is the same as evaluating dot products with the columns of the matrix. If \(Q\) is an orthogonal matrix whose columns form an orthonormal basis of \(\real^3\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\left[
+\begin{array}{rrr}
+\uvec_1\amp\uvec_2\amp\uvec_3
+\end{array}
+\right]\text{,}
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+Q^TQ =
+\left[
+\begin{array}{c}
+\uvec_1^T \\
+\uvec_2^T \\
+\uvec_3^T \\
+\end{array}
+\right]
+\left[
+\begin{array}{ccc}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \\
+\end{array}
+\right]
+=
+\begin{bmatrix}
+\uvec_1\cdot\uvec_1 \amp \uvec_1\cdot\uvec_2 \amp \uvec_1\cdot\uvec_3 \\
+\uvec_2\cdot\uvec_1 \amp \uvec_2\cdot\uvec_2 \amp \uvec_2\cdot\uvec_3 \\
+\uvec_3\cdot\uvec_1 \amp \uvec_3\cdot\uvec_2 \amp \uvec_3\cdot\uvec_3 \\
+\end{bmatrix}
+= I
+\end{equation*}
+</div>
+<p>since the dot products of the basis vectors are either 1 or 0. This leaves us with \(Q^TQ=I\) so that \(Q^T=Q^{-1}\text{.}\)</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Orthgonal projections</span>
+</h3>
+<p id="p-244">We now turn to an important problem that will appear in many forms in the rest of this book.  Suppose, as shown on the left of <a data-knowl="./knowl/fig-3d-orthog-proj.html" title="Figure 1.3.9">Figure 1.3.9</a>, that we have a two-dimensional subspace in \(\real^3\) (that is, a plane) and a vector \(\bvec\) that is not in the plane.  We would like to find the vector \(\bhat\) in the plane that is closest to \(\bvec\text{.}\)</p>
+<figure class="figure-like" id="fig-3d-orthog-proj"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-orthog-proj-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-orthog-proj-3.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.9.</span> Given a plane in \(\real^3\) and a vector \(\bvec\) not on the plane, we wish to find the vector \(\bhat\) in the plane that is closest to \(\bvec\text{.}\)</figcaption></figure><p id="p-245">To get started, let's consider the simpler problem where we have a line \(L\) in \(\real^2\text{,}\) defined by the vector \(\wvec\text{,}\) and another vector \(\bvec\) that is not on the line.  We wish to find \(\bhat\text{,}\) the vector on the line that is closest to \(\bvec\text{,}\) as illustrated in <a data-knowl="./knowl/fig-projection-line-a.html" title="Figure 1.3.10">Figure 1.3.10</a>.</p>
+<figure class="figure-like" id="fig-projection-line-a"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/projection-line-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/projection-line-4.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.10.</span> Given a line \(L\) and a vector \(\bvec\text{,}\) we seek the vector \(\bhat\) on \(L\) that is closest to \(\bvec\text{.}\)</figcaption></figure><p id="p-246">To find \(\bhat\text{,}\) we require that \(\bvec-\bhat\) be orthogonal to \(L\text{.}\)  For instance, if \(\yvec\) is another vector on the line, as shown in <a data-knowl="./knowl/fig-projection-line-b.html" title="Figure 1.3.11">Figure 1.3.11</a>, then the Pythagorean theorem implies that</p>
+<div class="displaymath">
+\begin{equation*}
+\len{\bvec-\yvec}^2 = \len{\bvec-\bhat}^2 +
+\len{\bhat-\yvec}^2\text{,} 
+\end{equation*}
+</div>
+<p>which means that \(\len{\bvec-\yvec}\geq\len{\bvec-\bhat}\text{.}\)</p>
+<figure class="figure-like" id="fig-projection-line-b"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/projection-line-3.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.11.</span> The vector \(\bhat\) is closer to \(\bvec\) than \(\yvec\) because \(\bvec-\bhat\) is orthogonal to \(L\text{.}\)</figcaption></figure><p id="p-247">We say that <em class="emphasis">\(\bhat\) is the <em class="emphasis">orthogonal projection</em> of \(\bvec\) onto \(L\text{.}\)</em> </p>
+<article class="project-like" id="activity-10"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.3.3</span>.</h6>
+<p id="p-248">This activity demonstrates how to determine the orthogonal projection of a vector onto a subspace of \(\real^n\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-124">
+<p id="p-249">Let's begin by considering a line \(L\) and vector \(\bvec\) not on \(L\text{,}\) as illustrated in <a data-knowl="./knowl/fig-projection-line-c.html" title="Figure 1.3.12">Figure 1.3.12</a>.</p>
+<figure class="figure-like" id="fig-projection-line-c"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/projection-line-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/projection-line-2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.12.</span> To determine the vector \(\bhat\text{,}\) we write \(\bhat=s\wvec\text{.}\)</figcaption></figure><ol id="p-250" class="lower-roman">
+<li id="li-125">
+<p id="p-251">To find \(\bhat\text{,}\) first notice that \(\bhat =
+s\wvec\) for some scalar \(s\text{.}\) Since \(\bvec-\bhat = \bvec -
+s\wvec\) is orthogonal to \(\wvec\text{,}\) what do we know about the dot product</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec\cdot(\bvec-s\wvec)\text{?}
+\end{equation*}
+</div>
+</li>
+<li id="li-126"><p id="p-252">Apply the distributive property of dot products to find the scalar \(s\text{.}\)  What is the vector \(\bhat\) that is the orthogonal projection of \(\bvec\) onto \(L\text{?}\)</p></li>
+<li id="li-127">
+<p id="p-253">More generally, explain why the orthogonal projection of \(\bvec\) onto the line defined by \(\wvec\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\wvec\cdot\bvec}{\wvec\cdot\wvec}~\wvec\text{.} 
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li id="li-128">
+<p id="p-254">The same ideas apply more generally.  Suppose we have two orthogonal vectors \(\wvec_1\) and \(\wvec_2\) that define a plane \(W\) in \(\real^3\text{.}\)  If \(\bvec\) is another vector in \(\real^3\text{,}\) we seek the vector \(\bhat\) on the plane \(W\) closest to \(\bvec\text{.}\) As before, the vector \(\bvec-\bhat\) will be orthogonal to \(P\text{,}\) as illustrated in <a data-knowl="./knowl/fig-3d-orthog.html" title="Figure 1.3.13">Figure 1.3.13</a>.</p>
+<figure class="figure-like" id="fig-3d-orthog"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-orthog-proj-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-orthog-proj-2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.3.13.</span> Given a plane \(W\) defined by the orthogonal vectors \(\wvec_1\) and \(\wvec_2\) and another vector \(\bvec\text{,}\) we seek the vector \(\bhat\) on \(W\) closest to \(\bvec\text{.}\)</figcaption></figure><ol id="p-255" class="lower-roman">
+<li id="li-129"><p id="p-256">The vector \(\bvec-\bhat\) is orthogonal to \(P\text{.}\) What does this say about the dot products: \(\wvec_1\cdot(\bvec-\bhat)\) and \(\wvec_2\cdot(\bvec-\bhat)\text{?}\)</p></li>
+<li id="li-130">
+<p id="p-257">Suppose that the orthogonal vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1=\threevec22{-1},\hspace{24pt}
+\wvec_2=\threevec102
+\end{equation*}
+</div>
+<p>define the plane \(W\) and that \(\bvec =
+\threevec322\text{.}\)  Since \(\bhat\) is in the plane \(W\text{,}\) we can write it as a linear combination \(\bhat = c_1\vvec_1 + c_2\vvec_2\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec-\bhat = \bhat - (c_1\wvec_1+c_2\wvec_2)\text{.}
+\end{equation*}
+</div>
+<p>Find the weight \(c_1\) by dotting \(\bvec-\bhat\) with \(\wvec_1\) and applying the distributive property of dot products.  Find the weight \(c_2\) in the same way.</p>
+</li>
+<li id="li-131"><p id="p-258">What is the vector \(\bhat\text{,}\) the orthogonal projection of \(\wvec\) onto the plane \(P\text{?}\)</p></li>
+</ol>
+</li>
+<li id="li-132">
+<p id="p-259">Suppose that \(W\) is a subspace of \(\real^n\) with orthogonal basis \(\wvec_1,\wvec_2,\ldots,\wvec_m\) and that \(\bvec\) is a vector in \(\real^n\text{.}\)  Explain why the orthogonal projection of \(\bvec\) onto \(W\) is the vector</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_m\cdot\bvec}{\wvec_m\cdot\wvec_m}~\wvec_m\text{.} 
+\end{equation*}
+</div>
+</li>
+<li id="li-133">
+<p id="p-260">Suppose that \(\uvec_1,\uvec_2,\ldots,\uvec_m\) is an <em class="emphasis">orthonormal</em> basis for \(W\text{;}\)  that is, the vectors are orthogonal to one another and have unit length.  Explain why the orthogonal projection is</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat=
+(\uvec_1\cdot\bvec)~\uvec_1 + 
+(\uvec_2\cdot\bvec)~\uvec_2 +
+\ldots +
+(\uvec_m\cdot\bvec)~\uvec_m\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-261">In all the cases considered in the activity, we are looking for \(\bhat\text{,}\) the vector in a subspace \(W\) closest to a vector \(\bvec\text{,}\) which is found by requiring \(\bvec-\bhat\) to be orthogonal to \(W\text{.}\)  This means that \(\wvec\cdot(\bvec-\bhat) = 0\) for any vector \(\wvec\) in \(W\text{.}\)</p>
+<p id="p-262">If we have an orthogonal basis \(\wvec_1,\wvec_2,\ldots,\wvec_m\) for \(W\text{,}\) then \(\bhat = c_1\wvec_1+c_w\wvec_2+\ldots c_m\wvec_m\text{.}\)  Therefore,</p>
+<div class="displaymath">
+\begin{align*}
+\wvec_i\cdot(\bvec-\bhat) \amp = 0\\
+\wvec_i\cdot\bvec \amp = \wvec_i\cdot\bhat\\
+\wvec_i\cdot\bvec \amp =
+\wvec_i\cdot(c_1\wvec_1+c_2\wvec_2+\ldots + c_m\wvec_m)\\
+\wvec_i\cdot\bvec \amp = c_i\wvec_i\cdot\wvec_i\\
+c_i \amp = \frac{\wvec_i\cdot\bvec}{\wvec_i\cdot\wvec_i}.
+\end{align*}
+</div>
+<p>This leads to the projection formula:</p>
+<article class="theorem-like" id="prop-proj-formula"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.14</span>. <span class="title">Projection formula.</span>
+</h6>
+<p id="p-263">If \(W\) is a subspace of \(\real^n\) having an orthogonal basis \(\wvec_1,\wvec_2,\ldots, \wvec_m\) and \(\bvec\) is a vector in \(\real^n\text{,}\) then \(\bhat\text{,}\) the orthogonal projection of \(\bvec\) onto \(W\text{,}\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_m\cdot\bvec}{\wvec_m\cdot\wvec_m}~\wvec_m\text{.}
+\end{equation*}
+</div>
+<p>Furthermore, if \(\uvec_1,\uvec_2,\ldots,\uvec_m\) is an orthonormal basis of \(W\text{,}\) this simplifies further to</p>
+<div class="displaymath">
+\begin{equation*}
+(\uvec_1\cdot\bvec)~\uvec_1 + 
+(\uvec_2\cdot\bvec)~\uvec_2 +
+\ldots + 
+(\uvec_m\cdot\bvec)~\uvec_m\text{.}
+\end{equation*}
+</div></article><article class="assemblage-like" id="assemblage-4"><p id="p-264">Be careful to only apply the projection formula given in <a data-knowl="./knowl/prop-proj-formula.html" title="Proposition 1.3.14: Projection formula">Proposition 1.3.14</a> only when the basis \(\wvec_1,\wvec_2,\ldots,\wvec_m\) of \(W\) is <em class="emphasis">orthogonal</em>.</p></article><p id="p-265">If we have an orthonormal basis \(\uvec_1,\uvec_2,\ldots,\uvec_m\) for \(W\text{,}\) we can form the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \ldots \amp \uvec_n 
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The expression for the orthogonal projection of \(\bvec\) onto \(W\) is</p>
+<div class="displaymath">
+\begin{align*}
+(\uvec_1\cdot\bvec)~\uvec_1 + \amp
+(\uvec_2\cdot\bvec)~\uvec_2 +
+\ldots + 
+(\uvec_m\cdot\bvec)~\uvec_m\\
+= \amp
+\begin{bmatrix}
+\uvec_1\amp\uvec_2\amp\ldots\amp\uvec_m
+\end{bmatrix}
+\begin{bmatrix}
+\uvec_1\cdot\bvec \\
+\uvec_2\cdot\bvec \\
+\vdots \\
+\uvec_m\cdot\bvec \\
+\end{bmatrix}\\
+= \amp QQ^T\wvec
+\end{align*}
+</div>
+<p id="p-266">In other words, we have:</p>
+<article class="theorem-like" id="prop-proj-orthonormal"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.15</span>.</h6>
+<p id="p-267">If \(\uvec_1,\uvec_2,\ldots,\uvec_m\) is an orthonormal basis for a subspace \(W\) of \(\real^n\text{,}\) then the the matrix transformation that projects vectors in \(\real^n\) orthogonally onto \(W\) is represented by the matrix \(QQ^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \ldots \amp \uvec_m \\
+\end{bmatrix}\text{.}
+\end{equation*}
+</div></article><article class="example-like" id="example-projection-matrix"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.3.16</span>.</h6>
+<p id="p-268">In the previous activity, we looked at the plane \(W\) defined by the two orthogonal vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1=\threevec22{-1},\hspace{24pt}
+\wvec_2=\threevec102\text{.}
+\end{equation*}
+</div>
+<p>We can form an orthonormal basis by scalar multiplying these vectors to have unit length:</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec_1=\frac13\threevec22{-1} =
+\threevec{2/3}{2/3}{-1/3},\hspace{24pt}
+\uvec_2=\frac1{\sqrt{5}}\threevec102 =
+\threevec{1/\sqrt{5}}0{2/\sqrt{5}}\text{.}
+\end{equation*}
+</div>
+<p>Using these vectors, we form the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\begin{bmatrix}
+2/3 \amp 1/\sqrt{5} \\
+2/3 \amp 0 \\
+-1/3 \amp 2/\sqrt{5} \\
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The projection onto the plane \(P\) is therefore</p>
+<div class="displaymath">
+\begin{equation*}
+QQ^T =
+\begin{bmatrix}
+2/3 \amp 1/\sqrt{5} \\
+2/3 \amp 0 \\
+-1/3 \amp 2/\sqrt{5} \\
+\end{bmatrix}
+\begin{bmatrix}
+2/3 \amp 2/3 \amp -1/3 \\
+1/\sqrt{5} \amp 0 \amp 2/\sqrt{5} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+{29}/{45} \amp {4}/{9} \amp {8}/{45} \\
+{4}/{9} \amp {4}/{9} \amp -{2}/{9} \\
+{8}/{45} \amp -{2}/{9} \amp {41}/{45}
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-269">Let's check that this works by considering the vector \(\bvec=\threevec100\) and finding \(\bhat\text{,}\) its orthogonal projection onto the plane \(W\text{.}\)  In terms of the original basis \(\wvec_1\) and \(\wvec_2\text{,}\) the projection formula from <a data-knowl="./knowl/prop-proj-formula.html" title="Proposition 1.3.14: Projection formula">Proposition 1.3.14</a> tells us that</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat=\frac{\wvec_1\cdot\bvec}
+{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}
+{\wvec_2\cdot\wvec_2}~\wvec_2 
+=
+\threevec{{29}/{45}}{4/9}{8/{45}} \\
+\end{equation*}
+</div>
+<p id="p-270">Alternatively, we can use the orthonormal basis \(\uvec_1\) and \(\uvec_2\) to construct the matrix \(Q\text{,}\) as in <a data-knowl="./knowl/prop-proj-orthonormal.html" title="Proposition 1.3.15">Proposition 1.3.15</a> so that</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat = QQ^T\bvec = 
+\begin{bmatrix}
+{29}/{45} \amp {4}/{9} \amp {8}/{45} \\
+{4}/{9} \amp {4}/{9} \amp -{2}/{9} \\
+{8}/{45} \amp -{2}/{9} \amp {41}/{45}
+\end{bmatrix}\threevec100
+=
+\threevec{{29}/{45}}{4/9}{8/{45}}\text{.}
+\end{equation*}
+</div></article><article class="project-like" id="activity-11"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.3.4</span>.</h6>
+<ol id="p-271" class="lower-alpha">
+<li id="li-134">
+<p id="p-272">Suppose that \(L\) is the line in \(\real^3\) defined by the vector \(\wvec=\threevec{1}{2}{-2}\text{.}\) <div class="sagecell-sage" id="sage-18"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-roman">
+<li id="li-135"><p id="p-273">Find an orthonormal basis \(\uvec\) for \(L\text{.}\)</p></li>
+<li id="li-136"><p id="p-274">Construct the matrix \(Q = \begin{bmatrix}\uvec\end{bmatrix}\) and use it to construct the matrix \(P\) that projects vectors orthogonally onto \(L\text{.}\)</p></li>
+<li id="li-137"><p id="p-275">Use your matrix to find \(\bhat\text{,}\) the orthogonal projection of \(\bvec=\threevec111\) onto \(L\text{.}\)</p></li>
+<li id="li-138"><p id="p-276">Find \(\rank(P)\) and explain its geometric significance.</p></li>
+</ol>
+</li>
+<li id="li-139">
+<p id="p-277">The orthogonal vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \fourvec1111,\hspace{24pt}
+\wvec_2 = \fourvec011{-2}
+\end{equation*}
+</div>
+<p>form the basis of \(W\text{,}\) a two-dimensional subspace of \(\real^4\text{.}\) <div class="sagecell-sage" id="sage-19"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-roman">
+<li id="li-140"><p id="p-278">Use the projection formula from <a data-knowl="./knowl/prop-proj-formula.html" title="Proposition 1.3.14: Projection formula">Proposition 1.3.14</a> to find \(\bhat\text{,}\) the orthogonal projection of \(\bvec=\fourvec92{-2}3\) onto \(W\text{.}\)</p></li>
+<li id="li-141"><p id="p-279">Find an orthonormal basis \(\uvec_1\) and \(\uvec_2\) for \(W\) and use it to construct the matrix \(P\) that projects vectors orthogonally onto \(W\text{.}\)  Check that \(P\bvec = \bhat\text{,}\) the orthogonal projection you found in the previous part of this activity.</p></li>
+<li id="li-142"><p id="p-280">Find \(\rank(P)\) and explain its geometric significance.</p></li>
+<li id="li-143"><p id="p-281">Find a basis for \(W^\perp\text{.}\)</p></li>
+<li id="li-144">
+<p id="p-282">Find a vector \(\bvec^\perp\) in \(W^\perp\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec = \bhat + \bvec^\perp.
+\end{equation*}
+</div>
+</li>
+<li id="li-145"><p id="p-283">Find the product \(Q^TQ\) and explain your result.</p></li>
+</ol>
+</li>
+</ol></article><p id="p-284">As we've seen, when the columns of \(Q\) are an orthonormal basis for a subspace \(W\text{,}\) then \(QQ^T\) is the matrix defining the orthogonal projection of vectors onto \(W\text{.}\) Suppose that \(W\) is two-dimensional so that \(Q\) has two columns.  Evaluating the product \(Q^TQ\text{,}\) we find</p>
+<div class="displaymath">
+\begin{equation*}
+Q^TQ =
+\begin{bmatrix}
+\uvec_1\cdot\uvec_1 \amp 
+\uvec_1\cdot\uvec_2 \\
+\uvec_2\cdot\uvec_1 \amp 
+\uvec_2\cdot\uvec_2 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>In this case, we find that \(Q^TQ=I\text{,}\) which expresses the fact that the columns of \(Q\) are orthonormal.  It's important to note, however, that we find the \(2\times2\) identity matrix since \(Q\) is a \(2\times3\) matrix.</p>
+<article class="theorem-like" id="proposition-9"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.17</span>.</h6>
+<p id="p-285">If the columns of the \(n\times m\) matrix \(Q\) are orthonormal, we have \(Q^TQ = I_m\) where \(I_m\) is the \(m\times m\) identity matrix.</p></article><p id="p-286">The previous activity raises one final issue.  We found \(\bhat\text{,}\) the orthogonal projection of \(\bvec\) onto \(W\text{,}\) by requiring that \(\bvec-\bhat\) be orthogonal to \(W\text{.}\)  In other words, \(\bvec-\bhat\) is a vector in the orthogonal complement \(W^\perp\text{,}\) which we may denote \(\bvec^\perp\text{.}\)  This explains the following proposition.</p>
+<article class="theorem-like" id="prop-orthog-decomp"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.18</span>. <span class="title">Orthogonal Decomposition.</span>
+</h6>If \(W\) is a subspace of \(\real^n\) with orthogonal complement \(W^\perp\text{,}\) then any \(n\)-dimensional vector \(\bvec\) can be uniquely written as<div class="displaymath">
+\begin{equation*}
+\bvec = \bhat + \bvec^\perp
+\end{equation*}
+</div>where \(\bhat\) is in \(W\) and \(\bvec^\perp\) is in \(W^\perp\text{.}\)</article></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-287">There is an underlying unity to the ideas we've seen in this section, but it may take a moment's thought to see that.  To begin, we considered an orthogonal basis \(\wvec_1,\wvec_2,\ldots,\wvec_n\) for \(\real^n\) and found that</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_n\cdot\bvec}{\wvec_n\cdot\wvec_n}~\wvec_n\text{.}
+\end{equation*}
+</div>
+<p>Later, we used an orthogonal basis for an \(m\)-dimensional subspace \(W\) to find \(\bhat\text{,}\) the orthogonal projection of \(\bvec\) onto \(W\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_m\cdot\bvec}{\wvec_m\cdot\wvec_m}~\wvec_m\text{.}
+\end{equation*}
+</div>
+<p id="p-288">These two formulas look similar though the first gives an expression of \(\bvec\) in terms of the orthogonal basis while the second gives an expression for \(\bhat\text{,}\) the orthogonal projection of \(\bvec\) onto \(W\text{.}\)  The first expression, however, is really a special case of the second under the assumption that our subspace \(W=\real^n\text{.}\)  In this case, the closest vector in \(W=\real^n\) to \(\bvec\) is \(\bvec\) itself so that \(\bhat=\bvec\text{.}\)</p>
+<ul id="p-289" class="disc">
+<li id="li-146">
+<p id="p-290">If \(\wvec_1,\wvec_2,\ldots,\wvec_m\) is an orthogonal basis for the subspace \(W\) of \(\real^n\) and \(\bvec\) is a vector in \(\real^n\text{,}\) then \(\bhat\text{,}\) the orthogonal projection of \(\bvec\) onto \(W\) is the vector in \(W\) closest to \(\bvec\text{.}\)  Moreover,</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_m\cdot\bvec}{\wvec_m\cdot\wvec_m}~\wvec_m\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-147"><p id="p-291">If \(\uvec_1,\uvec_2,\ldots,\uvec_m\) is an orthonormal basis of \(W\text{,}\) then the matrix \(P=QQ^T\text{,}\) where \(Q\) is the matrix whose columns are \(\uvec_i\text{,}\) projects vectors orthogonally onto \(W\text{.}\)</p></li>
+<li id="li-148"><p id="p-292">If the columns of \(Q\) form an orthonormal basis for an \(m\)-dimensional subspace of \(\real^n\text{,}\) then \(Q^TQ=I_m\text{.}\)</p></li>
+<li id="li-149">
+<p id="p-293">If the subspace \(W=\real^n\) and \(\bvec\) is a vector in \(\real^n\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec = \bhat =
+\frac{\wvec_1\cdot\bvec}{\wvec_1\cdot\wvec_1}~\wvec_1 + 
+\frac{\wvec_2\cdot\bvec}{\wvec_2\cdot\wvec_2}~\wvec_2 +
+\ldots + 
+\frac{\wvec_n\cdot\bvec}{\wvec_n\cdot\wvec_n}~\wvec_n\text{.}
+\end{equation*}
+</div>
+<p>If \(Q\) is a square matrix whose columns are an orthonormal basis for \(\real^n\text{,}\) then \(Q^{-1} =
+Q^T\) and we say that \(Q\) is an orthogonal matrix.</p>
+</li>
+</ul></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

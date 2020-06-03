@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:08-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution"><ol class="lower-alpha">
+<li>
+<p>Working with the \(RGB\) color model, we find that</p>
+<ol class="lower-roman">
+<li><p>we produce red with varying degrees of brightness.</p></li>
+<li><p>we produce blue with varying degrees of brightness.</p></li>
+<li><p>\(R=G=B=0\text{.}\)</p></li>
+<li><p>\(R=G=B=255\text{.}\)</p></li>
+</ol>
+</li>
+<li>
+<p>Working with the \(YC_bC_r\) color model, we find that</p>
+<ol class="lower-roman">
+<li><p>we produce gray with varying degrees of brightness.</p></li>
+<li><p>we produce blue with varying degrees of brightness.</p></li>
+<li><p>we produce red with varying degrees of brightness.</p></li>
+<li><p>\(Y=C_b=C_r = 0\text{.}\)</p></li>
+<li><p>\(Y=255\) with \(C_b=C_r=0\text{.}\)</p></li>
+</ol>
+</li>
+<li><p>If we row reduce the matrix whose columns are the vectors in \(\bcal\text{,}\) we obtain the identity matrix, which means that the vectors are linearly independent and span \(\real^3\text{.}\)</p></li>
+<li>
+<p>The matrices are</p>
+<div class="displaymath">
+\begin{equation*}
+C_{\bcal} =
+\left[\begin{array}{rrr}
+1.0000 \amp 0.00000 \amp 1.4020 \\
+1.0000 \amp -0.34413 \amp -0.71414 \\
+1.0000 \amp 1.7720 \amp 0.00000
+\end{array}\right]
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+C_{\bcal}^{-1} =
+\left[\begin{array}{rrr}
+0.29900 \amp 0.58700 \amp 0.11400 \\
+-0.16874 \amp -0.33126 \amp 0.50000 \\
+0.50000 \amp -0.41869 \amp -0.081311
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>To convert from \(RGB\) to \(YC_bC_r\text{,}\) we multiply by \(C_{\bcal}^{-1}\) so that</p>
+<ol class="lower-roman">
+<li><p>\(\threevec{Y}{C_b}{C_r} =
+\threevec{76.2}{-43.0}{127.5}\)</p></li>
+<li><p>\(\threevec{Y}{C_b}{C_r} =
+\threevec{149.7}{-84.5}{-105.8}\)</p></li>
+<li><p>\(\threevec{Y}{C_b}{C_r} =
+\threevec{29.1}{127.5}{-20.7}\)</p></li>
+<li><p>\(\threevec{Y}{C_b}{C_r} =
+\threevec{255}{0}{0}\)</p></li>
+<li><p>\(\threevec{Y}{C_b}{C_r} =
+\threevec{0}{0}{0}\)</p></li>
+</ol>
+</li>
+<li>
+<p>To convert from \(YC_bC_r\) to \(RGB\text{,}\) we multiply by \(C_{\bcal}\) so that</p>
+<ol class="lower-roman">
+<li><p>\(\threevec{R}{G}{B} = \threevec{128}{128}{128}\)</p></li>
+<li><p>\(\threevec{R}{G}{B} = \threevec{128}{107.4}{234.3}\)</p></li>
+<li><p>\(\threevec{R}{G}{B} = \threevec{212.1}{85.1}{128}\)</p></li>
+</ol>
+</li>
+<li>
+<p>We have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{4}
+Y \amp {}={} \amp 0.299R \amp {}+{} \amp 0.587G \amp {}+{}
+\amp 0.114B \\
+C_b \amp {}={} \amp -0.169R \amp {}-{} \amp 0.331G \amp {}+{}
+\amp 0.500B \\
+C_r \amp {}={} \amp 0.500R \amp {}-{} \amp 0.419G \amp {}-{}
+\amp 0.081B\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>The expression for \(Y\) is a weighted average of the \(R\text{,}\) \(G\text{,}\) and \(B\) values.  The expression for \(C_b\) takes half the amount of \(B\) and subtracts the amounts of red and green.  Likewise, the expression for \(C_r\) takes half the amount of \(R\) and subtracts the amounts of green and blue.</p>
+</li>
+</ol></div></body>
+</html>

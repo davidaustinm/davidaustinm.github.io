@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">d.iii</span>.</h6>
+<p>Let's now use Sage to determine the reduced row echelon form of \(A-I\text{:}\)</p>
+<div class="sagecell-sage" id="sage-104"><script type="text/x-sage">A = matrix(2,2,[0.4,0.3,0.6,0.7])
+(A-identity_matrix(2)).rref()
+</script></div>
+<p>What result does Sage report for the reduced row echelon form?  Why is this result not correct?</p></article><span class="incontext"><a href="sec-eigen-find.html#li-2545">in-context</a></span>
+</body>
+</html>

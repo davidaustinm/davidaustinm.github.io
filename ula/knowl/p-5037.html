@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:49-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose that \(A = \left[\begin{array}{rr}
+0.8 \amp 0.4 \\
+0.2 \amp 0.6 \\
+\end{array}\right]
+\text{.}\)  Explain how we know that \(1\) is an eigenvalue of \(A\) and then explain why the following Sage computation is incorrect. <div class="sagecell-sage" id="sage-134"><script type="text/x-sage">A = matrix(2,2,[0.8, 0.4, 0.2, 0.6])
+I = matrix(2,2,[1, 0, 0, 1])	  
+(A-I).rref()
+</script></div></p>
+<span class="incontext"><a href="sec-power-method.html#p-5037">in-context</a></span>
+</body>
+</html>

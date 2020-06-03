@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:11-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li><p>The matrix \(U_1\) is invertible because we see there is a pivot position in every row and column.  The matrix \(U_2\text{,}\) however, is not invertible because there is not a pivot position in the third row.</p></li>
+<li><p>The determinant of an upper triangular matrix equals the product of its diagonal entries.  Consequently, if the determinant of an upper triangular matrix is not zero, then each of its diagonal entries must be nonzero.  In this case, there is a pivot position in every row and every column so that the matrix is invertible.</p></li>
+<li><p>Row replacement operations do not change the determinant so \(\det A = \det A_1\text{.}\)</p></li>
+<li><p>In the same way, \(\det A = \det A_2\text{.}\)</p></li>
+<li><p>Interchanges change the sign of the determinant so \(\det A = -\det U\text{.}\)</p></li>
+<li><p>The determinant \(\det U = -4\) since it is the product of the diagonal entries of \(U\text{.}\)  This means that \(\det A = 4\text{.}\)  We see that \(A\) is invertible because \(U\text{,}\) which has a pivot position in every row and every column, is invertible.</p></li>
+<li>
+<p>Beginning with a row replacement operation, we arrive at</p>
+<div class="displaymath">
+\begin{equation*}
+A_1=\left[\begin{array}{rrr}
+1 \amp - 1 \amp 3 \\
+0 \amp 2 \amp -2 \\
+0 \amp -3 \amp 3 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We next scale the second row by \(\frac12\) to obtain</p>
+<div class="displaymath">
+\begin{equation*}
+A_2=\left[\begin{array}{rrr}
+1 \amp - 1 \amp 3 \\
+0 \amp 1 \amp -1 \\
+0 \amp -3 \amp 3 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Another row replacement operation gives</p>
+<div class="displaymath">
+\begin{equation*}
+A_3=\left[\begin{array}{rrr}
+1 \amp - 1 \amp 3 \\
+0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Putting these operations together, we see that \(\det A = 2\det U = 0\text{.}\)  In this case, \(A\) is not invertible because \(U\text{,}\) which has a row without a pivot position, is not invertible.</p>
+</li>
+<li><p>Performing one of the three row operations either leaves the determinant unchanged (row replacement), changes its sign (interchange), or multiplies it by a nonzero number (scaling).  Therefore, if we begin with a matrix whose determinant is not zero, the determinant remains not zero after any row operation is applied.</p></li>
+<li><p>If we apply a sequence of row operations to \(A\) to find a row equivalent matrix \(U\) that is upper triangular, we know that \(\det A\neq0\) if and only if \(\det U \neq 0\text{.}\) We also know that \(A\) is invertible if and only if \(U\) is invertible.  Putting these facts together, we conclude that \(\det A\neq 0\) if and only if \(A\) is invertible.</p></li>
+<li><p>Since \(A^{-1}A = I\text{,}\) we have \(\det A^{-1}
+\det A = 1\) so \(\det A^{-1} = \frac 13\text{.}\)</p></li>
+</ol>
+<span class="incontext"><a href="sec-determinants.html#p-2992">in-context</a></span>
+</body>
+</html>

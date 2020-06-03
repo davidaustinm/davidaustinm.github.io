@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Evaluating the following cell will load in some special commands. <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">sage.repl.load.load("http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py", globals())
+</script></div></p>
+<ul class="disc">
+<li><p>There is a command to apply the projection formula: <code class="code-inline tex2jax_ignore">projection(b, basis)</code> returns the orthogonal projection of <code class="code-inline tex2jax_ignore">b</code> onto the subspace spanned by <code class="code-inline tex2jax_ignore">basis</code>, which is a list of vectors.</p></li>
+<li><p>The command <code class="code-inline tex2jax_ignore">unit(w)</code> returns a unit vector parallel to <code class="code-inline tex2jax_ignore">w</code>.</p></li>
+<li><p>Given a collection of vectors, say, <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code>, we can form the matrix whose columns are <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code> using <code class="code-inline tex2jax_ignore">matrix([v1, v2]).T</code>.  When given a <code class="code-inline tex2jax_ignore">list</code> of vectors, Sage constructs a matrix whose <em class="emphasis">rows</em> are the given vectors.  For this reason, we need to apply the tranpose.</p></li>
+</ul>
+<span class="incontext"><a href="sec-gram-schmidt.html#p-322">in-context</a></span>
+</body>
+</html>

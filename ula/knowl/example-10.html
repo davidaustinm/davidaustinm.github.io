@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:05-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.5</span>.</h6>
+<p>In this section's preview activity, we considered the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \twovec{2}{1},
+\vvec_2 = \twovec{1}{2}\text{,}
+\end{equation*}
+</div>
+<p>which form a basis \(\bcal=\{\vvec_1,\vvec_2\}\) for \(\real^2\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p>In the standard coordinate system, the point \((2,-3)\) is found by moving 2 units to the right and 3 units down.  We would like to define a new coordinate system where we interpret \((2,-3)\) to mean we move two times along \(\vvec_1\) and 3 times along \(-\vvec_2\text{.}\)  As we see in the figure, doing so leaves us at the point \((1,-4)\text{,}\) expressed in the usual coordinate system.</p></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-1.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>We have seen that</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = \twovec{1}{-4} = 2\vvec_1 - 3\vvec_2 \text{.}
+\end{equation*}
+</div>
+<p>The coordinates of the vector \(\xvec\) in the new coordinate system are the weights that we use to create \(\xvec\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p>
+<p>Since we now have two descriptions of the vector \(\xvec\text{,}\) we need some notation to keep track of which coordinate system we are using.  Because \(\twovec{1}{-4} = 2\vvec_1 - 3\vvec_2\text{,}\) we will write</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\twovec{1}{-4}}{\bcal} =
+\twovec{2}{-3} \text{.}
+\end{equation*}
+</div>
+<p>More generally, \(\coords{\xvec}{\bcal}\) will denote the coordinates of \(\xvec\) in the basis \(\bcal\text{;}\)  that is, \(\coords{\xvec}{\bcal}\) is the vector \(\twovec{c_1}{c_2}\) of weights such that</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = c_1\vvec_1 + c_2 \vvec_2\text{.}
+\end{equation*}
+</div>
+<p>To illustrate, if the coordinates of \(\xvec\) in the basis \(\bcal\) are</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\xvec}{\bcal} = \twovec{5}{-2}\text{,}
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = 5\vvec_1 - 2\vvec_2 = 5\twovec{2}{1}-2\twovec{1}{2}
+= \twovec{8}{3}\text{.}
+\end{equation*}
+</div>
+<p>We conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\twovec{8}{3}}{\bcal} = \twovec{5}{-2}\text{.}
+\end{equation*}
+</div>
+<p>This demonstrates how we can translate coordinates in the basis \(\bcal\) into standard coordinates.</p>
+<p>Suppose we know the expression of a vector \(\xvec\) in standard coordinates.  How can we find its coordinates in the basis \(\bcal\text{?}\)  For instance, suppose \(\xvec=\twovec{-8}{2}\) and that we would like to find \(\coords{\xvec}{\bcal}\text{.}\)  We have</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\twovec{-8}{2}}{\bcal}=\twovec{c_1}{c_2}
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\twovec{-8}{2} = c_1\vvec_1 + c_2\vvec_2
+\end{equation*}
+</div>
+<p>or</p>
+<div class="displaymath">
+\begin{equation*}
+c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
+\end{equation*}
+</div>
+<p>This linear system for the weights defines an augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+2 \amp 1 \amp -8 \\
+1 \amp 2 \amp 2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp -6 \\
+0 \amp 1 \amp 4 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\twovec{-8}{2}}{\bcal} = \twovec{-6}{4}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="sec-bases.html#example-10">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:59-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose that we have a data set with \(N\) points and that \(A\) represents the demeaned data matrix.</p>
+<ol class="lower-alpha">
+<li><p>Given a matrix \(B\text{,}\) of what matrix do the right singular vectors of \(B\) appear as eigenvectors?</p></li>
+<li><p>If we have \(B=U\Sigma V^T\text{,}\) remember that \(B^T=V\Sigma^T U^T\text{.}\)  In other words, the left singular vectors of \(B\) are the right singular vectors of \(B^T\text{.}\)  Of what matrix do the left singular vectors of \(B\) appear as eigenvectors?</p></li>
+<li><p>Consider now our demeaned data matrix and a singular value decomposition \(A=U\Sigma V^T\text{.}\)  Of what matrix do the left singular vectors, the columns of \(U\text{,}\) appear as eigenvectors?  Explain how this matrix is related to the covariance matrix \(C\text{.}\) Then explain why the columns of \(U\) are the principal components of \(A\text{.}\)</p></li>
+<li><p>How are the singular values of \(A\) related to the eigenvalues of the covariance matrix \(C\text{.}\)  In particular, how is the variance \(V_{\uvec_j}\) expressed in terms of the singular values of \(A\text{.}\)</p></li>
+<li>
+<p>Let's revisit the iris data set that we studied in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>.  Remember that there are four measurements given for each of 150 irises.  The irises are grouped into three species of which there are 50 each.</p>
+<p>Evaluating the following cell will load the demeaned data matrix \(A\) whose shape is \(4\times150\text{.}\) <div class="sagecell-sage" id="sage-81"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/pca-iris.py', globals())
+df.head()
+</script></div></p>
+<p>Find the singular values of \(A\) using the command <code class="code-inline tex2jax_ignore">A.singular_values()</code> and use them to determine the fraction of variance explained by the first two principal components. <div class="sagecell-sage" id="sage-82"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li>
+<p>We will now write the matrix \(\Gamma = \Sigma
+V^T\) so that \(A = U\Gamma\text{.}\)</p>
+<p>Suppoe that a demeaned data point, say, the 100th column of \(A\text{,}\) is written as a linear combination of principal components:</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = c_1\uvec_1+c_2\uvec_2+c_3\uvec_3+c_4\uvec_4.
+\end{equation*}
+</div>
+<p>Explain why the vector \(\fourvec{c_1}{c_2}{c_3}{c_4}\) appears as 100th column of \(\Gamma\text{.}\)</p>
+</li>
+<li><p>Let's now consider the approximation \(A_2=U_2\Sigma_2V_2^T\) of the demeaned data matrix \(A\text{,}\) which involves the first two principal components.  Explain why the 100th column of \(A_2\) represents the projection of \(\xvec\) onto the two-dimensional subspace spanned by the first two principal components, \(\uvec_1\) and \(\uvec_2\text{.}\)  Then explain why the coefficients in that projection, \(c_1\uvec_1 + c_2\uvec_2\text{,}\) form a two-dimensional vector \(\twovec{c_1}{c_2}\) that is the 100th column of \(\Gamma_2=\Sigma_2
+V_2^T\text{.}\)</p></li>
+<li><p>Now we've seen that the columns of \(\Gamma_2 =
+\Sigma_2 V_2^T\) form the coordinates of the demeaned data points projected on the two-dimensional subspace spanned by \(\uvec_1\) and \(\uvec_2\text{.}\) In the cell below, find a singular value decomposition of \(A\) and use it to form the matrix <code class="code-inline tex2jax_ignore">Gamma2</code> below.  When you evaluate this cell, you will see a plot of the projected demeaned data plots, similar to the one we created in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>. <div class="sagecell-sage" id="sage-83"><script type="text/x-sage"># Form the SVD of A and use it to form Gamma2
+
+		    
+Gamma2 = 
+
+# The following will plot the projected demeaned data points
+data = Gamma2.columns()
+(list_plot(data[:50], color='blue', aspect_ratio=1) +
+ list_plot(data[50:100], color='orange') +
+ list_plot(data[100:], color='green'))
+</script></div></p></li>
+</ol>
+<span class="incontext"><a href="sec-svd-uses.html#p-915">in-context</a></span>
+</body>
+</html>

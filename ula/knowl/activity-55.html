@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">4.5.2</span>.</h6>
+<p>Suppose you live in a country with three political parties \(P\text{,}\) \(Q\text{,}\) and \(R\text{.}\)  We use \(P_k\text{,}\) \(Q_k\text{,}\) and \(R_k\) to denote the percentage of voters voting for that party in election \(k\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><p>Voters will change parties from one election to the next as shown in the figure.  We see that 60% of voters stay with the same party.  However, 40% of those who vote for party \(P\) will vote for party \(Q\) in the next election.</p></div>
+<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><img src="images/stoch-parties.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<ol class="lower-alpha">
+<li><p>Write expressions for \(P_{k+1}\text{,}\) \(Q_{k+1}\text{,}\) and \(R_{k+1}\) in terms of \(P_k\text{,}\) \(Q_k\text{,}\) and \(R_k\text{.}\)</p></li>
+<li><p>If we write \(\xvec_k =
+\threevec{P_k}{Q_k}{R_k}\text{,}\) find the matrix \(A\) such that \(\xvec_{k+1} = A\xvec_k\text{.}\)</p></li>
+<li><p>Explain why \(A\) is a stochastic matrix.</p></li>
+<li><p>Suppose that initially 40% of citizens vote for party \(P\text{,}\) 30% vote for party \(Q\text{,}\) and 30% vote for party \(R\text{.}\)  Form the vector \(\xvec_0\) and explain why \(\xvec_0\) is a probability vector.</p></li>
+<li><p>Find \(\xvec_1\text{,}\) the percentages who vote for the three parties in the next election.  Verify that \(\xvec_1\) is also a probabilty vector and explain why \(\xvec_k\) will be a probability vector for every \(k\text{.}\) <div class="sagecell-sage" id="sage-115"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the eigenvalues of the matrix \(A\) and explain why the eigenspace \(E_1\) is a one-dimensional subspace of \(\real^3\text{.}\)  Then verify that \(\vvec=\threevec{1}{2}{2}\) is a basis vector for \(E_1\text{.}\)</p></li>
+<li><p>As every vector in \(E_1\) is a scalar multiple of \(\vvec\text{,}\) find a probability vector in \(E_1\) and explain why it is the only probability vector in \(E_1\text{.}\)</p></li>
+<li><p>Describe what happens to \(\xvec_k\) after a very long time.</p></li>
+</ol></article><span class="incontext"><a href="sec-stochastic.html#activity-55">in-context</a></span>
+</body>
+</html>

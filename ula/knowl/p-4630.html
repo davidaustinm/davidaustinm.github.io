@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:40-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li><p>Construct the Google matrix \(G\) for this Internet.  Then use a Markov chain to find the steady-state PageRank vector \(\xvec\text{.}\) <div class="sagecell-sage" id="sage-121"><script type="text/x-sage">def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0.numerical_approx(digits=3))
+## define the matrix G and x0
+G =
+x0 =
+markov_chain(G, x0, 20)
+</script></div></p></li>
+<li><p>What does this vector tell us about the relative quality of the pages in this Internet?  Which page has the highest quality and which the lowest?</p></li>
+<li>
+<p>Now consider the Internet with five pages, shown in <a data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/google-cyclic.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">4.5.9.</span> A model of the Internet with five web pages.</figcaption></figure><p>What happens when you begin the Markov chain with the vector \(\xvec_0=\fivevec{1}{0}{0}{0}{0}\text{?}\)  Explain why this behavior is consistent with the Perron-Frobenius theorem.</p>
+</li>
+<li><p>What do you think the PageRank vector for this Internet should be?  Is any one page of a higher quality than another?</p></li>
+<li>
+<p>Now consider the Internet with eight web pages, shown in <a data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/google-reducible.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">4.5.10.</span> Another model of the Internet with eight web pages.</figcaption></figure><p>Notice that this version of the Internet is identical to the first one that we saw in this activity, except that a single link from page 7 to page 1 has been removed.  We can therefore find its Google matrix \(G\) by slightly modifying the earlier matrix.</p>
+<p>What is the long-term behavior of a Markov chain defined by \(G\) and why is this behavior not desirable?  How is this behavior consistent with the Perron-Frobenius theorem?</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-stochastic.html#p-4630">in-context</a></span>
+</body>
+</html>

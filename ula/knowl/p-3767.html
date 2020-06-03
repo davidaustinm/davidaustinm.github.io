@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We will use Sage to find the eigenvalues and eigenvectors of a matrix.  Let's begin with the matrix \(A = \left[\begin{array}{rr}
+1 \amp 2 \\
+2 \amp 1 \\
+\end{array}\right]
+\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>We can find the characteristic polynomial of a matrix \(A\) by writing <code class="code-inline tex2jax_ignore">A.charpoly('lam')</code>.  Notice that we have to give Sage a variable in which to write the polynomial;  here, we use <code class="code-inline tex2jax_ignore">lam</code> though you could just as well use <code class="code-inline tex2jax_ignore">x</code>.</p>
+<div class="sagecell-sage" id="sage-100"><script type="text/x-sage">A = matrix(2,2,[1,2,2,1])
+A.charpoly('lam')
+</script></div>
+<p>The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities.  The factor chacteristic polynomial is found with <code class="code-inline tex2jax_ignore">A.fcp('lam')</code>.</p>
+<div class="sagecell-sage" id="sage-101"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.fcp('lam')
+</script></div>
+</li>
+<li>
+<p>If we only want the eigenvalues, we can use <code class="code-inline tex2jax_ignore">A.eigenvalues()</code>.</p>
+<div class="sagecell-sage" id="sage-102"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.eigenvalues()
+</script></div>
+<p>Notice that the multiplicity of an eigenvalue is the number of times it is repeated in the list of eigenvalues.</p>
+</li>
+<li>
+<p>Finally, we can find eigenvectors by <code class="code-inline tex2jax_ignore">A.eigenvectors_right()</code>.  (We are looking for <em class="emphasis">right</em> eigenvalues since the vector \(\vvec\) appears to the right of \(A\) in the definition \(A\vvec=\lambda \vvec\text{.}\))</p>
+<div class="sagecell-sage" id="sage-103"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.eigenvectors_right()
+</script></div>
+<p>At first glance, the result of this command can be a little confusing to interpret.  What we see is a list with one entry for each eigenvalue.  For each eigenvalue, there is a triple consisting of (i) the eigenvalue \(\lambda\text{,}\) (ii) a basis for \(E_\lambda\text{,}\) and (iii) the multiplicity of \(\lambda\text{.}\)</p>
+</li>
+<li>
+<p>When working with decimal entries, which are called <em class="emphasis">floating point numbers</em> in computer science, we must remember that computers perform only approximate arithmetic. This is a problem when we wish to find the eigenvectors of such a matrix.  To illustrate, consider the matrix \(A=\left[\begin{array}{rr}
+0.4 \amp 0.3 \\
+0.6 \amp 0.7 \\
+\end{array}\right]
+\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>Without using Sage, find the eigenvalues of this matrix.</p></li>
+<li><p>What do you find for the reduced row echelon form of \(A-I\text{?}\)</p></li>
+<li>
+<p>Let's now use Sage to determine the reduced row echelon form of \(A-I\text{:}\)</p>
+<div class="sagecell-sage" id="sage-104"><script type="text/x-sage">A = matrix(2,2,[0.4,0.3,0.6,0.7])
+(A-identity_matrix(2)).rref()
+</script></div>
+<p>What result does Sage report for the reduced row echelon form?  Why is this result not correct?</p>
+</li>
+<li>
+<p>Because the arithmetic Sage performs with floating point entries is only approximate, we are not able to find the eigenspace \(E_1\text{.}\)  In this next chapter, we will learn how to address this issue.  In the meantime, we can get around this problem by writing the entries in the matrix as rational numbers:</p>
+<div class="sagecell-sage" id="sage-105"><script type="text/x-sage">A = matrix(2,2,[4/10,3/10,6/10,7/10])
+A.eigenvectors_right()
+</script></div>
+</li>
+</ol>
+</li>
+</ol>
+<span class="incontext"><a href="sec-eigen-find.html#p-3767">in-context</a></span>
+</body>
+</html>

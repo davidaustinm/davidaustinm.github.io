@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>When working with decimal entries, which are called <em class="emphasis">floating point numbers</em> in computer science, we must remember that computers perform only approximate arithmetic. This is a problem when we wish to find the eigenvectors of such a matrix.  To illustrate, consider the matrix \(A=\left[\begin{array}{rr}
+0.4 \amp 0.3 \\
+0.6 \amp 0.7 \\
+\end{array}\right]
+\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>Without using Sage, find the eigenvalues of this matrix.</p></li>
+<li><p>What do you find for the reduced row echelon form of \(A-I\text{?}\)</p></li>
+<li>
+<p>Let's now use Sage to determine the reduced row echelon form of \(A-I\text{:}\)</p>
+<div class="sagecell-sage" id="sage-104"><script type="text/x-sage">A = matrix(2,2,[0.4,0.3,0.6,0.7])
+(A-identity_matrix(2)).rref()
+</script></div>
+<p>What result does Sage report for the reduced row echelon form?  Why is this result not correct?</p>
+</li>
+<li>
+<p>Because the arithmetic Sage performs with floating point entries is only approximate, we are not able to find the eigenspace \(E_1\text{.}\)  In this next chapter, we will learn how to address this issue.  In the meantime, we can get around this problem by writing the entries in the matrix as rational numbers:</p>
+<div class="sagecell-sage" id="sage-105"><script type="text/x-sage">A = matrix(2,2,[4/10,3/10,6/10,7/10])
+A.eigenvectors_right()
+</script></div>
+</li>
+</ol>
+<span class="incontext"><a href="sec-eigen-find.html#p-3774">in-context</a></span>
+</body>
+</html>

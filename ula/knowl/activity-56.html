@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">4.5.3</span>.</h6>
+<p>Consider the matrices</p>
+<div class="displaymath">
+\begin{equation*}
+A=\left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right],\qquad
+B=\left[\begin{array}{rr}
+0.4 \amp 0.3 \\
+0.6 \amp 0.7 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>Verify that both \(A\) and \(B\) are stochastic matrices.</p></li>
+<li><p>Find the eigenvalues of \(A\) and then find a steady-state vector for \(A\text{.}\)</p></li>
+<li><p>We will form the Markov chain beginning with the vector \(\xvec_0 = \twovec{1}{0}\) and defining \(\xvec_{k+1} = A\xvec_k\text{.}\)  The Sage cell below constructs the first \(N\) terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix \(A\) and vector \(x0\) and evaluate the cell to find the first 10 terms of the Markov chain. <div class="sagecell-sage" id="sage-116"><script type="text/x-sage">def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0)
+## define the matrix A and x0
+A =
+x0 =
+markov_chain(A, x0, 10)
+</script></div> What do you notice about the Markov chain?  Does it converge to the steady-state vector for \(A\text{?}\)</p></li>
+<li><p>Now find the eigenvalues of \(B\) along with a steady-state vector for \(B\text{.}\)</p></li>
+<li><p>As before, find the first 10 terms in the Markov chain beginning with \(\xvec_0 = \twovec{1}{0}\) and \(\xvec_{k+1} = B\xvec_k\text{.}\)  What do you notice about the Markov chain?  Does it converge to the steady-state vector for \(B\text{?}\)</p></li>
+<li><p>What condition on the eigenvalues of a stochastic matrix will guarantee that a Markov chain will converge to a steady-state vector?</p></li>
+</ol></article><span class="incontext"><a href="sec-stochastic.html#activity-56">in-context</a></span>
+</body>
+</html>

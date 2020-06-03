@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.1.4</span>.</h6>
+<p>We'll begin with a set of three data points</p>
+<div class="displaymath">
+\begin{equation*}
+\dvec_1=\twovec11, \hspace{24pt}
+\dvec_2=\twovec21, \hspace{24pt}
+\dvec_3=\twovec34.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li>
+<p>Find the centroid, or mean, \(\overline{\dvec} =
+\frac1N\sum_j \dvec_j\text{.}\)  Then plot the data points and their centroid in <a data-knowl="./knowl/fig-variance-data.html" title="Figure 2.1.11">Figure 2.1.11</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.11.</span> <p id="p-533">Plot the data points and their centroid here.</p></figcaption></figure>
+</li>
+<li>
+<p>Notice that the centroid lies in the center of the data so that the spread of the data will be measured by how far away the points are from the centroid. To simplify our work, find the demeaned data points</p>
+<div class="displaymath">
+\begin{equation*}
+\dtil_j = \dvec_j - \overline{\dvec}
+\end{equation*}
+</div>
+<p>and plot them in <a data-knowl="./knowl/fig-variance-demeaned.html" title="Figure 2.1.12">Figure 2.1.12</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.12.</span> <p id="p-535">Plot the data points \(\dtil_j\) here.</p></figcaption></figure>
+</li>
+<li>
+<p>Now that the data has been demeaned, we will define the total variance as the average of the squares of the distances from the origin; that is, the total variance is</p>
+<div class="displaymath">
+\begin{equation*}
+V = \frac 1N\sum_j~\len{\dtil_j}^2.
+\end{equation*}
+</div>
+<p>Find the total variance \(V\text{.}\)</p>
+</li>
+<li>
+<p>Now plot the projections of the demeaned data onto the \(x\) and \(y\) axes using <a data-knowl="./knowl/fig-variance-projection.html" title="Figure 2.1.13">Figure 2.1.13</a>.  Then find the variances \(V_x\) and \(V_y\) of the projected points.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/x-axis-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/y-axis-4.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.13.</span> <p id="p-538">Plot the projections of the deameaned data onto the \(x\) and \(y\) axes.</p></figcaption></figure>
+</li>
+<li><p>Which of the variances, \(V_x\) and \(V_y\text{,}\) is larger and how does the plot of the projected points explain your response?</p></li>
+<li><p>What do you notice about the relationship between \(V\text{,}\) \(V_x\text{,}\) and \(V_y\text{?}\)  How does the Pythagorean theorem explain this relationship?</p></li>
+<li>
+<p>Plot the projections of the demeaned data points onto the lines defined by vectors \(\vvec_1=\twovec11\) and \(\vvec_2=\twovec{-1}1\) using <a data-knowl="./knowl/fig-variance-projection-2.html" title="Figure 2.1.14">Figure 2.1.14</a>.  Then find the variance \(V_{\vvec_1}\) and \(V_{\vvec_2}\) of these projected points.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4-diag.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.14.</span> <p id="p-542">Plot the projections of the deameaned data onto the lines defined by \(\vvec_1\) and \(\vvec_2\text{.}\)</p></figcaption></figure>
+</li>
+<li><p>What is the relationship between the total variance \(V\) and \(V_{\vvec_1}\) and \(V_{\vvec_2}\text{?}\) How does the Pythagorean theorem explain your response?</p></li>
+</ol></article><span class="incontext"><a href="sec-symmetric-matrices.html#activity-23">in-context</a></span>
+</body>
+</html>

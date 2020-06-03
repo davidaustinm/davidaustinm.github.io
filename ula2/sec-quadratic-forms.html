@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:55-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Quadratic forms</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-symmetric-matrices.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-pca.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-symmetric-matrices.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-pca.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms" class="active">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-quadratic-forms"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Quadratic forms</span>
+</h2>
+<a href="sec-quadratic-forms.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-579">In the last section, we saw that symmetric matrices can be orthogonally diagonalized and that the variance of a data set is described using a symmetric matrix, the covariance matrix \(C\text{.}\)  In addition, we saw how an understanding of directions where the variance is large and where it is small can help us understand when the data is concentrated along, say, a line.</p>
+<p id="p-580">In this section, we'll explore how to determine the directions in which the variance is as large as possible and where it is as small as possible.  In fact, this is part of a larger story, involving a type of function called a <em class="emphasis">quadratic form</em>, that we'll explore here.</p>
+<article class="project-like" id="preview-quadforms"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">2.2.1</span>.</h6>
+<p id="p-581">Let's begin by looking at an example.  Suppose we have three data points that form the demeaned data matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp 0 \amp -3 \\
+0 \amp 3 \amp -3 \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-296">
+<p id="p-582">Plot the demeaned data points in <a data-knowl="./knowl/fig-quad-preview.html" title="Figure 2.2.1">Figure 2.2.1</a>.</p>
+<figure class="figure-like" id="fig-quad-preview"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.2.1.</span> <p id="p-583">Use this coordinate grid to plot the demeaned data points.</p></figcaption></figure>
+</li>
+<li id="li-297"><p id="p-584">Based on this sketch, which direction would you estimate to have the greatest variance?  Which direction would you estimate to have the smallest variance?</p></li>
+<li id="li-298"><p id="p-585">Construct the covariance matrix \(C\text{.}\) <div class="sagecell-sage" id="sage-49"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-299"><p id="p-586">Find a basis of \(\real^2\) consisting of eigenvectors of \(C\text{.}\)  Use this to construct an orthogonal diagonalization of \(C\text{.}\)</p></li>
+<li id="li-300"><p id="p-587">Suppose that \(\uvec_1\) is an eigenvector having unit length associated with the largest eigenvalue of \(C\text{.}\)  Sketch the line defined by \(\uvec_1\) and determine the variance \(V_{\uvec_1}\text{.}\)</p></li>
+<li id="li-301"><p id="p-588">Suppose that \(\uvec_2\) is an eigenvector having unit length associated with the smallest eigenvalue of \(C\text{.}\)  Sketch the line defined by \(\uvec_2\) and determine the variance \(V_{\uvec_2}\text{.}\)</p></li>
+<li id="li-302"><p id="p-589">Generally speaking, if \(C\) is a covariance matrix and \(\uvec\) an eigenvector of \(C\) having unit length and with associated eigenvalue \(\lambda\text{,}\) what is \(V_{\uvec}\text{?}\)</p></li>
+</ol></article></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Quadratic forms</span>
+</h3>
+<p id="p-590">When we have a matrix \(A\) of demeaned data points, the symmetric covariance matrix \(C\) determines the variance in a direction \(\uvec\) by</p>
+<div class="displaymath">
+\begin{equation*}
+V_{\uvec} = \uvec\cdot(C\uvec)
+\end{equation*}
+</div>
+<p>where \(\uvec\) is a unit vector.</p>
+<p id="p-591">More generally, a symmetric \(n\times n\) matrix \(A\) defines a function \(q:\real^n \to \real\) by</p>
+<div class="displaymath">
+\begin{equation*}
+q(\xvec) = \xvec\cdot(A\xvec).
+\end{equation*}
+</div>
+<p>Notice that this expression is similar to the one we use to find the variance \(V_{\uvec}\) in terms of the covariance matrix \(C\text{.}\)  The only difference is that we allow \(\xvec\) to be any vector rather than requiring it to be a unit vector.</p>
+<article class="example-like" id="example-15"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.2</span>.</h6>
+<p id="p-592">Suppose that \(A=\begin{bmatrix}
+1 \amp 2\\
+2 \amp 1
+\end{bmatrix}
+\text{.}\)  If we write \(\xvec=\twovec{x_1}{x_2}\text{,}\) then we have</p>
+<div class="displaymath">
+\begin{align*}
+q\left(\twovec {x_1}{x_2}\right) \amp = \twovec
+{x_1}{x_2} \cdot
+\left(
+\begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}
+\twovec {x_1}{x_2}
+\right)\\
+\amp = \twovec {x_1}{x_2} \cdot
+\twovec{x_1 + 2x_2}{2x_1 + x_2}\\
+\amp = x_1^2 + 2xy + 2x_1x_2 + x_2^2\\
+\amp = x_1^2 + 4x_1x_2 + x_2^2.
+\end{align*}
+</div>
+<p id="p-593">We may evaluate the quadratic form using some input vectors:</p>
+<div class="displaymath">
+\begin{equation*}
+q\left(\twovec 10\right) = 1, \hspace{24pt}
+q\left(\twovec 11\right) = 6, \hspace{24pt}
+q\left(\twovec 24\right) = 52.
+\end{equation*}
+</div></article><article class="definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.2.3</span>.</h6>
+<p id="p-594">If \(A\) is a symmetric \(n\times n\) matrix, the <em class="emphasis">quadratic form</em> defined by \(A\) is the function \(q(\xvec) = \xvec\cdot(A\xvec)\text{.}\)</p></article><article class="project-like" id="activity-26"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.2.2</span>.</h6>
+<p id="p-595">We will look at some more examples of quadratic forms.</p>
+<ol class="lower-alpha">
+<li id="li-303"><p id="p-596">Consider the symmetric matrix \(D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp -1 \\
+\end{bmatrix}
+\text{.}\)  Write the quadratic form \(q(\xvec)\) defined by \(D\) in terms of the components of \(\xvec=\twovec{x_1}{x_2}\text{.}\)  What is the value of \(q\left(\twovec2{-4}\right)\text{?}\)</p></li>
+<li id="li-304"><p id="p-597">Given the symmetric matrix \(A=\begin{bmatrix}
+2 \amp 5 \\
+5 \amp -3
+\end{bmatrix}
+\text{,}\) write the quadratic form \(q(\xvec)\) defined by \(A\) and evaluate \(q\left(\twovec{2}{-1}\right)\text{.}\)</p></li>
+<li id="li-305"><p id="p-598">Suppose that \(q\left(\twovec{x_1}{x_2}\right) = 3x_1^2
+- 4x_1x_2 + 4x_2^2\text{.}\)  Find a symmetric matrix \(A\) such that \(q\) is the quadratic form defined by \(A\text{.}\)</p></li>
+<li id="li-306"><p id="p-599">Suppose that we have a demeaned data matrix \(A = \begin{bmatrix}
+2 \amp 5 \amp -7 \\
+-2 \amp -2 \amp 4
+\end{bmatrix}
+\text{.}\) Write the quadratic form defined by the covariance matrix \(C\text{.}\)</p></li>
+<li id="li-307"><p id="p-600">Suppose that \(q\) is a quadratic form and that \(q(\xvec) = 3\text{.}\)  What is \(q(2\xvec)\text{?}\) \(q(-\xvec)\text{?}\) \(q(10\xvec)\text{?}\)</p></li>
+<li id="li-308"><p id="p-601">Suppose that \(A\) is a symmetric matrix and \(q(\xvec)\) is the quadratic form defined by \(A\text{.}\)  Suppose that \(\xvec\) is an eigenvector of \(A\) with associated eigenvalue -4 and with length 7.  What is \(q(\xvec)\text{?}\)</p></li>
+</ol></article><p id="p-602">Linear algebra is principally about things that are linear. However, quadratic forms, as the name implies, have a distinctly non-linear character.  First, if \(A=\begin{bmatrix} a \amp b \\ b \amp c \end{bmatrix}\text{,}\) is a symmetric matrix, then the associated quadratic form is</p>
+<div class="displaymath">
+\begin{equation*}
+q\left(\twovec{x_1}{x_2}\right) = ax_1^2 + 2bx_1x_2 + cx_2^2.
+\end{equation*}
+</div>
+<p>Notice how the unknowns \(x_1\) and \(x_2\) are multiplied together, which tells us this isn't a linear function.</p>
+<p id="p-603">This expression takes a notable form if \(D\) is a diagonal matrix.  In particular, if \(D = \begin{bmatrix}
+a \amp 0 \\
+0 \amp c \\
+\end{bmatrix}
+\text{,}\) then \(q\left(\twovec{x_1}{x_2}\right) = ax_1^2 +
+cx_2^2\text{.}\)  This is special because there is no cross-term involving \(x_1x_2\text{.}\)</p>
+<p id="p-604">Remember that matrix transformations have the property that \(T(s\xvec) = sT(s\xvec)\text{.}\)  Quadratic forms behave differently:</p>
+<div class="displaymath">
+\begin{equation*}
+q(s\xvec) = (s\xvec)\cdot(A(s\xvec)) = s^2\xvec\cdot(A\xvec)=
+s^2q(\xvec).
+\end{equation*}
+</div>
+<p>For instance, when we multiply \(\xvec\) by the scalar 2, then \(q(2\xvec) = 4q(\xvec)\text{.}\)  Also, notice that \(q(-\xvec) = q(\xvec)\) since the scalar is squared.</p>
+<p id="p-605">Finally, evaluating a quadratic form on an eigenvector has a particularly simple form.  Suppose that \(\xvec\) is an eigenvector of \(A\) with associated eigenvalue \(\lambda\text{.}\)  We then have</p>
+<div class="displaymath">
+\begin{equation*}
+q(\xvec) = \xvec\cdot(A\xvec) = \lambda\xvec\cdot\xvec =
+\lambda \len{\xvec}^2.
+\end{equation*}
+</div>
+<p id="p-606">Let's now recall our motivating question:  in which direction \(\uvec\) is the variance of a dataset as large as possible and in which is it as small as possible.  Remembering that the vector \(\uvec\) is a unit vector, we can now state a more general form of this question: <em class="emphasis">If \(q(\xvec)\) is a quadratic form, for which unit vectors	\(\uvec\) is \(q(\uvec)\) as large as possible and for which is it as small as possible?</em> Since a unit vector specifies a direction, we will often ask for the directions in which the quadratic form \(q(\xvec)\) is at its maximum or minimum value.</p>
+<article class="project-like" id="activity-27"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.2.3</span>.</h6>
+<p id="p-607">We can gain some intuition about this problem by graphing the quadratic form paying particular attention to the unit vectors.</p>
+<ol class="lower-alpha">
+<li id="li-309"><p id="p-608">Evaluating the following cell defines the matrix \(D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp -1
+\end{bmatrix}\) and displays the graph of the associated quadratic form \(q_D(\xvec)\text{.}\)  In addition, the points corresponding to vectors \(\uvec\) with unit length are displayed as a curve. <div class="sagecell-sage" id="sage-50"><script type="text/x-sage">x, y, t = var('x', 'y', 't')
+
+A = matrix(2, 2, [3,0,0,-1])    
+
+def q(x,y):
+   return vector([x,y])*(A*vector([x,y]))
+graph = plot3d(q(x,y), (x,-1.2,1.2), (y,-1.2,1.2), color='orange', opacity=0.9, aspect_ratio=(1,1,1/max(matrix(RDF, A).singular_values())))
+curve = parametric_plot3d([cos(t), sin(t), q(cos(t), sin(t))], (t,0,2*pi), thickness=3)   
+graph + curve
+</script></div> Notice that the matrix \(D\) is diagonal.  In which directions does the quadratic form have its maximum and minimum values?</p></li>
+<li id="li-310"><p id="p-609">Write the quadratic form \(q_D\) associated to \(D\text{.}\)  What is the value of \(q_D\left(\twovec10\right)\text{?}\)  What is the value of \(q_D\left(\twovec01\right)\text{?}\)</p></li>
+<li id="li-311"><p id="p-610">Consider a unit vector \(\uvec=\twovec{u_1}{u_2}\) so that \(u_1^2+u_2^2 =
+1\text{,}\) an expression we can rewrite as \(u_1^2 =
+1-u_2^2\text{.}\)  Write the quadratic form \(q_D(\uvec)\) and replace \(u_1^2\) by \(1-u_2^2\text{.}\)  Now explain why the maximum of \(q_D(\uvec)\) is 3.  In which direction does this occur?  Does this agree with what you observed by looking at the graph above?</p></li>
+<li id="li-312"><p id="p-611">Write the quadratic form \(q_D(\uvec)\) and replace \(u_2^2\) by \(1-u_1^2\text{.}\)  What is the minimum value of \(q_D(\uvec)\) and in which direction does this occur?</p></li>
+<li id="li-313"><p id="p-612">Use the previous Sage cell to change the matrix to \(A=\begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}\) and display the graph of the quadratic form \(q_A(\xvec) = \xvec\cdot(A\xvec)\text{.}\) Determine the directions in which the maximum and minimum occur?</p></li>
+<li id="li-314">
+<p id="p-613">Remember that \(A=\begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}\) is symmetric so that \(A=QDQ^T\) where \(D\) is the diagonal matrix above and \(Q\) is the orthogonal matrix that rotates vectors by \(45^\circ\text{.}\)  Write \(\vvec = Q^T\uvec\text{.}\) Explain why \(\vvec\) is also a unit vector;  that is, explain why</p>
+<div class="displaymath">
+\begin{equation*}
+\len{\vvec}^2 = \len{Q^T\uvec}^2 =
+(Q^T\uvec)\cdot(Q^T\uvec) = 1.
+\end{equation*}
+</div>
+</li>
+<li id="li-315"><p id="p-614">We now have \(q_A(\uvec) = q_D(\vvec)\text{.}\)  Explain how we now know the maximum value of \(q_A(\uvec)\) is 3 and determine the direction in which this occurs.  Also, determine the minumum value of \(q_A(\uvec)\) and determine the direction in which this occurs.</p></li>
+</ol></article><p id="p-615">There's a lot in this activity so let's take some time to unpack it.  First off, diagonal matrices are relatively easy to work with.  For instance, the diagonal matrix \(D=\begin{bmatrix}
+3 \amp 0 \\
+0 \amp -1
+\end{bmatrix}\) defines the associated quadratic form \(q_D(\xvec) = 3x_1^2 - x_2^2\text{,}\) which has no cross term.  For this reason, we may determine where the maxima and minima of \(q(\uvec)\) occur when \(\uvec=\twovec{u_1}{u_2}\) is a unit vector.  In that case, we have \(u_1^2 + u_2^2 = 1\) so that we can rewrite</p>
+<div class="displaymath">
+\begin{equation*}
+q_D(\uvec) = 3u_1^2 - u_2^2 = 3(1-u_2^2) - u_2^2 = 3 - 4u_2^2.
+\end{equation*}
+</div>
+<p>Seen in terms of \(u_2\text{,}\) \(q_D(\uvec)\) is a quadratic function that has a maximum of 3 when \(u_2=0\text{.}\)  Therefore, the maximum value of \(q_D(\uvec)\) is 3, which occurs in the direction \(\uvec=\pm\twovec10\text{.}\)</p>
+<p id="p-616">Similarly, we can rewrite</p>
+<div class="displaymath">
+\begin{equation*}
+q_D(\uvec) = 3u_1^2 - u_2^2 = 3u_1^2 - (1-u_1^2) = 4u_1^2 - 1.
+\end{equation*}
+</div>
+<p>This shows us that \(q_D(\uvec)\) has a minimum value of -1, which occurs when \(u_1=0\) or when \(\uvec=\pm\twovec01\text{.}\)</p>
+<p id="p-617">When \(D\) is a diagonal matrix, we can now answer the question:  what are the maximum and minimum values of \(q_D(\uvec)\) and in which directions do they occur.  We can use this to understand the case of a more general symmetric matrix.</p>
+<p id="p-618">For example, if \(A\) is a symmetric matrix, we know that \(A\) is orthogonally diagonalizable and this forms a relationship between \(q_A\) and \(q_D\) for some diagonal matrix \(D\text{.}\)  Using the example in the activity, we have \(A = \begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix} = QDQ^T\) where \(Q=\begin{bmatrix}\uvec_1 \amp \uvec_2 \end{bmatrix}\) and \(D=\begin{bmatrix} 3 \amp 0 \\ 0 \amp -1
+\end{bmatrix}\text{.}\)  Recall that \(\uvec_1\) and \(\uvec_2\) are eigenvectors of \(A\) having associated eigenvalues 3 and -1, respectively.</p>
+<p id="p-619">Since \(Q\) is orthogonal, it preserves the lengths of vectors;  that is,</p>
+<div class="displaymath">
+\begin{equation*}
+\len{Q\vvec}^ 2 = (Q\vvec)\cdot(Q\vvec) =
+Q^TQ\vvec\cdot\vvec = \vvec\cdot\vvec=\len{\vvec}^2.
+\end{equation*}
+</div>
+<p>Therefore, if \(\uvec\) is a unit vector, then so is \(Q\uvec\text{.}\)</p>
+<p id="p-620">If \(\uvec\) is a unit vector, then</p>
+<div class="displaymath">
+\begin{equation*}
+q_A(\uvec) = \uvec\cdot(A\uvec) = \uvec\cdot(QDQ^T\uvec) =
+(Q^T\uvec)\cdot (DQ^T\uvec) = q_D(Q^T\uvec).
+\end{equation*}
+</div>
+<p>If we define \(\vvec=Q^T\uvec\text{,}\) or equivalently, \(\uvec=Q\vvec\text{,}\) then \(\vvec\) is also a unit vector, and we have \(q_A(\uvec) = q_D(\vvec)\text{.}\)  In other words, \(q_A\) and \(q_D\) are the same function after a change of coordinates.</p>
+<p id="p-621">We know that \(q_D(\vvec)\) has a maximum value of 3 when \(\vvec=\pm\twovec10\text{.}\)  This says that \(q_A(\uvec)\) has a maximum value of 3 when \(\uvec=Q\vvec=\pm Q\twovec10=\pm\uvec_1\text{.}\)  Similarly, \(q_A(\uvec)\) has a minimum value of -1 when \(\uvec=Q\vvec=\pm Q\twovec01 =\pm\uvec_2\text{.}\)</p>
+<p id="p-622">The essential thing to note is the role of the eigenvectors: the maximum value of \(q_A(\uvec)\) is the largest eigenvalue of \(A\) and that maximum occurs in the direction of \(\uvec_1\text{,}\) the eigenvector associated to the largest eigenvalue.  In the same way, the minimum value of \(q_A(\uvec)\) is the smallest eigenvalue and that minimum occurs in the direction of \(\uvec_2\text{,}\) the eigenvector associated to the smallest eigenvalue.</p>
+<p id="p-623">More generally, we have</p>
+<article class="theorem-like" id="prop-quadform-extrema"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.2.4</span>.</h6>
+<p id="p-624">Suppose that \(A\) is a symmetric matrix, that we list its eigenvalues in decreasing order \(\lambda_1 \geq \lambda_2 \ldots \geq \lambda_n\) and that \(\uvec_1,\uvec_2,\ldots,\uvec_n\) is a basis of associated eigenvectors. If \(\uvec\) is a unit vector, then the maximum value of \(q_A(\uvec)\) is \(\lambda_1\text{,}\) which occurs in the directions \(\pm\uvec_1\text{.}\)  Similarly, the minimum value of \(q_A(\uvec)\) is \(\lambda_n\text{,}\) which occurs in the directions \(\pm\uvec_n\text{.}\)</p></article><article class="example-like" id="example-16"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.5</span>.</h6>
+<p id="p-625">Consider the matrix \(A=\begin{bmatrix}
+2 \amp 2 \\
+2 \amp -1
+\end{bmatrix}\text{,}\) which may be orthogonally diagonalized as \(A=QDQ^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+Q = \begin{bmatrix}
+2/\sqrt{5} \amp -1/\sqrt{5} \\
+1/\sqrt{5} \amp 2/\sqrt{5}
+\end{bmatrix}, \hspace{24pt}
+D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp -2
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>We see that the maximum value of \(q_A(\uvec)\) is 3, which occurs in the direction \(\pm\twovec{2/\sqrt{5}}{1/\sqrt{5}}\text{,}\) and the minimum value is -2, which occurs in the direction \(\pm\twovec{-1/\sqrt{5}}{2/\sqrt{5}}\text{.}\)</p></article><article class="example-like" id="example-17"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.6</span>.</h6>
+<p id="p-626">Suppose we have the matrix of demeaned data points \(A = \begin{bmatrix}
+3 \amp 0 \amp -3 \\
+0 \amp 3 \amp -3 \\
+\end{bmatrix}\) that we considered in <a data-knowl="./knowl/preview-quadforms.html" title="Preview Activity 2.2.1">Preview Activity 2.2.1</a>.  The data points are shown in <a data-knowl="./knowl/fig-covariance-quad.html" title="Figure 2.2.7">Figure 2.2.7</a>.</p>
+<figure class="figure-like" id="fig-covariance-quad"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/quad-variance-data.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.2.7.</span> <p id="p-627">The set of demeaned data points from <a data-knowl="./knowl/preview-quadforms.html" title="Preview Activity 2.2.1">Preview Activity 2.2.1</a>.</p></figcaption></figure><p id="p-628">Consructing the covariance matrix \(C=\frac13~AA^T\) gives \(C=\begin{bmatrix}6\amp3 \\
+3\amp6\end{bmatrix}\text{,}\) which has eigenvalues \(\lambda_1
+= 9\text{,}\) with associated eigenvector \(\twovec11\text{,}\) and \(\lambda_2=3\text{,}\) with associated eigenvector \(\twovec{-1}1\text{.}\)</p>
+<p id="p-629">Remember that the variance in a direction \(\uvec\) is \(V_{\uvec} = \uvec\cdot(C\uvec) = q_C(\uvec)\text{.}\) Therefore, the variance attains a maximum value of 9 in the direction \(\twovec11\) and a minimum value of 3 in the direction \(\twovec{-1}1\text{.}\)  <a data-knowl="./knowl/fig-quad-project.html" title="Figure 2.2.8">Figure 2.2.8</a> shows the data projected onto the lines defined by these vectors.</p>
+<figure class="figure-like" id="fig-quad-project"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/quad-variance-a.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/quad-variance-b.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.2.8.</span> <p id="p-630">The demeaned data from <a data-knowl="./knowl/preview-quadforms.html" title="Preview Activity 2.2.1">Preview Activity 2.2.1</a> is shown projected onto the lines of maximal and minimal variance.</p></figcaption></figure><p id="p-631">Remember that variance is additive, as stated in <a data-knowl="./knowl/prop-variance-additivity.html" title="Proposition 2.1.15: Additivity of Variance">Proposition 2.1.15</a>, which tells us that the total variance is \(V = 9 + 3 = 12\text{.}\)</p></article><p id="p-632">We've been focused on finding the directions in which a quadratic form attains its maximum and minimum values, but there's another important observation to make after this activity.  Recall how we used the fact that a symmetric matrix is orthogonally diagonalizable: if \(A=QDQ^T\text{,}\) then \(q_A(\uvec) = q_D(\vvec)\) where \(\vvec = Q^T\uvec\text{.}\)</p>
+<p id="p-633">More generally, if we define \(\yvec = Q^T\xvec\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+q_A(\xvec) = \xvec\cdot(A\xvec) =
+\xvec\cdot(QDQ^T\xvec) =
+(Q^T\xvec)\cdot(DQ^T\xvec) =
+\yvec\cdot(D\yvec) = q_D(\yvec)
+\end{equation*}
+</div>
+<p>Remembering that the quadratic form associated to a diagonal form has no cross terms, we obtain</p>
+<div class="displaymath">
+\begin{equation*}
+q_A(\xvec) = q_D(\yvec) =
+\lambda_1y_1^2 + \lambda_2y_2^2 + \ldots + \lambda_ny_n^2.
+\end{equation*}
+</div>
+<p>In other words, after a change of coordinates, the quadratic form \(q_A\) can be written without cross terms.  This is known as the Principle Axes Theorem.</p>
+<article class="theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.2.9</span>. <span class="title">Principle Axes Theorem.</span>
+</h6>
+<p id="p-634">If \(A\) is a symmetric \(n\times n\) matrix with eigenvalues \(\lambda_1,\lambda_2,\ldots,\lambda_n\text{,}\) then the quadratic form \(q_A\) can be written, after an orthogonal change of coordinates \(\yvec=Q\xvec\text{,}\) as</p>
+<div class="displaymath">
+\begin{equation*}
+q_A(\xvec) = 
+\lambda_1^2y_1 + \lambda_2^2y_2 + \ldots +
+\lambda_ny_n^2.
+\end{equation*}
+</div></article><p id="p-635">We will put this to use in the next section.</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Definite symmetric matrices</span>
+</h3>
+<p id="p-636">While our study of variance provides motivation for exploring quadratic forms, these functions appear in a variety of other contexts so it's worth spending some more time with them.  In particular, quadratic forms appear in multivariable calculus when describing the behavior of a function of several variables near a critical point and in physics when describing the kinetic energy of a rigid body.</p>
+<p id="p-637">The following definition will be important in this section.</p>
+<article class="definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.2.10</span>.</h6>
+<p id="p-638">A symmetric matrix \(A\) is called <em class="emphasis">positive definite</em> if its associated quadratic form satisfies \(q_A(\xvec) \gt 0\) for any nonzero vector \(\xvec\text{.}\)  If \(q_A(\xvec) \geq 0\) for nonzero vectors \(\xvec\text{,}\) we say that \(A\) is <em class="emphasis">positive semidefinite</em>.</p>
+<p id="p-639">Likewise, we say that \(A\) is <em class="emphasis">negative definite</em> if \(q_A(\xvec) \lt 0\) for any nonzero vector \(\xvec\text{.}\)</p>
+<p id="p-640">Finally, \(A\) is called <em class="emphasis">indefinite</em> if \(q_A(\xvec) \gt 0\) for some \(\xvec\) and \(q_A(\xvec) \lt 0\) for others.</p></article><article class="project-like" id="activity-28"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.2.4</span>.</h6>
+<p id="p-641">This activity explores the relationship between the eigenvalues of a symmetric matrix and its definiteness.</p>
+<ol class="lower-alpha">
+<li id="li-316"><p id="p-642">Consider the diagonal matrix \(D=\begin{bmatrix}
+4 \amp 0 \\
+0 \amp 2 \\
+\end{bmatrix}\) and write its quadratic form \(q_D(\xvec)\) in terms of the components of \(\xvec=\twovec{x_1}{x_2}\text{.}\) How does this help you decide whether \(D\) is positive definite or not?</p></li>
+<li id="li-317"><p id="p-643">Now consider \(D=\begin{bmatrix}
+4 \amp 0 \\
+0 \amp 0 \\
+\end{bmatrix}\) and write its quadratic form \(q_D(\xvec)\) in terms of \(x_1\) and \(x_2\text{.}\)  What can you say about the definiteness of \(D\text{?}\)</p></li>
+<li id="li-318">
+<p id="p-644">If \(D\) is a diagonal matrix, what condition on the diagonal entries guarantee that \(D\) is</p>
+<ol class="lower-roman">
+<li id="li-319"><p id="p-645">positive definite?</p></li>
+<li id="li-320"><p id="p-646">positive semidefinite?</p></li>
+<li id="li-321"><p id="p-647">negative definite?</p></li>
+<li id="li-322"><p id="p-648">negative semidefinite?</p></li>
+<li id="li-323"><p id="p-649">indefinite?</p></li>
+</ol>
+</li>
+<li id="li-324"><p id="p-650">Suppose that \(A\) is a symmetric matrix with eigenvalues 4 and 2 so that \(A=QDQ^T\) where \(D=\begin{bmatrix}4 \amp 0 \\ 0 \amp 2
+\end{bmatrix}\text{.}\)  If \(\yvec = Q^T\xvec\text{,}\) then we have \(q_A(\xvec) = q_D(\yvec)\text{.}\)  Explain why this tells us that \(A\) is positive definite.</p></li>
+<li id="li-325"><p id="p-651">Suppose that \(A\) is a symmetric matrix with eigenvalues 4 and 0.  What can you say about the definiteness of \(A\) in this case?</p></li>
+<li id="li-326">
+<p id="p-652">What condition on the eigenvalues of a symmetric matrix \(A\) guarantee that \(A\) is</p>
+<ol class="lower-roman">
+<li id="li-327"><p id="p-653">positive definite?</p></li>
+<li id="li-328"><p id="p-654">positive semidefinite?</p></li>
+<li id="li-329"><p id="p-655">negative definite?</p></li>
+<li id="li-330"><p id="p-656">negative semidefinite?</p></li>
+<li id="li-331"><p id="p-657">indefinite?</p></li>
+</ol>
+</li>
+</ol></article><p id="p-658">As seen in this activity, it is straightforward to determine the definiteness of a diagonal matrix.  For instance, if \(D=\begin{bmatrix} 7 \amp 0 \\ 0 \amp 5 \end{bmatrix}\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+q_D(\xvec) = 7x_1^2 + 5x_2^2.
+\end{equation*}
+</div>
+<p>This shows that \(q_D(\xvec) \gt 0\) when either \(x_1\) or \(x_2\) is not zero so we conclude that \(D\) is positive definite.</p>
+<p id="p-659">In the same way, we see that \(D\) is positive semidefinite is all the diagonal entries are nonnegative.</p>
+<p id="p-660">Understanding this behavior for diagonal matrices enables us to understand more general symmetric matrices.  As we saw previously, the quadratic form for a symmetric matrix \(A=QDQ^T\) agrees with the quadratic form for the diagonal matrix \(D\) after a change of coordinates.  In particular,</p>
+<div class="displaymath">
+\begin{equation*}
+q_A(\xvec) = q_D(\yvec)
+\end{equation*}
+</div>
+<p>where \(\yvec=Q^T\xvec\text{.}\)  Now the diagonal entries of \(D\) are the eigenvalues of \(A\) from which we conclude that \(q_A(\xvec) \gt 0\) if all the eigenvalues of \(A\) are positive.  Likewise, \(q_A(\xvec)\geq 0\) if all the eigenvalues are nonnegative.</p>
+<article class="theorem-like" id="prop-definite-matrices"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.2.11</span>.</h6>
+<p id="p-661">A symmetric matrix is positive definite if all its eigenvalues are positive.  It is positive semidefinite if all its eigenvalues are nonnegative.</p>
+<p id="p-662">Likewise, a symmetric matrix is indefinite if some eigenvalues are positive and some are negative.</p></article><p id="p-663">This observation is useful when studying the nature of critical points in multivariable calculus.  The rest of this section assumes that the reader is familiar with ideas from multivariable calculus and can be skipped by others.</p>
+<p id="p-664">First, suppose that \(f(x,y)\) is a differentiable function. We will use \(f_x\) and \(f_y\) to denote the partial derivatives of \(f\) with respect to \(x\) and \(y\text{.}\) Similarly, \(f_{xx}\text{,}\) \(f_{xy}\text{,}\) \(f_{yx}\) and \(f_{yy}\) denote the second partial derivatives.  You may recall that the mixed partials, \(f_{xy}\) and \(f_{yx}\) are equal, under a mild assumption on the function \(f\text{.}\) A typical question in calculus is to determine where this function has its maximum and minimum values</p>
+<p id="p-665">Any local maximum or minimum of \(f\) appears at a critical point \((x_0,y_0)\) where</p>
+<div class="displaymath">
+\begin{equation*}
+f_x(x_0,y_0) = 0,\hspace{24pt}
+f_y(x_0,y_0) = 0.
+\end{equation*}
+</div>
+<p>Near a critical point, the linear approximation of \(f\) tells us that</p>
+<div class="displaymath">
+\begin{align*}
+f(x,y)\approx f(x_0,y_0) \amp + \frac12
+f_{xx}(x_0,y_0)(x-x_0)^2\\
+\amp + f_{xy}(x_0,y_0)(x-x_0)(y-y_0) + \frac12
+f_{yy}(x_0,y_0)(y-y_0)^2.
+\end{align*}
+</div>
+<article class="project-like" id="activity-29"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.2.5</span>.</h6>
+<p id="p-666">Let's explore how our understanding of quadratic forms helps us understand how \(f\) behaves near a critical point.</p>
+<ol class="lower-alpha">
+<li id="li-332"><p id="p-667">Consider the function \(f(x,y) = 2x^3 - 6xy +
+3y^2\text{.}\)  Find the partial derivatives \(f_{x}\) and \(f_y\text{.}\)  Then use these expressions to determine that the critical points of \(f\) are \((0,0)\) and \((1,1)\text{.}\)</p></li>
+<li id="li-333"><p id="p-668">Evaluate the second partial derivatives \(f_{xx}\text{,}\) \(f_{xy}\text{,}\) and \(f_{yy}\text{.}\)</p></li>
+<li id="li-334"><p id="p-669">Let's first consider the critical point \((1,1)\text{.}\) Use the linear approximation as written above to find an expression approximating \(f\) near the critical point.</p></li>
+<li id="li-335">
+<p id="p-670">Using the vector \(\wvec = \twovec{x-1}{y-1}\text{,}\) rewrite your approximation as</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y) \approx f(1,1) + q_A(\wvec)
+\end{equation*}
+</div>
+<p>for some matrix \(A\text{.}\)  What is the matrix \(A\) in this case?</p>
+</li>
+<li id="li-336"><p id="p-671">Find the eigenvalues of \(A\text{.}\)  What can you conclude about the definiteness of \(A\text{?}\)</p></li>
+<li id="li-337"><p id="p-672">Recall that \((x_0,y_0)\) is a local minimum for \(f\) if \(f(x,y) \gt f(x_0,y_0)\) for nearby points \((x,y)\text{.}\) Explain why our understanding of the eigenvalues of \(A\) shows that \((1,1)\) is a local minimum for \(f\text{.}\) <div class="sagecell-sage" id="sage-51"><script type="text/x-sage">plot3d(2*x^3 - 6*x*y + 3*y^2, (x, -2,2), (y,-2,2))
+</script></div></p></li>
+<li id="li-338"><p id="p-673">Show that the function \(g(x,y,z) = 4xyz = x^4
+-y^4-z^4\) has a critical point at \((1,1,1)\text{.}\)</p></li>
+<li id="li-339">
+<p id="p-674">Use the linear approximation to write</p>
+<div class="displaymath">
+\begin{equation*}
+g(x,y,z) \approx g(1,1,1) + q_A(\wvec)
+\end{equation*}
+</div>
+<p>for some matrix \(A\) when \(\wvec =
+\threevec{x-1}{y-1}{z-1}\text{.}\)</p>
+</li>
+<li id="li-340"><p id="p-675">Determine the matrix \(A\) and its eigenvalues.  What does this say about whether \(g\) has a local maximum or minimum at \((1,1,1)\text{?}\)</p></li>
+</ol></article><p id="p-676">Near a critical point \((x_0,y_0)\) of a function \(f(x,y)\text{,}\) we can write</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y) \approx f(x_0, y_0) + q_A(\wvec)
+\end{equation*}
+</div>
+<p>where \(\wvec = \twovec{x-x_0}{y-y_0}\) and \(A = \frac12
+\begin{bmatrix}
+f_{xx}(x_0,y_0) \amp f_{xy}(x_0,y_0) \\
+f_{yx}(x_0,y_0) \amp f_{yy}(x_0,y_0)
+\end{bmatrix}\text{.}\)  If \(A\) is positive definite, then \(q_A(\wvec) \gt 0\text{,}\) which tells us that</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y) \approx f(x_0,y_0) + q_A(\wvec) \gt f(x_0,y_0)
+\end{equation*}
+</div>
+<p>and that the critical point \((x_0,y_0)\) is therefore a local minimum.</p>
+<p id="p-677">The matrix</p>
+<div class="displaymath">
+\begin{equation*}
+H = 
+\begin{bmatrix}
+f_{xx}(x_0,y_0) \amp f_{xy}(x_0,y_0) \\
+f_{yx}(x_0,y_0) \amp f_{yy}(x_0,y_0)
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>is called the <em class="emphasis">Hessian</em> of \(f\text{,}\) and we see now that the eigenvalues of this symmetric matrix determine the nature of the critical point \((x_0,y_0)\text{.}\)  In particular, if the eigenvalues are both positive, then \(q_H\) is positive definite, and the critical point is a local minimum.</p>
+<p id="p-678">This observation leads to the Second Derivative Test for multivariable functions.</p>
+<article class="theorem-like" id="proposition-20"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.2.12</span>. <span class="title">Second Derivative Test.</span>
+</h6>
+<p id="p-679">The nature of a critical point of a multivariable function is determined by the Hessian \(H\) of the function at the critical point.  If</p>
+<ul class="disc">
+<li id="li-341"><p id="p-680">\(H\) has all positive eigenvalues, the critical point is a local minimum.</p></li>
+<li id="li-342"><p id="p-681">\(H\) has all negative eigenvalues, the critical point is a local maximum.</p></li>
+<li id="li-343"><p id="p-682">\(H\) has both positive and negative eigenvalues, the critical point is neither a local maximum or minimum.</p></li>
+</ul></article><p id="p-683">Most multivariable calculus texts assume that the reader is not familiar with eigenvalues and so write the second derivative test for functions of two variables in terms of \(D=\det(H)\text{.}\)  If</p>
+<ul class="disc">
+<li id="li-344"><p id="p-684">\(D \gt 0\) and \(f_{xx}(x_0,y_0)) \gt 0\text{,}\) then \((x_0, y_0)\) is a local minimum.</p></li>
+<li id="li-345"><p id="p-685">\(D \gt 0\) and \(f_{xx}(x_0,y_0)) \lt 0\text{,}\) then \((x_0, y_0)\) is a local maximum.</p></li>
+<li id="li-346"><p id="p-686">\(D \lt 0\text{,}\) then \((x_0,y_0)\) is neither a local maximum or minimum.</p></li>
+</ul>
+<p>The conditions in this version of the second derivative test imply the corresponding conditions on the eigenvalues of \(H\text{.}\)</p></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-687">This section explored quadratic forms, functions that are defined by symmetric matrices.</p>
+<ul class="disc">
+<li id="li-347">
+<p id="p-688">If \(A\) is a symmetric matrix, when the quadratic form defined by \(A\) is the function \(q_A(\xvec) =
+\xvec\cdot(A\xvec)\text{.}\)</p>
+<p id="p-689">Quadratic forms appear when studying the variance of a data set.  If \(C\) is the covariance matrix, then the variance in the direction defined by a unit vector \(\uvec\) is \(q_C(\uvec) = \uvec\cdot(C\uvec)\text{.}\)</p>
+<p id="p-690">Similarly, quadratic forms appear in multivariable calculus when analyzing the behavior of a function of several variables near a critical point.</p>
+</li>
+<li id="li-348">
+<p id="p-691">If \(\lambda_1\) is the largest eigenvalue of a symmetric matrix \(A\) and \(\lambda_n\) the smallest, then the maximum value of \(q_A(\uvec)\text{,}\) when \(\uvec\) is a unit vector, is \(\lambda_1\text{,}\) and this maximum value occurs in the direction of \(\uvec_1\text{,}\) a unit eigenvector associated to \(\lambda_1\text{.}\)</p>
+<p id="p-692">Similarly, the minimum value of \(q_A(\uvec)\) is \(\lambda_n\text{,}\) which appears in the direction of \(\uvec_n\text{,}\) an eigenvector associated to \(\lambda_n\text{.}\)</p>
+</li>
+<li id="li-349"><p id="p-693">A symmetric matrix is positive definite if its eigenvalues are all positive, positive semidefinite if its eigenvalues are all nonnegative, and indefinite if it has both positive and negative eigenvalues.</p></li>
+</ul></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

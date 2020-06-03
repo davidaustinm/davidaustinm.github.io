@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>In addition to loading the data, evaluating the cell above created a vector <code class="code-inline tex2jax_ignore">data_mean</code>, which is the mean of the four data points, and <code class="code-inline tex2jax_ignore">A</code>, the \(17\times4\) matrix of demeaned data.</p>
+<ol class="lower-alpha">
+<li><p>What is the average consumption of Beverages across the four nations? <div class="sagecell-sage" id="sage-59"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the covariance matrix \(C\) and its eigenvalues.  Because there are four points in \(\real^{17}\) whose mean is zero, there are only three nonzero eigenvalues.  State their values.</p></li>
+<li><p>For what percentage of the total variance does the first principal component account?</p></li>
+<li>
+<p>Find the first principal component \(\uvec_1\) and project the four demeaned data points onto the line defined by \(\uvec_1\text{.}\)  Plot those points on <a data-knowl="./knowl/fig-pca-1d.html" title="Figure 2.3.2">Figure 2.3.2</a></p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/pca-plot-1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.2.</span> <p id="p-741">A plot of the demeaned data projected onto the first principal component.</p></figcaption></figure>
+</li>
+<li><p>For what percentage of the total variance do the first two principal components account?</p></li>
+<li>
+<p>Find the cordinates of the demeaned data points projected onto \(W_2\text{,}\) the two-dimensional subspace of \(\real^{17}\) spanned by the first two principal components. <div class="sagecell-sage" id="sage-60"><script type="text/x-sage">
+</script></div></p>
+<p>Plot these coordinates in <a data-knowl="./knowl/fig-pca-2d.html" title="Figure 2.3.3">Figure 2.3.3</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/pca-plot-2.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.3.</span> <p id="p-745">The coordinates of the demeaned data points projected onto the first two principal components.</p></figcaption></figure>
+</li>
+<li><p>What information do these plots reveal that is not clear from consideration of the original data points?</p></li>
+<li><p>Study the first principal component \(\uvec_1\) and find the first component of \(\uvec_1\text{,}\) which corresponds to the dietary category Alcoholic Drinks. (To do this, you may wish to use <code class="code-inline tex2jax_ignore">N(u1,
+		digits=2)</code> for a result that's easier to read.) If a data point lies on the far right side of the plot in <a data-knowl="./knowl/fig-pca-2d.html" title="Figure 2.3.3">Figure 2.3.3</a>, what does it mean about that nation's consumption of Alcoholic Drinks?</p></li>
+</ol>
+<span class="incontext"><a href="sec-pca.html#p-736">in-context</a></span>
+</body>
+</html>

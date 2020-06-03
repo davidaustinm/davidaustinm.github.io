@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:45-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">5.1.2.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>We may find this result by forming the augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+\frac1{10000} \amp 1 \amp 1 \\
+1 \amp 1 \amp 2 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>and row reducing.</p>
+</li>
+<li><p>The solution would be rounded to \(x\approx1\) and \(y\approx1\text{.}\)</p></li>
+<li>
+<p>We first multiply the first row by \(-10000\) and add to the second row.  This gives</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{l}
+\left[\begin{array}{rr|r}
+0.0001 \amp 1 \amp 1 \\
+0 \amp -9999 \amp -9998 \\
+\end{array}\right] \\
+\approx
+\left[\begin{array}{rr|r}
+0.0001 \amp 1 \amp 1 \\
+0 \amp -10000 \amp -10000 \\
+\end{array}\right] \\
+\sim 
+\left[\begin{array}{rr|r}
+0.0001 \amp 1 \amp 1 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right] 
+\text{.}
+\end{array}
+\end{equation*}
+</div>
+<p>This tells us that \(y\approx 1\text{.}\)</p>
+</li>
+<li>
+<p>The next steps in the Gaussian elimination algorithm give us</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+0.0001 \amp 0 \amp 0 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>so have the approximation solution \(x\approx0\) and \(y\approx1\text{.}\)</p>
+</li>
+<li><p>This compares to the actual solution, as represented in our computer, as \(x\approx1\) and \(y\approx1\text{.}\) The value of \(x\) differs considerably.</p></li>
+<li>
+<p>Now we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+\left[\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+0.0001 \amp 1 \amp 1 \\
+\end{array}\right] \amp
+\sim \amp
+\left[\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+0 \amp 0.9999 \amp 0.9998 \\
+\end{array}\right] \\
+\amp \approx \amp
+\left[\begin{array}{rr|r}
+1 \amp 1 \amp 2 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]\text{,}
+\end{array}
+\end{equation*}
+</div>
+<p>which gives \(y\approx1\text{.}\)</p>
+</li>
+<li>
+<p>Performing one more row operation gives us</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 1 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p>which shows the approximate solution as \(x\approx1\) and \(y\approx1\text{.}\)</p>
+</li>
+<li><p>The second approach gives an approximate solution that is as accurate as possible given the computer's limited ability to store digits.</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-gaussian-revisited.html#solution-249">in-context</a></span>
+</body>
+</html>

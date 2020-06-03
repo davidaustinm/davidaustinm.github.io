@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:00-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">2.6.4.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\threevec{x}{y}{1} =
+\threevec{ax+by+c}{dx+ey+f}{1}\text{,}
+\end{equation*}
+</div>
+<p>which shows that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{2}
+x' \amp {}={} ax+by+c \\
+y' \amp {}={} dx+ey+f\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li><p>We would like to reflect in the vertical axis so we use the matrix \(\left[\begin{array}{rrr}
+-1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</p></li>
+<li><p>The character is successively rotated by \(45^\circ\) using the matrix \(\left[\begin{array}{rrr}
+\cos(45^\circ) \amp -\sin(45^\circ) \amp 0 \\
+\sin(45^\circ) \amp  \sin(45^\circ) \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+\frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}} \amp 0 \\
+\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</p></li>
+<li>
+<p>We first translate the character down two units using the matrix \(\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -2 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\) Then we zoom in by uniformly stretching by a factor of \(2\) using the matrix \(\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp 2 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\) The net effect is the transformation described by the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp 2 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -2 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+=
+\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp 2 \amp -4 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>The shadow is first created using the shear \(\left[\begin{array}{rrr}
+1 \amp 1 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\) Then the vertical scale is compressed using the matrix \(\left[\begin{array}{rrr}
+\frac12 \amp 0 \amp 0 \\
+0 \amp \frac12 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-transforms-geom.html#solution-101">in-context</a></span>
+</body>
+</html>

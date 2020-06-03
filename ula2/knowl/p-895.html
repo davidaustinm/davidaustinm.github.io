@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:59-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Consider the equation \(A\xvec=\bvec\) where</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 0 \\
+1 \amp 1 \\
+1 \amp 2
+\end{bmatrix}
+\xvec = \threevec{-1}36
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>Find a singular value decomposition for \(A\) using the Sage cell below.  What are singular values of \(A\text{?}\) <div class="sagecell-sage" id="sage-77"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>What is \(r\text{,}\) the rank of \(A\text{?}\)  How can we identify an orthonormal basis for \(\col(A)\text{?}\)</p></li>
+<li>
+<p>Suppose we write \(\bvec\) as a linear combination of the columns of \(U\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec = c_1\uvec_1 + c_2\uvec_2 + c_3\uvec_3.
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li><p>What condition on the weights \(c_1\text{,}\) \(c_2\text{,}\) and \(c_3\) determine whether \(A\xvec = \bvec\) is consistent?</p></li>
+<li><p>Similarly, what condition on \(U^T\bvec\) determines whether \(A\xvec=\bvec\) is consistent.</p></li>
+<li><p>Evaluate \(U^T\bvec\) and determine whether \(A\xvec=\bvec\) is consistent. <div class="sagecell-sage" id="sage-78"><script type="text/x-sage">
+</script></div></p></li>
+</ol>
+</li>
+<li>
+<p>Form the reduced singular value decomposition \(U_r\Sigma_rV_r^T\) by constructing the matrix \(U_r\text{,}\) consisting of the first \(r\) columns of \(U\text{,}\) \(V_r\text{,}\) consisting of the first \(r\) columns of \(V\text{,}\) and \(\Sigma_r\text{,}\) an \(r\times r\) matrix. Verify that \(A=U_r\Sigma_r V_r^T\text{.}\)</p>
+<p>You may find it convenient to remember that, if <code class="code-inline tex2jax_ignore">B</code> is a matrix defined in Sage, then <code class="code-inline tex2jax_ignore">B.matrix_from_columns( list )</code> and <code class="code-inline tex2jax_ignore">B.matrix_from_rows( list )</code> can be used to extract columns or rows from <code class="code-inline tex2jax_ignore">B</code>. <div class="sagecell-sage" id="sage-79"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>How does the reduced singular value decomposition provide a matrix whose columns are an orthonormal basis for \(\col(A)\text{?}\)</p></li>
+<li>
+<p>Explain why \(\xhat\text{,}\) the least squares approximate solution, satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A\xhat = U_r\Sigma_rV_r^T\xhat = U_rU_r^T\bvec.
+\end{equation*}
+</div>
+</li>
+<li><p>What is the product \(U_r^TU_r\text{?}\)  What do you find if you multiply both sides of \(U_r\Sigma_rV_r^T\xhat
+= U_rU_r^T\bvec\) by \(U_r^T\text{?}\)</p></li>
+<li>
+<p>Explain why</p>
+<div class="displaymath">
+\begin{equation*}
+\xhat = V_r\Sigma_r^{-1}U_r^T\bvec
+\end{equation*}
+</div>
+<p>and use this expression to find \(\xhat\text{.}\) <div class="sagecell-sage" id="sage-80"><script type="text/x-sage">
+</script></div></p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-svd-uses.html#p-895">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:08-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li>
+<p>First, we will explore the \(RGB\) color model.</p>
+<p>COLOR-RGB</p>
+<ol class="lower-roman">
+<li><p>What happens when \(G=0\text{,}\) \(B=0\) (pushed all the way to the left), and \(R\) is allowed to vary?</p></li>
+<li><p>What happens when \(R=0\text{,}\) \(G=0\text{,}\) and \(B\) is allowed to vary?</p></li>
+<li><p>How can you create black in this color model?</p></li>
+<li><p>How can you create white?</p></li>
+</ol>
+</li>
+<li>
+<p>Next, we will explore the \(YC_bC_r\) color model.</p>
+<p>COLOR-YCbCr</p>
+<ol class="lower-roman">
+<li><p>What happens when \(C_b=0\) and \(C_r=0\) (kept in the center) and \(Y\) is allowed to vary?</p></li>
+<li><p>What happens when \(Y=0\) (pushed to the left), \(C_r=0\) (kept in the center), and \(C_b\) is allowed to increase between 0 and 127.5?</p></li>
+<li><p>What happens when \(Y=0\text{,}\) \(C_b=0\text{,}\) and \(C_r\) is allowed to increase between 0 and 127.5?</p></li>
+<li><p>How can you create black in this color model?</p></li>
+<li><p>How can you create white?</p></li>
+</ol>
+</li>
+<li><p>Verify that \(\bcal\) is a basis for \(\real^3\text{.}\) <div class="sagecell-sage" id="sage-86"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the matrix \(C_{\bcal}\) that converts from \(\threevec{Y}{C_b}{C_r}\) coordinates into \(\threevec{R}{G}{B}\) coordinates.  Then find the matrix \(C_{\bcal}^{-1}\) that converts from \(\threevec{R}{G}{B}\) coordinates back into \(\threevec{Y}{C_b}{C_r}\) coordinates.</p></li>
+<li>
+<p>Find the \(\threevec{Y}{C_b}{C_r}\) coordinates for the following colors and check, using the diagrams above, that the two representations agree.</p>
+<ol class="lower-roman">
+<li><p>Pure red is \(\threevec{R}{G}{B}=
+\threevec{255}{0}{0}\text{.}\)</p></li>
+<li><p>Pure green is \(\threevec{R}{G}{B}=
+\threevec{0}{255}{0}\text{.}\)</p></li>
+<li><p>Pure blue is \(\threevec{R}{G}{B}=
+\threevec{0}{0}{255}\text{.}\)</p></li>
+<li><p>Pure white is \(\threevec{R}{G}{B}=
+\threevec{255}{255}{255}\text{.}\)</p></li>
+<li><p>Pure black is \(\threevec{R}{G}{B}=
+\threevec{0}{0}{0}\text{.}\)</p></li>
+</ol>
+</li>
+<li>
+<p>Find the \(\threevec{R}{G}{B}\) coordinates for the following colors and check, using the diagrams above, that the two representations agree.</p>
+<ol class="lower-roman">
+<li><p>\(\threevec{Y}{C_b}{C_r}=\threevec{128}{0}{0}\text{.}\)</p></li>
+<li><p>\(\threevec{Y}{C_b}{C_r}=\threevec{128}{60}{0}\text{.}\)</p></li>
+<li><p>\(\threevec{Y}{C_b}{C_r}=\threevec{128}{0}{60}\text{.}\)</p></li>
+</ol>
+</li>
+<li>
+<p>Write an expression for</p>
+<ol class="lower-roman">
+<li><p>The luminance \(Y\) as it depends on \(R\text{,}\) \(G\text{,}\) and \(B\text{.}\)</p></li>
+<li><p>The blue chrominance \(C_b\) as it depends on \(R\text{,}\) \(G\text{,}\) and \(B\text{.}\)</p></li>
+<li><p>The red chrominance \(C_r\) as it depends on \(R\text{,}\) \(G\text{,}\) and \(B\text{.}\)</p></li>
+</ol>
+<p>Explain how these quantities can be roughly interpreted by stating that</p>
+<ol class="lower-roman">
+<li><p>the luminance represents the brightness of the color.</p></li>
+<li><p>the blue chrominance measures the amount of blue in the color.</p></li>
+<li><p>the red chrominance measures the amount of red in the color.</p></li>
+</ol>
+</li>
+</ol>
+<span class="incontext"><a href="sec-jpeg.html#p-2703">in-context</a></span>
+</body>
+</html>

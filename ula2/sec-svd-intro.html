@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:55-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Singular Value Decomposition</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-pca.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-svd-uses.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-pca.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-svd-uses.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro" class="active">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-svd-intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">The Singular Value Decomposition</span>
+</h2>
+<a href="sec-svd-intro.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-766">The power of the Spectral Theorem has animated the past few sections.  Because symmetric matrices are orthogonally diagonalizable, we are able to understand quadratic forms, which helped us develop the second derivative test in multivariable calculus and principal component analysis.  More specifically, the fact that the covariance matrix \(C\) is symmetric means that we can write \(C=QDQ^T\text{,}\) where the columns of \(Q\) provide the principal components and the diagonal entries of \(D\) tell us how the relative importance of each of those components.</p>
+<p id="p-767">But what about matrices that are not symmetric or even square? For instance, the following matrices are not diagonalizable, much less orthogonally so:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+2 \amp 1 \\
+0 \amp 2
+\end{bmatrix},
+\hspace{24pt}
+\begin{bmatrix}
+1 \amp 1 \amp 0 \\
+-1 \amp 0 \amp 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>In this section, we will begin exploring an alternative description of matrices called the <em class="emphasis">singular value decomposition</em>.  Most notably, we will see that every matrix has a singular value decomposition and that the decomposition of a symmetric matrix is closely related to its orthogonal diagonalization.  In this way, we will see that singular value decompositions provide us with a powerful tool for working with general matrices that is analagous to how we use orthogonal diagonalizations to work with symmetric matrices.</p>
+<article class="project-like" id="exploration-9"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">2.4.1</span>.</h6>
+<p id="p-768">It will be helpful to remember some concepts from earlier parts of the course.</p>
+<ol class="lower-alpha">
+<li id="li-390"><p id="p-769">Find the orthogonal diagonalization of the symmetric matrix \(A = \begin{bmatrix} 2 \amp 1 \\ 1 \amp 2
+\end{bmatrix}\text{.}\) <div class="sagecell-sage" id="sage-68"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-391"><p id="p-770">What is the maximum value of the quadratic form \(q_A(\uvec)\) where \(\uvec\) is a unit vector and in what direction does this maximum occur?</p></li>
+<li id="li-392"><p id="p-771">What do we mean by the rank of a matrix \(A\text{?}\)</p></li>
+<li id="li-393"><p id="p-772">What do we mean by \(\nul(A)\text{,}\) the null space of a matrix \(A\) and how is its dimension expressed in terms of \(\rank(A)\text{?}\)</p></li>
+<li id="li-394"><p id="p-773">What do we mean by \(\col(A)\text{,}\) the column space of a matrix \(A\) and how is its dimension expressed in terms of \(\rank(A)\text{?}\)  What is the relationship between \(\col(A)\) and questions about the consistency of an equation \(A\xvec = \bvec\text{?}\)</p></li>
+<li id="li-395"><p id="p-774">How does the matrix \(A^T\) help us understand the orthogonal complement of \(\col(A)\text{?}\)</p></li>
+</ol></article></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">An introduction to singular value decompositions</span>
+</h3>
+<p id="p-775">We will begin by explaining what a singular value decomposition is and how it generalizes the notion of orthogonal diagonalization. First, recall how the orthogonal diagonalization of a symmetric matrix is formed:  if \(A\) is symmetric, we write \(A = QDQ^T\) where the diagonal entries of \(D\) are the eigenvalues of \(A\) and the columns of \(Q\) are the associated eigenvectors.</p>
+<p id="p-776">Now imagine an alternate world in which we don't have a theory about the eigenvalues and eigenvectors of a \(2\times2\) symmetric matrix \(A\text{.}\)  If we studied the quadratic form \(q_A\text{,}\) however, we could detect the eigenvalues as the maximum and minimum of \(q_A\) among all unit vectors and the associated eigenvectors as the unit vectors at which the maximum and minimum occur.</p>
+<p id="p-777">A general matrix, particularly a matrix that is not square, may not have eigenvalues and eigenvectors, but we can discover analogous features called <em class="emphasis">singular values</em> and <em class="emphasis">singular vectors</em>, by studying something like a quadratic form.  More specifically, a matrix \(A\) defines a function</p>
+<div class="displaymath">
+\begin{equation*}
+l_A(\xvec) = \len{A\xvec},
+\end{equation*}
+</div>
+<p>that measures the length of \(A\xvec\text{.}\)  This function is not a quadratic form, but we can discover the singular values and vectors by looking for the maximum and minimum of this function among unit vectors.  The next activity introduces us to singular values and vectors in a geometric way.</p>
+<article class="project-like" id="activity-34"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.4.2</span>.</h6>
+<p id="p-778">The following interactive figure will help us explore singular values and vectors geometrically before we begin a more algebraic approach.  This figure is also available at <a class="external" href="http://gvsu.edu/s/0YE" target="_blank">gvsu.edu/s/0YE</a>.</p>
+<figure class="figure-like" id="js-svd"><div style="width:600px;"><p id="p-779">The four sliders at the top of this figure enable us to choose a \(2\times2\) matrix \(A\text{.}\)  Below on the left, we see the unit circle and the red unit vector \(\xvec\text{.}\)  Notice that we can vary \(\xvec\) by clicking in the head of the vector and dragging it to a new unit vector.</p></div>
+<iframe id="interactive-svd" width="600" height="400" src="interactive-svd-if.html"></iframe><figcaption><span class="type">Figure</span> <span class="codenumber">2.4.1.</span> Singular values, right singular vectors and left singular vectors</figcaption></figure><ol id="p-780" class="lower-alpha">
+<li id="li-396">
+<p id="p-781">Let's begin by studying the matrix \(A=\begin{bmatrix} 1 \amp 2 \\ 2 \amp 1
+\end{bmatrix}
+\text{.}\)  Of course, this is a symmetric matrix that we know can be written as \(A=QDQ^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp -1
+\end{bmatrix},\hspace{24pt}
+Q = \begin{bmatrix}
+1/\sqrt{2} \amp -1/\sqrt{2} \\
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p id="p-782">On the right side of the figure, you will see the vector \(A\xvec\) in gray.  The height of the blue rectangle is \(l_A(\xvec)\text{,}\) the length of \(A\xvec\text{.}\)  Move the vector \(\xvec\) so that \(l_A(\xvec)\) is as large as possible.</p>
+<ol class="lower-roman">
+<li id="li-397"><p id="p-783">The maximum value of \(l_A(\xvec)\) is called the first singular value and denoted \(\sigma_1\text{.}\)  What is the value of \(\sigma_1\text{?}\)</p></li>
+<li id="li-398"><p id="p-784">The vector \(\xvec\) that gives the maximum value of \(l_A(\xvec)\) is \(\vvec_1\text{,}\) the first <em class="emphasis">right singular vector</em>.  This may seem a little confusing because the right singular vector appears on the left side of the diagram, but the reason for this terminology will be clear later. What do you find for \(\vvec_1\text{?}\)</p></li>
+<li id="li-399"><p id="p-785">Finally, <em class="emphasis">left singular vector</em> \(\uvec_1\) is the unit vector, shown on the right in blue, that is parallel to \(A\vvec_1\text{.}\)  Once again, it may not be clear why the left singular vector appears on the right of the diagram, but we'll explain this later.  What do you find for the left singular vector?</p></li>
+</ol>
+</li>
+<li id="li-400">
+<p id="p-786">Now move \(\xvec\) so that \(l_A(\xvec)\) is as small as possible.  What do you find for</p>
+<ol class="lower-roman">
+<li id="li-401"><p id="p-787">the second singular value \(\sigma_2\text{,}\) the smallest value of \(l_A(\xvec)\text{?}\)</p></li>
+<li id="li-402"><p id="p-788">the right singular vector \(\vvec_2\text{,}\) the vector \(\xvec\) at which the minimum occurs?</p></li>
+<li id="li-403"><p id="p-789">the left singular vector \(\uvec_2\text{,}\) the unit vector parallel to \(A\vvec_2\text{?}\)</p></li>
+</ol>
+</li>
+<li id="li-404"><p id="p-790">For this symmetric matrix \(A\text{,}\) how do the singular values and singular vectors appear to be related to the eigenvalues and eigenvectors of \(A\text{?}\)</p></li>
+<li id="li-405"><p id="p-791">Let's now look at the matrix \(A = \begin{bmatrix}
+1 \amp 2 \\
+-1 \amp 2
+\end{bmatrix}
+\text{.}\) Move the vector \(\xvec\) so that \(l_A(\xvec)\) is as large as possible.  What do you find for the singular value \(\sigma_1\text{,}\) the right singular vector \(\vvec_1\) at which this maximum occurs, and the left singular vector \(\uvec_1\text{,}\) the unit vector which is parallel to \(A\vvec_1\text{?}\)</p></li>
+<li id="li-406"><p id="p-792">Move the vector \(\xvec\) again so that \(l_A(\xvec)\) is as small as possible.  What do you find for the second singular value \(\sigma_2\text{,}\) right singular vector \(\vvec_2\text{,}\) and left singular vector \(\uvec_2\text{?}\)</p></li>
+<li id="li-407"><p id="p-793">What do you notice about the angle between the two right singular vectors \(\vvec_1\) and \(\vvec_2\text{?}\)  What do you notice about the angle between the two left singular vectors \(\uvec_1\) and \(\uvec_2\text{?}\)</p></li>
+<li id="li-408"><p id="p-794">Explain why \(A\vvec_1 = \sigma_1\uvec_1\) and \(A\vvec_2 = \sigma_2\uvec_2\text{.}\)</p></li>
+</ol></article><p id="p-795">Before moving on, let's summarize these results and take a look ahead.</p>
+<article class="example-like" id="example-18"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.4.2</span>.</h6>
+<p id="p-796">When \(A=\begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}\text{,}\) we find singular values and vectors</p>
+<div class="displaymath">
+\begin{align*}
+\sigma_1 = 3, \hspace{24pt}\amp \vvec_1 =
+\twovec{1/\sqrt{2}}{1/\sqrt{2}}, 
+\amp \uvec_1 = \twovec{1/\sqrt{2}}{1/\sqrt{2}}\\
+\sigma_2 = 1, \hspace{24pt}\amp \vvec_2 =
+\twovec{-1/\sqrt{2}}{1/\sqrt{2}}, 
+\amp \uvec_2 = \twovec{1/\sqrt{2}}{-1/\sqrt{2}}
+\end{align*}
+</div>
+<p>Notice that the singular values \(\sigma_j\) are the absolute values of the eigenvalues of \(A\) and that the right singular vectors \(\vvec_j\) are eigenvectors of \(A\text{.}\) The left singular vectors are also eigenvectors and satisfy \(\uvec_j = \pm\vvec_j\) depending on whether the associated eigenvalue is positive or negative.</p>
+<p id="p-797">Just as the orthogonal diagonalization leads to a factorization \(A=QDQ^T\text{,}\) the singular values and vectors lead to a factorization as well.  We will explain this more fully later, but for now, let's get a sense of where we're headed.  We form three matrices:  \(U\) having columns \(\uvec_1\) and \(\uvec_2\text{,}\) \(V\) having columns \(\vvec_1\) and \(\vvec_2\text{,}\) and \(\Sigma\text{,}\) a diagonal matrix whose entries are the singular values:</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix},
+\Sigma = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp 1
+\end{bmatrix},
+V = \begin{bmatrix}
+1/\sqrt{2} \amp -1/\sqrt{2} \\
+1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>It turns out that the product \(U\Sigma V^T\) forms the original matrix \(A\text{;}\)  that is,</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+3 \amp 0 \\
+0 \amp 1
+\end{bmatrix}
+\begin{bmatrix}
+1/\sqrt{2} \amp -1/\sqrt{2} \\
+1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>We call this factorization \(A=U\Sigma V^T\text{,}\) the <em class="emphasis">singular value decomposition</em> of \(A\) and note its similarity to the orthogonal diagonalization \(A=QDQ^T\text{.}\)</p></article><article class="example-like" id="example-19"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.4.3</span>.</h6>
+<p id="p-798">Let's now look at the matrix \(A=\begin{bmatrix}
+1 \amp 2 \\
+-1 \amp 2
+\end{bmatrix}
+\text{.}\)  The eigenvalues of this matrix are not real so \(A\) is not diagonalizable, much less orthogonally diagonalizable. However, the previous activity shows that we have singular values and vectors:</p>
+<div class="displaymath">
+\begin{align*}
+\sigma_1 = \sqrt{8}, \hspace{24pt}\amp \vvec_1 =
+\twovec01
+\amp \uvec_1 = \twovec{1/\sqrt{2}}{1/\sqrt{2}}\\
+\sigma_2 = \sqrt{2}, \hspace{24pt}\amp \vvec_2 =
+\twovec10
+\amp \uvec_2 = \twovec{1/\sqrt{2}}{-1/\sqrt{2}}
+\end{align*}
+</div>
+<p id="p-799">Notice that there is a connection between a singular value and its associated singular vectors.  Because</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_j = l_A(\vvec_j) = \len{A\vvec_j},
+\end{equation*}
+</div>
+<p>we see that \(\sigma_j\) equals the length of \(A\vvec_j\text{.}\)  Since \(\uvec_j\) is a unit vector whose direction is the same as \(A\vvec_j\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+A\vvec_j = \sigma_j\uvec_j,
+\end{equation*}
+</div>
+<p>a key fact we'll soon use when we find singular value decompositions algebraically.</p>
+<p id="p-800">Once again, we construct the matrices \(U\text{,}\) \(V\text{,}\) and \(\Sigma\) as before,</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix},
+\Sigma = \begin{bmatrix}
+\sqrt{8} \amp 0 \\
+0 \amp \sqrt{2}
+\end{bmatrix},
+V = \begin{bmatrix}
+0 \amp 1 \\
+1 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>and see that \(A=U\Sigma V^T\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp 2 \\
+-1 \amp 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{8} \amp 0 \\
+0 \amp \sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+0 \amp 1 \\
+1 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Notice that the right singular vectors \(\vvec_1\) and \(\vvec_2\) are orthgonal to one another and that the left singular vectors \(\uvec_1\) and \(\uvec_2\) are orthogonal.  We will soon verify that the orthogonality of the right and left singular vectors is a general principle. For now, however, notice that this means that \(U\) and \(V\) are orthogonal matrices as their columns form orthonormal bases of \(\real^2\text{.}\)</p>
+<p id="p-801">To summarize, we see that, even though \(A\) is not diagonalizable, it still has a singular value decomposition \(A=U\Sigma V^T\) where \(\Sigma\) is diagonal and \(U\) and \(V\) are orthogonal.  In fact, we will see that <em class="emphasis">every</em> matrix, even those that are not square, has a singular value decomposition, and we can apply these decompositions to study general matrices in the same way we used orthogonal diagonalizations to study symmetric matrices.</p></article></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Finding singular value decompositions algebraically</span>
+</h3>
+<p id="p-802">Now that we have a sense of what singular value decompositions are, we will explore an algebraic technique for finding them.  We earlier found singular values by studying the function \(l_A(\xvec) = \len{A\xvec}\text{.}\)  Our key observation is that, while \(l_A\) is not a quadratic form, its square is.  That is, we will define</p>
+<div class="displaymath">
+\begin{equation*}
+q(\xvec) =
+\left(l_A(\xvec)\right)^2 = \len{A\xvec}^2
+\end{equation*}
+</div>
+<p>and notice that</p>
+<div class="displaymath">
+\begin{equation*}
+q(\xvec) = \len{A\xvec}^2 = (A\xvec)\cdot(A\xvec) =
+\xvec\cdot(A^TA\xvec).
+\end{equation*}
+</div>
+<p>To find singular values and vectors, we sought the maximum and minimum values of \(l_A(\xvec) = \sqrt{q(\xvec)}\text{.}\) Because \(q(\xvec)\) is a quadratic form, we know how to find its maximum and minimum values using an orthogonal diagonalization of its associated matrix \(A^TA\text{.}\)  The matrix \(A^TA\) is called the <em class="emphasis">Gram matrix</em> of \(A\text{,}\) and the next activity explores its role in constructing the singular value decomposition of \(A\text{.}\)</p>
+<article class="project-like" id="activity-35"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.4.3</span>.</h6>
+<p id="p-803">In this activity, we will construct the singular value decomposition of \(A=\begin{bmatrix} 1 \amp 0 \amp -1 \\
+1 \amp 1 \amp 1
+\end{bmatrix}
+\text{.}\)  Notice that this matrix is not square so eigenvalues and eigenvectors are not associated to it.</p>
+<ol class="lower-alpha">
+<li id="li-409"><p id="p-804">Construct the Gram matrix \(G=A^TA\) and explain why it is a symmetric matrix. <div class="sagecell-sage" id="sage-69"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-410"><p id="p-805">Find an orthogonal diagonalization of \(G\text{;}\) that is, find matrices \(Q\) and \(D\) so that \(G
+= QDQ^T\text{.}\)</p></li>
+<li id="li-411">
+<p id="p-806">The eigenvalues of \(G\) give the critical values of the quadratic form</p>
+<div class="displaymath">
+\begin{equation*}
+Q_G(\xvec) = \xvec\cdot(G\xvec) = \len{A\xvec}^2
+= \left(l_A(\xvec)\right)^2.
+\end{equation*}
+</div>
+<p>Explain why the singular values of \(A\) are the square roots of the eigenvalues of the Gram matrix and state the singular values of \(A\) taking care of arrange them in decreasing order.</p>
+</li>
+<li id="li-412"><p id="p-807">Explain why the eigenvectors of \(G\) define the critical directions of \(l_A(\xvec)\) so that the right singular vectors of \(A\) are eigenvectors of \(G\text{.}\)  State the right singular vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{.}\)</p></li>
+<li id="li-413"><p id="p-808">Explain why this observation tells us that the right singular vectors \(\vvec_j\) are orthogonal to one another.</p></li>
+<li id="li-414"><p id="p-809">Remembering that \(A\vvec_j = \sigma_j\uvec_j\text{,}\) find the left singular vectors \(\uvec_1\) and \(\uvec_2\text{.}\)  Notice that we can only create two left singular vectors in this way since there are only two nonzero singular values. <div class="sagecell-sage" id="sage-70"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-415">
+<p id="p-810">We can now explain why the left singular vectors are orthogonal.  To do so, first use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+(A\vvec_1)\cdot(A\vvec_2) = \vvec_1
+\cdot(A^TA\vvec_2)
+\end{equation*}
+</div>
+<p>to explain why \(A\vvec_1\) and \(A\vvec_2\) are orthogonal to one another.  Then use the fact that \(A\vvec_j = \sigma_j\uvec_j\) to explain why \(\uvec_1\) and \(\uvec_2\) are orthogonal.</p>
+</li>
+<li id="li-416">
+<p id="p-811">As before, form the matrices \(U\) and \(V\) from the left and right singular vectors.  Now form \(\Sigma\) so that it has the same shape as \(A\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \begin{bmatrix}
+\sigma_1 \amp 0 \amp 0 \\
+0 \amp \sigma_2 \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>and verify that \(A = U\Sigma V^T\text{.}\) <div class="sagecell-sage" id="sage-71"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-417"><p id="p-812">Suppose that we also would like the singular decomposition of \(A^T = \begin{bmatrix}
+1 \amp 1 \\
+0 \amp 1 \\
+-1 \amp 1
+\end{bmatrix}.\) Explain how knowing the singular value decomposition of \(A=U\Sigma V^T\) gives us the singular value decomposition of \(A^T=(U\Sigma V^T)^T\text{.}\)</p></li>
+</ol></article><p id="p-813">In this activity, we found the singular value decomposition of a \(2\times3\) matrix \(A\) using its Gram matrix \(G\) to relate the function \(l_A(\xvec)\) to the quadratic form \(q_G(\xvec)\text{;}\)  in particular, we keep in mind that \(l_A(\xvec) = \sqrt{q_G(\xvec)}\text{.}\)</p>
+<p id="p-814">Constructing the Gram matrix of \(A=\begin{bmatrix}
+1 \amp 0 \amp -1 \\
+1 \amp 1 \amp 1
+\end{bmatrix}\) gives the \(3\times3\) matrix</p>
+<div class="displaymath">
+\begin{equation*}
+G = \begin{bmatrix}
+2 \amp 1 \amp 0 \\
+1 \amp 1 \amp 1 \\
+0 \amp 1 \amp 2
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Notice that the Gram matrix is always a symmetric matrix because \(G^T=(A^TA)^T = A^TA=G\text{.}\)  The Spectral Theorem then tells us that \(G\) is orthogonally diagonalizable, and we find that \(G=QDQ^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+D = \begin{bmatrix}
+3 \amp 0 \amp 0 \\
+0 \amp 2 \amp 0 \\
+0 \amp 0 \amp 0
+\end{bmatrix},\hspace{24pt}
+Q = \begin{bmatrix}
+1/\sqrt{3} \amp 1/\sqrt{2} \amp 1/\sqrt{6} \\
+1/\sqrt{3} \amp 0 \amp -2/\sqrt{6} \\
+1/\sqrt{3} \amp -1/\sqrt{2} \amp 1/\sqrt{6} 
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p id="p-815">Because \(l_A(\xvec) = \sqrt{q_G(\xvec)}\text{,}\) the critical values of \(l_A(\xvec)\) are the square roots of the critical values of \(q_G(\xvec)\text{,}\) which are the eigenvalues \(\lambda_j\) of \(G\text{.}\)  This means that \(\sigma_j=\sqrt{\lambda_j}\) so we have \(\sigma_1 =\sqrt{3}\text{,}\) \(\sigma_2 = \sqrt2\text{,}\) and \(\sigma_3 = 0\text{.}\)</p>
+<p id="p-816">The critical directions of \(l_A(\xvec)\) are the same as the critical directions of \(q_A(\xvec)\) so we find that the right singular vectors \(\vvec_j\) are formed by the eigenvectors of \(G\text{,}\) which appear as the columns of \(Q\text{.}\)  This shows that</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \threevec{1/\sqrt{3}}{1/\sqrt{3}}{1/\sqrt{3}},
+\hspace{24pt}
+\vvec_2 = \threevec{1/\sqrt{2}}{0}{-1/\sqrt{2}},
+\hspace{24pt}
+\vvec_3 = \threevec{1/\sqrt{6}}{-2/\sqrt{6}}{1/\sqrt{6}}.
+\end{equation*}
+</div>
+<p>Because these are the eigenvectors of the symmetric matrix \(G\) associated to distinct eigenvalues, we know that they are orthogonal and hence form an orthonormal basis of \(\real^3\text{.}\)  The matrix \(V=\begin{bmatrix}\vvec_1 \amp
+\vvec_2 \amp \vvec_3\end{bmatrix}\) is therefore orthogonal.</p>
+<p id="p-817">We now form the left singular vectors using the relationship \(A\vvec_j = \sigma_j\uvec_j\text{.}\)  In particular, we have</p>
+<div class="displaymath">
+\begin{align*}
+A\vvec_1 \amp = \twovec{0}{\sqrt{3}} = \sqrt{3} \twovec01\\
+A\vvec_2 \amp = \twovec{\sqrt{2}}0 = \sqrt{2} \twovec10
+\end{align*}
+</div>
+<p>showing that</p>
+<div class="displaymath">
+\begin{equation*}
+\uvec_1 = \twovec01, \hspace{24pt} \uvec_2 = \twovec10.
+\end{equation*}
+</div>
+<p id="p-818">Notice that the left singular vectors are orthogonal.  This follows because \((A\vvec_1)\cdot(A\vvec_2) =
+\vvec_1\cdot(A^TA\vvec_2) = 2\vvec_1\cdot\vvec_2 = 0\) because \(\vvec_2\) is an eigenvector of \(A^TA\) with associated eigenvalue 2 and \(\vvec_1\) and \(\vvec_2\) are already known to be orthogonal. Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+(A\vvec_1)\cdot(A\vvec_2) =
+\sqrt3\sqrt2~\uvec_1\cdot\uvec_2 = 0,
+\end{equation*}
+</div>
+<p>which explains why the left singular vectors are orthogonal.</p>
+<p id="p-819">To construct the singular value decomposition, we form \(\Sigma\) so that it has the same shape as \(A\) and write the singular values on the diagonal:</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \begin{bmatrix}
+\sqrt{3} \amp 0 \amp 0 \\
+0 \amp \sqrt{2} \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>If we are to have \(A=U\Sigma V^T\text{,}\) then \(U\) will be \(2\times2\) and \(V\) will be \(3\times3\text{.}\)  This leads to</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+\sqrt{3} \amp 0 \amp 0 \\
+0 \amp \sqrt{2} \amp 0
+\end{bmatrix}, \hspace{10pt}
+V = \begin{bmatrix}
+1/\sqrt{3} \amp 1/\sqrt{2} \amp 1/\sqrt{6} \\
+1/\sqrt{3} \amp 0 \amp -2/\sqrt{6} \\
+1/\sqrt{3} \amp -1/\sqrt{2} \amp 1/\sqrt{6} 
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p id="p-820">Suppose now that we write a three-dimensional vector \(\xvec\) in terms of the basis of right singular vectors:</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = c_1\vvec_1+c_2\vvec_2+c_3\vvec_3.
+\end{equation*}
+</div>
+<p>We then have \(\xvec = V\threevec{c_1}{c_2}{c_3}\text{,}\) which says, because \(V\) is orthogonal, that \(\threevec{c_1}{c_2}{c_3} = V^T\xvec\text{.}\)  This means that</p>
+<div class="displaymath">
+\begin{align*}
+A\xvec \amp = A(c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3)\\
+\amp = c_1A\vvec_1 + c_2A\vvec_2 + c_3A\vvec_3\\
+\amp = c_1\sigma_1\uvec_1 + c_2\sigma_2\uvec_2\\
+\amp = \begin{bmatrix}\uvec_1 \amp \uvec_2 \end{bmatrix}
+\twovec{c_1\sigma_1}{c_2\sigma_2}\\
+\amp = U
+\begin{bmatrix}
+\sigma_1 \amp 0 \amp 0 \\
+0 \amp \sigma_2 \amp 0
+\end{bmatrix}
+\threevec{c_1}{c_2}{c_3}\\
+\amp = U\Sigma V^T\xvec.
+\end{align*}
+</div>
+<p>In other words, we see that \(A\xvec = U\Sigma V^T\xvec\) for every vector \(\xvec\text{,}\) which means that \(A = U\Sigma
+V^T\text{.}\)</p>
+<p id="p-821">We have now found the singular value decomposition of \(A\text{.}\)  To summarize, we</p>
+<ul class="disc">
+<li id="li-418"><p id="p-822">found the Gram matrix \(G=A^TA\text{.}\)</p></li>
+<li id="li-419"><p id="p-823">found the eigenvalues \(\lambda_j\text{,}\) in decreasing order, and an orthonormal basis of eigenvectors \(\vvec_j\text{.}\)</p></li>
+<li id="li-420"><p id="p-824">found the singular values \(\sigma_j=\sqrt{\lambda_j}\) and the right singular vectors as the eigenvectors \(\vvec_j\) of \(G\text{.}\)</p></li>
+<li id="li-421"><p id="p-825">found the left singular vectors using the relationship \(A\vvec_j = \sigma_j\uvec_j\text{.}\)</p></li>
+<li id="li-422"><p id="p-826">constructed \(\Sigma\) to have the same shape as \(A\) with the singular values running down the diagonal and constructed orthogonal matrix \(U\) and \(V\) from the left and right singular vectors.</p></li>
+</ul>
+<p id="p-827">As we'll see in the next section, some additional work may be needed to construct the left singular vectors \(\uvec_j\) if more of the singular values are zero, but we won't worry about that now.  For the time being, let's record our work in the following theorem.</p>
+<article class="theorem-like" id="theorem-svd"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.4.4</span>. <span class="title">The singular value decomposition.</span>
+</h6>If \(A\) is an \(m\times n\) matrix, it may be written as \(A=U\Sigma V^T\) where \(U\) is an orthogonal \(m\times m\) matrix, \(V\) is an orthogonal \(n\times n\) matrix, and \(\Sigma\) is an \(m\times
+n\) matrix with zero entries except for the singular values of \(A\) in decreasing order on the diagonal.</article><p id="p-828">Notice that the singular value decomposition of \(A\) gives us the singular value decomposition of \(A^T\text{.}\)  For instance, if \(A=U\Sigma
+V^T\text{,}\) then \(A^T = (U\Sigma V^T)^T = V\Sigma^T U^T\text{.}\) In other words, the singular value decomposition of \(A^T\) is obtained from that of \(A\) by replacing \(\Sigma\) with \(\Sigma^T\) and interchanging the roles of the left and right singular vectors.</p>
+<article class="theorem-like" id="prop-svd-transpose"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.4.5</span>.</h6>
+<p id="p-829">If \(A=U\Sigma V^T\text{,}\) then \(A^T = V\Sigma^T U^T\text{.}\) In other words, \(A\) and \(A^T\) share the same singular values, and the left singular vectors of \(A\) are the right singular vectors of \(A^T\) and vice-versa.</p></article><p id="p-830">As we said earlier, the singular value decomposition should be thought of a generalization of orthogonal diagonalizations. For instance, the Spectral Theorem tells us that a symmetric matrix can be written as \(QDQ^T\text{.}\)  Many matrices, however, are not symmetric and so they are not orthogonally diagonalizable.  However, every matrix has a singular value decomposition \(U\Sigma V^T\text{.}\)  The cost of this generalization is that we usually have two different orthogonal matrices \(U\) and \(V\) whereas we have only one orthogonal matrix \(Q\) in an orthogonal diagonalization.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">The structure of singular value decompositions</span>
+</h3>
+<p id="p-831">Now that we have a handle on what a singular value decomposition is and how to construct it, let's explore how a singular value decomposition reveals the underlying structure of the matrix.  As we'll see, the matrices \(U\) and \(V\) in a singular value decomposition provide convenient bases for some subspaces, such as the column and null spaces, of the matrix.  This observation will provide the key to some of our uses of these decompositions.</p>
+<article class="project-like" id="activity-36"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.4.4</span>.</h6>
+<p id="p-832">Let's suppose that a matrix \(A\) has a singular value decomposition \(A=U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+U=\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \amp \uvec_4
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+20 \amp 0 \amp 0 \\
+0 \amp 5 \amp 0 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0
+\end{bmatrix},\hspace{10pt}
+V=\begin{bmatrix}
+\vvec_1 \amp \vvec_2 \amp \vvec_3
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-423"><p id="p-833">What is the shape of \(A\text{;}\)  that is, how many rows and columns does \(A\) have?</p></li>
+<li id="li-424">
+<p id="p-834">Suppose we write a three-dimensional vector \(\xvec\) as a linear combination of right singular vectors:</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3.
+\end{equation*}
+</div>
+<p>We would like to find an expression for \(A\xvec\text{.}\)  To begin, find the vector \(V^T\xvec = \threevec{\vvec_1\cdot\xvec}
+{\vvec_2\cdot\xvec}
+{\vvec_3\cdot\xvec}
+\text{.}\)</p>
+</li>
+<li id="li-425"><p id="p-835">Now multiply this vector by \(\Sigma\) to obtain \(\Sigma V^T\xvec\text{.}\)</p></li>
+<li id="li-426"><p id="p-836">Finally, write \(A\xvec = U(\Sigma V^T\xvec)\) as a linear combination of left singular vectors \(\uvec_j\text{.}\)</p></li>
+<li id="li-427"><p id="p-837">We now have \(A\xvec = 20c_1\uvec_1 +
+5c_2\uvec_2\text{.}\)  Find the vectors \(\xvec\) that solve the equation \(A\xvec = \uvec_1\) by finding the appropriate coefficients \(c_1\text{,}\) \(c_2\text{,}\) \(c_3\text{.}\)  How does this help determine whether \(\uvec_1\) is in \(\col(A)\text{?}\)</p></li>
+<li id="li-428"><p id="p-838">Find the vectors \(\xvec\) that solve the equation \(A\xvec=\uvec_2\text{.}\)  What does this say about whether \(\uvec_2\) is in \(\col(A)\text{?}\)</p></li>
+<li id="li-429"><p id="p-839">Find the vectors \(\xvec\) that solve the equation \(A\xvec=\uvec_3\text{.}\)  What does this say about whether \(\uvec_3\) is in \(\col(A)\text{?}\)</p></li>
+<li id="li-430">
+<p id="p-840">Find the vectors \(\xvec\) that solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\xvec=3\uvec_1 - 7\uvec_2 + \uvec_3 - 4\uvec_4.
+\end{equation*}
+</div>
+</li>
+<li id="li-431"><p id="p-841">Find a basis for \(\col(A)\) consisting of left singular vectors.  What is \(\rank(A)\text{?}\)</p></li>
+<li id="li-432"><p id="p-842">Remembering that \(\col(A)^\perp = \nul(A^T)\text{,}\) find a basis for \(\nul(A^T)\) consisting of left singular vectors.</p></li>
+<li id="li-433"><p id="p-843">For what vectors \(\xvec\) do we have \(A\xvec =
+\zerovec\text{?}\)</p></li>
+<li id="li-434"><p id="p-844">Find a basis for \(\nul(A)\) consisting of right singular vectors.</p></li>
+</ol></article><p id="p-845">This activity shows how the singular value decomposition of a matrix encodes important information about its null and column spaces.  Using the example in the activity, we begin by remembering that \(A\) has the same shape as \(\Sigma\text{,}\) so it must have four rows and three columns.</p>
+<p id="p-846">We now write a vector \(\xvec\) in terms of left singular vectors, \(\xvec=c_1\vvec_1+c_2\vvec_2 + c_3\vvec_3\) so that</p>
+<div class="displaymath">
+\begin{align*}
+A\xvec=\amp U\Sigma V^T\xvec = U\Sigma
+\threevec{\vvec_1\cdot\xvec} {\vvec_2\cdot\xvec}
+{\vvec_3\cdot\xvec}\\
+=\amp U\begin{bmatrix} 20 \amp 0 \amp 0 \\
+0 \amp 5 \amp 0 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0
+\end{bmatrix}
+\threevec{c_1}{c_2}{c_3}\\
+=\amp
+\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \amp \uvec_4
+\end{bmatrix}
+\fourvec{20c_1}{5c_2}00\\
+=\amp 20c_1\uvec_1 + 5c_2\uvec_2.
+\end{align*}
+</div>
+<p>We are left with</p>
+<div class="displaymath">
+\begin{equation*}
+A(c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3) = 20c_1\uvec_1 +
+5c_2\uvec_2.
+\end{equation*}
+</div>
+<p id="p-847">Suppose we write \(\bvec\text{,}\) a four-dimensional vector, as a linear combination of left singular vectors:</p>
+<div class="displaymath">
+\begin{equation*}
+\bvec = b_1\uvec_1 + b_2\uvec_2 + b_3\uvec_3 + b_4\uvec_4.
+\end{equation*}
+</div>
+<p>The equation \(A\xvec = \bvec\) then takes the form</p>
+<div class="displaymath">
+\begin{equation*}
+20c_1\uvec_1 + 5c_2\uvec_2 = b_1\uvec_1 + b_2\uvec_2 +
+b_3\uvec_3 + b_4\uvec_4.
+\end{equation*}
+</div>
+<p>Because the left singular vectors are linearly independent, we find a solution by simply equating the coefficients on the two sides:</p>
+<div class="displaymath">
+\begin{align*}
+20c_1 \amp = b_1\\
+5c_2 \amp = b_2\\
+0 \amp = b_3\\
+0 \amp = b_4.
+\end{align*}
+</div>
+<p>In other words, this equation is only consistent if \(b_3=b_4 = 0\) in which case \(\bvec = b_1\uvec_1 +
+b_2\uvec_2\text{.}\) Therefore, \(A\xvec = \bvec\) is consistent only when \(\bvec\) is a linear combination of \(\uvec_1\) and \(\uvec_2\text{,}\) which implies that \(\uvec_1\) and \(\uvec_2\) form a basis for \(\col(A)\text{.}\)</p>
+<p id="p-848">Because \(\uvec_3\) and \(\uvec_4\) are orthogonal to \(\uvec_1\) and \(\uvec_2\text{,}\) they must lie in \(\col(A)^\perp = \nul(A^T)\text{.}\)  We therefore see that \(\uvec_3\) and \(\uvec_4\) form a basis for \(\nul(A^T)\text{.}\)</p>
+<p id="p-849">Finally, remember that \(\nul(A)\) is the solution set of the equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\xvec = \zerovec = 
+20c_1\uvec_1 + 5c_2\uvec_2.
+\end{equation*}
+</div>
+<p>If \(\xvec\) is a solution, we must have \(c_1=c_2=0\) so \(\xvec\) has the form \(\xvec=c_3\vvec_3\text{.}\)  This shows that \(\vvec_3\) is a basis for \(\nul(A)\text{.}\)</p>
+<p id="p-850">In this way, we see that the left and right singular vectors form bases for \(\col(A)\text{,}\) \(\nul(A^T)\text{,}\) and \(\nul(A)\text{.}\)  Notice that there are two vectors in a basis for \(\col(A)\text{,}\) which tells us that \(\rank(A) =
+\dim\col(A) = 2\text{.}\)  In fact, we have one basis vector for every nonzero singular value, which shows us that the \(\rank(A)\) is the number of nonzero singular values.</p>
+<p id="p-851">Generally speaking, if the rank of a matrix \(A\) is \(r\text{,}\) then \(\Sigma\) has the form</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+\sigma_1 \amp \ldots \amp 0 \amp \ldots \amp 0 \\
+0 \amp \ldots \amp 0 \amp \ldots \amp 0 \\
+0 \amp \ldots \amp \sigma_r \amp \ldots \amp 0 \\
+0 \amp \ldots \amp 0 \amp \ldots \amp 0 \\
+0 \amp \vdots \amp 0 \amp \vdots \amp 0 \\
+0 \amp \ldots \amp 0 \amp \ldots \amp 0 \\
+\end{bmatrix},
+\end{equation*}
+</div>
+<p>\(U\) holds bases for \(\col(A)\) and \(\nul(A^T)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+U = \left[
+\underbrace{\uvec_1 ~ \ldots ~ \uvec_r}_{\col(A)} \hspace{3pt}
+\underbrace{\uvec_{r+1} ~ \ldots ~ \uvec_m}_{\nul(A^T)}
+\right]
+\end{equation*}
+</div>
+<p>and \(V\) hold a basis for \(\nul(A)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+V = \left[
+\vvec_1 ~ \ldots ~ \vvec_r\hspace{3pt}
+\underbrace{\vvec_{r+1} ~ \ldots ~ \vvec_m}_{\nul(A)}
+\right]
+\end{equation*}
+</div>
+<p id="p-852">If you're bothered by the fact that the first \(r\) columns of \(V\) don't seem to describe a natural subspace, don't despair.  Remember that writing \(A=U\Sigma V^T\) means that \(A^T=V\Sigma^T U^T\) so that the right singular vectors of \(A\) become left singular vectors of \(A^T\text{.}\)  Since \(\rank(A^T) = \rank(A) = r\text{,}\) it follows that \(\vvec_1, \ldots, \vvec_r\) form a basis for \(\col(A^T)\) so we have</p>
+<div class="displaymath">
+\begin{equation*}
+V = \left[
+\underbrace{\vvec_1 ~ \ldots ~ \vvec_r}_{\col(A^T)} \hspace{3pt}
+\underbrace{\vvec_{r+1} ~ \ldots ~ \vvec_m}_{\nul(A)}
+\right].
+\end{equation*}
+</div>
+<p id="p-853">Because the columns of \(A^T\) are the rows of \(A\text{,}\) this subspace is sometimes called the <em class="emphasis">row space</em> of \(A\) and denoted \(\row(A)\text{.}\)  While we haven't had an occasion to use \(\row(A)\) so far, there are times when it's important to have an orthonormal basis for it. Fortunately, a singular value decomposition provides just that.</p>
+<p id="p-854">Considered altogether, the subspaces \(\col(A)\text{,}\) \(\nul(A)\text{,}\) \(\col(A^T)\text{,}\) and \(\nul(A^T)\) are called the <em class="emphasis">four fundamental subspaces</em> associated to \(A\text{.}\)  In addition to telling us the rank of a matrix, a singular value decomposition gives us orthonormal bases for all four fundamental subspaces.</p>
+<article class="theorem-like" id="theorem-4"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.4.6</span>.</h6>
+<p id="p-855">Suppose \(A\) is an \(m\times n\) matrix having the singular value decomposition \(A=U\Sigma V^T\text{.}\)  Then</p>
+<ul class="disc">
+<li id="li-435"><p id="p-856">\(r=\rank(A)\) is the number of nonzero singular values.</p></li>
+<li id="li-436"><p id="p-857">The columns \(\uvec_1,\uvec_2,\ldots,\uvec_r\) form an orthonormal basis for \(\col(A)\text{.}\)</p></li>
+<li id="li-437"><p id="p-858">The columns \(\uvec_{r+1},\ldots,\uvec_m\) form an orthonormal basis for \(\nul(A^T)\text{.}\)</p></li>
+<li id="li-438"><p id="p-859">The columns \(\vvec_1,\vvec_2,\ldots,\vvec_r\) form an orthonormal basis for \(\col(A^T)\text{.}\)</p></li>
+<li id="li-439"><p id="p-860">The columns \(\vvec_{r+1},\ldots,\vvec_n\) form an orthonormal basis for \(\nul(A)\text{.}\)</p></li>
+</ul></article><p id="p-861">The procedure we've outlined for finding a singular value decomposition runs into a problem if the rank of the matrix is smaller than the number of rows.  In this case, we cannot find all the left singular vectors using the relationship \(A\vvec_j = \sigma_j\uvec_j\) because either \(\sigma_j = 0\) or there are not enough right singular vectors \(\vvec_j\text{.}\)</p>
+<p id="p-862">Our procedure will always find \(r\) left singular vectors, however, since the first \(r\) singular values are nonzero. We just need to find a complementary set of left singular vectors \(\uvec_{r+1}, \ldots, \uvec_m\text{.}\)  This theorem tells us how to do that: simply find an orthonormal basis for \(\nul(A^T)\) by solving \(A^T\xvec = \zerovec\) and applying the Gram-Schmidt algorithm.  Then use that basis as the last \(m-r\) columns of \(U\) to obtain a singular value decomposition.</p>
+<p id="p-863">We won't worry about this issue too much, however.  Going forward, we will mainly be interested in applying singular value decompositions so we will rely on software to compute them for us.</p></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.4</span> <span class="title">Summary</span>
+</h3>
+<p id="p-864">This section has explored singular value decompositions, how to find them, and how they organize important information about a matrix.</p>
+<ul class="disc">
+<li id="li-440"><p id="p-865">The singular value decomposition of a matrix \(A\) is a factorization where \(A=U\Sigma V^T\text{.}\)  The matrix \(\Sigma\) has the same shape as \(A\text{,}\) and its only nonzero entries are the singular values of \(A\text{,}\) which appear in decreasing order on the diagonal.  The matrices \(U\) and \(V\) are orthogonal and contain the left and right singular vectors.</p></li>
+<li id="li-441"><p id="p-866">To find a singular value decomposition of a matrix, we construct the Gram matrix \(G=A^TA\text{,}\) which is symmetric.  The singular values of \(A\) are the square roots of the eigenvalues of \(G\text{,}\) and the right singular vectors \(\vvec_j\) are the associated eigenvectors of \(G\text{.}\)  The left singular vectors \(\uvec_j\) are determined from the relationship \(A\vvec_j=\sigma_j\uvec_j\text{.}\)</p></li>
+<li id="li-442"><p id="p-867">A singular value decomposition organizes fundamental information about a matrix.  For instance, the number of nonzero singular values is the rank \(r\) of the matrix.  The first \(r\) left singular vectors form an orthonormal basis for \(\col(A)\) with the remaining left singular vectors forming an orthonormal basis of \(\nul(A^T)\text{.}\)  The first \(r\) right singular vectors form an orthonormal basis for \(\col(A^T)\) while the remaining right singular vectors form an orthonormal basis of \(\nul(A)\text{.}\)</p></li>
+</ul></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

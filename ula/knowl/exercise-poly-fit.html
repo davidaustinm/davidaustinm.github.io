@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:51-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="exercise-like"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">7.</span>
+</h6>
+<p>In a previous math class, you have probably seen the fact that, if we are given two points in the plane, then there is a unique line passing through both of them.  In this problem, we will begin with the four points on the left below and ask to find a polynomial that passes through these four points as shown on the right. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/interpolation-0.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/interpolation-1.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></p>
+<p>A degree three polynomial can be written as</p>
+<div class="displaymath">
+\begin{equation*}
+p(x) = a + bx + cx^2 + dx^3
+\end{equation*}
+</div>
+<p>where \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\) are coefficients that we would like to determine. Since we want the polynomial to pass through the point \((3,1)\text{,}\) we should require that</p>
+<div class="displaymath">
+\begin{equation*}
+p(3) = a + 3b + 9c + 27d = 1\text{.}
+\end{equation*}
+</div>
+<p>In this way, we obtain a linear equation for the coefficients \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Write the four linear equations for the coefficients obtained by requiring that the graph of the polynomial \(p(x)\) passes through the four points above.</p></li>
+<li><p>Write the augmented matrix corresponding to this system of equations and use the Sage cell below to solve for the coefficients. <div class="sagecell-sage" id="sage-24"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Write the polynomial \(p(x)\) that you found and check your work by graphing it in the Sage cell below and verifying that it passes through the four points.  To plot a function over a range, you may use a command like <code class="code-inline tex2jax_ignore"> plot(1 + x- 2*x^2, xmin = -1, xmax = 4)</code>. <div class="sagecell-sage" id="sage-25"><script type="text/x-sage">
+</script></div></p></li>
+<li>
+<p>Rather than looking for a degree three polynomial, suppose we wanted to find a polynomial that passes through the four points and that has degree two, such as</p>
+<div class="displaymath">
+\begin{equation*}
+p(x) = a + bx + cx^2\text{.}
+\end{equation*}
+</div>
+<p>Solve the system of equations for the coefficients. What can you say about the existence and uniqueness of a degree two polynomial passing through these four points? <div class="sagecell-sage" id="sage-26"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li>
+<p>Rather than looking for a degree three polynomial, suppose we wanted to find a polynomial that passes through the four points and that has degree four, such as</p>
+<div class="displaymath">
+\begin{equation*}
+p(x) = a + bx + cx^2 + dx^3 + ex^4\text{.}
+\end{equation*}
+</div>
+<p>Solve the system of equations for the coefficients. What can you say about the existence and uniqueness of a degree four polynomial passing through these four points? <div class="sagecell-sage" id="sage-27"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>Suppose you had 10 points and you wanted to find a polynomial passing through each of them.  What should the degree of the polynomial be to guarantee that there is exactly one such polynomial?  Explain your response.</p></li>
+</ol></article><span class="incontext"><a href="sec-pivots.html#exercise-poly-fit">in-context</a></span>
+</body>
+</html>

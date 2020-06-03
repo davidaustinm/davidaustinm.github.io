@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:53-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.5</span>.</h6>
+<p>Describe the solution space of the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+2 \amp 0 \amp 2 \\
+4 \amp -1 \amp 6 \\
+1 \amp 3 \amp -5 \\
+\end{array}\right]
+\xvec
+=
+\left[\begin{array}{r}
+0 \\ -5 \\ 15
+\end{array}\right]
+\end{equation*}
+</div>
+<p>By <a data-knowl="./knowl/prop-matrix-eq-solution.html" title="Proposition 2.2.4">Proposition 2.2.4</a>, the solution space to this equation is the same as the equation</p>
+<div class="displaymath">
+\begin{equation*}
+x_1\left[\begin{array}{r}2\\4\\1\end{array}\right] +
+x_2\left[\begin{array}{r}0\\-1\\3\end{array}\right]+
+x_3\left[\begin{array}{r}2\\6\\-5\end{array}\right]=
+\left[\begin{array}{r}0\\-5\\15\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p>which is the same as the linear system corresponding to</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr|r}
+2 \amp 0 \amp 2 \amp 0 \\
+4 \amp -1 \amp 6 \amp -5 \\
+1 \amp 3 \amp -5 \amp 15 \\
+\end{array} \right]\text{.}
+\end{equation*}
+</div>
+<p>We will study the solutions to this linear system by finding the reduced row echelon form of the augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr|r}
+2 \amp 0 \amp 2 \amp 0 \\
+4 \amp -1 \amp 6 \amp -5 \\
+1 \amp 3 \amp -5 \amp 15 \\
+\end{array} \right]
+\sim
+\left[\begin{array}{rrr|r}
+1 \amp 0 \amp 1 \amp 0 \\
+0 \amp 1 \amp -2 \amp 5 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array} \right]\text{.}
+\end{equation*}
+</div>
+<p>This gives us the system of equations</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{4}
+x_1 \amp \amp \amp {}+{} \amp x_3 \amp {}={} \amp 0 \\
+\amp \amp x_2 \amp {}-{} \amp 2x_3 \amp {}={} \amp 5 \\
+\end{alignedat}\text{.}
+\end{equation*}
+</div>
+<p>The variable \(x_3\) is free so we may write the solution space parametrically as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+x_1 \amp {}={} -x_3 \\
+x_2 \amp {}={} 5+2x_3 \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>Since we originally asked to describe the solutions to the equation \(A\xvec = \bvec\text{,}\) we will express the solution in terms of the vector \(\xvec\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec
+=\left[
+\begin{array}{r}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right]
+=
+\left[
+\begin{array}{r}
+-x_3 \\ 5 + 2x_3 \\ x_3
+\end{array}
+\right]
+=\left[\begin{array}{r}0\\5\\0\end{array}\right]
++x_3\left[\begin{array}{r}-1\\2\\1\end{array}\right]
+\end{equation*}
+</div>
+<p>This shows that the solutions \(\xvec\) may be written in the form \(\vvec + x_3\wvec\text{,}\) for appropriate vectors \(\vvec\) and \(\wvec\text{.}\)  Geometrically, the solution space is a line in \(\real^3\) through \(\vvec\) moving parallel to \(\wvec\text{.}\)</p></article><span class="incontext"><a href="sec-matrices-lin-combs.html#example-5">in-context</a></span>
+</body>
+</html>

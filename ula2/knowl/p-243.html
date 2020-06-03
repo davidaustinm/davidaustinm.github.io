@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Here's another way to verify <a data-knowl="./knowl/prop-orthog-matrix.html" title="Proposition 1.3.7">Proposition 1.3.7</a>. Remember that multiplying by the transpose of a matrix is the same as evaluating dot products with the columns of the matrix. If \(Q\) is an orthogonal matrix whose columns form an orthonormal basis of \(\real^3\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Q =
+\left[
+\begin{array}{rrr}
+\uvec_1\amp\uvec_2\amp\uvec_3
+\end{array}
+\right]\text{,}
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+Q^TQ =
+\left[
+\begin{array}{c}
+\uvec_1^T \\
+\uvec_2^T \\
+\uvec_3^T \\
+\end{array}
+\right]
+\left[
+\begin{array}{ccc}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \\
+\end{array}
+\right]
+=
+\begin{bmatrix}
+\uvec_1\cdot\uvec_1 \amp \uvec_1\cdot\uvec_2 \amp \uvec_1\cdot\uvec_3 \\
+\uvec_2\cdot\uvec_1 \amp \uvec_2\cdot\uvec_2 \amp \uvec_2\cdot\uvec_3 \\
+\uvec_3\cdot\uvec_1 \amp \uvec_3\cdot\uvec_2 \amp \uvec_3\cdot\uvec_3 \\
+\end{bmatrix}
+= I
+\end{equation*}
+</div>
+<p>since the dot products of the basis vectors are either 1 or 0. This leaves us with \(Q^TQ=I\) so that \(Q^T=Q^{-1}\text{.}\)</p>
+<span class="incontext"><a href="sec-orthogonal-bases.html#p-243">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We wish to explain why \(\rank(A) = \rank(A^T)\text{.}\)  As an example, we will consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+S =
+\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 1 \amp 2 \\
+-1 \amp 1 \amp -2 \amp -3 \amp 0 \\
+2 \amp -2 \amp 0 \amp 2 \amp 4 \\
+-1 \amp 1 \amp -2 \amp -3 \amp 0
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 1 \amp 2 \\
+0 \amp 0 \amp 1 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p>which shows that \(\rank(S)=2\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Find the reduced row echelon form of \(S^T\) to verify that \(\rank(S^T)=2\text{.}\)  For this example, we see that \(\rank(S)=\rank(S^T) = 2\text{,}\) which is the result we would like to explain. <div class="sagecell-sage" id="sage-13"><script type="text/x-sage">
+</script></div></p></li>
+<li>
+<p>Suppose that \(A\) is some matrix whose \(LU\) factorization is \(A=LU\text{.}\)  Remember that the lower-triangular matrix \(L\) is invertible.</p>
+<ol class="lower-roman">
+<li><p>Suppose that \(\xvec\) is in \(\nul(U)\) so that \(U\xvec=\zerovec\text{.}\)  Explain why \(\xvec\) is also in \(\nul(A)\text{.}\)</p></li>
+<li><p>Suppose that \(\xvec\) is in \(\nul(A)\) so that \(A\xvec = \zerovec\text{.}\)  Use the fact that \(U=L^{-1}A\) to explain why \(U\xvec= \zerovec\) and hence \(\xvec\) is also in \(\nul(U)\text{.}\)</p></li>
+<li><p>Explain why \(\nul(A) = \nul(U)\text{.}\)</p></li>
+<li><p>Remembering that the rank is related to the dimension of the null space, explain why \(\rank(A) =
+\rank(U)\text{.}\)</p></li>
+</ol>
+</li>
+<li>
+<p>Suppose that \(U\) is an upper-triangular matrix, such as \(U=
+\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 1 \amp 2 \\
+0 \amp 0 \amp -2 \amp -2 \amp 2 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0
+\end{bmatrix}\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>Explain why \(\rank(U)\) equals the number of nonzero rows of \(U\text{.}\)</p></li>
+<li><p>If \(U\) is the matrix above, write the matrix \(U^T\text{.}\) Explain why \(\rank(U^T)\) equals the number of nonzero columns of \(U^T\text{.}\)</p></li>
+<li><p>Explain why \(\rank(U)=\rank(U^T)\text{.}\)</p></li>
+</ol>
+</li>
+<li>
+<p>Since \(A=LU\text{,}\) we will write \(A^T=U^TL^T\) and remember that \(L\text{,}\) and hence \(L^T\text{,}\) is invertible.</p>
+<ol class="lower-roman">
+<li><p>Suppose that \(\bvec\) is in \(\col(A^T)\) so that \(A^T\xvec=\bvec\) is consistent.  Explain why \(U^T\yvec=\bvec\) is also consistent and therefore \(\bvec\) is in \(\col(U^T)\text{.}\)</p></li>
+<li><p>Suppose that \(\bvec\) is in \(\col(U^T)\) so that \(U^T\yvec=\bvec\) is consistent.  Use the fact that \(U^T = A^T(L^T)^{-1}\) to explain why \(A^T\xvec=\bvec\) is also consistent and therefore \(\bvec\) is in \(\col(A^T)\text{.}\)</p></li>
+<li><p>This shows that \(\col(A^T)=\col(U^T)\text{.}\) Remembering the relationship between the rank and the dimension of the column space, explain why \(\rank(A^T) = \rank(U^T)\text{.}\)</p></li>
+</ol>
+<p>We have now seen that</p>
+<div class="displaymath">
+\begin{equation*}
+\rank(A)=\rank(U)=\rank(U^T)=\rank(A^T)\text{.}
+\end{equation*}
+</div>
+<p>This tells us that \(\rank(A)=\rank(A^T)\text{,}\) the fact that we originally set out to explain.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-transpose.html#p-156">in-context</a></span>
+</body>
+</html>

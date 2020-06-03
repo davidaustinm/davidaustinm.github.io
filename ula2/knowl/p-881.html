@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:59-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Let's consider a matrix \(A=U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{align*}
+\amp U = \begin{bmatrix}
+\frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \\
+\frac{1}{2} \amp \frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \\
+\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \amp -\frac{1}{2} \\
+\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \\
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+500 \amp 0 \amp 0 \amp 0 \\
+0 \amp 100 \amp 0 \amp 0 \\
+0 \amp 0 \amp 20 \amp 0  \\
+0 \amp 0 \amp 0 \amp 4
+\end{bmatrix}\\
+\amp V = \begin{bmatrix}
+\frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \\
+\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \\
+-\frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2} \amp \frac{1}{2} \\
+-\frac{1}{2} \amp \frac{1}{2} \amp -\frac{1}{2} \amp \frac{1}{2}
+\end{bmatrix}
+\end{align*}
+</div>
+<p>Evaluating the following cell will create the matrices <code class="code-inline tex2jax_ignore">U</code>, <code class="code-inline tex2jax_ignore">V</code>, and <code class="code-inline tex2jax_ignore">Sigma</code>.  Notice how the <code class="code-inline tex2jax_ignore">diagonal_matrix</code> command provides a convenient way to form a diagonal matrix. <div class="sagecell-sage" id="sage-72"><script type="text/x-sage">h = 1/2
+U = matrix(4,4,[h,h,h,h,  h,h,-h,-h,  h,-h,h,-h,  h,-h,-h,h])	    
+V = matrix(4,4,[h,h,h,h,  h,-h,-h,h,  -h,-h,h,h,  -h,h,-h,h])
+Sigma = diagonal_matrix([500, 100, 20, 4])
+</script></div></p>
+<ol class="lower-alpha">
+<li><p>Form the matrix \(A=U\Sigma V^T\text{.}\)  What is \(\rank(A)\text{?}\) <div class="sagecell-sage" id="sage-73"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Now form the approximating matrix \(A_1=U\Sigma_1
+V^T\text{.}\)  What is \(\rank(A_1)\text{?}\) <div class="sagecell-sage" id="sage-74"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the error in the approximation, which may be expressed as \(A-A_1\text{.}\)</p></li>
+<li><p>Now find \(A_2 = U\Sigma_2 V^T\) and the error \(A-A_2\text{.}\)  What is \(\rank(A_2)\text{?}\) <div class="sagecell-sage" id="sage-75"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find \(A_3 = U\Sigma_3 V^T\) and the error \(A-A_3\text{.}\)  What is \(\rank(A_3)\text{?}\)</p></li>
+<li><p>What would happen if we were to compute \(A_4\text{?}\)</p></li>
+<li>
+<p>Suppose that another matrix has the singular value decomposition \(U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+5 \amp 0 \\
+0 \amp 3 \\
+0 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Suppose also that we define new matrices by trimming off the last column of \(U\) and the last row of \(\Sigma\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+U_2 = \begin{bmatrix}
+\uvec_1 \amp \uvec_2 
+\end{bmatrix},\hspace{10pt}
+\Sigma_2 = \begin{bmatrix}
+5 \amp 0 \\
+0 \amp 3 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Explain why \(U\Sigma = U_2\Sigma_2\text{.}\)</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-svd-uses.html#p-881">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:50-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Here are some practices that you may find helpful when working with matrices in Sage.</p>
+<ul class="disc">
+<li>
+<p>Break the matrix entries across lines, one for each row, for better readability by pressing <em class="emphasis">Enter</em> between rows.</p>
+<pre class="code-block tex2jax_ignore">
+A = matrix(2, 4, [ 1, 2, -1, 0,
+                  -3, 0,  4, 3 ])
+              </pre>
+</li>
+<li>
+<p>Print your original matrix to check that you have entered it correctly.  You may want to also print a dividing line to separate matrices.</p>
+<pre class="code-block tex2jax_ignore">
+A = matrix(2, 2, [ 1, 2,
+                   2, 2])
+print (A)
+print ("---------")
+A.rref()
+	      </pre>
+</li>
+</ul>
+<span class="incontext"><a href="sec-sage-introduction.html#p-366">in-context</a></span>
+</body>
+</html>

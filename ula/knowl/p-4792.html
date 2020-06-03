@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:43-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We saw a couple of model Internets in which a Markov chain defined by the Google matrix \(G\) did not converge to an appropriate PageRank vector.  For this reason, Google defines the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+H_n = \left[\begin{array}{rrrr}
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p>where \(n\) is the number of web pages, and constructs a Markov chain from the modified Google matrix</p>
+<div class="displaymath">
+\begin{equation*}
+G' = \alpha G + (1-\alpha)H_n\text{.}
+\end{equation*}
+</div>
+<p>Since \(G'\) is positive, the Markov chain is guaranteed to converge to a unique steady-state vector.</p>
+<span class="incontext"><a href="sec-stochastic.html#p-4792">in-context</a></span>
+</body>
+</html>

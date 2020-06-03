@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">c</span>.</h6>
+<p>Since \(R\) is upper triangular, this is a relatively simple equation to solve using back substitution, as we saw in <span>(((Unresolved xref, reference "sec-gaussian-revisited"; check spelling or use "provisional" attribute)))</span><a href="" class="internal" title=""> </a>.  We will therefore write the least squares approximate solution as</p>
+<div class="displaymath">
+\begin{equation*}
+\xhat = R^{-1}Q^T\bvec,
+\end{equation*}
+</div>
+<p>and put this to use in the following context.</p>
+<p>Brozak’s formula, which is used to calculate a person's body fat index (\(BFI\)), is</p>
+<div class="displaymath">
+\begin{equation*}
+BFI = 100 \left(\frac{4.57}{\rho} - 4.142\right)
+\end{equation*}
+</div>
+<p>where \(\rho\) denotes a person's body density in grams per cubic centimeter.  Obtaining an accurate measure of \(\rho\) is difficult, however, because it requires submerging the person in water and measuring the volume of water displaced.  Instead, we will gather several other body measurements, which are more easily obtained, and use it to predict \(BFI\text{.}\)  For instance, suppose we take 10 patients and measure their weight \(w\) in pounds, height \(h\) in inches, abdomen \(a\) in centimeters, wrist circumference \(r\) in centimeters, neck circumference \(n\) in centimeters, and \(BFI\text{.}\)  Evaluating the following cell loads and displays the data. <div class="sagecell-sage" id="sage-32"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py', globals())
+df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/bfi.csv')
+weight = vector(df['Weight'])
+height = vector(df['Height'])
+abdomen = vector(df['Abdomen'])
+wrist = vector(df['Wrist'])
+neck = vector(df['Neck'])
+BFI = vector(df['BFI'])
+print(df)
+</script></div>  In addition, that cell provides:</p>
+<ol class="lower-alpha">
+<li><p>vectors <code class="code-inline tex2jax_ignore">weight</code>, <code class="code-inline tex2jax_ignore">height</code>, <code class="code-inline tex2jax_ignore">abdomen</code>, <code class="code-inline tex2jax_ignore">wrist</code>, <code class="code-inline tex2jax_ignore">neck</code>, and <code class="code-inline tex2jax_ignore">BFI</code> formed from the columns of the dataset.</p></li>
+<li><p>the command <code class="code-inline tex2jax_ignore">onesvec(n)</code>, which returns an \(n\)-dimensional vector whose entries are all one.</p></li>
+<li><p>the command <code class="code-inline tex2jax_ignore">QR(A)</code> that returns the \(QR\) factorization of \(A\) as <code class="code-inline tex2jax_ignore">Q, R =
+		    QR(A)</code>.</p></li>
+<li><p>the command <code class="code-inline tex2jax_ignore">demean(v)</code>, which returns the demeaned vector \(\widetilde{\vvec}\text{.}\)</p></li>
+</ol>
+<p>We would like to find the linear function</p>
+<div class="displaymath">
+\begin{equation*}
+\beta_0 + \beta_1w + \beta_2h + \beta_3a + \beta_4r +
+\beta_5n = BFI
+\end{equation*}
+</div>
+<p>that best fits the data.</p>
+<p>Use the first data point to write an equation for the parameters \(\beta_0,\beta_1,\ldots,\beta_5\text{.}\)</p></article><span class="incontext"><a href="sec-least-squares.html#li-209">in-context</a></span>
+</body>
+</html>

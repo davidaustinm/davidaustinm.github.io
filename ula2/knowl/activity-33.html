@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.3.5</span>.</h6>
+<p>In this activity, we're going to look at a <a class="external" href="https://archive.ics.uci.edu/ml/datasets/Iris" target="_blank">well-known dataset</a> that records four measurements of each of 150 irises. There are three species of irises, each of which appears 50 times in the data set.  Examples of the three species are shown in <a data-knowl="./knowl/fig-iris.html" title="Figure 2.3.4">Figure 2.3.4</a>. For each flower, the length and width of its sepal and the length and width of its petal, all in centimeters, are recorded.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="https://thegoodpython.com/assets/images/iris-species.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.4.</span> <p id="p-752">The three species of irises represented in the data set: iris setosa, iris versicolor, and iris virginica.  Photo credit:  <a class="external" href="https://thegoodpython.com/iris-dataset/" target="_blank">The Good Python</a></p></figcaption></figure><p>Evaluating the following cell will load the data set, which consists of 150 points in \(\real^4\text{.}\)  In addition, we have a vector <code class="code-inline tex2jax_ignore">data_mean</code>, a four-dimensional vector holding the mean of the data points, and <code class="code-inline tex2jax_ignore">A</code>, the \(4\times150\) demeaned data matrix. <div class="sagecell-sage" id="sage-61"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/pca-iris.py', globals())
+df
+</script></div> Since the data is four-dimensional, we are not able to visualize it.  Of course, we could forget about two of the measurements and plot the 150 points represented by their, say, sepal length and sepal width. <div class="sagecell-sage" id="sage-62"><script type="text/x-sage">sepal_plot()
+</script></div></p>
+<ol class="lower-alpha">
+<li><p>What is the mean sepal width?</p></li>
+<li><p>Find the covariance matrix \(C\) and its eigenvalues. <div class="sagecell-sage" id="sage-63"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the fraction of variance for which the first two principal components account?</p></li>
+<li><p>Construct the first two principal components \(\uvec_1\) and \(\uvec_2\) along with the matrix \(Q\) whose columns are \(\uvec_1\) and \(\uvec_2\text{.}\) <div class="sagecell-sage" id="sage-64"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>As we have seen, the columns of the matrix \(Q^TA\) hold the coordinates of the demeaned data points after projecting onto \(W_2\text{,}\) the subspace spanned by the first two principal components.  Evaluating the following cell shows a plot of these coordinates. <div class="sagecell-sage" id="sage-65"><script type="text/x-sage">pca_plot(Q.T*A)
+</script></div> Suppose we have a flower whose coordinates in this plane are \((-2.5, -0.75)\text{.}\)  To what species does this iris most likely belong?  Find an estimate of the sepal length, sepal width, petal length, and petal width for this flower.</p></li>
+<li><p>Suppose you have an iris, but you only know that its sepal length is 5.65 cm and its sepal width is 2.75 cm.  Knowing only these two measurements, determine the coordinates \((c_1, c_2)\) in the plane where this iris lies.  To what species does this iris most likely belong?  Now estimate the petal length and petal width of this iris. <div class="sagecell-sage" id="sage-66"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Suppose you find another iris whose sepal width is 3.2 cm and whose petal width is 2.2 cm.  Find the coordinates \((c_1, c_2)\) of this iris and determine the species to which it most likely belongs.  Also, estimate the sepal length and the petal length. <div class="sagecell-sage" id="sage-67"><script type="text/x-sage">
+</script></div></p></li>
+</ol></article><span class="incontext"><a href="sec-pca.html#activity-33">in-context</a></span>
+</body>
+</html>

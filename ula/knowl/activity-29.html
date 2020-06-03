@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:02-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.1.4</span>.</h6>
+<p>As an example, we will consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+2 \amp 0 \amp -2 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>When performing Gaussian elimination on \(A\text{,}\) we first apply a row replacement operation in which we multiply the first row by \(-2\) and add to the second row.  After this step, we have a new matrix \(A_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+2 \amp 0 \amp -2 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+0 \amp -4 \amp -4 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]
+= A_1\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li>
+<p>Show that multiplying \(A\) by the lower triangular matrix</p>
+<div class="displaymath">
+\begin{equation*}
+L_1 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>has the same effect as this row operation;  that is, show that \(L_1A = A_1\text{.}\)</p>
+</li>
+<li><p>Explain why \(L_1\) is invertible and find its inverse \(L_1^{-1}\text{.}\) <div class="sagecell-sage" id="sage-77"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>You should see that there is a simple relationship between \(L_1\) and \(L_1^{-1}\text{.}\)  Describe this relationship and explain why it holds.</p></li>
+<li>
+<p>To continue the Gaussian elimination algorithm, we need to apply two more row replacements to bring \(A\) into a triangular form \(U\) where</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+2 \amp 0 \amp -2 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+0 \amp -4 \amp -4 \\
+0 \amp 0 \amp -4 \\
+\end{array}\right] = U\text{.}
+\end{equation*}
+</div>
+<p>Find the matrices \(L_2\) and \(L_3\) that perform these row replacement operations so that \(L_3L_2L_1 A = U\text{.}\)</p>
+</li>
+<li><p>Explain why the matrix product \(L_3L_2L_1\) is invertible and use this fact to write \(A = LU\text{.}\)  What is the matrix \(L\) that you find?  Why do you think we denote it by \(L\text{?}\) <div class="sagecell-sage" id="sage-78"><script type="text/x-sage">
+</script></div></p></li>
+<li>
+<p>Row replacement operations may always be performed by multiplying by a lower triangular matrix.  It turns out the other two row operations, scaling and interchange, may also be performed using matrix multiplication.  For instance, consider the two matrices</p>
+<div class="displaymath">
+\begin{equation*}
+S = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 3 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right],
+\hspace{24pt}
+P = \left[\begin{array}{rrr}
+0 \amp 0 \amp 1 \\
+0 \amp 1 \amp 0 \\
+1 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Show that multiplying \(A\) by \(S\) performs a scaling operation and that multiplying by \(P\) performs a row interchange.</p>
+</li>
+<li><p>Explain why the matrices \(S\) and \(P\) are invertible and state their inverses.</p></li>
+</ol></article><span class="incontext"><a href="sec-matrix-inverse.html#activity-29">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:52-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">2.2.2.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>We have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{2}
+\left[\begin{array}{rrrr}
+1 \amp 2 \amp 0 \amp -2 \\
+2 \amp 4 \amp -3 \amp -2 \\
+-1 \amp -2 \amp 6 \amp 1 \\
+\end{array}\right]
+\amp
+\fourvec{3}{1}{-1}{1} \\
+\amp =
+\threevec{3(1)+1(2)-1(0)+1(-1)}
+{3(2)+1(4)-1(-3)+1(-2)}
+{3(-1)+1(-2)-1(6)+1(1)} \\
+\amp =\threevec{4}{11}{10}\text{.}
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li><p>The dimension of \(\xvec\) must be the same as the number of columns of \(A\) so \(\xvec\) is three-dimensional.  The dimension of \(A\xvec\) equals the number of rows of \(A\) so \(A\xvec\) is four-dimensional.</p></li>
+<li><p>We have \(A\zerovec = \zerovec\text{.}\)</p></li>
+<li><p>We have \(I\xvec=\xvec\text{;}\)  that is, multiplying a vector by \(I\) produces the same vector.</p></li>
+<li><p>The product \(A\evec_1 = 1\vvec_1+0\vvec_2+\ldots+0\vvec_n =
+\vvec_1\text{.}\)</p></li>
+<li>
+<p>If \(A\xvec=\bvec\text{,}\) then we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{3}
+x_1 \amp {}+{} \amp 2x_2 \amp {}={} \amp 6 \\
+-x_1 \amp {}+{} \amp x_2 \amp {}={} \amp 0\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>with corresponding augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+1 \amp 2 \amp 6 \\
+-1 \amp 1 \amp 0
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 2 \\
+0 \amp 1 \amp 2
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>This means that \(\xvec=\twovec{2}{2}\) is the unique solution to the equation \(A\xvec=\bvec\text{.}\)</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-matrices-lin-combs.html#solution-41">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">a</span>.</h6>
+<p>Suppose that we have a small data set containing the points \((0,2)\text{,}\) \((1,1)\text{,}\) \((2,3)\text{,}\) and \((3,3)\text{,}\) such as appear when the following cell is evaluated. <div class="sagecell-sage" id="sage-35"><script type="text/x-sage">data = [[0, 2], [1, 1], [2, 3], [3, 3]]
+list_plot(data, color='blue', size=40)
+</script></div> In addition to loading and plotting the data, evaluating that cell provides the following commands:</p>
+<ul class="disc">
+<li><p><code class="code-inline tex2jax_ignore">Q, R = QR(A)</code> returns the \(QR\) factorization of \(A\text{.}\)</p></li>
+<li><p><code class="code-inline tex2jax_ignore">demean(v)</code> returns the demeaned vector \(\widetilde{\vvec}\text{.}\)</p></li>
+</ul>
+<p>Let's fit a quadratic function of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\beta_0 + \beta_1 x + \beta_2 x^2 = y
+\end{equation*}
+</div>
+<p>to this dataset.</p>
+<p>Write four equations, one for each data point, for the coefficients \(\beta_0\text{,}\) \(\beta_1\text{,}\) and \(\beta_2\text{.}\)</p></article><span class="incontext"><a href="sec-least-squares.html#li-220">in-context</a></span>
+</body>
+</html>

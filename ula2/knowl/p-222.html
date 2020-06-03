@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Consider the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\wvec_1 = \threevec1{-1}1,\hspace{24pt}
+\wvec_2 = \threevec1{1}0,\hspace{24pt}
+\wvec_3 = \threevec1{-1}{-2}
+\end{equation*}
+</div>
+<p>that appeared in <a data-knowl="./knowl/example-orthogonal-set.html" title="Example 1.3.3">Example 1.3.3</a>.  Since this a set of three nonzero orthogonal vectors in \(\real^3\text{,}\) we know it is an orthogonal basis for \(\real^3\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Suppose that \(\bvec=\threevec24{-4}\text{.}\)  Find the weights \(c_1\text{,}\) \(c_2\text{,}\) and \(c_3\) that express \(\bvec\) as a linear combination \(\bvec=c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3\) using <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a>.</p>
+<div class="sagecell-sage" id="sage-15"><script type="text/x-sage">
+</script></div>
+</li>
+<li>
+<p>If we multiply a vector \(\vvec\) by a positive scalar \(s\text{,}\) the length of \(\vvec\) is also multiplied by \(s\text{;}\)  that is, \(\len{s\vvec} = s\len{\vvec}\text{.}\)</p>
+<p>Using this observation, find a vector \(\uvec_1\) that is parallel to \(\wvec_1\) and has length 1. Such vectors are called <em class="emphasis">unit vectors</em>. <div class="sagecell-sage" id="sage-16"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li><p>In a similar way, find a unit vector \(\uvec_2\) that is parallel to \(\wvec_2\) and a unit vector \(\uvec_3\) that is parallel to \(\wvec_3\text{.}\)</p></li>
+<li><p>Using <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a>, express the vector \(\bvec=\threevec420\) as a linear combination \(c_1\uvec_1+c_2\uvec_2+c_3\uvec_3\text{.}\) <div class="sagecell-sage" id="sage-17"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>How does the expression for the weights, as given in <a data-knowl="./knowl/prop-orthog-lincomb.html" title="Proposition 1.3.5">Proposition 1.3.5</a>, simplify when the basis vectors have unit length?</p></li>
+<li><p>Form the matrix \(Q =
+\left[
+\begin{array}{rrr}
+\uvec_1 \amp \uvec_2 \amp \uvec_3
+\end{array}
+\right]
+\text{.}\) For a general 3-dimensional vector \(\xvec\text{,}\) how is \(Q^T\xvec\) expressed in terms of dot products?</p></li>
+<li><p>Explain why \(QQ^T\xvec = Q(Q^T\xvec)=\xvec\) for any 3-dimensional vector \(\xvec\text{.}\)</p></li>
+<li><p>Explain why \(Q^{-1}=Q^T\) and use this observation to solve the equation \(Q\xvec = \threevec22{-1}\text{.}\)</p></li>
+</ol>
+<span class="incontext"><a href="sec-orthogonal-bases.html#p-222">in-context</a></span>
+</body>
+</html>

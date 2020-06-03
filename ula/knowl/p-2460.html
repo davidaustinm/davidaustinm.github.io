@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:05-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose we know the expression of a vector \(\xvec\) in standard coordinates.  How can we find its coordinates in the basis \(\bcal\text{?}\)  For instance, suppose \(\xvec=\twovec{-8}{2}\) and that we would like to find \(\coords{\xvec}{\bcal}\text{.}\)  We have</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\twovec{-8}{2}}{\bcal}=\twovec{c_1}{c_2}
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\twovec{-8}{2} = c_1\vvec_1 + c_2\vvec_2
+\end{equation*}
+</div>
+<p>or</p>
+<div class="displaymath">
+\begin{equation*}
+c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
+\end{equation*}
+</div>
+<p>This linear system for the weights defines an augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+2 \amp 1 \amp -8 \\
+1 \amp 2 \amp 2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp -6 \\
+0 \amp 1 \amp 4 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\twovec{-8}{2}}{\bcal} = \twovec{-6}{4}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="sec-bases.html#p-2460">in-context</a></span>
+</body>
+</html>

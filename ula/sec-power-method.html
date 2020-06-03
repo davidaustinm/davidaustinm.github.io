@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:49-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Finding eigenvectors numerically</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline">David Austin</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gaussian-revisited.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gaussian-revisited.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method" class="active">Finding eigenvectors numerically</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-power-method"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Finding eigenvectors numerically</span>
+</h2>
+<a href="sec-power-method.html" class="permalink">¶</a><section class="introduction" id="introduction-26"><p id="p-5031">When presented with a square matrix \(A\text{,}\) we have typically found its eigenvalues as the roots of the characteristic polynomial \(\det(A-\lambda I) = 0\) and the associated eigenvectors as the null space \(\nul(A-\lambda I)\text{.}\) Unfortunately, this approach is not practical when we are working with large matrices. First, finding the charactertic polynomial of a large matrix requires considerable computation, as does finding the roots of that polynomial. Second, finding the null space of a singular matrix is plagued by numerical problems, as we will see in the preview activity.</p>
+<p id="p-5032">In this section, we will explore a technique called the <em class="emphasis">power method</em> that finds numerical approximations to the eigenvalues and eigenvectors of a square matrix.  Generally speaking, this method is how eigenvectors are found in practical computing applications.</p>
+<article class="project-like" id="exploration-20"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">5.2.1</span>.</h6>
+<p id="p-5033">Let's recall some earlier observations about eigenvalues and eigenvectors.</p>
+<ol class="lower-alpha">
+<li id="li-3437"><p id="p-5034">How are the eigenvalues and associated eigenvectors of \(A\) related to those of \(A^{-1}\text{?}\)</p></li>
+<li id="li-3438"><p id="p-5035">How are the eigenvalues and associated eigenvectors of \(A\) related to those of \(A-3I\text{?}\)</p></li>
+<li id="li-3439"><p id="p-5036">If \(\lambda\) is an eigenvalue of \(A\text{,}\) what can we say about the pivot positions of \(A-\lambda
+I\text{?}\)</p></li>
+<li id="li-3440"><p id="p-5037">Suppose that \(A = \left[\begin{array}{rr}
+0.8 \amp 0.4 \\
+0.2 \amp 0.6 \\
+\end{array}\right]
+\text{.}\)  Explain how we know that \(1\) is an eigenvalue of \(A\) and then explain why the following Sage computation is incorrect. <div class="sagecell-sage" id="sage-134"><script type="text/x-sage">A = matrix(2,2,[0.8, 0.4, 0.2, 0.6])
+I = matrix(2,2,[1, 0, 0, 1])	  
+(A-I).rref()
+</script></div></p></li>
+<li id="li-3441"><p id="p-5038">Suppose that \(\xvec_0 = \twovec{1}{0}\text{,}\) and we define a sequence \(\xvec_{k+1} = A\xvec_k\text{;}\)  in other words, \(\xvec_{k} = A^k\xvec_0\text{.}\)  What happens to \(\xvec_k\) as \(k\) grows increasingly large?</p></li>
+<li id="li-3442"><p id="p-5039">Explain how the eigenvalues of \(A\) are responsible for the behavior noted in the previous question.</p></li>
+</ol></article></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">The power method</span>
+</h3>
+<p id="p-5047">Our goal is to find a technique that produces numerical approximations to the eigenvalues and associated eigenvectors of a matrix \(A\text{.}\)  We begin by searching for the eigenvalue having the largest absolute value.  We call this the <em class="emphasis">dominant</em> eigenvalue. </p>
+<p id="p-5048">Let's begin with the positive stochastic matrix \(A=\left[\begin{array}{rr}
+0.8 \amp 0.4 \\
+0.2 \amp 0.6 \\
+\end{array}\right]
+\text{.}\) We spent quite a bit of time studying this type of matrix in <a href="sec-stochastic.html" class="internal" title="Section 4.5: Markov chains and Google's PageRank algorithm">Section 4.5</a>; in particular, we saw that any Markov chain will converge to the unique steady state vector.  Let's rephrase this statement in terms of the eigenvectors of \(A\text{.}\)</p>
+<p id="p-5049">In this case, we have eigenvalues \(\lambda_1 = 1\) and \(\lambda_2 =0.4\text{,}\) and associated eigenvectors \(\vvec_1 =
+\twovec{2}{1}\) and \(\vvec_2 = \twovec{-1}{1}\text{.}\)</p>
+<p id="p-5050">Suppose we begin with the vector</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec_0 = \twovec{1}{0} = \frac13 \vvec_1 - \frac13 \vvec_2
+\end{equation*}
+</div>
+<p>and find</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\xvec_1 \amp {}={} A\xvec_0 = \frac13 \vvec_1 - \frac13(0.4)
+\vvec_2 \\
+\xvec_2 \amp {}={} A^2\xvec_0 = \frac13 \vvec_1 - \frac13(0.4)^2
+\vvec_2 \\
+\xvec_3 \amp {}={} A^3\xvec_0 = \frac13 \vvec_1 - \frac13(0.4)^3
+\vvec_2 \\
+\amp \vdots \\
+\xvec_k \amp {}={} A^k\xvec_0 = \frac13 \vvec_1 - \frac13(0.4)^k
+\vvec_2 \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>and so forth.  The point is that the powers \(0.4^k\) become increasingly small as \(k\) grows so that \(\xvec_k\approx \frac13\vvec_1\) when \(k\) is large.  As \(k\) grows large, the contribution from the eigenvector \(\vvec_2\) to the vectors \(\xvec_k\) becomes increasingly insignificant.  Therefore, the vectors \(\xvec_k\) become increasingly close to a vector in the eigenspace \(E_1\text{.}\) If we did not know the eigenvector \(\vvec_1\text{,}\) we could find a basis vector for \(E_1\) in this way.</p>
+<p id="p-5051">Let's now look at the matrix \(A = \left[\begin{array}{rr}
+2 \amp 1 \\
+1 \amp 2 \\
+\end{array}\right]
+\text{,}\) which has eigenvalues \(\lambda_1=3\) and \(\lambda_2 =
+1\) and associated eigenvectors \(\vvec_1 = \twovec{1}{1}\) and \(\vvec_{2} = \twovec{-1}{1}\text{.}\)  Once again, begin with the vector \(\xvec_0 = \twovec{1}{0}=\frac12 \vvec_1 - \frac12 \vvec_2\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\xvec_1 \amp {}={} A\xvec_0 = 3\frac12 \vvec_1 - \frac12
+\vvec_2 \\
+\xvec_2 \amp {}={} A^2\xvec_0 = 3^2\frac13 \vvec_1 - \frac12
+\vvec_2 \\
+\xvec_3 \amp {}={} A^3\xvec_0 = 3^3\frac13 \vvec_1 - \frac12
+\vvec_2 \\
+\amp \vdots \\
+\xvec_k \amp {}={} A^k\xvec_0 = 3^k\frac13 \vvec_1 - \frac12
+\vvec_2\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:56.4102564102564%;justify-content:flex-start;"><p id="p-5052">As the figure shows, the vectors \(\xvec_k\) are stretched by a factor of \(3\) in the \(\vvec_1\) direction and not at all in the \(\vvec_2\) direction. Consequently, the vectors \(\xvec_k\) become increasingly long, but their direction gets closer to the direction of the eigenvector \(\vvec_1=\twovec{1}{1}\) associated to the dominant eigenvalue.</p></div>
+<div class="sbspanel" style="width:41.025641025641%;justify-content:flex-start;"><img src="images/numerical-power.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-5053">To find an eigenvector associated to the dominant eigenvalue, we will prevent the length of the vectors \(\xvec_k\) from growing arbitrarily large by multiplying by an appropriate normalizing constant.  There are several ways to do this; we will describe one simple way.  Given the vector \(\xvec_k\text{,}\) we identify its component having the largest absolute value and call it \(m_k\text{.}\)  We then define \(\overline{\xvec}_k =
+\frac{1}{m_k} \xvec_k\text{,}\) which means that the component of \(\overline{\xvec}_k\) having the largest absolute value is \(1\text{.}\)</p>
+<p id="p-5054">For example, beginning with \(\xvec_0 = \twovec{1}{0}\text{,}\) we find \(\xvec_1 = A\xvec_{0} =
+\twovec{2}{1}\text{.}\)  The component of \(\xvec_1\) having the largest absolute value is \(m_1=2\) so we multiply by \(\frac{1}{m_1} = \frac12\) to obtain \(\overline{\xvec}_1 =
+\twovec{1}{\frac12}\text{.}\)  Then \(\xvec_2 = A\overline{\xvec}_1 =
+\twovec{\frac52}{2}\text{.}\)  Now the component having the largest absolute value is \(m_2=\frac52\) so we multiply by \(\frac25\) to obtain \(\overline{\xvec}_2 = \twovec{1}{\frac45}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:56.4102564102564%;justify-content:flex-start;"><p id="p-5055">The resulting sequence of vectors \(\overline{\xvec}_k\) is shown in the figure.  Notice how the vectors \(\overline{\xvec}_k\) now approach the eigenvector \(\vvec_1\text{.}\)  In this way, we find the eigenvector \(\vvec=\twovec{1}{1}\) of the matrix \(A\text{.}\) This is the <em class="emphasis">power method</em> for finding an eigenvector associated to the dominant eigenvalue of a matrix. </p></div>
+<div class="sbspanel" style="width:41.025641025641%;justify-content:flex-start;"><img src="images/numerical-power-norm.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<article class="project-like" id="activity-64"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">5.2.2</span>.</h6>
+<p id="p-5056">Let's begin by considering the matrix \(A = \left[\begin{array}{rr}
+0.5 \amp 0.2 \\
+0.4 \amp 0.7 \\
+\end{array}\right]\) and the initial vector \(\xvec_0 = \twovec{1}{0}\text{.}\) <div class="sagecell-sage" id="sage-135"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-3449"><p id="p-5057">Compute the vector \(\xvec_1 =
+A\xvec_0\text{.}\)</p></li>
+<li id="li-3450"><p id="p-5058">Find \(m_1\text{,}\) the component of \(\xvec_1\) that has the largest absolute value.  Then form \(\overline{\xvec}_1 =
+\frac 1{m_1} \xvec_1\text{.}\)  Notice that the component having the largest absolute value of \(\overline{\xvec}_1\) is \(1\text{.}\)</p></li>
+<li id="li-3451"><p id="p-5059">Find the vector \(\xvec_2 = A\overline{\xvec}_1\text{.}\) Identify the component \(m_2\) of \(\xvec_2\) having the largest absolute value.  Then form \(\overline{\xvec}_2 =
+\frac1{m_2}\overline{\xvec}_1\) to obtain a vector in which the component with the largest absolute value is \(1\text{.}\)</p></li>
+<li id="li-3452">
+<p id="p-5060">The Sage cell below defines a function that implements the power method.  Define the matrix \(A\) and initial vector \(\xvec_0\) below.  The command <code class="code-inline tex2jax_ignore">power(A, x0,	N)</code> will print out the multiplier \(m\) and the vectors \(\overline{\xvec}_k\) for \(N\) steps of the power method. <div class="sagecell-sage" id="sage-136"><script type="text/x-sage">def power(A, x, N):
+    for i in range(N):
+        x = A*x
+        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
+        x = 1/float(m)*x
+        print (m, x)
+
+### Define the matrix A and initial vector x0 below
+A =
+x0 =
+power(A, x0, 20)
+</script></div></p>
+<p id="p-5061">How does this computation identify an eigenvector of the matrix \(A\text{?}\)</p>
+</li>
+<li id="li-3453"><p id="p-5062">What is the corresponding eigenvalue of this eigenvector?</p></li>
+<li id="li-3454"><p id="p-5063">How do the values of the multipliers \(m_k\) tell us the eigenvalue associated to the eigenvector we have found?</p></li>
+<li id="li-3455"><p id="p-5064">Consider now the matrix \(A=\left[\begin{array}{rr}
+-5.1 \amp 5.7 \\
+-3.8 \amp 4.4 \\
+\end{array}\right]
+\text{.}\) Use the power method to find the dominant eigenvalue of \(A\) and an associated eigenvector.</p></li>
+</ol></article><p id="p-5073">Notice that the power method gives us not only an eigenvector \(\vvec\) but also its associated eigenvalue.  As in the activity, consider the matrix \(A=\left[\begin{array}{rr}
+-5.1 \amp 5.7 \\
+-3.8 \amp 4.4 \\
+\end{array}\right]
+\text{,}\) which has eigenvector \(\vvec=\twovec{3}{2}\text{.}\)  The first component has the largest absolute value so we multiply by \(\frac13\) to obtain \(\overline{\vvec}=\twovec{1}{\frac23}\text{.}\)  When we multiply by \(A\text{,}\) we have \(A\overline{\vvec} = \twovec{-1.30}{-0.86}\text{.}\) Notice that the first component still has the largest absolute value so that the multiplier \(m=-1.3\) is the eigenvalue \(\lambda\) corresponding to the eigenvector.  This demonstrates the fact that the multipliers \(m_k\) approach the eigenvalue \(\lambda\) having the largest absolute value.</p>
+<p id="p-5074">Notice that the power method requires us to choose an initial vector \(\xvec_0\text{.}\)  For most choices, this method will find the eigenvalue having the largest absolute value.  However, an unfortunate choice of \(\xvec_0\) may not.  For instance, if we had chosen \(\xvec_0 = \vvec_2\) in our example above, the vectors in the sequence \(\xvec_k =
+A^k\xvec_0=\lambda_2^k\vvec_2\) will not detect the eigenvector \(\vvec_1\text{.}\)  However, it usually happens that our initial guess \(\xvec_0\) has some contribution from \(\vvec_1\) that enables us to find it.</p>
+<p id="p-5075">The power method, as presented here, will fail for certain unlucky matrices.  This is examined in <a data-knowl="./knowl/exercise-power-method.html" title="Exercise 5.2.4.5">Exercise 5.2.4.5</a> along with a means to improve the power method to work for all matrices.</p></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Finding other eigenvalues</span>
+</h3>
+<p id="p-5076">The power method gives a technique for finding the dominant eigenvalue of a matrix.  We can modify the method to find the other eigenvalues as well.</p>
+<article class="project-like" id="activity-65"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">5.2.3</span>.</h6>
+<p id="p-5077">The key to finding the eigenvalue of \(A\) having the smallest absolute value is to note that the eigenvectors of \(A\) are the same as those of \(A^{-1}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3463"><p id="p-5078">If \(\vvec\) is an eigenvector of \(A\) with associated eigenvector \(\lambda\text{,}\) explain why \(\vvec\) is an eigenvector of \(A^{-1}\) with associated eigenvalue \(\lambda^{-1}\text{.}\)</p></li>
+<li id="li-3464"><p id="p-5079">Explain why the eigenvalue of \(A\) having the smallest absolute value is the reciprocal of the dominant eigenvalue of \(A^{-1}\text{.}\)</p></li>
+<li id="li-3465"><p id="p-5080">Explain how to use the power method applied to \(A^{-1}\) to find the eigenvalue of \(A\) having the smallest absolute value.</p></li>
+<li id="li-3466"><p id="p-5081">If we apply the power method to \(A^{-1}\text{,}\) we begin with an intial vector \(\xvec_0\) and generate the sequence \(\xvec_{k+1} = A^{-1}\xvec_k\text{.}\)  It is not computationally efficient to compute \(A^{-1}\text{,}\) however, so instead we solve the equation \(A\xvec_{k+1} =
+\xvec_k\text{.}\)  Explain why an \(LU\) factorization of \(A\) is useful for implementing the power method applied to \(A^{-1}\text{.}\)</p></li>
+<li id="li-3467"><p id="p-5082">The following Sage cell defines a command called <code class="code-inline tex2jax_ignore">inverse_power</code> that applies the power method to \(A^{-1}\text{.}\)  That is, <code class="code-inline tex2jax_ignore">inverse_power(A, x0, N)</code> prints the vectors \(\xvec_k\text{,}\) where \(\xvec_{k+1} =
+A^{-1}\xvec_k\text{,}\) and multipliers \(\frac{1}{m_k}\text{,}\) which approximate the eigenvalue of \(A\text{.}\)  Use it to find the eigenvalue of \(A=\left[\begin{array}{rr}
+-5.1 \amp 5.7 \\
+-3.8 \amp 4.4 \\
+\end{array}\right]\) having the smallest absolute value. <div class="sagecell-sage" id="sage-137"><script type="text/x-sage">def inverse_power(A, x, N):
+    for i in range(N):
+        x = A \ x
+        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
+        x = 1/float(m)*x
+        print (1/float(m), x)
+### define the matrix A and vector x0
+A =
+x0 =
+inverse_power(A, x0, 20)
+</script></div></p></li>
+<li id="li-3468"><p id="p-5083">The inverse power method only works if \(A\) is invertible.  If \(A\) is not invertible, what is its eigenvalue having the smallest absolute value?</p></li>
+<li id="li-3469"><p id="p-5084">Use the power method and the inverse power method to find the eigenvalues and associated eigenvectors of the matrix \(A = \left[\begin{array}{rr}
+-0.23 \amp -2.33 \\
+-1.16 \amp 1.08 \\
+\end{array}\right]
+\text{.}\)</p></li>
+</ol></article><p id="p-5093">With the power method and the inverse power method, we can now find the eigenvalues of a matrix \(A\) having the largest and smallest absolute values.  With one more modification, we can find all the eigenvalues of \(A\text{.}\)</p>
+<article class="project-like" id="activity-66"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">5.2.4</span>.</h6>
+<p id="p-5094">Remember that the absolute value of a number tells us how far that number is from \(0\) on the real number line.  We may therefore think of the inverse power method as telling us the eigenvalue closest to \(0\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3477"><p id="p-5095">If \(\vvec\) is an eigenvalue of \(A\) with associated eigenvalue \(\lambda\text{,}\) explain why \(\vvec\) is an eigenvector of \(A - sI\) where \(s\) is some scalar.</p></li>
+<li id="li-3478"><p id="p-5096">What is the eigenvalue of \(A-sI\) associated to the eigenvector \(\vvec\text{?}\)</p></li>
+<li id="li-3479"><p id="p-5097">Explain why the eigenvalue of \(A\) closest to \(s\) is the eigenvalue of \(A-sI\) closest to \(0\text{.}\)</p></li>
+<li id="li-3480"><p id="p-5098">Explain why applying the inverse power method to \(A-sI\) gives the eigenvalue of \(A\) closest to \(s\text{.}\)</p></li>
+<li id="li-3481">
+<p id="p-5099">Consider the matrix \(A = \left[\begin{array}{rrrr}
+3.6 \amp 1.6 \amp 4.0 \amp 7.6 \\
+1.6 \amp 2.2 \amp 4.4 \amp 4.1 \\
+3.9 \amp 4.3 \amp 9.0 \amp 0.6 \\
+7.6 \amp 4.1 \amp 0.6 \amp 5.0 \\
+\end{array}\right]
+\text{.}\) If we use the power method and inverse power method, we find two eigenvalues, \(\lambda_1=16.35\) and \(\lambda_2=0.75\text{.}\)  Viewing these eigenvalues on a number line, we know that the other eigenvalues lie in the range between \(-\lambda_1\) and \(\lambda_1\text{,}\) as shaded in <a data-knowl="./knowl/fig-numerical-power-line.html" title="Figure 5.2.1">Figure 5.2.1</a>.</p>
+<figure class="figure-like" id="fig-numerical-power-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/numerical-power-line.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">5.2.1.</span> The range of eigenvalues of \(A\text{.}\)</figcaption></figure><p id="p-5100">The Sage cell below has a function <code class="code-inline tex2jax_ignore">find_closest_eigenvalue(A, s, x, N)</code> that implements \(N\) steps of the inverse power method using the matrix \(A-sI\) and an initial vector \(x\text{.}\)  This function prints approximations to the eigenvalues and eigenvectors of \(A\text{.}\) By trying different values in the gray regions of the number line, find the other two eigenvalues of \(A\text{.}\) <div class="sagecell-sage" id="sage-138"><script type="text/x-sage">def find_closest_eigenvalue(A, s, x, N):
+    B = A-s*identity_matrix(A.nrows())
+    for i in range(N):
+        x = B \ x
+        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
+        x = 1/float(m)*x
+        print (1/float(m)+s, x)
+### define the matrix A and vector x0
+A =
+x0 =
+find_closest_eigenvalue(A, 2, x0, 20)
+</script></div></p>
+</li>
+<li id="li-3482"><p id="p-5101">Write a list of the four eigenvalues of \(A\) in increasing order.</p></li>
+</ol></article><p id="p-5109">There are clearly restrictions on the matrices to which this technique applies.  We have been making the mild assumption that the eigenvalues of \(A\) are real and distinct.  If \(A\) has repeated or complex eigenvalues, some other technique will need to be used.</p></section><section class="subsection" id="subsection-80"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-5110">We have explored the power method as a tool for numerically approximating the eigenvalues and eigenvectors of a matrix.</p>
+<ul class="disc">
+<li id="li-3489"><p id="p-5111">After choosing an initial vector \(\xvec_0\text{,}\) we define the sequence \(\xvec_{k+1}=A\xvec_k\text{.}\)  As \(k\) becomes increasingly large, the direction of the vectors \(\xvec_k\) increasingly closely approximates the direction of the eigenspace corresponding to the eigenvalue \(\lambda_1\) having the largest absolute value.</p></li>
+<li id="li-3490"><p id="p-5112">We normalize the vectors \(\xvec_k\) by multiplying by \(\frac{1}{m_k}\text{,}\) where \(m_k\) is the component having the largest absolute value.  In this way, the vectors \(\overline{\xvec}_k\) approach an eigenvector associated to \(\lambda_1\text{.}\)  The multipliers \(m_k\) approach the eigenvalue \(\lambda_1\text{.}\)</p></li>
+<li id="li-3491"><p id="p-5113">To find the eigenvalue having the smallest absolute value, we apply the power method using the matrix \(A^{-1}\text{.}\)</p></li>
+<li id="li-3492"><p id="p-5114">To find the eigenvalue closest to some number \(s\text{,}\) we apply the power method using the matrix \((A-sI)^{-1}\text{.}\)</p></li>
+</ul></section><section class="exercises" id="exercises-21"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.2.4</span> <span class="title">Exercises</span>
+</h3>
+<p id="p-5115">This Sage cell has the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> that we have developed in this section.  After evaluating this cell, these commands will be available in any other cell on this page. <div class="sagecell-sage" id="sage-139"><script type="text/x-sage">def power(A, x, N):
+    for i in range(N):
+        x = A*x
+        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
+        x = 1/float(m)*x
+        print m, x
+def find_closest_eigenvalue(A, s, x, N):
+    B = A-s*identity_matrix(A.nrows())
+    for i in range(N):
+        x = B \ x
+        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
+        x = 1/float(m)*x
+        print 1/float(m)+s, x
+def inverse_power(A, x, N):
+    find_closest_eigenvalue(A, 0, x, N)
+</script></div></p>
+<article class="exercise-like" id="exercise-182"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-5116">Suppose that \(A\) is a matrix having eigenvalues \(-3\text{,}\) \(-0.2\text{,}\) \(1\text{,}\) and \(4\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3493"><p id="p-5117">What are the eigenvalues of \(A^{-1}\text{?}\)</p></li>
+<li id="li-3494"><p id="p-5118">What are the eigenvalues of \(A+7I\text{?}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-183"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-5125">Use the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> to approximate the eigenvalues and associated eigenvectors of the following matrices. <div class="sagecell-sage" id="sage-140"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-3499"><p id="p-5126">\(A= \left[\begin{array}{rr}
+-2 \amp -2 \\
+-8 \amp -2 \\
+\end{array}\right]
+\text{.}\)</p></li>
+<li id="li-3500"><p id="p-5127">\(A= \left[\begin{array}{rr}
+0.6 \amp 0.7 \\
+0.5 \amp 0.2 \\
+\end{array}\right]
+\text{.}\)</p></li>
+<li id="li-3501"><p id="p-5128">\(A= \left[\begin{array}{rrrr}
+1.9  \amp -16.0 \amp  -13.0 \amp 27.0 \\
+-2.4 \amp  20.3 \amp  4.6 \amp -17.7 \\
+-0.51 \amp -11.7 \amp -1.4 \amp  13.1  \\
+-2.1 \amp  15.3 \amp  6.9 \amp -20.5 \\
+\end{array}\right]
+\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-184"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-5138">Use the techniques we have seen in this section to find the eigenvalues of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{rrrrr}
+-14.6 \amp 9.0 \amp -14.1 \amp 5.8 \amp  13.0 \\
+27.8 \amp -4.2 \amp  16.0 \amp 0.9 \amp -21.3 \\
+-5.5 \amp 3.4 \amp  3.4 \amp  3.3 \amp  1.1 \\
+-25.4 \amp 11.3 \amp -15.4 \amp 4.7 \amp  20.3 \\
+-33.7 \amp 14.8 \amp -22.5 \amp 9.7 \amp  26.6 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-141"><script type="text/x-sage">A = matrix(5,5, [-14.6,  9.0, -14.1, 5.8,  13.0,
+                  27.8, -4.2,  16.0, 0.9, -21.3,
+                  -5.5,  3.4,   3.4, 3.3,   1.1,
+                 -25.4, 11.3, -15.4, 4.7,  20.3,
+                 -33.7, 14.8, -22.5, 9.7,  26.6])
+</script></div></p></article><article class="exercise-like" id="exercise-185"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-5141">Consider the matrix \(A = \left[\begin{array}{rr}
+0 \amp -1 \\
+-4 \amp 0 \\
+\end{array}\right]
+\text{.}\) <div class="sagecell-sage" id="sage-142"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-3508"><p id="p-5142">Describe what happens if we apply the power method and the inverse power method using the initial vector \(\xvec_0 =
+\twovec{1}{0}\text{.}\)</p></li>
+<li id="li-3509"><p id="p-5143">Find the eigenvalues of this matrix and explain this observed behavior.</p></li>
+<li id="li-3510"><p id="p-5144">How can we apply the techniques of this section to find the eigenvalues of \(A\text{?}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-power-method"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-5153">We have seen that the matrix \(A = \left[\begin{array}{rr}
+1 \amp 2 \\
+2 \amp 1 \\
+\end{array}\right]\) has eigenvalues \(\lambda_1 = 3\) and \(\lambda_2=-1\) and associated eigenvectors \(\vvec_1 =
+\twovec{1}{1}\) and \(\vvec_2=\twovec{-1}{1}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3517"><p id="p-5154">Describe what happens when we apply the inverse power method using the initial vector \(\xvec_0 = \twovec{1}{0}\text{.}\)</p></li>
+<li id="li-3518"><p id="p-5155">Explain why this is happening and provide a contrast with how the power method usually works.</p></li>
+<li id="li-3519"><p id="p-5156">How can we modify the power method to give the dominant eigenvalue in this case?</p></li>
+</ol></article><article class="exercise-like" id="exercise-187"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-5165">Suppose that \(A\) is a \(2\times2\) matrix with eigenvalues \(4\) and \(-3\) and that \(B\) is a \(2\times2\) matrix with eigenvalues \(4\) and \(1\text{.}\) If we apply the power method to find the dominant eigenvalue of these matrices to the same degree of accuracy, which matrix will require more steps in the algorithm?  Explain your response.</p></article><article class="exercise-like" id="exercise-188"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-5168">Suppose that we apply the power method to the matrix \(A\) with an initial vector \(\xvec_0\) and find the eigenvalue \(\lambda=3\) and eigenvector \(\vvec\text{.}\) Suppose that we then apply the power method again with a different initial vector and find the same eigenvalue \(\lambda=3\) but a different eigenvector \(\wvec\text{.}\)  What can we conclude about the matrix \(A\) in this case?</p></article><article class="exercise-like" id="exercise-189"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-5171">The power method we have developed only works if the matrix has real eigenvalues. Suppose that \(A\) is a \(2\times2\) matrix that has a complex eigenvalue \(\lambda = 2+3i\text{.}\)  What would happen if we apply the power method to \(A\text{?}\)</p></article><article class="exercise-like" id="exercise-190"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-5174">Consider the matrix \(A=\left[\begin{array}{rr}
+1 \amp 1 \\
+0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3526"><p id="p-5175">Find the eigenvalues and associated eigenvectors of \(A\text{.}\)</p></li>
+<li id="li-3527"><p id="p-5176">Make a prediction about what happens if we apply the power method and the inverse power method to find eigenvalues of \(A\text{.}\)</p></li>
+<li id="li-3528"><p id="p-5177">Verify your prediction using Sage. <div class="sagecell-sage" id="sage-143"><script type="text/x-sage">
+</script></div></p></li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

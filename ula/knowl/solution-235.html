@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:39-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">4.5.5.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>Notice that page \(2\) receives half of the PageRank from pages \(1\) and \(3\text{.}\)  This means that \(x_2=\frac12x_2+\frac12x_3\text{.}\)</p>
+<p>Also, page \(3\) receives half of the PageRank from page \(1\) and none from page \(2\) so we have \(x_3=\frac12 x_1\text{.}\)</p>
+<p>This means that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{4}
+x_1 \amp {}={} \amp \amp \amp x_2 \amp {}+{} \amp
+\frac12x_3 \\
+x_2 \amp {}={} \amp \frac12x_1\amp \amp \amp {}+{} \amp
+\frac12x_3 \\
+x_3 \amp {}={} \amp \frac12x_1\amp \amp \amp \amp\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li><p>From the equations, we see that \(G=\left[\begin{array}{rrr}
+0 \amp 1 \amp \frac12 \\
+\frac12 \amp 0 \amp \frac12 \\
+\frac12 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}\)</p></li>
+<li><p>All of the entries of \(G\) are nonnegative and the columns each add to \(1\text{.}\)  This tells us that \(G\) is stochastic.</p></li>
+<li><p>We see that \(\lambda_1=1\) is an eigenvalue and that the eigenspace \(E_1\) is spanned by \(\threevec432\text{.}\)  The unique steady-state vector is then \(\qvec=\threevec{\frac49}{\frac39}{\frac29}\text{.}\)</p></li>
+<li><p>Page \(1\) is assessed to have the highest quality because its PageRank \(x_1=\frac49\) is the largest.  This makes sense as a reflection of the structure of this Internet.  Since Page \(2\) only links to Page \(1\) and not Page \(3\text{,}\) it is not as useful as Page \(1\text{.}\)  Furthermore, Page \(3\) only has one incoming link so it is not viewed by Page \(2\) as being useful.</p></li>
+<li><p>Since all the entries of \(G^4\) are positive, we can conclude that \(G\) is a positive matrix.  The Perron-Frobenius theorem tells us there is a unique steady-state vector, which we have already seen, and that any Markov chain will converge to it.</p></li>
+<li><p>We verify that the Markov chain converges to the unique steady-state vector \(\qvec=\threevec{\frac49}{\frac39}{\frac29}\text{.}\)</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-stochastic.html#solution-235">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:40-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">4.5.7</span>.</h6>
+<p>The following Sage cell will generate the Markov chain for the modified Google matrix \(G\) if you simply enter the original Google matrix \(G\) in the appropriate line. <div class="sagecell-sage" id="sage-122"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+    r = A.nrows()
+    A = 0.85*A + 0.15*matrix(r,r,[1.0/r]*(r*r))	      
+    for i in range(N):
+        x0 = A*x0
+        print (x0.numerical_approx(digits=3))
+## Define original Google matrix G and initial vector x0.
+## The function above finds the modified Google matrix
+## and resulting Markov chain 
+G =
+x0 =
+modified_markov_chain(G, x0, 20)
+</script></div></p>
+<ol class="lower-alpha">
+<li><p>Consider the original Internet with three pages shown in <a data-knowl="./knowl/fig-google-intro.html" title="Figure 4.5.7">Figure 4.5.7</a> and find the PageRank vector \(\xvec\) using the modified Google matrix in the Sage cell above. How does this modified PageRank vector compare to the vector we found using the original Google matrix \(G\text{?}\)</p></li>
+<li><p>Find the modified PageRank vector for the Internet shown in <a data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.  Explain why this vector seems to be the correct one.</p></li>
+<li><p>Find the modified PageRank vector for the Internet shown in <a data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a>.  Explain why this modified PageRank vector fixes the problem that appeared with the original PageRank vector.</p></li>
+</ol></article><span class="incontext"><a href="sec-stochastic.html#activity-60">in-context</a></span>
+</body>
+</html>

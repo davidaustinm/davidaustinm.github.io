@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:46-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">5.1.3</span>.</h6>
+<p>We will consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+-2 \amp -3 \amp -2 \\
+3 \amp 7 \amp 4 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>and begin performing Gaussian elimination.</p>
+<ol class="lower-alpha">
+<li>
+<p>Perform two row replacement operations to find the row equivalent matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A' = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+0 \amp 1 \amp 0 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Find elementary matrices \(E_1\) and \(E_2\) that perform these two operations so that \(E_2E_1 A = A'\text{.}\)</p>
+</li>
+<li>
+<p>Perform a third row replacement to find the upper triangular matrix</p>
+<div class="displaymath">
+\begin{equation*}
+U = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Find the elementary matrix \(E_3\) such that \(E_3E_2E_1A
+= U\text{.}\)</p>
+</li>
+<li><p>We can write \(A=E_1^{-1}E_2^{-1}E_3^{-1} U\text{.}\) Find the inverse matrices \(E_1^{-1}\text{,}\) \(E_2^{-1}\text{,}\) and \(E_3^{-1}\) and the product \(L = E_1^{-1}E_2^{-1}E_3^{-1}\text{.}\)  Then verify that \(A=LU\text{.}\) <div class="sagecell-sage" id="sage-128"><script type="text/x-sage">
+</script></div></p></li>
+<li>
+<p>Suppose that we want to solve the equation \(A\xvec = \bvec = \threevec4{-7}{12}\text{.}\)  We will write</p>
+<div class="displaymath">
+\begin{equation*}
+A\xvec = LU\xvec = L(U\xvec) = \bvec
+\end{equation*}
+</div>
+<p>and introduce an unknown vector \(\cvec\) such that \(U\xvec = \cvec\text{.}\)  Find \(\cvec\) by noting that \(L\cvec = \bvec\) and solving this equation.</p>
+</li>
+<li><p>Now that we have found \(\cvec\text{,}\) find \(\xvec\) by solving \(U\xvec = \cvec\text{.}\)</p></li>
+<li><p>Use the factorization \(A=LU\) and this two-step process, solve the equation \(A\xvec = \threevec{2}{-2}{7}\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-gaussian-revisited.html#activity-62">in-context</a></span>
+</body>
+</html>

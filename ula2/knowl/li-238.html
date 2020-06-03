@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">e</span>.</h6>
+<p>Repeat one more time by fitting a degree 11 polynomial to the data, plotting it, and finding \(R^2\text{.}\) <div class="sagecell-sage" id="sage-44"><script type="text/x-sage">
+</script></div></p>
+<p>It's certainly true that higher degree polynomials fit the data better, as seen by the increasing values of \(R^2\text{,}\) but that's not always a good thing. For instance, when \(k=11\text{,}\) you may notice that the polynomial wiggles a little more than it should. In this case, the polynomial is trying too hard to fit the data, which usually has some errors in it, especially if it's obtained from measurements. The error built in to the data is called <em class="emphasis">noise,</em> and acknowledging its presence means that we shouldn't expect our polynomial to fit the data perfectly. When we choose a polynomial whose degree is too high, we give the noise too much weight in the model, which leads to some undesirable behavior, like the wiggles in the graph.</p>
+<p>Choosing the degree of the polynomial to be too high is called <em class="emphasis">overfitting</em>, a phenomenon that appears in many machine learning applications. Generally speaking, we would like to choose \(k\) large enough to capture the essential features of the data but not so large that we overfit and build the noise into the model.  There are ways to determine the optimal value of \(k\text{,}\) but we won't pursue that here.</p></article><span class="incontext"><a href="sec-least-squares.html#li-238">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose that \(W\) is a three-dimensional subspace of \(\real^4\) with basis:</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fourvec1111,\hspace{24pt}
+\vvec_2 = \fourvec1322,\hspace{24pt}
+\vvec_3 = \fourvec1{-3}{-3}{-3}\text{.}
+\end{equation*}
+</div>
+<p>Our goal is to create an orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) for the subspace \(W\text{.}\) <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li><p>First, notice that the original basis \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) is not orthogonal by computing \(\vvec_1\cdot\vvec_2\text{.}\)</p></li>
+<li>
+<p>We will now begin to create our new basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) by declaring \(\wvec_1=\vvec_1\text{.}\)  We call \(W_1\) the line defined by \(\wvec_1\text{.}\)</p>
+<p>Find the vector \(\vhat_2\) that is the orthogonal projection of \(\vvec_2\) onto \(W_1\text{,}\) the line defined by \(\wvec_1\text{.}\)</p>
+</li>
+<li><p>Form the vector \(\wvec_2 = \vvec_2-\vhat_2\) and verify that it is orthogonal to \(\wvec_1\text{.}\)</p></li>
+<li><p>Explain why \(\span{\wvec_1,\wvec_2} =
+\span{\vvec_1,\vvec_2}\) by showing that any linear combination of \(\vvec_1\) and \(\vvec_2\) can be written as a linear combination of \(\wvec_1\) and \(\wvec_2\) and vice versa.</p></li>
+<li><p>The vectors \(\wvec_1\) and \(\wvec_2\) are an orthogonal basis for a two-dimensional subspace \(W_2\) of \(\real^4\text{.}\)  Find the vector \(\vhat_3\) that is the orthogonal projection of \(\vvec_3\) onto \(W_2\text{.}\)</p></li>
+<li><p>Verify that \(\wvec_3 = \vvec_3-\vhat_3\) is orthogonal to both \(\wvec_1\) and \(\wvec_2\text{.}\)</p></li>
+<li><p>Explain why \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) form an orthogonal basis for \(W\text{.}\)</p></li>
+<li><p>Now find an orthonormal basis for \(W\text{.}\)</p></li>
+</ol>
+<span class="incontext"><a href="sec-gram-schmidt.html#p-305">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.4.3</span>.</h6>
+<p>Sage can automate these computations for us.  Before we begin, however, it will be helpful to understand how we can combine things using a <code class="code-inline tex2jax_ignore">list</code> in Python.  For instance, if the vectors <code class="code-inline tex2jax_ignore">v1</code>, <code class="code-inline tex2jax_ignore">v2</code>, and <code class="code-inline tex2jax_ignore">v3</code> form a basis for a subspace, we can bundle them together using square brackets: <code class="code-inline tex2jax_ignore">[v1, v2, v3]</code>.  Furthermore, we could assign this to a variable, such as, <code class="code-inline tex2jax_ignore">basis = [v1, v2, v3]</code>.</p>
+<p>Evaluating the following cell will load in some special commands. <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">sage.repl.load.load("http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py", globals())
+</script></div></p>
+<ul class="disc">
+<li><p>There is a command to apply the projection formula: <code class="code-inline tex2jax_ignore">projection(b, basis)</code> returns the orthogonal projection of <code class="code-inline tex2jax_ignore">b</code> onto the subspace spanned by <code class="code-inline tex2jax_ignore">basis</code>, which is a list of vectors.</p></li>
+<li><p>The command <code class="code-inline tex2jax_ignore">unit(w)</code> returns a unit vector parallel to <code class="code-inline tex2jax_ignore">w</code>.</p></li>
+<li><p>Given a collection of vectors, say, <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code>, we can form the matrix whose columns are <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code> using <code class="code-inline tex2jax_ignore">matrix([v1, v2]).T</code>.  When given a <code class="code-inline tex2jax_ignore">list</code> of vectors, Sage constructs a matrix whose <em class="emphasis">rows</em> are the given vectors.  For this reason, we need to apply the tranpose.</p></li>
+</ul>
+<p>Let's now consider the subspace \(W\) whose basis is</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1 = \fivevec{14}{-6}{8}2{-6},\hspace{24pt}
+\vvec_2 = \fivevec{5}{-3}{4}3{-7},\hspace{24pt}
+\vvec_3 = \fivevec{2}30{-2}1.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li>
+<p>Apply the Gram-Schmidt algorithm to find an orthogonal basis \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) for \(W\text{.}\)</p>
+<div class="sagecell-sage" id="sage-22"><script type="text/x-sage">
+</script></div>
+</li>
+<li><p>Find \(\bhat\text{,}\) the orthogonal projection of \(\bvec = 
+\fivevec{-5}{11}0{-1}5\) onto \(W\text{.}\)</p></li>
+<li>
+<p>Explain why we know that \(\bhat\) is a linear combination of the original vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) and then find weights so that</p>
+<div class="displaymath">
+\begin{equation*}
+\bhat = c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Find an orthonormal basis \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) for \(\uvec_3\) for \(W\) and form the matrix \(Q\) whose columns are these vectors.</p>
+<div class="sagecell-sage" id="sage-23"><script type="text/x-sage">
+</script></div>
+</li>
+<li><p>Find the product \(Q^TQ\) and explain the result.</p></li>
+<li><p>Find the matrix \(P\) that projects vectors orthogonally onto \(W\) and verify that \(P\bvec\) gives \(\bhat\text{,}\) the orthogonal projection that you found earlier.</p></li>
+<li><p>Find a basis for the orthogonal complement \(W^\perp\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-gram-schmidt.html#activity-13">in-context</a></span>
+</body>
+</html>

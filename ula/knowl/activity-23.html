@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:58-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.5.4</span>.</h6>
+<p>Suppose we run a company that has two warehouses, which we will call \(P\) and \(Q\text{,}\) and a fleet of 1000 delivery trucks. Every day, a delivery truck goes out from one of the warehouses and returns every evening to one of the warehouses.  Every evening,</p>
+<ul class="disc">
+<li><p>70% of the trucks that leave \(P\) return to \(P\text{.}\)  The other 30% return to \(Q\text{.}\)</p></li>
+<li><p>50% of the trucks that leave \(Q\) return to \(Q\) and 50% return to \(P\text{.}\)</p></li>
+</ul>
+<p>We will use the vector \(\xvec=\twovec{P}{Q}\) to represent the number of trucks at location \(P\) and \(Q\) in the morning.  We consider the matrix transformation \(T(\xvec) = \twovec{P'}{Q'}\) that describes the number of trucks at location \(P\) and \(Q\) in the evening. <div class="sagecell-sage" id="sage-68"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li>
+<p>Suppose that all 1000 trucks begin the day at location \(P\) and none at \(Q\text{.}\)  How many trucks are at each location at the end of the day? Therefore, what is the vector \(T\left(\ctwovec{1000}{0}\right)\text{?}\)</p>
+<p>Using this result, what is \(T\left(\twovec{1}{0}\right)\text{?}\)</p>
+</li>
+<li><p>In the same way, suppose that all 1000 trucks begin the day at location \(Q\) and none at \(P\text{.}\)  How many trucks are at each location at the end of the day? What is the result \(T\left(\ctwovec{0}{1000}\right)\text{?}\)</p></li>
+<li><p>Find the matrix \(A\) such that \(T(\xvec) =
+A\xvec\text{.}\)</p></li>
+<li><p>Suppose that there are 100 trucks at \(P\) and 900 at \(Q\) at the beginning of the day.  How many are there at the two locations at the end of the day?</p></li>
+<li><p>Suppose that there are 550 trucks at \(P\) and 450 at \(Q\) at the end of the day.  How many trucks were there at the two locations at the beginning of the day?</p></li>
+<li>
+<p>Suppose that all of the trucks are at location \(Q\) on Monday morning?</p>
+<ol class="lower-alpha">
+<li><p>How many trucks are at each location Monday evening?</p></li>
+<li><p>How many trucks are at each location Tuesday evening?</p></li>
+<li><p>How many trucks are at each location Wednesday evening?</p></li>
+</ol>
+</li>
+<li><p>Suppose that \(S\) is the matrix transformation that transforms the distribution of trucks \(\xvec\) one morning into the distribution of trucks two mornings later. What is the matrix that defines the transformation \(S\text{?}\)</p></li>
+<li><p>Suppose that \(R\) is the matrix transformation that transforms the distribution of trucks \(\xvec\) one morning into the distribution of trucks one week later. What is the matrix that defines the transformation \(R\text{?}\)</p></li>
+<li><p>What happens to the distribution of trucks after a very long time?</p></li>
+</ol></article><span class="incontext"><a href="sec-linear-trans.html#activity-23">in-context</a></span>
+</body>
+</html>

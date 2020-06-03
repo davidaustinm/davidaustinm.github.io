@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:55-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Principal Component Analysis</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\row}{\text{Row}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\corr}{\text{corr}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-quadratic-forms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-svd-intro.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-quadratic-forms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap7.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-svd-intro.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">1</span> <span class="title">Orthogonality</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">The tranpose and orthogonality</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Least squares problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">2</span> <span class="title">Singular Value Decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca" class="active">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">The Singular Value Decomposition</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-pca"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Principal Component Analysis</span>
+</h2>
+<a href="sec-pca.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><p id="p-694">As previously seen, we are sometimes presented with a dataset having quite a few data points that live in a high dimensional space.  For instance, we looked at a dataset describing the body fat index (BFI) in <a data-knowl="./knowl/activity-BFI.html" title="Activity 1.5.4">Activity 1.5.4</a> where each data point is six-dimensional.  In this case, developing an intuitive understanding of the data is hampered by the fact that it cannot be visualized.</p>
+<p id="p-695">This section explores a technique called <em class="emphasis">principal component analysis</em>, which enables us to reduce the dimension of a dataset so that it may be visualized or studied in some way that causes interesting features to stand out.  Our previous work with variance and the orthogonal diagonalization of symmetric matrices provides the key ideas.</p>
+<article class="project-like" id="exploration-8"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">2.3.1</span>.</h6>
+<p id="p-696">We will begin by recalling our earlier discussion of variance.  Suppose we have a dataset that leads to the covariance matrix</p>
+<div class="displaymath">
+\begin{equation*}
+C = \begin{bmatrix}
+7 \amp -4 \\
+-4 \amp 13
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-350"><p id="p-697">What is the variance in the direction \(\uvec =
+\twovec10\text{;}\)  that is, what is the variance of the demeaned data when projected onto the line defined by \(\uvec\text{?}\)</p></li>
+<li id="li-351"><p id="p-698">What is the variance in the direction \(\uvec=\twovec01\text{?}\)</p></li>
+<li id="li-352"><p id="p-699">What is the total variance?</p></li>
+<li id="li-353"><p id="p-700">Suppose that \(\uvec\) is an eigenvalue of \(C\) with eigenvalue \(\lambda\text{.}\)  What is the variance in the \(\uvec\) direction?</p></li>
+<li id="li-354"><p id="p-701">Find an orthogonal diagonalization of \(C\text{.}\) <div class="sagecell-sage" id="sage-52"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-355"><p id="p-702">In which direction is the variance greatest and what is the variance in this direction?  If we project the data onto this line, how much variance is lost?</p></li>
+</ol></article><p id="p-703">There are some ideas from our previous work that will be particularly useful here.  If \(A\) is a matrix of \(N\) demeaned data points, we form the covariance matrix \(C=\frac 1N AA^T\text{.}\) If \(\uvec\) is a unit vector, then the variance of the demeaned data after projecting onto the line defined by \(\uvec\) is given by the quadratic form \(V_{\uvec} =
+\uvec\cdot(C\uvec)\text{.}\)  In particular, if \(\uvec\) is an eigenvector of \(C\) with eigenvalue \(\lambda\text{,}\) then \(V_{\uvec} = \lambda\text{.}\)</p>
+<p id="p-704">Moreover, variance is additive, as we recorded in <a data-knowl="./knowl/prop-variance-additivity.html" title="Proposition 2.1.15: Additivity of Variance">Proposition 2.1.15</a>:  if \(W\) is a subspace having orthonormal basis \(\uvec_1,\uvec_2,\ldots,\uvec_n\text{,}\) then the variance</p>
+<div class="displaymath">
+\begin{equation*}
+V_W = V_{\uvec_1} + V_{\uvec_2} + \ldots + V_{\uvec_n}.
+\end{equation*}
+</div></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Principal Component Analysis</span>
+</h3>
+<p id="p-705">Let's begin by looking at example that illustrates the central theme of this technique.</p>
+<article class="project-like" id="activity-30"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.3.2</span>.</h6>
+<p id="p-706">Suppose that we work with a dataset having 100 five-dimensional data points.  The demeaned data matrix \(A\) is therefore \(5\times100\) and leads to the covariance matrix \(C=\frac1{100}~AA^T\text{,}\) which is \(5\times5\text{.}\)  Because \(C\) is symmetric, the Spectral Theorem tells us it is orthogonally diagonalizable so suppose that \(C =
+QDQ^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+Q = \begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \amp \uvec_4 \amp \uvec_5
+\end{bmatrix},\hspace{24pt}
+D = \begin{bmatrix}
+13 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 10 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 2 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-356"><p id="p-707">What is \(V_{\uvec_2}\text{,}\) the variance in the \(\uvec_2\) direction?</p></li>
+<li id="li-357"><p id="p-708">Find the variance of the data projected onto the line defined by \(\uvec_4\text{.}\)  What does this say about the data?</p></li>
+<li id="li-358"><p id="p-709">What is the total variance of the data?</p></li>
+<li id="li-359"><p id="p-710">Consider the two-dimensional subspace spanned by \(\uvec_1\) and \(\uvec_2\text{.}\)  If we project the data onto this subspace, what fraction of the total variance is represented by the variance of the projected data?</p></li>
+<li id="li-360"><p id="p-711">How does this question change if we project onto the three-dimensional subspace spanned by \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{?}\)</p></li>
+<li id="li-361"><p id="p-712">What does this tell us about the data?</p></li>
+</ol></article><p id="p-713">This activity illustrates how the eigenvalues of the covariance matrix tells us when data is clustered around a smaller dimensional subspace.  In particular, the original data is five-dimensional, but we see that it actually lies on a three-dimensional subspace of \(\real^5\text{.}\)  Later in this section, we'll see how to use this observation to work with the data as if it were three-dimensional, an idea known as <em class="emphasis">dimensional reduction</em>.</p>
+<p id="p-714">To be more specific, remember that the variance in the direction of an eigenvector of the covariance matrix \(C\) equals its associated eigenvalue.  Now consider the sequence of subspaces</p>
+<ul class="disc">
+<li id="li-362"><p id="p-715">\(W_1\text{,}\) the one-dimensional subspace spanned by \(\uvec_1\text{.}\)</p></li>
+<li id="li-363"><p id="p-716">\(W_2\text{,}\) the two-dimensional subspace spanned by \(\uvec_1\) and \(\uvec_2\text{.}\)</p></li>
+<li id="li-364"><p id="p-717">\(W_3\text{,}\) the three-dimensional subspace spanned by \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{.}\)</p></li>
+</ul>
+<p>Since variance is additive, we have</p>
+<div class="displaymath">
+\begin{align*}
+V_{W_1} = \amp V_{\uvec_1} = 13\\
+V_{W_2} = \amp V_{\uvec_1} + V_{\uvec_2} = 23\\
+V_{W_3} = \amp V_{\uvec_1} + V_{\uvec_2} + V_{\uvec_3} = 25
+\end{align*}
+</div>
+<p id="p-718">Notice how we capture more of the total variance as we increase the dimension of the subspace onto which the data is projected. Eventually, projecting the data onto \(W_3\) gives the total variance 25.  Since we don't lose any of the variance projecting onto \(W_3\text{,}\) the data must already lie in \(W_3\text{.}\)</p>
+<p id="p-719">Another way to think about this is to notice that the eigenvalue associated to the eigenvector \(\uvec_4\) is zero; this means that the variance of the data projected along the line defined by \(\uvec_4\) is zero so all the points project to the zero vector.  From this, we conclude that the data must lie in the orthogonal complement of \(\uvec_4\text{.}\) Similarly, the eigenvalue associated to \(\uvec_5\) is zero so the data must lie in the orthogonal complement of \(\uvec_5\) as well.  Since the data lies in the orthogonal complements of both \(\uvec_4\) and \(\uvec_5\text{,}\) it must lie in \(W_3\text{,}\) the three-dimensional subspace spanned by \(\uvec_1\text{,}\) \(\uvec_2\text{,}\) and \(\uvec_3\text{.}\)</p>
+<p id="p-720">Of course, this is a contrived example.  Typically, the presence of noise in a dataset means that we do not expect all the points to be wholly contained in a smaller dimensional subspace.  The two-dimensional subspace \(W_2\) captures 23/25 = 92% of the variance.  Depending on the situation, we may want to write off the remaining 8% of the variance as noise in exchange for the convenience of working with a smaller dimensional subspace.</p>
+<p id="p-721">The eigenvectors \(\uvec_j\) are called <em class="emphasis">principal components</em>, and we order them so their associated eigenvalues decrease.  Generally speaking, we hope that the first few principal components capture most of the variance.  In any case, adding more principal components captures more of the variance but at the expense of working with a higher dimensional subspace.  As we'll see later, we will seek a balance using a number of principal components large enough to capture most of the variance but small enough to be easy to work with.</p>
+<article class="project-like" id="activity-31"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.3.3</span>.</h6>
+<p id="p-722">We will work here with a dataset having 100 3-dimensional demeaned data points.  Evaluating the following cell will plot those data points and define the demeaned data matrix <code class="code-inline tex2jax_ignore">A</code> whose shape is \(3\times100\text{.}\) <div class="sagecell-sage" id="sage-53"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/pca-demo.py', globals())
+</script></div> Notice that the data appears to cluster around a plane though it does not seem to be wholly contained within that plane.</p>
+<ol class="lower-alpha">
+<li id="li-365"><p id="p-723">Use the matrix <code class="code-inline tex2jax_ignore">A</code> to construct the covariance matrix \(C\text{.}\)  Then determine the variance in the direction of \(\uvec=\threevec{1/3}{2/3}{2/3}\text{?}\) <div class="sagecell-sage" id="sage-54"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-366"><p id="p-724">Find the eigenvalues of \(C\) and determine the total variance. <div class="sagecell-sage" id="sage-55"><script type="text/x-sage">
+</script></div> Notice that Sage does not necessarily sort the eigenvalues in decreasing order.</p></li>
+<li id="li-367"><p id="p-725">Use the <code class="code-inline tex2jax_ignore">right_eigenmatrix()</code> command to find the eigenvectors of \(C\text{.}\)  Then remember that the Sage command <code class="code-inline tex2jax_ignore">B.column(1)</code> retrieves the vector represented by the second column of <code class="code-inline tex2jax_ignore">B</code> and define vectors <code class="code-inline tex2jax_ignore">u1</code>, <code class="code-inline tex2jax_ignore">u2</code>, and <code class="code-inline tex2jax_ignore">u3</code> representing the three principal components in order of decreasing eigenvalues.</p></li>
+<li id="li-368"><p id="p-726">What fraction of the total variance is captured by projecting the data onto \(W_1\text{,}\) the subspace spanned by \(\uvec_1\text{?}\)  What fraction of the total variance is captured by projecting onto \(W_2\text{,}\) the subspace spanned by \(\uvec_1\) and \(\uvec_2\text{?}\)  What fraction of the total variance do we lose by projecting onto \(W_2\text{?}\)</p></li>
+<li id="li-369">
+<p id="p-727">If we project a data point \(\xvec\) onto \(W_2\text{,}\) the projection formula tells us we obtain</p>
+<div class="displaymath">
+\begin{equation*}
+\xhat = (\uvec_1\cdot\xvec) \uvec_1 +
+(\uvec_2\cdot\xvec) \uvec_2.
+\end{equation*}
+</div>
+<p>Rather than viewing the projected data in \(\real^3\text{,}\) we will record the coordinates of \(\xhat\) in the basis defined by \(\uvec_1\) and \(\uvec_2\text{;}\)  that is, we will record the coordinates</p>
+<div class="displaymath">
+\begin{equation*}
+\twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}.  
+\end{equation*}
+</div>
+<p>Construct the matrix \(Q\) so that \(Q^T\xvec =
+\twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}\text{.}\) <div class="sagecell-sage" id="sage-56"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-370"><p id="p-728">Since each column of \(A\) represents a data point, the matrix \(Q^TA\) represents the coordinates of the projected data points.  Evaluating the following cell will plot those projected data points. <div class="sagecell-sage" id="sage-57"><script type="text/x-sage">pca_plot(Q.T*A)
+</script></div> Notice how this plot enables us to view the data as if it were two-dimensional. Why is this plot wider than it is tall?</p></li>
+</ol></article><p id="p-729">This example is a more realistic illustration of principal component analysis.  Starting with the \(3\times100\) matrix of demeaned data \(A\text{,}\) we construct the covariance matrix \(C=\frac{1}{100} ~AA^T\) and study its eigenvalues. Notice that the first two principal components account for more than 98% of the variance, which means we can expect the points to lie close to \(W_2\text{,}\) the two-dimensional subspace spanned by \(\uvec_1\) and \(\uvec_2\text{.}\)  In fact, the plot of the three-dimensional data appears to show that the data lies close to a plane.  The analysis we are performing helps us to identify that plane quantitatively.</p>
+<p id="p-730">Since \(W_2\) is a subspace of \(\real^3\text{,}\) projecting the data points onto \(W_2\) gives a list of 100 points in \(\real^3\text{.}\)  In order to visualize them more easily, we instead consider the coordinates of the projections in the basis defined by \(\uvec_1\) and \(\uvec_2\text{.}\)  For instance, we know that the projection of a data point \(\xvec\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\xhat = (\uvec_1\cdot\xvec)\uvec_1 +
+(\uvec_2\cdot\xvec)\uvec_2,
+\end{equation*}
+</div>
+<p>which is a three-dimensional vector.  Instead, we can record the coordinates \(\twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}\) and plot them in the two-dimensional coordinate plane, as illustrated in <a data-knowl="./knowl/fig-pca-coords.html" title="Figure 2.3.1">Figure 2.3.1</a>.</p>
+<figure class="figure-like" id="fig-pca-coords"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:52.6315789473684%;justify-content:flex-start;"><img src="images/pca-proj.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:42.1052631578947%;justify-content:flex-start;"><img src="images/pca-coords.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.1.</span> <p id="p-731">The projection \(\xhat\) of a data point \(\xvec\) onto \(W_2\) is a three-dimensional vector, which may be represented by the two coordinates describing this vector as a linear combination of \(\uvec_1\) and \(\uvec_2\text{.}\)</p></figcaption></figure><p id="p-732">If we form the matrix \(Q=\begin{bmatrix}\uvec_1 \amp \uvec_2
+\end{bmatrix}\text{,}\) then we have</p>
+<div class="displaymath">
+\begin{equation*}
+Q^T\xvec = \twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}.
+\end{equation*}
+</div>
+<p>This means that the columns of \(Q^TA\) represent the coordinates of the projected points, which may now be plotted in the plane.</p>
+<p id="p-733">In this plot, the first coordinate, represented by the horizontal coordinate, represents the projection of a data point onto the line defined by \(\uvec_1\) while the second coordinate represents the projection onto the line defined by \(\uvec_2\text{.}\)  Since \(\uvec_1\) is the first principal component, the variance in the \(\uvec_1\) direction is greater than the variance in the \(\uvec_2\) direction.  For this reason, the plot will be more spread out in the horizontal direction than in the vertical.</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Using Principal Component Analysis</span>
+</h3>
+<p id="p-734">Now that we've explored the ideas behind principal component analysis, we will look at a few examples that illustrate its use.</p>
+<article class="project-like" id="activity-32"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.3.4</span>.</h6>
+<p id="p-735">The next cell will load a dataset describing the dietary habits of citizens in each of the four nations of the United Kingdom.  The units for each entry are grams per person per week. <div class="sagecell-sage" id="sage-58"><script type="text/x-sage">import pandas as pd
+df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/uk-diet.csv', index_col=0)
+data_mean = vector(df.T.mean())
+A = matrix([vector(row) for row in (df.T-df.T.mean()).values]).T
+df
+</script></div> We will view this as a dataset having four points in \(\real^{17}\text{.}\)  As such, it is impossible to visualize and studying the numbers themselves doesn't lead to much insight.</p>
+<p id="p-736">In addition to loading the data, evaluating the cell above created a vector <code class="code-inline tex2jax_ignore">data_mean</code>, which is the mean of the four data points, and <code class="code-inline tex2jax_ignore">A</code>, the \(17\times4\) matrix of demeaned data.</p>
+<ol class="lower-alpha">
+<li id="li-371"><p id="p-737">What is the average consumption of Beverages across the four nations? <div class="sagecell-sage" id="sage-59"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-372"><p id="p-738">Find the covariance matrix \(C\) and its eigenvalues.  Because there are four points in \(\real^{17}\) whose mean is zero, there are only three nonzero eigenvalues.  State their values.</p></li>
+<li id="li-373"><p id="p-739">For what percentage of the total variance does the first principal component account?</p></li>
+<li id="li-374">
+<p id="p-740">Find the first principal component \(\uvec_1\) and project the four demeaned data points onto the line defined by \(\uvec_1\text{.}\)  Plot those points on <a data-knowl="./knowl/fig-pca-1d.html" title="Figure 2.3.2">Figure 2.3.2</a></p>
+<figure class="figure-like" id="fig-pca-1d"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/pca-plot-1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.2.</span> <p id="p-741">A plot of the demeaned data projected onto the first principal component.</p></figcaption></figure>
+</li>
+<li id="li-375"><p id="p-742">For what percentage of the total variance do the first two principal components account?</p></li>
+<li id="li-376">
+<p id="p-743">Find the cordinates of the demeaned data points projected onto \(W_2\text{,}\) the two-dimensional subspace of \(\real^{17}\) spanned by the first two principal components. <div class="sagecell-sage" id="sage-60"><script type="text/x-sage">
+</script></div></p>
+<p id="p-744">Plot these coordinates in <a data-knowl="./knowl/fig-pca-2d.html" title="Figure 2.3.3">Figure 2.3.3</a>.</p>
+<figure class="figure-like" id="fig-pca-2d"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/pca-plot-2.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.3.</span> <p id="p-745">The coordinates of the demeaned data points projected onto the first two principal components.</p></figcaption></figure>
+</li>
+<li id="li-377"><p id="p-746">What information do these plots reveal that is not clear from consideration of the original data points?</p></li>
+<li id="li-378"><p id="p-747">Study the first principal component \(\uvec_1\) and find the first component of \(\uvec_1\text{,}\) which corresponds to the dietary category Alcoholic Drinks. (To do this, you may wish to use <code class="code-inline tex2jax_ignore">N(u1,
+		digits=2)</code> for a result that's easier to read.) If a data point lies on the far right side of the plot in <a data-knowl="./knowl/fig-pca-2d.html" title="Figure 2.3.3">Figure 2.3.3</a>, what does it mean about that nation's consumption of Alcoholic Drinks?</p></li>
+</ol></article><p id="p-748">This activity demonstrates how principal component analysis enables us to extract information from a dataset that may not be readily apparent otherwise.  As in our previous example, we see that the data points lie, on average, quite close to a two-dimensional subspace of \(\real^{17}\text{.}\)  In fact, \(W_2\text{,}\) the subspace spanned by the first two principal components, accounts for more than 96% of the variance. More importantly, when we project the data onto \(W_2\text{,}\) it becomes apparent that Northern Ireland is fundamentally different from the other three nations.</p>
+<p id="p-749">With some additional thought, we can determine more specific ways in which Northern Ireland is different.  On the two-dimensional plot, Northern Ireland lies far to the right compared to the other three nations.  Since the data has been demeaned, the origin \((0,0)\) in this plot corresponds to the average of the four nations.  The coordinates of the point representing Northern Ireland are about \((477, 59)\text{,}\) meaning that the projected data point differs from the mean by about \(477\uvec_1+59\uvec_2\text{.}\)</p>
+<p id="p-750">Let's just focus on the contribution from \(\uvec_1\text{.}\)  We see that the ninth component of \(\uvec_1\text{,}\) the one that describes Fresh Fruit, is about -0.63.  This means that \(477\uvec_1\) differs from the mean by about \(477(-0.63) =
+-300\) grams per person per week.  So roughly speaking, people in Northern Ireland are eating about 300 fewer grams of Fresh Fruit than the average across the three countries.  This is borne out by looking at the origin data, which shows that the consumption of Fresh Fruit in Northern Ireland is significantly less than the other nations.  Examing the other components of \(\uvec_1\) shows other categories in which Northern Ireland is significantly different.</p>
+<article class="project-like" id="activity-33"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.3.5</span>.</h6>
+<p id="p-751">In this activity, we're going to look at a <a class="external" href="https://archive.ics.uci.edu/ml/datasets/Iris" target="_blank">well-known dataset</a> that records four measurements of each of 150 irises. There are three species of irises, each of which appears 50 times in the data set.  Examples of the three species are shown in <a data-knowl="./knowl/fig-iris.html" title="Figure 2.3.4">Figure 2.3.4</a>. For each flower, the length and width of its sepal and the length and width of its petal, all in centimeters, are recorded.</p>
+<figure class="figure-like" id="fig-iris"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="https://thegoodpython.com/assets/images/iris-species.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.3.4.</span> <p id="p-752">The three species of irises represented in the data set: iris setosa, iris versicolor, and iris virginica.  Photo credit:  <a class="external" href="https://thegoodpython.com/iris-dataset/" target="_blank">The Good Python</a></p></figcaption></figure><p id="p-753">Evaluating the following cell will load the data set, which consists of 150 points in \(\real^4\text{.}\)  In addition, we have a vector <code class="code-inline tex2jax_ignore">data_mean</code>, a four-dimensional vector holding the mean of the data points, and <code class="code-inline tex2jax_ignore">A</code>, the \(4\times150\) demeaned data matrix. <div class="sagecell-sage" id="sage-61"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/pca-iris.py', globals())
+df
+</script></div> Since the data is four-dimensional, we are not able to visualize it.  Of course, we could forget about two of the measurements and plot the 150 points represented by their, say, sepal length and sepal width. <div class="sagecell-sage" id="sage-62"><script type="text/x-sage">sepal_plot()
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-379"><p id="p-754">What is the mean sepal width?</p></li>
+<li id="li-380"><p id="p-755">Find the covariance matrix \(C\) and its eigenvalues. <div class="sagecell-sage" id="sage-63"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-381"><p id="p-756">Find the fraction of variance for which the first two principal components account?</p></li>
+<li id="li-382"><p id="p-757">Construct the first two principal components \(\uvec_1\) and \(\uvec_2\) along with the matrix \(Q\) whose columns are \(\uvec_1\) and \(\uvec_2\text{.}\) <div class="sagecell-sage" id="sage-64"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-383"><p id="p-758">As we have seen, the columns of the matrix \(Q^TA\) hold the coordinates of the demeaned data points after projecting onto \(W_2\text{,}\) the subspace spanned by the first two principal components.  Evaluating the following cell shows a plot of these coordinates. <div class="sagecell-sage" id="sage-65"><script type="text/x-sage">pca_plot(Q.T*A)
+</script></div> Suppose we have a flower whose coordinates in this plane are \((-2.5, -0.75)\text{.}\)  To what species does this iris most likely belong?  Find an estimate of the sepal length, sepal width, petal length, and petal width for this flower.</p></li>
+<li id="li-384"><p id="p-759">Suppose you have an iris, but you only know that its sepal length is 5.65 cm and its sepal width is 2.75 cm.  Knowing only these two measurements, determine the coordinates \((c_1, c_2)\) in the plane where this iris lies.  To what species does this iris most likely belong?  Now estimate the petal length and petal width of this iris. <div class="sagecell-sage" id="sage-66"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-385"><p id="p-760">Suppose you find another iris whose sepal width is 3.2 cm and whose petal width is 2.2 cm.  Find the coordinates \((c_1, c_2)\) of this iris and determine the species to which it most likely belongs.  Also, estimate the sepal length and the petal length. <div class="sagecell-sage" id="sage-67"><script type="text/x-sage">
+</script></div></p></li>
+</ol></article></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-761">This section has explored principal component analysis as a technique to reduce the dimension of a dataset.  From the demeaned data matrix \(A\text{,}\) we form the covariance matrix \(C= \frac1N ~AA^T\text{,}\) where \(N\) is the number of data points.</p>
+<ul class="disc">
+<li id="li-386"><p id="p-762">The eigenvectors \(\uvec_1, \uvec_2, \ldots \uvec_m\text{,}\) of \(C\) are called the principal components.  We arrange them so that their corresponding eigenvalues are in decreasing order.</p></li>
+<li id="li-387"><p id="p-763">If \(W_n\) is the subspace spanned by the first \(n\) principal components, then the variance of the demeaned data projected onto \(W_n\) is the sum of the first \(n\) eigenvalues.</p></li>
+<li id="li-388"><p id="p-764">If \(Q\) is the matrix whose columns are the first \(n\) principal components, then the columns of \(Q^TA\) hold the coordinates, expressed in the basis \(\uvec_1,\ldots,\uvec_n\text{,}\) of the data once projected onto \(W_n\text{.}\)</p></li>
+<li id="li-389"><p id="p-765">We hope to use a number of principal components that is large enough to capture most of the variance in the dataset but small enough to be manageable.</p></li>
+</ul></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

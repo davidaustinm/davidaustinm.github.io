@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:54-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="exercise-like"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">12.</span>
+</h6>
+<p>Suppose that a city is starting a bicycle sharing program with bicycles at locations \(B\) and \(C\text{.}\)  Bicycles that are rented at one location may be returned to either location at the end of the day.  Over time, the city finds that 80% of bicycles rented at location \(B\) are returned to \(B\) with the other 20% returned to \(C\text{.}\)  Similarly, 50% of bicycles rented at location \(C\) are returned to \(B\) and 50% to \(C\text{.}\)</p>
+<p>To keep track of the bicycles, we form a vector</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec_k = \twovec{B_k}{C_k}
+\end{equation*}
+</div>
+<p>where \(B_k\) is the number of bicycles at location \(B\) at the beginning of day \(k\) and \(C_k\) is the number of bicycles at \(C\text{.}\)  The information above tells us</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec_{k+1} = A\xvec_k
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+0.8 \amp 0.5 \\
+0.2 \amp 0.5 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-54"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li>
+<p>Let's check that this makes sense.</p>
+<ol class="lower-roman">
+<li><p>Suppose that there are 1000 bicycles at location \(B\) and none at \(C\) on day 1.  This means we have \(\xvec_1 = \twovec{1000}{0}\text{.}\)  Find the number of bicycles at both locations on day 2 by evaluating \(\xvec_2 = A\xvec_1\text{.}\)</p></li>
+<li><p>Suppose that there are 1000 bicycles at location \(C\) and none at \(B\) on day 1.  Form the vector \(\xvec_1\) and determine the number of bicycles at the two locations the next day by finding \(\xvec_2 = A\xvec_1\text{.}\)</p></li>
+</ol>
+</li>
+<li><p>Suppose that one day there are 1050 bicycles at location \(B\) and 450 at location \(C\text{.}\)  How many bicycles were there at each location the previous day?</p></li>
+<li><p>Suppose that there are 500 bicycles at location \(B\) and 500 at location \(C\) on Monday.  How many bicycles are there at the two locations on Tuesday?  on Wednesday? on Thursday?</p></li>
+</ol></article><span class="incontext"><a href="sec-matrices-lin-combs.html#exercise-38">in-context</a></span>
+</body>
+</html>

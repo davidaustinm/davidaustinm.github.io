@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.4.4</span>.</h6>
+<p>Let's suppose that a matrix \(A\) has a singular value decomposition \(A=U\Sigma V^T\) where</p>
+<div class="displaymath">
+\begin{equation*}
+U=\begin{bmatrix}
+\uvec_1 \amp \uvec_2 \amp \uvec_3 \amp \uvec_4
+\end{bmatrix},\hspace{10pt}
+\Sigma = \begin{bmatrix}
+20 \amp 0 \amp 0 \\
+0 \amp 5 \amp 0 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0
+\end{bmatrix},\hspace{10pt}
+V=\begin{bmatrix}
+\vvec_1 \amp \vvec_2 \amp \vvec_3
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>What is the shape of \(A\text{;}\)  that is, how many rows and columns does \(A\) have?</p></li>
+<li>
+<p>Suppose we write a three-dimensional vector \(\xvec\) as a linear combination of right singular vectors:</p>
+<div class="displaymath">
+\begin{equation*}
+\xvec = c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3.
+\end{equation*}
+</div>
+<p>We would like to find an expression for \(A\xvec\text{.}\)  To begin, find the vector \(V^T\xvec = \threevec{\vvec_1\cdot\xvec}
+{\vvec_2\cdot\xvec}
+{\vvec_3\cdot\xvec}
+\text{.}\)</p>
+</li>
+<li><p>Now multiply this vector by \(\Sigma\) to obtain \(\Sigma V^T\xvec\text{.}\)</p></li>
+<li><p>Finally, write \(A\xvec = U(\Sigma V^T\xvec)\) as a linear combination of left singular vectors \(\uvec_j\text{.}\)</p></li>
+<li><p>We now have \(A\xvec = 20c_1\uvec_1 +
+5c_2\uvec_2\text{.}\)  Find the vectors \(\xvec\) that solve the equation \(A\xvec = \uvec_1\) by finding the appropriate coefficients \(c_1\text{,}\) \(c_2\text{,}\) \(c_3\text{.}\)  How does this help determine whether \(\uvec_1\) is in \(\col(A)\text{?}\)</p></li>
+<li><p>Find the vectors \(\xvec\) that solve the equation \(A\xvec=\uvec_2\text{.}\)  What does this say about whether \(\uvec_2\) is in \(\col(A)\text{?}\)</p></li>
+<li><p>Find the vectors \(\xvec\) that solve the equation \(A\xvec=\uvec_3\text{.}\)  What does this say about whether \(\uvec_3\) is in \(\col(A)\text{?}\)</p></li>
+<li>
+<p>Find the vectors \(\xvec\) that solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\xvec=3\uvec_1 - 7\uvec_2 + \uvec_3 - 4\uvec_4.
+\end{equation*}
+</div>
+</li>
+<li><p>Find a basis for \(\col(A)\) consisting of left singular vectors.  What is \(\rank(A)\text{?}\)</p></li>
+<li><p>Remembering that \(\col(A)^\perp = \nul(A^T)\text{,}\) find a basis for \(\nul(A^T)\) consisting of left singular vectors.</p></li>
+<li><p>For what vectors \(\xvec\) do we have \(A\xvec =
+\zerovec\text{?}\)</p></li>
+<li><p>Find a basis for \(\nul(A)\) consisting of right singular vectors.</p></li>
+</ol></article><span class="incontext"><a href="sec-svd-intro.html#activity-36">in-context</a></span>
+</body>
+</html>

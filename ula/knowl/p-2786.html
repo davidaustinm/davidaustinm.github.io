@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:09-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We see that the coefficients \(F_6\) and \(F_7\text{,}\) which correspond to rapid variations in the luminance values, are quite small.  Let's see what happens when we ignore them.  Form a new vector of Fourier coefficients by rounding the coefficients to the nearest integer and setting \(F_6\) and \(F_7\) to zero.  This is an approximation to \(\fvec\text{,}\) the vector of Fourier coefficients.  Use the approximation to \(\fvec\) to form an approximation of the vector \(\xvec\text{.}\) <div class="sagecell-sage" id="sage-89"><script type="text/x-sage"># define fapprox below and then find xapprox
+fapprox =
+xapprox =
+print ("x      =", x)
+print ("xapprox=", xapprox.numerical_approx(digits=3))
+</script></div> How much does your approximation differ from the actual vector \(\xvec\text{?}\)</p>
+<span class="incontext"><a href="sec-jpeg.html#p-2786">in-context</a></span>
+</body>
+</html>

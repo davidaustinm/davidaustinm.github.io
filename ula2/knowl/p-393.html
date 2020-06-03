@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We would like to represent this relationship by a linear function</p>
+<div class="displaymath">
+\begin{equation*}
+T = \beta_0 + \beta_1 C\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>Use the first data point \((C_1,T_1)=(20.0,88.6)\) to write an equation involving \(\beta_0\) and \(\beta_1\text{.}\)</p></li>
+<li><p>Suppose that we represent the unknowns using a vector \(\xvec = \twovec{\beta_0}{\beta_1}\text{.}\)  Use the data to create the matrix \(A\) and vector \(\bvec\) from the 15 data points such that the linear system \(A\xvec= \bvec\) describes the unknown vector \(\xvec\text{.}\) <div class="sagecell-sage" id="sage-29"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Write the normal equations \(A^TA\xhat =
+A^T\bvec\text{;}\) that is, find the matrix \(A^TA\) and the vector \(A^T\bvec\text{.}\)</p></li>
+<li>
+<p>Solve the normal equations to find \(\xhat\text{,}\) the least squares approximate solution to the equation \(A\xvec=\bvec\text{.}\)  Call your solution <code class="code-inline tex2jax_ignore">xhat</code> since Sage thinks <code class="code-inline tex2jax_ignore">x</code> has another meaning. <div class="sagecell-sage" id="sage-30"><script type="text/x-sage">
+</script></div></p>
+<p>What are the values of \(\beta_0\) and \(\beta_1\) that you found?</p>
+</li>
+<li>
+<p>If the chirp rate is 22 chirps per second, what is your prediction for the temperature?</p>
+<p>You can plot the data and your line, assuming you called the solution <code class="code-inline tex2jax_ignore">xhat</code>, using the cell below. <div class="sagecell-sage" id="sage-31"><script type="text/x-sage">plot_model(xhat, data, domain=(12, 22))
+</script></div></p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-least-squares.html#p-393">in-context</a></span>
+</body>
+</html>

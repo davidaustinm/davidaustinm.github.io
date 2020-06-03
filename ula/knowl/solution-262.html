@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:49-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">5.2.1.1</span>.</h6>
+<ol class="lower-alpha">
+<li><p>If \(\lambda\) is an eigenvalue of \(A\text{,}\) then \(A\vvec=\lambda\vvec\) for an associated eigenvector \(\vvec\text{.}\)  Multiplying by \(A^{-1}\) and \(\lambda^{-1}\text{,}\) we obtain \(\lambda^{-1}\vvec =
+A^{-1}\vvec\text{,}\) which shows that \(\lambda^{-1}\) is an eigenvalue of \(A^{-1}\text{.}\)</p></li>
+<li><p>In the same way, if \(\lambda\) is an eigenvalue of \(A\text{,}\) then \(A\vvec=\lambda\vvec\) for an associated eigenvector \(\vvec\text{.}\)  This means that \((A-3I)\vvec = (\lambda-3)\vvec\) so that \(\lambda-3\) is an eigenvalue of \(A-3I\text{.}\)</p></li>
+<li><p>If \(\lambda\) is an eigenvalue of \(A\text{,}\) then \(A-\lambda I\) is not invertible and so has a row without a pivot position.</p></li>
+<li><p>Since \(A\) is a positive stochastic matrix, we know that \(\lambda=1\) is an eigenvalue and hence that \(A-I\) is not invertible.  Sage, however, tells us that \(A-I\sim I\text{,}\) which cannot be true since \(A-I\) is not invertible.</p></li>
+<li><p>The vectors \(\xvec_k\) form a Markov chain, which must converge to the steady-state vector \(\qvec=\twovec{\frac23}{\frac13}\text{.}\)</p></li>
+<li><p>We have eigenvalues \(\lambda_1=1\) and \(\lambda_2=0.4\text{.}\)  If we begin with \(\xvec_0=c_1\vvec_1+c_2\vvec_2\) and successively multiply by \(A\text{,}\) we have \(\xvec_k=c_1\vvec_1 + c_2(0.4)^k\vvec_2\text{.}\)  When \(k\) becomes large, the coefficient of \(\vvec_2\) becomes insignificantly small so we are left with an eigenvector in \(E_1\text{.}\)</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-power-method.html#solution-262">in-context</a></span>
+</body>
+</html>

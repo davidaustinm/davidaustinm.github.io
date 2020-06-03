@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We will form the Markov chain beginning with the vector \(\xvec_0 = \twovec{1}{0}\) and defining \(\xvec_{k+1} = A\xvec_k\text{.}\)  The Sage cell below constructs the first \(N\) terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix \(A\) and vector \(x0\) and evaluate the cell to find the first 10 terms of the Markov chain. <div class="sagecell-sage" id="sage-116"><script type="text/x-sage">def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0)
+## define the matrix A and x0
+A =
+x0 =
+markov_chain(A, x0, 10)
+</script></div> What do you notice about the Markov chain?  Does it converge to the steady-state vector for \(A\text{?}\)</p>
+<span class="incontext"><a href="sec-stochastic.html#p-4563">in-context</a></span>
+</body>
+</html>

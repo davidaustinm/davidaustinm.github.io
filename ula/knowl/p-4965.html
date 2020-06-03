@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:47-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li><p>Since \(A\) is a positive stochastic matrix, we know that \(\lambda=1\) is an eigenvalue.  Therefore, \(A-I\) should not be invertible.</p></li>
+<li><p>Sage tells us that the reduced row echelon form of \(A-I\) is \(\left[\begin{array}{rrr} 1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}\)</p></li>
+<li><p>The computation tells us that \(A-I\) is invertible.  We know that this can't be the case, however, since \(\lambda=1\) is an eigenvalue.</p></li>
+<li>
+<p>Let's trace through the work that goes into finding the reduced row echelon form of \(A-I\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A-I=
+\left[\begin{array}{rrr}
+-0.8 \amp 0.2 \amp 0.4 \\
+0.2 \amp -0.7 \amp 0.1 \\
+0.6 \amp 0.5 \amp -0.5 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+-0.8 \amp 0.2 \amp 0.4 \\
+0.0 \amp -0.65 \amp 0.2 \\
+0.0 \amp 0.65 \amp -0.2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>The next step is to multiply the second row by \(0.65/0.65\) and add it to the third row.  The last entry in the third row would be \(-0.2 + 0.2(0.65)/0.65\text{,}\) which we identify as being \(0\text{.}\)  The problem is that the computer only approximates this result so it finds something close to \(0\) but not quite equal to \(0\text{.}\)  It therefore, thinks this is a pivot position and scales the row to have \(1\) in that position.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-4965">in-context</a></span>
+</body>
+</html>

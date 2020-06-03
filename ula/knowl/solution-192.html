@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">4.2.5.1</span>.</h6>
+<ol class="lower-alpha">
+<li><p>The <code class="code-inline tex2jax_ignore">fcp</code> command will return the factored characteristic polynomial <code class="code-inline tex2jax_ignore">lam^2 - 2*lam - 3</code>.</p></li>
+<li><p>The <code class="code-inline tex2jax_ignore">eigenvalues</code> command returns a list of eigenvalues <code class="code-inline tex2jax_ignore">[-3, -3]</code>.</p></li>
+<li><p>The <code class="code-inline tex2jax_ignore">eigenvectors_right</code> command returns <code class="code-inline tex2jax_ignore">[(-3, [(1, 0)], 2)]</code>.</p></li>
+<li>
+<p>If we begin with the matrix \(A\text{,}\) we find</p>
+<ol class="lower-roman">
+<li><p>The eigenvalues are \(\lambda=1\) and \(\lambda=0.1\text{.}\)</p></li>
+<li><p>The reduced row echelon form is \(\mattwo{-2}{1}{0}{0}\text{,}\) which shows that \(A-I\) is not invertible, as expected.</p></li>
+<li><p>Sage returns \(\mattwo{1}{0}{0}{1}\text{,}\) which is not correct because \(A-I\) cannot be invertible if \(\lambda=1\) is an eigenvalue of \(A\text{.}\)</p></li>
+<li><p>Here we find the correct eigenvalues, \(\lambda=1\) with basis vector \(\twovec{1}{2}\) for \(E_1\) and \(\lambda=0.1\) with basis vector \(\twovec{1}{-1}\) for \(E_{0.1}\text{.}\)</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-eigen-find.html#solution-192">in-context</a></span>
+</body>
+</html>

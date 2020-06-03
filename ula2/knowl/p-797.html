@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Just as the orthogonal diagonalization leads to a factorization \(A=QDQ^T\text{,}\) the singular values and vectors lead to a factorization as well.  We will explain this more fully later, but for now, let's get a sense of where we're headed.  We form three matrices:  \(U\) having columns \(\uvec_1\) and \(\uvec_2\text{,}\) \(V\) having columns \(\vvec_1\) and \(\vvec_2\text{,}\) and \(\Sigma\text{,}\) a diagonal matrix whose entries are the singular values:</p>
+<div class="displaymath">
+\begin{equation*}
+U = \begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix},
+\Sigma = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp 1
+\end{bmatrix},
+V = \begin{bmatrix}
+1/\sqrt{2} \amp -1/\sqrt{2} \\
+1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>It turns out that the product \(U\Sigma V^T\) forms the original matrix \(A\text{;}\)  that is,</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+1 \amp 2 \\
+2 \amp 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1/\sqrt{2} \amp 1/\sqrt{2} \\
+1/\sqrt{2} \amp -1/\sqrt{2}
+\end{bmatrix}
+\begin{bmatrix}
+3 \amp 0 \\
+0 \amp 1
+\end{bmatrix}
+\begin{bmatrix}
+1/\sqrt{2} \amp -1/\sqrt{2} \\
+1/\sqrt{2} \amp 1/\sqrt{2}
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>We call this factorization \(A=U\Sigma V^T\text{,}\) the <em class="emphasis">singular value decomposition</em> of \(A\) and note its similarity to the orthogonal diagonalization \(A=QDQ^T\text{.}\)</p>
+<span class="incontext"><a href="sec-svd-intro.html#p-797">in-context</a></span>
+</body>
+</html>

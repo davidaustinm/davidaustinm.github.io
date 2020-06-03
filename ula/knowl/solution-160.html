@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:14-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">3.4.5.13.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>If \(a\text{,}\) \(b\text{,}\) and \(c\) are not distinct, we see that \(\det V=0\) because two of the rows are identical. Therefore, we apply the following row operations, assuming \(a\text{,}\) \(b\text{,}\) and \(c\) are distinct:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+V = \amp
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+1 \amp b \amp b^2 \\
+1 \amp c \amp c^2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+0 \amp b-a \amp b^2-a^2 \\
+0 \amp c-a \amp c^2-a^2 \\
+\end{array}\right] \\
+\sim \amp
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+0 \amp 1 \amp b+a \\
+0 \amp 1 \amp c+a \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+0 \amp 1 \amp b+a \\
+0 \amp 0 \amp c-b \\
+\end{array}\right]\text{.}
+\end{array}
+\end{equation*}
+</div>
+<p>Because of the scalings by \(b-a\) and \(c-a\text{,}\) we have \(\det V = (b-a)(c-a)(c-b)\text{.}\)</p>
+</li>
+<li><p>If \(a\text{,}\) \(b\text{,}\) and \(c\) are distinct, then \(\det V \neq 0\text{,}\) which implies that \(V\) is invertible.</p></li>
+<li>
+<p>In the \(4\times4\) case, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\det\left[\begin{array}{rrrr}
+1 \amp a \amp a^2 \amp a^3 \\
+1 \amp b \amp b^2 \amp b^3 \\
+1 \amp c \amp c^2 \amp c^3 \\
+1 \amp d \amp d^2 \amp d^3 \\
+\end{array}\right]
+= (d-a)(d-b)(d-c)(c-a)(c-b)(b-a)\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-determinants.html#solution-160">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:56-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">2.4.5.1.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>We view the vectors as the columns of a matrix so that</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrrr}
+1 \amp 0 \amp 2 \amp -2 \\
+2 \amp 1 \amp 3 \amp 4 \\
+1 \amp 3 \amp -1 \amp -1
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrr}
+1 \amp 0 \amp 2 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Since there is a column without a pivot position, the vectors must linearly dependent.  We also expect this because four vectors in \(\real^3\) must always be linearly dependent.</p>
+</li>
+<li>
+<p>If we view the first three columns as an augmented matrix, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 2 \\
+2 \amp 1 \amp 3 \\
+1 \amp 3 \amp -1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 2 \\
+0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We see that \(\vvec_3 = 2\vvec_1-\vvec_2\text{.}\)</p>
+</li>
+<li><p>From the solution to the previous part, we have \(-2\vvec_1+\vvec_2+\vvec_3 = \zerovec\text{,}\) which says that \(c_1=-2\text{,}\) \(c_2=1\text{,}\) \(c_3=1\text{,}\) and \(c_4=0\) is an appropriate choice of weights.</p></li>
+<li><p>From the solution to the previous part, we see that \(\xvec = \fourvec{-2}{1}{1}{0}\) is a solution of the homogeneous equation.</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-linear-dep.html#solution-75">in-context</a></span>
+</body>
+</html>

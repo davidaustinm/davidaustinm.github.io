@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Remember that the Sage command <code class="code-inline tex2jax_ignore">A.right_eigenmatrix()</code> tries to find a basis for \(\real^n\) consisting of eigenvectors of \(A\text{.}\)  In particular, <code class="code-inline tex2jax_ignore">D, P =
+	A.right_eigenmatrix()</code> provides a diagonal matrix \(D\) constructed from the eigenvalues of \(A\) with the columns of \(P\) containing associated eigenvectors. <div class="sagecell-sage" id="sage-45"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li>
+<p>For each of the following matrices, determine whether there is a basis for \(\real^2\) consisting of eigenvectors of \(A\text{.}\)  When there is such a basis, form the matrices \(P\) and \(D\) and verify that \(A=PDP^{-1}\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>\(A = \begin{bmatrix}
+3 \amp -4 \\
+4 \amp 3
+\end{bmatrix}
+\text{.}\)</p></li>
+<li><p>\(A = \begin{bmatrix}
+1 \amp 1 \\
+-1 \amp 3
+\end{bmatrix}
+\text{.}\)</p></li>
+<li><p>\(A = \begin{bmatrix}
+1 \amp 0\\
+-1 \amp 2
+\end{bmatrix}
+\text{.}\)</p></li>
+<li><p>\(A = \begin{bmatrix}
+9 \amp 2 \\
+2 \amp 6
+\end{bmatrix}
+\text{.}\)</p></li>
+</ol>
+</li>
+<li><p>For which of these examples is it possible to form an orthogonal basis for \(\real^2\) consisting of eigenvectors of \(A\text{?}\)</p></li>
+<li><p>For any such matrix, find an orthonormal basis of eigenvectors and explain why \(A = QDQ^{-1}\) where \(Q\) is an orthogonal matrix.</p></li>
+<li><p>Finally, explain why \(A=QDQ^T\) in this case.</p></li>
+<li><p>When \(A=QDQ^T\text{,}\) what is the relationship between \(A\) and \(A^T\text{?}\)</p></li>
+</ol>
+<span class="incontext"><a href="sec-symmetric-matrices.html#p-493">in-context</a></span>
+</body>
+</html>

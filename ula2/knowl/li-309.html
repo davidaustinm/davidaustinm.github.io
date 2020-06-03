@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:58-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">a</span>.</h6>
+<p>Evaluating the following cell defines the matrix \(D = \begin{bmatrix}
+3 \amp 0 \\
+0 \amp -1
+\end{bmatrix}\) and displays the graph of the associated quadratic form \(q_D(\xvec)\text{.}\)  In addition, the points corresponding to vectors \(\uvec\) with unit length are displayed as a curve. <div class="sagecell-sage" id="sage-50"><script type="text/x-sage">x, y, t = var('x', 'y', 't')
+
+A = matrix(2, 2, [3,0,0,-1])    
+
+def q(x,y):
+   return vector([x,y])*(A*vector([x,y]))
+graph = plot3d(q(x,y), (x,-1.2,1.2), (y,-1.2,1.2), color='orange', opacity=0.9, aspect_ratio=(1,1,1/max(matrix(RDF, A).singular_values())))
+curve = parametric_plot3d([cos(t), sin(t), q(cos(t), sin(t))], (t,0,2*pi), thickness=3)   
+graph + curve
+</script></div> Notice that the matrix \(D\) is diagonal.  In which directions does the quadratic form have its maximum and minimum values?</p></article><span class="incontext"><a href="sec-quadratic-forms.html#li-309">in-context</a></span>
+</body>
+</html>

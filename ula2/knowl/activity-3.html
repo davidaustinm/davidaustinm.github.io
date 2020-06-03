@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.1.4</span>.</h6>
+<p>To begin, we identify the <em class="emphasis">centroid</em>, or the average, of a set of vectors \(\vvec_1, \vvec_2, \ldots,\vvec_n\) as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac1n\left(\vvec_1+\vvec_2+\ldots+\vvec_n\right).
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li>
+<p>Find the centroid of the vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1=\twovec11,
+\vvec_2=\twovec41,
+\vvec_3=\twovec44.
+\end{equation*}
+</div>
+<p>and sketch the vectors and the centroid using <a data-knowl="./knowl/fig-centroid-plot.html" title="Figure 1.1.11">Figure 1.1.11</a>.  You may wish to simply plot the points represented by the tips of the vectors rather than drawing the vectors themselves.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-5-k.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.1.11.</span> The vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\) and their centroid.</figcaption></figure><p>Notice that the centroid lies in the center of the points defined by the vectors.</p>
+</li>
+<li>
+<p>Now we'll illustrate an algorithm to create clusterings.  To begin, consider the following points, represented as vectors,</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1=\twovec{-2}{1},
+\vvec_2=\twovec11,
+\vvec_3=\twovec12,
+\vvec_4=\twovec32,
+\end{equation*}
+</div>
+<p>which are shown in <a data-knowl="./knowl/fig-clustering-ex.html" title="Figure 1.1.12">Figure 1.1.12</a>.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/kmeans-data.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.1.12.</span> We will group this set of four points into two clusters.</figcaption></figure><p>Suppose that we would like to group these points into \(k=2\) clusters. (Later on, we'll see how to choose an appropriate value for \(k\text{,}\) the number of clusters.)  We begin by choosing two points \(c_1\) and \(c_2\) at random and declaring them to be the “centers”' of the two clusters.</p>
+<p>For example, suppose we randomly choose \(c_1=\vvec_2\) and \(c_2=\vvec_3\) as the center of two clusters.  The cluster centered on \(c_1=\vvec_2\) will be the set of points that are closer to \(c_1=\vvec_2\) than to \(c_2=\vvec_3\text{.}\) Determine which of the four data points are in this cluster, which we denote by \(C_1\text{,}\) and circle them in <a data-knowl="./knowl/fig-clustering-ex.html" title="Figure 1.1.12">Figure 1.1.12</a>.</p>
+</li>
+<li><p>The second cluster will consist of the data points that are closer to \(c_2=\vvec_3\) than \(c_1=\vvec_2\text{.}\)  Determine which of the four points are in this cluster, which we denote by \(C_2\text{,}\) and circle them in <a data-knowl="./knowl/fig-clustering-ex.html" title="Figure 1.1.12">Figure 1.1.12</a>.</p></li>
+<li>
+<p>We now have a clustering with two clusters, but it may be that we can improve upon them in the following way.  First, find the centroids of the two clusters;  that is, redefine \(c_1\) to be the centroid of cluster \(C_1\) and \(c_2\) to be the centroid of \(C_2\text{.}\) Find those centroids and indicate them in <a data-knowl="./knowl/fig-clustering-ex-2.html" title="Figure 1.1.13">Figure 1.1.13</a></p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/kmeans-data.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.1.13.</span> Indicate the new centroids and clusters.</figcaption></figure><p>Now update the cluster \(C_1\) to be the set of points closer to \(c_1\) than \(c_2\text{.}\) Update the cluster \(C_2\) in a similar way and indicate the clusters in <a data-knowl="./knowl/fig-clustering-ex-2.html" title="Figure 1.1.13">Figure 1.1.13</a>.</p>
+</li>
+<li>
+<p>Let's perform this last step again.  That is, update the centroids \(c_1\) and \(c_2\) from the new clusters and then update the clusters \(C_1\) and \(C_2\text{.}\)  Indicate your centroids and clusters in <a data-knowl="./knowl/fig-clustering-ex-3.html" title="Figure 1.1.14">Figure 1.1.14</a></p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/kmeans-data.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.1.14.</span> Indicate the new centroids and clusters.</figcaption></figure><p>Notice that this last step produces the same set of clusters so there is no point in repeating it.  We declare this to be our final clustering.</p>
+</li>
+</ol></article><span class="incontext"><a href="sec-dot-product.html#activity-3">in-context</a></span>
+</body>
+</html>

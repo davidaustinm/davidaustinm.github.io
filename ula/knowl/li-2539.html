@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">a</span>.</h6>
+<p>We can find the characteristic polynomial of a matrix \(A\) by writing <code class="code-inline tex2jax_ignore">A.charpoly('lam')</code>.  Notice that we have to give Sage a variable in which to write the polynomial;  here, we use <code class="code-inline tex2jax_ignore">lam</code> though you could just as well use <code class="code-inline tex2jax_ignore">x</code>.</p>
+<div class="sagecell-sage" id="sage-100"><script type="text/x-sage">A = matrix(2,2,[1,2,2,1])
+A.charpoly('lam')
+</script></div>
+<p>The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities.  The factor chacteristic polynomial is found with <code class="code-inline tex2jax_ignore">A.fcp('lam')</code>.</p>
+<div class="sagecell-sage" id="sage-101"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.fcp('lam')
+</script></div></article><span class="incontext"><a href="sec-eigen-find.html#li-2539">in-context</a></span>
+</body>
+</html>

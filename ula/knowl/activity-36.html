@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:11-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.4.3</span>.</h6>
+<p>We will investigate the connection between the determinant of a matrix and its invertibility using Gaussian elimination.</p>
+<ol class="lower-alpha">
+<li>
+<p>Consider the two upper triangular matrices</p>
+<div class="displaymath">
+\begin{equation*}
+U_1 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right],
+U_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Which of the matrices \(U_1\) and \(U_2\) are invertible? Use our earlier observation that the determinant of an upper triangular matrix is the product of its diagonal entries to find \(\det U_1\) and \(\det U_2\text{.}\)</p>
+</li>
+<li><p>Explain why an upper triangular matrix is invertible if and only if its determinant is not zero.</p></li>
+<li>
+<p>Let's now consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>and start the Gaussian elimination process. We begin with a row replacement operation</p>
+<div class="displaymath">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+= A_1\text{.}
+\end{equation*}
+</div>
+<p>What is the relationship between \(\det A\) and \(\det A_1\text{?}\)</p>
+</li>
+<li>
+<p>Next we perform another row replacement operation:</p>
+<div class="displaymath">
+\begin{equation*}
+A_1=
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+= A_2\text{.}
+\end{equation*}
+</div>
+<p>What is the relationship between \(\det A\) and \(\det
+A_2\text{?}\)</p>
+</li>
+<li>
+<p>Finally, we perform an interchange:</p>
+<div class="displaymath">
+\begin{equation*}
+A_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right]
+= U
+\end{equation*}
+</div>
+<p>to arrive at an upper triangular matrix \(U\text{.}\)  What is the relationship between \(\det A\) and \(\det U\text{?}\)</p>
+</li>
+<li><p>Since \(U\) is upper triangular, we can compute its determinant, which allows us to find \(\det A\text{.}\)  What is \(\det A\text{?}\)  Is \(A\) invertible?</p></li>
+<li>
+<p>Now consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 3 \\
+0 \amp 2 \amp -2 \\
+2 \amp 1 \amp 3 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Perform a sequence of row operations to find an upper triangular matrix \(U\) that is row equivalent to \(A\text{.}\)  Use this to determine \(\det A\text{.}\)  Is the matrix \(A\) invertible?</p>
+</li>
+<li><p>Suppose we apply a sequence of row operations on a matrix \(A\) to obtain \(A'\text{.}\)  Explain why \(\det A
+\neq 0\) if and only if \(\det A' \neq 0\text{.}\)</p></li>
+<li><p>Explain why an \(n\times n\) matrix \(A\) is invertible if and only if \(\det A \neq 0\text{.}\)</p></li>
+<li><p>If \(A\) is an invertible matrix with \(\det A =
+-3\text{,}\) what is \(\det A^{-1}\text{?}\)</p></li>
+</ol></article><span class="incontext"><a href="sec-determinants.html#activity-36">in-context</a></span>
+</body>
+</html>

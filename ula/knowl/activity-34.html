@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:09-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.3.3</span>.</h6>
+<p>We will explore the influence that the Fourier coefficients have on the vector \(\xvec\text{.}\)</p>
+<p>FOURIER-COEFFS</p>
+<ol class="lower-alpha">
+<li><p>Describe the effect on the vector \(\xvec\) when you vary \(F_0\text{.}\)</p></li>
+<li><p>Now observe the effect on \(\xvec\) when \(F_3\) and \(F_7\) are varied.  Compare the effect of \(F_0\text{,}\) \(F_3\text{,}\) and \(F_7\text{.}\)</p></li>
+<li><p>If the vector \(\xvec\) shows only small variations, what would you expect to be true of the Fourier coefficients \(F_j\text{?}\)</p></li>
+<li><p>The Sage cell below will construct the vector \(C_{\bcal}\text{,}\) which is denoted <code class="code-inline tex2jax_ignore">C</code>, and its inverse \(C_{\bcal}^{-1}\text{,}\) which is denoted <code class="code-inline tex2jax_ignore">Cinv</code>.  Evaluate this Sage cell and notice that it prints the matrix \(C_{\bcal}^{-1}\text{.}\) <div class="sagecell-sage" id="sage-dct-def"><script type="text/x-sage">mat = []
+for i in range(8):
+    for j in range(8):
+        mat.append(cos((2*i+1)*j*pi/16))
+C = matrix(8,8, mat).numerical_approx()
+Cinv = C.inverse()	
+print (Cinv.numerical_approx(digits=3))
+</script></div> Now look at the form of \(C_{\bcal}^{-1}\) and explain why \(F_0\) is the average of the luminance values in the vector \(\xvec\text{.}\)</p></li>
+<li><p>The Sage cell below defines the vector \(\xvec\text{,}\) which is the vector of luminance values in the first column, as seen in <a data-knowl="./knowl/fig-jpeg-block-luminance.html" title="Figure 3.3.6">Figure 3.3.6</a>. Use the cell below to find the vector \(\fvec\) of Fourier coefficients \(F_0,F_1,\ldots,F_7\text{.}\)  If you have evaluated the cell above, you will still be able to refer to <code class="code-inline tex2jax_ignore">C</code> and <code class="code-inline tex2jax_ignore">Cinv</code> in this cell. <div class="sagecell-sage" id="sage-88"><script type="text/x-sage">x = vector([176,181,165,139,131,131,140,150])
+#  find the vector of Fourier coefficients f below
+f =
+print (f.numerical_approx(digits=4))
+</script></div> Write the Fourier coefficients and discuss the relative sizes of the coefficients.</p></li>
+<li><p>We see that the coefficients \(F_6\) and \(F_7\text{,}\) which correspond to rapid variations in the luminance values, are quite small.  Let's see what happens when we ignore them.  Form a new vector of Fourier coefficients by rounding the coefficients to the nearest integer and setting \(F_6\) and \(F_7\) to zero.  This is an approximation to \(\fvec\text{,}\) the vector of Fourier coefficients.  Use the approximation to \(\fvec\) to form an approximation of the vector \(\xvec\text{.}\) <div class="sagecell-sage" id="sage-89"><script type="text/x-sage"># define fapprox below and then find xapprox
+fapprox =
+xapprox =
+print ("x      =", x)
+print ("xapprox=", xapprox.numerical_approx(digits=3))
+</script></div> How much does your approximation differ from the actual vector \(\xvec\text{?}\)</p></li>
+<li>
+<p>When we ignore the Fourier coefficients corresponding to rapidly varying basis elements, we see that the vector \(\xvec\) that we reconstruct is very close to the original one.  In fact, the luminance values in the approximation differ by at most one or two from the actual luminance values. Our eyes are not sensitive enough to detect this difference.</p>
+<p>So far, we have concentrated on only one column in our \(8\times8\) block of luminance values.  Let's now consider all of the columns. The following Sage cell defines a matrix called <code class="code-inline tex2jax_ignore">luminance</code>, which is the \(8\times8\) matrix of luminance values.  Find the \(8\times8\) matrix \(F\) whose columns are the Fourier coefficients of the columns of luminance values. <div class="sagecell-sage" id="sage-90"><script type="text/x-sage">luminance = matrix(8,8, [176, 170, 170, 169, 162, 160, 155, 150, 181,
+179, 175, 167, 162, 160, 154, 149, 165, 170, 169, 161, 162, 161, 160,
+158, 139, 150, 164, 166, 159, 160, 162, 163, 131, 137, 157, 165, 163,
+163, 164, 164, 131, 132, 153, 161, 167, 167, 167, 169, 140, 142, 157,
+166, 166, 166, 167, 169, 150, 152, 160, 168, 172, 170, 168, 168])
+# define your matrix F below
+F =
+print (F.numerical_approx(digits=3))
+</script></div></p>
+</li>
+<li><p>Notice that the first row of this matrix consists of the Fourier coefficient \(F_0\) for each of the columns.  Just as we saw before, the entries in this row do not change significantly as we move across the row.  In the Sage cell below, write these entries in the vector \(\yvec\) and find the corresponding Fourier coefficients. <div class="sagecell-sage" id="sage-91"><script type="text/x-sage"># define the vector y as the entries in the first row of F	    
+y = 
+y_fourier =
+print (y_fourier.numerical_approx(digits=3))
+</script></div></p></li>
+</ol></article><span class="incontext"><a href="sec-jpeg.html#activity-34">in-context</a></span>
+</body>
+</html>

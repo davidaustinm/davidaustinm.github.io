@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:10-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="exercise-like"><h6 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">4.</span>
+</h6>
+<p>In <a data-knowl="./knowl/example-wavelet-basis.html" title="Example 3.2.7">Example 3.2.7</a>, we looked at a basis for \(\real^4\) that we called the Haar wavelet basis. The basis vectors are</p>
+<div class="displaymath">
+\begin{equation*}
+\vvec_1=\fourvec{1}{1}{1}{1},
+\vvec_2=\fourvec{1}{1}{-1}{-1},
+\vvec_3=\fourvec{1}{-1}{0}{0},
+\vvec_4=\fourvec{0}{0}{1}{-1}\text{,}
+\end{equation*}
+</div>
+<p>which may be understood graphically as in <a data-knowl="./knowl/fig-haar-wavelet-basis.html" title="Figure 3.3.11">Figure 3.3.11</a>. We will denote this basis by \(\wcal\text{.}\)</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/basis-revenue-elements.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">3.3.11.</span> The Haar wavelet basis represented graphically.</figcaption></figure><p>The change of coordinates from a vector \(\xvec\) in \(\real^4\) to \(\coords{\xvec}{\wcal}\) is called the Haar <em class="emphasis">wavelet transform</em> and we write</p>
+<div class="displaymath">
+\begin{equation*}
+\coords{\xvec}{\wcal} = \fourvec{H_1}{H_2}{H_3}{H_4}\text{.}
+\end{equation*}
+</div>
+<p>The coefficients \(H_1,H_2,H_3,H_4\) are called wavelet coefficients.</p>
+<p>Let's work with the \(4\times4\) block of luminance values in the upper left corner of our larger \(8\times8\) block:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrrr}
+176 \amp 170 \amp 170 \amp 169 \\
+181 \amp 179 \amp 175 \amp 167 \\
+165 \amp 170 \amp 169 \amp 161 \\
+139 \amp 150 \amp 164 \amp 166
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>The following Sage cell defines the matrix <code class="code-inline tex2jax_ignore">W</code> whose columns are the basis vectors in \(\wcal\text{.}\)  If \(\xvec\) is the first column of luminance values in the \(4\times4\) block above, find the wavelet coefficients \(\coords{\xvec}{\wcal}\text{.}\) <div class="sagecell-sage" id="sage-94"><script type="text/x-sage">W = matrix(4,4,[1,1,1,0,1,1,-1,0,1,-1,0,1,1,-1,0,-1])
+</script></div></p></li>
+<li>
+<p>Notice that \(H_1\) gives the average value of the components of \(\xvec\) and \(H_2\) describes how the averages of the first two and last two components differ from the overall average.  The coefficients \(H_3\) and \(H_4\) describe small-scale variations between the first two components and last two components, respectively.</p>
+<p>If we set the last wavelet coefficients \(H_3=0\) and \(H_4=0\text{,}\) we obtain the wavelet coefficients \(\coords{\yvec}{\wcal}\) for a vector \(\yvec\) that approximates \(\xvec\text{.}\)  Find the vector \(\yvec\) and compare it to the original vector \(\xvec\text{.}\)</p>
+</li>
+<li><p>What impact does the fact that \(H_3=0\) and \(H_4=0\) have on the form of the vector \(\yvec\text{?}\)  Explain how setting these coefficients to zero ignores the behavior of \(\xvec\) on a small scale.</p></li>
+<li><p>In the JPEG compression algorithm, we looked at the Fourier coefficients of all the columns of luminance values and then performed a Fourier transform on the rows.  The Sage cell below will perform the same operation using the wavelet transform;  that is, it will first find the wavelet coefficients of each of the columns and then perform the wavelet transform on the rows.  You only need to evaluate the cell to find the wavelet coefficients obtained in this way. <div class="sagecell-sage" id="sage-95"><script type="text/x-sage">luminance = matrix(4,4,[176, 170, 170, 169, 181, 179, 175, 167, 165,
+170, 169, 161, 139, 150,  164, 166])
+Winv = W.inverse()
+wavelet_transform = (Winv*(Winv*luminance).transpose()).transpose()
+print wavelet_transform.numerical_approx(digits=3)
+</script></div></p></li>
+<li><p>Now set all the wavelet coefficients equal to zero except those in the upper left \(2\times2\) block and use them to define the matrix <code class="code-inline tex2jax_ignore">coeffs</code> in the Sage cell below.  This has the effect of ignoring all of the small-scale differences.  Evaluating this cell will recover the approximate luminance values. <div class="sagecell-sage" id="sage-96"><script type="text/x-sage"># define the matrix of coefficients below
+coeffs = 
+# this code will undo the wavelet transform
+approx_luminance = W*((W*(coeffs.transpose())).transpose())
+print approx_luminance.numerical_approx(digits=3)
+</script></div></p></li>
+<li><p>Explain how the wavelet transform and this approximation can be used to create a lower resolution version of the image.</p></li>
+</ol>
+<p>This kind of wavelet transform is the basis of the JPEG 2000 compression algorithm, which is an alternative to the usual JPEG algorithm.</p></article><span class="incontext"><a href="sec-jpeg.html#exercise-99">in-context</a></span>
+</body>
+</html>

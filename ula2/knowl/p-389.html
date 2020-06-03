@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:57-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>The rate at which a cricket chirps is related to the outdoor temperature, as reflected in some experimental data that we'll study in this activity.  The chirp rate \(C\) is expressed in chirps per second while the temperature \(T\) is in degrees Fahrenheit.  Evaluate the following cell to load in the data: <div class="sagecell-sage" id="sage-28"><script type="text/x-sage">sage.repl.load.load('http://merganser.math.gvsu.edu/david/linear.algebra/ula/python/orthogonality.py', globals())
+df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/crickets.csv')
+data = [vector(row) for row in df.values]
+chirps = vector(df['Chirps'])
+temps = vector(df['Temperature'])
+print(df)
+list_plot(data, color='blue', size=40)
+</script></div> Evaluating this cell also provides:</p>
+<ul class="disc">
+<li><p>the vectors <code class="code-inline tex2jax_ignore">chirps</code> and <code class="code-inline tex2jax_ignore">temps</code> formed from the columns of the data set.</p></li>
+<li><p>the command <code class="code-inline tex2jax_ignore">onesvec(n)</code>, which creates an \(n\)-dimensional vector whose entries are all one.</p></li>
+<li><p>Remember that you can form a matrix whose columns are the vectors <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code> with <code class="code-inline tex2jax_ignore">matrix([v1,
+	      v2]).T</code>.</p></li>
+</ul>
+<span class="incontext"><a href="sec-least-squares.html#p-389">in-context</a></span>
+</body>
+</html>

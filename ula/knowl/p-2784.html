@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:09-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>The Sage cell below will construct the vector \(C_{\bcal}\text{,}\) which is denoted <code class="code-inline tex2jax_ignore">C</code>, and its inverse \(C_{\bcal}^{-1}\text{,}\) which is denoted <code class="code-inline tex2jax_ignore">Cinv</code>.  Evaluate this Sage cell and notice that it prints the matrix \(C_{\bcal}^{-1}\text{.}\) <div class="sagecell-sage" id="sage-dct-def"><script type="text/x-sage">mat = []
+for i in range(8):
+    for j in range(8):
+        mat.append(cos((2*i+1)*j*pi/16))
+C = matrix(8,8, mat).numerical_approx()
+Cinv = C.inverse()	
+print (Cinv.numerical_approx(digits=3))
+</script></div> Now look at the form of \(C_{\bcal}^{-1}\) and explain why \(F_0\) is the average of the luminance values in the vector \(\xvec\text{.}\)</p>
+<span class="incontext"><a href="sec-jpeg.html#p-2784">in-context</a></span>
+</body>
+</html>

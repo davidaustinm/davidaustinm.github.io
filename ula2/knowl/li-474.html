@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:59-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">h</span>.</h6>
+<p>Now we've seen that the columns of \(\Gamma_2 =
+\Sigma_2 V_2^T\) form the coordinates of the demeaned data points projected on the two-dimensional subspace spanned by \(\uvec_1\) and \(\uvec_2\text{.}\) In the cell below, find a singular value decomposition of \(A\) and use it to form the matrix <code class="code-inline tex2jax_ignore">Gamma2</code> below.  When you evaluate this cell, you will see a plot of the projected demeaned data plots, similar to the one we created in <a href="sec-pca.html" class="internal" title="Section 2.3: Principal Component Analysis">Section 2.3</a>. <div class="sagecell-sage" id="sage-83"><script type="text/x-sage"># Form the SVD of A and use it to form Gamma2
+
+		    
+Gamma2 = 
+
+# The following will plot the projected demeaned data points
+data = Gamma2.columns()
+(list_plot(data[:50], color='blue', aspect_ratio=1) +
+ list_plot(data[50:100], color='orange') +
+ list_plot(data[100:], color='green'))
+</script></div></p></article><span class="incontext"><a href="sec-svd-uses.html#li-474">in-context</a></span>
+</body>
+</html>

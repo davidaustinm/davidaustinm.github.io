@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-05T14:34:56-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Vectors are often used to represent how a quantity changes over time.  For instance, the vector \(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\) might represent the value of a company's stock on four consecutive days. We call such a vector a <em class="emphasis">time series.</em>  Evaluate the Sage cell below to see a representation of two time series \(\svec_1\text{,}\) in blue, and \(\svec_2\text{,}\) in orange, which we may imagine represent the value of two stocks over a period of time. <div class="sagecell-sage" id="sage-4"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s2, 'orange')
+</script></div> Even though one stock has a higher value than the other, the two appear to be related since they seem to rise and fall at roughly similar ways.  We often say that they are <em class="emphasis">correlated</em>, and we would like to measure the degree to which they are correlated.</p>
+<ol class="lower-roman">
+<li><p>In order to compare the ways in which they rise and fall, we will first <em class="emphasis">demean</em> the time series;  that is, for each time series, we will subtract its average value to obtain a new time series.  There is a command <code class="code-inline tex2jax_ignore">demean(s)</code> that returns the demeaned time series of <code class="code-inline tex2jax_ignore">s</code>.  Use the Sage cell below to demean the series \(\svec_1\) and \(\svec_2\) and plot.  (This cell relies on some data loaded by the first cell in this activity.) <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">ds1 = demean(s1)
+ds2 = demean(s2)
+series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
+</script></div></p></li>
+<li>
+<p>If the demeaned series are \(\tilde{\svec}_1\) and \(\tilde{\svec}_2\text{,}\) then the correlation between \(\svec_1\) and \(\svec_2\) is defined to be</p>
+<div class="displaymath">
+\begin{equation*}
+\corr(\svec_1, \svec_2) =
+\frac{\tilde{\svec}_1\cdot\tilde{\svec}_2}
+{\len{\tilde{\svec}_1}\len{\tilde{\svec}_2}}.
+\end{equation*}
+</div>
+<p>Given the geometric interpretation of the dot product, the correlation equals the cosine of the agle between the demeaned time series, and therefore \(\corr(\svec_1,\svec_2)\) is between -1 and 1.</p>
+<p>Find the correlation between \(\svec_1\) and \(\svec_2\text{.}\) <div class="sagecell-sage" id="sage-6"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li>
+<p>Suppose that two time series are such that their demeaned time series are scalar multiples of one another, as in <a data-knowl="./knowl/fig-correlation.html" title="Figure 1.1.9">Figure 1.1.9</a></p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/correlation-pos.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/correlation-neg.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">1.1.9.</span> On the left, the demeaned time series are positive scalar multiples of one another.  On the right, they are negative scalar multiples.</figcaption></figure><p>Suppose we have time series \(\tvec_1\) and \(\tvec_2\) whose demeaned time series \(\tilde{\tvec}_1\) and \(\tilde{\tvec}_2\) are positive scalar multiples of one another, what is the angle between the demeaned vectors?  What does this say about the correlation \(\corr(\tvec_1, \tvec_2)\text{?}\)</p>
+</li>
+<li><p>Suppose the demeaned time series \(\tilde{\tvec}_1\) and \(\tilde{\tvec}_2\) are negative scalar multiples of one another, what is the angle between the demeaned vectors?  What does this say about the correlation \(\corr(\tvec_1, \tvec_2)\text{?}\)</p></li>
+<li><p>Use the Sage cell below to plot the time series \(\svec_1\) and \(\svec_3\) and find their correlation. <div class="sagecell-sage" id="sage-7"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s3, 'orange')
+</script></div></p></li>
+<li><p>Use the Sage cell below to plot the time series \(\svec_1\) and \(\svec_4\) and find their correlation. <div class="sagecell-sage" id="sage-8"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s4, 'orange')
+</script></div></p></li>
+</ol>
+<span class="incontext"><a href="sec-dot-product.html#p-44">in-context</a></span>
+</body>
+</html>

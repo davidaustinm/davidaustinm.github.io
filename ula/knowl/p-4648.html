@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:40-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>To make sense of this, suppose that there are \(N\) pages on our internet.  The matrix</p>
+<div class="displaymath">
+\begin{equation*}
+H_n = \left[\begin{array}{rrrr}
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>is a positive stochastic matrix describing a process where we can move from any page to another with equal probability.  To form the modified Google matrix \(G'\text{,}\) we choose a parameter \(\alpha\) that is used to mix \(G\) and \(H_n\) together;  that is, \(G'\) is the positive stochastic matrix</p>
+<div class="displaymath">
+\begin{equation*}
+G' = \alpha G +(1-\alpha)H_n\text{.}
+\end{equation*}
+</div>
+<p>In practice, it is thought that Google uses a value of \(\alpha=0.85\) (Google doesn't publish this number as it is a trade secret) so that we have</p>
+<div class="displaymath">
+\begin{equation*}
+G' = 0.85 G + 0.15H_n\text{.}
+\end{equation*}
+</div>
+<p>Intuitively, this means that an Internet user will randomly follow a link from one page to another 85% of the time and will randomly jump to any other page on the Internet 15% of the time.  Since the matrix \(G'\) is positive, the Perron-Frobenius theorem tells us that any Markov chain will converge to a unique steady-state vector that we call the PageRank vector.</p>
+<span class="incontext"><a href="sec-stochastic.html#p-4648">in-context</a></span>
+</body>
+</html>

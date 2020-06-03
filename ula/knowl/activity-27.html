@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:02-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="project-like"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">3.1.2</span>.</h6>
+<p>Let's consider the matrices</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 0 \amp 2 \\
+2 \amp 2 \amp 1 \\
+1 \amp 1 \amp 1 \\
+\end{array}\right],
+B = \left[\begin{array}{rrr}
+1 \amp 2 \amp -4 \\
+-1 \amp -1 \amp 3 \\
+0 \amp -1 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>Define these matrices in Sage and verify that \(BA =
+I\) so that \(B=A^{-1}\text{.}\) <div class="sagecell-sage" id="sage-72"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the solution to the equation \(A\xvec =
+\threevec{4}{-1}{4}\) using \(A^{-1}\text{.}\)</p></li>
+<li><p>Using your Sage cell above, multiply \(A\) and \(B\) in the opposite order;  that is, what do you find when you evaluate \(AB\text{?}\)</p></li>
+<li><p>Suppose that \(A\) is an \(n\times n\) invertible matrix with inverse \(A^{-1}\text{.}\)  This means that every equation of the form \(A\xvec=\bvec\) has a solution, namely, \(\xvec = A^{-1}\bvec\text{.}\)  What can you conclude about the span of the columns of \(A\text{?}\)</p></li>
+<li><p>What can you conclude about the pivot positions of the matrix \(A\text{?}\)</p></li>
+<li><p>If \(A\) is an invertible \(4\times4\) matrix, what is its reduced row echelon form?</p></li>
+</ol></article><span class="incontext"><a href="sec-matrix-inverse.html#activity-27">in-context</a></span>
+</body>
+</html>

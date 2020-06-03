@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The geometry of matrix transformations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline">David Austin</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-linear-trans.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap3.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-linear-trans.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom" class="active">The geometry of matrix transformations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-transforms-geom"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">The geometry of matrix transformations</span>
+</h2>
+<a href="sec-transforms-geom.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-1957">Matrix transformations, which we explored in the last section, allow us to describe certain functions \(T:\real^n\to\real^m\text{.}\)  In this section, we will demonstrate how matrix transformations provide a convenient way to describe geometric operations, such as rotations, reflections, and scalings.  We will then explore how matrix transformations are used in computer animation.</p>
+<article class="project-like" id="exploration-8"><h6 class="heading">
+<span class="type">Preview Activity</span> <span class="codenumber">2.6.1</span>.</h6>
+<p id="p-1958">Suppose that we wish to describe the geometric operation that reflects 2-dimensional vectors in the horiztonal axis.  For instance, <a data-knowl="./knowl/fig-reflect-intro.html" title="Figure 2.6.1">Figure 2.6.1</a> illustrates how a vector \(\xvec\) is reflected into the vector \(T(\xvec)\text{.}\)</p>
+<figure class="figure-like" id="fig-reflect-intro"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/reflect-intro.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.1.</span> A vector \(\xvec\) and its reflection \(T(\xvec)\) in the horizontal axis.</figcaption></figure><ol id="p-1959" class="lower-alpha">
+<li id="li-1322"><p id="p-1960">If \(\xvec = \twovec{2}{4}\text{,}\) what is the vector \(T(\xvec)\text{?}\)  Sketch the vectors \(\xvec\) and \(T(\xvec)\text{.}\)</p></li>
+<li id="li-1323"><p id="p-1961">More generally, if \(\xvec=\twovec{x}{y}\text{,}\) what is \(T(\xvec)\text{?}\)</p></li>
+<li id="li-1324"><p id="p-1962">Find the vectors \(T\left(\twovec{1}{0}\right)\) and \(T\left(\twovec{0}{1}\right)\text{.}\)</p></li>
+<li id="li-1325"><p id="p-1963">Use your results to write the matrix \(A\) so that \(T(\xvec) = A\xvec\text{.}\) Then verify that \(T\left(\twovec{x}{y}\right)\) agrees with what you found in part b.</p></li>
+<li id="li-1326"><p id="p-1964">Describe the transformation that results from composing \(T\) with itself;  that is, what is the transformation \(T\circ T\text{?}\)  Explain how matrix multiplication can be used to justify your response.</p></li>
+</ol></article></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">The geometry of \(2\times2\) matrix transformations</span>
+</h3>
+<p id="p-1971">The preview activity demonstrates how the matrix \(\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp -1 \\
+\end{array}\right]\) defines a matrix transformation that has the effect of reflecting 2-dimensional vectors in the horizontal axis.  The following activity shows, more generally, that matrix transformations can perform a variety of important geometric operations.</p>
+<article class="project-like" id="activity-linear-trans-geom"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.6.2</span>.</h6>
+The diagram below demonstrates the effect of a matrix transformation
+  on the plane.  You may modify the matrix \(A\) defining the matrix
+  transformation \(T\) through the sliders at the top.  You may also move
+  the red vector \({\mathbf x}\) on the left, by clicking in the head of the
+  vector, and observe \(T({\mathbf x})\) on the right.
+</p>
+
+<p>
+  <div style="text-align:center">
+    <canvas id="bottomsliders" width="450" height="100">
+      Your browser does not support HTML5 Canvas.
+    </canvas>
+    <br>
+    <canvas id="bottomleft" width="250" height="250" hspace=5>
+      Your browser does not support HTML5 Canvas.
+    </canvas>
+    <canvas id="bottomright" width="250" height="250" hspace=5>
+      Your browser does not support HTML5 Canvas.
+    </canvas>
+    <script type='text/javascript' src="jslibrary/figures.js"></script>
+    <script type='text/javascript' src="jslibrary/mult.c.js"></script>
+  </div>
+<p>
+<p id="p-1973">For the following matrices \(A\) given below, use the diagram to study the effect of the corresponding matrix transformation \(T(\xvec) = A\xvec\text{.}\)  For each transformation, describe the geometric effect of the transformation on the plane.</p>
+<ol class="lower-alpha">
+<li id="li-1332"><p id="p-1974">The matrix \(A=\left[\begin{array}{rr}
+2 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1333"><p id="p-1975">The matrix \(A=\left[\begin{array}{rr}
+2 \amp 0 \\
+0 \amp 2 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1334"><p id="p-1976">The matrix \(A=\left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1335"><p id="p-1977">The matrix \(A=\left[\begin{array}{rr}
+1 \amp 1 \\
+0 \amp 1 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1336"><p id="p-1978">The matrix \(A=\left[\begin{array}{rr}
+-1 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1337"><p id="p-1979">The matrix \(A=\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp 0 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1338"><p id="p-1980">The matrix \(A=\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right]\text{.}\)</p></li>
+<li id="li-1339"><p id="p-1981">The matrix \(A=\left[\begin{array}{rr}
+1 \amp -1 \\
+-2 \amp 2 \\
+\end{array}\right]\text{.}\)</p></li>
+</ol></article><p id="p-1991">The previous activity presented some examples in which matrix transformations perform interesting geometric actions, such as rotations, scalings, and reflections.  Let's turn this question around: Suppose we have a specific geometric action that we would like to perform.  Can we find a matrix \(A\) that represents this action through the matrix transformation \(T(\xvec) = A\xvec\text{?}\)</p>
+<p id="p-1992">The linearity of matrix-vector multiplication <a data-knowl="./knowl/prop-matrix-mult-prop.html" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> provides the key to answering this question.  Remember that if \(A\) is a matrix, \(\vvec\) and \(\wvec\) vectors, and \(c\) a scalar, then</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+A(c\vvec) \amp {}={} cA\vvec \\
+A(\vvec + \wvec) \amp {}={} A\vvec + A\wvec\text{.}
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>This means that a matrix transformation \(T(\xvec) = A\xvec\) satisfies the corresponding linearity property: <article class="assemblage-like" id="linearity-of-linear-transformations"><h6 class="heading"><span class="title">Linearity of Matrix Transformations.</span></h6>
+<div class="displaymath" id="p-1993">
+\begin{equation*}
+\begin{aligned}
+T(c\vvec) \amp {}={} cT(\vvec) \\
+T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+\end{aligned}
+\end{equation*}
+</div></article></p>
+<p id="p-1994">It turns out that, if \(T:\real^n\to\real^m\) satisfies these two linearity properties, then we can find a matrix \(A\) such that \(T(\xvec) = A\xvec\text{.}\)  In fact, <a data-knowl="./knowl/prop-linear-trans-columns.html" title="Proposition 2.5.4">Proposition 2.5.4</a> tells us how to form \(A\text{;}\) we simply write</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rrrr}
+T(\evec_1) \amp T(\evec_2) \amp \ldots T(\evec_n)
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We will now check that \(T(\xvec) = A\xvec\) using the linearity of \(T\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+T(\xvec) = T\left(\fourvec{x_1}{x_2}{\vdots}{x_n}\right)
+\amp {}={}
+T(x_1\evec_1 + x_2\evec_2 + \ldots + x_n\evec_n) \\ \\
+\amp {}={}
+x_1T(\evec_1) + x_2T(\evec_2) + \ldots + x_nT(\evec_n) \\ \\
+\amp {}={}
+x_1A\evec_1 + x_2A\evec_2 + \ldots + x_nA\evec_n \\ \\
+\amp {}={}
+A(x_1\evec_1 + x_2\evec_2 + \ldots + x_n\evec_n) \\ \\
+\amp {}={}
+A\fourvec{x_1}{x_2}{\vdots}{x_n} \\ \\
+\amp {}={}
+A\xvec
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p id="p-1995">The result is the following proposition.</p>
+<article class="theorem-like" id="prop-linear-trans-characterization"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.6.2</span>.</h6>
+<p id="p-1996">The function \(T:\real^n\to\real^m\) is a matrix transformation where \(T(\xvec) = A\xvec\) for some \(m\times n\) matrix \(A\) if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+T(c\vvec) \amp {}={} cT(\vvec) \\
+T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>In this case, \(A\) is the matrix whose columns are \(T(\evec_j)\text{;}\)  that is,</p>
+<div class="displaymath">
+\begin{equation*}
+A=\left[\begin{array}{rrrr}
+T(\evec_1) \amp T(\evec_2) \amp \ldots \amp T(\evec_n)
+\end{array}\right]\text{.}
+\end{equation*}
+</div></article><p id="p-1997">We will put this proposition to use in the following example by finding the matrix whose matrix transformation performs a specific geometric operation.</p>
+<article class="example-like" id="example-8"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.6.3</span>.</h6>
+<p id="p-1998">In this example, we will find the matrix defining a matrix transformation that performs a \(45^\circ\) counterclockwise rotation.</p>
+<p id="p-1999">We first need to know that this geometric operation can be represented by a matrix transformation.  To begin, we will define the function \(T:\real^2\to\real^2\) where \(T(\xvec)\) is obtained by rotating \(\xvec\) counterclockwise by \(45^\circ\text{,}\) as shown in <a data-knowl="./knowl/fig-45-rotation.html" title="Figure 2.6.4">Figure 2.6.4</a>.</p>
+<figure class="figure-like" id="fig-45-rotation"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.4.</span> The function \(T\) rotates a vector counterclockwise by \(45^\circ\text{.}\)</figcaption></figure><p id="p-2000">We need to check that \(T\) is a matrix transformation; by <a data-knowl="./knowl/prop-linear-trans-characterization.html" title="Proposition 2.6.2">Proposition 2.6.2</a>, this means that we should make sure that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+T(c\vvec) \amp {}={} cT(\vvec) \\
+T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+\end{aligned}
+\end{equation*}
+</div>
+<p>The next two figures illustrate these properties.  For instance, <a data-knowl="./knowl/fig-45-rotation-linear-mult.html" title="Figure 2.6.5">Figure 2.6.5</a> shows that relationship between \(T(\vvec)\) and \(T(c\vvec)\) when \(c\) is a scalar.  We easily see that \(T(c\vvec)\) is a scalar multiple of \(T(\vvec)\) and hence that \(T(c\vvec) = cT(\vvec)\text{.}\)</p>
+<figure class="figure-like" id="fig-45-rotation-linear-mult"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-linear-a.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.5.</span> We see that the vector \(T(c\vvec)\) is a scalar multiple to \(T(\vvec)\) so that \(T(c\vvec) =
+cT(\vvec)\text{.}\)</figcaption></figure><p id="p-2001">Similarly, <a data-knowl="./knowl/fig-45-rotation-linear-add.html" title="Figure 2.6.6">Figure 2.6.6</a> shows the relationship between \(T(\vvec+\wvec)\text{,}\) \(T(\vvec)\text{,}\) and \(T(\wvec)\text{.}\)  In this way, we see that \(T(\vvec+\wvec) = T(\vvec) + T(\wvec)\text{.}\)</p>
+<figure class="figure-like" id="fig-45-rotation-linear-add"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-linear-b.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.6.</span> We see that the vector \(T(\vvec+\wvec)\) is the sum of \(T(\vvec)\) and \(T(\wvec)\) so that \(T(\vvec + \wvec) = T(\vvec) + T(\wvec)\text{.}\)</figcaption></figure><p id="p-2002">This shows that the function \(T\text{,}\) which rotates vectors by \(45^\circ\) is a matrix transformation.  We may therefore write it as \(T(\xvec) = A\xvec\) where \(A\) is the \(2\times2\) matrix \(A=\left[\begin{array}{rr} T(\evec_1) \amp T(\evec_2)
+\end{array}\right]\text{.}\)  The columns of this matrix, \(T(\evec_1)\) and \(T(\evec_2)\text{,}\) are shown in <a data-knowl="./knowl/fig-45-rotation-basis.html" title="Figure 2.6.7">Figure 2.6.7</a>.</p>
+<figure class="figure-like" id="fig-45-rotation-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-basis.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.7.</span> The effect of \(T\) on \(\evec_1\) and \(\evec_2\text{.}\)</figcaption></figure><p id="p-2003">To find the components of these vectors, notice that they form an isosceles right triangle, as shown in <a data-knowl="./knowl/fig-45-rotation-e1.html" title="Figure 2.6.8">Figure 2.6.8</a>.  Since the length of \(\evec_1\) is 1, the length of \(T(\evec_1)\text{,}\) the hypotenuse of the triangle, is 1.</p>
+<figure class="figure-like" id="fig-45-rotation-e1"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-e1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.8.</span> The vector \(T(\evec_1)\) forms a right isosceles triangle whose hypotenuse has length 1.</figcaption></figure><p id="p-2004">This leads to</p>
+<div class="displaymath">
+\begin{equation*}
+T(\evec_1) = \twovec{\frac1{\sqrt{2}}}
+{\frac1{\sqrt{2}}},
+T(\evec_2) = \twovec{-\frac1{\sqrt{2}}}
+{\frac1{\sqrt{2}}}\text{.}
+\end{equation*}
+</div>
+<p>Hence, the matrix \(A\) is</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+\frac{1}{\sqrt{2}} \amp 
+-\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} \amp 
+\frac{1}{\sqrt{2}} \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>You may wish to check this using the interactive diagram in the previous activity using the approximation \(1/\sqrt{2} \approx 0.7\text{.}\)</p></article><p id="p-2005">In this example, we found that the desired geometric operation, a rotation in the plane, was in fact a matrix transformation \(T\) by checking that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+T(c\vvec) \amp {}={} cT(\vvec) \\
+T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p>In general, the same kind of thinking applies to show that rotations, reflections, and scalings are matrix transformations so we will not bother with that step in the future.</p>
+<article class="project-like" id="activity-25"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.6.3</span>.</h6>
+<p id="p-2006">In this activity, we seek to describe various matrix transformations by finding the matrix that gives the desired transformation.  All of the transformations that we study here have the form \(T:\real^2\to\real^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-1348"><p id="p-2007">Find the matrix of the transformation that has no effect on vectors;  that is, \(T(\xvec) = \xvec\text{.}\)  We call this matrix the <em class="emphasis">identity</em> and denote it by \(I\text{.}\)</p></li>
+<li id="li-1349"><p id="p-2008">Find the matrix of the transformation that reflects vectors in \(\real^2\) over the line \(y=x\text{.}\)</p></li>
+<li id="li-1350"><p id="p-2009">What is the result of composing the reflection you found in the previous part with itself;  that is, what is the effect of reflecting in the line \(y=x\) and then reflecting in this line again.  Provide a geometric explanation for your result as well as an algebraic one obtained by multiplying matrices.</p></li>
+<li id="li-1351"><p id="p-2010">Find the matrix that rotates vectors counterclockwise in the plane by \(90^\circ\text{.}\)</p></li>
+<li id="li-1352"><p id="p-2011">Compare the result of rotating by \(90^\circ\) and then reflecting in the line \(y=x\) to the result of first reflecting in \(y=x\) and then rotating \(90^\circ\text{.}\)</p></li>
+<li id="li-1353"><p id="p-2012">Find the matrix that results from composing a \(90^\circ\) rotation with itself.  Explain the geometric meaning of this operation.</p></li>
+<li id="li-1354"><p id="p-2013">Find the matrix that results from composing a \(90^\circ\) rotation with itself four times; that is, if \(T\) is the matrix transformation that rotates vectors by \(90^\circ\text{,}\) find the matrix for \(T\circ T\circ T \circ
+T\text{.}\)  Explain why your result makes sense geometrically.</p></li>
+<li id="li-1355">
+<p id="p-2014">Explain why the matrix that rotates vectors counterclockwise by an angle \(\theta\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-2025">In the first part of this activity, we encountered the <em class="emphasis">identity</em> matrix, which, as an \(n\times n\) matrix, has the form</p>
+<div class="displaymath">
+\begin{equation*}
+I = \left[\begin{array}{cccc}
+1 \amp 0 \amp \ldots \amp 0 \\
+0 \amp 1 \amp \ldots \amp 0 \\
+\vdots \amp \vdots \amp \vdots \amp 0 \\
+0 \amp 0 \amp \ldots \amp 1 \\
+\end{array}\right]
+= \left[\begin{array}{rrrr}
+\evec_1 \amp \evec_2 \amp \ldots \amp \evec_n \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>The matrix transformation \(T(\xvec) = I\xvec\) leaves vectors unchanged;  that is, \(T(\xvec) = \xvec\) so that \(I\xvec =
+\xvec\text{.}\) Notice that the columns of \(I\) are simply the vectors \(\evec_j\text{.}\)</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Matrix transformations and computer animation</span>
+</h3>
+<p id="p-2026">Linear algebra plays a significant role in computer animation. We will now illustrate how matrix transformations and some of the ideas we have developed in this section are used by computer animators to create the illusion of motion in their characters.</p>
+<p id="p-2027"><a data-knowl="./knowl/fig-blob-man.html" title="Figure 2.6.9">Figure 2.6.9</a> shows a test character used by Pixar animators.  On the left is the original definition of the character; on the right, we see that the character has been moved into a different pose.  To make it appear that the character is moving, animators create a sequence of frames in which the character's pose is modified slightly from one frame to the next.  Matrix transformations play an important role in doing this.</p>
+<figure class="figure-like" id="fig-blob-man"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/char-bind.jpg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/char-mvt.jpg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.9.</span> Computer animators define a character and create motion by drawing it in a sequence of poses. © Disney/Pixar</figcaption></figure><p id="p-2028">For instance, <a data-knowl="./knowl/fig-remy.html" title="Figure 2.6.10">Figure 2.6.10</a> shows the character Remy from Pixar's <em class="emphasis">Ratatouille</em>.  Clearly, a lot goes into transforming the model on the left into the engaging character on the right, such as the addition of fur and eyes.  We will focus only on the motion of the character.</p>
+<figure class="figure-like" id="fig-remy"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/remy-cage.jpg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/remy-1.jpg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.10.</span> Remy from the Pixar movie <em class="emphasis">Ratatouille</em>.  © Disney/Pixar.</figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><p id="p-2029">Of course, realistic characters will be drawn in three-dimensions.  To keep things a little more simple, however, we will look at this two-dimensional character and devise matrix transformations that move them into different poses.</p></div>
+<div class="sbspanel" style="width:38.8888888888889%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-2030">Of course, the first thing we may wish to do is simply move them to a different position in the plane, such as that shown in <a data-knowl="./knowl/fig-animate-translate.html" title="Figure 2.6.11">Figure 2.6.11</a>.  Motions like this are called <em class="emphasis">translations</em>.</p>
+<figure class="figure-like" id="fig-animate-translate"><div class="sidebyside"><div class="sbsrow" style="margin-left:32.5%;margin-right:32.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/animate-translate.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.11.</span> Translating our character to a new position in the plane.</figcaption></figure><p id="p-2031">This presents a problem because a matrix transformation \(T:\real^2\to\real^2\) has the property that \(T(\zerovec) = \zerovec\text{.}\)  This means that a matrix transformation cannot move the origin of the coordinate plane.  To address this restriction, animators use <em class="emphasis">homogeneous coordinates</em>, which are formed by placing the two-dimensional coordinate plane inside \(\real^3\) as the plane \(z=1\text{.}\)  This is shown in <a data-knowl="./knowl/fig-animate-homogeneous.html" title="Figure 2.6.12">Figure 2.6.12</a>.</p>
+<figure class="figure-like" id="fig-animate-homogeneous"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/animate-homogeneous.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.12.</span> Include the plane in \(\real^3\) as the plane \(z=1\) so that we can translate the character.</figcaption></figure><p id="p-2032">Therefore, rather than describing points in the plane as vectors \(\twovec{x}{y}\text{,}\) we describe them as three-dimensional vectors \(\threevec{x}{y}{1}\text{.}\)  As we see in the next activity, this allows us to translate our character in the plane.</p>
+<article class="project-like" id="activity-26"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">2.6.4</span>.</h6>
+<p id="p-2033">In this activity, we will use homogeneous coordinates and matrix transformations to move our character into a variety of poses.</p>
+<ol id="p-2034" class="lower-alpha">
+<li id="li-1364">
+<p id="p-2035">Since we regard our character as living in \(\real^3\text{,}\) we will consider matrix transformations defined by matrices</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Verify that such a matrix transformation transforms points in the plane \(z=1\) into other points in this plane; that is, verify that</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\threevec{x}{y}{1} = \threevec{x'}{y'}{1}\text{.}
+\end{equation*}
+</div>
+<p>Express the coordinates of the resulting point \(x'\) and \(y'\) in terms of the coordinates of the original point \(x\) and \(y\text{.}\)</p>
+The diagram below allows you to create matrix transformations of this
+  form to move our character into different poses.  You may use it to help
+  address the following questions.
+</p>
+
+<p>
+  <div style="text-align:center">
+
+  	<table cellpadding = 5 align=center>
+	  <tr> <td>
+              <canvas id="a" width="150" height="45">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	    <td>
+              <canvas id="b" width="150" height="45">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	    <td>
+              <canvas id="c" width="150" height="45">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	  </tr>
+
+	  <tr> <td>
+              <canvas id="d" width="150" height="45">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	    <td>
+              <canvas id="e" width="150" height="45">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	    <td>
+              <canvas id="f" width="150" height="45">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	  </tr>
+	</table>
+
+	<table cellpadding = 10 align = center>
+	  <tr> <td>
+	      <canvas id="left" width="250" height="250" hspace="10">
+		Your browser does not support HTML5 Canvas.
+	      </canvas>
+	    </td>
+	    <td>
+	      <canvas id="right" width="250" height="250" hspace="10">
+		Your browser does not support HTML5 Canvas.
+	      </canvas>
+	    </td>
+	  </tr>
+	</table>
+	<button type="button" id="compose"> Compose </button>
+	<button type="button" id="reset"> Reset </button>
+        <script type='text/javascript' src='jslibrary/animate.js'></script>
+
+  </div>
+<p>
+</li>
+<li id="li-1365">
+<p id="p-2037">Find the matrix transformation that translates our character to a new position in the plane, as shown in <a data-knowl="./knowl/fig-animate-translate-2.html" title="Figure 2.6.13">Figure 2.6.13</a></p>
+<figure class="figure-like" id="fig-animate-translate-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-translate.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.13.</span> Translating to a new position.</figcaption></figure>
+</li>
+<li id="li-1366">
+<p id="p-2038">As originally drawn, our character is waving with one of their hands. In one of the movie's scenes, we would like her to wave with their other hand, as shown in <a data-knowl="./knowl/fig-animate-reflect.html" title="Figure 2.6.14">Figure 2.6.14</a>. Find the matrix transformation that moves them into this pose.</p>
+<figure class="figure-like" id="fig-animate-reflect"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-reflect.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.14.</span> Waving with the other hand.</figcaption></figure>
+</li>
+<li id="li-1367">
+<p id="p-2039">Later, our chracter performs a cartwheel by moving through the sequence of poses shown in <a data-knowl="./knowl/fig-animate-rotate.html" title="Figure 2.6.15">Figure 2.6.15</a>. Find the matrix transformations that create these poses.</p>
+<figure class="figure-like" id="fig-animate-rotate"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-a.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-b.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-c.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-d.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.15.</span> Performing a cartwheel.</figcaption></figure>
+</li>
+<li id="li-1368">
+<p id="p-2040">Next, we would like to find the transformations that zoom in on our character's face, as shown in <a data-knowl="./knowl/fig-animate-closeup.html" title="Figure 2.6.16">Figure 2.6.16</a>. To do this, you should think about composing matrix transformations.  This can be accomplished in the diagram by using the <em class="emphasis">Compose</em> button, which makes the current pose, displayed on the right, the new beginning pose, displayed on the left.  What is the matrix transformation that moves the character from the original pose, shown in the upper left, to the final pose, shown in the lower right?</p>
+<figure class="figure-like" id="fig-animate-closeup"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-closeup-a.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-closeup-b.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-closeup-c.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.16.</span> Zooming in on our characters' face.</figcaption></figure>
+</li>
+<li id="li-1369">
+<p id="p-2041">We would also like to create our character's shadow, shown in the sequence of poses in <a data-knowl="./knowl/fig-animate-shadow.html" title="Figure 2.6.17">Figure 2.6.17</a>. Find the sequence of matrix transformations that achieves this.  In particular, find the matrix transformation that take our character from their original pose to their shadow in the lower right.</p>
+<figure class="figure-like" id="fig-animate-shadow"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-shadow-a.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-shadow-b.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-shadow-c.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.17.</span> Casting a shadow.</figcaption></figure>
+</li>
+<li id="li-1370"><p id="p-2042">Write a final scene to the movie and describe how to construct a sequence of matrix transformations that create your scene.</p></li>
+</ol></article></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Summary</span>
+</h3>
+<p id="p-2050">This section explored how geometric operations, such as rotations, reflections, and scalings, are performed by matrix transformations.</p>
+<ul class="disc">
+<li id="li-1377"><p id="p-2051">A matrix of the form \(\left[\begin{array}{rr}
+a \amp 0 \\
+0 \amp b \\
+\end{array}\right]\) represents a horizontal scaling by a factor \(a\) and a vertical scaling by \(b\text{.}\)</p></li>
+<li id="li-1378"><p id="p-2052">A matrix of the form \(\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]\) defines a rotation by an angle \(\theta\text{.}\)</p></li>
+<li id="li-1379"><p id="p-2053">Composing geometric operations corresponds to matrix multiplication.</p></li>
+<li id="li-1380"><p id="p-2054">Computer animators use matrix transformations to create the illusion of motion.  Homogeneous coordinates are used so that translations can be realized as matrix transformations.</p></li>
+</ul></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.6.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-2055">For each of the following geometric operations in the plane, find a \(2\times 2\) matrix that defines the matrix transformation performing the operation.</p>
+<ol class="lower-alpha">
+<li id="li-1381"><p id="p-2056">Rotates vectors by \(180^\circ\text{.}\)</p></li>
+<li id="li-1382"><p id="p-2057">Reflects vectors in the vertical axis.</p></li>
+<li id="li-1383"><p id="p-2058">Reflects vectors in the line \(y=-x\text{.}\)</p></li>
+<li id="li-1384"><p id="p-2059">Rotates vectors counterclockwise by \(60^\circ\text{.}\)</p></li>
+<li id="li-1385"><p id="p-2060">First rotates vectors counterclockwise by \(60^\circ\) and then reflects in the line \(y=x\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="ex-compose-reflections"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-2073">This exercise investigates the composition of reflections in the plane.</p>
+<ol class="lower-alpha">
+<li id="li-1396"><p id="p-2074">Find the result of first reflecting in the line \(y=0\) and then \(y=x\text{.}\)  What familiar operation is the cumulative effect of this composition?</p></li>
+<li id="li-1397"><p id="p-2075">What happens if you compose the operations in the opposite order;  that is, what happens if you first reflect in \(y=x\) and then \(y=0\text{?}\)  What familiar operation results?</p></li>
+<li id="li-1398"><p id="p-2076">What familiar geometric operation results if you first reflect in the line \(y=x\) and then \(y=-x\text{?}\)</p></li>
+<li id="li-1399"><p id="p-2077">What familiar geometric operation results if you first rotate by \(90^\circ\) and then reflect in the line \(y=x\text{?}\)</p></li>
+</ol>
+<p id="p-2078">It is a general fact that the composition of two reflections results in a rotation through twice the angle from the first line of reflection to the second.  We will investigate this more generally in <a data-knowl="./knowl/ex-reflection-compose-general.html" title="Exercise 2.6.4.8">Exercise 2.6.4.8</a></p></article><article class="exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-2089">Shown below in <a data-knowl="./knowl/fig-3d-basis.html" title="Figure 2.6.18">Figure 2.6.18</a> are the vectors \(\evec_1\text{,}\) \(\evec_2\text{,}\) and \(\evec_3\) in \(\real^3\text{.}\)</p>
+<figure class="figure-like" id="fig-3d-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/3d-basis.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.18.</span> The vectors \(\evec_1\text{,}\) \(\evec_2\text{,}\) and \(\evec_3\) in \(\real^3\text{.}\)</figcaption></figure><ol id="p-2090" class="lower-alpha">
+<li id="li-1408"><p id="p-2091">Imagine that the thumb of your right hand points in the direction of \(\evec_1\text{.}\)  A positive rotation about the \(x\) axis corresponds to a rotation in the direction in which your fingers point. Find the matrix definining the matrix transformation \(T\) that rotates vectors by \(90^\circ\) around the \(x\)-axis.</p></li>
+<li id="li-1409"><p id="p-2092">In the same way, find the matrix that rotates vectors by \(90^\circ\) around the \(y\)-axis.</p></li>
+<li id="li-1410">Find the matrix that rotates vectors by \(90^\circ\) around the \(z\)-axis.</li>
+<li id="li-1411"><p id="p-2093">What is the cumulative effect of rotating by \(90^\circ\) about the \(x\)-axis, followed by a \(90^\circ\) rotation about the \(y\)-axis, followed by a \(-90^\circ\) rotation about the \(x\)-axis. <div class="sagecell-sage" id="sage-70"><script type="text/x-sage">
+</script></div></p></li>
+</ol></article><article class="exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-2104">We have seen how a matrix transformation can perform a geometric operation; now we would like to find a matrix transformation that undoes that operation.</p>
+<ol class="lower-alpha">
+<li id="li-1420">
+<p id="p-2105">Suppose that \(T:\real^2\to\real^2\) is the matrix transformation that rotates vectors by \(90^\circ\text{.}\) Find a matrix transformation \(S:\real^2\to\real^2\) that undoes the rotation;  that is, \(S\) takes \(T(\xvec)\) back into \(\xvec\) so that \(S\circ T(\xvec) = \xvec\text{.}\)  Think geometrically about what the transformation \(S\) should be and then verify it algebraically.</p>
+<p id="p-2106">We say that \(S\) is the <em class="emphasis">inverse</em> of \(T\) and we will write it as \(T^{-1}\text{.}\)</p>
+</li>
+<li id="li-1421"><p id="p-2107">Verify algebraically that the reflection \(R:\real^2\to\real^2\) across the line \(y=x\) is its own inverse;  that is, \(R^{-1} = R\text{.}\)</p></li>
+<li id="li-1422">
+<p id="p-2108">The matrix transformation \(T:\real^2\to\real^2\) defined by the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A=
+\left[\begin{array}{rr}
+1\amp 1 \\
+0 \amp 1\\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>is called a <em class="emphasis">shear</em>.  Find the inverse of \(T\text{.}\)</p>
+</li>
+<li id="li-1423">
+<p id="p-2109">Describe the geometric effect of the matrix transformation defined by</p>
+<div class="displaymath">
+\begin{equation*}
+A=\left[\begin{array}{rr}
+\frac12 \amp 0 \\
+0 \amp 3\\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>and then find its inverse.</p>
+</li>
+</ol></article><article class="exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-2121">We have seen that the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p>performs a rotation through an angle \(\theta\) about the origin.  Suppose instead that we would like to rotate by \(90^\circ\) about the point \((1,2)\text{.}\)  Using homogeneous coordinates, we will develop a matrix that performs this operation.</p>
+<p id="p-2122">Our strategy is to</p>
+<ul class="disc">
+<li id="li-1432"><p id="p-2123">begin with a vector whose tail is at the point \((1,2)\text{,}\)</p></li>
+<li id="li-1433"><p id="p-2124">translate the vector so that its tail is at the origin,</p></li>
+<li id="li-1434"><p id="p-2125">rotate by \(90^\circ\text{,}\) and</p></li>
+<li id="li-1435"><p id="p-2126">translate the vector so that its tail is back at \((1,2)\text{.}\)</p></li>
+</ul>
+<p>This is shown in <a data-knowl="./knowl/fig-ex-rotate-about-p.html" title="Figure 2.6.19">Figure 2.6.19</a>.</p>
+<figure class="figure-like" id="fig-ex-rotate-about-p"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-rotate-about-p.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.19.</span> A sequence of matrix transformations that, when read right to left and top to bottom, rotate a vector about the point \((1,2)\text{.}\)</figcaption></figure><p id="p-2127">Remember that, when working with homogeneous coordinates, we consider matrices of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-1436"><p id="p-2128">The first operation is a translation by \((-1,-2)\text{.}\)  Find the matrix that performs this translation.</p></li>
+<li id="li-1437"><p id="p-2129">The second operation is a \(90^\circ\) rotation about the origin.  Find the matrix that performs this rotation.</p></li>
+<li id="li-1438"><p id="p-2130">The third operation is a translation by \((1,2)\text{.}\) Find the matrix that performs this translation.</p></li>
+<li id="li-1439"><p id="p-2131">Use these matrices to find the matrix that performs a \(90^\circ\) rotation about \((1,2)\text{.}\)</p></li>
+<li id="li-1440"><p id="p-2132">Use your matrix to determine where the point \((-10,
+5)\) ends up if rotated by \(90^\circ\) about the \((1,2)\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-2143">This exercise concerns matrix transformations called <em class="emphasis">projections</em>.</p>
+<ol class="lower-alpha">
+<li id="li-1449">
+<p id="p-2144">Consider the matrix transformation \(T:\real^2\to\real^2\) that assigns to a vector \(\xvec\) the closest vector on horizontal axis as illustrated in <a data-knowl="./knowl/fig-ex-projection.html" title="Figure 2.6.20">Figure 2.6.20</a>.  This transformation is called the projection onto the horizontal axis.  You may imagine \(T(\xvec)\) as the shadow cast by \(\xvec\) from a flashlight far up on the positive \(y\)-axis.</p>
+<figure class="figure-like" id="fig-ex-projection"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/v-projection.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.20.</span> Projection onto the \(x\)-axis.</figcaption></figure><p id="p-2145">Find the matrix that defines this matrix transformation \(T\text{.}\)</p>
+</li>
+<li id="li-1450"><p id="p-2146">Find the matrix that defines projection on the vertical axis.</p></li>
+<li id="li-1451"><p id="p-2147">What is the result of composing the projection onto the horizontal axis with the projection onto the vertical axis?</p></li>
+<li id="li-1452"><p id="p-2148">Find the matrix that defines projection onto the line \(y=x\text{.}\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2159">This exericse concerns the matrix transformations defined by matrices of the form</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+a \amp -b \\
+b \amp a \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Let's begin by looking at two special types of these matrices.</p>
+<ol class="lower-alpha">
+<li id="li-1461">
+<p id="p-2160">First, consider the matrix where \(a = 2\) and \(b=0\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+2 \amp 0 \\
+0 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Describe the geometric effect of this matrix.  More generally, suppose we have</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+r \amp 0 \\
+0 \amp r \\
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p>where \(r\) is a positive number.  What is the geometric effort of \(A\) on vectors in the plane?</p>
+</li>
+<li id="li-1462">
+<p id="p-2161">Suppose now that \(a = 0\) and \(b = 1\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>What is the geometric effect of \(A\) on vectors in the plane?  More generally, suppose we have</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>What is the geometric effect of \(A\) on vectors in the plane?</p>
+</li>
+<li id="li-1463">
+<p id="p-2162">In general, the composition of matrix transformation depends on the order in which we compose them.  For these transformations, however, it is not the case.  Check this by verifying that</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr}
+r \amp 0 \\
+0 \amp r \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]
+=
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]
+\left[\begin{array}{rr}
+r \amp 0 \\
+0 \amp r \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1464">
+<p id="p-2163">Let's now look at the general case where</p>
+<div class="displaymath">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+a \amp -b \\
+b \amp a \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We will draw the vector \(\twovec{a}{b}\) in the plane and express it using polar coordinates \(r\) and \(\theta\) as shown in <a data-knowl="./knowl/fig-ex-complex-polar.html" title="Figure 2.6.21">Figure 2.6.21</a>.</p>
+<figure class="figure-like" id="fig-ex-complex-polar"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-complex-polar.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.21.</span> A vector may be expressed in polar coordinates.</figcaption></figure><p id="p-2164">We then have</p>
+<div class="displaymath">
+\begin{equation*}
+\twovec{a}{b} = \twovec{r\cos\theta}{r\sin\theta}\text{.}
+\end{equation*}
+</div>
+<p>Show that the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr}
+a \amp -b \\
+b \amp a \\
+\end{array}\right]
+=
+\left[\begin{array}{rr}
+r \amp 0 \\
+0 \amp r \\
+\end{array}\right]
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1465">
+<p id="p-2165">Using this description, describe the geometric effect on vectors in the plane of the matrix transformation defined by</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{rr}
+a \amp -b \\
+b \amp a \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1466">
+<p id="p-2166">Suppose we have a matrix transformation \(T\) defined by a matrix \(A\) and another transformation \(S\) defined by \(B\) where</p>
+<div class="displaymath">
+\begin{equation*}
+A= \left[\begin{array}{rr}
+a \amp -b \\
+b \amp a \\
+\end{array}\right],
+B= \left[\begin{array}{rr}
+c \amp -d \\
+d \amp c \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>Describe the geometric effect of the composition \(S\circ
+T\) in terms of the \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\text{.}\)</p>
+</li>
+</ol>
+<p>The matrices of this form give a model for the complex numbers and will play an important role in <a href="sec-dynamical.html" class="internal" title="Section 4.4: Dynamical systems">Section 4.4</a>.</p></article><article class="exercise-like" id="ex-reflection-compose-general"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-2181">We saw earlier that the rotation in the plane through an angle \(\theta\) is given by the matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>We would like to find a similar expression for the matrix that represents the reflection in \(L_\theta\text{,}\) the line passing through the origin and making an angle of \(\theta\) with the positive \(x\)-axis, as shown in <a data-knowl="./knowl/fig-ex-reflection-def.html" title="Figure 2.6.22">Figure 2.6.22</a>.</p>
+<figure class="figure-like" id="fig-ex-reflection-def"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-reflection-def.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.22.</span> The reflection in the line \(L_\theta\text{.}\)</figcaption></figure><ol class="lower-alpha">
+<li id="li-1479">
+<p id="p-2182">To do this, notice that this reflection can be obtained by composing three separate transformations as shown in <a data-knowl="./knowl/fig-ex-reflection-compose.html" title="Figure 2.6.23">Figure 2.6.23</a>.  Beginning with the vector \(\xvec\text{,}\) we apply the transformation \(R\) to rotate by \(-\theta\) and obtain \(R(\xvec)\text{.}\)  Next, we apply \(S\text{,}\) a reflection in the horizontal axis, followed by \(T\text{,}\) a rotation by \(\theta\text{.}\)  We see that \(T(S(R(\xvec)))\) is the same as the reflection of \(\xvec\) in the original line \(L_\theta\text{.}\)</p>
+<figure class="figure-like" id="fig-ex-reflection-compose"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-reflection-compose.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.23.</span> Reflection in the line \(L_\theta\) as a composition of three transformations.</figcaption></figure><p id="p-2183">Using this decomposition, show that the reflection in the line \(L_\theta\) is described by the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rr}
+\cos(2\theta) \amp \sin(2\theta) \\
+\sin(2\theta) \amp -\cos(2\theta) \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p>You will need to remember the trigonometric identities:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\cos(2\theta) \amp {}={} \cos^2\theta - \sin^2\theta \\
+\sin(2\theta) \amp {}={} 2\sin\theta\cos\theta \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1480"><p id="p-2184">Now that we have a matrix that describes the reflection in the line \(L_\theta\text{,}\) show that the composition of the reflection in the horizontal axis followed by the reflection in \(L_\theta\) is a counterclockwise rotation by an angle \(2\theta\text{.}\)  We saw some examples of this earlier in <a data-knowl="./knowl/ex-compose-reflections.html" title="Exercise 2.6.4.2">Exercise 2.6.4.2</a>.</p></li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

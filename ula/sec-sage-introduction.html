@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:10:35-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Computation with Sage</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\rvec}{{\mathbf r}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+\end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+\end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+\end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+\end{array}\right]}
+\newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+#4 \\ #5 \\ \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<p class="byline">David Austin</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-finding-solutions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-pivots.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-finding-solutions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-pivots.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction" class="active">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-sage-introduction"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Computation with Sage</span>
+</h2>
+<a href="sec-sage-introduction.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-338">Linear algebra owes its prominence as a powerful scientific tool to the ever-growing power of computers.  Carl Cowen, the former president of the Mathematical Association of America, has said, “No serious application of linear algebra happens without a computer.” Indeed, Cowen notes that, in the 1950s, working with a system of 100 equations in 100 unknowns was difficult. Today, scientists and mathematicians routinely work on problems that are vastly larger.  This is only possible because of today's computing power.</p>
+<p id="p-339">It is therefore important for any student of linear algebra to become comfortable solving linear algebraic problems on a computer.  This section will introduce you to a program called Sage that can help.  While you may be able to do much of this work on a graphing calculator, you are encouraged to become comfortable with Sage as we will use increasingly powerful features as we encounter their need.</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Introduction to Sage</span>
+</h3>
+<p id="p-340">There are several ways to access Sage.</p>
+<ul class="disc">
+<li id="li-207">
+<p id="p-341">If you are reading this book online, there will be embedded “Sage cells” at appropriate places in the text.  You have the opportunity to type Sage commands into this cell and execute them, provided you are connected to the Internet.</p>
+<p id="p-342">For instance, here is a Sage cell with a command that asks Sage to multiply 5 and 3.  You may execute the command by pressing the button that says “Evaluate.” <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">5 * 3
+</script></div></p>
+</li>
+<li id="li-208"><p id="p-343">You may also go to the website <a class="external" href="https://cocalc.com" target="_blank">https://cocalc.com</a>, sign up for an account, open a new project, and create a “Sage worksheet.” Once inside the worksheet, you may enter commands, as shown here, and evaluate them by presing <em class="emphasis">Enter</em> on your keyboard while holding down the <em class="emphasis">Shift</em> key.</p></li>
+</ul>
+<article class="project-like" id="activity-7"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.3.1</span>. <span class="title">Basic Sage commands.</span>
+</h6>
+<ol class="lower-alpha">
+<li id="li-209">
+<p id="p-344">Sage uses the standard operators +, -, *, /, and ^ for the usual arithmetic operations.  By entering text in the cell below, ask Sage to evaluate</p>
+<div class="displaymath">
+\begin{equation*}
+3 + 4(2^4 - 1)
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-2"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-210">
+<p id="p-345">Notice that we can create new lines by pressing <em class="emphasis">Enter</em> and enter additional commands on them. What happens when you evaluate this Sage cell? <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">5 * 3
+10 - 4
+</script></div></p>
+<p id="p-346">Notice that we only see the result from the last command. With the <code class="code-inline tex2jax_ignore">print</code> command, we may see earlier results, if we wish.  Note that we must enclose the things we want printed in parentheses. <div class="sagecell-sage" id="sage-4"><script type="text/x-sage">print (5 * 3)
+print (10 - 4)
+</script></div></p>
+</li>
+<li id="li-211">
+<p id="p-347">We may give a name to the result of one command and refer to it in a later command. <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">income = 1500 * 12
+taxes = income * 0.15
+print (taxes)
+</script></div></p>
+<p id="p-348">Suppose you have three tests in your linear algebra class and your scores are 90, 100, and 98.  In the Sage cell below, add your scores together and call the result <code class="code-inline tex2jax_ignore">total</code>.  On the next line, find the average of your test scores and print it. <div class="sagecell-sage" id="sage-6"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-212"><p id="p-349">If you are evaluating Sage cells inside an online version of this book, please be aware that your work will be lost if you reload the page.  If you are working online at <a class="external" href="https://cocalc.com" target="_blank">cocalc.com</a>, however, your results will be saved.</p></li>
+<li id="li-213"><p id="p-350">If you are not a programmer, you may ignore this part. If you are an experienced programmer, however, you should know that Sage is written in the Python programming language and that you may enter Python code into a Sage cell. <div class="sagecell-sage" id="sage-7"><script type="text/x-sage">for i in range(10):
+    print (i)
+</script></div></p></li>
+</ol></article></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Sage and matrices</span>
+</h3>
+<p id="p-351">When we encounter a matrix, <a data-knowl="./knowl/thm-rref-is-unique.html" title="Theorem 1.2.4">Theorem 1.2.4</a> tells us that there is exactly one reduced row echelon matrix that is row equivalent to it.</p>
+<p id="p-352">In fact, the uniqueness of this reduced row echelon matrix is what motivates us to define this particular form.  When solving a system of linear equations using Gaussian elimination, there are many possible matrices that reveal the structure of the solution space.  The reduced row echelon matrix is simply a convenience as it is an agreement we make with one another to seek the same matrix.</p>
+<p id="p-353">An added benefit is that we can ask a computer program, like Sage, to find reduced row echelon matrices for us.  We will learn how to do this now that we have a little familiarity with Sage.</p>
+<p id="p-354">First, notice that a matrix has a certain number of rows and columns.  For instance, the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{rrrrr}
+* \amp * \amp * \amp * \amp  * \\
+* \amp * \amp * \amp * \amp  * \\
+* \amp * \amp * \amp * \amp  * \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p>has three rows and five columns.  We consequently refer to this as a \(3\times 5\) matrix.</p>
+<p id="p-355">We may tell Sage about the \(2\times4\) matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{rrrr}
+-1 \amp 0 \amp 2 \amp 7 \\
+2 \amp 1 \amp -3 \amp -1 \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p>by entering <div class="sagecell-sage" id="sage-8"><script type="text/x-sage">matrix(2, 4, [-1, 0, 2, 7, 2, 1, -3, -1])
+</script></div> When evaluated, Sage will confirm the matrix by writing out the rows of the matrix, each inside square brackets.</p>
+<p id="p-356">Notice that there are three separate things (we call them <em class="emphasis">arguments</em>) inside the parentheses: the number of rows, the number of columns, and the entries of the matrix listed by row inside square brackets.  These three arguments are separated by commas.  Notice that there is no way of specifying whether this is an augmented or coefficient matrix so it will be up to us to remember.</p>
+<article class="assemblage-like" id="assemblage-2"><p id="p-357">Some common mistakes are</p>
+<ul class="disc">
+<li id="li-214"><p id="p-358">to forget the square brackets around the list of entries,</p></li>
+<li id="li-215"><p id="p-359">to omit an entry from the list or to add an extra one,</p></li>
+<li id="li-216"><p id="p-360">to forget to separate the rows, columns, and entries by commas, and</p></li>
+<li id="li-217"><p id="p-361">to forget the parentheses around the arguments after <code class="code-inline tex2jax_ignore">matrix</code>.</p></li>
+</ul>
+<p>If you see an error message, carefully proofread your input and try again.</p></article><article class="project-like" id="activity-8"><h6 class="heading">
+<span class="type">Activity</span> <span class="codenumber">1.3.2</span>. <span class="title">Using Sage to find row reduced echelon matrices.</span>
+</h6>
+<ol class="lower-alpha">
+<li id="li-example-rref">
+<p id="p-362">Enter the following matrix into Sage.</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{rrrr}
+-1 \amp -2 \amp 2 \amp -1 \\
+2 \amp 4 \amp -1 \amp 5 \\
+1 \amp 2 \amp 0 \amp 3
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-9"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-219">
+<p id="p-363">Let's give our matrix the name \(A\) by entering</p>
+<pre class="code-block tex2jax_ignore">
+A = matrix( ..., ..., [ ... ])
+	  </pre>
+<p>We may then find the reduced row echelon by entering</p>
+<pre class="code-block tex2jax_ignore">
+A = matrix( ..., ..., [ ... ])
+A.rref()
+	  </pre>
+<p id="p-364">Use Sage to find the reduced row echelon form of the matrix from <a data-knowl="./knowl/li-example-rref.html" title="Item a">Item a</a> of this activity. <div class="sagecell-sage" id="sage-10"><script type="text/x-sage">
+</script></div> Another common mistake is to forget the parentheses after <code class="code-inline tex2jax_ignore">rref</code>.</p>
+<p id="p-365"><article class="assemblage-like" id="assemblage-3"><p id="p-366">Here are some practices that you may find helpful when working with matrices in Sage.</p>
+<ul class="disc">
+<li id="li-220">
+<p id="p-367">Break the matrix entries across lines, one for each row, for better readability by pressing <em class="emphasis">Enter</em> between rows.</p>
+<pre class="code-block tex2jax_ignore">
+A = matrix(2, 4, [ 1, 2, -1, 0,
+                  -3, 0,  4, 3 ])
+              </pre>
+</li>
+<li id="li-221">
+<p id="p-368">Print your original matrix to check that you have entered it correctly.  You may want to also print a dividing line to separate matrices.</p>
+<pre class="code-block tex2jax_ignore">
+A = matrix(2, 2, [ 1, 2,
+                   2, 2])
+print (A)
+print ("---------")
+A.rref()
+	      </pre>
+</li>
+</ul></article></p>
+</li>
+<li id="li-rref-solve">
+<p id="p-369">Use Sage to describe the solution space of the system of linear equations</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{5}
+-x_1 \amp  \amp  \amp  \amp  \amp  {}+{}  \amp 2x_4 \amp
+{}={}  \amp 4 \\ 
+\amp  \amp 3x_2 \amp  {}+{}  \amp x_3 \amp  {}+{}  \amp 2x_4
+\amp  {}={}  \amp 3 \\ 
+4x_1 \amp  {}-{}  \amp 3x_2 \amp  \amp  \amp  {}+{}  \amp
+x_4 \amp  {}={}  \amp 14 \\ 
+\amp  \amp 2x_2 \amp  {}+{}  \amp 2x_3 \amp  {}+{}  \amp x_4
+\amp  {}={}  \amp 1 \\ 
+\end{alignedat}
+\end{equation*}
+</div>
+<p><div class="sagecell-sage" id="sage-11"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-augmentation-principle">
+<p id="p-370">Consider the two matrices:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+A \amp = \amp \left[
+\begin{array}{rrrr}
+1 \amp -2 \amp 1 \amp -3 \\
+-2 \amp 4 \amp 1 \amp 1 \\
+-4 \amp 8 \amp -1 \amp 7 \\
+\end{array}\right] \\
+B \amp = \amp \left[
+\begin{array}{rrrrrr}
+1 \amp -2 \amp 1 \amp -3 \amp 0 \amp 3 \\
+-2 \amp 4 \amp 1 \amp 1 \amp 1 \amp -1 \\
+-4 \amp 8 \amp -1 \amp 7 \amp 3 \amp 2 \\
+\end{array}\right] \\
+\end{array}
+\end{equation*}
+</div>
+<p>We say that \(B\) is an <em class="emphasis">augmented</em> matrix of \(A\) because it is obtained from \(A\) by adding some more columns.</p>
+<p id="p-371">Using Sage, define the matrices and compare their reduced row echelon forms.  What do you notice about the relationship between the two reduced row echelon forms?</p>
+<p id="p-372"><div class="sagecell-sage" id="sage-12"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-224">
+<p id="p-373">Using the system of equations in <a data-knowl="./knowl/li-rref-solve.html" title="Item c">Item c</a>, write the augmented matrix corresponding to the system of equations. What did you find for the reduced row echelon form of the augmented matrix?</p>
+<p id="p-374">Now write the coefficient matrix of this system of equations.  What does <a data-knowl="./knowl/li-augmentation-principle.html" title="Item d">Item d</a> of this activity tell you about its reduced row echelon form?</p>
+</li>
+</ol></article><p id="p-375">The last part of the previous activity, <a data-knowl="./knowl/li-augmentation-principle.html" title="Item d">Item d</a>, demonstrates something that will be helpful for us in the future.  In that activity, we started with a matrix \(A\text{,}\) which we augmented by adding some columns to obtain a matrix \(B\text{.}\)  We then noticed that the reduced row echelon form of \(B\) is obtained by augmenting the reduced row echelon form of \(A\text{.}\)</p>
+<p id="p-376">To illustrate, we can consider the reduced row echelon form of the augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+-2 \amp 3 \amp 0 \amp 2 \\
+-1 \amp 4 \amp 1 \amp 3 \\
+3 \amp 0 \amp 2 \amp 2 \\
+1 \amp 5 \amp 3 \amp 7 \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{ccc|c}
+1 \amp 0 \amp 0 \amp -4 \\
+0 \amp 1 \amp 0 \amp -2 \\
+0 \amp 0 \amp 1 \amp 7 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p id="p-377">We can then determine the reduced row echelon form of the coefficient matrix by looking inside the augmented matrix.</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{ccc}
+-2 \amp 3 \amp 0 \\
+-1 \amp 4 \amp 1 \\
+3 \amp 0 \amp 2 \\
+1 \amp 5 \amp 3 \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{ccc}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 0 \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p id="p-378">If we trace through the steps in the Gaussian elimination algorithm carefully, we see that this is a general principle, which we now state.</p>
+<article class="theorem-like" id="principle-augmentation-principle"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.3.1</span>. <span class="title">Augmentation Principle.</span>
+</h6>
+<p id="p-379">If matrix \(B\) is an augmentation of matrix \(A\text{,}\) then the reduced row echelon form of \(B\) is an augmentation of the reduced row echelon form of \(A\text{.}\)</p></article></section><section class="subsection" id="subsec-compute-effort"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Computational effort</span>
+</h3>
+<a href="sec-sage-introduction.html#subsec-compute-effort" class="permalink">¶</a><p id="p-380">At the beginning of this section, we indicated that linear algebra has become more prominent as computers have grown more powerful.  Computers, however, still have limits.  Let's consider how much effort is expended when we ask to find the reduced row echelon form of a matrix.  We will measure, very roughly, the effort by the number of times the algorithm requires us to multiply or add two numbers.</p>
+<p id="p-381">We will assume that our matrix has the same number of rows as columns, which we call \(n\text{.}\)  We are mainly interested in the case when \(n\) is very large, which is when we need to worry about how much effort is required.</p>
+<p id="p-382">Let's first consider the effort required for each of our row operations.</p>
+<ul class="disc">
+<li id="li-225"><p id="p-383">Scaling a row multiplies each of the \(n\) entries in a row by some number, which requires \(n\) operations.</p></li>
+<li id="li-226"><p id="p-384">Interchanging two rows requires no multiplications or additions so we won't worry about the effort required by an interchange.</p></li>
+<li id="li-227"><p id="p-385">A replacement requires us to multiply each entry in a row by some number, which takes \(n\) operations, and then add the resulting entries to another row, which requires another \(n\) operations.  The total number of operations is \(2n\text{.}\)</p></li>
+</ul>
+<p id="p-386">Our goal is to transform a matrix to its reduced row echelon form, which looks something like this:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{cccc}
+1 \amp 0 \amp \ldots \amp 0 \\
+0 \amp 1 \amp \ldots \amp 0 \\
+\vdots \amp \vdots \amp \ddots \amp 0 \\
+0 \amp 0 \amp \ldots \amp 1 \\
+\end{array}
+\right]\text{.}
+\end{equation*}
+</div>
+<p>We roughly perform one replacement operation for every 0 entry in the reduced row echelon matrix.  When \(n\) is very large, most of the \(n^2\) entries in the reduced row echelon form are 0, which will require roughly \(n^2\) replacements.  Since each replacement operation requires \(2n\) operations, the number of operations resulting from the needed replacements is roughly \(n^2(2n) =
+2n^3\text{.}\)</p>
+<p id="p-387">Each row is scaled roughly one time so there are roughly \(n\) scaling operations, each of which requires \(n\) operations.  The number of operations due to scaling is roughly \(n^2\text{.}\)</p>
+<p id="p-388">Therefore, the total number of operations is roughly</p>
+<div class="displaymath">
+\begin{equation*}
+2n^3 + n^2\text{.}
+\end{equation*}
+</div>
+<p>When \(n\) is very large, the \(n^2\) term is much smaller than the \(n^3\) term.  We therefore state that</p>
+<article class="remark-like" id="observation-2"><h6 class="heading">
+<span class="type">Observation</span> <span class="codenumber">1.3.2</span>.</h6>
+<p id="p-389">The number of operations required to find the reduced row echelon form of an \(n\times n\) matrix is roughly proportional to \(n^3\text{.}\)</p></article><p id="p-390">This is a very rough measure of the effort required to find the reduced row echelon form;  a more careful accounting shows that the number of arithmetic operations is roughly \(\frac23
+n^3\text{.}\)  As we have seen, some matrices require more effort than others, but the upshot of this observation is that the effort is proportional of \(n^3\text{.}\) We can think of this in the following way: If the size of the matrix grows by a factor of 10, then the effort required grows by a factor of \(10^3 = 1000\text{.}\)</p>
+<p id="p-391">While today's computers are powerful, they cannot handle every problem we might ask of them.  Eventually, we would like to be able to consider matrices that have \(n=10^{12}\) (a trillion) rows and columns.  In very broad terms, the effort required to find the reduced row echelon matrix will require roughly \((10^{12})^3 = 10^{36}\) operations.</p>
+<p id="p-392">To put this into context, imagine we need to solve a linear system with a trillion equations and a trillion unknowns and that we had a computer that could perform a trillion, \(10^{12}\text{,}\) operations every second.  Finding the reduced row echelon form would take about \(10^{16}\) years.  At this time, the universe is estimated to be approximately \(10^{10}\) years old.  If we started the calculation when the universe was born, we'd be about one-millionth of the way through.</p>
+<p id="p-393">This may seem like an absurd situation, but we'll see in <a href="sec-stochastic.html#subsec-google" class="internal" title="Subsection 4.5.3: Google's PageRank algorithm">Subsection 4.5.3</a> how we use the results of such a computation every day. Clearly, we will need some better tools to deal with <em class="emphasis">really</em> big problems like this one.</p></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.4</span> <span class="title">Summary</span>
+</h3>
+<p id="p-394">We learned some basic features of Sage with an emphasis on finding the reduced row echelon form of a matrix.</p>
+<ul class="disc">
+<li id="li-228"><p id="p-395">Sage can perform basic arithmetic using standard operators.  Sage can also save results from one command to be reused in a later command.</p></li>
+<li id="li-229"><p id="p-396">We may define matrices in Sage and find the reduced row echelon form using the <code class="code-inline tex2jax_ignore">rref</code> command.</p></li>
+<li id="li-230"><p id="p-397">We saw an example of the Augmentation Principle, which we then stated as a general principle.</p></li>
+<li id="li-231"><p id="p-398">We saw that the computational effort required to find the reduced row echelon form of an \(n\times n\) matrix is proportional to \(n^3\text{.}\)</p></li>
+</ul></section><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.3.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-399">Consider the system of linear equations:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{4}
+x \amp {}+{} \amp 2y \amp {}-{} \amp z \amp {}={} \amp 1 \\
+3x \amp {}+{} \amp 2y \amp {}+{} \amp 2z \amp {}={} \amp 7 \\
+-x \amp \amp \amp {}+{} \amp 4z \amp {}={} \amp -3 \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>Write this system as an augmented matrix and use Sage to find a description of the solution space. <div class="sagecell-sage" id="sage-13"><script type="text/x-sage">
+</script></div></p></article><article class="exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-402">Shown below are some traffic patterns in the downtown area of a large city.  The figures give the number of cars per hour traveling along each road.  Any car that drives into an intersection must also leave the intersection.  This means that the number of cars entering an intersection in an hour is equal to the number of cars leaving the intersection.</p>
+<ol class="lower-alpha">
+<li id="li-232">
+<p id="p-403">Let's begin with the following traffic pattern.</p>
+<ol class="lower-roman">
+<li id="li-233"><p id="p-404">How many cars per hour enter the upper left intersection?  How many cars per hour leave this intersection?  Use this to form a linear equation in the variables \(x\text{,}\) \(y\text{,}\) \(z\text{,}\) and \(w\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/traffic-b.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<li id="li-234"><p id="p-405">Form three more linear equations from the other three intersections to form a linear system having four equations in four unknowns.  Then use Sage to find the solution space to this system. <div class="sagecell-sage" id="sage-14"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-235"><p id="p-406">Is there exactly one solution or infinitely many solutions?  Explain why you would expect this given the information provided.</p></li>
+</ol>
+</li>
+<li id="li-236">
+<p id="p-407">Another traffic pattern is shown below. <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/traffic-a.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<ol class="lower-roman">
+<li id="li-237"><p id="p-408">Once again, write a system of equations for the quantities \(x\text{,}\) \(y\text{,}\) \(z\text{,}\) and \(w\) and solve the system using the Sage cell below. <div class="sagecell-sage" id="sage-15"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-238"><p id="p-409">What can you say about the solution of this linear system?  Is there exactly one solution or infinitely many solutions?  Explain why you would expect this given the information provided.</p></li>
+<li id="li-239"><p id="p-410">What is the smallest amount of traffic flowing through \(x\text{?}\)</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-423">A typical problem in thermodynamics is to find the steady-state temperature distribution inside a thin plate if we know the temperature around the boundary.  Let \(T_1, T_2, \ldots,
+T_6\) be the temperatures at the six nodes inside the plate as shown below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/heat.svg" style="width: 100%; height: auto;" alt=""></div></div></div> The temperature at a node is approximately the average of the four nearest nodes: for instance,</p>
+<div class="displaymath">
+\begin{equation*}
+T_1 = (10 + 15 + T_2 + T_4)/4\text{,}
+\end{equation*}
+</div>
+<p>which we may rewrite as</p>
+<div class="displaymath">
+\begin{equation*}
+4T_1 - T_2 - T_4
+= 25\text{.}
+\end{equation*}
+</div>
+<p id="p-424">Set up a linear system to find the temperature at these six points inside the plate.  Then use Sage to solve the linear system.  If all the entries of the matrix are integers, Sage will compute the reduced row echelon form using rational numbers.  To view a decimal approximation of the results, you may use</p>
+<pre class="code-block tex2jax_ignore">
+A.rref().numerical_approx(digits=4)
+      </pre>
+<p><div class="sagecell-sage" id="sage-16"><script type="text/x-sage">
+</script></div></p>
+<p id="p-425">In the real world, the approximation becomes better the closer the points are together, which happens as we add more and more points into the grid.  This is a situtation where we would want to solve linear systems having millions of equations and millions of unknowns.</p></article><article class="exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-428">The fuel inside model rocket motors is a black powder mixture that ideally consists of 60% charcoal, 30% potassium nitrate, and 10% sulfur by weight.</p>
+<p id="p-429">Suppose you work at a company that makes model rocket motors.  When you come into work one morning, you learn that yesterday's first shift made a perfect batch of fuel.  The second shift, however, misread the recipe and used 50% charcoal, 20% potassium nitrate and 30% sulfur.  Then the two batches were mixed together.  A chemical analysis shows that there are 100.3 pounds of charcoal in the mixture and 46.9 pounds of potassium nitrate.</p>
+<ol class="lower-alpha">
+<li id="li-250"><p id="p-430">Assuming the first shift produced \(x\) pounds of fuel and the second \(y\) pounds, set up a linear system in terms of \(x\) and \(y\text{.}\)  How many pounds of fuel did the first shift produce and how many did the second shift produce? <div class="sagecell-sage" id="sage-17"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-251"><p id="p-431">How much sulfur would you expect to find in the mixture?</p></li>
+</ol></article><article class="exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-436">This exercise is about balancing chemical reactions.</p>
+<ol class="lower-alpha">
+<li id="li-254">
+<p id="p-437">Chemists denote a molecule of water as \(\text{H}_2\text{O}\text{,}\) which means it is composed of two atoms of hydrogen (H) and one atom of oxygen (O). The process by which hydrogen is burned is described by the chemical reaction</p>
+<div class="displaymath">
+\begin{equation*}
+x\thinspace \text{H}_2 + y\thinspace\text{O}_2 \to
+z\thinspace \text{H}_2\text{O}
+\end{equation*}
+</div>
+<p>This means that \(x\) molecules of hydrogen \(\text{H}_2\) combine with \(y\) molecules of oxygen \(\text{O}_2\) to produce \(z\) water molecules. The number of hydrogen atoms is the same before and after the reaction;  the same is true of the oxygen atoms.</p>
+<ol id="p-438" class="lower-roman">
+<li id="li-255"><p id="p-439">How many hydrogen atoms are there before the reaction?  How many hydrogen atoms are there after the reaction?  Find a linear equation in \(x\text{,}\) \(y\text{,}\) and \(z\) by equating these quantities.</p></li>
+<li id="li-256"><p id="p-440">Find a second linear equation in \(x\text{,}\) \(y\text{,}\) and \(z\) by equating the number of oxygen atoms before and after the reaction.</p></li>
+<li id="li-257"><p id="p-441">Find the solutions of this linear system. Why are there infinitely many solutions? <div class="sagecell-sage" id="sage-18"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-258"><p id="p-442">In this chemical setting, \(x\text{,}\) \(y\text{,}\) and \(z\) should be positive integers.  Find the solution where \(x\text{,}\) \(y\text{,}\) and \(z\) are the smallest possible positive integers.</p></li>
+</ol>
+</li>
+<li id="li-259">
+<p id="p-443">Now consider the reaction where potassium permanganate and manganese sulfate combine with water to produce manganese dioxide, potassium sulfate, and sulfuric acid:</p>
+<div class="displaymath">
+\begin{equation*}
+x_1\thinspace \text{K}\text{Mn}\text{O}_4 + 
+x_2\thinspace \text{Mn}\text{S}\text{O}_4 + 
+x_3\thinspace \text{H}_2\text{O} \to
+x_4\thinspace \text{Mn}\text{O}_2 + 
+x_5\thinspace \text{K}_2\text{S}\text{O}_4 + 
+x_6\thinspace \text{H}_2\text{S}\text{O}_4.
+\end{equation*}
+</div>
+<p>As in the previous exercise, find the appropriate values for \(x_1, x_2, \ldots, x_6\) to balance the chemical reaction. <div class="sagecell-sage" id="sage-19"><script type="text/x-sage">
+</script></div></p>
+</li>
+</ol></article><article class="exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-454">We began this section by stating that increasing computational power has helped linear algebra assume a greater prominence as a scientific tool.  Later, we looked at one computational limitation:  once a matrix gets to be too big, it is not reasonable to apply Gaussian elimination to find its reduced row echelon form.</p>
+<p id="p-455">In this exercise, we will see another limitation: computer arithmetic with real numbers is only an approximation because computers represent real numbers with only a finite number of bits.  For instance, the number pi</p>
+<div class="displaymath">
+\begin{equation*}
+\pi =
+3.141592653589793238462643383279502884197169399\ldots
+\end{equation*}
+</div>
+<p>would be approximated inside a computer by, say,</p>
+<div class="displaymath">
+\begin{equation*}
+\pi\approx 3.141592653589793
+\end{equation*}
+</div>
+<p>Most of the time, this is not a problem.  However, when we perform millions or even billions of arithmetic operations, the error in these approximations starts to accumulate and can lead to results that are wildly inaccurate.  Here are two examples demonstrating this.</p>
+<ol class="lower-alpha">
+<li id="li-267">
+<p id="p-456">Let's first see an example showing that computer arithmetic really is an approximation.  First, consider the linear system</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{4}
+x \amp {}+{} \amp \frac12y \amp {}+{} \amp \frac13z \amp
+{}={} \amp 1 \\
+\frac12x \amp {}+{} \amp \frac13y \amp {}+{} \amp \frac14z \amp
+{}={} \amp 0 \\
+\frac13x \amp {}+{} \amp \frac14y \amp {}+{} \amp \frac15z \amp
+{}={} \amp 0 \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>If the coefficients are entered into Sage as fractions, Sage will find the exact reduced row echelon form.  Find the exact solution to this linear system. <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">
+</script></div></p>
+<p id="p-457">Now let's ask Sage to compute with real numbers.  We can do this by representing one of the coefficients as a decimal.  For instance, the same linear system can be represented as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{4}
+x \amp {}+{} \amp 0.5y \amp {}+{} \amp \frac13z \amp
+{}={} \amp 1 \\
+\frac12x \amp {}+{} \amp \frac13y \amp {}+{} \amp \frac14z \amp
+{}={} \amp 0 \\
+\frac13x \amp {}+{} \amp \frac14y \amp {}+{} \amp \frac15z \amp
+{}={} \amp 0 \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>Most computers do arithmetic using either 32 or 64 bits.  To magnify the problem so that we can see it better, we will ask Sage to do arithmetic using only 10 bits as follows. <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">R = RealNumber
+RealNumber = RealField(10)
+
+# enter the matrix below
+A = matrix( ..., ..., [ ... ] )
+
+print A.rref()
+RealNumber = R
+</script></div> What does Sage give for the solution now?  Compare this to the exact solution that you found previously.</p>
+</li>
+<li id="li-268">
+<p id="p-458">Some types of linear systems are particularly sensitive to errors resulting from computers' approximate arithmetic. For instance, suppose we are interested in the linear system</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{3}
+x \amp {}+{} \amp y \amp {}={} \amp 2 \\
+x \amp {}+{} 1.001\amp y \amp {}={} \amp 2 \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>Find the solution to this linear system. <div class="sagecell-sage" id="sage-22"><script type="text/x-sage">
+</script></div></p>
+<p id="p-459">Suppose now that the computer has accumulated some error in one of the entries of this system so that it incorrectly stores the system as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{alignedat}{3}
+x \amp {}+{} \amp y \amp {}={} \amp 2 \\
+x \amp {}+{} 1.001\amp y \amp {}={} \amp 2.001 \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p>Find the solution to this linear system. <div class="sagecell-sage" id="sage-23"><script type="text/x-sage">
+</script></div></p>
+<p id="p-460">Notice how a small error in one of the entries in the linear system leads to a solution that has a dramatically large error.  Fortunately, this is an issue that has been well studied, and there are techniques that mitigate this type of behavior.</p>
+</li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>

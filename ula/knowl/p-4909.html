@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-12-26T11:11:46-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We have now introduced \(LU\) factorizations as a technique for solving equations \(A\xvec = \bvec\text{,}\) but we have yet to explain why they are useful.  It becomes apparent when we consider the type of equations that we are solving;  for instance, \(L\cvec = \bvec\) in our example has the form</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+3 \amp 1 \amp 1
+\end{array}\right]\cvec = \threevec4{-7}{12}\text{.}
+\end{equation*}
+</div>
+<p>Because \(L\) is a lower-triangular matrix, it contains lots of zeros.  In fact, we are able to read off the first component of \(\cvec\) directly from the equations:  \(c_1 = 4\text{.}\)  We then have \(-2c_1+c_2 = -7\text{,}\) which gives \(c_2 = 1\text{,}\) and \(3c_1 + c_2 + c_3 = 12\text{,}\) which gives \(c_3=-1\text{.}\)  As this shows, solving equations involving triangular matrices is quite easy because we essentially only need to perform a sequence of substitutions.</p>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-4909">in-context</a></span>
+</body>
+</html>
