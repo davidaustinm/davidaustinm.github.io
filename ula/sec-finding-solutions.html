@@ -1,68 +1,67 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:35-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:32:35-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Finding solutions to systems of linear equations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -70,7 +69,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -89,7 +90,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -99,11 +100,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -113,8 +124,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-expect.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-sage-introduction.html" title="Next">Next</a></span>
@@ -124,9 +136,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-expect.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-sage-introduction.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -134,7 +146,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions" class="active">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -152,7 +164,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -175,20 +187,39 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-finding-solutions"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-finding-solutions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Finding solutions to systems of linear equations</span>
 </h2>
-<a href="sec-finding-solutions.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-130">In the previous section, we looked at systems of linear equations from a graphical perspective.  Since the equations had only two or three unknowns, we could study the solution spaces as the intersections of lines and planes.</p>
+<section class="introduction" id="introduction-2"><p id="p-130">In the previous section, we looked at systems of linear equations from a graphical perspective.  Since the equations had only two or three unknowns, we could study the solution spaces as the intersections of lines and planes.</p>
 <p id="p-131">Remembering that we will eventually consider many more equations and unknowns, this will, in general, not be a useful strategy.  Instead, we will approach this problem algebraically and develop a technique to understand the solution spaces of general systems of linear equations.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Gaussian elimination</span>
 </h3>
 <p id="p-132">We will develop an algorithm, which is usually called <em class="emphasis">Gaussian elimination</em>, that allows us to describe the solution space to a system of linear equations.</p>
-<article class="project-like" id="exploration-1"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">1.2.1</span>.</h6>
+<article class="exploration project-like" id="exploration-1"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h6>
 <p id="p-133">Let's begin by considering some simple examples that will guide us in finding a more general approach.</p>
 <ol class="decimal">
 <li id="li-80">
@@ -231,8 +262,9 @@ x \amp {} + {} \amp 2y \amp {}={} \amp 2 \\
 <li id="li-84">Describe the solution space to the linear equation \(0x =
 5\text{.}\)</li>
 </ol></article><p id="p-146">As the examples in this preview activity provide some motivation for the general approach we will develop, we wish to call particular attention to two of the examples.</p>
-<article class="remark-like" id="observation-1"><h6 class="heading">
-<span class="type">Observation</span> <span class="codenumber">1.2.1</span>.</h6>
+<article class="observation remark-like" id="observation-1"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h6>
 <p id="p-147">Let's look more carefully at two examples.</p>
 <ul id="p-148" class="disc">
 <li id="li-90">First, finding the solution space to some systems is simple. For instance, each equation in the following system<div class="displaymath">
@@ -255,7 +287,7 @@ x \amp \amp \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>we may multiply the third equation by \(1/2\) to obtain</p>
+<p class="continuation">we may multiply the third equation by \(1/2\) to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{alignedat}{4}
@@ -266,7 +298,7 @@ x \amp \amp \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>Any solution to this system of equations must then have \(z=2\text{.}\)</p>
+<p class="continuation">Any solution to this system of equations must then have \(z=2\text{.}\)</p>
 <p id="p-150">Once we know that, we may substitute \(z=2\) into the first and second equation and simplify to obtain a new system of equations having the same solutions:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -278,7 +310,7 @@ x \amp \amp \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>Continuing in this way, we eventually obtain a decoupled system showing that there is exactly one solution, which is \((x,y,z)=(-1,-1,2)\text{.}\)</p>
+<p class="continuation">Continuing in this way, we eventually obtain a decoupled system showing that there is exactly one solution, which is \((x,y,z)=(-1,-1,2)\text{.}\)</p>
 <p id="p-151">Our original system,</p>
 <div class="displaymath">
 \begin{equation*}
@@ -290,7 +322,7 @@ x \amp \amp \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>  is called a <em class="emphasis">triangular</em> system due to the shape formed by the coefficients.  As this example demonstrates, triangular systems are easily solved by a process called <em class="emphasis">back substitution</em>.</p>
+<p class="continuation"> is called a <em class="emphasis">triangular</em> system due to the shape formed by the coefficients.  As this example demonstrates, triangular systems are easily solved by a process called <em class="emphasis">back substitution</em>.</p>
 </li>
 </ul></article><p id="p-152">Let's look at the process of substitution a little more carefully.  A natural approach to the system</p>
 <div class="displaymath">
@@ -301,13 +333,13 @@ x \amp {} + {} \amp 2y \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>is to use the first equation to express \(x\) in terms of \(y\text{:}\)</p>
+<p class="continuation">is to use the first equation to express \(x\) in terms of \(y\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 x = 2-2y
 \end{equation*}
 </div>
-<p>and then substitute this into the second equation and simplify:</p>
+<p class="continuation">and then substitute this into the second equation and simplify:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{alignedat}{2}
@@ -328,8 +360,8 @@ x = 2-2y
 \end{array}
 \end{equation*}
 </div>
-<p>to obtain <div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
-<div class="sbspanel" style="width:31.0344827586207%;justify-content:center;"><div class="displaymath" id="p-154">
+<p class="continuation">to obtain <div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel middle" style="width:31.0344827586207%;"><div class="displaymath" id="p-154">
 \begin{equation*}
 \begin{array}{cr}
 \amp -2(x+2y=2) \\
@@ -339,8 +371,8 @@ x = 2-2y
 \end{array}
 \end{equation*}
 </div></div>
-<div class="sbspanel" style="width:31.0344827586207%;justify-content:center;"><p id="p-155">which gives us</p></div>
-<div class="sbspanel" style="width:31.0344827586207%;justify-content:center;"><div class="displaymath" id="p-156">
+<div class="sbspanel middle" style="width:31.0344827586207%;"><p id="p-155">which gives us</p></div>
+<div class="sbspanel middle" style="width:31.0344827586207%;"><div class="displaymath" id="p-156">
 \begin{equation*}
 \begin{array}{crcr}
 \amp -2x-4y \amp = \amp -4 \\
@@ -360,7 +392,7 @@ x \amp {} + {} \amp 2y \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>is transformed into the system</p>
+<p class="continuation">is transformed into the system</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{alignedat}{3}
@@ -369,7 +401,7 @@ x \amp {} + {} \amp 2y \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>which has the same solution space. Of course, the choice to multiply the first equation by -2 was made so that terms involving \(x\) in the two equations will cancel when added.  Notice that this operation transforms our original system into a triangular one;  we may now perform back substitution to arrive at a decoupled system.</p>
+<p class="continuation">which has the same solution space. Of course, the choice to multiply the first equation by -2 was made so that terms involving \(x\) in the two equations will cancel when added.  Notice that this operation transforms our original system into a triangular one;  we may now perform back substitution to arrive at a decoupled system.</p>
 <p id="p-158">Based on these observations, we take note of three operations that transform a system of linear equations into a new system of equations having the same solution space. Our goal is to create a new system whose solution space is the same as the original system's and may be easily described.</p>
 <dl class="description-list">
 <dt id="li-92">Scaling</dt>
@@ -380,13 +412,13 @@ x \amp {} + {} \amp 2y \amp {}={} \amp 2 \\
 2x -4y = 6 
 \end{equation*}
 </div>
-<p>has the same set of solutions as</p>
+<p class="continuation">has the same set of solutions as</p>
 <div class="displaymath">
 \begin{equation*}
 \frac12(2x-4y=6)
 \end{equation*}
 </div>
-<p>or</p>
+<p class="continuation">or</p>
 <div class="displaymath">
 \begin{equation*}
 x-2y=3\text{.}
@@ -413,8 +445,9 @@ x \amp  {}-{}  \amp 3y \amp  {}={}  \amp 0 \\
 <dt id="li-94">Replacement</dt>
 <dd><p id="p-160">As we saw above, we may multiply one equation by a real number and add it to another equation.  We call this process <em class="emphasis">replacement</em>.</p></dd>
 </dl>
-<article class="example-like" id="example-1"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.2.2</span>.</h6>
+<article class="example example-like" id="example-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h6>
 <p id="p-161">Let's illustrate the use of these operations to find the solution space to the system of equations:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -426,8 +459,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 \end{equation*}
 </div>
 <p id="p-162">We will first transform the system into a triangular system so we start by eliminating \(x\) from the second and third equations. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-163">We begin with a replacement operation where we multiply the first equation by -2 and add the result to the second equation.</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-164">
+<div class="sbspanel middle" style="width:50%;"><p id="p-163">We begin with a replacement operation where we multiply the first equation by -2 and add the result to the second equation.</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-164">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
@@ -439,8 +472,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 </div></div>
 </div></div></p>
 <p id="p-165"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-166">Scale the second equation by multiplying it by \(-1/3\text{.}\)</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-167">
+<div class="sbspanel middle" style="width:50%;"><p id="p-166">Scale the second equation by multiplying it by \(-1/3\text{.}\)</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-167">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
@@ -452,8 +485,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 </div></div>
 </div></div></p>
 <p id="p-168"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-169">Another replacement operation eliminates \(x\) from the third equation.  We multiply the first equation by 3 and add to the third.</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-170">
+<div class="sbspanel middle" style="width:50%;"><p id="p-169">Another replacement operation eliminates \(x\) from the third equation.  We multiply the first equation by 3 and add to the third.</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-170">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
@@ -464,8 +497,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 </div></div>
 </div></div></p>
 <p id="p-171"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-172">Eliminate \(y\) from the third equation by multiplying the second equation by -4 and adding it to the third.</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-173">
+<div class="sbspanel middle" style="width:50%;"><p id="p-172">Eliminate \(y\) from the third equation by multiplying the second equation by -4 and adding it to the third.</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-173">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
@@ -476,8 +509,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 </div></div>
 </div></div></p>
 <p id="p-174"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-175">After scaling the third equation by \(-1/3\text{,}\) we have found the value for \(z\text{.}\)</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-176">
+<div class="sbspanel middle" style="width:50%;"><p id="p-175">After scaling the third equation by \(-1/3\text{,}\) we have found the value for \(z\text{.}\)</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-176">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
@@ -488,8 +521,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 </div></div>
 </div></div></p>
 <p id="p-177"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-178">The system now has a triangular form so we will begin the process of back substitution by multiplying the third equation by -1 and adding to the second.</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-179">
+<div class="sbspanel middle" style="width:50%;"><p id="p-178">The system now has a triangular form so we will begin the process of back substitution by multiplying the third equation by -1 and adding to the second.</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-179">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
@@ -500,8 +533,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 4 \\
 </div></div>
 </div></div></p>
 <p id="p-180"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:center;"><p id="p-181">Finally, multiply the second equation by -2 and add to the first to obtain:</p></div>
-<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-182">
+<div class="sbspanel middle" style="width:50%;"><p id="p-181">Finally, multiply the second equation by -2 and add to the first to obtain:</p></div>
+<div class="sbspanel middle" style="width:50%;"><div class="displaymath" id="p-182">
 \begin{equation*}
 \begin{alignedat}{4}
 x \amp \amp \amp  \amp  \amp  {}={}  \amp 2 \\
@@ -513,8 +546,8 @@ x \amp \amp \amp  \amp  \amp  {}={}  \amp 2 \\
 </div></div></p>
 <p id="p-183">Now that we have arrived at a decoupled system, we know that there is exactly one solution to our original system of equations, which is \((x,y,z) = (2,1,-2)\text{.}\)</p></article><p id="p-184">One could find the same result by applying a different sequence of replacement and scaling operations.  However, we chose this particular sequence guided by our desire to first transform the system into a triangular one.  To do this, we eliminated the first unknown \(x\) from all but one equation and then proceeded to the next unknowns working left to right.  Once we had a triangular system, we used back substitution moving through the unknowns right to left.</p>
 <p id="p-185">We call this process <em class="emphasis">Gaussian elimination</em> and note that it is our primary tool for solving systems of linear equations.</p>
-<article class="project-like" id="activity-4"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">1.2.2</span>. <span class="title">Gaussian Elimination.</span>
+<article class="activity project-like" id="activity-4"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian Elimination.</span>
 </h6>
 <p id="p-186">Use Gaussian elimination to describe the solutions to the following systems of linear equations.</p>
 <ol class="lower-alpha">
@@ -559,7 +592,7 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 2 \\
 </h3>
 <p id="p-199">After performing Gaussian elimination a few times, you probably noticed that you spent most of the time concentrating on the coefficients and simply recorded the unknowns as place holders. For convenience, we will therefore introduce a shorthand description of linear systems.</p>
 <p id="p-200"> When writing a linear system, we always write the unknowns in the same order in each equation.  We then construct an <em class="emphasis">augmented matrix</em> by simply forgetting about the unknowns and recording the numerical data in a rectangular array.  For instance, the system of equations below has the following augmented matrix <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-201">
+<div class="sbspanel top" style="width:50%;"><div class="displaymath" id="p-201">
 \begin{equation*}
 \begin{alignedat}{4}
 -x \amp  {}-{}  \amp 2y \amp  {}+{}  \amp 2z \amp  {}={}  \amp -1 \\
@@ -568,7 +601,7 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 3 \\
 \end{alignedat}
 \end{equation*}
 </div></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-202">
+<div class="sbspanel top" style="width:50%;"><div class="displaymath" id="p-202">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -592,7 +625,7 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 3 \\
 \right].
 \end{equation*}
 </div>
-<p id="p-204">The three operations we perform on systems of equations translate naturally into operations on matrices.  For instance, the replacement operation that multiplies the first equation by 2 and adds it to the second may be recorded as <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><div class="displaymath" id="p-205">
+<p id="p-204">The three operations we perform on systems of equations translate naturally into operations on matrices.  For instance, the replacement operation that multiplies the first equation by 2 and adds it to the second may be recorded as <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><div class="displaymath" id="p-205">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -612,8 +645,8 @@ x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 3 \\
 \end{equation*}
 </div></div></div></div></p>
 <p id="p-206">The symbol \(\sim\) between the matrices indicates that the two matrices are related by a sequence of scaling, interchange, and replacement operations.  Since these operations act on the rows of the matrices, we say that the matrices are <em class="emphasis">row equivalent</em>. </p>
-<article class="project-like" id="activity-5"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">1.2.3</span>. <span class="title">Augmented matrices and solution spaces.</span>
+<article class="activity project-like" id="activity-5"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrices and solution spaces.</span>
 </h6>
 <ol id="p-207" class="lower-alpha">
 <li id="li-104">
@@ -627,7 +660,7 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>and perform Gaussian elimination to describe the solution space of the system of equations in as much detail as you can.</p>
+<p class="continuation">and perform Gaussian elimination to describe the solution space of the system of equations in as much detail as you can.</p>
 </li>
 <li id="li-105">
 <p id="p-209">Suppose that you have a system of linear equations in the unknowns \(x\) and \(y\) whose augmented matrix is row equivalent to</p>
@@ -642,7 +675,7 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \right].
 \end{equation*}
 </div>
-<p>Write the system of linear equations corresponding to the augmented matrix.  Then describe the solution set of the system of equations in as much detail as you can.</p>
+<p class="continuation">Write the system of linear equations corresponding to the augmented matrix.  Then describe the solution set of the system of equations in as much detail as you can.</p>
 </li>
 <li id="li-106">
 <p id="p-210">Suppose that you have a system of linear equations in the unknowns \(x\) and \(y\) whose augmented matrix is row equivalent to</p>
@@ -657,7 +690,7 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \right].
 \end{equation*}
 </div>
-<p>Write the system of linear equations corresponding to the augmented matrix.  Then describe the solution set of the system of equations in as much detail as you can.</p>
+<p class="continuation">Write the system of linear equations corresponding to the augmented matrix.  Then describe the solution set of the system of equations in as much detail as you can.</p>
 </li>
 <li id="li-107">
 <p id="p-211">Suppose that the augmented matrix of a system of linear equations has the following shape where \(*\) could be any real number.</p>
@@ -672,7 +705,7 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \right].
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-roman">
 <li id="li-108"><p id="p-212">How many equations are there in this system and how many unknowns?</p></li>
 <li id="li-109"><p id="p-213">Based on our earlier discussion in <a href="sec-expect.html" class="internal" title="Section 1.1: What can we expect">Section 1.1</a>, do you think it's possible that this system has exactly one solution, infinitely many solutions, or no solutions?</p></li>
 <li id="li-110">
@@ -688,7 +721,7 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \right].
 \end{equation*}
 </div>
-<p>Make a choice for the names of the unknowns and write the corresponding system of linear equations.  Does the system have exactly one solution, infinitely many solutions, or no solutions?</p>
+<p class="continuation">Make a choice for the names of the unknowns and write the corresponding system of linear equations.  Does the system have exactly one solution, infinitely many solutions, or no solutions?</p>
 </li>
 </ol>
 </li>
@@ -709,8 +742,9 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \right].
 \end{equation*}
 </div>
-<article class="definition-like" id="definition-2"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.2.3</span>.</h6>
+<article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h6>
 <p id="p-226">We say that a matrix is in <em class="emphasis">reduced row echelon form</em> if the following properties are satisfied.</p>
 <ul class="disc">
 <li id="li-119">Any rows in which all the entries are zero are at the bottom of the matrix.</li>
@@ -718,40 +752,40 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 <li id="li-121">The leading entry in one row is to the right of the leading entry in any row above.</li>
 <li id="li-122">A leading entry is the only nonzero entry in its column.</li>
 </ul>
-<p> We call a matrix in reduced row echelon form a <em class="emphasis">reduced row echelon matrix</em>.</p></article><p id="p-227">We have been intentionally vague about whether the matrix we are considering is an augmented matrix corresponding to a linear system or a coefficient matrix since we will eventually consider both possibilities.</p>
-<article class="project-like" id="activity-6"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">1.2.4</span>. <span class="title">Identifying reduced row echelon matrices.</span>
+<p class="continuation"> We call a matrix in reduced row echelon form a <em class="emphasis">reduced row echelon matrix</em>.</p></article><p id="p-227">We have been intentionally vague about whether the matrix we are considering is an augmented matrix corresponding to a linear system or a coefficient matrix since we will eventually consider both possibilities.</p>
+<article class="activity project-like" id="activity-6"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying reduced row echelon matrices.</span>
 </h6>
 <p id="p-228">Consider each of the following augmented matrices. Determine if the matrix is in reduced row echelon form.  If it is not, perform a sequence of scaling, interchange, and replacement operations to obtain a row equivalent matrix that is in reduced row echelon form.  Then use the reduced row echelon matrix to describe the solution space.</p>
 <ol class="lower-alpha">
-<li id="li-123"><p id="p-229">\(\left[
+<li id="li-123"><p id="p-229">\(\displaystyle \left[
 \begin{array}{rrr|r}
 2 \amp 0 \amp 4 \amp -8 \\
 0 \amp 1 \amp 3 \amp 2 \\
 \end{array}
 \right].\)</p></li>
-<li id="li-124"><p id="p-230">\(\left[
+<li id="li-124"><p id="p-230">\(\displaystyle \left[
 \begin{array}{rrr|r}
 1 \amp 0 \amp 0 \amp -1 \\
 0 \amp 1 \amp 0 \amp 3 \\
 0 \amp 0 \amp 1 \amp 1 \\
 \end{array}
 \right].\)</p></li>
-<li id="li-125"><p id="p-231">\(\left[
+<li id="li-125"><p id="p-231">\(\displaystyle \left[
 \begin{array}{rrr|r}
 1 \amp 0 \amp 4 \amp 2 \\
 0 \amp 1 \amp 3 \amp 2 \\
 0 \amp 0 \amp 0 \amp 1 \\
 \end{array}
 \right].\)</p></li>
-<li id="li-126"><p id="p-232">\(\left[
+<li id="li-126"><p id="p-232">\(\displaystyle \left[
 \begin{array}{rrr|r}
 0 \amp 1 \amp 3 \amp 2 \\
 0 \amp 0 \amp 0 \amp 0 \\
 1 \amp 0 \amp 4 \amp 2 \\
 \end{array}
 \right].\)</p></li>
-<li id="li-127"><p id="p-233">\(\left[
+<li id="li-127"><p id="p-233">\(\displaystyle \left[
 \begin{array}{rrr|r}
 1 \amp 2 \amp -1 \amp 2 \\
 0 \amp 1 \amp -2 \amp 0 \\
@@ -759,11 +793,12 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \end{array}
 \right].\)</p></li>
 </ol></article><p id="p-246">If we are given a matrix, the examples in the previous activity indicate that there is a sequence of row operations that produces a matrix in reduced row echelon form.  Moreover, the conditions that define reduced row echelon matrices guarantee that this matrix is unique.</p>
-<article class="theorem-like" id="thm-rref-is-unique"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.2.4</span>.</h6>
+<article class="theorem theorem-like" id="thm-rref-is-unique"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h6>
 <p id="p-247">Given a matrix, there is exactly one reduced row echelon matrix to which it is row equivalent.</p></article><p id="p-248">Once we have this reduced row echelon matrix, we may describe the set of solutions to the corresponding linear system with relative ease.</p>
-<article class="example-like" id="example-2"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.2.5</span>. <span class="title">Describing the solution space from a reduced row echelon matrix.</span>
+<article class="example example-like" id="example-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Describing the solution space from a reduced row echelon matrix.</span>
 </h6>
 <ol id="p-249" class="decimal">
 <li id="li-138">
@@ -778,7 +813,7 @@ x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
 \right].
 \end{equation*}
 </div>
-<p>Its corresponding linear system may be written as</p>
+<p class="continuation">Its corresponding linear system may be written as</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{alignedat}{4}
@@ -787,7 +822,7 @@ x \amp  \amp  \amp  {}+{}  \amp 2z \amp  {}={}  \amp -1 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>Let's rewrite the equations as</p>
+<p class="continuation">Let's rewrite the equations as</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{alignedat}{2}
@@ -796,9 +831,9 @@ y \amp {}={}  \amp 2-z. \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p>From this description, it is clear that we obtain a solution for any value of the variable \(z\text{.}\)  For instance, if \(z=2\text{,}\) then \(x =
+<p class="continuation">From this description, it is clear that we obtain a solution for any value of the variable \(z\text{.}\)  For instance, if \(z=2\text{,}\) then \(x =
 -5\) and \(y=0\) so that \((x,y,z) = (-5,0,2)\) is a solution.  Similarly, if \(z=0\text{,}\) we see that \((x,y,z) = (-1,2,0)\) is also a solution.</p>
-<p id="p-251">Because there is no restriction on the value of \(z\text{,}\) we call it a <em class="emphasis">free variable</em>, and note that the linear system has infinitely many solutions.  The variables \(x\) and \(y\) are called <em class="emphasis">basic variables</em> as they are determined once we make a choice of the free variable.  </p>
+<p id="p-251">Because there is no restriction on the value of \(z\text{,}\) we call it a <em class="emphasis">free variable</em>, and note that the linear system has infinitely many solutions.  The variables \(x\) and \(y\) are called <em class="emphasis">basic variables</em> as they are determined once we make a choice of the free variable. </p>
 <p id="p-252">We will call this description of the solution space, in which the basic variables are written in terms of the free variables, a <em class="emphasis">parametric description</em> of the solution space. </p>
 </li>
 <li id="li-139">
@@ -815,13 +850,13 @@ y \amp {}={}  \amp 2-z. \\
 \right].
 \end{equation*}
 </div>
-<p>The last equation gives</p>
+<p class="continuation">The last equation gives</p>
 <div class="displaymath">
 \begin{equation*}
 0x +0y+0z = 0\text{,}
 \end{equation*}
 </div>
-<p>which is true for any \((x,y,z)\text{.}\)  We may safely ignore this equation since it does not provide a restriction on the choice of \((x,y,z)\text{.}\)  We then see that there is a unique solution \((x,y,z) =
+<p class="continuation">which is true for any \((x,y,z)\text{.}\)  We may safely ignore this equation since it does not provide a restriction on the choice of \((x,y,z)\text{.}\)  We then see that there is a unique solution \((x,y,z) =
 (4,-3,1)\text{.}\)</p>
 </li>
 <li id="li-140">
@@ -837,13 +872,13 @@ y \amp {}={}  \amp 2-z. \\
 \right].
 \end{equation*}
 </div>
-<p>Beginning with the last equation, we see that</p>
+<p class="continuation">Beginning with the last equation, we see that</p>
 <div class="displaymath">
 \begin{equation*}
 0x +0y+0z = 0 = 1\text{,}
 \end{equation*}
 </div>
-<p>which is not true for any \((x,y,z)\text{.}\) There is no solution to this particular equation and therefore no solution to the system of equations.</p>
+<p class="continuation">which is not true for any \((x,y,z)\text{.}\) There is no solution to this particular equation and therefore no solution to the system of equations.</p>
 </li>
 </ol></article></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.4</span> <span class="title">Summary</span>
@@ -856,7 +891,7 @@ y \amp {}={}  \amp 2-z. \\
 </ul></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">1.2.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-259">For each of the linear systems below, write the associated augmented matrix and find the reduced row echelon matrix that is row equivalent to it.  Identify the basic and free variables and then describe the solution space of the original linear system using a parametric description, if appropriate.</p>
 <ol id="p-260" class="lower-alpha">
 <li id="li-144"><div class="displaymath" id="p-261">
@@ -894,7 +929,7 @@ x_1 \amp  \amp  \amp  {}-{}  \amp x_3 \amp  {}+{}
 \end{alignedat}
 \end{equation*}
 </div></li>
-</ol></article><article class="exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-272">Consider each matrix below and determine if it is in reduced row echelon form.  If not, indicate the reason and apply a sequence of row operations to find its reduced row echelon matrix. For each matrix, indicate whether the linear system has infinitely many solutions, exactly one solution, or no solutions.</p>
 <ol class="lower-alpha">
 <li id="li-153"><div class="displaymath" id="p-273">
@@ -944,7 +979,7 @@ x_1 \amp  \amp  \amp  {}-{}  \amp x_3 \amp  {}+{}
 \right]
 \end{equation*}
 </div></li>
-</ol></article><article class="exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-287">Give an example of a reduced row echelon matrix that describes a linear system having the stated properties.  If it is not possible to find such an example, explain why not.</p>
 <ol class="lower-alpha">
 <li id="li-165"><p id="p-288">Write a reduced row echelon matrix for a linear system having five equations and three unknowns and having exactly one solution.</p></li>
@@ -952,14 +987,14 @@ x_1 \amp  \amp  \amp  {}-{}  \amp x_3 \amp  {}+{}
 <li id="li-167"><p id="p-290">Write a reduced row echelon matrix for a linear system having three equations and five unknowns and having infinitely many solutions.</p></li>
 <li id="li-168"><p id="p-291">Write a reduced row echelon matrix for a linear system having three equations and four unknowns and having exactly one solution.</p></li>
 <li id="li-169"><p id="p-292">Write a reduced row echelon matrix for a linear system having four equations and four unknowns and having exactly one solution.</p></li>
-</ol></article><article class="exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-305">For each of the questions below, provide a justification for your response.</p>
 <ol class="lower-alpha">
 <li id="li-180"><p id="p-306">What does the presence of a row whose entries are all zero in an augmented matrix tell us about the solution space of the linear system?</p></li>
 <li id="li-181"><p id="p-307">How can you determine if a linear system has no solutions directly from its reduced row echelon matrix?</p></li>
 <li id="li-182"><p id="p-308">How can you determine if a linear system has infinitely many solutions directly from its reduced row echelon matrix?</p></li>
 <li id="li-183"><p id="p-309">What can you say the solution space of a linear system if there are more unknowns than equations and at least one solution exists?</p></li>
-</ol></article><article class="exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-320">Determine whether the following statements are true or false and explain your reasoning.</p>
 <ol class="lower-alpha">
 <li id="li-192"><p id="p-321">If every variable is basic, then the linear system has exactly one solution.</p></li>
@@ -969,7 +1004,5 @@ x_1 \amp  \amp  \amp  {}-{}  \amp x_3 \amp  {}+{}
 <li id="li-196"><p id="p-325">If a linear system has the same number of equations as unknowns, then it has exactly one solution.</p></li>
 </ol></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:40-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:33:29-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Determinants</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,8 +132,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-jpeg.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-subspaces.html" title="Next">Next</a></span>
@@ -132,9 +144,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-jpeg.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-subspaces.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,59 +195,80 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-determinants"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-determinants"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Determinants</span>
 </h2>
-<a href="sec-determinants.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-2919">In this chapter, we have been concerned with bases and related questions about the invertibility of square matrices.  We saw that a square matrix is invertible if and only if it is row equivalent to the identity matrix.  In this section, we will develop a numerical criterion that tells us whether a square matrix is invertible.  This criterion will prove useful in the next chapter.</p>
-<p id="p-2920">To begin, let's consider a \(2\times2\) matrix \(A\) whose columns are vectors \(\vvec_1\) and \(\vvec_2\text{.}\)  We have frequently drawn the vectors and considered the linear combinations they form through a figure such as <a data-knowl="./knowl/fig-intro-dets.html" title="Figure 3.4.1">Figure 3.4.1</a>.</p>
-<figure class="figure-like" id="fig-intro-dets"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/basis-1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.1.</span> Linear combinations of two vectors \(\vvec_1\) and \(\vvec_2\) form a collection of congruent parallelograms.</figcaption></figure><p id="p-2921">Notice how the linear combinations form a set of congruent parallelograms in the plane.  In this section, we will measure the area of the parallelograms, which will lead naturally to a numerical quantity called the determinant, that tells us if the matrix \(A\) is invertible.</p>
+<section class="introduction" id="introduction-16"><p id="p-2919">In this chapter, we have been concerned with bases and related questions about the invertibility of square matrices.  We saw that a square matrix is invertible if and only if it is row equivalent to the identity matrix.  In this section, we will develop a numerical criterion that tells us whether a square matrix is invertible.  This criterion will prove useful in the next chapter.</p>
+<p id="p-2920">To begin, let's consider a \(2\times2\) matrix \(A\) whose columns are vectors \(\vvec_1\) and \(\vvec_2\text{.}\)  We have frequently drawn the vectors and considered the linear combinations they form through a figure such as <a class="xref" data-knowl="./knowl/fig-intro-dets.html" title="Figure 3.4.1">Figure 3.4.1</a>.</p>
+<figure class="figure figure-like" id="fig-intro-dets"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="images/basis-1.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.1<span class="period">.</span></span><span class="space"> </span>Linear combinations of two vectors \(\vvec_1\) and \(\vvec_2\) form a collection of congruent parallelograms.</figcaption></figure><p id="p-2921">Notice how the linear combinations form a set of congruent parallelograms in the plane.  In this section, we will measure the area of the parallelograms, which will lead naturally to a numerical quantity called the determinant, that tells us if the matrix \(A\) is invertible.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-2922">To recall, if we are given the parallelogram in the figure, we find its area by multiplying the length of one side by the perpendicular distance to its parallel side.  Using the notation in the figure, the area of the parallelogram is \(bh\text{.}\)</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img src="images/parallelogram-area.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel middle" style="width:63.1578947368421%;"><p id="p-2922">To recall, if we are given the parallelogram in the figure, we find its area by multiplying the length of one side by the perpendicular distance to its parallel side.  Using the notation in the figure, the area of the parallelogram is \(bh\text{.}\)</p></div>
+<div class="sbspanel middle" style="width:31.5789473684211%;"><img src="images/parallelogram-area.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<article class="project-like" id="exploration-12"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">3.4.1</span>.</h6>
+<article class="exploration project-like" id="exploration-12"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
+</h6>
 <p id="p-2923">We will explore the area formula in this preview activity.</p>
 <ol class="lower-alpha">
 <li id="li-1987">
 <p id="p-2924">Find the area of the following parallelograms.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0.0833333333333333%;margin-right:0.0833333333333333%;">
-<div class="sbspanel" style="width:3.005008347245409%;justify-content:flex-start;"><p id="p-2925">i.</p></div>
-<div class="sbspanel" style="width:30.0500834724541%;justify-content:flex-start;"><img src="images/parallelogram-a.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:3.005008347245409%;justify-content:flex-start;"><p id="p-2926">ii.</p></div>
-<div class="sbspanel" style="width:30.0500834724541%;justify-content:flex-start;"><img src="images/parallelogram-b.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:3.005008347245409%;justify-content:flex-start;"><p id="p-2927">iii.</p></div>
-<div class="sbspanel" style="width:30.0500834724541%;justify-content:flex-start;"><img src="images/parallelogram-c.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:3.005008347245409%;"><p id="p-2925">i.</p></div>
+<div class="sbspanel top" style="width:30.0500834724541%;"><img src="images/parallelogram-a.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:3.005008347245409%;"><p id="p-2926">ii.</p></div>
+<div class="sbspanel top" style="width:30.0500834724541%;"><img src="images/parallelogram-b.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:3.005008347245409%;"><p id="p-2927">iii.</p></div>
+<div class="sbspanel top" style="width:30.0500834724541%;"><img src="images/parallelogram-c.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0.0833333333333333%;margin-right:0.0833333333333333%;">
-<div class="sbspanel" style="width:3.005008347245409%;justify-content:flex-start;"><p id="p-2928">iv.</p></div>
-<div class="sbspanel" style="width:30.0500834724541%;justify-content:flex-start;"><img src="images/parallelogram-d.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:3.005008347245409%;justify-content:flex-start;"><p id="p-2929">v.</p></div>
-<div class="sbspanel" style="width:30.0500834724541%;justify-content:flex-start;"><img src="images/parallelogram-e.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:3.005008347245409%;justify-content:flex-start;"><p id="p-2930"></p></div>
-<div class="sbspanel" style="width:30.0500834724541%;justify-content:flex-start;"><p id="p-2931"></p></div>
+<div class="sbspanel top" style="width:3.005008347245409%;"><p id="p-2928">iv.</p></div>
+<div class="sbspanel top" style="width:30.0500834724541%;"><img src="images/parallelogram-d.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:3.005008347245409%;"><p id="p-2929">v.</p></div>
+<div class="sbspanel top" style="width:30.0500834724541%;"><img src="images/parallelogram-e.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:3.005008347245409%;"><p id="p-2930"></p></div>
+<div class="sbspanel top" style="width:30.0500834724541%;"><p id="p-2931"></p></div>
 </div></div>
 </li>
 <li id="li-1988"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:52.6315789473684%;justify-content:center;"><p id="p-2932">Explain why the area of the parallelogram formed by the vectors \(\vvec\) and \(\wvec_1\) is the same as that formed by \(\vvec\) and \(\wvec_2\text{.}\)</p></div>
-<div class="sbspanel" style="width:42.1052631578947%;justify-content:center;"><img src="images/area-shear.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel middle" style="width:52.6315789473684%;"><p id="p-2932">Explain why the area of the parallelogram formed by the vectors \(\vvec\) and \(\wvec_1\) is the same as that formed by \(\vvec\) and \(\wvec_2\text{.}\)</p></div>
+<div class="sbspanel middle" style="width:42.1052631578947%;"><img src="images/area-shear.svg" role="img" class="contained" alt=""></div>
 </div></div></li>
 </ol></article></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Determinants of \(2\times2\) matrices</span>
 </h3>
 <p id="p-2941">We will now use our familiarity with parallelograms to define the determinant of a \(2\times2\) matrix \(A = \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
-\end{array}\right]\text{.}\)  First, however, we need to define the orientation of a pair of vectors.  As shown in <a data-knowl="./knowl/fig-det-orientation.html" title="Figure 3.4.2">Figure 3.4.2</a>, a pair of vectors \(\vvec_1\) and \(\vvec_2\) is called <em class="emphasis">positively</em> oriented if the angle, measured in the counterclockwise direction, from \(\vvec_1\) to \(\vvec_2\) is less than \(180^\circ\text{;}\) we say the pair is \(negatively\) oriented if it is more than \(180^\circ\text{.}\)</p>
-<figure class="figure-like" id="fig-det-orientation"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/det-orientation.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.2.</span> The vectors on the left are positively oriented while the ones on the right are negatively oriented.</figcaption></figure><p id="p-2942">We can now define the determinant of a \(2\times2\) matrix \(A\text{.}\)</p>
-<article class="definition-like" id="definition-11"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.4.3</span>.</h6>
-<p id="p-2943">Suppose a \(2\times2\) matrix \(A\) has columns \(\vvec_1\) and \(\vvec_2\text{.}\)  If the pair of vectors is positively oriented, then the <em class="emphasis">determinant</em> of \(A\text{,}\) denoted \(\det A\text{,}\) is the area of the parallelogram formed by \(\vvec_1\) and \(\vvec_2\text{.}\) If the pair is negatively oriented, then \(\det A\) is minus the area of the parallelogram.</p></article><article class="example-like" id="example-det-identity"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.4.4</span>.</h6>
+\end{array}\right]\text{.}\)  First, however, we need to define the orientation of a pair of vectors.  As shown in <a class="xref" data-knowl="./knowl/fig-det-orientation.html" title="Figure 3.4.2">Figure 3.4.2</a>, a pair of vectors \(\vvec_1\) and \(\vvec_2\) is called <em class="emphasis">positively</em> oriented if the angle, measured in the counterclockwise direction, from \(\vvec_1\) to \(\vvec_2\) is less than \(180^\circ\text{;}\) we say the pair is \(negatively\) oriented if it is more than \(180^\circ\text{.}\)</p>
+<figure class="figure figure-like" id="fig-det-orientation"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="images/det-orientation.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.2<span class="period">.</span></span><span class="space"> </span>The vectors on the left are positively oriented while the ones on the right are negatively oriented.</figcaption></figure><p id="p-2942">We can now define the determinant of a \(2\times2\) matrix \(A\text{.}\)</p>
+<article class="definition definition-like" id="definition-11"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+</h6>
+<p id="p-2943">Suppose a \(2\times2\) matrix \(A\) has columns \(\vvec_1\) and \(\vvec_2\text{.}\)  If the pair of vectors is positively oriented, then the <em class="emphasis">determinant</em> of \(A\text{,}\) denoted \(\det A\text{,}\) is the area of the parallelogram formed by \(\vvec_1\) and \(\vvec_2\text{.}\) If the pair is negatively oriented, then \(\det A\) is minus the area of the parallelogram.</p></article><article class="example example-like" id="example-det-identity"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
+</h6>
 <p id="p-2944">Consider the determinant of the identity matrix</p>
 <div class="displaymath">
 \begin{equation*}
@@ -247,9 +280,9 @@ I =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>As seen on the left of <a data-knowl="./knowl/fig-det-identity.html" title="Figure 3.4.5">Figure 3.4.5</a>, the vectors \(\vvec_1 = \evec_1\) and \(\vvec_2=\evec_2\) form a positively oriented pair. Since the parallelogram they form is a \(1\times1\) square, we have \(\det I = 1.\)</p>
-<figure class="figure-like" id="fig-det-identity"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/det-identity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.5.</span> The determinant \(\det I = 1\) as seen on the left. Otherwise, the determinant \(\det A = -2\) where \(A\) is the matrix whose columns are shown on the right.</figcaption></figure><p id="p-2945">Now we will consider the matrix</p>
+<p class="continuation">As seen on the left of <a class="xref" data-knowl="./knowl/fig-det-identity.html" title="Figure 3.4.5">Figure 3.4.5</a>, the vectors \(\vvec_1 = \evec_1\) and \(\vvec_2=\evec_2\) form a positively oriented pair. Since the parallelogram they form is a \(1\times1\) square, we have \(\det I = 1.\)</p>
+<figure class="figure figure-like" id="fig-det-identity"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="images/det-identity.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.5<span class="period">.</span></span><span class="space"> </span>The determinant \(\det I = 1\) as seen on the left. Otherwise, the determinant \(\det A = -2\) where \(A\) is the matrix whose columns are shown on the right.</figcaption></figure><p id="p-2945">Now we will consider the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A = 
@@ -260,9 +293,10 @@ A =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>As seen on the right of <a data-knowl="./knowl/fig-det-identity.html" title="Figure 3.4.5">Figure 3.4.5</a>, the vectors \(\vvec_1\) and \(\vvec_2\) form a negatively oriented pair.  The parallelogram they define is a \(2\times1\) rectangle so we have \(\det A = -2\text{.}\)</p></article><p id="p-2946">The next set of examples will help illustrate some properties of the determinant.</p>
-<article class="project-like" id="activity-35"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.4.2</span>.</h6>
+<p class="continuation">As seen on the right of <a class="xref" data-knowl="./knowl/fig-det-identity.html" title="Figure 3.4.5">Figure 3.4.5</a>, the vectors \(\vvec_1\) and \(\vvec_2\) form a negatively oriented pair.  The parallelogram they define is a \(2\times1\) rectangle so we have \(\det A = -2\text{.}\)</p></article><p id="p-2946">The next set of examples will help illustrate some properties of the determinant.</p>
+<article class="activity project-like" id="activity-35"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
+</h6>
 <p id="p-2947">We will use the diagram to find the determinant of some simple \(2\times2\) matrices.</p>
 The sliders in the diagram below allow you to choose a matrix \(A\).
 The two vectors representing the columns of the matrix, along with the
@@ -314,15 +348,15 @@ B = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Use the diagram to find the determinants of \(A\text{,}\) \(B\text{,}\) and \(AB\text{.}\)  What does this suggest is generally true about the relationship of \(\det(AB)\) to \(\det A\) and \(\det B\text{?}\)</p>
+<p class="continuation">Use the diagram to find the determinants of \(A\text{,}\) \(B\text{,}\) and \(AB\text{.}\)  What does this suggest is generally true about the relationship of \(\det(AB)\) to \(\det A\) and \(\det B\text{?}\)</p>
 </li>
 </ol></article><p id="p-2965">Though this activity dealt with determinants of \(2\times2\) matrices, the properties that we saw are more generally true for determinants of \(n\times n\) matrices.  Let's review these properties now.</p>
 <ul class="disc">
-<li id="li-2010"><p id="p-2966">\(\det I = 1\) as we saw in <a data-knowl="./knowl/example-det-identity.html" title="Example 3.4.4">Example 3.4.4</a>.</p></li>
+<li id="li-2010"><p id="p-2966">\(\det I = 1\) as we saw in <a class="xref" data-knowl="./knowl/example-det-identity.html" title="Example 3.4.4">Example 3.4.4</a>.</p></li>
 <li id="li-2011"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:66.6666666666667%;justify-content:flex-start;"><p id="p-2967">If \(A\) is a diagonal matrix, then \(\det A\) equals the product of its diagonal entries.  For instance, \(\det\left[\begin{array}{rr} 2 \amp 0 \\
+<div class="sbspanel top" style="width:66.6666666666667%;"><p id="p-2967">If \(A\) is a diagonal matrix, then \(\det A\) equals the product of its diagonal entries.  For instance, \(\det\left[\begin{array}{rr} 2 \amp 0 \\
 0 \amp 3 \\ \end{array}\right] = 2\cdot 3 = 6\) since each diagonal entry represents a stretching along one of the axes, as seen in the figure.</p></div>
-<div class="sbspanel" style="width:30.7692307692308%;justify-content:flex-start;"><img src="images/parallelogram-b.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:30.7692307692308%;"><img src="images/parallelogram-b.svg" role="img" class="contained" alt=""></div>
 </div></div></li>
 <li id="li-2012">
 <p id="p-2968">If \(A\) is a triangular matrix, then \(\det A\) is also the product of the entries on the diagonal.  For example,</p>
@@ -332,12 +366,12 @@ B = \left[\begin{array}{rr}
 0 \amp 3 \\ \end{array}\right] = 2\cdot 3 = 6\text{,}
 \end{equation*}
 </div>
-<p>since the two parallelograms in <a data-knowl="./knowl/fig-parallelogram-f.html" title="Figure 3.4.6">Figure 3.4.6</a> have equal area.</p>
-<figure class="figure-like" id="fig-parallelogram-f"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
-<div class="sbspanel" style="width:37.5%;justify-content:flex-start;"><img src="images/parallelogram-f.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:37.5%;justify-content:flex-start;"><img src="images/parallelogram-b.svg" style="width: 100%; height: auto;" alt=""></div>
+<p class="continuation">since the two parallelograms in <a class="xref" data-knowl="./knowl/fig-parallelogram-f.html" title="Figure 3.4.6">Figure 3.4.6</a> have equal area.</p>
+<figure class="figure figure-like" id="fig-parallelogram-f"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel top" style="width:37.5%;"><img src="images/parallelogram-f.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:37.5%;"><img src="images/parallelogram-b.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.6.</span> The determinant of a triangular matrix equals the product of its diagonal entries.</figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.6<span class="period">.</span></span><span class="space"> </span>The determinant of a triangular matrix equals the product of its diagonal entries.</figcaption></figure>
 </li>
 <li id="li-2013">
 <p id="p-2969">We also saw that</p>
@@ -349,37 +383,38 @@ B = \left[\begin{array}{rr}
 \end{array}\right] = -1
 \end{equation*}
 </div>
-<p>because the vectors are a negatively oriented pair. The matrix transformation defined by this matrix is a reflection in the line \(y=x\text{;}\)  more generally, the determinant of any matrix that defines a reflection is \(-1\text{.}\)</p>
+<p class="continuation">because the vectors are a negatively oriented pair. The matrix transformation defined by this matrix is a reflection in the line \(y=x\text{;}\)  more generally, the determinant of any matrix that defines a reflection is \(-1\text{.}\)</p>
 </li>
 <li id="li-2014">
 <p id="p-2970">We saw that the determinant of a product of matrices equals the product of the determinants; that is, \(\det AB =
-\det A \det B\text{.}\)  Thus far, we have been thinking of the determinant as the area of a parallelogram.  We may also think of it as a factor by which areas are scaled under the matrix transformation defined by the matrix.  As seen in <a data-knowl="./knowl/fig-det-multiplies.html" title="Figure 3.4.7">Figure 3.4.7</a>, applying the transform \(B\) scales the area by a factor of \(\det B\text{.}\)  Next applying the transform \(A\) scales the area by a factor of \(\det
+\det A \det B\text{.}\)  Thus far, we have been thinking of the determinant as the area of a parallelogram.  We may also think of it as a factor by which areas are scaled under the matrix transformation defined by the matrix.  As seen in <a class="xref" data-knowl="./knowl/fig-det-multiplies.html" title="Figure 3.4.7">Figure 3.4.7</a>, applying the transform \(B\) scales the area by a factor of \(\det B\text{.}\)  Next applying the transform \(A\) scales the area by a factor of \(\det
 A\text{.}\)  The total scaling is then \(\det A\det B\text{.}\)</p>
-<figure class="figure-like" id="fig-det-multiplies"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
-<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><img src="images/parallelogram-h.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><img src="images/parallelogram-i.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><img src="images/parallelogram-j.svg" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig-det-multiplies"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel top" style="width:31.0344827586207%;"><img src="images/parallelogram-h.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:31.0344827586207%;"><img src="images/parallelogram-i.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:31.0344827586207%;"><img src="images/parallelogram-j.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.4.7.</span> The first transformation \(B\) scales the area of the unit square by a factor of \(\det B\) and the second transformation \(A\) scales the area by a factor of \(\det
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.7<span class="period">.</span></span><span class="space"> </span>The first transformation \(B\) scales the area of the unit square by a factor of \(\det B\) and the second transformation \(A\) scales the area by a factor of \(\det
 A\text{.}\)</figcaption></figure>
 </li>
 <li id="li-2015"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:66.6666666666667%;justify-content:flex-start;"><p id="p-2971">If two vectors are linearly dependent, then \(\det A =
+<div class="sbspanel top" style="width:66.6666666666667%;"><p id="p-2971">If two vectors are linearly dependent, then \(\det A =
 0\text{.}\)  In this case, the parallelogram is squashed down onto a line so that its area becomes zero.  This property is perhaps the most important of the ones that we have stated here, and it is what motivates us to explore determinants.</p></div>
-<div class="sbspanel" style="width:30.7692307692308%;justify-content:flex-start;"><img src="images/parallelogram-g.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:30.7692307692308%;"><img src="images/parallelogram-g.svg" role="img" class="contained" alt=""></div>
 </div></div></li>
 </ul>
 <p id="p-2972">Toward the end of this section, we will learn an algebraic technique for computing determinants.  In the meantime, we will simply note that we can define determinants for \(n\times
 n\) matrices by measuring the volume of a box defined by the columns of the matrix, even if this box resides in \(\real^n\) for some very large \(n\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:56.4102564102564%;justify-content:flex-start;"><p id="p-2973">For example, the columns of a \(3\times3\) matrix \(A\) will form a parallelpiped, like the one shown here. There is a means by which we can classify sets of such vectors as either positively or negatively oriented.  Therefore, we can define the determinant \(\det A = \pm V\) where \(V\) is the volume of the box, but we will not worry about the details here.</p></div>
-<div class="sbspanel" style="width:41.025641025641%;justify-content:flex-start;"><img src="images/det-3d.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:56.4102564102564%;"><p id="p-2973">For example, the columns of a \(3\times3\) matrix \(A\) will form a parallelpiped, like the one shown here. There is a means by which we can classify sets of such vectors as either positively or negatively oriented.  Therefore, we can define the determinant \(\det A = \pm V\) where \(V\) is the volume of the box, but we will not worry about the details here.</p></div>
+<div class="sbspanel top" style="width:41.025641025641%;"><img src="images/det-3d.svg" role="img" class="contained" alt=""></div>
 </div></div></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Determinants and invertibility</span>
 </h3>
 <p id="p-2974">In the previous activity, we saw that, when the columns of a \(2\times2\) matrix \(A\) are linearly dependent, then \(\det A = 0\) because the parallelogram formed by the columns of \(A\) lies on a line and thus has zero area.  Of course, when the columns are linearly dependent, the matrix is not invertible.  This points to an important proposition that we will explore more.</p>
-<article class="theorem-like" id="prop-invertible-det"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">3.4.8</span>.</h6>
+<article class="proposition theorem-like" id="prop-invertible-det"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
+</h6>
 <p id="p-2975">The matrix \(A\) is invertible if and only if \(\det A
 \neq 0\text{.}\)</p></article><p id="p-2976">To understand this proposition more fully, let's remember that the matrix \(A\) is invertible if and only if it is row equivalent to the identity matrix \(I\text{.}\)  We will therefore consider how the determinant changes when we perform row operations on a matrix. Along the way, we will discover an effective means to compute the determinant.</p>
 <p id="p-2977">In <a href="sec-matrix-inverse.html#subsec-triangular-invertible" class="internal" title="Subsection 3.1.3: Triangular matrices and Gaussian elimination">Subsection 3.1.3</a>, we saw how to describe the three row operations, scaling, interchange, and row replacement, using matrix multiplication.  Remember that</p>
@@ -395,7 +430,7 @@ S = \left[\begin{array}{rrr}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p>which has the effect of multiplying the second row by \(3\text{.}\)  Since \(S\) is diagonal, we know that its determinant is the product of its diagonal entries so that \(\det S = 3\text{.}\)  If we scale a row in \(A\) by \(3\) to obtain the matrix \(A'\text{,}\) then we have \(SA=A'\text{,}\) which means that \(\det S\det A = \det A'\text{.}\)  Therefore, \(3\det A
+<p class="continuation">which has the effect of multiplying the second row by \(3\text{.}\)  Since \(S\) is diagonal, we know that its determinant is the product of its diagonal entries so that \(\det S = 3\text{.}\)  If we scale a row in \(A\) by \(3\) to obtain the matrix \(A'\text{,}\) then we have \(SA=A'\text{,}\) which means that \(\det S\det A = \det A'\text{.}\)  Therefore, \(3\det A
 = \det A'\text{.}\)  In general, if we scale a row of \(A\) by \(s\) to obtain \(A'\text{,}\) we have \(s\det A=\det A'\text{.}\)</p>
 </li>
 <li id="li-2017">
@@ -409,7 +444,7 @@ P = \left[\begin{array}{rrr}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p>which has the effect of interchanging the first and second rows.  Notice that the determinant of this matrix is \(\det P = -1\) since it defines a reflection.  Therefore, if we perform an interchange operation on \(A\) to obtain \(A'\text{,}\) we have \(PA=A'\text{,}\) which means that \(\det P \det A = \det A'\text{.}\)  In other words, we have \(-\det A = \det A'\) so that the determinant before and after an interchange have opposite signs.</p>
+<p class="continuation">which has the effect of interchanging the first and second rows.  Notice that the determinant of this matrix is \(\det P = -1\) since it defines a reflection.  Therefore, if we perform an interchange operation on \(A\) to obtain \(A'\text{,}\) we have \(PA=A'\text{,}\) which means that \(\det P \det A = \det A'\text{.}\)  In other words, we have \(-\det A = \det A'\) so that the determinant before and after an interchange have opposite signs.</p>
 </li>
 <li id="li-2018">
 <p id="p-2980">Row replacement operations are performed by matrices such as</p>
@@ -422,11 +457,12 @@ R = \left[\begin{array}{rrr}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p>which multiplies the first row by \(-2\) and adds the result to the third row.  Since this is a lower triangular matrix, we know that the determinant is the product of diagonal entries, which says that \(\det R = 1\text{.}\)  If we perform a row replacement on \(A\) to obtain \(A'\text{,}\) then \(RA = A'\) and therefore \(\det R \det A = \det A'\text{,}\) which means that \(\det A = \det A'\text{.}\)  In other words, the determinants before and after a row replacement operation are equal.</p>
+<p class="continuation">which multiplies the first row by \(-2\) and adds the result to the third row.  Since this is a lower triangular matrix, we know that the determinant is the product of diagonal entries, which says that \(\det R = 1\text{.}\)  If we perform a row replacement on \(A\) to obtain \(A'\text{,}\) then \(RA = A'\) and therefore \(\det R \det A = \det A'\text{,}\) which means that \(\det A = \det A'\text{.}\)  In other words, the determinants before and after a row replacement operation are equal.</p>
 </li>
 </ul>
-<article class="project-like" id="activity-36"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.4.3</span>.</h6>
+<article class="activity project-like" id="activity-36"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+</h6>
 <p id="p-2981">We will investigate the connection between the determinant of a matrix and its invertibility using Gaussian elimination.</p>
 <ol class="lower-alpha">
 <li id="li-2019">
@@ -447,7 +483,7 @@ U_2 =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Which of the matrices \(U_1\) and \(U_2\) are invertible? Use our earlier observation that the determinant of an upper triangular matrix is the product of its diagonal entries to find \(\det U_1\) and \(\det U_2\text{.}\)</p>
+<p class="continuation">Which of the matrices \(U_1\) and \(U_2\) are invertible? Use our earlier observation that the determinant of an upper triangular matrix is the product of its diagonal entries to find \(\det U_1\) and \(\det U_2\text{.}\)</p>
 </li>
 <li id="li-2020"><p id="p-2983">Explain why an upper triangular matrix is invertible if and only if its determinant is not zero.</p></li>
 <li id="li-2021">
@@ -462,7 +498,7 @@ A =
 \end{array}\right]
 \end{equation*}
 </div>
-<p>and start the Gaussian elimination process. We begin with a row replacement operation</p>
+<p class="continuation">and start the Gaussian elimination process. We begin with a row replacement operation</p>
 <div class="displaymath">
 \begin{equation*}
 A = 
@@ -480,7 +516,7 @@ A =
 = A_1\text{.}
 \end{equation*}
 </div>
-<p>What is the relationship between \(\det A\) and \(\det A_1\text{?}\)</p>
+<p class="continuation">What is the relationship between \(\det A\) and \(\det A_1\text{?}\)</p>
 </li>
 <li id="li-2022">
 <p id="p-2985">Next we perform another row replacement operation:</p>
@@ -501,7 +537,7 @@ A_1=
 = A_2\text{.}
 \end{equation*}
 </div>
-<p>What is the relationship between \(\det A\) and \(\det
+<p class="continuation">What is the relationship between \(\det A\) and \(\det
 A_2\text{?}\)</p>
 </li>
 <li id="li-2023">
@@ -523,7 +559,7 @@ A_2 =
 = U
 \end{equation*}
 </div>
-<p>to arrive at an upper triangular matrix \(U\text{.}\)  What is the relationship between \(\det A\) and \(\det U\text{?}\)</p>
+<p class="continuation">to arrive at an upper triangular matrix \(U\text{.}\)  What is the relationship between \(\det A\) and \(\det U\text{?}\)</p>
 </li>
 <li id="li-2024"><p id="p-2987">Since \(U\) is upper triangular, we can compute its determinant, which allows us to find \(\det A\text{.}\)  What is \(\det A\text{?}\)  Is \(A\) invertible?</p></li>
 <li id="li-2025">
@@ -538,7 +574,7 @@ A =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Perform a sequence of row operations to find an upper triangular matrix \(U\) that is row equivalent to \(A\text{.}\)  Use this to determine \(\det A\text{.}\)  Is the matrix \(A\) invertible?</p>
+<p class="continuation">Perform a sequence of row operations to find an upper triangular matrix \(U\) that is row equivalent to \(A\text{.}\)  Use this to determine \(\det A\text{.}\)  Is the matrix \(A\) invertible?</p>
 </li>
 <li id="li-2026"><p id="p-2989">Suppose we apply a sequence of row operations on a matrix \(A\) to obtain \(A'\text{.}\)  Explain why \(\det A
 \neq 0\) if and only if \(\det A' \neq 0\text{.}\)</p></li>
@@ -562,7 +598,7 @@ A=\left[\begin{array}{rrr}
 = U
 \end{equation*}
 </div>
-<p>is row equivalent to an upper triangular matrix \(U\) through a sequence of row operations:  we first apply two row replacement operations and then an interchange.  We may represent the row replacement operations by the matrices \(R_1\) and \(R_2\) and the interchange by the matrix \(P\text{.}\)  We then have</p>
+<p class="continuation">is row equivalent to an upper triangular matrix \(U\) through a sequence of row operations:  we first apply two row replacement operations and then an interchange.  We may represent the row replacement operations by the matrices \(R_1\) and \(R_2\) and the interchange by the matrix \(P\text{.}\)  We then have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
@@ -573,13 +609,13 @@ PR_2R_1 A \amp {}={} U \\
 \end{aligned}
 \end{equation*}
 </div>
-<p>which shows us that \(\det A = 4\text{.}\)</p>
+<p class="continuation">which shows us that \(\det A = 4\text{.}\)</p>
 <p id="p-3004">Notice that the three row operations are represented by matrices whose determinants are not zero.  This means that if \(A\) is row equivalent to \(A'\text{,}\) then there are matrices such that \(E_p\ldots E_2E_1A = A'\) and so \(\det E_p\ldots
 \det E_2\det E_1 \det A = \det A'\text{.}\)  Since \(\det E_j\neq
 0\text{,}\) this tells us that \(\det A \neq 0\) if and only if \(\det A'\neq 0\text{.}\)</p>
 <p id="p-3005">The determinant of an upper triangular matrix \(U\) is equal to the product of its diagonal entries.  Of course, the matrix \(U\) is invertible if and only if there is a pivot position in every row, which means each of the diagonal entries must be nonzero. Therefore, an upper triangular matrix \(U\) is invertible if and only \(\det U \neq 0\text{.}\)</p>
 <p id="p-3006">We may now put all this together.  When performing Gaussian elimination on the matrix \(A\text{,}\) we apply a sequence of row operations until we obtain an upper triangular matrix \(U\) that is row equivalent to \(A\text{.}\)  It follows that \(\det A
-\neq 0\) if and only if \(\det U \neq 0\text{.}\)  We also know that \(\det U\neq 0\) if and only if \(U\) is invertible and that \(U\) is invertible if and only if \(A\) is invertible. This shows that that \(A\) is invertible if and only if \(\det A \neq 0\text{,}\) which completes our explanation of <a data-knowl="./knowl/prop-invertible-det.html" title="Proposition 3.4.8">Proposition 3.4.8</a>.</p>
+\neq 0\) if and only if \(\det U \neq 0\text{.}\)  We also know that \(\det U\neq 0\) if and only if \(U\) is invertible and that \(U\) is invertible if and only if \(A\) is invertible. This shows that that \(A\) is invertible if and only if \(\det A \neq 0\text{,}\) which completes our explanation of <a class="xref" data-knowl="./knowl/prop-invertible-det.html" title="Proposition 3.4.8">Proposition 3.4.8</a>.</p>
 <p id="p-3007">Finally, remember that \(A A^{-1} = I\) if \(A\) is invertible.  This means that \(\det A \det A^{-1} = \det I =
 1\text{;}\)  in other words, \(\det A\) and \(\det A^{-1}\) are multiplicative inverses so that \(\det A^{-1} = 1/\det A\text{.}\)</p></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Cofactor expansions</span>
@@ -596,10 +632,11 @@ c \amp d \\
 ad-bc\text{.}
 \end{equation*}
 </div>
-<p>With a little bit of work, it can be shown that this number is the same as the signed area of the parallelogram we introduced earlier.</p>
+<p class="continuation">With a little bit of work, it can be shown that this number is the same as the signed area of the parallelogram we introduced earlier.</p>
 <p id="p-3010">Using a cofactor expansion to find the determinant of a more general \(n\times n\) matrix is a little more work so we will demonstrate it with an example.</p>
-<article class="example-like" id="example-14"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.4.9</span>.</h6>
+<article class="example example-like" id="example-14"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span>
+</h6>
 <p id="p-3011">We illustrate how to use a cofactor expansion to find the determinant of \(A\) where</p>
 <div class="displaymath">
 \begin{equation*}
@@ -611,7 +648,7 @@ A =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>This is the same matrix that appeared in the last activity where we found that \(\det A = 4\text{.}\)</p>
+<p class="continuation">This is the same matrix that appeared in the last activity where we found that \(\det A = 4\text{.}\)</p>
 <p id="p-3012">To begin, we choose one row or column.  It doesn't matter which we choose because the result will be the same in any case.  Here, we will choose the second row.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -638,7 +675,7 @@ A =
 \end{array}\right]
 \end{equation*}
 </div>
-<p>using the second row, the entry in the first column of this row is \(-2\text{.}\)  Let's see how to form the term from this entry.</p>
+<p class="continuation">using the second row, the entry in the first column of this row is \(-2\text{.}\)  Let's see how to form the term from this entry.</p>
 <p id="p-3018">The term itself is \(-2\text{,}\) and the matrix that is left over when we cross out the second row and first column is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -649,7 +686,7 @@ A =
 \end{array}\right]
 \end{equation*}
 </div>
-<p>whose determinant is</p>
+<p class="continuation">whose determinant is</p>
 <div class="displaymath">
 \begin{equation*}
 \det\left[\begin{array}{rr}
@@ -659,7 +696,7 @@ A =
 -1(10) - 2 (-1) = -8\text{.}
 \end{equation*}
 </div>
-<p>Since this entry is in the second row and first column, the term we construct is \((-1)^{2+1}(-2)(-8) = -16
+<p class="continuation">Since this entry is in the second row and first column, the term we construct is \((-1)^{2+1}(-2)(-8) = -16
 \text{.}\)</p>
 <p id="p-3019">Putting this together, we find the determinant to be</p>
 <div class="displaymath">
@@ -703,8 +740,9 @@ A =
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<p>Notice that this agrees with the determinant that we found for this matrix using row operations in the last activity.</p></article><article class="project-like" id="activity-37"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.4.4</span>.</h6>
+<p class="continuation">Notice that this agrees with the determinant that we found for this matrix using row operations in the last activity.</p></article><article class="activity project-like" id="activity-37"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
+</h6>
 <p id="p-3020">We will explore cofactor expansions through some examples.</p>
 <ol class="lower-alpha">
 <li id="li-2042">
@@ -719,7 +757,7 @@ A =
 \end{array}\right] = -36\text{.}
 \end{equation*}
 </div>
-<p>Remember that you can choose any row or column to create the expansion, but the choice of a particular row or column may simplify the computation.</p>
+<p class="continuation">Remember that you can choose any row or column to create the expansion, but the choice of a particular row or column may simplify the computation.</p>
 </li>
 <li id="li-2043">
 <p id="p-3022">Use a cofactor expansion to find the determinant of</p>
@@ -733,7 +771,7 @@ A =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Explain how the cofactor expansion technique shows that the determinant of a triangular matrix is equal to the product of its diagonal entries.</p>
+<p class="continuation">Explain how the cofactor expansion technique shows that the determinant of a triangular matrix is equal to the product of its diagonal entries.</p>
 </li>
 <li id="li-2044">
 <p id="p-3023">Use a cofactor expansion to determine whether the following vectors form a basis of \(\real^3\text{:}\)</p>
@@ -757,7 +795,7 @@ A =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p><div class="sagecell-sage" id="sage-97"><script type="text/x-sage">
+<p class="continuation"><div class="sagecell-sage" id="sage-97"><script type="text/x-sage">
 </script></div></p>
 </li>
 </ol></article><p id="p-3030">In this section, we have seen three ways to compute the determinant: by interpreting the determinant as a signed area or volume; by applying appropriate row operations; and by using a cofactor expansion.  It's worth spending a moment to think about the relative merits of these approaches.</p>
@@ -777,7 +815,7 @@ A =
 </ul></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.4.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-3040">Consider the matrices</p>
 <div class="displaymath">
 \begin{equation*}
@@ -800,11 +838,11 @@ B =
 <ol class="lower-alpha">
 <li id="li-2054"><p id="p-3041">Find the determinants of \(A\) and \(B\) using row operations.</p></li>
 <li id="li-2055"><p id="p-3042">Find the determinants of \(A\) and \(B\) using cofactor expansions.</p></li>
-</ol></article><article class="exercise-like" id="exercise-102"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-102"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-3045">This exercise concerns rotations and reflections in \(\real^2\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-2056"><p id="p-3046">Suppose that \(A\) is the matrix that performs a counterclockwise rotation in \(\real^2\text{.}\)  Draw a typical picture of the vectors that form the columns of \(A\) and use the geometric definition of the determinant to determine \(\det A\text{.}\)</p></li>
-<li id="li-2057"><p id="p-3047">Suppose that \(B\) is the matrix that performs a reflection in a line passing through the origin.  Draw a typical picture of the columns of \(A\) and use the geometric definition of the determinant to determine \(\det A\text{.}\)</p></li>
+<li id="li-2057"><p id="p-3047">Suppose that \(B\) is the matrix that performs a reflection in a line passing through the origin.  Draw a typical picture of the columns of \(B\) and use the geometric definition of the determinant to determine \(\det B\text{.}\)</p></li>
 <li id="li-2058">
 <p id="p-3048">As we saw in <a href="sec-transforms-geom.html" class="internal" title="Section 2.6: The geometry of matrix transformations">Section 2.6</a>, the matrices have the form</p>
 <div class="displaymath">
@@ -820,9 +858,9 @@ B = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Compute the determinants of \(A\) and \(B\) and verify that they agree with what you found in the earlier parts of this exercise.</p>
+<p class="continuation">Compute the determinants of \(A\) and \(B\) and verify that they agree with what you found in the earlier parts of this exercise.</p>
 </li>
-</ol></article><article class="exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-3056">In the next chapter, we will say that matrices \(A\) and \(B\) are <em class="emphasis">similar</em> if there is a matrix \(P\) such that \(A= PBP^{-1}\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-2064">
@@ -838,10 +876,10 @@ A = P
 P^{-1}\text{.}
 \end{equation*}
 </div>
-<p>Find \(\det A\text{.}\)</p>
+<p class="continuation">Find \(\det A\text{.}\)</p>
 </li>
 <li id="li-2065"><p id="p-3058">Suppose that \(A\) and \(B\) are matrices and that there is a matrix \(P\) such that \(A=PBP^{-1}\text{.}\)  Explain why \(\det A = \det B\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-3065">Consider the matrix</p>
 <div class="displaymath">
 \begin{equation*}
@@ -852,7 +890,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p>where \(k\) is a parameter.</p>
+<p class="continuation">where \(k\) is a parameter.</p>
 <ol class="lower-alpha">
 <li id="li-2070"><p id="p-3066">Find an expression for \(\det A\) in terms of the parameter \(k\text{.}\)</p></li>
 <li id="li-2071">
@@ -864,9 +902,9 @@ A = \left[\begin{array}{rrr}
 \threevec{k}{0}{2}
 \end{equation*}
 </div>
-<p>are linearly independent?</p>
+<p class="continuation">are linearly independent?</p>
 </li>
-</ol></article><article class="exercise-like" id="exercise-105"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-105"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-3074">Determine whether the following statements are true or false and explain your response.</p>
 <ol class="lower-alpha">
 <li id="li-2076"><p id="p-3075">If we have a square matrix \(A\) and multiply the first row by \(5\) and add it to the third row to obtain \(A'\text{,}\) then \(\det A' = 5\det A\text{.}\)</p></li>
@@ -875,7 +913,7 @@ A = \left[\begin{array}{rrr}
 A\text{.}\)</p></li>
 <li id="li-2079"><p id="p-3078">If \(A\) and \(A'\) are row equivalent and \(\det A' = 0\text{,}\) then \(\det A = 0\) also.</p></li>
 <li id="li-2080"><p id="p-3079">If \(A\) is row equivalent to the identity matrix, then \(\det A = \det I = 1\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-106"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-106"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-3092">Suppose that \(A\) and \(B\) are \(5\times5\) matrices such that \(\det A = -2\) and \(\det B = 5\text{.}\) Find the following determinants:</p>
 <ol class="lower-alpha">
 <li id="li-2091"><p id="p-3093">\(\det(2A)\text{.}\)</p></li>
@@ -883,19 +921,19 @@ A\text{.}\)</p></li>
 <li id="li-2093"><p id="p-3095">\(\det(AB)\text{.}\)</p></li>
 <li id="li-2094"><p id="p-3096">\(\det(-A)\text{.}\)</p></li>
 <li id="li-2095"><p id="p-3097">\(\det(AB^{-1})\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-3110">Suppose that \(A\) and \(B\) are \(n\times n\) matrices.</p>
 <ol class="lower-alpha">
 <li id="li-2106"><p id="p-3111">If \(A\) and \(B\) are both invertible, use determinants to explain why \(AB\) is invertible.</p></li>
 <li id="li-2107"><p id="p-3112">If \(AB\) is invertible, use determinants to explain why both \(A\) and \(B\) is invertible.</p></li>
-</ol></article><article class="exercise-like" id="exercise-108"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-108"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-3119">Provide a justification for your responses to the following questions.</p>
 <ol class="lower-alpha">
 <li id="li-2112"><p id="p-3120">If every entry in one row of a matrix is zero, what can you say about the determinant?</p></li>
 <li id="li-2113"><p id="p-3121">If two rows of a square matrix are identical, what can you say about the determinant?</p></li>
 <li id="li-2114"><p id="p-3122">If two columns of a square matrix are identical, what can you say about the determinant?</p></li>
 <li id="li-2115"><p id="p-3123">If one column of a matrix is a linear combination of the others, what can you say about the determinant?</p></li>
-</ol></article><article class="exercise-like" id="exercise-109"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-109"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-3130">Consider the matrix</p>
 <div class="displaymath">
 \begin{equation*}
@@ -909,7 +947,7 @@ A = \left[\begin{array}{rrr}
 <ol class="lower-alpha">
 <li id="li-2120"><p id="p-3131">Write the equation \(\det A = 0\) in terms of \(x\text{,}\) \(y\text{,}\) and \(z\text{.}\)</p></li>
 <li id="li-2121"><p id="p-3132">Explain why \(\vvec_1\) and \(\vvec_2\text{,}\) the first two columns of \(A\text{,}\) satisfy the equation you found in the previous part.</p></li>
-</ol></article><article class="exercise-like" id="exercise-110"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-110"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <p id="p-3139">In this section, we studied the effect of row operations on the matrix \(A\text{.}\)  In this exercise, we will study the effect of analogous <em class="emphasis">column</em> operations.</p>
 <p id="p-3140">Suppose that \(A\) is the \(3\times3\) matrix \(A= \left[\begin{array}{rrr} \vvec_1 \amp \vvec_2 \amp \vvec_3
 \end{array}\right]\text{.}\)  Also consider elementary matrices</p>
@@ -948,7 +986,7 @@ A=\left[\begin{array}{rrr}
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="exercise-like" id="exercise-111"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-111"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-3156">Consider the matrices</p>
 <div class="displaymath">
 \begin{equation*}
@@ -972,7 +1010,7 @@ d \amp 0 \amp 0 \amp 0 \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Use row operations to find the determinants of these matrices.</p></article><article class="exercise-like" id="exercise-112"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p class="continuation">Use row operations to find the determinants of these matrices.</p></article><article class="exercise exercise-like" id="exercise-112"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
 <p id="p-3161">Consider the matrices</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1011,7 +1049,7 @@ D = \left[\begin{array}{rrrrr}
 <ol class="lower-alpha">
 <li id="li-2138"><p id="p-3162">Use row (and/or column) operations to find the determinants of these matrices.</p></li>
 <li id="li-2139"><p id="p-3163">Write the \(6\times6\) and \(7\times7\) matrices that follow in this pattern and state their determinants based on what you have seen.</p></li>
-</ol></article><article class="exercise-like" id="exercise-113"><h6 class="heading"><span class="codenumber">13.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-113"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <p id="p-3170">The following matrix is called a <em class="emphasis">Vandermond</em> matrix:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1028,9 +1066,7 @@ V = \left[\begin{array}{rrr}
 <li id="li-2145"><p id="p-3172">Explain why \(V\) is invertible if \(a\text{,}\) \(b\text{,}\) and \(c\) are all distinct real numbers.</p></li>
 <li id="li-2146"><p id="p-3173">There is a natural way to generalize this to a \(4\times4\) matrix with parameters \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\text{.}\)  Write this matrix and state its determinant based on your previous work.</p></li>
 </ol>
-<p id="p-3174">This matrix appeared in <a data-knowl="./knowl/exercise-poly-fit.html" title="Exercise 1.4.4.7">Exercise 1.4.4.7</a> when we were finding a polynomial that passed through a given set of points.</p></article></section></section></div></main>
+<p id="p-3174">This matrix appeared in <a class="xref" data-knowl="./knowl/exercise-poly-fit.html" title="Exercise 1.4.4.7">Exercise 1.4.4.7</a> when we were finding a polynomial that passed through a given set of points.</p></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

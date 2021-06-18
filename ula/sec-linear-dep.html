@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:37-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:32:59-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Linear independence</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,8 +132,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-span.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-linear-trans.html" title="Next">Next</a></span>
@@ -132,9 +144,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-span.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-linear-trans.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,25 +195,44 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-linear-dep"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-linear-dep"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Linear independence</span>
 </h2>
-<a href="sec-linear-dep.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-1462">In the previous section, we studied our question concerning the existence of solutions to a linear system by inquiring about the span of a set of vectors.  In particular, the span of a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is the set of vectors \(\bvec\) for which a solution to the linear system \(\left[\begin{array}{rrrr}
+<section class="introduction" id="introduction-9"><p id="p-1462">In the previous section, we studied our question concerning the existence of solutions to a linear system by inquiring about the span of a set of vectors.  In particular, the span of a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is the set of vectors \(\bvec\) for which a solution to the linear system \(\left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
 \end{array}\right]
 \xvec
 =
 \bvec\) exists.</p>
-<p id="p-1463">In this section, our focus turns to the uniqueness of solutions of a linear system, the second of our two fundamental questions asked in <a data-knowl="./knowl/fundamental-questions.html" title="Question 1.4.2">Question 1.4.2</a>.  This will lead us to the concept of linear independence.</p></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
+<p id="p-1463">In this section, our focus turns to the uniqueness of solutions of a linear system, the second of our two fundamental questions asked in <a class="xref" data-knowl="./knowl/fundamental-questions.html" title="Question 1.4.2">Question 1.4.2</a>.  This will lead us to the concept of linear independence.</p></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Linear dependence</span>
 </h3>
 <p id="p-1464">In the previous section, we looked at some examples of the span of sets of vectors in \(\real^3\text{.}\)  We saw one example in which the span of three vectors formed a plane.  In another, the span of three vectors formed \(\real^3\text{.}\)  We would like to understand the difference in these two examples.</p>
-<article class="project-like" id="exploration-6"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">2.4.1</span>.</h6>
+<article class="exploration project-like" id="exploration-6"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+</h6>
 <p id="p-1465">Let's start this activity by studying the span of two different sets of vectors.</p>
 <ol class="lower-alpha">
 <li id="li-962">
@@ -213,7 +244,7 @@ var js_version = 0.12;
 \vvec_3=\threevec{2}{0}{1}\text{.}
 \end{equation*}
 </div>
-<p>Describe the span of these vectors, \(\span{\vvec_1,\vvec_2,\vvec_3}\text{.}\) <div class="sagecell-sage" id="sage-63"><script type="text/x-sage">
+<p class="continuation">Describe the span of these vectors, \(\span{\vvec_1,\vvec_2,\vvec_3}\text{.}\) <div class="sagecell-sage" id="sage-63"><script type="text/x-sage">
 </script></div></p>
 </li>
 <li id="li-963">
@@ -225,7 +256,7 @@ var js_version = 0.12;
 \wvec_3=\threevec{3}{0}{1}\text{.}
 \end{equation*}
 </div>
-<p>Describe the span of these vectors, \(\span{\wvec_1,\wvec_2,\wvec_3}\text{.}\) <div class="sagecell-sage" id="sage-64"><script type="text/x-sage">
+<p class="continuation">Describe the span of these vectors, \(\span{\wvec_1,\wvec_2,\wvec_3}\text{.}\) <div class="sagecell-sage" id="sage-64"><script type="text/x-sage">
 </script></div></p>
 </li>
 <li id="li-964">
@@ -243,7 +274,7 @@ var js_version = 0.12;
 c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 \end{equation*}
 </div>
-<p>can be written as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)</p>
+<p class="continuation">can be written as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)</p>
 </li>
 <li id="li-966">
 <p id="p-1470">Explain why</p>
@@ -254,7 +285,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 </div>
 </li>
 </ol></article><p id="p-1472">The preview activity presents us with two similar examples that demonstrate quite different behaviors.  In the first example, the vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) span \(\real^3\text{,}\) which we recognize because the matrix \(\left[\begin{array}{rrr}\vvec_1\amp\vvec_2\amp\vvec_3
-\end{array}\right]\) has a pivot position in every row so that  <a data-knowl="./knowl/prop-pivot-row.html" title="Proposition 2.3.5">Proposition 2.3.5</a> applies.</p>
+\end{array}\right]\) has a pivot position in every row so that  <a class="xref" data-knowl="./knowl/prop-pivot-row.html" title="Proposition 2.3.5">Proposition 2.3.5</a> applies.</p>
 <p id="p-1473">However, the second example is very different.  In this case, the matrix \(\left[\begin{array}{rrr}
 \wvec_1\amp\wvec_2\amp\wvec_3 \end{array}\right]\) has only two pivot positions:</p>
 <div class="displaymath">
@@ -296,7 +327,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 \end{array}\right]
 \end{equation*}
 </div>
-<p>By doing so, we seek to express \(\wvec_3\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)  In fact, the reduced row echelon form shows us that</p>
+<p class="continuation">By doing so, we seek to express \(\wvec_3\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)  In fact, the reduced row echelon form shows us that</p>
 <div class="displaymath">
 \begin{equation*}
 \wvec_3 = \wvec_1 + \wvec_2\text{.}
@@ -306,37 +337,39 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
-c_1\wvec_1 + c_2\wvec_2 + c_2\wvec_3 \amp
+c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3 \amp
 {}={}
-c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
+c_1\wvec_1 + c_2\wvec_2 + c_3(\wvec_1+\wvec_2) \\
 \amp {}={}
 (c_1+c_3)\wvec_1 + (c_2+c_3)\wvec_2 \\
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<p>In other words, any linear combination of \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) may be written as a linear combination using only the vectors \(\wvec_1\) and \(\wvec_2\text{.}\)  Since the span of a set of vectors is simply the set of their linear combinations, this shows that</p>
+<p class="continuation">In other words, any linear combination of \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) may be written as a linear combination using only the vectors \(\wvec_1\) and \(\wvec_2\text{.}\)  Since the span of a set of vectors is simply the set of their linear combinations, this shows that</p>
 <div class="displaymath">
 \begin{equation*}
 \span{\wvec_1,\wvec_2,\wvec_3} = \span{\wvec_1,\wvec_2}\text{.}
 \end{equation*}
 </div>
-<p>In other words, adding the vector \(\wvec_3\) to the set of vectors \(\wvec_1\) and \(\wvec_2\) does not change the span.</p>
+<p class="continuation">In other words, adding the vector \(\wvec_3\) to the set of vectors \(\wvec_1\) and \(\wvec_2\) does not change the span.</p>
 <p id="p-1476">Before exploring this type of behavior more generally, let's think about this from a geometric point of view.  In the first example, we begin with two vectors \(\vvec_1\) and \(\vvec_2\) and add a third vector \(\vvec_3\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-plane-nonstd.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-plane-span-no-w.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/3d-plane-nonstd.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/3d-plane-span-no-w.svg" role="img" class="contained" alt=""></div>
 </div></div> Because the vector \(\vvec_3\) is not a linear combination of \(\vvec_1\) and \(\vvec_2\text{,}\) it provides a direction to move that, when creating linear combinations, is independent of \(\vvec_1\) and \(\vvec_2\text{.}\)  The three vectors therefore span \(\real^3\text{.}\)</p>
 <p id="p-1477">In the second example, however, the third vector \(\wvec_3\) is a linear combination of \(\wvec_1\) and \(\wvec_2\) so it already lies in the plane formed by these two vectors. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-plane-nonstd-w.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/3d-plane-span-yes-w.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/3d-plane-nonstd-w.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/3d-plane-span-yes-w.svg" role="img" class="contained" alt=""></div>
 </div></div> Since we can already move in this direction with just the first two vectors \(\wvec_1\) and \(\wvec_2\text{,}\) adding \(\wvec_3\) to the set does not enlarge the span.  It remains a plane.</p>
 <p id="p-1478">With these examples in mind, we will make the following definition.</p>
-<article class="definition-like" id="definition-7"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.4.1</span>.</h6>
+<article class="definition definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+</h6>
 <p id="p-1479">A set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is called <em class="emphasis">linearly dependent</em> if one of the vectors is a linear combination of the others.  Otherwise, the set of vectors is called <em class="emphasis">linearly independent</em>.</p></article><p id="p-1480">For the sake of completeness, we say that a set of vectors containing only one vector is linearly independent if that vector is not the zero vector, \(\zerovec\text{.}\)</p></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">How to recognize linear dependence</span>
 </h3>
-<article class="project-like" id="activity-19"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">2.4.2</span>.</h6>
+<article class="activity project-like" id="activity-19"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h6>
 <p id="p-1481">We would like to develop a means of detecting when a set of vectors is linearly dependent.  These questions will point the way.</p>
 <ol class="lower-alpha">
 <li id="li-967">
@@ -356,7 +389,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Is it possible to write one of the vectors \(\vvec_1,\vvec_2,\ldots,\vvec_5\) as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</p>
+<p class="continuation">Is it possible to write one of the vectors \(\vvec_1,\vvec_2,\ldots,\vvec_5\) as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</p>
 </li>
 <li id="li-968">
 <p id="p-1483">Suppose we have another set of three vectors in \(\real^4\) that form the columns of a matrix having reduced row echelon form</p>
@@ -374,7 +407,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Is it possible to write one of these vectors \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) \(\wvec_3\) as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</p>
+<p class="continuation">Is it possible to write one of these vectors \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) \(\wvec_3\) as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</p>
 </li>
 <li id="li-969"><p id="p-1484">By looking at the pivot positions, how can you determine whether the columns of a matrix are linearly dependent or independent?</p></li>
 <li id="li-970"><p id="p-1485">If one vector in a set is the zero vector \(\zerovec\text{,}\) can the set of vectors be linearly independent?</p></li>
@@ -398,7 +431,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Notice that the third column does not contain a pivot position. Let's focus on the first three columns and consider them as an augmented matrix:</p>
+<p class="continuation">Notice that the third column does not contain a pivot position. Let's focus on the first three columns and consider them as an augmented matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{rr|r}
@@ -413,13 +446,13 @@ c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>There is not a pivot in the rightmost column so we know that \(\vvec_3\) can be written as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  In fact, we can read the weights from the augmented matrix:</p>
+<p class="continuation">There is not a pivot in the rightmost column so we know that \(\vvec_3\) can be written as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  In fact, we can read the weights from the augmented matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \vvec_3 = -\vvec_1 + 2\vvec_2\text{.}
 \end{equation*}
 </div>
-<p>This says that the set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_5\) is linearly dependent.</p>
+<p class="continuation">This says that the set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_5\) is linearly dependent.</p>
 <p id="p-1495">This points to the general observation that a set of vectors is linearly dependent if the matrix they form has a column without a pivot.</p>
 <p id="p-1496">In addition, the fifth column of this matrix does not contain a pivot meaning that \(\vvec_5\) can be written as a linear combination:</p>
 <div class="displaymath">
@@ -451,14 +484,15 @@ c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>If we interpret this as an augmented matrix again, we see that the linear system is inconsistent since there is a pivot in the rightmost column.  This means that \(\wvec_3\) cannot be expressed as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)</p>
+<p class="continuation">If we interpret this as an augmented matrix again, we see that the linear system is inconsistent since there is a pivot in the rightmost column.  This means that \(\wvec_3\) cannot be expressed as a linear combination of \(\wvec_1\) and \(\wvec_2\text{.}\)</p>
 <p id="p-1499">Similarly, \(\wvec_2\) cannot be expressed as a linear combination of \(\wvec_1\text{.}\) In addition, if \(\wvec_2\) could be expressed as a linear combination of \(\wvec_1\) and \(\wvec_3\text{,}\) we could rearrange that expression to write \(\wvec_3\) as a linear combination of \(\wvec_1\) and \(\wvec_2\text{,}\) which we know is impossible.</p>
 <p id="p-1500">We can therefore conclude that \(\wvec_1\text{,}\) \(\wvec_2\text{,}\) and \(\wvec_3\) form a linearly indpendent set of vectors.</p>
 </li>
 </ul>
 <p id="p-1501">This leads to the following proposition.</p>
-<article class="theorem-like" id="proposition-9"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.4.2</span>.</h6>
+<article class="proposition theorem-like" id="proposition-9"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h6>
 <p id="p-1502">The columns of a matrix are linearly independent if and only if every column contains a pivot position.</p></article><p id="p-1503">This condition imposes a constraint on how many vectors we can have in a linearly independent set.  Here is an example of the reduced row echelon form of a matrix having linearly independent columns.  Notice that there are three vectors in \(\real^5\) so there are at least as many rows as columns.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -472,14 +506,15 @@ c_1\wvec_1 + c_2\wvec_2 + c_2(\wvec_1+\wvec_2) \\
 \end{equation*}
 </div>
 <p id="p-1504">More generally, suppose that \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is a linearly independent set of vectors in \(\real^m\text{.}\)  When these vectors form the columns of a matrix, there must be a pivot position in every column of the matrix.  Since every row contains at most one pivot position, the number of columns can be no greater than the number of rows. This means that the number of vectors in a linearly independent set can be no greater than the number of dimensions.</p>
-<article class="theorem-like" id="proposition-10"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.4.3</span>.</h6>
+<article class="proposition theorem-like" id="proposition-10"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h6>
 <p id="p-1505">A linearly independent set of vectors in \(\real^m\) can contain no more than \(m\) vectors.</p></article><p id="p-1506">This says, for instance, that any linearly independent set of vectors in \(\real^3\) can contain no more three vectors.  Once again, this makes intuitive sense.  We usually imagine three independent directions, such as up/down, front/back, left/right, in our three-dimensional world.  This proposition tells us that there can be no more independent directions.</p></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">The homogeneous equation</span>
 </h3>
 <p id="p-1507">Given an \(m\times n\) matrix \(A\text{,}\) we call the equation \(A\xvec = \zerovec\) a <em class="emphasis">homogenous</em> equation.  The solutions to this equation reflect whether the columns of \(A\) are linearly independent or not.</p>
-<article class="project-like" id="activity-20"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">2.4.3</span>. <span class="title">Linear independence and homogeneous equations.</span>
+<article class="activity project-like" id="activity-20"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Linear independence and homogeneous equations.</span>
 </h6>
 <ol id="p-1508" class="lower-alpha">
 <li id="li-979"><p id="p-1509">Explain why the homogenous equation \(A\xvec =
@@ -495,7 +530,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p>whose columns we denote by \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{.}\) Are the vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) linearly dependent or independent? <div class="sagecell-sage" id="sage-65"><script type="text/x-sage">
+<p class="continuation">whose columns we denote by \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{.}\) Are the vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) linearly dependent or independent? <div class="sagecell-sage" id="sage-65"><script type="text/x-sage">
 </script></div></p>
 </li>
 <li id="li-981"><p id="p-1511">Give a description of the solution space of the homogeneous equation \(A\xvec = \zerovec\text{.}\)</p></li>
@@ -508,13 +543,14 @@ c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec\text{.}
 </div>
 </li>
 <li id="li-983"><p id="p-1513">Use the expression you found in the previous part to write one of the vectors as a linear combination of the others.</p></li>
-</ol></article><p id="p-1520">  For any matrix \(A\text{,}\) we know that the equation \(A\xvec =
+</ol></article><p id="p-1520"> For any matrix \(A\text{,}\) we know that the equation \(A\xvec =
 \zerovec\) has at least one solution, namely, the vector \(\xvec = \zerovec\text{.}\)  We call this the trivial solution to the homogeneous equation so that any other solution that exists is a \(nontrivial\) solution.</p>
 <p id="p-1521">If there is no nontrivial solution, then \(A\xvec =
 \zerovec\) has exactly one solution.  There can be no free variables in a description of the solution space so \(A\) must have a pivot position in every column.  In this case, the columns of \(A\) must be linearly independent.</p>
 <p id="p-1522">If, however, there is a nontrivial solution, then there are infinitely many solutions so \(A\) must have a column without a pivot position.  Hence, the columns of \(A\) are linearly dependent.</p>
-<article class="example-like" id="example-7"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.4.4</span>.</h6>
+<article class="example example-like" id="example-7"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6>
 <p id="p-1523">We will make the connection between solutions to the homogeneous equation and the linear independence of the columns more explict by looking at an example.  In particular, we will demonstrate how a nontrivial solution to the homogeneous equation shows that one column of \(A\) is a linear combination of the others. With the matrix \(A\) in the previous activity, the homogeneous equation has the reduced row echelon form</p>
 <div class="displaymath">
 \begin{equation*}
@@ -531,7 +567,7 @@ c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec\text{.}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p>which implies that</p>
+<p class="continuation">which implies that</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{alignedat}{4}
@@ -540,7 +576,7 @@ x_1 \amp \amp \amp {}+{} \amp 2x_3 \amp {}={} \amp 0 \\
 \end{alignedat}\text{.}
 \end{equation*}
 </div>
-<p>In terms of the free variable \(x_3\text{,}\) we have</p>
+<p class="continuation">In terms of the free variable \(x_3\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
@@ -549,21 +585,22 @@ x_2 \amp {}={} 3x_3 \\
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<p>Any choice for a value of the free variable \(x_3\) produces a solution so let's choose, for convenience, \(x_3=1\text{.}\) We then have \((x_1,x_2,x_3) = (-2,3,1)\text{.}\)</p>
+<p class="continuation">Any choice for a value of the free variable \(x_3\) produces a solution so let's choose, for convenience, \(x_3=1\text{.}\) We then have \((x_1,x_2,x_3) = (-2,3,1)\text{.}\)</p>
 <p id="p-1524">Since \((-2,3,1)\) is a solution to the homogeneous equation \(A\xvec=\zerovec\text{,}\) this solution gives weights for a linear combination of the columns of \(A\) that create \(\zerovec\text{.}\)  That is,</p>
 <div class="displaymath">
 \begin{equation*}
 -2\vvec_1 + 3\vvec_2 + \vvec_3 = \zerovec\text{,}
 \end{equation*}
 </div>
-<p>which we rewrite as</p>
+<p class="continuation">which we rewrite as</p>
 <div class="displaymath">
 \begin{equation*}
 \vvec_3 = 2\vvec_1 - 3\vvec_2\text{.}
 \end{equation*}
 </div></article><p id="p-1525">As this example demonstrates, there are many ways we can view the question of linear independence.  We will record some of these ways in the following proposition.</p>
-<article class="theorem-like" id="proposition-11"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.4.5</span>.</h6>
+<article class="proposition theorem-like" id="proposition-11"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h6>
 <p id="p-1526">For a matrix \(A = \left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
 \end{array}\right]
@@ -584,7 +621,7 @@ c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec\text{.}
 </ul></article></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.4</span> <span class="title">Summary</span>
 </h3>
-<p id="p-1532">In this section, we developed the concept of linear dependence of a set of vectors.  At the beginning of the section, we said that this concept addressed the second of our fundamental questions, expressed in <a data-knowl="./knowl/fundamental-questions.html" title="Question 1.4.2">Question 1.4.2</a>, concerning the uniqueness of solutions to a linear system.  It is worth comparing the results of this section with those of the previous one so that the parallels between them become clear.</p>
+<p id="p-1532">In this section, we developed the concept of linear dependence of a set of vectors.  At the beginning of the section, we said that this concept addressed the second of our fundamental questions, expressed in <a class="xref" data-knowl="./knowl/fundamental-questions.html" title="Question 1.4.2">Question 1.4.2</a>, concerning the uniqueness of solutions to a linear system.  It is worth comparing the results of this section with those of the previous one so that the parallels between them become clear.</p>
 <p id="p-1533">As is usual, we will write a matrix as a collection of vectors,</p>
 <div class="displaymath">
 \begin{equation*}
@@ -615,7 +652,7 @@ c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec\text{.}
 </ul></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.4.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-1543">Consider the set of vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -641,7 +678,7 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <li id="li-1004"><p id="p-1547">Find a nontrivial solution to the homogenous equation \(A\xvec = \zerovec\) where \(A=\left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\vvec_3\amp\vvec_4
 \end{array}\right]\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-1558">Consider the vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -656,13 +693,13 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <li id="li-1014"><p id="p-1560">Describe the \(\span{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</p></li>
 <li id="li-1015"><p id="p-1561">Suppose that \(\bvec\) is a vector in \(\real^3\text{.}\)  Explain why we can guarantee that \(\bvec\) may be written as a linear combination of \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{.}\)</p></li>
 <li id="li-1016"><p id="p-1562">Suppose that \(\bvec\) is a vector in \(\real^3\text{.}\)  In how many ways can \(\bvec\) be written as a linear combination of \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-1573">Answer the following questions and provide a justification for your responses.</p>
 <ol class="lower-alpha">
 <li id="li-1025"><p id="p-1574">If the vectors \(\vvec_1\) and \(\vvec_2\) form a linearly dependent set, must one vector be a scalar multiple of the other?</p></li>
 <li id="li-1026"><p id="p-1575">Suppose that \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is a linearly independent set of vectors.  What can you say about the linear independence or dependence of a subset of these vectors?</p></li>
 <li id="li-1027"><p id="p-1576">Suppose \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is a linearly independent set of vectors that form the columns of a matrix \(A\text{.}\)  If the equation \(A\xvec = \bvec\) is inconsistent, what can you say about the linear independence or dependence of the set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n,\bvec\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-1585">Determine if the following statements are true or false and provide a justification for your response.</p>
 <ol class="lower-alpha">
 <li id="li-1034"><p id="p-1586">If \(\vvec_1,\vvec_2,\ldots,\vvec_n\) are linearly dependent, then one vector is a scalar multiple of one of the others.</p></li>
@@ -670,14 +707,14 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <li id="li-1036"><p id="p-1588">If \(\vvec_1, \vvec_2, \ldots, \vvec_{5}\) are vectors in \(\real^{10}\text{,}\) then the set of vectors is linearly independent.</p></li>
 <li id="li-1037"><p id="p-1589">Suppose we have a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) and that \(\vvec_2\) is a scalar multiple of \(\vvec_1\text{.}\)  Then the set is linearly dependent.</p></li>
 <li id="li-1038"><p id="p-1590">Suppose that \(\vvec_1,\vvec_2,\ldots,\vvec_n\) are linearly independent and form the columns of a matrix \(A\text{.}\)  If \(A\xvec = \bvec\) is consistent, then there is exactly one solution.</p></li>
-</ol></article><article class="exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-1603">Suppose we have a set of vectors \(\vvec_1,\vvec_2,\vvec_3,\vvec_4\) in \(\real^5\) that satisfy the relationship:</p>
 <div class="displaymath">
 \begin{equation*}
 2\vvec_1 - \vvec_2 + 3\vvec_3 + \vvec_4 = \zerovec
 \end{equation*}
 </div>
-<p>and suppose that \(A\) is the matrix \(A=\left[\begin{array}{rrrr}
+<p class="continuation">and suppose that \(A\) is the matrix \(A=\left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\vvec_3\amp\vvec_4
 \end{array}\right]
 \text{.}\)</p>
@@ -687,14 +724,14 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <li id="li-1050"><p id="p-1605">Explain why the matrix \(A\) has a column without a pivot position.</p></li>
 <li id="li-1051"><p id="p-1606">Write one of the vectors as a linear combination of the others.</p></li>
 <li id="li-1052"><p id="p-1607">Explain why the set of vectors is linearly dependent.</p></li>
-</ol></article><article class="exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-1618">Suppose that \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is a set of vectors in \(\real^{27}\) that form the columns of a matrix \(A\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-1061"><p id="p-1619">Suppose that the vectors span \(\real^{27}\text{.}\)  What can you say about the number of vectors \(n\) in this set?</p></li>
 <li id="li-1062"><p id="p-1620">Suppose instead that the vectors are linearly independent.  What can you say about the number of vectors \(n\) in this set?</p></li>
 <li id="li-1063"><p id="p-1621">Suppose that the vectors are both linearly independent and span \(\real^{27}\text{.}\)  What can you say about the number of vectors in the set?</p></li>
 <li id="li-1064"><p id="p-1622">Assume that the vectors are both linearly independent and span \(\real^{27}\text{.}\)  Given a vector \(\bvec\) in \(\real^{27}\text{,}\) what can you say about the solution space to the equation \(A\xvec = \bvec\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-1633">Given below are some descriptions of sets of vectors that form the columns of a matrix \(A\text{.}\)  For each description, give a possible reduced row echelon form for \(A\) or indicate why there is no set of vectors satisfying the description by stating why the required reduced row echelon matrix cannot exist.</p>
 <ol class="lower-alpha">
 <li id="li-1073"><p id="p-1634">A set of 4 linearly independent vectors in \(\real^5\text{.}\)</p></li>
@@ -702,12 +739,12 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <li id="li-1075"><p id="p-1636">A set of 3 vectors that span \(\real^4\text{.}\)</p></li>
 <li id="li-1076"><p id="p-1637">A set of 5 linearly independent vectors in \(\real^3\text{.}\)</p></li>
 <li id="li-1077"><p id="p-1638">A set of 5 vectors that span \(\real^4\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-1651">When we explored matrix multiplication in <a href="sec-matrices-lin-combs.html" class="internal" title="Section 2.2: Matrix multiplication and linear combinations">Section 2.2</a>, we saw that some properties that are true for real numbers are not true for matrices.  This exercise will investigate that in some more depth.</p>
 <ol class="lower-alpha">
 <li id="li-1088"><p id="p-1652">Suppose that \(A\) and \(B\) are two matrices and that \(AB = 0\text{.}\)  If \(B \neq 0\text{,}\) what can you say about the linear independence of the columns of \(A\text{?}\)</p></li>
 <li id="li-1089"><p id="p-1653">Suppose that we have matrices \(A\text{,}\) \(B\) and \(C\) such that \(AB = AC\text{.}\)  We have seen that we cannot generally conclude that \(B=C\text{.}\)  If we assume additionally that \(A\) is a matrix whose columns are linearly independent, explain why \(B = C\text{.}\)  You may wish to begin by rewriting the equation \(AB = AC\) as \(AB-AC = A(B-C) = 0\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-1660">Suppose that \(k\) is an unknown parameter and consider the set of vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -719,7 +756,7 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <ol class="lower-alpha">
 <li id="li-1094"><p id="p-1661">For what values of \(k\) is the set of vectors linearly dependent?</p></li>
 <li id="li-1095"><p id="p-1662">For what values of \(k\) does the set of vectors span \(\real^3\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <p id="p-1669">Given a set of linearly dependent vectors, we can eliminate some of the vectors to create a smaller, linearly independent set of vectors.</p>
 <ol class="lower-alpha">
 <li id="li-1100"><p id="p-1670">Suppose that \(\wvec\) is a linear combination of the vectors \(\vvec_1\) and \(\vvec_2\text{.}\) Explain why \(\span{\vvec_1,\vvec_2, \wvec} =
@@ -734,13 +771,11 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 \vvec_4 = \threevec{7}{-1}{1}\text{.}
 \end{equation*}
 </div>
-<p>Write one of the vectors as a linear combination of the others.  Find a set of three vectors whose span is the same as \(\span{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</p>
+<p class="continuation">Write one of the vectors as a linear combination of the others.  Find a set of three vectors whose span is the same as \(\span{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</p>
 </li>
 <li id="li-1102"><p id="p-1672">Are the three vectors you are left with linearly independent?  If not, express one of the vectors as a linear combination of the others and find a set of two vectors whose span is the same as \(\span{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</p></li>
 <li id="li-1103"><p id="p-1673">Give a geometric description of \(\span{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\) in \(\real^3\) as we did in <a href="sec-span.html" class="internal" title="Section 2.3: The span of a set of vectors">Section 2.3</a>.</p></li>
 </ol></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

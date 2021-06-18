@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:49-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:34:13-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Finding eigenvectors numerically</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,20 +132,21 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gaussian-revisited.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-gaussian-revisited.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap6.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gaussian-revisited.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-gaussian-revisited.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap6.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,17 +195,36 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method" class="active">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-power-method"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-power-method"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Finding eigenvectors numerically</span>
 </h2>
-<a href="sec-power-method.html" class="permalink">¶</a><section class="introduction" id="introduction-26"><p id="p-5031">When presented with a square matrix \(A\text{,}\) we have typically found its eigenvalues as the roots of the characteristic polynomial \(\det(A-\lambda I) = 0\) and the associated eigenvectors as the null space \(\nul(A-\lambda I)\text{.}\) Unfortunately, this approach is not practical when we are working with large matrices. First, finding the charactertic polynomial of a large matrix requires considerable computation, as does finding the roots of that polynomial. Second, finding the null space of a singular matrix is plagued by numerical problems, as we will see in the preview activity.</p>
+<section class="introduction" id="introduction-26"><p id="p-5031">When presented with a square matrix \(A\text{,}\) we have typically found its eigenvalues as the roots of the characteristic polynomial \(\det(A-\lambda I) = 0\) and the associated eigenvectors as the null space \(\nul(A-\lambda I)\text{.}\) Unfortunately, this approach is not practical when we are working with large matrices. First, finding the charactertic polynomial of a large matrix requires considerable computation, as does finding the roots of that polynomial. Second, finding the null space of a singular matrix is plagued by numerical problems, as we will see in the preview activity.</p>
 <p id="p-5032">In this section, we will explore a technique called the <em class="emphasis">power method</em> that finds numerical approximations to the eigenvalues and eigenvectors of a square matrix.  Generally speaking, this method is how eigenvectors are found in practical computing applications.</p>
-<article class="project-like" id="exploration-20"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">5.2.1</span>.</h6>
+<article class="exploration project-like" id="exploration-20"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h6>
 <p id="p-5033">Let's recall some earlier observations about eigenvalues and eigenvectors.</p>
 <ol class="lower-alpha">
 <li id="li-3437"><p id="p-5034">How are the eigenvalues and associated eigenvectors of \(A\) related to those of \(A^{-1}\text{?}\)</p></li>
@@ -227,7 +258,7 @@ I = matrix(2,2,[1, 0, 0, 1])
 \xvec_0 = \twovec{1}{0} = \frac13 \vvec_1 - \frac13 \vvec_2
 \end{equation*}
 </div>
-<p>and find</p>
+<p class="continuation">and find</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
@@ -243,7 +274,7 @@ I = matrix(2,2,[1, 0, 0, 1])
 \end{aligned}
 \end{equation*}
 </div>
-<p>and so forth.  The point is that the powers \(0.4^k\) become increasingly small as \(k\) grows so that \(\xvec_k\approx \frac13\vvec_1\) when \(k\) is large.  As \(k\) grows large, the contribution from the eigenvector \(\vvec_2\) to the vectors \(\xvec_k\) becomes increasingly insignificant.  Therefore, the vectors \(\xvec_k\) become increasingly close to a vector in the eigenspace \(E_1\text{.}\) If we did not know the eigenvector \(\vvec_1\text{,}\) we could find a basis vector for \(E_1\) in this way.</p>
+<p class="continuation">and so forth.  The point is that the powers \(0.4^k\) become increasingly small as \(k\) grows so that \(\xvec_k\approx \frac13\vvec_1\) when \(k\) is large.  As \(k\) grows large, the contribution from the eigenvector \(\vvec_2\) to the vectors \(\xvec_k\) becomes increasingly insignificant.  Therefore, the vectors \(\xvec_k\) become increasingly close to a vector in the eigenspace \(E_1\text{.}\) If we did not know the eigenvector \(\vvec_1\text{,}\) we could find a basis vector for \(E_1\) in this way.</p>
 <p id="p-5051">Let's now look at the matrix \(A = \left[\begin{array}{rr}
 2 \amp 1 \\
 1 \amp 2 \\
@@ -266,8 +297,8 @@ I = matrix(2,2,[1, 0, 0, 1])
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:56.4102564102564%;justify-content:flex-start;"><p id="p-5052">As the figure shows, the vectors \(\xvec_k\) are stretched by a factor of \(3\) in the \(\vvec_1\) direction and not at all in the \(\vvec_2\) direction. Consequently, the vectors \(\xvec_k\) become increasingly long, but their direction gets closer to the direction of the eigenvector \(\vvec_1=\twovec{1}{1}\) associated to the dominant eigenvalue.</p></div>
-<div class="sbspanel" style="width:41.025641025641%;justify-content:flex-start;"><img src="images/numerical-power.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:56.4102564102564%;"><p id="p-5052">As the figure shows, the vectors \(\xvec_k\) are stretched by a factor of \(3\) in the \(\vvec_1\) direction and not at all in the \(\vvec_2\) direction. Consequently, the vectors \(\xvec_k\) become increasingly long, but their direction gets closer to the direction of the eigenvector \(\vvec_1=\twovec{1}{1}\) associated to the dominant eigenvalue.</p></div>
+<div class="sbspanel top" style="width:41.025641025641%;"><img src="images/numerical-power.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-5053">To find an eigenvector associated to the dominant eigenvalue, we will prevent the length of the vectors \(\xvec_k\) from growing arbitrarily large by multiplying by an appropriate normalizing constant.  There are several ways to do this; we will describe one simple way.  Given the vector \(\xvec_k\text{,}\) we identify its component having the largest absolute value and call it \(m_k\text{.}\)  We then define \(\overline{\xvec}_k =
 \frac{1}{m_k} \xvec_k\text{,}\) which means that the component of \(\overline{\xvec}_k\) having the largest absolute value is \(1\text{.}\)</p>
@@ -276,11 +307,12 @@ I = matrix(2,2,[1, 0, 0, 1])
 \twovec{1}{\frac12}\text{.}\)  Then \(\xvec_2 = A\overline{\xvec}_1 =
 \twovec{\frac52}{2}\text{.}\)  Now the component having the largest absolute value is \(m_2=\frac52\) so we multiply by \(\frac25\) to obtain \(\overline{\xvec}_2 = \twovec{1}{\frac45}\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:56.4102564102564%;justify-content:flex-start;"><p id="p-5055">The resulting sequence of vectors \(\overline{\xvec}_k\) is shown in the figure.  Notice how the vectors \(\overline{\xvec}_k\) now approach the eigenvector \(\vvec_1\text{.}\)  In this way, we find the eigenvector \(\vvec=\twovec{1}{1}\) of the matrix \(A\text{.}\) This is the <em class="emphasis">power method</em> for finding an eigenvector associated to the dominant eigenvalue of a matrix. </p></div>
-<div class="sbspanel" style="width:41.025641025641%;justify-content:flex-start;"><img src="images/numerical-power-norm.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:56.4102564102564%;"><p id="p-5055">The resulting sequence of vectors \(\overline{\xvec}_k\) is shown in the figure.  Notice how the vectors \(\overline{\xvec}_k\) now approach the eigenvector \(\vvec_1\text{.}\)  In this way, we find the eigenvector \(\vvec=\twovec{1}{1}\) of the matrix \(A\text{.}\) This is the <em class="emphasis">power method</em> for finding an eigenvector associated to the dominant eigenvalue of a matrix. </p></div>
+<div class="sbspanel top" style="width:41.025641025641%;"><img src="images/numerical-power-norm.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<article class="project-like" id="activity-64"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">5.2.2</span>.</h6>
+<article class="activity project-like" id="activity-64"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6>
 <p id="p-5056">Let's begin by considering the matrix \(A = \left[\begin{array}{rr}
 0.5 \amp 0.2 \\
 0.4 \amp 0.7 \\
@@ -322,12 +354,13 @@ power(A, x0, 20)
 \text{,}\) which has eigenvector \(\vvec=\twovec{3}{2}\text{.}\)  The first component has the largest absolute value so we multiply by \(\frac13\) to obtain \(\overline{\vvec}=\twovec{1}{\frac23}\text{.}\)  When we multiply by \(A\text{,}\) we have \(A\overline{\vvec} = \twovec{-1.30}{-0.86}\text{.}\) Notice that the first component still has the largest absolute value so that the multiplier \(m=-1.3\) is the eigenvalue \(\lambda\) corresponding to the eigenvector.  This demonstrates the fact that the multipliers \(m_k\) approach the eigenvalue \(\lambda\) having the largest absolute value.</p>
 <p id="p-5074">Notice that the power method requires us to choose an initial vector \(\xvec_0\text{.}\)  For most choices, this method will find the eigenvalue having the largest absolute value.  However, an unfortunate choice of \(\xvec_0\) may not.  For instance, if we had chosen \(\xvec_0 = \vvec_2\) in our example above, the vectors in the sequence \(\xvec_k =
 A^k\xvec_0=\lambda_2^k\vvec_2\) will not detect the eigenvector \(\vvec_1\text{.}\)  However, it usually happens that our initial guess \(\xvec_0\) has some contribution from \(\vvec_1\) that enables us to find it.</p>
-<p id="p-5075">The power method, as presented here, will fail for certain unlucky matrices.  This is examined in <a data-knowl="./knowl/exercise-power-method.html" title="Exercise 5.2.4.5">Exercise 5.2.4.5</a> along with a means to improve the power method to work for all matrices.</p></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
+<p id="p-5075">The power method, as presented here, will fail for certain unlucky matrices.  This is examined in <a class="xref" data-knowl="./knowl/exercise-power-method.html" title="Exercise 5.2.4.5">Exercise 5.2.4.5</a> along with a means to improve the power method to work for all matrices.</p></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Finding other eigenvalues</span>
 </h3>
 <p id="p-5076">The power method gives a technique for finding the dominant eigenvalue of a matrix.  We can modify the method to find the other eigenvalues as well.</p>
-<article class="project-like" id="activity-65"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">5.2.3</span>.</h6>
+<article class="activity project-like" id="activity-65"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6>
 <p id="p-5077">The key to finding the eigenvalue of \(A\) having the smallest absolute value is to note that the eigenvectors of \(A\) are the same as those of \(A^{-1}\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-3463"><p id="p-5078">If \(\vvec\) is an eigenvector of \(A\) with associated eigenvector \(\lambda\text{,}\) explain why \(\vvec\) is an eigenvector of \(A^{-1}\) with associated eigenvalue \(\lambda^{-1}\text{.}\)</p></li>
@@ -357,8 +390,9 @@ inverse_power(A, x0, 20)
 \end{array}\right]
 \text{.}\)</p></li>
 </ol></article><p id="p-5093">With the power method and the inverse power method, we can now find the eigenvalues of a matrix \(A\) having the largest and smallest absolute values.  With one more modification, we can find all the eigenvalues of \(A\text{.}\)</p>
-<article class="project-like" id="activity-66"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">5.2.4</span>.</h6>
+<article class="activity project-like" id="activity-66"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6>
 <p id="p-5094">Remember that the absolute value of a number tells us how far that number is from \(0\) on the real number line.  We may therefore think of the inverse power method as telling us the eigenvalue closest to \(0\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-3477"><p id="p-5095">If \(\vvec\) is an eigenvalue of \(A\) with associated eigenvalue \(\lambda\text{,}\) explain why \(\vvec\) is an eigenvector of \(A - sI\) where \(s\) is some scalar.</p></li>
@@ -372,9 +406,9 @@ inverse_power(A, x0, 20)
 3.9 \amp 4.3 \amp 9.0 \amp 0.6 \\
 7.6 \amp 4.1 \amp 0.6 \amp 5.0 \\
 \end{array}\right]
-\text{.}\) If we use the power method and inverse power method, we find two eigenvalues, \(\lambda_1=16.35\) and \(\lambda_2=0.75\text{.}\)  Viewing these eigenvalues on a number line, we know that the other eigenvalues lie in the range between \(-\lambda_1\) and \(\lambda_1\text{,}\) as shaded in <a data-knowl="./knowl/fig-numerical-power-line.html" title="Figure 5.2.1">Figure 5.2.1</a>.</p>
-<figure class="figure-like" id="fig-numerical-power-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/numerical-power-line.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">5.2.1.</span> The range of eigenvalues of \(A\text{.}\)</figcaption></figure><p id="p-5100">The Sage cell below has a function <code class="code-inline tex2jax_ignore">find_closest_eigenvalue(A, s, x, N)</code> that implements \(N\) steps of the inverse power method using the matrix \(A-sI\) and an initial vector \(x\text{.}\)  This function prints approximations to the eigenvalues and eigenvectors of \(A\text{.}\) By trying different values in the gray regions of the number line, find the other two eigenvalues of \(A\text{.}\) <div class="sagecell-sage" id="sage-138"><script type="text/x-sage">def find_closest_eigenvalue(A, s, x, N):
+\text{.}\) If we use the power method and inverse power method, we find two eigenvalues, \(\lambda_1=16.35\) and \(\lambda_2=0.75\text{.}\)  Viewing these eigenvalues on a number line, we know that the other eigenvalues lie in the range between \(-\lambda_1\) and \(\lambda_1\text{,}\) as shaded in <a class="xref" data-knowl="./knowl/fig-numerical-power-line.html" title="Figure 5.2.1">Figure 5.2.1</a>.</p>
+<figure class="figure figure-like" id="fig-numerical-power-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="images/numerical-power-line.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.1<span class="period">.</span></span><span class="space"> </span>The range of eigenvalues of \(A\text{.}\)</figcaption></figure><p id="p-5100">The Sage cell below has a function <code class="code-inline tex2jax_ignore">find_closest_eigenvalue(A, s, x, N)</code> that implements \(N\) steps of the inverse power method using the matrix \(A-sI\) and an initial vector \(x\text{.}\)  This function prints approximations to the eigenvalues and eigenvectors of \(A\text{.}\) By trying different values in the gray regions of the number line, find the other two eigenvalues of \(A\text{.}\) <div class="sagecell-sage" id="sage-138"><script type="text/x-sage">def find_closest_eigenvalue(A, s, x, N):
     B = A-s*identity_matrix(A.nrows())
     for i in range(N):
         x = B \ x
@@ -405,23 +439,23 @@ find_closest_eigenvalue(A, 2, x0, 20)
         x = A*x
         m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
         x = 1/float(m)*x
-        print m, x
+        print (m, x)
 def find_closest_eigenvalue(A, s, x, N):
     B = A-s*identity_matrix(A.nrows())
     for i in range(N):
         x = B \ x
         m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
         x = 1/float(m)*x
-        print 1/float(m)+s, x
+        print (1/float(m)+s, x)
 def inverse_power(A, x, N):
     find_closest_eigenvalue(A, 0, x, N)
 </script></div></p>
-<article class="exercise-like" id="exercise-182"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-182"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-5116">Suppose that \(A\) is a matrix having eigenvalues \(-3\text{,}\) \(-0.2\text{,}\) \(1\text{,}\) and \(4\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-3493"><p id="p-5117">What are the eigenvalues of \(A^{-1}\text{?}\)</p></li>
 <li id="li-3494"><p id="p-5118">What are the eigenvalues of \(A+7I\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-183"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-183"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-5125">Use the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> to approximate the eigenvalues and associated eigenvectors of the following matrices. <div class="sagecell-sage" id="sage-140"><script type="text/x-sage">
 </script></div></p>
 <ol class="lower-alpha">
@@ -442,7 +476,7 @@ def inverse_power(A, x, N):
 -2.1 \amp  15.3 \amp  6.9 \amp -20.5 \\
 \end{array}\right]
 \text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-184"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-184"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-5138">Use the techniques we have seen in this section to find the eigenvalues of the matrix</p>
 <div class="displaymath">
 \begin{equation*}
@@ -455,12 +489,12 @@ A= \left[\begin{array}{rrrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p><div class="sagecell-sage" id="sage-141"><script type="text/x-sage">A = matrix(5,5, [-14.6,  9.0, -14.1, 5.8,  13.0,
+<p class="continuation"><div class="sagecell-sage" id="sage-141"><script type="text/x-sage">A = matrix(5,5, [-14.6,  9.0, -14.1, 5.8,  13.0,
                   27.8, -4.2,  16.0, 0.9, -21.3,
                   -5.5,  3.4,   3.4, 3.3,   1.1,
                  -25.4, 11.3, -15.4, 4.7,  20.3,
                  -33.7, 14.8, -22.5, 9.7,  26.6])
-</script></div></p></article><article class="exercise-like" id="exercise-185"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</script></div></p></article><article class="exercise exercise-like" id="exercise-185"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-5141">Consider the matrix \(A = \left[\begin{array}{rr}
 0 \amp -1 \\
 -4 \amp 0 \\
@@ -472,7 +506,7 @@ A= \left[\begin{array}{rrrrr}
 \twovec{1}{0}\text{.}\)</p></li>
 <li id="li-3509"><p id="p-5143">Find the eigenvalues of this matrix and explain this observed behavior.</p></li>
 <li id="li-3510"><p id="p-5144">How can we apply the techniques of this section to find the eigenvalues of \(A\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-power-method"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-power-method"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-5153">We have seen that the matrix \(A = \left[\begin{array}{rr}
 1 \amp 2 \\
 2 \amp 1 \\
@@ -482,10 +516,10 @@ A= \left[\begin{array}{rrrrr}
 <li id="li-3517"><p id="p-5154">Describe what happens when we apply the inverse power method using the initial vector \(\xvec_0 = \twovec{1}{0}\text{.}\)</p></li>
 <li id="li-3518"><p id="p-5155">Explain why this is happening and provide a contrast with how the power method usually works.</p></li>
 <li id="li-3519"><p id="p-5156">How can we modify the power method to give the dominant eigenvalue in this case?</p></li>
-</ol></article><article class="exercise-like" id="exercise-187"><h6 class="heading"><span class="codenumber">6.</span></h6>
-<p id="p-5165">Suppose that \(A\) is a \(2\times2\) matrix with eigenvalues \(4\) and \(-3\) and that \(B\) is a \(2\times2\) matrix with eigenvalues \(4\) and \(1\text{.}\) If we apply the power method to find the dominant eigenvalue of these matrices to the same degree of accuracy, which matrix will require more steps in the algorithm?  Explain your response.</p></article><article class="exercise-like" id="exercise-188"><h6 class="heading"><span class="codenumber">7.</span></h6>
-<p id="p-5168">Suppose that we apply the power method to the matrix \(A\) with an initial vector \(\xvec_0\) and find the eigenvalue \(\lambda=3\) and eigenvector \(\vvec\text{.}\) Suppose that we then apply the power method again with a different initial vector and find the same eigenvalue \(\lambda=3\) but a different eigenvector \(\wvec\text{.}\)  What can we conclude about the matrix \(A\) in this case?</p></article><article class="exercise-like" id="exercise-189"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-5171">The power method we have developed only works if the matrix has real eigenvalues. Suppose that \(A\) is a \(2\times2\) matrix that has a complex eigenvalue \(\lambda = 2+3i\text{.}\)  What would happen if we apply the power method to \(A\text{?}\)</p></article><article class="exercise-like" id="exercise-190"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-187"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-5165">Suppose that \(A\) is a \(2\times2\) matrix with eigenvalues \(4\) and \(-3\) and that \(B\) is a \(2\times2\) matrix with eigenvalues \(4\) and \(1\text{.}\) If we apply the power method to find the dominant eigenvalue of these matrices to the same degree of accuracy, which matrix will require more steps in the algorithm?  Explain your response.</p></article><article class="exercise exercise-like" id="exercise-188"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-5168">Suppose that we apply the power method to the matrix \(A\) with an initial vector \(\xvec_0\) and find the eigenvalue \(\lambda=3\) and eigenvector \(\vvec\text{.}\) Suppose that we then apply the power method again with a different initial vector and find the same eigenvalue \(\lambda=3\) but a different eigenvector \(\wvec\text{.}\)  What can we conclude about the matrix \(A\) in this case?</p></article><article class="exercise exercise-like" id="exercise-189"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-5171">The power method we have developed only works if the matrix has real eigenvalues. Suppose that \(A\) is a \(2\times2\) matrix that has a complex eigenvalue \(\lambda = 2+3i\text{.}\)  What would happen if we apply the power method to \(A\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-190"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-5174">Consider the matrix \(A=\left[\begin{array}{rr}
 1 \amp 1 \\
 0 \amp 1 \\
@@ -498,7 +532,5 @@ A= \left[\begin{array}{rrrrr}
 </script></div></p></li>
 </ol></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

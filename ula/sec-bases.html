@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:39-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:33:19-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bases and coordinate systems</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,8 +132,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-matrix-inverse.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-jpeg.html" title="Next">Next</a></span>
@@ -132,9 +144,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-matrix-inverse.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-jpeg.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases" class="active">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,19 +195,38 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-bases"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-bases"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Bases and coordinate systems</span>
 </h2>
-<a href="sec-bases.html" class="permalink">¶</a><section class="introduction" id="introduction-14"><p id="p-2416">When working in the plane, we are used to thinking about standard Cartesian coordinates.  If we mention the point \((4,3)\text{,}\) we know that we arrive at this point from the origin by moving four units to the right and three units up.</p>
-<p id="p-2417">Sometimes, however, it is more natural to work in a different coordinate system.  Suppose, for instance, that you live in the city whose map is shown in <a data-knowl="./knowl/fig-city-map.html" title="Figure 3.2.1">Figure 3.2.1</a> and that you would like to give a guest directions for getting from your house to the store.  You would probably say something like, "Go four blocks up Maple.  Then turn left on Main for three blocks." The grid of streets in the city gives a more natural coordinate system than standard north-south, east-west coordinates.</p>
-<figure class="figure-like" id="fig-city-map"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/city-map.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.1.</span> A city map.</figcaption></figure><p id="p-2418">In this section, we will develop the concept of a <em class="emphasis">basis</em> through which we will create new coordinate systems in \(\real^m\text{.}\)  We will see that the right choice of a coordinate system provides a more natural way to approach some problems.</p>
-<article class="project-like" id="exploration-10"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">3.2.1</span>.</h6>
+<section class="introduction" id="introduction-14"><p id="p-2416">When working in the plane, we are used to thinking about standard Cartesian coordinates.  If we mention the point \((4,3)\text{,}\) we know that we arrive at this point from the origin by moving four units to the right and three units up.</p>
+<p id="p-2417">Sometimes, however, it is more natural to work in a different coordinate system.  Suppose, for instance, that you live in the city whose map is shown in <a class="xref" data-knowl="./knowl/fig-city-map.html" title="Figure 3.2.1">Figure 3.2.1</a> and that you would like to give a guest directions for getting from your house to the store.  You would probably say something like, "Go four blocks up Maple.  Then turn left on Main for three blocks." The grid of streets in the city gives a more natural coordinate system than standard north-south, east-west coordinates.</p>
+<figure class="figure figure-like" id="fig-city-map"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="images/city-map.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>A city map.</figcaption></figure><p id="p-2418">In this section, we will develop the concept of a <em class="emphasis">basis</em> through which we will create new coordinate systems in \(\real^m\text{.}\)  We will see that the right choice of a coordinate system provides a more natural way to approach some problems.</p>
+<article class="exploration project-like" id="exploration-10"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h6>
 <p id="p-2419">Consider the vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -203,11 +234,11 @@ var js_version = 0.12;
 \vvec_2 = \twovec{1}{2}
 \end{equation*}
 </div>
-<p>in \(\real^2\text{.}\)</p>
+<p class="continuation">in \(\real^2\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-1643"><p id="p-2420">Indicate the linear combination \(\vvec_1 -
-2\vvec_2\) on <a data-knowl="./knowl/fig-basis-1.html" title="Figure 3.2.2">Figure 3.2.2</a>. <figure class="figure-like" id="fig-basis-1"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/basis-1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.2.</span> Linear combinations of \(\vvec_1\) and \(\vvec_2\text{.}\)</figcaption></figure></p></li>
+2\vvec_2\) on <a class="xref" data-knowl="./knowl/fig-basis-1.html" title="Figure 3.2.2">Figure 3.2.2</a>. <figure class="figure figure-like" id="fig-basis-1"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/basis-1.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Linear combinations of \(\vvec_1\) and \(\vvec_2\text{.}\)</figcaption></figure></p></li>
 <li id="li-1644"><p id="p-2421">Express the vector \(\twovec{-3}{0}\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
 <li id="li-1645"><p id="p-2422">Find the linear combination \(10\vvec_1 -
 13\vvec_2\text{.}\)</p></li>
@@ -217,11 +248,13 @@ var js_version = 0.12;
 <span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Bases</span>
 </h3>
 <p id="p-2432">In the preview activity, we created a new coordinate system for \(\real^2\) using linear combinations of a set of vectors. As we work to do this more generally, the following definition will guide us.</p>
-<article class="definition-like" id="definition-10"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.2.3</span>.</h6>
+<article class="definition definition-like" id="definition-10"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h6>
 <p id="p-2433">A set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) in \(\real^m\) is called a <em class="emphasis">basis</em> for \(\real^m\) if the set of vectors spans \(\real^m\) and is linearly independent.</p></article><p id="p-2434">We will look at some examples of bases in the following activity.</p>
-<article class="project-like" id="activity-30"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.2.2</span>.</h6>
+<article class="activity project-like" id="activity-30"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h6>
 <ol id="p-2435" class="lower-alpha">
 <li id="li-1653">
 <p id="p-2436">In the preview activity, we considered a set of vectors in \(\real^2\text{:}\)</p>
@@ -231,7 +264,7 @@ var js_version = 0.12;
 \vvec_2 = \twovec{1}{2}\text{.}
 \end{equation*}
 </div>
-<p>Explain why these vectors form a basis for \(\real^2\text{.}\)</p>
+<p class="continuation">Explain why these vectors form a basis for \(\real^2\text{.}\)</p>
 </li>
 <li id="li-1654">
 <p id="p-2437">Consider the set of vectors in \(\real^3\)</p>
@@ -242,7 +275,7 @@ var js_version = 0.12;
 \vvec_3 = \threevec{1}{0}{-1}\text{.}
 \end{equation*}
 </div>
-<p>and determine whether they form a basis for \(\real^3\text{.}\)</p>
+<p class="continuation">and determine whether they form a basis for \(\real^3\text{.}\)</p>
 </li>
 <li id="li-1655">
 <p id="p-2438">Do the vectors</p>
@@ -254,7 +287,7 @@ var js_version = 0.12;
 \vvec_4 = \threevec{0}{3}{-2}
 \end{equation*}
 </div>
-<p>form a basis for \(\real^3\text{?}\)</p>
+<p class="continuation">form a basis for \(\real^3\text{?}\)</p>
 </li>
 <li id="li-1656"><p id="p-2439">Explain why the vectors \(\evec_1,\evec_2,\evec_3\) form a basis for \(\real^3\text{.}\)</p></li>
 <li id="li-1657">
@@ -276,7 +309,7 @@ A = \left[\begin{array}{rrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>To be a basis, this set of vectors must span \(\real^m\) and be linearly independent.</p>
+<p class="continuation">To be a basis, this set of vectors must span \(\real^m\) and be linearly independent.</p>
 <p id="p-2450">We know that the set of vectors spans \(\real^m\) if and only if \(A\) has a pivot position in every row.  We also know that the set of vectors is linearly independent if and only if \(A\) has a pivot position in every column.  This means that a set of vectors forms a basis if and only if \(A\) has a pivot in every row and every column. Therefore, \(A\) must be row equivalent to the identify matrix \(I\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -289,8 +322,9 @@ A \sim \left[\begin{array}{cccc}
 \end{equation*}
 </div>
 <p id="p-2451">In addition to helping identify bases, this fact tells us something important about the number of vectors in a basis.  Since the matrix \(A\) has a pivot position in every row and every column, it must have the same number of rows as columns. Therefore, the number of vectors in a basis for \(\real^m\) must be \(m\text{.}\)  For example, a basis for \(\real^{10}\) must have exactly 10 vectors.</p>
-<article class="example-like" id="example-9"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.2.4</span>.</h6>
+<article class="example example-like" id="example-9"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+</h6>
 <p id="p-2452">It is worth pointing out that we first encountered a basis long ago when we considered the vectors in \(\real^3\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -299,7 +333,7 @@ A \sim \left[\begin{array}{cccc}
 \evec_3 = \threevec{0}{0}{1}\text{.}
 \end{equation*}
 </div>
-<p>We see that these vectors are, in fact, the columns of the \(3\times3\) identity matrix, which confirms that this set forms a basis.</p>
+<p class="continuation">We see that these vectors are, in fact, the columns of the \(3\times3\) identity matrix, which confirms that this set forms a basis.</p>
 <p id="p-2453">More generally, the set of vectors \(\evec_1,\evec_2,\ldots,\evec_m\) forms a basis for \(\real^m\text{,}\) which we call the <em class="emphasis">standard</em> basis for \(\real^m\text{.}\)</p></article></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Coordinate systems</span>
 </h3>
@@ -309,8 +343,9 @@ A \sim \left[\begin{array}{cccc}
 \bcal = \{\vvec_1,\vvec_2,\ldots,\vvec_m\}
 \end{equation*}
 </div>
-<article class="example-like" id="example-10"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.2.5</span>.</h6>
+<article class="example example-like" id="example-10"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+</h6>
 <p id="p-2455">In this section's preview activity, we considered the vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -318,10 +353,10 @@ A \sim \left[\begin{array}{cccc}
 \vvec_2 = \twovec{1}{2}\text{,}
 \end{equation*}
 </div>
-<p>which form a basis \(\bcal=\{\vvec_1,\vvec_2\}\) for \(\real^2\text{.}\)</p>
+<p class="continuation">which form a basis \(\bcal=\{\vvec_1,\vvec_2\}\) for \(\real^2\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-2456">In the standard coordinate system, the point \((2,-3)\) is found by moving 2 units to the right and 3 units down.  We would like to define a new coordinate system where we interpret \((2,-3)\) to mean we move two times along \(\vvec_1\) and 3 times along \(-\vvec_2\text{.}\)  As we see in the figure, doing so leaves us at the point \((1,-4)\text{,}\) expressed in the usual coordinate system.</p></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><p id="p-2456">In the standard coordinate system, the point \((2,-3)\) is found by moving 2 units to the right and 3 units down.  We would like to define a new coordinate system where we interpret \((2,-3)\) to mean we move two times along \(\vvec_1\) and 3 times along \(-\vvec_2\text{.}\)  As we see in the figure, doing so leaves us at the point \((1,-4)\text{,}\) expressed in the usual coordinate system.</p></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/basis-1.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-2457">We have seen that</p>
 <div class="displaymath">
@@ -329,7 +364,7 @@ A \sim \left[\begin{array}{cccc}
 \xvec = \twovec{1}{-4} = 2\vvec_1 - 3\vvec_2 \text{.}
 \end{equation*}
 </div>
-<p>The coordinates of the vector \(\xvec\) in the new coordinate system are the weights that we use to create \(\xvec\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p>
+<p class="continuation">The coordinates of the vector \(\xvec\) in the new coordinate system are the weights that we use to create \(\xvec\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p>
 <p id="p-2458">Since we now have two descriptions of the vector \(\xvec\text{,}\) we need some notation to keep track of which coordinate system we are using.  Because \(\twovec{1}{-4} = 2\vvec_1 - 3\vvec_2\text{,}\) we will write</p>
 <div class="displaymath">
 \begin{equation*}
@@ -337,7 +372,7 @@ A \sim \left[\begin{array}{cccc}
 \twovec{2}{-3} \text{.}
 \end{equation*}
 </div>
-<p>More generally, \(\coords{\xvec}{\bcal}\) will denote the coordinates of \(\xvec\) in the basis \(\bcal\text{;}\)  that is, \(\coords{\xvec}{\bcal}\) is the vector \(\twovec{c_1}{c_2}\) of weights such that</p>
+<p class="continuation">More generally, \(\coords{\xvec}{\bcal}\) will denote the coordinates of \(\xvec\) in the basis \(\bcal\text{;}\)  that is, \(\coords{\xvec}{\bcal}\) is the vector \(\twovec{c_1}{c_2}\) of weights such that</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec = c_1\vvec_1 + c_2 \vvec_2\text{.}
@@ -349,39 +384,39 @@ A \sim \left[\begin{array}{cccc}
 \coords{\xvec}{\bcal} = \twovec{5}{-2}\text{,}
 \end{equation*}
 </div>
-<p>then</p>
+<p class="continuation">then</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec = 5\vvec_1 - 2\vvec_2 = 5\twovec{2}{1}-2\twovec{1}{2}
 = \twovec{8}{3}\text{.}
 \end{equation*}
 </div>
-<p>We conclude that</p>
+<p class="continuation">We conclude that</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{\twovec{8}{3}}{\bcal} = \twovec{5}{-2}\text{.}
 \end{equation*}
 </div>
-<p>This demonstrates how we can translate coordinates in the basis \(\bcal\) into standard coordinates.</p>
+<p class="continuation">This demonstrates how we can translate coordinates in the basis \(\bcal\) into standard coordinates.</p>
 <p id="p-2460">Suppose we know the expression of a vector \(\xvec\) in standard coordinates.  How can we find its coordinates in the basis \(\bcal\text{?}\)  For instance, suppose \(\xvec=\twovec{-8}{2}\) and that we would like to find \(\coords{\xvec}{\bcal}\text{.}\)  We have</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{\twovec{-8}{2}}{\bcal}=\twovec{c_1}{c_2}
 \end{equation*}
 </div>
-<p>where</p>
+<p class="continuation">where</p>
 <div class="displaymath">
 \begin{equation*}
 \twovec{-8}{2} = c_1\vvec_1 + c_2\vvec_2
 \end{equation*}
 </div>
-<p>or</p>
+<p class="continuation">or</p>
 <div class="displaymath">
 \begin{equation*}
 c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \end{equation*}
 </div>
-<p>This linear system for the weights defines an augmented matrix</p>
+<p class="continuation">This linear system for the weights defines an augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{rr|r}
@@ -395,7 +430,7 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Therefore,</p>
+<p class="continuation">Therefore,</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{\twovec{-8}{2}}{\bcal} = \twovec{-6}{4}\text{.}
@@ -407,14 +442,15 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \xvec = c_1\vvec_1 + c_2\vvec_2 + \ldots + c_m\vvec_m
 \end{equation*}
 </div>
-<p>where the weights \(c_1, c_2,\ldots, c_m\) are unique.  In this case, we write the coordinate description of \(\xvec\) in the basis \(\bcal\) as</p>
+<p class="continuation">where the weights \(c_1, c_2,\ldots, c_m\) are unique.  In this case, we write the coordinate description of \(\xvec\) in the basis \(\bcal\) as</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{\xvec}{\bcal} = \fourvec{c_1}{c_2}{\vdots}{c_m}\text{.}
 \end{equation*}
 </div>
-<article class="project-like" id="activity-31"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.2.3</span>.</h6>
+<article class="activity project-like" id="activity-31"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h6>
 <p id="p-2463">Let's begin with the basis \(\bcal =
 \{\vvec_1,\vvec_2\}\) of \(\real^2\) where</p>
 <div class="displaymath">
@@ -435,13 +471,13 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \ccal = \left\{\twovec{1}{2}, \twovec{-2}{1}\right\}\text{.}
 \end{equation*}
 </div>
-<p>Find a matrix \(C\) that converts coordinates in the basis \(\ccal\) into coordinates in the basis \(\bcal\text{;}\)  that is,</p>
+<p class="continuation">Find a matrix \(C\) that converts coordinates in the basis \(\ccal\) into coordinates in the basis \(\bcal\text{;}\)  that is,</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{\xvec}{\bcal} = C \coords{\xvec}{\ccal}\text{.}
 \end{equation*}
 </div>
-<p>You may wish to think about converting coordinates from the basis \(\ccal\) into the standard coordinate system and then into the basis \(\bcal\text{.}\)</p>
+<p class="continuation">You may wish to think about converting coordinates from the basis \(\ccal\) into the standard coordinate system and then into the basis \(\bcal\text{.}\)</p>
 </li>
 <li id="li-1670">
 <p id="p-2469">Suppose we consider the standard basis</p>
@@ -450,7 +486,7 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \ecal = \{\evec_1,\evec_2\}\text{.}
 \end{equation*}
 </div>
-<p>What is the relationship between \(\xvec\) and \(\coords{\xvec}{\ecal}\text{?}\)</p>
+<p class="continuation">What is the relationship between \(\xvec\) and \(\coords{\xvec}{\ecal}\text{?}\)</p>
 </li>
 </ol></article><p id="p-2477">This activity demonstrates how we can efficiently convert between coordinate systems defined by different bases.  Let's consider a basis \(\bcal = \{\vvec_1,\vvec_2,\ldots,\vvec_m\}\) and a vector \(\xvec\text{.}\)  We know that</p>
 <div class="displaymath">
@@ -472,13 +508,13 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \end{aligned}
 \end{equation*}
 </div>
-<p>If we use \(C_{\bcal}\) to denote the matrix whose columns are the basis vectors, then we find that</p>
+<p class="continuation">If we use \(C_{\bcal}\) to denote the matrix whose columns are the basis vectors, then we find that</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec = C_{\bcal}\coords{\xvec}{\bcal}
 \end{equation*}
 </div>
-<p>where \(C_{\bcal} = \left[\begin{array}{rrrr}
+<p class="continuation">where \(C_{\bcal} = \left[\begin{array}{rrrr}
 \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_m
 \end{array}\right]\text{.}\)  This means that the matrix \(C_{\bcal}\) converts coordinates in the basis \(\bcal\) into standard coordinates.</p>
 <p id="p-2478">Since the columns of \(C_{\bcal}\) are the basis vectors \(\vvec_1,\vvec_2,\ldots,\vvec_m\text{,}\) we know that \(C_{\bcal}
@@ -488,7 +524,7 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 \xvec = C_{\bcal}\coords{\xvec}{\bcal}\text{,}
 \end{equation*}
 </div>
-<p>we must also have</p>
+<p class="continuation">we must also have</p>
 <div class="displaymath">
 \begin{equation*}
 C_{\bcal}^{-1}\xvec = \coords{\xvec}{\bcal}\text{.}
@@ -503,7 +539,7 @@ C_{\bcal}^{-1}\xvec = \coords{\xvec}{\bcal}\text{.}
 = (C_{\bcal}^{-1}C_{\ccal}) \coords{\xvec}{\ccal}\text{.}
 \end{equation*}
 </div>
-<p>Therefore, \(C_{\bcal}^{-1}C_{\ccal}\) is the matrix that converts \(\ccal\)-coordinates into \(\bcal\)-coordinates.</p>
+<p class="continuation">Therefore, \(C_{\bcal}^{-1}C_{\ccal}\) is the matrix that converts \(\ccal\)-coordinates into \(\bcal\)-coordinates.</p>
 <p id="p-2481">In spite of the fact that much of what we are doing here seems new, we have been using the standard basis all along.  For example, if \(\xvec\) is a vector, then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -512,12 +548,13 @@ C_{\bcal}^{-1}\xvec = \coords{\xvec}{\bcal}\text{.}
 = C_{\ecal}\coords{\xvec}{\ecal}\text{.}
 \end{equation*}
 </div>
-<p>The matrix \(C_{\ecal}\) is, of course, the identity.</p></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<p class="continuation">The matrix \(C_{\ecal}\) is, of course, the identity.</p></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Examples of bases</span>
 </h3>
 <p id="p-2482">We will now look at some examples of bases and begin to see the usefulness of looking at a problem in a different coordinate system.</p>
-<article class="example-like" id="example-11"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.2.6</span>.</h6>
+<article class="example example-like" id="example-11"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
+</h6>
 <p id="p-2483">Let's consider the basis of \(\real^3\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -528,7 +565,7 @@ C_{\bcal}^{-1}\xvec = \coords{\xvec}{\bcal}\text{.}
 \right\}\text{.}
 \end{equation*}
 </div>
-<p>It is relatively straightforward to convert a vector's representation in this basis to the standard basis, using the matrix whose columns are the basis vectors:</p>
+<p class="continuation">It is relatively straightforward to convert a vector's representation in this basis to the standard basis, using the matrix whose columns are the basis vectors:</p>
 <div class="displaymath">
 \begin{equation*}
 C_{\bcal} =
@@ -539,7 +576,7 @@ C_{\bcal} =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>For example, suppose that the vector \(\xvec\) is described in the coordinate system defined by the basis as \(\coords{\xvec}{\bcal} = \threevec{2}{-2}{1}\text{.}\)  We then have</p>
+<p class="continuation">For example, suppose that the vector \(\xvec\) is described in the coordinate system defined by the basis as \(\coords{\xvec}{\bcal} = \threevec{2}{-2}{1}\text{.}\)  We then have</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec = C_{\bcal}\coords{\xvec}{\bcal} =
@@ -567,10 +604,11 @@ C_{\bcal} =
 =
 \threevec{2}{0}{1}\text{.}
 \end{equation*}
-</div></article><article class="example-like" id="example-wavelet-basis"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.2.7</span>.</h6>
+</div></article><article class="example example-like" id="example-wavelet-basis"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
+</h6>
 <p id="p-2485">Suppose we work for a company that records its quarterly revenue, in millions of dollars, as:</p>
-<figure class="figure-like" id="table-1"><table>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.8<span class="period">.</span></span><span class="space"> </span>Quarterly revenue</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b1 r0 l0 t3 lines">Quarter</td>
 <td class="c m b1 r0 l0 t3 lines">Revenue</td>
@@ -591,9 +629,8 @@ C_{\bcal} =
 <td class="c m b2 r0 l0 t0 lines">4</td>
 <td class="c m b2 r0 l0 t0 lines">8.2</td>
 </tr>
-</table>
-<figcaption><span class="type">Table</span> <span class="codenumber">3.2.8.</span> Quarterly revenue</figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
+</table></div></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;">
 <p id="p-2486">Rather than using a table to record the data, we could display it in a graph or write it as a vector in \(\real^4\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -601,7 +638,7 @@ C_{\bcal} =
 \end{equation*}
 </div>
 </div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/basis-revenue.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-2487">Let's now consider a new basis \(\bcal\) for \(\real^4\) using vectors</p>
 <div class="displaymath">
@@ -612,9 +649,9 @@ C_{\bcal} =
 \vvec_4=\fourvec{0}{0}{1}{-1}\text{.}
 \end{equation*}
 </div>
-<p>We may view these basis elements graphically, as in <a data-knowl="./knowl/fig-basis-revenue-elements.html" title="Figure 3.2.9">Figure 3.2.9</a></p>
-<figure class="figure-like" id="fig-basis-revenue-elements"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/basis-revenue-elements.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.9.</span> A representation of the basis elements of \(\bcal\text{.}\)</figcaption></figure><p id="p-2488">As we wish to convert our revenue vectors into the coordinates given by \(\bcal\text{,}\) we form the matrices:</p>
+<p class="continuation">We may view these basis elements graphically, as in <a class="xref" data-knowl="./knowl/fig-basis-revenue-elements.html" title="Figure 3.2.9">Figure 3.2.9</a></p>
+<figure class="figure figure-like" id="fig-basis-revenue-elements"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="images/basis-revenue-elements.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.9<span class="period">.</span></span><span class="space"> </span>A representation of the basis elements of \(\bcal\text{.}\)</figcaption></figure><p id="p-2488">As we wish to convert our revenue vectors into the coordinates given by \(\bcal\text{,}\) we form the matrices:</p>
 <div class="displaymath">
 \begin{equation*}
 C_{\bcal} =
@@ -633,7 +670,7 @@ C_{\bcal}^{-1} =
 \end{array}\right]
 \end{equation*}
 </div>
-<p>and compute</p>
+<p class="continuation">and compute</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{\xvec}{\bcal} = C_{\bcal}^{-1} \xvec =
@@ -648,17 +685,17 @@ C_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 0.350 \vvec_4\text{.}
 \end{equation*}
 </div>
-<p>We will think about what these coordinates mean by adding the basis vectors together one at a time.</p>
+<p class="continuation">We will think about what these coordinates mean by adding the basis vectors together one at a time.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-2490">The first coordinate gives us the average revenue over the year: \(9.775\vvec_1\text{.}\)</p></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue-approx-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><p id="p-2490">The first coordinate gives us the average revenue over the year: \(9.775\vvec_1\text{.}\)</p></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/basis-revenue-approx-1.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-2491">Adding in the second component shows how the averages in the first and second halves of year differ from the annual average: \(9.775\vvec_1 + 1.925\vvec_2\text{.}\)</p></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue-approx-2.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><p id="p-2491">Adding in the second component shows how the averages in the first and second halves of year differ from the annual average: \(9.775\vvec_1 + 1.925\vvec_2\text{.}\)</p></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/basis-revenue-approx-2.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
+<div class="sbspanel top" style="width:47.3684210526316%;">
 <p id="p-2492">The third and fourth components break down the behavior in the first and second halves of the year into quarters:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -670,29 +707,29 @@ C_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 \end{equation*}
 </div>
 </div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue-approx-3.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/basis-revenue-approx-3.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-2493">If we write \(\coords{\xvec}{\bcal} =
 \fourvec{c_1}{c_2}{c_3}{c_4}\text{,}\) we see that the coefficient \(c_1\) measures the average revenue over the year, \(c_2\) measures the deviation from the annual average in the first and second halves of the year, and \(c_3\) measures how the revenue in the first and second quarter differs from the average in the first half of the year.  In this way, the coefficients provide a view of the revenue over different time scales, from an annual summary to a finer view of quarterly behavior.</p>
-<p id="p-2494">This basis is sometimes called a <em class="emphasis">Haar</em> wavelet basis, and the change of basis is known as a <em class="emphasis">Haar</em> wavelet transform.  In the next section, we will see how this basis provides a useful way to store digital images.</p></article><article class="project-like" id="activity-32"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.2.4</span>. <span class="title">Edge detection.</span>
+<p id="p-2494">This basis is sometimes called a <em class="emphasis">Haar</em> wavelet basis, and the change of basis is known as a <em class="emphasis">Haar</em> wavelet transform.  In the next section, we will see how this basis provides a useful way to store digital images.</p></article><article class="activity project-like" id="activity-32"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Edge detection.</span>
 </h6>
-<p id="p-2495">An important problem in the field of computer vision is to detect edges in a digital photograph, as is shown in <a data-knowl="./knowl/fig-edge-detection.html" title="Figure 3.2.10">Figure 3.2.10</a>.  Edge detection algorithms are useful when, say, we want a robot to locate an object in its field of view.  Graphic designers also use these algorithms to create artist effects.</p>
-<figure class="figure-like" id="fig-edge-detection"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/spring-canyon-cropped.jpg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/spring-canyon-edges.jpg" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-2495">An important problem in the field of computer vision is to detect edges in a digital photograph, as is shown in <a class="xref" data-knowl="./knowl/fig-edge-detection.html" title="Figure 3.2.10">Figure 3.2.10</a>.  Edge detection algorithms are useful when, say, we want a robot to locate an object in its field of view.  Graphic designers also use these algorithms to create artist effects.</p>
+<figure class="figure figure-like" id="fig-edge-detection"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/spring-canyon-cropped.jpg" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/spring-canyon-edges.jpg" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.10.</span> A canyon wall in Capitol Reef National Park and the result of an edge detection algorithm.</figcaption></figure><p id="p-2496">We will consider a very simple version of an edge detection algorithm to give a sense of how this works.  Rather than considering a two-dimensional photograph, we will think about a one-dimensional row of pixels in a photograph.  The grayscale values of a pixel measure the brightness of a pixel;  a grayscale value of 0 corresponds to black, and a value of 255 corresponds to white.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.10<span class="period">.</span></span><span class="space"> </span>A canyon wall in Capitol Reef National Park and the result of an edge detection algorithm.</figcaption></figure><p id="p-2496">We will consider a very simple version of an edge detection algorithm to give a sense of how this works.  Rather than considering a two-dimensional photograph, we will think about a one-dimensional row of pixels in a photograph.  The grayscale values of a pixel measure the brightness of a pixel;  a grayscale value of 0 corresponds to black, and a value of 255 corresponds to white.</p>
 <p id="p-2497">Suppose, for simplicity, that the grayscale values for a row of six pixels are represented by a vector \(\xvec\) in \(\real^6\text{:}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-2498">
+<div class="sbspanel top" style="width:50%;"><div class="displaymath" id="p-2498">
 \begin{equation*}
 \xvec = \left[\begin{array}{r}
 25 \\ 34 \\ 30 \\ 45 \\ 190 \\ 200
 \end{array}\right]\text{.}
 \end{equation*}
 </div></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/edges-grayscale.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:50%;"><img src="images/edges-grayscale.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-2499">We can easily see that there is a jump in brightness between pixels 4 and 5, but how can we detect it computationally?  We will introduce a new basis \(\bcal\) for \(\real^6\) with vectors:</p>
 <div class="displaymath">
@@ -725,7 +762,7 @@ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \end{array}\right],
 c_1 \\ c_2 \\ c_3 \\ c_4 \\ c_5 \\ c_6 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Using the relationship \(\coords{\xvec}{\bcal} =
+<p class="continuation">Using the relationship \(\coords{\xvec}{\bcal} =
 C_{\bcal}^{-1}\xvec\text{,}\) determine an expression for the coefficient \(c_2\) in terms of \(x_1,x_2,\ldots,x_6\text{.}\) What does \(c_2\) measure in terms of the grayscale values of the pixels?  What does \(c_4\) measure in terms of the grayscale values of the pixels?</p>
 </li>
 <li id="li-1680">
@@ -737,7 +774,7 @@ C_{\bcal}^{-1}\xvec\text{,}\) determine an expression for the coefficient \(c_2\
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p>determine the representation of \(\xvec\) in the \(\bcal\)-coordinate system.</p>
+<p class="continuation">determine the representation of \(\xvec\) in the \(\bcal\)-coordinate system.</p>
 </li>
 <li id="li-1681"><p id="p-2504">Explain how the coefficients in \(\coords{\xvec}{\bcal}\) determine the location of the jump in brightness in the grayscale values represented by the vector \(\xvec\text{.}\)</p></li>
 </ol>
@@ -757,7 +794,7 @@ A = \left[\begin{array}{rrrr}
 \sim I\text{.}
 \end{equation*}
 </div>
-<p>This means there must be \(m\) vectors in a basis for \(\real^m\text{.}\)</p>
+<p class="continuation">This means there must be \(m\) vectors in a basis for \(\real^m\text{.}\)</p>
 </li>
 <li id="li-1688"><p id="p-2514">If \(\vvec_1,\vvec_2,\ldots,\vvec_m\) forms a basis for \(\real^m\text{,}\) then any vector in \(\real^m\) can be written as a linear combination of the vectors in exactly one way.</p></li>
 <li id="li-1689">
@@ -783,21 +820,21 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 </ul></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.2.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">1.</span></h6>
-<p id="p-2517">Shown in <a data-knowl="./knowl/fig-ex-basis.html" title="Figure 3.2.11">Figure 3.2.11</a> are two vectors \(\vvec_1\) and \(\vvec_2\) in the plane \(\real^2\text{.}\)</p>
-<figure class="figure-like" id="fig-ex-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-basis.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.11.</span> Vectors \(\vvec_1\) and \(\vvec_2\) in \(\real^2\text{.}\)</figcaption></figure><ol id="p-2518" class="lower-alpha">
+<article class="exercise exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-2517">Shown in <a class="xref" data-knowl="./knowl/fig-ex-basis.html" title="Figure 3.2.11">Figure 3.2.11</a> are two vectors \(\vvec_1\) and \(\vvec_2\) in the plane \(\real^2\text{.}\)</p>
+<figure class="figure figure-like" id="fig-ex-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-basis.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.11<span class="period">.</span></span><span class="space"> </span>Vectors \(\vvec_1\) and \(\vvec_2\) in \(\real^2\text{.}\)</figcaption></figure><ol id="p-2518" class="lower-alpha">
 <li id="li-1691"><p id="p-2519">Explain why \(\bcal=\{\vvec_1,\vvec_2\}\) is a basis for \(\real^2\text{.}\)</p></li>
 <li id="li-1692">
-<p id="p-2520">Using <a data-knowl="./knowl/fig-ex-basis.html" title="Figure 3.2.11">Figure 3.2.11</a>, indicate the vectors \(\xvec\) such that</p>
+<p id="p-2520">Using <a class="xref" data-knowl="./knowl/fig-ex-basis.html" title="Figure 3.2.11">Figure 3.2.11</a>, indicate the vectors \(\xvec\) such that</p>
 <ol class="lower-roman">
-<li id="li-1693"><p id="p-2521">\(\coords{\xvec}{\bcal} = \twovec{2}{-1}\)</p></li>
-<li id="li-1694"><p id="p-2522">\(\coords{\xvec}{\bcal} = \twovec{-1}{-2}\)</p></li>
-<li id="li-1695"><p id="p-2523">\(\coords{\xvec}{\bcal} = \twovec{0}{3}\)</p></li>
+<li id="li-1693"><p id="p-2521">\(\displaystyle \coords{\xvec}{\bcal} = \twovec{2}{-1}\)</p></li>
+<li id="li-1694"><p id="p-2522">\(\displaystyle \coords{\xvec}{\bcal} = \twovec{-1}{-2}\)</p></li>
+<li id="li-1695"><p id="p-2523">\(\displaystyle \coords{\xvec}{\bcal} = \twovec{0}{3}\)</p></li>
 </ol>
 </li>
 <li id="li-1696">
-<p id="p-2524">Using <a data-knowl="./knowl/fig-ex-basis.html" title="Figure 3.2.11">Figure 3.2.11</a>, find the representation \(\coords{\xvec}{\bcal}\) if</p>
+<p id="p-2524">Using <a class="xref" data-knowl="./knowl/fig-ex-basis.html" title="Figure 3.2.11">Figure 3.2.11</a>, find the representation \(\coords{\xvec}{\bcal}\) if</p>
 <ol class="lower-roman">
 <li id="li-1697"><p id="p-2525">\(\xvec = \twovec{-2}{-1}\text{.}\)</p></li>
 <li id="li-1698"><p id="p-2526">\(\xvec = \twovec{2}{4}\text{.}\)</p></li>
@@ -805,7 +842,7 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 </ol>
 </li>
 <li id="li-1700"><p id="p-2528">Find \(\coords{\xvec}{\bcal}\) if \(\xvec=\twovec{60}{90}\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-2551">Consider vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -815,7 +852,7 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 \end{aligned}
 \end{equation*}
 </div>
-<p>and let \(\bcal = \{\vvec_1,\vvec_2\}\) and \(\ccal =
+<p class="continuation">and let \(\bcal = \{\vvec_1,\vvec_2\}\) and \(\ccal =
 \{\wvec_1,\wvec_2\}\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-1721"><p id="p-2552">Explain why \(\bcal\) and \(\ccal\) are both bases of \(\real^2\text{.}\)</p></li>
@@ -823,7 +860,7 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 <li id="li-1723"><p id="p-2554">If \(\coords{\xvec}{\bcal}=\twovec{2}{-4}\text{,}\) find \(\xvec\) and \(\coords{\xvec}{\ccal}\text{.}\)</p></li>
 <li id="li-1724"><p id="p-2555">If \(\coords{\xvec}{\ccal}=\twovec{-3}{2}\text{,}\) find \(\xvec\) and \(\coords{\xvec}{\bcal}\text{.}\)</p></li>
 <li id="li-1725"><p id="p-2556">Find a matrix \(D\) such that \(\coords{\xvec}{\bcal} = D\coords{\xvec}{\ccal}\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-2569">Consider the following vectors in \(\real^4\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -839,7 +876,7 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 <li id="li-1738"><p id="p-2572">Explain how to convert the vector \(\xvec\) into, \(\coords{\xvec}{\bcal}\text{,}\) its representation in the coordinate system defined by \(\bcal\text{.}\)</p></li>
 <li id="li-1739"><p id="p-2573">If \(\xvec=\fourvec{23}{12}{10}{19}\text{,}\) find \(\coords{\xvec}{\bcal}\text{.}\)</p></li>
 <li id="li-1740"><p id="p-2574">If \(\coords{\xvec}{\bcal}=\fourvec{3}{1}{-3}{-4}\text{,}\) find \(\xvec\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-2587">Consider the following vectors in \(\real^3\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -871,9 +908,9 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Find a subset of the vectors that span \(\real^4\text{.}\)</p>
+<p class="continuation">Find a subset of the vectors that span \(\real^4\text{.}\)</p>
 </li>
-</ol></article><article class="exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-2599">This exercise involves a simple Fourier transform, which will play an important role in the next section.</p>
 <p id="p-2600">Suppose that we have the vectors</p>
 <div class="displaymath">
@@ -892,7 +929,7 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 </script></div></p></li>
 <li id="li-1761"><p id="p-2602">If \(\xvec=\threevec{15}{15}{15}\text{,}\) find \(\coords{\xvec}{\bcal}\text{.}\)</p></li>
 <li id="li-1762"><p id="p-2603">Find the matrices \(C_{\bcal}\) and \(C_{\bcal}^{-1}\text{.}\)  If \(\xvec=\threevec{x_1}{x_2}{x_3}\) and \(\coords{\xvec}{\bcal} = \threevec{c_1}{c_2}{c_3}\text{,}\) explain why \(c_1\) is the average of \(x_1\text{,}\) \(x_2\text{,}\) and \(x_3\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-92"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-2612">Determine whether the following statements are true or false and provide a justification for your response.</p>
 <ol class="lower-alpha">
 <li id="li-1769"><p id="p-2613">If the columns of a matrix \(A\) form a basis for \(\real^m\text{,}\) then \(A\) is invertible.</p></li>
@@ -901,16 +938,16 @@ C_{\bcal}^{-1} x \amp {}={} \coords{\xvec}{\bcal} \\
 <li id="li-1772"><p id="p-2616">The coordinates \(\coords{\xvec}{\bcal}\) are the weights that form \(\xvec\) as a linear combination of basis vectors.</p></li>
 <li id="li-1773"><p id="p-2617">If the basis vectors form the columns of the matrix \(C_{\bcal}\text{,}\) then \(\coords{\xvec}{\bcal} =
 C_{\bcal}\xvec\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-93"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-93"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-2630">Provide a justification for your response to each of the following questions.</p>
 <ol class="lower-alpha">
 <li id="li-1784"><p id="p-2631">Suppose you have \(m\) linearly independent vectors in \(\real^m\text{.}\)  Can you guarantee that they form a basis of \(\real^m\text{?}\)</p></li>
 <li id="li-1785"><p id="p-2632">If \(A\) is an invertible \(m\times m\) matrix, do the columns necessarily form a basis of \(\real^m\text{?}\)</p></li>
 <li id="li-1786"><p id="p-2633">Suppose we have an invertible \(m\times m\) matrix \(A\text{,}\) and we perform a sequence of row operations on \(A\) to form a matrix \(B\text{.}\)  Can you guarantee that the columns of \(B\) form a basis for \(\real^m\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-94"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-2642">Crystallographers find it convenient to use coordinate systems that are adapted to the specific geometry of a crystal. As a two-dimensional example, consider a layer of graphite in which carbon atoms are arranged in regular hexagons to form the crystalline structure shown in <a data-knowl="./knowl/fig-ex-graphite.html" title="Figure 3.2.12">Figure 3.2.12</a>.</p>
-<figure class="figure-like" id="fig-ex-graphite"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-graphite.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.12.</span> A layer of carbon atoms in a graphite crystal.</figcaption></figure><p id="p-2643">The origin of the coordinate system is at the carbon atom labeled by “0”.  It is convenient to choose the basis \(\bcal\) defined by the vectors \(\vvec_1\) and \(\vvec_2\) and the coordinate system it defines.</p>
+</ol></article><article class="exercise exercise-like" id="exercise-94"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-2642">Crystallographers find it convenient to use coordinate systems that are adapted to the specific geometry of a crystal. As a two-dimensional example, consider a layer of graphite in which carbon atoms are arranged in regular hexagons to form the crystalline structure shown in <a class="xref" data-knowl="./knowl/fig-ex-graphite.html" title="Figure 3.2.12">Figure 3.2.12</a>.</p>
+<figure class="figure figure-like" id="fig-ex-graphite"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-graphite.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.12<span class="period">.</span></span><span class="space"> </span>A layer of carbon atoms in a graphite crystal.</figcaption></figure><p id="p-2643">The origin of the coordinate system is at the carbon atom labeled by “0”.  It is convenient to choose the basis \(\bcal\) defined by the vectors \(\vvec_1\) and \(\vvec_2\) and the coordinate system it defines.</p>
 <ol id="p-2644" class="lower-alpha">
 <li id="li-1793">
 <p id="p-2645">Locate the points \(\xvec\) for which</p>
@@ -925,7 +962,7 @@ C_{\bcal}\xvec\text{.}\)</p></li>
 <li id="li-1798"><p id="p-2650">What are the coordinates \(\coords{\xvec}{\bcal}\) of the center of that hexagon, which is labeled “C”?</p></li>
 <li id="li-1799"><p id="p-2651">How do the coordinates of the atoms in the hexagon whose lower left corner is labeled “1” compare to the coordinates in the hexagon whose lower left corner is labeled "0"?</p></li>
 <li id="li-1800"><p id="p-2652">Does the point \(\xvec\) whose coordinates are \(\coords{\xvec}{\bcal} = \twovec{16}{4}\) correspond to a carbon atom or the center of a hexagon?</p></li>
-</ol></article><article class="exercise-like" id="exercise-95"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-95"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-2665">Suppose that \(A=\left[\begin{array}{rr} 2 \amp 1 \\ 1\amp
 2 \\ \end{array}\right]\) and</p>
 <div class="displaymath">
@@ -942,9 +979,7 @@ C_{\bcal}\xvec\text{.}\)</p></li>
 <li id="li-1815"><p id="p-2670">Find a matrix \(D\) such that \(\coords{A\xvec}{\bcal} =
 D\coords{\xvec}{\bcal}\text{.}\)</p></li>
 </ol>
-<p>You should find that the matrix \(D\) is a very simple matrix, which means that this basis \(\bcal\) is well suited to study the effect of multiplication by \(A\text{.}\) This observation is the central idea of the next chapter.</p></article></section></section></div></main>
+<p class="continuation">You should find that the matrix \(D\) is a very simple matrix, which means that this basis \(\bcal\) is well suited to study the effect of multiplication by \(A\text{.}\) This observation is the central idea of the next chapter.</p></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

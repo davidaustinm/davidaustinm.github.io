@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:37-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:33:05-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Matrix transformations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,8 +132,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-linear-dep.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-transforms-geom.html" title="Next">Next</a></span>
@@ -132,9 +144,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-linear-dep.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-transforms-geom.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,41 +195,61 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-linear-trans"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-linear-trans"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Matrix transformations</span>
 </h2>
-<a href="sec-linear-trans.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><p id="p-1684">The past few sections introduced us to vectors and linear combinations as a means of thinking geometrically about the solutions to a linear system.  Using matrix-vector multiplication, we rewrote a linear system as a matrix equation \(A\xvec = \bvec\) and used the concepts of span and linear independence to understand when solutions exist and when they are unique.</p>
+<section class="introduction" id="introduction-10"><p id="p-1684">The past few sections introduced us to vectors and linear combinations as a means of thinking geometrically about the solutions to a linear system.  Using matrix-vector multiplication, we rewrote a linear system as a matrix equation \(A\xvec = \bvec\) and used the concepts of span and linear independence to understand when solutions exist and when they are unique.</p>
 <p id="p-1685">In this section, we will explore how matrix-vector multiplication defines certain types of functions, which we call <em class="emphasis">matrix transformations</em>, similar to those encountered in previous algebra courses.  In particular, we will develop some algebraic tools for thinking about matrix transformations and look at some motivating examples.  In the next section, we will see how matrix transformations describe important geometric operations and how they are used in computer animation.</p>
-<article class="project-like" id="exploration-7"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">2.5.1</span>.</h6>
+<article class="exploration project-like" id="exploration-7"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
+</h6>
 <p id="p-1686">We will begin by considering a more familiar situation; namely, the function \(f(x) = x^2\text{,}\) which takes a real number \(x\) as an input and produces its square \(x^2\) as its output.</p>
 <ol class="lower-alpha">
 <li id="li-1112"><p id="p-1687">What is the value of \(f(3)\text{?}\)</p></li>
 <li id="li-1113"><p id="p-1688">Can we solve the equation \(f(x) = 4\text{?}\)  If so, is the solution unique?</p></li>
 <li id="li-1114"><p id="p-1689">Can we solve the equation \(f(x) = -10\text{?}\)  If so, is the solution unique?</p></li>
-<li id="li-1115"><p id="p-1690">Sketch a graph of the function \(f(x)=x^2\) in <a data-knowl="./knowl/fig-graph-square.html" title="Figure 2.5.1">Figure 2.5.1</a> <figure class="figure-like" id="fig-graph-square"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.5.1.</span> Graph the function \(f(x)=x^2\) above.</figcaption></figure></p></li>
+<li id="li-1115"><p id="p-1690">Sketch a graph of the function \(f(x)=x^2\) in <a class="xref" data-knowl="./knowl/fig-graph-square.html" title="Figure 2.5.1">Figure 2.5.1</a> <figure class="figure figure-like" id="fig-graph-square"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/empty-4.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Graph the function \(f(x)=x^2\) above.</figcaption></figure></p></li>
 <li id="li-1116"><p id="p-1691">Remember that the range of a function is the set of all possible outputs.  What is the range of the function \(f\text{?}\)</p></li>
-<li id="li-1117"><p id="p-1692">We will now consider functions having the form \(g(x)=mx\text{.}\)  Draw a graph of the function \(g(x) = 2x\) on the left in <a data-knowl="./knowl/fig-graph-linear.html" title="Figure 2.5.2">Figure 2.5.2</a>. <figure class="figure-like" id="fig-graph-linear"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/empty-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<li id="li-1117"><p id="p-1692">We will now consider functions having the form \(g(x)=mx\text{.}\)  Draw a graph of the function \(g(x) = 2x\) on the left in <a class="xref" data-knowl="./knowl/fig-graph-linear.html" title="Figure 2.5.2">Figure 2.5.2</a>. <figure class="figure figure-like" id="fig-graph-linear"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/empty-4.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/empty-4.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.5.2.</span> Graphs of the function \(g(x)=2x\) and \(h(x) =
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.2<span class="period">.</span></span><span class="space"> </span>Graphs of the function \(g(x)=2x\) and \(h(x) =
 -\frac13 x\text{.}\)</figcaption></figure></p></li>
-<li id="li-1118"><p id="p-1693">Draw a graph of the funcion \(h(x) = -\frac13 x\) on the right of <a data-knowl="./knowl/fig-graph-linear.html" title="Figure 2.5.2">Figure 2.5.2</a>.</p></li>
+<li id="li-1118"><p id="p-1693">Draw a graph of the funcion \(h(x) = -\frac13 x\) on the right of <a class="xref" data-knowl="./knowl/fig-graph-linear.html" title="Figure 2.5.2">Figure 2.5.2</a>.</p></li>
 <li id="li-1119"><p id="p-1694">Remember that composing two functions means we use the output from one function as the input into the other.  That is, \(g\circ h(x) = g(h(x))\text{.}\)  What function results from composing \(g\circ h(x)\text{?}\)  How is the composite function related to the two functions \(g\) and \(h\text{?}\)</p></li>
 </ol></article></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Matrix transformations</span>
 </h3>
-<p id="p-1704">In the preview activity, we considered simple linear functions, such as \(g(x) = \frac12 x\) whose graph is the line shown in <a data-knowl="./knowl/fig-graph-line.html" title="Figure 2.5.3">Figure 2.5.3</a>.  We construct a function like this by choosing a number \(m\text{;}\)  when given an input \(x\text{,}\) the output \(g(x) = mx\) is formed by multiplying \(x\) by \(m\text{.}\) <figure class="figure-like" id="fig-graph-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/graph-line.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.5.3.</span> The graph of the function \(g(x) = \frac12 x\text{.}\)</figcaption></figure></p>
+<p id="p-1704">In the preview activity, we considered simple linear functions, such as \(g(x) = \frac12 x\) whose graph is the line shown in <a class="xref" data-knowl="./knowl/fig-graph-line.html" title="Figure 2.5.3">Figure 2.5.3</a>.  We construct a function like this by choosing a number \(m\text{;}\)  when given an input \(x\text{,}\) the output \(g(x) = mx\) is formed by multiplying \(x\) by \(m\text{.}\) <figure class="figure figure-like" id="fig-graph-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/graph-line.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span>The graph of the function \(g(x) = \frac12 x\text{.}\)</figcaption></figure></p>
 <p id="p-1705"> In this section, we will consider functions defined through matrix-vector multiplication.  That is, we will choose a matrix \(A\text{;}\) when given an input \(\xvec\text{,}\) the function \(T(\xvec) = A\xvec\) forms the product \(A\xvec\) as its output.  Such a function is called a <em class="emphasis">matrix transformation</em>.</p>
-<article class="project-like" id="activity-21"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">2.5.2</span>.</h6>
+<article class="activity project-like" id="activity-21"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+</h6>
 <p id="p-1706">In this activity, we will look at some examples of matrix transformations.</p>
 <ol class="lower-alpha">
 <li id="li-1128">
@@ -230,7 +262,7 @@ A = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>We define the matrix transformation \(T(\xvec) =
+<p class="continuation">We define the matrix transformation \(T(\xvec) =
 A\xvec\) so that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -244,7 +276,7 @@ A\twovec{-2}{3} =
 \twovec{-1}{4}\text{.}
 \end{equation*}
 </div>
-<p>The function \(T\) takes the vector \(\twovec{-2}{3}\) as an input and gives us \(\twovec{-1}{4}\) as the output.</p>
+<p class="continuation">The function \(T\) takes the vector \(\twovec{-2}{3}\) as an input and gives us \(\twovec{-1}{4}\) as the output.</p>
 <ol id="p-1708" class="lower-roman">
 <li id="li-1129"><p id="p-1709">What is \(T\left(\twovec{1}{-2}\right)\text{?}\)</p></li>
 <li id="li-1130"><p id="p-1710">What is \(T\left(\twovec{1}{0}\right)\text{?}\)</p></li>
@@ -279,7 +311,7 @@ T\left(\twovec{1}{0}\right) = \threevec{3}{-1}{1},
 T\left(\twovec{0}{1}\right) = \threevec{2}{2}{-1}\text{,}
 \end{equation*}
 </div>
-<p>what is the matrix \(A\text{?}\)</p>
+<p class="continuation">what is the matrix \(A\text{?}\)</p>
 </li>
 </ol></article><p id="p-1731">Let's discuss a few of the issues that appear in this activity.  First, if \(A\) is an \(m\times n\) matrix, we can form the matrix product \(A\xvec\) when \(\xvec\) is an \(n\)-dimensional vector in \(\real^n\text{.}\)  The resulting product \(A\xvec\) is an \(m\)-dimensional vector in \(\real^m\text{.}\)  If \(T(\xvec) = A\xvec\text{,}\) we therefore write \(T:\real^n\to\real^m\) meaning \(T\) takes vectors in \(\real^n\) as inputs and produces vectors in \(\real^m\) as outputs.  For instance, if</p>
 <div class="displaymath">
@@ -290,7 +322,7 @@ A=\left[\begin{array}{rrrr}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p>then \(T:\real^4\to\real^2\text{.}\)</p>
+<p class="continuation">then \(T:\real^4\to\real^2\text{.}\)</p>
 <p id="p-1732">If we know the matrix \(A\text{,}\) then we can form the matrix transformation \(T(\xvec) = A\xvec\text{.}\)  However, if we only know the values of the matrix transformation \(T\text{,}\) we can reconstruct the matrix \(A\text{.}\)  The key is to remember that matrix-vector multiplication constructs a linear combination.  For instance, if \(A\) is a \(m\times2\) matrix \(A=\left[\begin{array}{rr} \vvec_1
 \amp \vvec_2 \end{array}\right]\text{,}\) then</p>
 <div class="displaymath">
@@ -302,7 +334,7 @@ T\left(\twovec{1}{0}\right) =
 \vvec_1\text{.}
 \end{equation*}
 </div>
-<p>That is, we can find the first column of \(A\) by evaluating \(T\left(\twovec{1}{0}\right)\text{.}\)  Similarly, the second column of \(A\) is found by evaluating \(T\left(\twovec{0}{1}\right)\text{.}\)</p>
+<p class="continuation">That is, we can find the first column of \(A\) by evaluating \(T\left(\twovec{1}{0}\right)\text{.}\)  Similarly, the second column of \(A\) is found by evaluating \(T\left(\twovec{0}{1}\right)\text{.}\)</p>
 <p id="p-1733">More generally, we will write</p>
 <div class="displaymath">
 \begin{equation*}
@@ -315,7 +347,7 @@ T\left(\twovec{1}{0}\right) =
 0 \\ 0 \\ \vdots \\ 1 \end{array}\right]
 \end{equation*}
 </div>
-<p>so that</p>
+<p class="continuation">so that</p>
 <div class="displaymath">
 \begin{equation*}
 T(\evec_j) = \left[\begin{array}{rrrr}
@@ -324,9 +356,10 @@ T(\evec_j) = \left[\begin{array}{rrrr}
 \evec_j = \vvec_j\text{.}
 \end{equation*}
 </div>
-<p>This means that the \(j^{th}\) column of \(A\) is found by evaluating \(T(\evec_j)\text{.}\)  We record this fact in the following proposition.</p>
-<article class="theorem-like" id="prop-linear-trans-columns"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.4</span>.</h6>
+<p class="continuation">This means that the \(j^{th}\) column of \(A\) is found by evaluating \(T(\evec_j)\text{.}\)  We record this fact in the following proposition.</p>
+<article class="proposition theorem-like" id="prop-linear-trans-columns"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
+</h6>
 <p id="p-1734">If \(T:\real^n\to\real^m\) is a matrix transformation given by \(T(\xvec) = A\xvec\text{,}\) then the matrix \(A\) has columns \(T(\evec_j)\text{;}\) that is,</p>
 <div class="displaymath">
 \begin{equation*}
@@ -335,8 +368,9 @@ T(\evec_1) \amp T(\evec_2) \amp \ldots \amp T(\evec_n)
 \end{array}\right]\text{.}
 \end{equation*}
 </div></article><p id="p-1735">We will look at some examples of matrix transformations in the following activity.</p>
-<article class="project-like" id="activity-22"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">2.5.3</span>.</h6>
+<article class="activity project-like" id="activity-22"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h6>
 <p id="p-1736">Suppose that we work for a company that produces baked goods, including cakes, donuts, and eclairs.  Our company operates two plants, Plant 1 and Plant 2.  In one hour of operation,</p>
 <ul class="disc">
 <li id="li-1150"><p id="p-1737">Plant 1 produces 10 cakes, 50 donuts, and 30 eclairs.</p></li>
@@ -370,13 +404,13 @@ T(\evec_1) \amp T(\evec_2) \amp \ldots \amp T(\evec_n)
 T\left(\twovec{1}{0}\right) = \threevec{10}{50}{30}\text{.}
 \end{equation*}
 </div>
-<p>Similarly,</p>
+<p class="continuation">Similarly,</p>
 <div class="displaymath">
 \begin{equation*}
 T\left(\twovec{0}{1}\right) = \threevec{20}{30}{30}\text{,}
 \end{equation*}
 </div>
-<p>which tells us that the matrix \(A\) that defines \(T\) is</p>
+<p class="continuation">which tells us that the matrix \(A\) that defines \(T\) is</p>
 <div class="displaymath">
 \begin{equation*}
 A=\left[\begin{array}{rr}
@@ -394,7 +428,7 @@ R\left(\threevec{0}{1}{0}\right) = \twovec{1}{1},\qquad
 R\left(\threevec{0}{0}{1}\right) = \twovec{1}{2}\text{,}
 \end{equation*}
 </div>
-<p>which means that the matrix defining \(R\) is</p>
+<p class="continuation">which means that the matrix defining \(R\) is</p>
 <div class="displaymath">
 \begin{equation*}
 B = \left[\begin{array}{rrr}
@@ -409,7 +443,7 @@ B = \left[\begin{array}{rrr}
 R(T(\xvec)) = R(A\xvec) = B(A\xvec) = BA\xvec\text{.}
 \end{equation*}
 </div>
-<p>Notice that the matrix that defines the composition is given by the product of the two matrices defining the matrix transformations.</p>
+<p class="continuation">Notice that the matrix that defines the composition is given by the product of the two matrices defining the matrix transformations.</p>
 <p id="p-1766">In this case, we have</p>
 <div class="displaymath">
 \begin{equation*}
@@ -429,7 +463,7 @@ BA =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>This means that the matrix transformation that tells us the required amount of ingredients given the amount of time that the plants are operated is described by</p>
+<p class="continuation">This means that the matrix transformation that tells us the required amount of ingredients given the amount of time that the plants are operated is described by</p>
 <div class="displaymath">
 \begin{equation*}
 P(\xvec) = R\circ T(\xvec)= \left[\begin{array}{rr}
@@ -440,7 +474,7 @@ P(\xvec) = R\circ T(\xvec)= \left[\begin{array}{rr}
 = \twovec{F}{S}\text{.}
 \end{equation*}
 </div>
-<p>For instance, if Plant 1 operates for 30 hours and Plant 2 for 20 hours, we have</p>
+<p class="continuation">For instance, if Plant 1 operates for 30 hours and Plant 2 for 20 hours, we have</p>
 <div class="displaymath">
 \begin{equation*}
 P\left(\twovec{30}{20}\right) =
@@ -452,16 +486,18 @@ P\left(\twovec{30}{20}\right) =
 = \twovec{6400}{6500}\text{.}
 \end{equation*}
 </div>
-<p>In other words, we need 6400 units of flour and 6500 units of sugar.</p>
+<p class="continuation">In other words, we need 6400 units of flour and 6500 units of sugar.</p>
 <p id="p-1767">This activity shows that the composition of matrix transformations corresponds to the product of matrices, an important observation that we summarize in the following proposition.</p>
-<article class="theorem-like" id="proposition-13"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.5.5</span>.</h6>
+<article class="proposition theorem-like" id="proposition-13"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
+</h6>
 <p id="p-1768">If we have a matrix transformation \(T\) defined by the matrix \(A\) and a matrix transformation \(S\) defined by the matrix \(B\text{,}\) then the composition of the matrix transformations is a new matrix transformation \(S\circ T\) defined by the matrix \(BA\text{.}\)</p></article></section><section class="subsection" id="subsec-dynamical-systems"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.2</span> <span class="title">Discrete Dynamical Systems</span>
 </h3>
-<a href="sec-linear-trans.html#subsec-dynamical-systems" class="permalink">¶</a><p id="p-1769">In <a href="sec-dynamical.html" class="internal" title="Section 4.4: Dynamical systems">Section 4.4</a>, we will give considerable attention to a specific type of matrix transformation, which is illustrated in the next activity.</p>
-<article class="project-like" id="activity-23"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">2.5.4</span>.</h6>
+<p id="p-1769">In <a href="sec-dynamical.html" class="internal" title="Section 4.4: Dynamical systems">Section 4.4</a>, we will give considerable attention to a specific type of matrix transformation, which is illustrated in the next activity.</p>
+<article class="activity project-like" id="activity-23"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
+</h6>
 <p id="p-1770">Suppose we run a company that has two warehouses, which we will call \(P\) and \(Q\text{,}\) and a fleet of 1000 delivery trucks. Every day, a delivery truck goes out from one of the warehouses and returns every evening to one of the warehouses.  Every evening,</p>
 <ul class="disc">
 <li id="li-1173"><p id="p-1771">70% of the trucks that leave \(P\) return to \(P\text{.}\)  The other 30% return to \(Q\text{.}\)</p></li>
@@ -491,7 +527,7 @@ A\xvec\text{.}\)</p></li>
 <li id="li-1185"><p id="p-1785">Suppose that \(R\) is the matrix transformation that transforms the distribution of trucks \(\xvec\) one morning into the distribution of trucks one week later. What is the matrix that defines the transformation \(R\text{?}\)</p></li>
 <li id="li-1186"><p id="p-1786">What happens to the distribution of trucks after a very long time?</p></li>
 </ol></article><p id="p-1800">This is type of situation occurs frequently.  We have a vector \(\xvec\) that describes the state of some system; in this case, \(\xvec\) describes the distribution of trucks between the two locations at a particular time.  Then we have a matrix \(A\) that defines a matrix transformation with \(T(\xvec) =
-A\xvec\) describing the state at some later time.  We call \(\xvec\) the <em class="emphasis">state</em> vector and \(T\) the <em class="emphasis">transition</em> function, as it describes the transition of the state vector from one time to the next.  </p>
+A\xvec\) describing the state at some later time.  We call \(\xvec\) the <em class="emphasis">state</em> vector and \(T\) the <em class="emphasis">transition</em> function, as it describes the transition of the state vector from one time to the next. </p>
 <p id="p-1801">We begin in an initial state \(\xvec_0=
 \ctwovec{0}{1000}\text{.}\)  The state one day later will be the vector \(\xvec_1 = T(\xvec_0) = A\xvec_0\text{.}\)  In the example from our activity, we have</p>
 <div class="displaymath">
@@ -502,7 +538,7 @@ A = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Therefore,</p>
+<p class="continuation">Therefore,</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec_1 = A\xvec_0 = 
@@ -521,7 +557,7 @@ A = \left[\begin{array}{rr}
 \ctwovec{600}{400}\text{.}
 \end{equation*}
 </div>
-<p>We can continue this process finding \(\xvec_k\text{,}\) the state after \(k\) days using \(\xvec_k = A\xvec_{k-1} =
+<p class="continuation">We can continue this process finding \(\xvec_k\text{,}\) the state after \(k\) days using \(\xvec_k = A\xvec_{k-1} =
 A^k\xvec_0\text{.}\)  In this way, we see that the long-term behavior of the state vector is determined by the powers of the matrix \(A\text{.}\)</p>
 <p id="p-1803">Using Sage, we can compute \(A^k\) for some very large powers of \(A\text{.}\)  For instance,</p>
 <div class="displaymath">
@@ -532,7 +568,7 @@ A^{100} \approx \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>In fact, all large powers of \(A\) look very close to this matrix.  Therefore, after a very long time, the state vector is very close to</p>
+<p class="continuation">In fact, all large powers of \(A\) look very close to this matrix.  Therefore, after a very long time, the state vector is very close to</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{rr}
@@ -543,7 +579,7 @@ A^{100} \approx \left[\begin{array}{rr}
 = \ctwovec{625}{375}\text{.}
 \end{equation*}
 </div>
-<p>This means that, eventually, 625 cars are at location \(P\) every day and 375 are at \(Q\text{.}\)</p>
+<p class="continuation">This means that, eventually, 625 cars are at location \(P\) every day and 375 are at \(Q\text{.}\)</p>
 <p id="p-1804"> We call this sitution in which the state of a system evolves from one time to the next according to the rule \(\xvec_{k+1}=A\xvec_k\) a <em class="emphasis">discrete dynamical system</em>.  In <a href="chap4.html" class="internal" title="Chapter 4: Eigenvalues and eigenvectors">Chapter 4</a>, we will develop a theory that enables us to easily make long-term predictions without needing to compute large powers of the matrix.</p></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.3</span> <span class="title">Summary</span>
 </h3>
@@ -566,7 +602,7 @@ A\xvec\) that describes how the state vector evolves from one time to the next. 
 </ul></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.5.4</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-1810">Suppose that \(T\) is the matrix transformation defined by the matrix \(A\) and \(S\) is the matrix transformation defined by \(B\) where</p>
 <div class="displaymath">
 \begin{equation*}
@@ -587,7 +623,7 @@ B = \left[\begin{array}{rrr}
 <li id="li-1205"><p id="p-1813">Evaluate the matrix transformation \(S\left(\threevec{-2}{2}{1}\right)\text{.}\)</p></li>
 <li id="li-1206"><p id="p-1814">Evaluate the matrix transformation \(S\circ T\left(\threevec{1}{-3}{2}\right)\text{.}\)</p></li>
 <li id="li-1207"><p id="p-1815">Find the matrix \(C\) that defines the matrix transformation \(S\circ T\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-1828">Determine whether the following statements are true or false and provide a justification for your response.</p>
 <ol class="lower-alpha">
 <li id="li-1218"><p id="p-1829">A matrix transformation \(T:\real^4\to\real^5\) is defined by \(T(\xvec) = A\xvec\) where \(A\) is a \(4\times5\) matrix.</p></li>
@@ -596,7 +632,7 @@ B = \left[\begin{array}{rrr}
 <li id="li-1221"><p id="p-1832">If \(T:\real^n\to\real^m\) is a matrix transformation, then the equation \(T(\xvec) =
 \zerovec\) always has a solution.</p></li>
 <li id="li-1222"><p id="p-1833">If \(T:\real^n\to\real^m\) is a matrix transformation and \(\vvec\) and \(\wvec\) two vectors in \(\real^n\text{,}\) then the vectors \(T(\vvec + t\wvec)\) form a line in \(\real^m\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-1846">This problem concerns the identification of matrix transformations.</p>
 <ol class="lower-alpha">
 <li id="li-1233">
@@ -620,9 +656,9 @@ T\left(\threevec{x_1}{x_2}{x_3}\right) =
 \end{array}\right]
 \end{equation*}
 </div>
-<p>is not a matrix transformation.</p>
+<p class="continuation">is not a matrix transformation.</p>
 </li>
-</ol></article><article class="exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-1855">Suppose that the matrix</p>
 <div class="displaymath">
 \begin{equation*}
@@ -633,20 +669,20 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p>defines the matrix transformation \(T:\real^3\to\real^3\text{.}\)</p>
+<p class="continuation">defines the matrix transformation \(T:\real^3\to\real^3\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-1239"><p id="p-1856">Describe the vectors \(\xvec\) that satisfy \(T(\xvec) = \zerovec\text{.}\)</p></li>
 <li id="li-1240"><p id="p-1857">Describe the vectors \(\xvec\) that satisfy \(T(\xvec) = \threevec{-8}{9}{2}\text{.}\)</p></li>
 <li id="li-1241"><p id="p-1858">Describe the vectors \(\xvec\) that satisfy \(T(\xvec) = \threevec{-8}{2}{-4}\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">5.</span></h6>
-<p id="p-1867">Suppose \(T:\real^3\to\real^2\) is a matrix transformation with \(T(\evec_j) = \vvec_j\) where \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) are as shown in <a data-knowl="./knowl/fig-ex-linear-trans.html" title="Figure 2.5.6">Figure 2.5.6</a>.</p>
-<figure class="figure-like" id="fig-ex-linear-trans"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-linear-trans.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.5.6.</span> The vectors \(T(\evec_j)=\vvec_j\text{.}\)</figcaption></figure><ol id="p-1868" class="lower-alpha">
+</ol></article><article class="exercise exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-1867">Suppose \(T:\real^3\to\real^2\) is a matrix transformation with \(T(\evec_j) = \vvec_j\) where \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) are as shown in <a class="xref" data-knowl="./knowl/fig-ex-linear-trans.html" title="Figure 2.5.6">Figure 2.5.6</a>.</p>
+<figure class="figure figure-like" id="fig-ex-linear-trans"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-linear-trans.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.6<span class="period">.</span></span><span class="space"> </span>The vectors \(T(\evec_j)=\vvec_j\text{.}\)</figcaption></figure><ol id="p-1868" class="lower-alpha">
 <li id="li-1248"><p id="p-1869">Sketch the vector \(T\left(\threevec{2}{1}{2}\right)\text{.}\)</p></li>
 <li id="li-1249"><p id="p-1870">What is the vector \(T\left(\threevec{0}{1}{0}\right)\text{?}\)</p></li>
 <li id="li-1250"><p id="p-1871">Find all the vectors \(\xvec\) such that \(T(\xvec) =
 \zerovec\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-1880">Suppose that a company has three plants, called Plants 1, 2, and 3, that produce milk \(M\) and yogurt \(Y\text{.}\)  For every hour of operation,</p>
 <ul class="disc">
 <li id="li-1257"><p id="p-1881">Plant \(1\) produces 20 units of milk and 15 units of yogurt.</p></li>
@@ -663,13 +699,13 @@ A = \left[\begin{array}{rrr}
 <li id="li-1263"><p id="p-1887">milk requires 5 units of electricity and 8 units of labor.</p></li>
 <li id="li-1264"><p id="p-1888">yogurt requires 6 units of electricity and 10 units of labor.</p></li>
 </ul>
-<p>Write expressions for the required amounts of electricity \(E\) and labor \(L\) in terms of \(M\) and \(Y\text{.}\)</p>
+<p class="continuation">Write expressions for the required amounts of electricity \(E\) and labor \(L\) in terms of \(M\) and \(Y\text{.}\)</p>
 </li>
 <li id="li-1265"><p id="p-1889">If we write the vector \(\zvec = \twovec{E}{L}\) to record the required amounts of electricity and labor, find the matrix \(B\) that defines the matrix transformation \(S(\yvec) =
 \zvec\text{.}\)</p></li>
 <li id="li-1266"><p id="p-1890">If \(\xvec = \threevec{30}{20}{10}\) describes the amounts of time that the three plants are operated, how much milk and yogurt is produced?  How much electricity and labor are required?</p></li>
 <li id="li-1267"><p id="p-1891">Find the matrix \(C\) that describes the matrix transformation \(R(\xvec)=\zvec\) that gives the required amounts of electricity and labor when the plants are operated times given by vector \(\xvec\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-1904">Suppose that \(T:\real^2\to\real^2\) is a matrix transformation and that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -681,7 +717,7 @@ T\left(\twovec{-1}{1}\right) = \twovec{1}{2}\text{.}
 <li id="li-1278"><p id="p-1905">Find the vector \(T\left(\twovec{1}{0}\right)\text{.}\)</p></li>
 <li id="li-1279"><p id="p-1906">Find the matrix \(A\) that defines \(T\text{.}\)</p></li>
 <li id="li-1280"><p id="p-1907">Find the vector \(T\left(\twovec{4}{-5}\right)\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-1916">Suppose that two species \(P\) and \(Q\) interact with one another and that we measure their populations every month.  We record their populations in a state vector \(\xvec = \twovec{p}{q}\text{,}\) where \(p\) and \(q\) are the populations of \(P\) and \(Q\text{,}\) respectively.  We observe that there is a matrix</p>
 <div class="displaymath">
 \begin{equation*}
@@ -691,20 +727,20 @@ A = \left[\begin{array}{rr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p>such that the matrix transformation \(T(\xvec)=A\xvec\) is the transition function describing how the state vector evolves from month to month.  We also observe that, at the beginning of July, the populations are described by the state vector \(\xvec=\twovec{1}{2}\text{.}\) <div class="sagecell-sage" id="sage-69"><script type="text/x-sage">
+<p class="continuation">such that the matrix transformation \(T(\xvec)=A\xvec\) is the transition function describing how the state vector evolves from month to month.  We also observe that, at the beginning of July, the populations are described by the state vector \(\xvec=\twovec{1}{2}\text{.}\) <div class="sagecell-sage" id="sage-69"><script type="text/x-sage">
 </script></div></p>
 <ol class="lower-alpha">
 <li id="li-1287"><p id="p-1917">What will the populations be at the beginning of August?</p></li>
 <li id="li-1288"><p id="p-1918">What were the populations at the beginning of June?</p></li>
 <li id="li-1289"><p id="p-1919">What will the populations be at the beginning of December?</p></li>
 <li id="li-1290"><p id="p-1920">What will the populations be at the beginning of July in the following year?</p></li>
-</ol></article><article class="exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-1931">Students in a school are sometimes absent due to an illness.  Suppose that</p>
 <ul class="disc">
 <li id="li-1299"><p id="p-1932">95% of the students who attend school will attend school the next day.</p></li>
 <li id="li-1300"><p id="p-1933">50% of the students are absent one day will be absent the next day.</p></li>
 </ul>
-<p>We will record the number of present students \(p\) and the number of absent students \(a\) in a state vector \(\xvec=\twovec{p}{a}\text{.}\)  On Tuesday, the state vector is \(\xvec=\ctwovec{1700}{100}\text{.}\)  The state vector evolves from one day to the next according to the transition function \(T:\real^2\to\real^2\text{.}\)</p>
+<p class="continuation">We will record the number of present students \(p\) and the number of absent students \(a\) in a state vector \(\xvec=\twovec{p}{a}\text{.}\)  On Tuesday, the state vector is \(\xvec=\ctwovec{1700}{100}\text{.}\)  The state vector evolves from one day to the next according to the transition function \(T:\real^2\to\real^2\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-1301"><p id="p-1934">Suppose we initially have 1000 students who are present and none absent.  Find \(T\left(\ctwovec{1000}{0}\right)\text{.}\)</p></li>
 <li id="li-1302"><p id="p-1935">Suppose we initially have 1000 students who are absent and none present.  Find \(T\left(\ctwovec{0}{1000}\right)\text{.}\)</p></li>
@@ -715,7 +751,5 @@ A = \left[\begin{array}{rr}
 <li id="li-1307"><p id="p-1940">What happens to the number of students who are present after a very long time?</p></li>
 </ol></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

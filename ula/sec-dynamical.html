@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:46-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:33:58-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Dynamical systems</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,8 +132,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-eigen-diag.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap4.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-stochastic.html" title="Next">Next</a></span>
@@ -132,9 +144,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-eigen-diag.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap4.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-stochastic.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,18 +195,37 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-dynamical"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-dynamical"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Dynamical systems</span>
 </h2>
-<a href="sec-dynamical.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-4210">In the last section, we used a coordinate system defined by the eigenvectors of a matrix to express matrix multiplication in a simpler form.  For instance, if there is a basis of \(\real^n\) consisting of eigenvectors of \(A\text{,}\) we saw that multiplying a vector by \(A\text{,}\) when expressed in the coordinates defined by the basis of eigenvectors, was equivalent to multiplying by a diagonal matrix.</p>
+<section class="introduction" id="introduction-22"><p id="p-4210">In the last section, we used a coordinate system defined by the eigenvectors of a matrix to express matrix multiplication in a simpler form.  For instance, if there is a basis of \(\real^n\) consisting of eigenvectors of \(A\text{,}\) we saw that multiplying a vector by \(A\text{,}\) when expressed in the coordinates defined by the basis of eigenvectors, was equivalent to multiplying by a diagonal matrix.</p>
 <p id="p-4211">In this section, we will put these ideas to use as we explore discrete dynamical systems, first encountered in <a href="sec-linear-trans.html#subsec-dynamical-systems" class="internal" title="Subsection 2.5.2: Discrete Dynamical Systems">Subsection 2.5.2</a>.  Recall that we used a state vector \(\xvec\) to characterize the state of some system, such as the distribution of delivery trucks between two locations, at a particular time.  A matrix \(A\) described the transition of the state vector with \(A\xvec\) characterizing the state of the system at a later time.</p>
 <p id="p-4212">Our goal in this section is to describe the types of behaviors that dynamical systems exhibit and to develop a means of detecting these behaviors.</p>
-<article class="project-like" id="exploration-17"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">4.4.1</span>.</h6>
+<article class="exploration project-like" id="exploration-17"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="period">.</span>
+</h6>
 <p id="p-4213">Suppose that we have a diagonalizable matrix \(A=PDP^{-1}\) where</p>
 <div class="displaymath">
 \begin{equation*}
@@ -219,8 +250,9 @@ D = \left[\begin{array}{rr}
 <span class="type">Subsection</span> <span class="codenumber">4.4.1</span> <span class="title">A first example</span>
 </h3>
 <p id="p-4227">We will begin our study of dynamical systems with an example that illustrates how eigenvalues and eigenvectors may be used to understand their behavior.</p>
-<article class="project-like" id="activity-51"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.4.2</span>.</h6>
+<article class="activity project-like" id="activity-51"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span>
+</h6>
 <p id="p-4228">Suppose we have two species \(R\) and \(S\) that interact with one another and that we record the change in their populations from year to year.  When we begin our study, the populations, measured in thousands, are \(R_0\) and \(S_0\text{;}\) after \(k\) years, the populations are \(R_k\) and \(S_k\text{.}\)</p>
 <p id="p-4229">If we know the populations in one year, they are determined in the following year by the expressions</p>
 <div class="displaymath">
@@ -231,7 +263,7 @@ S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
 \end{aligned}
 \end{equation*}
 </div>
-<p>We will combine the populations in a vector \(\xvec_k = \twovec{R_k}{S_k}\) and note that \(\xvec_{k+1} = A\xvec_k\) where \(A = \left[\begin{array}{rr}
+<p class="continuation">We will combine the populations in a vector \(\xvec_k = \twovec{R_k}{S_k}\) and note that \(\xvec_{k+1} = A\xvec_k\) where \(A = \left[\begin{array}{rr}
 0.9 \amp 0.8 \\
 0.2 \amp 0.9 \\
 \end{array}\right]
@@ -245,7 +277,7 @@ S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
 \vvec_2=\twovec{-2}{1}
 \end{equation*}
 </div>
-<p>are eigenvectors of \(A\) and find their respective eigenvalues.</p>
+<p class="continuation">are eigenvectors of \(A\) and find their respective eigenvalues.</p>
 </li>
 <li id="li-2882"><p id="p-4231">Suppose that initially \(\xvec_0 = \twovec{2}{3}\text{.}\) Write \(\xvec_0\) as a linear combination of the eigenvectors \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
 <li id="li-2883"><p id="p-4232">Write the vectors \(\xvec_1\text{,}\) \(\xvec_2\text{,}\) and \(\xvec_3\) as a linear combination of eigenvectors \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
@@ -255,7 +287,7 @@ S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
 <li id="li-2886"><p id="p-4235">Explain what happens to the ratio \(R_k/S_k\) as \(k\) becomes very large no matter what the initial populations are.</p></li>
 <li id="li-2887"><p id="p-4236">After a very long time, by approximately what factor does the population of \(R\) grow every year?  By approximately what factor does the population of \(S\) grow every year?</p></li>
 </ol></article><p id="p-4245">This activity demonstrates the type of questions we will be considering.  In particular, we will assume that we have an initial vector \(\xvec_0\) and a matrix \(A\) and define \(\xvec_{k+1} = A\xvec_k\text{.}\)  The eigenvalues and eigenvectors of \(A\) provide the key that helps us understand how the vectors \(\xvec_k\) evolve and enables us to make long-range predictions.</p>
-<p id="p-4246">Let's look at the specific example in the preview activity more carefully.  We see that we have</p>
+<p id="p-4246">Let's look at the specific example in the previous activity more carefully.  We see that we have</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec_{k+1} = A\xvec_k = 
@@ -266,7 +298,7 @@ S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
 \xvec_k
 \end{equation*}
 </div>
-<p>and that the matrix \(A\) has eigenvectors \(\vvec_1 =
+<p class="continuation">and that the matrix \(A\) has eigenvectors \(\vvec_1 =
 \twovec{2}{1}\) and \(\vvec_2=\twovec{-2}{1}\) with associated eigenvalues \(\lambda_1=1.3\) and \(\lambda_2=0.5\text{.}\)</p>
 <p id="p-4247">Notice that the eigenvectors \(\vvec_1\) and \(\vvec_2\) form a basis \(\bcal\) of \(\real^2\text{.}\)  This means that \(A\) is diagonalizable so we can write \(A=PDP^{-1}\) where</p>
 <div class="displaymath">
@@ -283,7 +315,7 @@ D = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>In particular, we have</p>
+<p class="continuation">In particular, we have</p>
 <div class="displaymath">
 \begin{equation*}
 \coords{A\xvec}{\bcal} = D\coords{\xvec}{\bcal}\text{.}
@@ -305,16 +337,16 @@ D = \left[\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><p id="p-4249">Thinking about this geometrically, we begin with the vector \(\coords{\xvec_0}{\bcal}=\ctwovec{2}{1}\text{.}\)  Subsequent vectors \(\coords{\xvec_k}{\bcal}\) are obtained by scaling horizontally by a factor of \(1.3\) and scaling vertically by a factor \(0.5\text{.}\)  Notice how the points move along a curve away from the origin becoming ever closer to the horizontal axis.</p></div>
-<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><img src="images/eigen-dynamical-intro.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4249">Thinking about this geometrically, we begin with the vector \(\coords{\xvec_0}{\bcal}=\ctwovec{2}{1}\text{.}\)  Subsequent vectors \(\coords{\xvec_k}{\bcal}\) are obtained by scaling horizontally by a factor of \(1.3\) and scaling vertically by a factor \(0.5\text{.}\)  Notice how the points move along a curve away from the origin becoming ever closer to the horizontal axis.</p></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/eigen-dynamical-intro.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-4250">After a very long time, \(\coords{\xvec_k}{\bcal} \approx
 \ctwovec{1.3^k\cdot2}{0}\text{,}\) which says that \(\coords{\xvec_{k+1}}{\bcal} \approx
 1.3\coords{\xvec_k}{\bcal}\text{.}\)  That is, the vector \(\coords{\xvec_k}{\bcal}\) grows by a factor of \(1.3\) every year.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><p id="p-4251">To recover the behavior of the sequence \(\xvec_0, \xvec_1,
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4251">To recover the behavior of the sequence \(\xvec_0, \xvec_1,
 \xvec_2, \ldots\text{,}\) we change coordinate systems using the basis defined by \(\vvec_1\) and \(\vvec_2\text{.}\)  Here, the points move along a curve away from the origin becoming ever closer to the line defined by \(\vvec_1\text{.}\)</p></div>
-<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><img src="images/eigen-dynamical-intro-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/eigen-dynamical-intro-1.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-4252">Eventually, the vectors become practically indistinguishable from a scalar multiple of \(\vvec_1 = \twovec{2}{1}\text{;}\) that is, \(\xvec_k\approx s\vvec_1\text{.}\)  This means that</p>
 <div class="displaymath">
@@ -322,18 +354,19 @@ D = \left[\begin{array}{rr}
 \xvec_k = \twovec{R_k}{S_k} \approx s\twovec{2}{1}
 \end{equation*}
 </div>
-<p>so that \(R_k/S_k \approx 2\text{.}\)  In addition, \(\xvec_{k+1}
+<p class="continuation">so that \(R_k/S_k \approx 2\text{.}\)  In addition, \(\xvec_{k+1}
 \approx 1.3\xvec_k\) so that \(R_{k+1}\approx 1.3 R_k\) and \(S_{k+1}\approx 1.3 S_k\text{.}\)  We conclude that, after a very long time, the ratio of the populations \(R_k\) to \(S_k\) is very close to 2 to 1.  We also see that each population is multiplied by 1.3 every year meaning the annual growth rate for both populations is about 30%.</p>
-<p id="p-4253">In the same way, we can consider other possible initial populations \(\xvec_0\) as shown in <a data-knowl="./knowl/fig-eigen-dynam-saddle.html" title="Figure 4.4.1">Figure 4.4.1</a>.  Regardless of \(\xvec_0\text{,}\) the population vectors, in the coordinates defined by \(\bcal\text{,}\) are scaled horizontally by a factor of \(1.3\) and vertically by a factor of \(0.5\text{.}\)  The sequence of points \(\coords{\xvec_k}{\bcal}\text{,}\) called <em class="emphasis">trajectories</em>, move along the curves, as shown on the left.  In the standard coordinate system, we see that the trajectories converge to the eigenspace \(E_{1.3}\text{.}\)</p>
-<figure class="figure-like" id="fig-eigen-dynam-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-dynam-saddle.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.1.</span> The trajectories of the dynamical system formed by the matrix \(A\) in the coordinate system defined by \(\bcal\text{,}\) on the left, and in the standard coordinate system, on the right.</figcaption></figure><p id="p-4254">We conclude that, regardless of the initial populations, the ratio of the populations \(R_k/S_k\) will approach 2 to 1 and that the growth rate for both populations approaches 30%.  This example demonstrates the power of using eigenvalues and eigenvectors to rewrite the problem in terms of a new coordinate system.  By doing so, we are able to predict the long-term behavior of the populations independently of the initial populations.</p>
-<p id="p-4255">Diagrams like those shown in <a data-knowl="./knowl/fig-eigen-dynam-saddle.html" title="Figure 4.4.1">Figure 4.4.1</a> are called <em class="emphasis">phase portraits.</em> On the left of <a data-knowl="./knowl/fig-eigen-dynam-saddle.html" title="Figure 4.4.1">Figure 4.4.1</a> is the phase portrait of the diagonal matrix \(D=\mattwo{1.3}00{0.5}\) while the right of that figure shows the phase portrait of \(A =
+<p id="p-4253">In the same way, we can consider other possible initial populations \(\xvec_0\) as shown in <a class="xref" data-knowl="./knowl/fig-eigen-dynam-saddle.html" title="Figure 4.4.1">Figure 4.4.1</a>.  Regardless of \(\xvec_0\text{,}\) the population vectors, in the coordinates defined by \(\bcal\text{,}\) are scaled horizontally by a factor of \(1.3\) and vertically by a factor of \(0.5\text{.}\)  The sequence of points \(\coords{\xvec_k}{\bcal}\text{,}\) called <em class="emphasis">trajectories</em>, move along the curves, as shown on the left.  In the standard coordinate system, we see that the trajectories converge to the eigenspace \(E_{1.3}\text{.}\)</p>
+<figure class="figure figure-like" id="fig-eigen-dynam-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-dynam-saddle.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span>The trajectories of the dynamical system formed by the matrix \(A\) in the coordinate system defined by \(\bcal\text{,}\) on the left, and in the standard coordinate system, on the right.</figcaption></figure><p id="p-4254">We conclude that, regardless of the initial populations, the ratio of the populations \(R_k/S_k\) will approach 2 to 1 and that the growth rate for both populations approaches 30%.  This example demonstrates the power of using eigenvalues and eigenvectors to rewrite the problem in terms of a new coordinate system.  By doing so, we are able to predict the long-term behavior of the populations independently of the initial populations.</p>
+<p id="p-4255">Diagrams like those shown in <a class="xref" data-knowl="./knowl/fig-eigen-dynam-saddle.html" title="Figure 4.4.1">Figure 4.4.1</a> are called <em class="emphasis">phase portraits.</em> On the left of <a class="xref" data-knowl="./knowl/fig-eigen-dynam-saddle.html" title="Figure 4.4.1">Figure 4.4.1</a> is the phase portrait of the diagonal matrix \(D=\mattwo{1.3}00{0.5}\) while the right of that figure shows the phase portrait of \(A =
 \mattwo{0.9}{0.8}{0.2}{0.9}\text{.}\)  The phase portrait of \(D\) is relatively easy to understand because it is determined only by the two eigenvalues.  Once we have the phase portrait of \(D\text{,}\) however, the phase portrait of \(A\) has a similar appearance with the eigenvectors \(\vvec_j\) replacing the standard basis vectors \(\evec_j\text{.}\)</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.2</span> <span class="title">Classifying dynamical systems</span>
 </h3>
 <p id="p-4256">In the previous example, we were able to make predictions about the behavior of trajectories \(\xvec_k=A^k\xvec_0\) by considering the eigenvalues and eigenvectors of the matrix \(A\text{.}\)  The next activity looks at a collection of matrices that demonstrate the types of behavior a \(2\times2\) dynamical system can exhibit.</p>
-<article class="project-like" id="activity-52"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.4.3</span>.</h6>
+<article class="activity project-like" id="activity-52"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
+</h6>
 <p id="p-4257">We will now look at several more examples of dynamical systems.  If \(P = \left[\begin{array}{rr}
 1 \amp -1 \\
 1 \amp 1 \\
@@ -346,7 +379,7 @@ D = \left[\begin{array}{rr}
 0 \amp 1.5 \\
 \end{array}\right]
 \text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-activity.svg" role="img" class="contained" alt=""></div></div></div>
 </li>
 <li id="li-2896">
 <p id="p-4259">\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
@@ -354,7 +387,7 @@ D = \left[\begin{array}{rr}
 1 \amp 0 \\
 \end{array}\right]
 \text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-activity.svg" role="img" class="contained" alt=""></div></div></div>
 </li>
 <li id="li-2897">
 <p id="p-4260">\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
@@ -362,7 +395,7 @@ D = \left[\begin{array}{rr}
 0 \amp 1.5 \\
 \end{array}\right]
 \text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-activity.svg" role="img" class="contained" alt=""></div></div></div>
 </li>
 <li id="li-2898">
 <p id="p-4261">\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
@@ -370,7 +403,7 @@ D = \left[\begin{array}{rr}
 0 \amp 0.7 \\
 \end{array}\right]
 \text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-activity.svg" role="img" class="contained" alt=""></div></div></div>
 </li>
 <li id="li-2899">
 <p id="p-4262">\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
@@ -378,7 +411,7 @@ D = \left[\begin{array}{rr}
 0.9 \amp 1 \\
 \end{array}\right]
 \text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-activity.svg" role="img" class="contained" alt=""></div></div></div>
 </li>
 <li id="li-2900">
 <p id="p-4263">\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
@@ -386,49 +419,50 @@ D = \left[\begin{array}{rr}
 0.2 \amp 0.6 \\
 \end{array}\right]
 \text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-activity.svg" role="img" class="contained" alt=""></div></div></div>
 </li>
 </ol></article><p id="p-4265">This activity demonstrates six possible types of dynamical systems, which are determined by the eigenvalues of \(A\text{.}\)</p>
 <ul class="disc">
 <li id="li-2907">
 <p id="p-4266">Suppose that \(A\) has two real eigenvalues \(\lambda_1\) and \(\lambda_2\) and that both \(|\lambda_1|, |\lambda_2| \gt
-1\text{.}\)  In this case, any nonzero vector \(\xvec_0\) forms a trajectory that moves away from the origin so we say that the origin is a <em class="emphasis">repellor</em>.   This is illustrated in <a data-knowl="./knowl/fig-eigen-phase-repellor.html" title="Figure 4.4.2">Figure 4.4.2</a>.</p>
-<figure class="figure-like" id="fig-eigen-phase-repellor"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-repellor.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.2.</span> The origin is a repellor when \(|\lambda_1|,
+1\text{.}\)  In this case, any nonzero vector \(\xvec_0\) forms a trajectory that moves away from the origin so we say that the origin is a <em class="emphasis">repellor</em>.   This is illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-phase-repellor.html" title="Figure 4.4.2">Figure 4.4.2</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-phase-repellor"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-repellor.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>The origin is a repellor when \(|\lambda_1|,
 |\lambda_2| \gt 1\text{.}\)</figcaption></figure>
 </li>
 <li id="li-2908">
 <p id="p-4267">Suppose that \(A\) has two real eigenvalues \(\lambda_1\) and \(\lambda_2\) and that \(|\lambda_1| \gt 1 \gt |\lambda_2|
-\text{.}\)  In this case, most nonzero vectors \(\xvec_0\) form trajectories that converge to the eigenspace \(E_{\lambda_1}\text{.}\)  In this case, we say that the origin is a <em class="emphasis">saddle</em> as illustrated in <a data-knowl="./knowl/fig-eigen-phase-saddle.html" title="Figure 4.4.3">Figure 4.4.3</a>.</p>
-<figure class="figure-like" id="fig-eigen-phase-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-saddle.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.3.</span> The origin is a saddle when \(|\lambda_1|\gt 1 \gt
+\text{.}\)  In this case, most nonzero vectors \(\xvec_0\) form trajectories that converge to the eigenspace \(E_{\lambda_1}\text{.}\)  In this case, we say that the origin is a <em class="emphasis">saddle</em> as illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-phase-saddle.html" title="Figure 4.4.3">Figure 4.4.3</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-phase-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-saddle.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span>The origin is a saddle when \(|\lambda_1|\gt 1 \gt
 |\lambda_2|\text{.}\)</figcaption></figure>
 </li>
 <li id="li-2909">
 <p id="p-4268">Suppose that \(A\) has two real eigenvalues \(\lambda_1\) and \(\lambda_2\) and that both \(|\lambda_1|, |\lambda_2| \lt
-1\text{.}\)  In this case, any nonzero vector \(\xvec_0\) forms a trajectory that moves into the origin so we say that the origin is an <em class="emphasis">attractor</em>.   This is illustrated in <a data-knowl="./knowl/fig-eigen-phase-attractor.html" title="Figure 4.4.4">Figure 4.4.4</a>.</p>
-<figure class="figure-like" id="fig-eigen-phase-attractor"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-attractor.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.4.</span> The origin is an attractor when \(|\lambda_1|,
+1\text{.}\)  In this case, any nonzero vector \(\xvec_0\) forms a trajectory that moves into the origin so we say that the origin is an <em class="emphasis">attractor</em>.   This is illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-phase-attractor.html" title="Figure 4.4.4">Figure 4.4.4</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-phase-attractor"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-attractor.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.4<span class="period">.</span></span><span class="space"> </span>The origin is an attractor when \(|\lambda_1|,
 |\lambda_2| \lt 1\text{.}\)</figcaption></figure>
 </li>
 <li id="li-2910">
-<p id="p-4269">Suppose that \(A\) has a complex eigenvalue \(\lambda = a+bi\) where \(|\lambda| \gt 1\text{.}\)  In this case, a nonzero vector \(\xvec_0\) forms a trajectory that spirals away from the origin.  We say that the origin is a <em class="emphasis">spiral repellor</em>, as illustrated in <a data-knowl="./knowl/fig-eigen-phase-spiralr.html" title="Figure 4.4.5">Figure 4.4.5</a>.</p>
-<figure class="figure-like" id="fig-eigen-phase-spiralr"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-spiralr.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.5.</span> The origin is a spiral repellor when \(A\) has an eigenvalue \(\lambda=a+bi\) with \(a^2+b^2\gt 1\text{.}\)</figcaption></figure>
+<p id="p-4269">Suppose that \(A\) has a complex eigenvalue \(\lambda = a+bi\) where \(|\lambda| \gt 1\text{.}\)  In this case, a nonzero vector \(\xvec_0\) forms a trajectory that spirals away from the origin.  We say that the origin is a <em class="emphasis">spiral repellor</em>, as illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-phase-spiralr.html" title="Figure 4.4.5">Figure 4.4.5</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-phase-spiralr"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-spiralr.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span>The origin is a spiral repellor when \(A\) has an eigenvalue \(\lambda=a+bi\) with \(a^2+b^2\gt 1\text{.}\)</figcaption></figure>
 </li>
 <li id="li-2911">
-<p id="p-4270">Suppose that \(A\) has a complex eigenvalue \(\lambda = a+bi\) where \(|\lambda| = 1\text{.}\)  In this case, a nonzero vector \(\xvec_0\) forms a trajectory that moves on a closed curve around the origin.  We say that the origin is a <em class="emphasis">center</em>, as illustrated in <a data-knowl="./knowl/fig-eigen-phase-center.html" title="Figure 4.4.6">Figure 4.4.6</a>.</p>
-<figure class="figure-like" id="fig-eigen-phase-center"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-center.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.6.</span> The origin is a center when \(A\) has an eigenvalue \(\lambda=a+bi\) with \(a^2+b^2 = 1\text{.}\)</figcaption></figure>
+<p id="p-4270">Suppose that \(A\) has a complex eigenvalue \(\lambda = a+bi\) where \(|\lambda| = 1\text{.}\)  In this case, a nonzero vector \(\xvec_0\) forms a trajectory that moves on a closed curve around the origin.  We say that the origin is a <em class="emphasis">center</em>, as illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-phase-center.html" title="Figure 4.4.6">Figure 4.4.6</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-phase-center"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-center.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.6<span class="period">.</span></span><span class="space"> </span>The origin is a center when \(A\) has an eigenvalue \(\lambda=a+bi\) with \(a^2+b^2 = 1\text{.}\)</figcaption></figure>
 </li>
 <li id="li-2912">
-<p id="p-4271">Suppose that \(A\) has a complex eigenvalue \(\lambda = a+bi\) where \(|\lambda| \lt 1\text{.}\)  In this case, a nonzero vector \(\xvec_0\) forms a trajectory that spirals into the origin.  We say that the origin is a <em class="emphasis">spiral attractor</em>, as illustrated in <a data-knowl="./knowl/fig-eigen-phase-spirala.html" title="Figure 4.4.7">Figure 4.4.7</a>.</p>
-<figure class="figure-like" id="fig-eigen-phase-spirala"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-spirala.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.7.</span> The origin is a spiral attractor when \(A\) has an eigenvalue \(\lambda=a+bi\) with \(a^2+b^2\lt 1\text{.}\)</figcaption></figure>
+<p id="p-4271">Suppose that \(A\) has a complex eigenvalue \(\lambda = a+bi\) where \(|\lambda| \lt 1\text{.}\)  In this case, a nonzero vector \(\xvec_0\) forms a trajectory that spirals into the origin.  We say that the origin is a <em class="emphasis">spiral attractor</em>, as illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-phase-spirala.html" title="Figure 4.4.7">Figure 4.4.7</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-phase-spirala"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-phase-spirala.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.7<span class="period">.</span></span><span class="space"> </span>The origin is a spiral attractor when \(A\) has an eigenvalue \(\lambda=a+bi\) with \(a^2+b^2\lt 1\text{.}\)</figcaption></figure>
 </li>
 </ul>
-<article class="project-like" id="activity-53"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.4.4</span>.</h6>
+<article class="activity project-like" id="activity-53"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span>
+</h6>
 <p id="p-4272">In this activity, we will consider several ways in which two species might interact with one another.  Throughout, we will consider two species \(R\) and \(S\) whose populations in year \(k\) form a vector \(\xvec_k=\twovec{R_k}{S_k}\) and which evolve according to the rule</p>
 <div class="displaymath">
 \begin{equation*}
@@ -471,21 +505,22 @@ D = \left[\begin{array}{rr}
 </ol></article></section><section class="subsection" id="subsection-69"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.3</span> <span class="title">A \(3\times3\) system</span>
 </h3>
-<p id="p-4289">Up to this point, we have focused on \(2\times2\) systems. In fact, the general case is quite similar.  As an example, consider a \(3\times3\) system \(\xvec_{k+1}=A\xvec_k\) where the matrix \(A\) has eigenvalues \(\lambda_1 = 0.6\text{,}\) \(\lambda_2 = 0.8\text{,}\) and \(\lambda_3=1.1\text{.}\)  The matrix \(A\) therefore has a basis \(\bcal\) consisting of eigenvectors so we can look at the trajectories \(\coords{\xvec_k}{\bcal}\) in the coordinate system defined by \(\bcal\text{.}\)  The phase portraits in <a data-knowl="./knowl/fig-eigen-3d-saddle.html" title="Figure 4.4.8">Figure 4.4.8</a> show how the trajectories will evolve.  We see that all the trajectories will converge into the eigenspace \(E_{1.1}\text{.}\)</p>
-<figure class="figure-like" id="fig-eigen-3d-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/eigen-3d-saddle-d.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/eigen-3d-saddle-e.svg" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-4289">Up to this point, we have focused on \(2\times2\) systems. In fact, the general case is quite similar.  As an example, consider a \(3\times3\) system \(\xvec_{k+1}=A\xvec_k\) where the matrix \(A\) has eigenvalues \(\lambda_1 = 0.6\text{,}\) \(\lambda_2 = 0.8\text{,}\) and \(\lambda_3=1.1\text{.}\)  The matrix \(A\) therefore has a basis \(\bcal\) consisting of eigenvectors so we can look at the trajectories \(\coords{\xvec_k}{\bcal}\) in the coordinate system defined by \(\bcal\text{.}\)  The phase portraits in <a class="xref" data-knowl="./knowl/fig-eigen-3d-saddle.html" title="Figure 4.4.8">Figure 4.4.8</a> show how the trajectories will evolve.  We see that all the trajectories will converge into the eigenspace \(E_{1.1}\text{.}\)</p>
+<figure class="figure figure-like" id="fig-eigen-3d-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="images/eigen-3d-saddle-d.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="images/eigen-3d-saddle-e.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.8.</span> In a \(3\times3\) system with \(\lambda_1 = 0.6\text{,}\) \(\lambda_2=0.8\text{,}\) and \(\lambda_3 = 1.1\text{,}\) the trajectories \(\coords{\xvec_k}{\bcal}\) move along the curves shown above.</figcaption></figure><p id="p-4290">In the same way, suppose we have a \(3\times3\) system with complex eigenvalues \(\lambda=0.8 \pm 0.5i\) and \(\lambda_3=1.1\text{.}\)  Since the complex eigenvalues satisfy \(|\lambda| \lt 1\text{,}\) there is a two-dimensional subspace in which the trajectories spiral in toward the origin.  The phase portraits in <a data-knowl="./knowl/fig-eigen-3d-spiral.html" title="Figure 4.4.9">Figure 4.4.9</a> show some of the trajectories.  Once again, we see that all the trajectories converge into the eigenspace \(E_{1.1}\text{.}\)</p>
-<figure class="figure-like" id="fig-eigen-3d-spiral"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/eigen-3d-saddle-a.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/eigen-3d-saddle-c.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.8<span class="period">.</span></span><span class="space"> </span>In a \(3\times3\) system with \(\lambda_1 = 0.6\text{,}\) \(\lambda_2=0.8\text{,}\) and \(\lambda_3 = 1.1\text{,}\) the trajectories \(\coords{\xvec_k}{\bcal}\) move along the curves shown above.</figcaption></figure><p id="p-4290">In the same way, suppose we have a \(3\times3\) system with complex eigenvalues \(\lambda=0.8 \pm 0.5i\) and \(\lambda_3=1.1\text{.}\)  Since the complex eigenvalues satisfy \(|\lambda| \lt 1\text{,}\) there is a two-dimensional subspace in which the trajectories spiral in toward the origin.  The phase portraits in <a class="xref" data-knowl="./knowl/fig-eigen-3d-spiral.html" title="Figure 4.4.9">Figure 4.4.9</a> show some of the trajectories.  Once again, we see that all the trajectories converge into the eigenspace \(E_{1.1}\text{.}\)</p>
+<figure class="figure figure-like" id="fig-eigen-3d-spiral"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="images/eigen-3d-saddle-a.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="images/eigen-3d-saddle-c.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.4.9.</span> In a \(3\times3\) system with complex eigenvalues \(\lambda = a\pm bi\) with \(|\lambda| \lt 1\) and \(\lambda_3=1.1\text{,}\) the trajectories \(\coords{\xvec_k}{\bcal}\) move along the curves shown above.</figcaption></figure><article class="project-like" id="activity-54"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.4.5</span>.</h6>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.9<span class="period">.</span></span><span class="space"> </span>In a \(3\times3\) system with complex eigenvalues \(\lambda = a\pm bi\) with \(|\lambda| \lt 1\) and \(\lambda_3=1.1\text{,}\) the trajectories \(\coords{\xvec_k}{\bcal}\) move along the curves shown above.</figcaption></figure><article class="activity project-like" id="activity-54"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.5</span><span class="period">.</span>
+</h6>
 <p id="p-4291">The following type of analysis has been used to study the population of a bison herd.  We will divide the population of female bison into three groups: juveniles who are less than one year old; yearlings between one and two years old; and adults who are older than two years.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;">
+<div class="sbspanel top" style="width:51.2820512820513%;">
 <p id="p-4292">Each year,</p>
 <ul class="disc">
 <li id="li-2921"><p id="p-4293">80% of the juveniles survive to become yearlings.</p></li>
@@ -494,7 +529,7 @@ D = \left[\begin{array}{rr}
 <li id="li-2924"><p id="p-4296">40% of the adults give birth to a juvenile.</p></li>
 </ul>
 </div>
-<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><img src="images/eigen-3d-species.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/eigen-3d-species.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-4297">By \(J_k\text{,}\) \(Y_k\text{,}\) and \(A_k\text{,}\) we denote the number of juveniles, yearlings, and adults in year \(k\text{.}\)  We have</p>
 <div class="displaymath">
@@ -523,7 +558,7 @@ P \amp {}={} \left[\begin{array}{rrr}
 \end{aligned}
 \end{equation*}
 </div>
-<p>Make a prediction about the long-term behavior of \(\xvec_k\text{.}\)  For instance, at what rate does it grow?  For every 100 adults, how many juveniles, and yearlings are there?</p>
+<p class="continuation">Make a prediction about the long-term behavior of \(\xvec_k\text{.}\)  For instance, at what rate does it grow?  For every 100 adults, how many juveniles, and yearlings are there?</p>
 </li>
 <li id="li-2928"><p id="p-4301">Suppose that the birth rate decreases so that only 30% of adults give birth to a juvenile.  How does this affect the long-term growth rate of the herd? <div class="sagecell-sage" id="sage-111"><script type="text/x-sage">
 </script></div></p></li>
@@ -539,10 +574,10 @@ P \amp {}={} \left[\begin{array}{rrr}
 <li id="li-2938"><p id="p-4313">\(|\lambda_1| \gt 1\) and \(|\lambda_2| \lt 1\) produces a saddle in which most trajectories are pushed away from the origin and in the direction of \(E_{\lambda_1}\text{.}\)</p></li>
 <li id="li-2939"><p id="p-4314">\(|\lambda_1|, |\lambda_2| \gt 1\) produces a repellor in which trajectories are pushed away from the origin.</p></li>
 </ul>
-<p>The same kind of reasoning allows us to analyze \(n\times n\) systems as well.</p></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<p class="continuation">The same kind of reasoning allows us to analyze \(n\times n\) systems as well.</p></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.4.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-152"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-152"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-4315">For each of the \(2\times2\) matrices below, find the eigenvalues and, when appropriate, the eigenvectors to classify the dynamical system \(\xvec_{k+1}=A\xvec_k\text{.}\)  Use this information to sketch the phase portraits.</p>
 <ol class="lower-alpha">
 <li id="li-2940"><p id="p-4316">\(A = \left[\begin{array}{rr}
@@ -561,7 +596,7 @@ P \amp {}={} \left[\begin{array}{rrr}
 1.1 \amp -0.2 \\
 0.4 \amp 0.5 \\
 \end{array}\right]\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-153"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-153"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-4330">We will consider matrices that have the form \(A=PDP^{-1}\) where</p>
 <div class="displaymath">
 \begin{equation*}
@@ -569,13 +604,13 @@ D = \mattwo p00{\frac12},
 P = \mattwo 2{-2}11
 \end{equation*}
 </div>
-<p>where \(p\) is a parameter that we will vary. Sketch phase portraits for \(D\) and \(A\) below when</p>
+<p class="continuation">where \(p\) is a parameter that we will vary. Sketch phase portraits for \(D\) and \(A\) below when</p>
 <ol class="lower-alpha">
-<li id="li-2952"><p id="p-4331">\(p=\frac12\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-phase-parameter.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li id="li-2953"><p id="p-4332">\(p=1\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-phase-parameter.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li id="li-2954"><p id="p-4333">\(p=2\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-phase-parameter.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<li id="li-2952"><p id="p-4331">\(p=\frac12\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-phase-parameter.svg" role="img" class="contained" alt=""></div></div></div></p></li>
+<li id="li-2953"><p id="p-4332">\(p=1\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-phase-parameter.svg" role="img" class="contained" alt=""></div></div></div></p></li>
+<li id="li-2954"><p id="p-4333">\(p=2\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-phase-parameter.svg" role="img" class="contained" alt=""></div></div></div></p></li>
 <li id="li-2955"><p id="p-4334">For the different values of \(p\text{,}\) determine which types of dynamical system results.  For what range of \(p\) values do we have an attractor?  For what range of \(p\) values do we have a saddle?  For what value does the transition between the two types occur?</p></li>
-</ol></article><article class="exercise-like" id="exercise-154"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-154"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-4345">Suppose that the populations of two species interact according to the relationships</p>
 <div class="displaymath">
 \begin{equation*}
@@ -585,13 +620,13 @@ S_{k+1} \amp {}={} -pR_k + 2S_k \\
 \end{aligned}
 \end{equation*}
 </div>
-<p>where \(p\) is a parameter.  As we saw in the text, this dynamical system represents a typical predator-prey relationship, and the parameter \(p\) represents the rate at which species \(R\) preys on \(S\text{.}\)  We will denote the matrix \(A=\mattwo{\frac12}{\frac12}{-p}2\text{.}\)</p>
+<p class="continuation">where \(p\) is a parameter.  As we saw in the text, this dynamical system represents a typical predator-prey relationship, and the parameter \(p\) represents the rate at which species \(R\) preys on \(S\text{.}\)  We will denote the matrix \(A=\mattwo{\frac12}{\frac12}{-p}2\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-2964"><p id="p-4346">If \(p = 0\text{,}\) determine the eigenvectors and eigenvalues of the system and classify it as one of the six types.  Sketch the phase portraits for the diagonal matrix \(D\) to which \(A\) is similar as well as the phase portrait for \(A\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-predator-prey-empty.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li id="li-2965"><p id="p-4347">If \(p=1\text{,}\) determine the eigenvectors and eigenvalues of the system.  Sketch the phase portraits for the diagonal matrix \(D\) to which \(A\) is similar as well as the phase portrait for \(A\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-predator-prey-empty.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<li id="li-2964"><p id="p-4346">If \(p = 0\text{,}\) determine the eigenvectors and eigenvalues of the system and classify it as one of the six types.  Sketch the phase portraits for the diagonal matrix \(D\) to which \(A\) is similar as well as the phase portrait for \(A\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-predator-prey-empty.svg" role="img" class="contained" alt=""></div></div></div></p></li>
+<li id="li-2965"><p id="p-4347">If \(p=1\text{,}\) determine the eigenvectors and eigenvalues of the system.  Sketch the phase portraits for the diagonal matrix \(D\) to which \(A\) is similar as well as the phase portrait for \(A\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-predator-prey-empty.svg" role="img" class="contained" alt=""></div></div></div></p></li>
 <li id="li-2966"><p id="p-4348">For what values of \(p\) is the origin a saddle? What can you say about the populations when this happens?</p></li>
 <li id="li-2967"><p id="p-4349">Describe the evolution of the dynamical system as \(p\) begins at \(0\) and increases to \(p=1\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-155"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-155"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-4361">Consider the matrices</p>
 <div class="displaymath">
 \begin{equation*}
@@ -608,12 +643,12 @@ B = \left[\begin{array}{cc}
 <ol class="lower-alpha">
 <li id="li-2976"><p id="p-4362">Find the eigenvalues of \(A\text{.}\)  To which of the six types does the system \(\xvec_{k+1}=A\xvec_{k}\) belong?</p></li>
 <li id="li-2977"><p id="p-4363">Using the eigenvalues of \(A\text{,}\) we can write \(A=PEP^{-1}\) for some matrices \(E\) and \(P\text{.}\)  What is the matrix \(E\) and what geometric effect does multiplication by \(E\) have on vectors in the plane?</p></li>
-<li id="li-2978"><p id="p-4364">If we remember that \(A^k = PE^kP^{-1}\text{,}\) determine the smallest value of \(k\) for which \(A^k=I\text{?}\)</p></li>
+<li id="li-2978"><p id="p-4364">If we remember that \(A^k = PE^kP^{-1}\text{,}\) determine the smallest positive value of \(k\) for which \(A^k=I\text{?}\)</p></li>
 <li id="li-2979"><p id="p-4365">Find the eigenvalues of \(B\text{.}\)</p></li>
 <li id="li-2980"><p id="p-4366">Then find a matrix \(E\) such that \(B =
 PEP^{-1}\) for some matrix \(P\text{.}\)  What geometric effect does multiplication by \(E\) have on vectors in the plane?</p></li>
-<li id="li-2981"><p id="p-4367">Determine the smallest value of \(k\) for which \(A^k=I\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-156"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<li id="li-2981"><p id="p-4367">Determine the smallest positive value of \(k\) for which \(B^k=I\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-156"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-4382">Suppose we have the female population of a species is divided into juveniles, yearlings, and adults and that each year</p>
 <ul class="disc">
 <li id="li-2994"><p id="p-4383">90% of the juveniles live to be yearlings.</p></li>
@@ -627,7 +662,7 @@ PEP^{-1}\) for some matrix \(P\text{.}\)  What geometric effect does multiplicat
 </script></div></p></li>
 <li id="li-3000"><p id="p-4390">What prediction can you make about these populations after a very long time?</p></li>
 <li id="li-3001"><p id="p-4391">If the birth rate goes up to 80%, what prediction can you make about these populations after a very long time? For every 100 adults, how many juveniles, and yearlings are there?</p></li>
-</ol></article><article class="exercise-like" id="exercise-157"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-157"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-4402">Determine whether the following statements are true or false and provide a justification for your response.  In each case, we are considering a dynamical system of the form \(\xvec_{k+1} =
 A\xvec_k\text{.}\)</p>
 <ol class="lower-alpha">
@@ -637,7 +672,7 @@ A\xvec_k\text{.}\)</p>
 <li id="li-3013"><p id="p-4406">If a \(4\times4\) matrix has complex eigenvalues \(\lambda_1\text{,}\) \(\lambda_2\text{,}\) \(\lambda_3\text{,}\) and \(\lambda_4\text{,}\) all of which satisfy \(|\lambda_j| \gt
 1\text{,}\) then all the trajectories are pushed away from the origin.</p></li>
 <li id="li-3014"><p id="p-4407">If the origin is a saddle, then all the trajectories are pushed away from the origin.</p></li>
-</ol></article><article class="exercise-like" id="exercise-158"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-158"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-4420">The Fibonacci numbers form the sequence of numbers that begins \(0, 1, 1, 2, 3, 5, 8, 13, \ldots\text{.}\)  If we let \(F_n\) denote the \(n^{th}\) Fibonacci number, then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -648,7 +683,7 @@ F_3 =2,
 F_4 =3,\ldots\text{.}
 \end{equation*}
 </div>
-<p>In general, a Fibonacci number is the sum of the previous two Fibonacci numbers;  that is, \(F_{n+2} = F_{n}+F_{n+1}\) so that we have</p>
+<p class="continuation">In general, a Fibonacci number is the sum of the previous two Fibonacci numbers;  that is, \(F_{n+2} = F_{n}+F_{n+1}\) so that we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
@@ -671,7 +706,7 @@ A\xvec_n\text{.}\)</p></li>
 \end{aligned}
 \end{equation*}
 </div>
-<p>with associated eigenvectors \(\vvec_1=\twovec{\lambda_1}{1}\) and \(\vvec_2=\twovec{\lambda_2}{1}\text{.}\)</p>
+<p class="continuation">with associated eigenvectors \(\vvec_1=\twovec{\lambda_1}{1}\) and \(\vvec_2=\twovec{\lambda_2}{1}\text{.}\)</p>
 </li>
 <li id="li-3027"><p id="p-4424">Classify this dynamical system as one of the six types that we have seen in this section.  What happens to \(\xvec_n\) as \(n\) becomes very large?</p></li>
 <li id="li-3028"><p id="p-4425">Write the initial vector \(\xvec_0 =
@@ -690,7 +725,7 @@ F_{n} = \frac{1}{\sqrt{5}}\left[
 <li id="li-3031"><p id="p-4428">Use this relationship to compute \(F_{20}\text{.}\)</p></li>
 <li id="li-3032"><p id="p-4429">Explain why \(F_{n+1}/F_{n}\approx \lambda_1\) when \(n\) is very large.</p></li>
 </ol>
-<p id="p-4430">The number \(\lambda_1=\frac{1+\sqrt{5}}{2} = \phi\) is called the <em class="emphasis">golden ratio</em> and is one of mathematics' special numbers.</p></article><article class="exercise-like" id="exercise-159"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-4430">The number \(\lambda_1=\frac{1+\sqrt{5}}{2} = \phi\) is called the <em class="emphasis">golden ratio</em> and is one of mathematics' special numbers.</p></article><article class="exercise exercise-like" id="exercise-159"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-4450">This exercise is a continuation of the previous one.</p>
 <p id="p-4451">The Lucas numbers \(L_n\) are defined by the same relationship as the Fibonacci numbers: \(L_{n+2}=L_{n+1}+L_n\text{.}\)  However, we begin with \(L_0=2\) and \(L_1=1\text{,}\) which leads to the sequence \(2,1,3,4,7,11,\ldots\text{.}\)</p>
 <ol class="lower-alpha">
@@ -708,7 +743,7 @@ L_n =
 <li id="li-3051"><p id="p-4454">Explain why \(L_n\) is the closest integer to \(\phi^n\) when \(n\) is large, where \(\phi =
 \lambda_1\) is the golden ratio.</p></li>
 <li id="li-3052"><p id="p-4455">Use this observation to find \(L_{20}\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-160"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-160"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-4466">Gil Strang defines the <em class="emphasis">Gibonacci numbers</em> \(G_n\) as follows.  We begin with \(G_0 = 0\) and \(G_1=1\text{.}\)  A subsequent Gibonacci number is the average of the two previous; that is, \(G_{n+2} = \frac12(G_{n}+G_{n+1})\text{.}\)  We then have</p>
 <div class="displaymath">
 \begin{equation*}
@@ -726,7 +761,7 @@ A\xvec_n\text{.}\)</p></li>
 <li id="li-3064"><p id="p-4470">Write \(\xvec_{0}\) as a linear combination of eigenvectors of \(A\text{.}\)</p></li>
 <li id="li-3065"><p id="p-4471">Write \(\xvec_n\) as a linear combination of eigenvectors of \(A\text{.}\)</p></li>
 <li id="li-3066"><p id="p-4472">What happens to \(G_n\) as \(n\) becomes very large?</p></li>
-</ol></article><article class="exercise-like" id="exercise-161"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-161"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <p id="p-4487">Consider a small rodent that lives for three years.  Once again, we can separate a population of females into juveniles, yearlings, and adults.  Suppose that, each year,</p>
 <ul class="disc">
 <li id="li-3079"><p id="p-4488">Half of the juveniles live to be yearlings.</p></li>
@@ -745,7 +780,5 @@ A\xvec_n\text{.}\)</p></li>
 <li id="li-3089"><p id="p-4499">Find a population vector \(\xvec_0\) that is unchanged from year to year.</p></li>
 </ol></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>

@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:42-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-18T15:33:40-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>An introduction to eigenvalues and eigenvectors</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -49,28 +44,32 @@ MathJax.Hub.Config({
                            languages: ['sage'],
                            evalButtonText: 'Evaluate (Sage)'});
 });
-</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
-<script>var logged_in = false;
-var role = 'student';
-var guest_access = true;
-var login_required = false;
-var js_version = 0.12;
-</script>
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\bvec}{{\mathbf b}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+\newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
+\newcommand{\dtil}{\widetilde{\mathbf d}}
 \newcommand{\evec}{{\mathbf e}}
 \newcommand{\fvec}{{\mathbf f}}
+\newcommand{\nvec}{{\mathbf n}}
+\newcommand{\pvec}{{\mathbf p}}
 \newcommand{\qvec}{{\mathbf q}}
+\newcommand{\svec}{{\mathbf s}}
+\newcommand{\tvec}{{\mathbf t}}
 \newcommand{\uvec}{{\mathbf u}}
 \newcommand{\vvec}{{\mathbf v}}
 \newcommand{\wvec}{{\mathbf w}}
@@ -78,7 +77,9 @@ var js_version = 0.12;
 \newcommand{\yvec}{{\mathbf y}}
 \newcommand{\zvec}{{\mathbf z}}
 \newcommand{\rvec}{{\mathbf r}}
+\newcommand{\mvec}{{\mathbf m}}
 \newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\onevec}{{\mathbf 1}}
 \newcommand{\real}{{\mathbb R}}
 \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
 \end{array}\right]}
@@ -97,7 +98,7 @@ var js_version = 0.12;
 \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
 #4 \\ #5 \\ \end{array}\right]}
 \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
-\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
 \newcommand{\bcal}{{\cal B}}
 \newcommand{\ccal}{{\cal C}}
 \newcommand{\scal}{{\cal S}}
@@ -107,11 +108,21 @@ var js_version = 0.12;
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\text{rank}}
+\newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
+\renewcommand{\row}{\text{Row}}
 \newcommand{\nul}{\text{Nul}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\corr}{\text{corr}}
 \newcommand{\len}[1]{\left|#1\right|}
+\newcommand{\bbar}{\overline{\bvec}}
 \newcommand{\bhat}{\widehat{\bvec}}
+\newcommand{\bperp}{\bvec^\perp}
 \newcommand{\xhat}{\widehat{\xvec}}
+\newcommand{\vhat}{\widehat{\vvec}}
+\newcommand{\uhat}{\widehat{\uvec}}
+\newcommand{\what}{\widehat{\wvec}}
+\newcommand{\Sighat}{\widehat{\Sigma}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,8 +132,9 @@ var js_version = 0.12;
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
 <p class="byline">David Austin</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap4.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-eigen-find.html" title="Next">Next</a></span>
@@ -132,9 +144,9 @@ var js_version = 0.12;
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap4.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-eigen-find.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
+<li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
@@ -142,7 +154,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of Equations</span></a><ul>
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
 <li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
 <li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
 <li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
@@ -150,7 +162,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, Matrices, and Linear Combinations</span></a><ul>
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
 <li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
 <li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
 <li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
@@ -160,7 +172,7 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
 <li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
 <li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
@@ -183,21 +195,40 @@ var js_version = 0.12;
 <li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
-<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-eigen-intro"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-eigen-intro"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">An introduction to eigenvalues and eigenvectors</span>
 </h2>
-<a href="sec-eigen-intro.html" class="permalink">¶</a><section class="introduction" id="introduction-19"><p id="p-3452">This section introduces the concept of eigenvalues and eigenvectors and offers an example that motivates our interest in them.  The point here is to develop an intuitive understanding of eigenvalues and eigenvectors and explain how they can be used to simplify some problems that we have previously encountered. In the rest of this chapter, we will develop this concept into a richer theory and illustrate its use with more meaningful examples.</p>
-<article class="project-like" id="exploration-14"><h6 class="heading">
-<span class="type">Preview Activity</span> <span class="codenumber">4.1.1</span>.</h6>
+<section class="introduction" id="introduction-19"><p id="p-3452">This section introduces the concept of eigenvalues and eigenvectors and offers an example that motivates our interest in them.  The point here is to develop an intuitive understanding of eigenvalues and eigenvectors and explain how they can be used to simplify some problems that we have previously encountered. In the rest of this chapter, we will develop this concept into a richer theory and illustrate its use with more meaningful examples.</p>
+<article class="exploration project-like" id="exploration-14"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>
 <p id="p-3453">Before we introduce the definition of eigenvectors and eigenvalues, it will be helpful to remember some ideas we have seen previously.</p>
 <ol class="lower-alpha">
 <li id="li-2336"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><p id="p-3454">Suppose that \(\vvec\) is the vector shown in the figure.  Sketch the vector \(2\vvec\) and the vector \(-\vvec\text{.}\)</p></div>
-<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><img src="images/eigen-intro-vec.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-3454">Suppose that \(\vvec\) is the vector shown in the figure.  Sketch the vector \(2\vvec\) and the vector \(-\vvec\text{.}\)</p></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/eigen-intro-vec.svg" role="img" class="contained" alt=""></div>
 </div></div></li>
 <li id="li-2337"><p id="p-3455">State the geometric effect that scalar multiplication has on the vector \(\vvec\text{.}\)  Then sketch all the vectors of the form \(\lambda \vvec\) where \(\lambda\) is a scalar.</p></li>
 <li id="li-2338">
@@ -218,7 +249,7 @@ var js_version = 0.12;
 A\vvec_1 = 3 \vvec_1, \qquad A\vvec_2 = -\vvec_2\text{.}
 \end{equation*}
 </div>
-<p>Use the linearity of matrix multiplication to express the following vectors in terms of \(\vvec_1\) and \(\vvec_2\text{.}\)</p>
+<p class="continuation">Use the linearity of matrix multiplication to express the following vectors in terms of \(\vvec_1\) and \(\vvec_2\text{.}\)</p>
 <ol class="lower-roman">
 <li id="li-2340"><p id="p-3458">\(A(4\vvec_1)\text{.}\)</p></li>
 <li id="li-2341"><p id="p-3459">\(A(\vvec_1 + \vvec_2)\text{.}\)</p></li>
@@ -232,17 +263,19 @@ A\vvec_1 = 3 \vvec_1, \qquad A\vvec_2 = -\vvec_2\text{.}
 <span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">A few examples</span>
 </h3>
 <p id="p-3475">We will now introduce the definition of eigenvalues and eigenvectors and then look at a few simple examples.</p>
-<article class="definition-like" id="definition-17"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">4.1.1</span>.</h6>
+<article class="definition definition-like" id="definition-17"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>
 <p id="p-3476">Given a square \(n\times n\) matrix \(A\text{,}\) we say that a nonzero vector \(\vvec\) is an <em class="emphasis">eigenvector</em> of \(A\) if there is a scalar \(\lambda\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 A\vvec = \lambda \vvec\text{.}
 \end{equation*}
 </div>
-<p>The scalar \(\lambda\) is called the <em class="emphasis">eigenvalue</em> associated to the eigenvector \(\vvec\text{.}\)</p></article><p id="p-3477">At first glance, there is a lot going on in this definition so let's look at an example.</p>
-<article class="example-like" id="example-17"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.2</span>.</h6>
+<p class="continuation">The scalar \(\lambda\) is called the <em class="emphasis">eigenvalue</em> associated to the eigenvector \(\vvec\text{.}\)</p></article><p id="p-3477">At first glance, there is a lot going on in this definition so let's look at an example.</p>
+<article class="example example-like" id="example-17"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h6>
 <p id="p-3478">Consider the matrix \(A = \left[\begin{array}{rr}
 7 \amp 6 \\
 6 \amp -2 \\
@@ -260,7 +293,7 @@ A\vvec = \left[\begin{array}{rr}
 =10\vvec\text{.}
 \end{equation*}
 </div>
-<p>In other words, \(A\vvec = 10\vvec\text{,}\) which says that \(\vvec\) is an eigenvector of the matrix \(A\) with associated eigenvalue \(\lambda = 10\text{.}\)</p>
+<p class="continuation">In other words, \(A\vvec = 10\vvec\text{,}\) which says that \(\vvec\) is an eigenvector of the matrix \(A\) with associated eigenvalue \(\lambda = 10\text{.}\)</p>
 <p id="p-3479">Similarly, if \(\wvec = \twovec{-1}{2}\text{,}\) we find that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -275,8 +308,9 @@ A\wvec = \left[\begin{array}{rr}
 =-5\wvec\text{.}
 \end{equation*}
 </div>
-<p>Here again, we have \(A\wvec = -5\wvec\) showing that \(\wvec\) is an eigenvector of \(A\) with associated eigenvalue \(\lambda=-5\text{.}\)</p></article><article class="project-like" id="activity-41"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.1.2</span>.</h6>
+<p class="continuation">Here again, we have \(A\wvec = -5\wvec\) showing that \(\wvec\) is an eigenvector of \(A\) with associated eigenvalue \(\lambda=-5\text{.}\)</p></article><article class="activity project-like" id="activity-41"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h6>
 <p id="p-3480">This definition has an important geometric interpretation that we will investigate here.</p>
 <ol class="lower-alpha">
 <li id="li-2356"><p id="p-3481">Suppose that \(\vvec\) is a nonzero vector and that \(\lambda\) is a scalar.  What is the geometric relationship between \(\vvec\) and \(\lambda\vvec\text{?}\)</p></li>
@@ -328,19 +362,19 @@ gray.
 1 \amp 2 \\
 2 \amp 1 \\
 \end{array}\right]
-\text{.}\) On the left of <a data-knowl="./knowl/fig-eigen-intro.html" title="Figure 4.1.3">Figure 4.1.3</a>, we see that \(\vvec=\twovec{1}{0}\) is not an eigenvector of \(A\) since the vectors \(\vvec\) and \(A\vvec\) do not lie on the same line.  On the right, however, we see that \(\vvec=\twovec{1}{1}\) is an eigenvector.  In fact, \(A\vvec\) is obtained from \(\vvec\) by stretching \(\vvec\) by a factor of \(3\text{.}\)  Therefore, \(\vvec\) is an eigenvector of \(A\) with eigenvalue \(\lambda = 3\text{.}\)</p>
-<figure class="figure-like" id="fig-eigen-intro"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/eigen-intro-1-0.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/eigen-intro-1-1.svg" style="width: 100%; height: auto;" alt=""></div>
+\text{.}\) On the left of <a class="xref" data-knowl="./knowl/fig-eigen-intro.html" title="Figure 4.1.3">Figure 4.1.3</a>, we see that \(\vvec=\twovec{1}{0}\) is not an eigenvector of \(A\) since the vectors \(\vvec\) and \(A\vvec\) do not lie on the same line.  On the right, however, we see that \(\vvec=\twovec{1}{1}\) is an eigenvector.  In fact, \(A\vvec\) is obtained from \(\vvec\) by stretching \(\vvec\) by a factor of \(3\text{.}\)  Therefore, \(\vvec\) is an eigenvector of \(A\) with eigenvalue \(\lambda = 3\text{.}\)</p>
+<figure class="figure figure-like" id="fig-eigen-intro"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/eigen-intro-1-0.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/eigen-intro-1-1.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.1.3.</span> On the left, the vector \(\vvec\) is not an eigenvector. On the right, the vector \(\vvec\) is an eigenvector with eigenvalue \(\lambda = 3\text{.}\)</figcaption></figure><p id="p-3502">It is not difficult to see that any multiple of \(\twovec{1}{1}\) is also an eigenvector of \(A\) with eigenvalue \(\lambda = 3\text{.}\)  Indeed, we will see later that all the eigenvectors associated to a given eigenvalue form a subspace of \(\real^n\text{.}\)</p>
-<p id="p-3503">In <a data-knowl="./knowl/fig-eigen-intro-2.html" title="Figure 4.1.4">Figure 4.1.4</a>, we see that \(\vvec=\twovec{-1}{1}\) is also an eigenvector with eigenvalue \(\lambda =-1\text{.}\)</p>
-<figure class="figure-like" id="fig-eigen-intro-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-intro-1-m1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.1.4.</span> Here we see another eigenvector \(\vvec\) with eigenvalue \(\lambda = -1\text{.}\)</figcaption></figure><p id="p-3504">The interactive diagram we used in the activity is meant to convey the fact that the eigenvectors of a matrix \(A\) are special vectors.  Most of the time, the vectors \(\vvec\) and \(A\vvec\) appear somewhat unrelated.  For certain vectors, however, \(\vvec\) and \(A\vvec\) line up with one another. Something important is going on when that happens so we call attention to those vectors by calling them eigenvectors. For these vectors, the operation of multiplying by \(A\) reduces to the much simpler operation of scalar multiplying by \(\lambda\text{.}\)  The reason eigenvectors are important is because it is extremely convenient to be able to replace matrix multiplication by scalar multiplication.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>On the left, the vector \(\vvec\) is not an eigenvector. On the right, the vector \(\vvec\) is an eigenvector with eigenvalue \(\lambda = 3\text{.}\)</figcaption></figure><p id="p-3502">It is not difficult to see that any multiple of \(\twovec{1}{1}\) is also an eigenvector of \(A\) with eigenvalue \(\lambda = 3\text{.}\)  Indeed, we will see later that all the eigenvectors associated to a given eigenvalue form a subspace of \(\real^n\text{.}\)</p>
+<p id="p-3503">In <a class="xref" data-knowl="./knowl/fig-eigen-intro-2.html" title="Figure 4.1.4">Figure 4.1.4</a>, we see that \(\vvec=\twovec{-1}{1}\) is also an eigenvector with eigenvalue \(\lambda =-1\text{.}\)</p>
+<figure class="figure figure-like" id="fig-eigen-intro-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-intro-1-m1.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>Here we see another eigenvector \(\vvec\) with eigenvalue \(\lambda = -1\text{.}\)</figcaption></figure><p id="p-3504">The interactive diagram we used in the activity is meant to convey the fact that the eigenvectors of a matrix \(A\) are special vectors.  Most of the time, the vectors \(\vvec\) and \(A\vvec\) appear somewhat unrelated.  For certain vectors, however, \(\vvec\) and \(A\vvec\) line up with one another. Something important is going on when that happens so we call attention to those vectors by calling them eigenvectors. For these vectors, the operation of multiplying by \(A\) reduces to the much simpler operation of scalar multiplying by \(\lambda\text{.}\)  The reason eigenvectors are important is because it is extremely convenient to be able to replace matrix multiplication by scalar multiplication.</p>
 <p id="p-3505"><em class="emphasis">Eigen</em> is a German word that can be interpreted as meaning “characteristic”.  As we will see, the eigenvectors and eigenvalues of a matrix \(A\) give an important characterization of the matrix.</p></section><section class="subsection" id="subsec-eigen-use"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">The usefulness of eigenvalues and eigenvectors</span>
 </h3>
-<a href="sec-eigen-intro.html#subsec-eigen-use" class="permalink">¶</a><p id="p-3506">In the next section, we will introduce an algebraic technique for finding the eigenvalues and eigenvectors of a matrix.  Before doing that, however, we would like to discuss why eigenvalues and eigenvectors are so useful.</p>
+<p id="p-3506">In the next section, we will introduce an algebraic technique for finding the eigenvalues and eigenvectors of a matrix.  Before doing that, however, we would like to discuss why eigenvalues and eigenvectors are so useful.</p>
 <p id="p-3507">Let's continue looking at the example \(A = \left[\begin{array}{rr} 1 \amp 2 \\ 2 \amp 1 \\
 \end{array}\right] \text{.}\)  We have seen that \(\vvec_1 =
 \twovec{1}{1}\) is an eigenvector with eigenvalue \(\lambda=3\) and \(\vvec_2=\twovec{-1}{1}\) is an eigenvector with eigenvalue \(\lambda = -1\text{.}\)  This means that \(A\vvec_1 = 3\vvec_1\) and \(A\vvec_2=-\vvec_2\text{.}\) By the linearity of matrix multiplication, we can easily understand what happens when we multiply a linear combination of \(\vvec_1\) and \(\vvec_2\) by \(A\text{:}\)</p>
@@ -350,7 +384,7 @@ A(c_1\vvec_1 + c_2\vvec_2) = 3c_1\vvec_1 - c_2\vvec_2\text{.}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:42.1052631578947%;justify-content:flex-start;">
+<div class="sbspanel top" style="width:42.1052631578947%;">
 <p id="p-3508">For instance, if we consider the vector \(\xvec=\vvec_1-2\vvec_2\text{,}\) we find that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -360,30 +394,31 @@ A\xvec\amp{}={} 3\vvec_1 + 2\vvec_2
 \end{aligned}
 \end{equation*}
 </div>
-<p>as seen in the figure.</p>
+<p class="continuation">as seen in the figure.</p>
 </div>
-<div class="sbspanel" style="width:52.6315789473684%;justify-content:flex-start;"><img src="images/eigen-basis.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:52.6315789473684%;"><img src="images/eigen-basis.svg" role="img" class="contained" alt=""></div>
 </div></div>
 <p id="p-3509">In other words, multiplying by \(A\) has the effect of stretching a vector \(\xvec\) in the \(\vvec_1\) direction by a factor of \(3\) and flipping the \(\xvec\) in \(\vvec_2\) direction.</p>
 <p id="p-3510">We can draw an analogy with the more familiar example of the diagonal matrix \(D=\left[\begin{array}{rr}
 3 \amp 0 \\
 0 \amp -1 \\
 \end{array}\right]
-\text{.}\) As we have seen, the effect of multiplying a vector \(\xvec\) by \(D\) is to stretch \(\xvec\) horizontally by a factor of \(3\) and to flip \(\xvec\) vertically.  This is illustrated in <a data-knowl="./knowl/fig-eigen-intro-diagonal.html" title="Figure 4.1.5">Figure 4.1.5</a>.</p>
-<figure class="figure-like" id="fig-eigen-intro-diagonal"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-intro-diagonal.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.1.5.</span> The diagonal matrix \(D\) stretches vectors horizontally by a factor of \(3\) and flips vectors vertically.</figcaption></figure><p id="p-3511">The matrix \(A=\left[\begin{array}{rr}
+\text{.}\) As we have seen, the effect of multiplying a vector \(\xvec\) by \(D\) is to stretch \(\xvec\) horizontally by a factor of \(3\) and to flip \(\xvec\) vertically.  This is illustrated in <a class="xref" data-knowl="./knowl/fig-eigen-intro-diagonal.html" title="Figure 4.1.5">Figure 4.1.5</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-intro-diagonal"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-intro-diagonal.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>The diagonal matrix \(D\) stretches vectors horizontally by a factor of \(3\) and flips vectors vertically.</figcaption></figure><p id="p-3511">The matrix \(A=\left[\begin{array}{rr}
 1 \amp 2 \\
 2 \amp 1 \\
-\end{array}\right]\) has a similar effect when viewed in the basis defined by the eigenvectors \(\vvec_1\) and \(\vvec_2\text{,}\) as seen in <a data-knowl="./knowl/fig-eigen-intro-A.html" title="Figure 4.1.6">Figure 4.1.6</a>.</p>
-<figure class="figure-like" id="fig-eigen-intro-A"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-intro-A.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.1.6.</span> The matrix \(A\) has the same geometric effect as the diagonal matrix \(D\) when expressed in the coordinate system defined by the basis of eigenvectors.</figcaption></figure><p id="p-3512">In a sense that will be made precise later, having a set of eigenvectors of \(A\) that forms a basis of \(\real^2\) enables us to think of \(A\) as being equivalent to a diagonal matrix \(D\text{.}\)  Of course, as the other examples in the previous activity show, it may not always be possible to form a basis from the eigenvectors of a matrix.  For example, the only eigenvectors of the matrix \(\left[\begin{array}{rr} 2 \amp 1 \\ 0 \amp 2
+\end{array}\right]\) has a similar effect when viewed in the basis defined by the eigenvectors \(\vvec_1\) and \(\vvec_2\text{,}\) as seen in <a class="xref" data-knowl="./knowl/fig-eigen-intro-A.html" title="Figure 4.1.6">Figure 4.1.6</a>.</p>
+<figure class="figure figure-like" id="fig-eigen-intro-A"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="images/eigen-intro-A.svg" role="img" class="contained" alt=""></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>The matrix \(A\) has the same geometric effect as the diagonal matrix \(D\) when expressed in the coordinate system defined by the basis of eigenvectors.</figcaption></figure><p id="p-3512">In a sense that will be made precise later, having a set of eigenvectors of \(A\) that forms a basis of \(\real^2\) enables us to think of \(A\) as being equivalent to a diagonal matrix \(D\text{.}\)  Of course, as the other examples in the previous activity show, it may not always be possible to form a basis from the eigenvectors of a matrix.  For example, the only eigenvectors of the matrix \(\left[\begin{array}{rr} 2 \amp 1 \\ 0 \amp 2
 \end{array}\right]\text{,}\) which represents a shear, have the form \(\twovec{x}{0}\text{.}\)  In this example, we are not able to create a basis for \(\real^2\) consisting of eigenvectors of the matrix.  This is also true for the matrix \(\left[\begin{array}{rr}
 0 \amp -1 \\
 1 \amp 0 \\
 \end{array}\right]
 \text{,}\) which represents a \(90^\circ\) rotation.</p>
-<article class="project-like" id="activity-eigen-intro"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.1.3</span>.</h6>
+<article class="activity project-like" id="activity-eigen-intro"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h6>
 <p id="p-3513">Let's consider an example that illustrates how we can put these ideas to use.</p>
 <p id="p-3514">Suppose that we work for a car rental company that has two locations, \(P\) and \(Q\text{.}\)  When a customer rents a car at one location, they have the option to return it to either location at the end of the day.  After doing some market research, we determine:</p>
 <ul class="disc">
@@ -403,7 +438,7 @@ Q_{k+1}\amp {}={} 0.2P_k + 0.4Q_k\text{.} \\
 \end{aligned}
 \end{equation*}
 </div>
-<p>We can write the vector \(\xvec_k = \twovec{P_k}{Q_k}\) to reflect the number of cars at the two locations at the end of day \(k\text{,}\) which says that</p>
+<p class="continuation">We can write the vector \(\xvec_k = \twovec{P_k}{Q_k}\) to reflect the number of cars at the two locations at the end of day \(k\text{,}\) which says that</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
@@ -420,7 +455,7 @@ A\xvec_k
 \end{aligned}
 \end{equation*}
 </div>
-<p>where \(A=\left[\begin{array}{rr}0.8 \amp 0.6 \\ 0.2 \amp 0.4
+<p class="continuation">where \(A=\left[\begin{array}{rr}0.8 \amp 0.6 \\ 0.2 \amp 0.4
 \end{array}\right]\text{.}\)</p>
 <p id="p-3520">Suppose that</p>
 <div class="displaymath">
@@ -430,7 +465,7 @@ A\xvec_k
 \vvec_2 = \twovec{-1}{1}\text{.}
 \end{equation*}
 </div>
-<p>Compute \(A\vvec_1\) and \(A\vvec_2\) to demonstrate that \(\vvec_1\) and \(\vvec_2\) are eigenvectors of \(A\text{.}\) What are the associated eigenvalues \(\lambda_1\) and \(\lambda_2\text{?}\)</p>
+<p class="continuation">Compute \(A\vvec_1\) and \(A\vvec_2\) to demonstrate that \(\vvec_1\) and \(\vvec_2\) are eigenvectors of \(A\text{.}\) What are the associated eigenvalues \(\lambda_1\) and \(\lambda_2\text{?}\)</p>
 </li>
 <li id="li-2377"><p id="p-3521">We said that 1000 cars are initially at location \(P\) and none at location \(Q\text{.}\)  This means that the initial vector describing the number of cars is \(\xvec_0 =
 \twovec{1000}{0}\text{.}\)  Write \(\xvec_0\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
@@ -474,14 +509,14 @@ A\vvec_2 =
 \end{aligned}
 \end{equation*}
 </div>
-<p>This shows that \(\vvec_1\) is an eigenvector of \(A\) with eigenvalue \(\lambda_1 = 1\) and \(\vvec_2\) is an eigenvector of \(A\) with eigenvalue \(\lambda_2=0.2\text{.}\)</p>
+<p class="continuation">This shows that \(\vvec_1\) is an eigenvector of \(A\) with eigenvalue \(\lambda_1 = 1\) and \(\vvec_2\) is an eigenvector of \(A\) with eigenvalue \(\lambda_2=0.2\text{.}\)</p>
 <p id="p-3532">By the linearity of matrix matrix multiplication, we have</p>
 <div class="displaymath">
 \begin{equation*}
 A(c_1\vvec_1 + c_2\vvec_2) = c_1\vvec_1 + 0.2c_2\vvec_2\text{.}
 \end{equation*}
 </div>
-<p>Therefore, we will write the vector describing the initial distribution of cars \(\xvec_0=\twovec{1000}{0}\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{;}\)  that is, \(\xvec_0 =
+<p class="continuation">Therefore, we will write the vector describing the initial distribution of cars \(\xvec_0=\twovec{1000}{0}\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{;}\)  that is, \(\xvec_0 =
 c_1\vvec_2 + c_2 \vvec_2\text{.}\)  To do, we form the augmented matrix and row reduce:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -500,7 +535,7 @@ c_1\vvec_2 + c_2 \vvec_2\text{.}\)  To do, we form the augmented matrix and row 
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Therefore, \(\xvec_0 = 250\vvec_1 -250\vvec_2\text{.}\)</p>
+<p class="continuation">Therefore, \(\xvec_0 = 250\vvec_1 -250\vvec_2\text{.}\)</p>
 <p id="p-3533">To determine the distribution of cars on subsequent days, we will repeatedly multiply by \(A\text{.}\)  We find that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -527,17 +562,18 @@ A(250\vvec_1 - (0.2)^4250\vvec_2) = 250\vvec_1 - (0.2)^5250\vvec_2 \\
 = \twovec{750.09}{249.92}\text{.}
 \end{equation*}
 </div>
-<p>Taking notice of the pattern, we may write</p>
+<p class="continuation">Taking notice of the pattern, we may write</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec_k = 250\vvec_1 - (0.2)^k250\vvec_2\text{.}
 \end{equation*}
 </div>
-<p>Multiplying a number by \(0.2\) is the same as taking 20% of that number.  As each day goes by, the second term is multiplied by \(0.2\) so the coefficient of \(\vvec_2\) in the expression for \(\xvec_k\) will eventually become extremely small.  We therefore see that the distribution of cars will stabilize at \(\xvec=250\vvec_1=\twovec{750}{250}\text{.}\)</p>
+<p class="continuation">Multiplying a number by \(0.2\) is the same as taking 20% of that number.  As each day goes by, the second term is multiplied by \(0.2\) so the coefficient of \(\vvec_2\) in the expression for \(\xvec_k\) will eventually become extremely small.  We therefore see that the distribution of cars will stabilize at \(\xvec=250\vvec_1=\twovec{750}{250}\text{.}\)</p>
 <p id="p-3535">Notice how our use of the eigenvalues and eigenvectors of \(A\) enable us to look far into the future without having to repeatedly multiply a vector by the matrix \(A\text{.}\) Knowing the eigenvectors allows us to replace matrix multiplication with the simpler operation of scalar multiplication.  This is a powerful tool that we will develop more in the rest of this chapter.</p>
 <p id="p-3536">Notice also how this example relies on the fact that we can express the initial vector \(\xvec_0\) as a linear combination of eigenvectors.  For this reason, we would like, given an \(n\times n\) matrix, to be able to create a basis of \(\real^n\) of eigenvectors.  We will frequently return to this question in later sections.</p>
-<article class="example-like" id="question-eigen-basis"><h6 class="heading">
-<span class="type">Question</span> <span class="codenumber">4.1.7</span>.</h6>
+<article class="question example-like" id="question-eigen-basis"><h6 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
+</h6>
 <p id="p-3537">Given an \(n\times n\) matrix \(A\text{,}\) when can we form a basis for \(\real^n\) consisting of eigenvectors of \(A\text{?}\)</p></article></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.1.3</span> <span class="title">Summary</span>
 </h3>
@@ -550,7 +586,7 @@ A(250\vvec_1 - (0.2)^4250\vvec_2) = 250\vvec_1 - (0.2)^5250\vvec_2 \\
 </ul></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.1.4</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise-like" id="exercise-124"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-124"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-3543">Consider the matrix and vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -570,7 +606,7 @@ A = \left[\begin{array}{rr}
 </li>
 <li id="li-2390"><p id="p-3545">Express the vector \(\xvec = \twovec{-4}{-1}\) as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
 <li id="li-2391"><p id="p-3546">Use this expression to compute \(A\xvec\text{,}\) \(A^2\xvec\text{,}\) and \(A^{-1}\xvec\) as a linear combination of eigenvectors.</p></li>
-</ol></article><article class="exercise-like" id="exercise-125"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-125"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-3555">Consider the matrix and vectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -592,7 +628,7 @@ A = \left[\begin{array}{rrr}
 </li>
 <li id="li-2399"><p id="p-3557">Express the vector \(\xvec = \threevec{0}{-3}{-4}\) as a linear combination of the eigenvectors.</p></li>
 <li id="li-2400"><p id="p-3558">Use this expression to compute \(A\xvec\text{,}\) \(A^2\xvec\text{,}\) and \(A^{-1}\xvec\) as a linear combination of eigenvectors.</p></li>
-</ol></article><article class="exercise-like" id="exercise-126"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-126"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-3567">Suppose that \(A\) is an \(n\times n\) matrix.</p>
 <ol class="lower-alpha">
 <li id="li-2407"><p id="p-3568">Explain why \(\lambda = 0\) is an eigenvalue if and only if there is a non-trivial solution to the homogeneous equation \(A\xvec = 0\text{.}\)</p></li>
@@ -605,13 +641,13 @@ A = \left[\begin{array}{rrr}
 2 \amp 1 \\
 \end{array}\right]\) has eigenvectors \(\vvec_1=\twovec{1}{1}\) and \(\vvec_2=\twovec{-1}{1}\) and associated eigenvalues \(\lambda_1
 = 3\) and \(\lambda=-1\text{.}\)  What are some eigenvectors and associated eigenvalues for \(A^5\text{?}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-127"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-127"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><p id="p-3585">Suppose that \(A\) is a matrix with eigenvectors \(\vvec_1\) and \(\vvec_2\) and eigenvalues \(\lambda_1 =
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-3585">Suppose that \(A\) is a matrix with eigenvectors \(\vvec_1\) and \(\vvec_2\) and eigenvalues \(\lambda_1 =
 -1\) and \(\lambda_2=2\) as shown.</p></div>
-<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><img src="images/ex-eigen-powers.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/ex-eigen-powers.svg" role="img" class="contained" alt=""></div>
 </div></div>
-<p id="p-3586">Sketch the vectors \(A\xvec\text{,}\) \(A^2\xvec\text{,}\) and \(A^{-1}\xvec\text{.}\)</p></article><article class="exercise-like" id="exercise-128"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-3586">Sketch the vectors \(A\xvec\text{,}\) \(A^2\xvec\text{,}\) and \(A^{-1}\xvec\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-128"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-3589">For the following matrices, find the eigenvectors and associated eigenvalues by thinking geometrically about the corresponding matrix transformation.</p>
 <ol class="lower-alpha">
 <li id="li-2422"><p id="p-3590">\(\left[\begin{array}{rr}
@@ -626,7 +662,7 @@ A = \left[\begin{array}{rrr}
 \text{.}\)</p></li>
 <li id="li-2424"><p id="p-3592">What are the eigenvectors and associated eigenvalues of the identity matrix?</p></li>
 <li id="li-2425"><p id="p-3593">What are the eigenvectors and associated eigenvalues of a diagonal matrix with distinct diagonal entries?</p></li>
-</ol></article><article class="exercise-like" id="exercise-129"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-129"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-3604">Suppose that \(A\) is a \(2\times2\) matrix having eigenvectors</p>
 <div class="displaymath">
 \begin{equation*}
@@ -634,7 +670,7 @@ A = \left[\begin{array}{rrr}
 \vvec_2=\twovec{-1}{2}
 \end{equation*}
 </div>
-<p>and associated eigenvalues \(\lambda_1=2\) and \(\lambda_2=-3\text{.}\)  If \(\xvec=\twovec{5}{0}\text{,}\) find the vector \(A^4\xvec\text{.}\)</p></article><article class="exercise-like" id="exercise-130"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p class="continuation">and associated eigenvalues \(\lambda_1=2\) and \(\lambda_2=-3\text{.}\)  If \(\xvec=\twovec{5}{0}\text{,}\) find the vector \(A^4\xvec\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-130"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-3607">Determine whether the following statements are true or false and provide a justification for your response.</p>
 <ol class="lower-alpha">
 <li id="li-2434"><p id="p-3608">The eigenvalues of a diagonal matrix are equal to the entries on the diagonal.</p></li>
@@ -642,7 +678,7 @@ A = \left[\begin{array}{rrr}
 <li id="li-2436"><p id="p-3610">Every vector is an eigenvector of the identity matrix.</p></li>
 <li id="li-2437"><p id="p-3611">If \(\lambda=0\) is an eigenvalue of \(A\text{,}\) then \(A\) is invertible.</p></li>
 <li id="li-2438"><p id="p-3612">For every \(n\times n\) matrix \(A\text{,}\) it is possible to find a basis of \(\real^n\) consisting of eigenvectors of \(A\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-131"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-131"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-3625">Consider the two special matrices below and find their eigenvectors and associated eigenvalues.</p>
 <ol class="lower-alpha">
 <li id="li-2449"><p id="p-3626">\(\left[\begin{array}{rrr}
@@ -657,14 +693,14 @@ A = \left[\begin{array}{rrr}
 3 \amp 3 \amp 3 \\
 \end{array}\right]
 \text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-132"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-132"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-3635">For each of the following matrix transformations, describe the eigenvalues and eigenvectors of the corresponding matrix \(A\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-2455"><p id="p-3636">A reflection in \(\real^2\) in the line \(y=x\text{.}\)</p></li>
 <li id="li-2456"><p id="p-3637">A \(180^\circ\) rotation in \(\real^2\text{.}\)</p></li>
 <li id="li-2457"><p id="p-3638">A \(180^\circ\) rotation in \(\real^3\) about the \(y\)-axis.</p></li>
 <li id="li-2458"><p id="p-3639">A \(90^\circ\) rotation in \(\real^3\) about the \(x\)-axis.</p></li>
-</ol></article><article class="exercise-like" id="exercise-133"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-133"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <p id="p-3650">Suppose we have two species, \(P\) and \(Q\text{,}\) where species \(P\) preys on \(Q\text{.}\)  Their populations, in millions, in year \(k\) are denoted by \(P_k\) and \(Q_k\) and satisfy</p>
 <div class="displaymath">
 \begin{equation*}
@@ -674,7 +710,7 @@ Q_{k+1} \amp {}={} -0.3P_k + 1.5Q_k \\
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<p>We will keep track of the populations in year \(k\) using the vector \(\xvec_k=\twovec{P_k}{Q_k}\) so that</p>
+<p class="continuation">We will keep track of the populations in year \(k\) using the vector \(\xvec_k=\twovec{P_k}{Q_k}\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 \xvec_{k+1} = A\xvec_k =
@@ -693,7 +729,5 @@ Q_{k+1} \amp {}={} -0.3P_k + 1.5Q_k \\
 <li id="li-2471"><p id="p-3655">After a very long time, what is the ratio of \(P_k\) to \(Q_k\text{?}\)</p></li>
 </ol></article></section></section></div></main>
 </div>
-<div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
 </body>
 </html>
