@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-18T15:32:55-04:00       *-->
+<!--*       on 2021-08-15T11:44:31-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -453,10 +466,10 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 <article class="convention remark-like" id="convention-1"><h6 class="heading">
 <span class="type">Notation</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
 </h6>
-<p id="p-1266">We will denote the span of the set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) by \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></article></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<p id="p-1266">We will denote the span of the set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) by \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></article></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Pivot positions and span</span>
 </h3>
-<p id="p-1267">In the previous activity, we saw two examples, both of which considered two vectors \(\vvec\) and \(\wvec\) in \(\real^2\text{.}\)  In one example, the \(\span{\vvec,\wvec}\) consisted of a line;  in the other, the \(\span{\vvec,\wvec}=\real^2\text{.}\)  We would like to be able to distinguish these two situations in a more algebraic fashion.  After all, we will need to be able to deal with vectors in many more dimensions where we will not be able to draw pictures.</p>
+<p id="p-1267">In the previous activity, we saw two examples, both of which considered two vectors \(\vvec\) and \(\wvec\) in \(\real^2\text{.}\)  In one example, the \(\laspan{\vvec,\wvec}\) consisted of a line;  in the other, the \(\laspan{\vvec,\wvec}=\real^2\text{.}\)  We would like to be able to distinguish these two situations in a more algebraic fashion.  After all, we will need to be able to deal with vectors in many more dimensions where we will not be able to draw pictures.</p>
 <p id="p-1268">The key is found by looking at the pivot positions of the matrix \(\left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\ldots\vvec_n
 \end{array}\right]
@@ -474,7 +487,7 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p class="continuation">which has exactly one pivot position.  We found the \(\span{\vvec,\wvec}\) to be a line, in this case.</p>
+<p class="continuation">which has exactly one pivot position.  We found the \(\laspan{\vvec,\wvec}\) to be a line, in this case.</p>
 <p id="p-1269">In the second example, this matrix is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -489,14 +502,14 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p class="continuation">which has two pivot positions.  Here, we found \(\span{\vvec,\wvec}=\real^2\text{.}\)</p>
+<p class="continuation">which has two pivot positions.  Here, we found \(\laspan{\vvec,\wvec}=\real^2\text{.}\)</p>
 <p id="p-1270">These examples point to the fact that the size of the span is related to the number of pivot positions.  We will develop this idea more fully in <a href="sec-linear-dep.html" class="internal" title="Section 2.4: Linear independence">Section 2.4</a> and <a href="sec-subspaces.html" class="internal" title="Section 3.5: Subspaces of \(\real^p\)">Section 3.5</a>.  For now, however, we will examine the possibilities in \(\real^3\text{.}\)</p>
 <article class="activity project-like" id="activity-18"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
 </h6>
 <p id="p-1271">In this activity, we will look at the span of sets of vectors in \(\real^3\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-818"><p id="p-1272">Suppose \(v=\threevec{1}{2}{1}\text{.}\)  Give a written description of \(\span{v}\) and a rough sketch of it below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/coordinates-3d.svg" role="img" class="contained" alt=""></div></div></div></p></li>
+<li id="li-818"><p id="p-1272">Suppose \(v=\threevec{1}{2}{1}\text{.}\)  Give a written description of \(\laspan{v}\) and a rough sketch of it below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/coordinates-3d.svg" role="img" class="contained" alt=""></div></div></div></p></li>
 <li id="li-819">
 <p id="p-1273">Consider now the two vectors</p>
 <div class="displaymath">
@@ -505,8 +518,8 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 \evec_2 = \threevec{0}{1}{0}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Sketch the vectors below.  Then give a written description of \(\span{\evec_1,\evec_2}\) and a rough sketch of it below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/coordinates-3d.svg" role="img" class="contained" alt=""></div></div></div></p>
-<p id="p-1274">Let's now look at this algebraically by writing write \(\bvec = \threevec{b_1}{b_2}{b_3}\text{.}\)  Determine the conditions on \(b_1\text{,}\) \(b_2\text{,}\) and \(b_3\) so that \(\bvec\) is in \(\span{\evec_1,\evec_2}\) by considering the linear system</p>
+<p class="continuation">Sketch the vectors below.  Then give a written description of \(\laspan{\evec_1,\evec_2}\) and a rough sketch of it below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/coordinates-3d.svg" role="img" class="contained" alt=""></div></div></div></p>
+<p id="p-1274">Let's now look at this algebraically by writing write \(\bvec = \threevec{b_1}{b_2}{b_3}\text{.}\)  Determine the conditions on \(b_1\text{,}\) \(b_2\text{,}\) and \(b_3\) so that \(\bvec\) is in \(\laspan{\evec_1,\evec_2}\) by considering the linear system</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{rr}
@@ -528,7 +541,7 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 \threevec{b_1}{b_2}{b_3}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Explain how this relates to your sketch of \(\span{\evec_1,\evec_2}\text{.}\)</p>
+<p class="continuation">Explain how this relates to your sketch of \(\laspan{\evec_1,\evec_2}\text{.}\)</p>
 </li>
 <li id="li-820">
 <p id="p-1275">Consider the vectors</p>
@@ -539,11 +552,11 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 \end{equation*}
 </div>
 <ol class="lower-roman">
-<li id="li-821"><p id="p-1276">Is the vector \(\bvec=\threevec{1}{-2}{4}\) in \(\span{\vvec_1,\vvec_2}\text{?}\) <div class="sagecell-sage" id="sage-57"><script type="text/x-sage">
+<li id="li-821"><p id="p-1276">Is the vector \(\bvec=\threevec{1}{-2}{4}\) in \(\laspan{\vvec_1,\vvec_2}\text{?}\) <div class="sagecell-sage" id="sage-57"><script type="text/x-sage">
 </script></div></p></li>
-<li id="li-822"><p id="p-1277">Is the vector \(\bvec=\threevec{-2}{0}{3}\) in \(\span{\vvec_1,\vvec_2}\text{?}\) <div class="sagecell-sage" id="sage-58"><script type="text/x-sage">
+<li id="li-822"><p id="p-1277">Is the vector \(\bvec=\threevec{-2}{0}{3}\) in \(\laspan{\vvec_1,\vvec_2}\text{?}\) <div class="sagecell-sage" id="sage-58"><script type="text/x-sage">
 </script></div></p></li>
-<li id="li-823"><p id="p-1278">Give a written description of \(\span{\vvec_1,\vvec_2}\text{.}\)</p></li>
+<li id="li-823"><p id="p-1278">Give a written description of \(\laspan{\vvec_1,\vvec_2}\text{.}\)</p></li>
 </ol>
 </li>
 <li id="li-824">
@@ -557,12 +570,12 @@ a\vvec + b\wvec \amp {}={} a\vvec + b(-2\vvec) \\
 </div>
 <p class="continuation">Form the matrix \(\left[\begin{array}{rrrr} \vvec_1 \amp \vvec_2
 \amp \vvec_3 \end{array}\right]\) and find its reduced row echelon form. <div class="sagecell-sage" id="sage-59"><script type="text/x-sage">
-</script></div> What does this tell you about \(\span{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p>
+</script></div> What does this tell you about \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p>
 </li>
 <li id="li-825"><p id="p-1280">If a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) spans \(\real^3\text{,}\) what can you say about the pivots of the matrix \(\left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
 \end{array}\right]\text{?}\)</p></li>
-<li id="li-826"><p id="p-1281">What is the smallest number of vectors such that \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^3\text{?}\)</p></li>
+<li id="li-826"><p id="p-1281">What is the smallest number of vectors such that \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^3\text{?}\)</p></li>
 </ol></article><p id="p-1292">This activity shows us the types of sets that can appear as the span of a set of vectors in \(\real^3\text{.}\)</p>
 <ul class="disc">
 <li id="li-836">
@@ -607,7 +620,7 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 \vvec_2 = \threevec{0}{2}{1}\text{,}
 \end{equation*}
 </div>
-<p class="continuation">will form a plane. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/3d-plane-nonstd.svg" role="img" class="contained" alt=""></div></div></div> We saw one vector \(\bvec\) that was not in \(\span{\vvec_1,\vvec_2}\) and one that is. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<p class="continuation">will form a plane. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/3d-plane-nonstd.svg" role="img" class="contained" alt=""></div></div></div> We saw one vector \(\bvec\) that was not in \(\laspan{\vvec_1,\vvec_2}\) and one that is. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/3d-plane-span-no.svg" role="img" class="contained" alt=""></div>
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/3d-plane-span-yes.svg" role="img" class="contained" alt=""></div>
 </div></div> Once again, the matrix</p>
@@ -668,7 +681,7 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p class="continuation">there cannot be a pivot position in the rightmost column. This linear system is consistent for every vector \(\bvec\text{,}\) which tells us that \(\span{\vvec_1,\vvec_2,\vvec_3} = \real^3\text{.}\)</p>
+<p class="continuation">there cannot be a pivot position in the rightmost column. This linear system is consistent for every vector \(\bvec\text{,}\) which tells us that \(\laspan{\vvec_1,\vvec_2,\vvec_3} = \real^3\text{.}\)</p>
 </li>
 </ul>
 <p id="p-1297">To summarize, we looked at the pivot positions in the matrix whose columns were the vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)  We found that with</p>
@@ -681,7 +694,7 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 <article class="proposition theorem-like" id="prop-pivot-row"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
 </h6>
-<p id="p-1302">Suppose we have vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) in \(\real^m\text{.}\) Then \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}=\real^m\) if and only if the matrix \(\left[\begin{array}{rrrr}
+<p id="p-1302">Suppose we have vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) in \(\real^m\text{.}\) Then \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}=\real^m\) if and only if the matrix \(\left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
 \end{array}\right]\) has a pivot position in every row.</p></article><p id="p-1303">This tells us something important about the number of vectors needed to span \(\real^m\text{.}\)  Suppose we have \(n\) vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) that span \(\real^m\text{.}\)  The proposition tells us that the matrix \(A = \left[\begin{array}{rrrr}
 \vvec_1\amp\vvec_2\ldots\vvec_n
@@ -701,14 +714,14 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 <article class="proposition theorem-like" id="proposition-8"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
 </h6>
-<p id="p-1305">If a set of vectors span \(\real^m\text{,}\) there must be at least \(m\) vectors in the set.</p></article><p id="p-1306">This makes sense intuitively.  We have thought about a linear combination of a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) as the result of walking a certain distance in the direction of \(\vvec_1\text{,}\) followed by walking a certain distance in the direction of \(\vvec_2\text{,}\) and so on.  If \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^m\text{,}\) this means that we can walk to any point in \(\real^m\) using the directions \(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)  It makes sense that we would need at least \(m\) directions to give us the flexibilty needed to reach any point in \(\real^m\text{.}\)</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<p id="p-1305">If a set of vectors span \(\real^m\text{,}\) there must be at least \(m\) vectors in the set.</p></article><p id="p-1306">This makes sense intuitively.  We have thought about a linear combination of a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) as the result of walking a certain distance in the direction of \(\vvec_1\text{,}\) followed by walking a certain distance in the direction of \(\vvec_2\text{,}\) and so on.  If \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^m\text{,}\) this means that we can walk to any point in \(\real^m\) using the directions \(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)  It makes sense that we would need at least \(m\) directions to give us the flexibilty needed to reach any point in \(\real^m\text{.}\)</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Summary</span>
 </h3>
 <p id="p-1307">We defined the span of a set of vectors and developed some intuition for this concept through a series of examples.</p>
 <ul class="disc">
-<li id="li-843"><p id="p-1308">The span of a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is the set of linear combinations of the vectors.  We denote the span by \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></li>
+<li id="li-843"><p id="p-1308">The span of a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\) is the set of linear combinations of the vectors.  We denote the span by \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></li>
 <li id="li-844">
-<p id="p-1309">A vector \(\bvec\) is in \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\) if an only if the linear system</p>
+<p id="p-1309">A vector \(\bvec\) is in \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\) if an only if the linear system</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{rrrr}
@@ -728,7 +741,7 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">has a pivot in every row, then the span of these vectors is \(\real^m\text{;}\)  that is, \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n} =
+<p class="continuation">has a pivot in every row, then the span of these vectors is \(\real^m\text{;}\)  that is, \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} =
 \real^m\text{.}\)</p>
 </li>
 <li id="li-846"><p id="p-1311">Any set of vectors that spans \(\real^m\) must have at least \(m\) vectors.</p></li>
@@ -748,8 +761,8 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 \end{equation*}
 </div>
 <ol class="lower-roman">
-<li id="li-848"><p id="p-1314">Is \(\bvec = \twovec{2}{1}\) in \(\span{\vvec_1,\vvec_2}\text{?}\)</p></li>
-<li id="li-849"><p id="p-1315">Give a written description of \(\span{\vvec_1,\vvec_2}\text{.}\)</p></li>
+<li id="li-848"><p id="p-1314">Is \(\bvec = \twovec{2}{1}\) in \(\laspan{\vvec_1,\vvec_2}\text{?}\)</p></li>
+<li id="li-849"><p id="p-1315">Give a written description of \(\laspan{\vvec_1,\vvec_2}\text{.}\)</p></li>
 </ol>
 </li>
 <li id="li-850">
@@ -762,19 +775,19 @@ a\evec_1 + b\evec_2 = a\threevec{1}{0}{0}+b\threevec{0}{1}{0}
 \end{equation*}
 </div>
 <ol class="lower-roman">
-<li id="li-851"><p id="p-1317">Is the vector \(\bvec=\threevec{-10}{-1}{5}\) in \(\span{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
-<li id="li-852"><p id="p-1318">Is the vector \(\vvec_3\) in \(\span{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
-<li id="li-853"><p id="p-1319">Is the vector \(\bvec=\threevec{3}{3}{-1}\) in \(\span{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
-<li id="li-854"><p id="p-1320">Give a written description of \(\span{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</p></li>
+<li id="li-851"><p id="p-1317">Is the vector \(\bvec=\threevec{-10}{-1}{5}\) in \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
+<li id="li-852"><p id="p-1318">Is the vector \(\vvec_3\) in \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
+<li id="li-853"><p id="p-1319">Is the vector \(\bvec=\threevec{3}{3}{-1}\) in \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
+<li id="li-854"><p id="p-1320">Give a written description of \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</p></li>
 </ol>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-1335">Provide a justification for your response to the following questions.</p>
 <ol class="lower-alpha">
-<li id="li-867"><p id="p-1336">Suppose you have a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)  Can you guarantee that \(\zerovec\) is in \(\span{\vvec_1\,\vvec_2,\ldots,\vvec_n}\text{?}\)</p></li>
+<li id="li-867"><p id="p-1336">Suppose you have a set of vectors \(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)  Can you guarantee that \(\zerovec\) is in \(\laspan{\vvec_1\,\vvec_2,\ldots,\vvec_n}\text{?}\)</p></li>
 <li id="li-868"><p id="p-1337">Suppose that \(A\) is an \(m \times n\) matrix.  Can you guarantee that the equation \(A\xvec =
 \zerovec\) is consistent?</p></li>
-<li id="li-869"><p id="p-1338">What is \(\span{\zerovec,\zerovec,\ldots,\zerovec}\text{?}\)</p></li>
+<li id="li-869"><p id="p-1338">What is \(\laspan{\zerovec,\zerovec,\ldots,\zerovec}\text{?}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-1347">For both parts of this exericse, give a written description of sets of the vectors \(\bvec\) and include a sketch.</p>
 <ol class="lower-alpha">
@@ -833,10 +846,10 @@ A = \left[\begin{array}{rrrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-884"><p id="p-1362">If the equation \(A\xvec = \bvec\) is consistent, then \(\bvec\) is in \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></li>
+<li id="li-884"><p id="p-1362">If the equation \(A\xvec = \bvec\) is consistent, then \(\bvec\) is in \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></li>
 <li id="li-885"><p id="p-1363">The equation \(A\xvec = \vvec_1\) is always consistent.</p></li>
 <li id="li-886"><p id="p-1364">If \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\text{,}\) and \(\vvec_4\) are vectors in \(\real^3\text{,}\) then their span is \(\real^3\text{.}\)</p></li>
-<li id="li-887"><p id="p-1365">If \(\bvec\) can be expressed as a linear combination of \(\vvec_1, \vvec_2,\ldots,\vvec_n\text{,}\) then \(\bvec\) is in \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></li>
+<li id="li-887"><p id="p-1365">If \(\bvec\) can be expressed as a linear combination of \(\vvec_1, \vvec_2,\ldots,\vvec_n\text{,}\) then \(\bvec\) is in \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</p></li>
 <li id="li-888"><p id="p-1366">If \(A\) is a \(8032\times 427\) matrix, then the span of the columns of \(A\) is a set of vectors in \(\real^{427}\text{.}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-1379">This exercise asks you to construct some matrices whose columns span a given set.</p>
@@ -898,8 +911,8 @@ a\vvec_1 + b\vvec_2 + c\vvec_3
 </div>
 <p class="continuation">can be rewritten as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p>
 </li>
-<li id="li-946"><p id="p-1440">Explain why \(\span{\vvec_1,\vvec_2,\vvec_3} =
-\span{\vvec_1,\vvec_2}\text{.}\)</p></li>
+<li id="li-946"><p id="p-1440">Explain why \(\laspan{\vvec_1,\vvec_2,\vvec_3} =
+\laspan{\vvec_1,\vvec_2}\text{.}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-1449">As defined in this section, the span of a set of vectors is generated by taking all possible linear combinations of those vectors.  This exericse will demonstrate the fact that the span can also be realized as the solution space to a linear system.</p>
 <p id="p-1450">We will consider the vectors</p>
@@ -911,16 +924,16 @@ a\vvec_1 + b\vvec_2 + c\vvec_3
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-953"><p id="p-1451">Is every vector in \(\real^3\) in \(\span{\vvec_1,\vvec_2,\vvec_3}\text{?}\)  If not, describe the span. <div class="sagecell-sage" id="sage-62"><script type="text/x-sage">
+<li id="li-953"><p id="p-1451">Is every vector in \(\real^3\) in \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)  If not, describe the span. <div class="sagecell-sage" id="sage-62"><script type="text/x-sage">
 </script></div></p></li>
 <li id="li-954">
-<p id="p-1452">To describe \(\span{\vvec_1,\vvec_2,\vvec_3}\) as the solution space of a linear system, we will write</p>
+<p id="p-1452">To describe \(\laspan{\vvec_1,\vvec_2,\vvec_3}\) as the solution space of a linear system, we will write</p>
 <div class="displaymath">
 \begin{equation*}
 \bvec=\threevec{a}{b}{c}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">If \(\bvec\) is in \(\span{\vvec_1,\vvec_2,\vvec_3}\text{,}\) then the linear system corresponding to the augmented matrix</p>
+<p class="continuation">If \(\bvec\) is in \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{,}\) then the linear system corresponding to the augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
@@ -930,11 +943,11 @@ a\vvec_1 + b\vvec_2 + c\vvec_3
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">must be consistent.  This means that a pivot cannot occur in the rightmost column.  Perform row operations to put this augmented matrix into a triangular form.  Now identify an equation in \(a\text{,}\) \(b\text{,}\) and \(c\) that tells us when there is no pivot in the rightmost column.  The solution space to this equation describes \(\span{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</p>
+<p class="continuation">must be consistent.  This means that a pivot cannot occur in the rightmost column.  Perform row operations to put this augmented matrix into a triangular form.  Now identify an equation in \(a\text{,}\) \(b\text{,}\) and \(c\) that tells us when there is no pivot in the rightmost column.  The solution space to this equation describes \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</p>
 </li>
 <li id="li-955"><p id="p-1453">In this example, the matrix formed by the vectors \(\left[\begin{array}{rrr}
 \vvec_1\amp\vvec_2\amp\vvec_2 \\
-\end{array}\right]\) has two pivot positions.  Suppose we were to consider another example in which this matrix had had only one pivot position.  How would this have changed the linear system describing \(\span{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
+\end{array}\right]\) has two pivot positions.  Suppose we were to consider another example in which this matrix had had only one pivot position.  How would this have changed the linear system describing \(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

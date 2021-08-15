@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-18T15:33:09-04:00       *-->
+<!--*       on 2021-08-15T11:44:44-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -669,7 +682,7 @@ a \amp 0 \\
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.18<span class="period">.</span></span><span class="space"> </span>The vectors \(\evec_1\text{,}\) \(\evec_2\text{,}\) and \(\evec_3\) in \(\real^3\text{.}\)</figcaption></figure><ol id="p-2090" class="lower-alpha">
 <li id="li-1408"><p id="p-2091">Imagine that the thumb of your right hand points in the direction of \(\evec_1\text{.}\)  A positive rotation about the \(x\) axis corresponds to a rotation in the direction in which your fingers point. Find the matrix definining the matrix transformation \(T\) that rotates vectors by \(90^\circ\) around the \(x\)-axis.</p></li>
 <li id="li-1409"><p id="p-2092">In the same way, find the matrix that rotates vectors by \(90^\circ\) around the \(y\)-axis.</p></li>
-<li id="li-1410">Find the matrix that rotates vectors by \(90^\circ\) around the \(z\)-axis.</li>
+<li id="li-1410"><p id="p-derived-li-1410">Find the matrix that rotates vectors by \(90^\circ\) around the \(z\)-axis.</p></li>
 <li id="li-1411"><p id="p-2093">What is the cumulative effect of rotating by \(90^\circ\) about the \(x\)-axis, followed by a \(90^\circ\) rotation about the \(y\)-axis, followed by a \(-90^\circ\) rotation about the \(x\)-axis. <div class="sagecell-sage" id="sage-70"><script type="text/x-sage">
 </script></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>

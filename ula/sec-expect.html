@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-18T15:32:31-04:00       *-->
+<!--*       on 2021-08-15T11:44:08-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -274,9 +287,9 @@ y \amp = -x. \\
 <figure class="figure figure-like" id="fig-three-possibilities"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/three-possibilities.svg" role="img" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Three possibilities for collections of linear equations in two unknowns.</figcaption></figure><p id="p-45">In this example, we see that</p>
 <ul class="disc">
-<li id="li-19">With a single equation, there are infinitely many points \((x,y)\) satisfying that equation.</li>
-<li id="li-20">Adding a second equation adds another condition we place on the points \((x,y)\) resulting in a single point that satisfies both equations.</li>
-<li id="li-21">Adding a third equation adds a third condition on the points \((x,y)\text{,}\) and it is no longer possible to satisfy all three conditions.</li>
+<li id="li-19"><p id="p-derived-li-19">With a single equation, there are infinitely many points \((x,y)\) satisfying that equation.</p></li>
+<li id="li-20"><p id="p-derived-li-20">Adding a second equation adds another condition we place on the points \((x,y)\) resulting in a single point that satisfies both equations.</p></li>
+<li id="li-21"><p id="p-derived-li-21">Adding a third equation adds a third condition on the points \((x,y)\text{,}\) and it is no longer possible to satisfy all three conditions.</p></li>
 </ul>
 <p id="p-46">Generally speaking, a single equation will have many solutions, in fact, infinitely many.  As we add equations, we add conditions which lead to, in a sense we will make precise later, a smaller number of solutions.  Eventually, we have too many equations and find that no points satisfy all of them at the same time.</p>
 <p id="p-47">This example illustrates a general principle to which we will frequently return.</p>

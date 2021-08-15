@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-18T15:33:35-04:00       *-->
+<!--*       on 2021-08-15T11:45:08-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -239,8 +252,8 @@ A = \left[\begin{array}{rrrr}
 <li id="li-2155"><p id="p-3188">Explain how this parametric description produces two vectors \(\wvec_1\) and \(\wvec_2\) whose span is the solution space to the equation \(A\xvec = \zerovec\text{.}\)</p></li>
 <li id="li-2156"><p id="p-3189">What can you say about the linear independence of the set of vectors \(\wvec_1\) and \(\wvec_2\text{?}\)</p></li>
 <li id="li-2157"><p id="p-3190">Let's denote the columns of \(A\) as \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\text{,}\)  and \(\vvec_4\text{.}\) Explain why \(\vvec_3\) and \(\vvec_4\) can be written as linear combinations of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
-<li id="li-2158"><p id="p-3191">Explain why \(\vvec_1\) and \(\vvec_2\) are linearly independent and \(\span{\vvec_1,\vvec_2} =
-\span{\vvec_1, \vvec_2, \vvec_3, \vvec_4}\text{.}\)</p></li>
+<li id="li-2158"><p id="p-3191">Explain why \(\vvec_1\) and \(\vvec_2\) are linearly independent and \(\laspan{\vvec_1,\vvec_2} =
+\laspan{\vvec_1, \vvec_2, \vvec_3, \vvec_4}\text{.}\)</p></li>
 </ol></article></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Subspaces of \(\real^p\)</span>
 </h3>
@@ -285,13 +298,13 @@ A = \left[\begin{array}{rrrr}
 <li id="li-2166"><p id="p-3211">Explain why any subspace of \(\real^2\) must contain the zero vector \(\zerovec\text{.}\)</p></li>
 <li id="li-2167"><p id="p-3212">Explain why the subset \(S\) of \(\real^2\) that consists of only the zero vector \(\zerovec\) is a subspace of \(\real^2\text{.}\)</p></li>
 <li id="li-2168"><p id="p-3213">Explain why the subspace \(S=\real^2\) is itself a subspace of \(\real^2\text{.}\)</p></li>
-<li id="li-2169"><p id="p-3214">If \(\vvec\) and \(\wvec\) are two vectors in a subspace \(S\text{,}\) explain why \(\span{\vvec,\wvec}\) is contained in the subspace \(S\) as well.</p></li>
+<li id="li-2169"><p id="p-3214">If \(\vvec\) and \(\wvec\) are two vectors in a subspace \(S\text{,}\) explain why \(\laspan{\vvec,\wvec}\) is contained in the subspace \(S\) as well.</p></li>
 <li id="li-2170"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
 <div class="sbspanel top" style="width:61.5384615384615%;"><p id="p-3215">Suppose that \(S\) is a subspace of \(\real^2\) containing two vectors \(\vvec\) and \(\wvec\) that are not scalar multiples of one another.  What is the subspace \(S\) in this case?</p></div>
 <div class="sbspanel top" style="width:35.8974358974359%;"><img src="images/subspace-all-r2.svg" role="img" class="contained" alt=""></div>
 </div></div></li>
-</ol></article><p id="p-3223">This activity introduces an important idea.  Suppose that we have a subspace \(S\) of \(\real^p\) and that vectors \(\vvec_1, \vvec_2, \ldots, \vvec_n\) are in \(S\text{.}\)  We know that any linear combination of these vectors must also be in the subspace \(S\text{.}\)  Since the span of these vectors is the set of all linear commbinations of the vectors, it must be the case that \(\span{\vvec_1,\vvec_2,\ldots,\vvec_n}\) is in the subspace \(S\) as well.</p>
-<p id="p-3224">With this in mind, we can list all the subspaces of \(\real^2\text{.}\)  If a subspace \(S\) contains a nonzero vector, then it must contain the line containing that vector.  If \(S\) contains two vectors \(\vvec\) and \(\wvec\) that are not scalar multiples of one another, then \(\span{\vvec,\wvec} =
+</ol></article><p id="p-3223">This activity introduces an important idea.  Suppose that we have a subspace \(S\) of \(\real^p\) and that vectors \(\vvec_1, \vvec_2, \ldots, \vvec_n\) are in \(S\text{.}\)  We know that any linear combination of these vectors must also be in the subspace \(S\text{.}\)  Since the span of these vectors is the set of all linear commbinations of the vectors, it must be the case that \(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\) is in the subspace \(S\) as well.</p>
+<p id="p-3224">With this in mind, we can list all the subspaces of \(\real^2\text{.}\)  If a subspace \(S\) contains a nonzero vector, then it must contain the line containing that vector.  If \(S\) contains two vectors \(\vvec\) and \(\wvec\) that are not scalar multiples of one another, then \(\laspan{\vvec,\wvec} =
 \real^2\) so the subspace \(S\) must be all of \(\real^2\text{.}\)  These are the only possibilities:</p>
 <ul class="disc">
 <li id="li-2177"><p id="p-3225">The subspace \(S=\{\zerovec\}\) consisting of only the zero vector .</p></li>
@@ -514,7 +527,7 @@ A= \left[\begin{array}{rrr}
 </div>
 <p class="continuation">Since \(\col(A)\) is the span of the columns, the vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) naturally span \(\col(A)\text{.}\)  Are these vectors linearly independent?</p>
 </li>
-<li id="li-2205"><p id="p-3278">Show that \(\vvec_3\) can be written as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  Then explain why \(\col(A)=\span{\vvec_1,\vvec_2}\text{.}\)</p></li>
+<li id="li-2205"><p id="p-3278">Show that \(\vvec_3\) can be written as a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)  Then explain why \(\col(A)=\laspan{\vvec_1,\vvec_2}\text{.}\)</p></li>
 <li id="li-2206"><p id="p-3279">Explain why the vectors \(\vvec_1\) and \(\vvec_2\) form a basis for \(\col(A)\text{.}\)  This shows that \(\col(A)\) is a 2-dimensional subspace of \(\real^2\) and is therefore a plane.</p></li>
 <li id="li-2207">
 <p id="p-3280">Now consider the matrix \(A\) and its reduced row echelon form:</p>
@@ -557,7 +570,7 @@ A =
 </div>
 <p class="continuation">We will denote the columns as \(\vvec_1,\vvec_2,\ldots,\vvec_5\text{.}\)</p>
 <p id="p-3297">It is certainly true that \(\col(A) =
-\span{\vvec_1,\vvec_2,\ldots,\vvec_5}\) by the definition of the column space.  However, the reduced row echelon form of the matrix shows us that the vectors are not linearly independent so \(\vvec_1,\vvec_2,\ldots,\vvec_5\) do not form a basis for \(\col(A)\text{.}\)</p>
+\laspan{\vvec_1,\vvec_2,\ldots,\vvec_5}\) by the definition of the column space.  However, the reduced row echelon form of the matrix shows us that the vectors are not linearly independent so \(\vvec_1,\vvec_2,\ldots,\vvec_5\) do not form a basis for \(\col(A)\text{.}\)</p>
 <p id="p-3298">From the reduced row echelon form, however, we can see that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -568,7 +581,7 @@ A =
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">This means that any linear combination of \(\vvec_1,\vvec_2,\ldots,\vvec_5\) can be written as a linear combination of just \(\vvec_1\) and \(\vvec_2\text{.}\)  Therefore, we see that \(\col(A) = \span{\vvec_1,\vvec_2}\text{.}\)  Moreover, the reduced row echelon form shows that \(\vvec_1\) and \(\vvec_2\) are linearly independent, which implies that they form a basis for \(\col(A)\text{.}\)  Therefore, \(\col(A)\) is a 2-dimensional subspace of \(\real^3\text{,}\) which is a plane in \(\real^3\text{,}\) having basis</p>
+<p class="continuation">This means that any linear combination of \(\vvec_1,\vvec_2,\ldots,\vvec_5\) can be written as a linear combination of just \(\vvec_1\) and \(\vvec_2\text{.}\)  Therefore, we see that \(\col(A) = \laspan{\vvec_1,\vvec_2}\text{.}\)  Moreover, the reduced row echelon form shows that \(\vvec_1\) and \(\vvec_2\) are linearly independent, which implies that they form a basis for \(\col(A)\text{.}\)  Therefore, \(\col(A)\) is a 2-dimensional subspace of \(\real^3\text{,}\) which is a plane in \(\real^3\text{,}\) having basis</p>
 <div class="displaymath">
 \begin{equation*}
 \threevec{2}{-4}{0},
@@ -690,8 +703,8 @@ A = \left[\begin{array}{rrrr}
 \wvec_2 = \fourvec{-2}{4}{0}{1}
 \end{equation*}
 </div>
-<p class="continuation">and suppose that \(A\) is a matrix such that \(\col(A)=\span{\vvec_1,\vvec_2}\) and \(\nul(A) = 
-\span{\wvec_1,\wvec_2}\text{.}\)</p>
+<p class="continuation">and suppose that \(A\) is a matrix such that \(\col(A)=\laspan{\vvec_1,\vvec_2}\) and \(\nul(A) = 
+\laspan{\wvec_1,\wvec_2}\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-2305"><p id="p-3406">What are the dimensions of \(A\text{?}\)</p></li>
 <li id="li-2306"><p id="p-3407">Find such a matrix \(A\text{.}\)</p></li>
