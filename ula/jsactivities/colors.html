@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color models</title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+    </head>
+    <script type="text/javascript" async
+	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">    
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX","output/HTML-CSS"],
+          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+          TeX: {
+          }
+          });
+        </script>
+    <body>
+      <center>
+	<table width=640>
+	  <tr>
+	    <td>
+	      <h2> Color models </h2> 
+
+	      <p>
+		The $RGB$ model
+	      </p>
+	      
+	      <p>
+	  
+		<canvas id="rgb" width="500" height="70">
+		  Your browser does not support HTML5 Canvas.
+		</canvas>
+	      </p>
+		
+		<br />
+		<hr />
+
+	      <p>
+		The $YC_bC_r$ model
+	      </p>
+	      <p>
+		<canvas id="ycbcr" width="500" height="70">
+		  Your browser does not support HTML5 Canvas.
+		</canvas>
+	      </p>
+		<br/>
+		<hr/>
+
+	      <p>
+		The $HSV$ model
+	      </p>
+	      <p>
+		<canvas id="hsv" width="500" height="70">
+		  Your browser does not support HTML5 Canvas.
+		</canvas>
+		
+		<script type='text/javascript' src='../jslibrary/figures.js'></script>
+		<script type='text/javascript' src='../jslibrary/rgb.js'></script>
+		<script type='text/javascript' src='../jslibrary/ycbcr.js'></script>
+		<script type='text/javascript' src='../jslibrary/hsv.js'></script>
+	      </p>
+	    </td>
+	  </tr>
+	</table>
+      </center>
+    </body>
+</html>
