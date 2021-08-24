@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eigenvectors</title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+    </head>
+        <script type/text=javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX","output/HTML-CSS"],
+          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+          TeX: {
+          }
+          });
+        </script>
+    <body>
+      <center>
+	<h2> Eigenvectors </h2> 
+
+	<p> An eigenvector of a square matrix $A$ is a vector $\vec v$
+	such that $A\vec v = \lambda \vec v$.
+	  <br>
+	  <p>
+	    <canvas id="sliders" width="450" height="100">
+	      Your browser does not support HTML5 Canvas.
+	    </canvas>
+	    <br>
+	    <canvas id="eigenvector" width="400" height="400">
+	      Your browser does not support HTML5 Canvas.
+	    </canvas>
+            <script type='text/javascript' src='../../library/figures.js'></script>
+            <script type='text/javascript' src='eigenvectors.js'></script>
+      </center>
+    </body>
+</html>
