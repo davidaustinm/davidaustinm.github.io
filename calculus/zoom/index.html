@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zooming in on a graph at a point </title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+    </head>
+
+        <script type/text=javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX","output/HTML-CSS"],
+          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+          TeX: {
+          }
+          });
+        </script>
+    <body>
+      <center>
+	<h2> Zooming in on a graph at a point </h2> 
+      </center>
+
+      <center>
+      <table>
+	<tr><td width=650>
+	<p> As we look at the graph of a "well-behaved" function on a
+	smaller and smaller scale, the graph appears more and more
+	like a straight line.
+	  <br>
+	<p>
+        <canvas id="left" width="320" height="320" hspace="50">
+	  Your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas id="right" width="320" height="320" hspace="50">
+	  Your browser does not support HTML5 Canvas.
+        </canvas>
+	</td></tr>
+	<tr><td align=center>
+	<p>
+	<button type="button" id="zoom"> Zoom </button>
+	<button type="button" id="reset"> Reset </button>
+        <script type='text/javascript' src='../jslibrary/figures.js'></script>
+        <script type='text/javascript' src='zoom.js'></script>
+	</td></tr>
+      </table>
+      </center>
+    </body>
+</html>

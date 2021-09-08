@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graphing the derivative function </title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+    </head>
+
+        <script type/text=javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+          MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX","output/HTML-CSS"],
+          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+          TeX: {
+          }
+          });
+        </script>
+    <body>
+      <center>
+	<h2> Graphing the derivative function </h2> 
+
+	<p> On the left is shown the graph of $f(x)$ while the right
+	  shows the graph of the derivative $f'(x)$.
+	  <br>
+	  <p>
+        <canvas id="left" width="320" height="300" hspace="50">
+	  Your browser does not support HTML5 Canvas.
+        </canvas>
+        <canvas id="right" width="320" height="300" hspace="50">
+	  Your browser does not support HTML5 Canvas.
+        </canvas>
+        <script type='text/javascript' src='../jslibrary/figures.js'></script>
+        <script type='text/javascript' src='fpgraph.js'></script>
+	</center>
+    </body>
+</html>
