@@ -7,7 +7,7 @@
 		<vendor>David Austin</vendor>
 		<description>A spherical drawing program</description>
 		<description kind="tooltip">A tool for studying spherical geometry</description>
-		<homepage href="http://merganser.math.gvsu.edu/easel/index.html"/>
+		<homepage href="https://davidaustinm.github.io/easel/index.html" />
 		<icon href="smallsphere.gif" width="32" height="32"/>
 		<icon href="bigsphere.gif" width="64" height="64"/>
 		<icon kind="splash" href="splash.gif"/>
