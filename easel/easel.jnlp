@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <jnlp 
     spec="1.0+" 
-    codebase="http://merganser.math.gvsu.edu/easel" href="easel.jnlp">
+    codebase="https://davidaustinm.github.io/easel" href="easel.jnlp">
 	<information>
 		<title>Spherical Easel</title>
 		<vendor>David Austin</vendor>
