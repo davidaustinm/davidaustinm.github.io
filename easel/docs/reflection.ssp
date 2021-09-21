@@ -1,0 +1,61 @@
+ctm 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+ctminv 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+lastctm 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+lastctminv 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0
+plotables 1d0d45b 125d06e 196f4b5 19ba640 1bfc4fc 11db6bb 1c7e2da
+points 1fe571f 109ea96 83b1b 608760
+!plotable.SpherePoint 1fe571f
+color 255 128 128
+vec 0.0 -0.67816091954023 0.734913441983714
+label 1d0d45b
+showing
+!plotable.SpherePoint 109ea96
+color 255 128 128
+vec -0.660919540229885 0.21264367816091956 0.7196999565655904
+label 125d06e
+showing
+!plotable.SpherePoint 83b1b
+color 255 128 128
+vec -0.7758620689655171 -0.24137931034482762 0.5829014311854128
+label 1bfc4fc
+showing
+!plotable.IsometryPoint 608760
+isometry 11db6bb
+point 83b1b
+color 255 128 128
+vec -0.23753628429492205 0.16441887364703872 0.9573624954174889
+label 1c7e2da
+showing
+!plotable.Label 1d0d45b
+text A
+parent 1fe571f
+offsets 5 5
+!plotable.Label 125d06e
+text B
+parent 109ea96
+offsets 5 5
+!plotable.Line 196f4b5
+color 77 77 204
+normal -0.6980726599338138 -0.5262178141231931 -0.4855814798283995
+label 19ba640
+p1 1fe571f
+p2 109ea96
+labelAngle 0.7853981633974483
+showing
+linewidth 1.0099999904632568
+!plotable.Label 19ba640
+text l
+parent 196f4b5
+offsets 5 5
+!plotable.Label 1bfc4fc
+text C
+parent 83b1b
+showing
+offsets 5 5
+!plotable.Reflection 11db6bb
+line 196f4b5
+!plotable.Label 1c7e2da
+text C'
+parent 608760
+showing
+offsets 5 5
