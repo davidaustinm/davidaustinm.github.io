@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-11-10T13:40:05-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.4.2</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+</h4>
+<p>Suppose that <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W\)</span> is a three-dimensional subspace of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\real^4\)</span> with basis:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath process-math">
+\begin{equation*}
+\vvec_1 = \fourvec1111,\hspace{24pt}
+\vvec_2 = \fourvec1322,\hspace{24pt}
+\vvec_3 = \fourvec1{-3}{-3}{-3}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We can see that this basis is not orthogonal by noting that <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vvec_1\cdot\vvec_2 = 8\text{.}\)</span>  Our goal is to create an orthogonal basis <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\text{,}\)</span> <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_2\text{,}\)</span> and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_3\)</span> for <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W\text{.}\)</span></p>
+<p>To begin, we declare that <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1=\vvec_1\text{,}\)</span> and we call <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W_1\)</span> the line defined by <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\text{.}\)</span></p>
+<p><div class="sagecell-sage" id="sage-161"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li><p>Find the vector <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vhat_2\)</span> that is the orthogonal projection of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vvec_2\)</span> onto <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W_1\text{,}\)</span> the line defined by <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\text{.}\)</span></p></li>
+<li><p>Form the vector <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_2 = \vvec_2-\vhat_2\)</span> and verify that it is orthogonal to <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\text{.}\)</span></p></li>
+<li><p>Explain why <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\laspan{\wvec_1,\wvec_2} =
+\laspan{\vvec_1,\vvec_2}\)</span> by showing that any linear combination of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vvec_1\)</span> and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vvec_2\)</span> can be written as a linear combination of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\)</span> and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_2\)</span> and vice versa.</p></li>
+<li><p>The vectors <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\)</span> and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_2\)</span> are an orthogonal basis for a two-dimensional subspace <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W_2\)</span> of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\real^4\text{.}\)</span>  Find the vector <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vhat_3\)</span> that is the orthogonal projection of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\vvec_3\)</span> onto <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W_2\text{.}\)</span></p></li>
+<li><p>Verify that <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_3 = \vvec_3-\vhat_3\)</span> is orthogonal to both <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\)</span> and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_2\text{.}\)</span></p></li>
+<li><p>Explain why <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_1\text{,}\)</span> <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_2\text{,}\)</span> and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\wvec_3\)</span> form an orthogonal basis for <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W\text{.}\)</span></p></li>
+<li><p>Now find an orthonormal basis for <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(W\text{.}\)</span></p></li>
+</ol></article><span class="incontext"><a href="sec-gram-schmidt.html#activity-gram-schmidt">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-11-10T13:40:48-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.5.4</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+</h4>
+<ol class="lower-alpha">
+<li>
+<p>Suppose we are interested in finding the least squares approximate solution to the equation <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(A\xvec =
+\bvec\)</span> and that we have the <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(QR\)</span> factorization <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(A=QR\text{.}\)</span>  Explain why the least squares approximation solution is given by solving</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath process-math">
+\begin{align*}
+A\xhat \amp = QQ^T\bvec \\\\
+QR\xhat \amp = QQ^T\bvec \\
+\end{align*}
+</div>
+</li>
+<li>
+<p>Multiply both sides of the second expression by <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(Q^T\)</span> and explain why</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath process-math">
+\begin{equation*}
+R\xhat = Q^T\bvec.
+\end{equation*}
+</div>
+<p>Since <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(R\)</span> is upper triangular, this is a relatively simple equation to solve using back substitution, as we saw in <a href="sec-gaussian-revisited.html" class="internal" title="Section 5.1: Gaussian elimination revisited">Section 5.1</a>.  We will therefore write the least squares approximate solution as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath process-math">
+\begin{equation*}
+\xhat = R^{-1}Q^T\bvec,
+\end{equation*}
+</div>
+<p class="continuation">and put this to use in the following context.</p>
+</li>
+<li>
+<p>Brozak’s formula, which is used to calculate a person's body fat index <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(BFI\text{,}\)</span> is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath process-math">
+\begin{equation*}
+BFI = 100 \left(\frac{4.57}{\rho} - 4.142\right)
+\end{equation*}
+</div>
+<p class="continuation">where <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\rho\)</span> denotes a person's body density in grams per cubic centimeter.  Obtaining an accurate measure of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\rho\)</span> is difficult, however, because it requires submerging the person in water and measuring the volume of water displaced.  Instead, we will gather several other body measurements, which are more easily obtained, and use it to predict <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(BFI\text{.}\)</span></p>
+<p>For instance, suppose we take 10 patients and measure their weight <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(w\)</span> in pounds, height <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(h\)</span> in inches, abdomen <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(a\)</span> in centimeters, wrist circumference <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(r\)</span> in centimeters, neck circumference <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(n\)</span> in centimeters, and <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(BFI\text{.}\)</span>  Evaluating the following cell loads and displays the data. <div class="sagecell-sage" id="sage-176"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py', globals())
+df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/bfi.csv')
+weight = vector(df['Weight'])
+height = vector(df['Height'])
+abdomen = vector(df['Abdomen'])
+wrist = vector(df['Wrist'])
+neck = vector(df['Neck'])
+BFI = vector(df['BFI'])
+print(df)
+</script></div>  In addition, that cell provides:</p>
+<ol class="lower-alpha">
+<li><p>vectors <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">weight</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">height</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">abdomen</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">wrist</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">neck</code>, and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">BFI</code> formed from the columns of the dataset.</p></li>
+<li><p>the command <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">onesvec(n)</code>, which returns an <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(n\)</span>-dimensional vector whose entries are all one.</p></li>
+<li><p>the command <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">QR(A)</code> that returns the <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(QR\)</span> factorization of <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(A\)</span> as <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">Q, R =
+		      QR(A)</code>.</p></li>
+<li><p>the command <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">demean(v)</code>, which returns the demeaned vector <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\widetilde{\vvec}\text{.}\)</span></p></li>
+</ol>
+<p>We would like to find the linear function</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath process-math">
+\begin{equation*}
+\beta_0 + \beta_1w + \beta_2h + \beta_3a + \beta_4r +
+\beta_5n = BFI
+\end{equation*}
+</div>
+<p class="continuation">that best fits the data.</p>
+<p>Use the first data point to write an equation for the parameters <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\beta_0,\beta_1,\ldots,\beta_5\text{.}\)</span></p>
+</li>
+<li><p>Describe the linear system <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(A\xvec = \bvec\)</span> for these parameters.  More specifically, describe how the matrix <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(A\)</span> and the vector <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\bvec\)</span> are formed.</p></li>
+<li><p>Construct the matrix <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(A\)</span> and find its <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(QR\)</span> factorization in the cell below. <div class="sagecell-sage" id="sage-177"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Find the least squares approximate solution <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\xhat\)</span> by solving the equation <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(R\xhat =
+Q^T\bvec\text{.}\)</span>  You may want to use <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">N(xhat)</code> to display a decimal approximation of the vector. What are the parameters <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(\beta_0,\beta_1,\ldots,\beta_5\)</span> that best fit the data?</p></li>
+<li><p>Find the coefficient of determination <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(R^2\)</span> for your parameters.  What does this imply about the quality of the fit? <div class="sagecell-sage" id="sage-178"><script type="text/x-sage">
+</script></div></p></li>
+<li><p>Suppose a person's measurements are: weight 190, height 70, abdomen 90, wrist 18, and neck 35.  Estimate this person's <span xmlns:svg="http://www.w3.org/2000/svg" class="process-math">\(BFI\text{.}\)</span></p></li>
+</ol></article><span class="incontext"><a href="sec-least-squares.html#activity-BFI">in-context</a></span>
+</body>
+</html>
