@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seeds</title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+    </head>
+    <body>
+      <center>
+	<h2> Seeds</h2>
+	<table cellpadding = 5>
+	  <tr>
+	    <td>
+              <canvas id="seeds" width="650" height="650">
+		Your browser does not support HTML5 Canvas.
+              </canvas>
+	    </td>
+	  </tr>
+
+	  <tr align=center>
+	    <td>
+	      <b>Angle:</b> <input type="text" id="angle" maxlength=10 size = "6">
+	      <b>Number:</b> <input type="text" id="number" maxlength=4 size = "4">
+	      <b>Residue:</b> <input type="text" id="residue" maxlength=3 size = "3">
+	    </td>
+	  </tr>
+	  <tr align=center>
+	    <td>
+	      <button type="button" id="animate"> Animate </button>
+	      <button type="button" id="color"> Color </button>
+	    </td>
+	  </tr>
+	</table>
+        <script type='text/javascript' src='../library/figures.js'></script>
+        <script type='text/javascript' src='seeds.js'></script>
+      </center>
+    </body>
+</html>
