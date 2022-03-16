@@ -642,7 +642,15 @@ print (y_fourier.numerical_approx(digits=3))
 \end{array}\right]
 \text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-1909"><p id="p-2816">In the Sage cell below is a copy of the change of basis matrices that define the Fourier transform.  Find the Fourier coefficients of \(\xvec\text{.}\) <div class="sagecell-sage" id="sage-92"><script type="text/x-sage"></script></div></p></li>
+  <li id="li-1909"><p id="p-2816">In the Sage cell below is a copy of the change of basis matrices that define the Fourier transform.  Find the Fourier coefficients of \(\xvec\text{.}\)
+<div class="sagecell-sage" id="sage-added"><script type="text/x-sage">mat = []
+for i in range(8):
+    for j in range(8):
+        mat.append(cos((2*i+1)*j*pi/16))
+C = matrix(8,8, mat).numerical_approx()
+Cinv = C.inverse()	
+print (Cinv.numerical_approx(digits=3))
+  </script></div> </p></li>
 <li id="li-1910"><p id="p-2817">We will now form the vector \(\yvec\text{,}\) which is an approximation of \(\xvec\text{.}\)  To do this, round all the Fourier coefficients of \(\xvec\) to the nearest integer to obtain \(\coords{\yvec}{\ccal}\text{.}\)  If a coefficient has an absolute value less than one, set it equal to zero.  Now find the vector \(\yvec\) and compare this approximation to \(\xvec\text{.}\)  What is the error in this approximation?</p></li>
 <li id="li-1911"><p id="p-2818">Repeat the last part of this problem, but set the rounded Fourier coefficients to zero if they have an absolute value less than five.  Use it to create a second approximation of \(\xvec\text{.}\)  What is the error in this approximation?</p></li>
 <li id="li-1912"><p id="p-2819">Compare the number of nonzero Fourier coefficients that you have in the two approximations and compare the accuracy of the approximations.  Using a few sentences, discuss the comparisons that you find.</p></li>
