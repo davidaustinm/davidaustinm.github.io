@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" id="svg-0">
+  <defs>
+    <clipPath id="clip-to-bounding-box">
+      <rect x="10" y="10" width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="g-0" stroke-width="1" fill="None" stroke="#ccc">
+    <line id="line-0" x1="10.0" y1="310.0" x2="10.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-1" x1="60.0" y1="310.0" x2="60.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-2" x1="110.0" y1="310.0" x2="110.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-3" x1="160.0" y1="310.0" x2="160.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-4" x1="210.0" y1="310.0" x2="210.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-5" x1="260.0" y1="310.0" x2="260.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-6" x1="310.0" y1="310.0" x2="310.0" y2="10.0" type="vertical grid line"/>
+    <line id="line-7" x1="10.0" y1="310.0" x2="310.0" y2="310.0" type="horizontal grid line"/>
+    <line id="line-8" x1="10.0" y1="260.0" x2="310.0" y2="260.0" type="horizontal grid line"/>
+    <line id="line-9" x1="10.0" y1="210.0" x2="310.0" y2="210.0" type="horizontal grid line"/>
+    <line id="line-10" x1="10.0" y1="160.0" x2="310.0" y2="160.0" type="horizontal grid line"/>
+    <line id="line-11" x1="10.0" y1="110.0" x2="310.0" y2="110.0" type="horizontal grid line"/>
+    <line id="line-12" x1="10.0" y1="60.0" x2="310.0" y2="60.0" type="horizontal grid line"/>
+    <line id="line-13" x1="10.0" y1="10.0" x2="310.0" y2="10.0" type="horizontal grid line"/>
+  </g>
+  <g id="g-1" stroke-width="1" fill="None" stroke="#000">
+    <line id="line-14" x1="10.0" y1="260.0" x2="310.0" y2="260.0" type="horizontal axis"/>
+    <line id="line-15" x1="60.0" y1="310.0" x2="60.0" y2="10.0" type="vertical axis"/>
+    <g id="g-2" type="horizontal ticks">
+      <line id="line-16" x1="10.0" y1="263.0" x2="10.0" y2="257.0" type="tick on horizontal axis"/>
+      <line id="line-17" x1="60.0" y1="263.0" x2="60.0" y2="257.0" type="tick on horizontal axis"/>
+      <line id="line-18" x1="110.0" y1="263.0" x2="110.0" y2="257.0" type="tick on horizontal axis"/>
+      <line id="line-19" x1="160.0" y1="263.0" x2="160.0" y2="257.0" type="tick on horizontal axis"/>
+      <line id="line-20" x1="210.0" y1="263.0" x2="210.0" y2="257.0" type="tick on horizontal axis"/>
+      <line id="line-21" x1="260.0" y1="263.0" x2="260.0" y2="257.0" type="tick on horizontal axis"/>
+      <line id="line-22" x1="310.0" y1="263.0" x2="310.0" y2="257.0" type="tick on horizontal axis"/>
+    </g>
+    <g id="g-3" type="vertical ticks">
+      <line id="line-23" x1="57.0" y1="310.0" x2="63.0" y2="310.0" type="tick on vertical axis"/>
+      <line id="line-24" x1="57.0" y1="260.0" x2="63.0" y2="260.0" type="tick on vertical axis"/>
+      <line id="line-25" x1="57.0" y1="210.0" x2="63.0" y2="210.0" type="tick on vertical axis"/>
+      <line id="line-26" x1="57.0" y1="160.0" x2="63.0" y2="160.0" type="tick on vertical axis"/>
+      <line id="line-27" x1="57.0" y1="110.0" x2="63.0" y2="110.0" type="tick on vertical axis"/>
+      <line id="line-28" x1="57.0" y1="60.0" x2="63.0" y2="60.0" type="tick on vertical axis"/>
+      <line id="line-29" x1="57.0" y1="10.0" x2="63.0" y2="10.0" type="tick on vertical axis"/>
+    </g>
+  </g>
+  <line id="line-30" x1="10.0" y1="285.0" x2="310.0" y2="135.0" stroke="#00f" stroke-width="2" fill="None" type="line"/>
+  <path id="path-0" type="vector" stroke-width="1" fill="#777" d="M 0 -2.0 L 122.99725908332059 -2.0 L 120.68785800656208 -6.0 L 134.16407864998737 0 L 120.68785800656208 6.0 L 122.99725908332059 2.0 L 0 2.0 Z" transform="translate(220.0,180.0) rotate(-116.56505117707799)"/>
+  <path id="path-1" type="vector" stroke-width="1" fill="#f00" d="M 0 -2.0 L 167.71861863331637 -2.0 L 165.40921755655788 -6.0 L 178.88543819998318 0 L 165.40921755655788 6.0 L 167.71861863331637 2.0 L 0 2.0 Z" transform="translate(60.0,260.0) rotate(-26.56505117707799)"/>
+  <path id="path-2" type="vector" stroke-width="1" fill="#000" d="M 0 -2.0 L 100.6365793083227 -2.0 L 98.32717823156419 -6.0 L 111.80339887498948 0 L 98.32717823156419 6.0 L 100.6365793083227 2.0 L 0 2.0 Z" transform="translate(60.0,260.0) rotate(-26.56505117707799)"/>
+  <path id="path-3" type="vector" stroke-width="1" fill="#000" d="M 0 -2.0 L 212.43997818331215 -2.0 L 210.13057710655366 -6.0 L 223.60679774997897 0 L 210.13057710655366 6.0 L 212.43997818331215 2.0 L 0 2.0 Z" transform="translate(60.0,260.0) rotate(-63.43494882292201)"/>
+  <g transform="translate(4,6) translate(160.0,210.0) translate(0.0,-0.0)" type="label" id="{\mathbf v}">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0;" width="1.373ex" height="1.005ex" role="img" focusable="false" viewBox="0 -444 607 444">
+      <defs>
+        <style>svg a{fill:blue;stroke:blue}[data-mml-node="merror"]&gt;g{fill:red;stroke:red}[data-mml-node="merror"]&gt;rect[data-background]{fill:yellow;stroke:none}[data-frame],[data-line]{stroke-width:70px;fill:none}.mjx-dashed{stroke-dasharray:140}.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}use[data-c]{stroke-width:3px}</style>
+        <path id="MJX-1-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+      </defs>
+      <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+        <g data-mml-node="math">
+          <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi">
+                <use data-c="1D42F" xlink:href="#MJX-1-TEX-B-1D42F"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </g>
+  <g transform="translate(-4,-4) translate(160.0,60.0) translate(-11.568,-12.672)" type="label" id="{\mathbf b}">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.014ex;" width="1.446ex" height="1.584ex" role="img" focusable="false" viewBox="0 -694 639 700">
+      <defs>
+        <style>svg a{fill:blue;stroke:blue}[data-mml-node="merror"]&gt;g{fill:red;stroke:red}[data-mml-node="merror"]&gt;rect[data-background]{fill:yellow;stroke:none}[data-frame],[data-line]{stroke-width:70px;fill:none}.mjx-dashed{stroke-dasharray:140}.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}use[data-c]{stroke-width:3px}</style>
+        <path id="MJX-1-TEX-B-1D41B" d="M32 686L123 690Q214 694 215 694H221V409Q289 450 378 450Q479 450 539 387T600 221Q600 122 535 58T358 -6H355Q272 -6 203 53L160 1L129 0H98V301Q98 362 98 435T99 525Q99 591 97 604T83 620Q69 624 42 624H29V686H32ZM227 105L232 99Q237 93 242 87T258 73T280 59T306 49T339 45Q380 45 411 66T451 131Q457 160 457 230Q457 264 456 284T448 329T430 367T396 389T343 398Q282 398 235 355L227 348V105Z"/>
+      </defs>
+      <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+        <g data-mml-node="math">
+          <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi">
+                <use data-c="1D41B" xlink:href="#MJX-1-TEX-B-1D41B"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </g>
+  <g transform="translate(4,4) translate(220.0,180.0) translate(0.0,-0.0)" type="label" id="\widehat{\mathbf b}">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.014ex;" width="1.446ex" height="2.484ex" role="img" focusable="false" viewBox="0 -1092 639 1098">
+      <defs>
+        <style>svg a{fill:blue;stroke:blue}[data-mml-node="merror"]&gt;g{fill:red;stroke:red}[data-mml-node="merror"]&gt;rect[data-background]{fill:yellow;stroke:none}[data-frame],[data-line]{stroke-width:70px;fill:none}.mjx-dashed{stroke-dasharray:140}.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}use[data-c]{stroke-width:3px}</style>
+        <path id="MJX-1-TEX-B-1D41B" d="M32 686L123 690Q214 694 215 694H221V409Q289 450 378 450Q479 450 539 387T600 221Q600 122 535 58T358 -6H355Q272 -6 203 53L160 1L129 0H98V301Q98 362 98 435T99 525Q99 591 97 604T83 620Q69 624 42 624H29V686H32ZM227 105L232 99Q237 93 242 87T258 73T280 59T306 49T339 45Q380 45 411 66T451 131Q457 160 457 230Q457 264 456 284T448 329T430 367T396 389T343 398Q282 398 235 355L227 348V105Z"/>
+        <path id="MJX-1-TEX-SO-2C6" d="M279 669Q273 669 142 610T9 551L0 569Q-8 585 -8 587Q-8 588 -7 588L12 598Q30 608 66 628T136 666L277 744L564 587L555 569Q549 556 547 554T544 552Q539 555 410 612T279 669Z"/>
+      </defs>
+      <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+        <g data-mml-node="math">
+          <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+            <g data-mml-node="mover">
+              <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                <g data-mml-node="mi">
+                  <use data-c="1D41B" xlink:href="#MJX-1-TEX-B-1D41B"/>
+                </g>
+              </g>
+              <g data-mml-node="mo" transform="translate(319.5,248) translate(-278 0)">
+                <use data-c="2C6" xlink:href="#MJX-1-TEX-SO-2C6"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </g>
+  <rect x="-3" y="-3" width="29.024" height="21.232" stroke="none" fill="#fff" transform="translate(7,-6) translate(190.0,120.0) translate(0.0,-7.616)"/>
+  <g transform="translate(7,-6) translate(190.0,120.0) translate(0.0,-7.616)" type="label" id="{\mathbf b}^\perp">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.014ex;" width="2.878ex" height="1.904ex" role="img" focusable="false" viewBox="0 -835.3 1272.1 841.3">
+      <defs>
+        <style>svg a{fill:blue;stroke:blue}[data-mml-node="merror"]&gt;g{fill:red;stroke:red}[data-mml-node="merror"]&gt;rect[data-background]{fill:yellow;stroke:none}[data-frame],[data-line]{stroke-width:70px;fill:none}.mjx-dashed{stroke-dasharray:140}.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}use[data-c]{stroke-width:3px}</style>
+        <path id="MJX-1-TEX-B-1D41B" d="M32 686L123 690Q214 694 215 694H221V409Q289 450 378 450Q479 450 539 387T600 221Q600 122 535 58T358 -6H355Q272 -6 203 53L160 1L129 0H98V301Q98 362 98 435T99 525Q99 591 97 604T83 620Q69 624 42 624H29V686H32ZM227 105L232 99Q237 93 242 87T258 73T280 59T306 49T339 45Q380 45 411 66T451 131Q457 160 457 230Q457 264 456 284T448 329T430 367T396 389T343 398Q282 398 235 355L227 348V105Z"/>
+        <path id="MJX-1-TEX-N-22A5" d="M369 652Q369 653 370 655T372 658T375 662T379 665T384 667T391 668Q402 666 409 653V40H708Q723 32 723 20T708 0H71Q70 0 67 2T59 9T55 20T59 31T66 38T71 40H369V652Z"/>
+      </defs>
+      <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+        <g data-mml-node="math">
+          <g data-mml-node="msup">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+                <g data-mml-node="mi">
+                  <use data-c="1D41B" xlink:href="#MJX-1-TEX-B-1D41B"/>
+                </g>
+              </g>
+            </g>
+            <g data-mml-node="mo" transform="translate(672,363) scale(0.707)">
+              <use data-c="22A5" xlink:href="#MJX-1-TEX-N-22A5"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </g>
+  <g transform="translate(0,0) translate(285.0,135.0) translate(0.0,-12.36)" type="label" id="L">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0;" width="1.541ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 681 683">
+      <defs>
+        <style>svg a{fill:blue;stroke:blue}[data-mml-node="merror"]&gt;g{fill:red;stroke:red}[data-mml-node="merror"]&gt;rect[data-background]{fill:yellow;stroke:none}[data-frame],[data-line]{stroke-width:70px;fill:none}.mjx-dashed{stroke-dasharray:140}.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}use[data-c]{stroke-width:3px}</style>
+        <path id="MJX-1-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"/>
+      </defs>
+      <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+        <g data-mml-node="math">
+          <g data-mml-node="mi">
+            <use data-c="1D43F" xlink:href="#MJX-1-TEX-I-1D43F"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </g>
+</svg>
