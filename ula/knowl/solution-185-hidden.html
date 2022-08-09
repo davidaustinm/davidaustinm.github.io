@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:21-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:56-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>The vectors are as shown. <div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-eigen-intro-vec.svg" role="img" class="contained"></div></div></div></p></li>
+<li><p>Scalar multiplication has the effect of stretching and possibly flipping <span class="process-math">\(\vvec\)</span> along the line defined by <span class="process-math">\(\vvec\text{.}\)</span></p></li>
+<li><p>This matrix transformation stretches vectors by a factor of <span class="process-math">\(3\)</span> in the horizontal direction and flips vectors vertically.</p></li>
 <li>
-<p>Notice that an eigenvector \(\vvec\) must be in the column space \(\col(A)\) because \(A\vvec=\lambda\vvec\text{.}\)   The column space of this matrix is spanned by \(\vvec_1=\threevec{1}{1}{1}\) and we notice that \(A\vvec_1 = 3\vvec_1\text{.}\)  Therefore, \(\vvec_1\) is an eigenvector with associated eigenvalue \(\lambda_1=3\text{.}\)</p>
-<p>We also know that that the rank of this matrix is 1 so \(\nul(A)\) is two-dimensional.  A basis for the null space is \(\vvec_2=\threevec{-1}{1}{0}\) and \(\vvec_3=\threevec{-1}{0}{1}\) so these vectors are eigenvectors with associated eigenvalue \(\lambda_2=\lambda_3 =
-0\text{.}\)</p>
+<p>Applying linearity, we see that</p>
+<ol class="decimal">
+<li><p><span class="process-math">\(A(4\vvec_1) = 4A\vvec_1 =
+12\vvec_1\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A(\vvec_1+\vvec_2) = A\vvec_1 + A\vvec_2 =
+3\vvec_1 - \vvec_2\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A(4\vvec_1-3\vvec_2) = 4A\vvec_1 -3A\vvec_2 =
+12\vvec_1 + 3\vvec_2\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A^2\vvec_1 = A(3\vvec_1) =
+9\vvec_1\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A^2(4\vvec_1-3\vvec_2) = A(12\vvec_1 +3\vvec_2) =
+36\vvec_1 - 3\vvec_2\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A^4\vvec_1 = 3^4\vvec_1 =
+81\vvec_1\text{.}\)</span></p></li>
+</ol>
 </li>
-<li><p>In the same way, \(\vvec_1=\threevec{1}{2}{3}\) is an eigenvector with associated eigenvalue \(\lambda_1=6\) and \(\vvec_2=\threevec{-1}{1}{0}\) and \(\vvec_3=\threevec{-1}{0}{1}\) are eigenvectors with associated eigenvalue \(\lambda_2=\lambda_3=0\text{.}\)</p></li>
 </ol></div></body>
 </html>

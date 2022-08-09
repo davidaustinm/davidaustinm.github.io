@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:59-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:42-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">2.5.4.6.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.5.5.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
+<li><p>If 1000 trucks begin at <span class="process-math">\(P\text{,}\)</span> that evening we find that 70% of them are at <span class="process-math">\(P\)</span> with the remaining 30% at <span class="process-math">\(Q\text{.}\)</span>  Therefore, <span class="process-math">\(T\left(\ctwovec{1000}{0}\right) =
+\twovec{700}{300}\text{.}\)</span>  Since <span class="process-math">\(T\left(\ctwovec{1000}{0}\right) =
+1000A\twovec{1}{0}\text{,}\)</span> we see that <span class="process-math">\(T\left(\twovec{1}{0}\right) = \twovec{0.7}{0.3}\text{.}\)</span></p></li>
+<li><p>In the same way, we see that <span class="process-math">\(T\left(\ctwovec{0}{1000}\right) = \twovec{500}{500}\)</span> so that <span class="process-math">\(T\left(\twovec{0}{1}\right) =
+\twovec{0.5}{0.5}\text{.}\)</span></p></li>
+<li><p>The columns of <span class="process-math">\(A\)</span> are <span class="process-math">\(T\left(\twovec{1}{0}\right)\)</span> and <span class="process-math">\(T\left(\twovec{0}{1}\right)\)</span> so that <span class="process-math">\(A=\left[\begin{array}{rr}
+0.7 \amp 0.5 \\
+0.3 \amp 0.5 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li><p>Evaluate <span class="process-math">\(T\left(\twovec{100}{900}\right) =
+A\twovec{100}{900} = \twovec{520}{480}\text{.}\)</span></p></li>
+<li><p>We solve <span class="process-math">\(T(\xvec) = A\xvec = \twovec{550}{450}\)</span> to find <span class="process-math">\(\xvec=\twovec{250}{750}\text{.}\)</span></p></li>
 <li>
-<p>We have</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{alignedat}{4}
-M \amp {}={} \amp 20x_1 \amp {}+{} \amp 30 x_2 \amp 
-\amp \\
-Y \amp {}={} \amp 15x_1 \amp {}+{} \amp 5 x_2 \amp {}+{}
-\amp 40x_3\text{.} \\
-\end{alignedat}
-\end{equation*}
-</div>
+<p>We denote the distribution of trucks Monday morning by <span class="process-math">\(\xvec_0 = \ctwovec{0}{1000}\text{.}\)</span></p>
+<ol class="lower-roman">
+<li><p>Monday evening, we have <span class="process-math">\(\xvec_1=A\xvec_0 =
+\twovec{500}{500}\text{.}\)</span></p></li>
+<li><p>Tuesday evening, we have <span class="process-math">\(\xvec_2=A\xvec_1 =
+\twovec{600}{400}\text{.}\)</span></p></li>
+<li><p>Wednesday evening, we have <span class="process-math">\(\xvec_3=A\xvec_2 =
+\twovec{620}{380}\text{.}\)</span></p></li>
+</ol>
 </li>
-<li><p>The first column of the matrix is \(T\left(\threevec{1}{0}{0}\right)=\twovec{20}{15}\text{.}\)  This shows us that the matrix is \(A = \left[\begin{array}{rrr}
-20 \amp 30 \amp 0 \\
-15 \amp 5 \amp 40 \\
-\end{array}\right]\text{.}\)</p></li>
-<li>
-<p>We have</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{alignedat}{3}
-E \amp {}={} \amp 5M\amp {}+{} \amp 6Y \\
-L \amp {}={} \amp 8M\amp {}+{} \amp 10Y\text{,} \\
-\end{alignedat}
-\end{equation*}
-</div>
-<p>which shows us that the matrix is \(B = \left[\begin{array}{rr}
-5 \amp 6 \\
-8 \amp 10 \\
-\end{array}\right]\text{.}\)</p>
-</li>
-<li><p>\(\twovec{M}{Y}=T\left(\threevec{30}{20}{10}\right) =
-\twovec{1200}{950}\) and \(\twovec{E}{L}=S\left(T\left(\threevec{30}{20}{10}\right)\right)
-= \twovec{11700}{19100}\text{.}\)</p></li>
-<li><p>\(C=BA = \left[\begin{array}{rrr}
-190 \amp 180 \amp 240 \\
-310 \amp 290 \amp 400 \\
-\end{array}\right]\text{.}\)</p></li>
+<li><p>The matrix is <span class="process-math">\(A^7 = \left[\begin{array}{rr}
+0.625 \amp 0.625 \\
+0.375 \amp 0.375 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-linear-trans.html#solution-94">in-context</a></span>
+<span class="incontext"><a href="sec-linear-trans.html#solution-94" class="internal">in-context</a></span>
 </body>
 </html>

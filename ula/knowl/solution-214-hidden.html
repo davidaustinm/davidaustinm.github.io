@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:30-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:03-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution">
-<p>In each case, the vectors are rotated by \(90^\circ\text{.}\) Note that the figures below are draw at different scales.</p>
-<ol class="lower-alpha">
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>The vectors are stretched by a factor of 1.4.</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-comp-power-a.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>The vectors are stretched by a factor of 0.8.</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-comp-power-b.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>The length of the vectors is unchanged.</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-comp-power-c.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
 <li>
-<p>For different values of \(r\text{,}\)</p>
-<ol class="lower-roman">
-<li><p>The vectors are pulled into the origin as their lengths become increasingly small.</p></li>
-<li><p>The length of the vectors is unchanged.</p></li>
-<li><p>The vectors are pushed away from the origin as their lengths become increasingly large.</p></li>
-</ol>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D^2=\mattwo4001, D^3=\mattwo800{-1}, \ldots,
+D^k=\mattwo{2^k}00{(-1)^k}\text{.}
+\end{equation*}
+</div>
 </li>
-</ol>
-</div></body>
+<li><p>We know that <span class="process-math">\(A^2\vvec = \lambda A\vvec =
+\lambda^2\vvec\)</span> so that <span class="process-math">\(\vvec\)</span> is also an eigenvector of <span class="process-math">\(A^2\)</span> with associated eigenvalue <span class="process-math">\(\lambda^2\text{.}\)</span></p></li>
+<li><p>Since eigenvectors of <span class="process-math">\(A\)</span> are also eigenvectors of <span class="process-math">\(A^2\text{,}\)</span> we can use the matrix <span class="process-math">\(P\)</span> to diagonalize <span class="process-math">\(A^2\text{.}\)</span>  The eigenvalues are squared, however, so we have <span class="process-math">\(A^2=PEP^{-1}\)</span> where <span class="process-math">\(E=D^2=\mattwo4001\text{.}\)</span></p></li>
+<li>
+<p>We can also see this by noting that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+A^2 \amp = (PDP^{-1})(PDP^{-1})
+= PD(P^{-1}P)DP^{-1} \\
+\amp = PDIDP^{-1}
+= PD^2P^{-1}\text{.}\\
+\end{aligned}
+\end{equation*}
+</div>
+</li>
+<li><p><span class="process-math">\(A^3=PD^3P^{-1}\text{,}\)</span> <span class="process-math">\(A^4=PD^4P^{-1}\text{,}\)</span> and <span class="process-math">\(A^k=PD^kP^{-1}\text{.}\)</span></p></li>
+<li><p>We can write <span class="process-math">\(A=PDP^{-1}\)</span> where <span class="process-math">\(D=\mattwo{0.5}00{0.1}\text{.}\)</span>  Therefore, <span class="process-math">\(A^k=PD^kP^{-1}\)</span> where <span class="process-math">\(D^k=\mattwo{0.5^k}00{0.1^k}\text{.}\)</span>  As <span class="process-math">\(k\)</span> becomes very large, <span class="process-math">\(0.5^k\)</span> and <span class="process-math">\(0.1^k\)</span> become very close to zero.  Hence <span class="process-math">\(D^k\)</span> and <span class="process-math">\(A^k\)</span> become very close to the zero matrix.</p></li>
+</ol></div></body>
 </html>

@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:35-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:06-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">7.</span>
-</h6>
-<p>The Fibonacci numbers form the sequence of numbers that begins \(0, 1, 1, 2, 3, 5, 8, 13, \ldots\text{.}\)  If we let \(F_n\) denote the \(n^{th}\) Fibonacci number, then</p>
-<div class="displaymath">
-\begin{equation*}
-F_0 =0, 
-F_1 =1,
-F_2 =1,
-F_3 =2, 
-F_4 =3,\ldots\text{.}
-\end{equation*}
-</div>
-<p>In general, a Fibonacci number is the sum of the previous two Fibonacci numbers;  that is, \(F_{n+2} = F_{n}+F_{n+1}\) so that we have</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-F_{n+2} \amp {}={} F_{n} + F_{n+1} \\
-F_{n+1} \amp {}={} F_{n+1}\text{.} \\
-\end{aligned}
-\end{equation*}
-</div>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span>
+</h4>
+<p>For each of the following matrices and vectors, sketch the vector <span class="process-math">\(\xvec\)</span> along with <span class="process-math">\(A^k\xvec\)</span> for <span class="process-math">\(k=1,2,3,4\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li><p>If we write \(\xvec_n = \twovec{F_{n+1}}{F_n}\text{,}\) find the matrix \(A\) such that \(\xvec_{n+1} =
-A\xvec_n\text{.}\)</p></li>
-<li>
-<p>Show that \(A\) has eigenvalues</p>
-<div class="displaymath">
+<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel top" style="width:48.9795918367347%;"><div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
-\lambda_1 \amp {}={} \frac{1+\sqrt{5}}{2}\approx 1.61803\ldots \\
-\lambda_2 \amp {}={} \frac{1-\sqrt{5}}{2}\approx
--0.61803\ldots \\
+A \amp {}={} \left[\begin{array}{rr}
+1.4 \amp 0 \\
+0 \amp 0.7 \\
+\end{array}\right] \\
+\\
+\xvec \amp {}={} \twovec{1}{2}\text{.}
+\end{aligned}\text{.}
+\end{equation*}
+</div></div>
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/empty.svg" role="img" class="contained"></div>
+</div></div></li>
+<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel top" style="width:48.9795918367347%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+A \amp {}={} \left[\begin{array}{rr}
+0.6 \amp 0 \\
+0 \amp 0.9 \\
+\end{array}\right] \\ \\
+\xvec \amp {}={} \twovec{4}{3}\text{.}
+\end{aligned}
+\end{equation*}
+</div></div>
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/empty.svg" role="img" class="contained"></div>
+</div></div></li>
+<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel top" style="width:48.9795918367347%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+A \amp {}={} \left[\begin{array}{rr}
+1.2 \amp 0 \\
+0 \amp 1.4 \\
+\end{array}\right] \\ \\
+\xvec\amp{}={}\twovec{2}{1}\text{.}
+\end{aligned}
+\end{equation*}
+</div></div>
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/empty.svg" role="img" class="contained"></div>
+</div></div></li>
+<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel top" style="width:48.9795918367347%;">
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+A \amp {}={} \left[\begin{array}{rr}
+0.95 \amp 0.25 \\
+0.25 \amp 0.95 \\
+\end{array}\right] \\ \\
+\xvec\amp{}={}\twovec{3}{0}\text{.}
 \end{aligned}
 \end{equation*}
 </div>
-<p>with associated eigenvectors \(\vvec_1=\twovec{\lambda_1}{1}\) and \(\vvec_2=\twovec{\lambda_2}{1}\text{.}\)</p>
-</li>
-<li><p>Classify this dynamical system as one of the six types that we have seen in this section.  What happens to \(\xvec_n\) as \(n\) becomes very large?</p></li>
-<li><p>Write the initial vector \(\xvec_0 =
-\twovec{1}{0}\) as a linear combination of eigenvectors \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
-<li><p>Write the vector \(\xvec_n\) as a linear combinations of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
-<li>
-<p>Explain why the \(n^{th}\) Fibonacci number</p>
-<div class="displaymath">
-\begin{equation*}
-F_{n} = \frac{1}{\sqrt{5}}\left[
-\left(\frac{1+\sqrt{5}}{2}\right)^n -
-\left(\frac{1-\sqrt{5}}{2}\right)^n\right]\text{.}
-\end{equation*}
+<p class="continuation">Find the eigenvalues and eigenvectors of <span class="process-math">\(A\)</span> to create your sketch.</p>
 </div>
-</li>
-<li><p>Use this relationship to compute \(F_{20}\text{.}\)</p></li>
-<li><p>Explain why \(F_{n+1}/F_{n}\approx \lambda_1\) when \(n\) is very large.</p></li>
-</ol>
-<p>The number \(\lambda_1=\frac{1+\sqrt{5}}{2} = \phi\) is called the <em class="emphasis">golden ratio</em> and is one of mathematics' special numbers.</p></article><span class="incontext"><a href="sec-dynamical.html#exercise-158">in-context</a></span>
+<div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/empty.svg" role="img" class="contained"></div>
+</div></div></li>
+<li><p>If <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix with eigenvalues <span class="process-math">\(\lambda_1=0.7\)</span> and <span class="process-math">\(\lambda_2=0.5\)</span> and <span class="process-math">\(\xvec\)</span> is any vector, what happens to <span class="process-math">\(A^k\xvec\)</span> when <span class="process-math">\(k\)</span> becomes very large?</p></li>
+</ol></article><span class="incontext"><a href="sec-eigen-diag.html#exercise-158" class="internal">in-context</a></span>
 </body>
 </html>

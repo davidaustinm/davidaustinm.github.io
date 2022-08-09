@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:06-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider vectors</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-\vvec_1=\twovec{1}{2}, \amp \vvec_2=\twovec{1}{-3} \\
-\wvec_1=\twovec{2}{3}, \amp \wvec_2=\twovec{-1}{-2} \text{.} \\
-\end{aligned}
-\end{equation*}
-</div>
-<p>and let \(\bcal = \{\vvec_1,\vvec_2\}\) and \(\ccal =
-\{\wvec_1,\wvec_2\}\text{.}\)</p>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <ol class="lower-alpha">
-<li><p>Explain why \(\bcal\) and \(\ccal\) are both bases of \(\real^2\text{.}\)</p></li>
-<li><p>If \(\xvec = \twovec{5}{-3}\text{,}\) find \(\coords{\xvec}{\bcal}\) and \(\coords{\xvec}{\ccal}\text{.}\)</p></li>
-<li><p>If \(\coords{\xvec}{\bcal}=\twovec{2}{-4}\text{,}\) find \(\xvec\) and \(\coords{\xvec}{\ccal}\text{.}\)</p></li>
-<li><p>If \(\coords{\xvec}{\ccal}=\twovec{-3}{2}\text{,}\) find \(\xvec\) and \(\coords{\xvec}{\bcal}\text{.}\)</p></li>
-<li><p>Find a matrix \(D\) such that \(\coords{\xvec}{\bcal} = D\coords{\xvec}{\ccal}\text{.}\)</p></li>
+<li><p>No.  If <span class="process-math">\(A\)</span> has two identical columns, then the columns are not linearly independent.  This means there is a column without a pivot position and so <span class="process-math">\(A\)</span> is not row equivalent to the identity matrix <span class="process-math">\(I\text{.}\)</span></p></li>
+<li><p>No.  If we perform a replacement operation that multiplies one of the equal rows by <span class="process-math">\(-1\)</span> and adds it to the other equal row, we obtain a matrix having a row whose entries are all zero.  This says that the reduced row echelon form has such a row as well.  Therefore, there is a row that does not contain a pivot position so the reduced row echelon form cannot be the identity <span class="process-math">\(I\text{.}\)</span></p></li>
+<li><p>Yes.  If we multiply both sides of <span class="process-math">\(AB=AC\)</span> by <span class="process-math">\(A^{-1}\)</span> on the left, then we see that <span class="process-math">\(B=C\text{.}\)</span></p></li>
+<li><p>The inverse <span class="process-math">\(A^{-1}\)</span> is also invertible since <span class="process-math">\(A\)</span> is its inverse.  Therefore, the span of the columns of <span class="process-math">\(A^{-1}\)</span> is <span class="process-math">\(\real^n\text{.}\)</span></p></li>
+<li><p>Yes.  Since <span class="process-math">\(A\)</span> is row equivalent to the identity matrix <span class="process-math">\(I\text{,}\)</span> the matrix <span class="process-math">\(B\)</span> is as well.  Therefore, <span class="process-math">\(B\)</span> is invertible.</p></li>
 </ol>
-<span class="incontext"><a href="sec-bases.html#p-2551">in-context</a></span>
+<span class="incontext"><a href="sec-matrix-inverse.html#p-2551" class="internal">in-context</a></span>
 </body>
 </html>

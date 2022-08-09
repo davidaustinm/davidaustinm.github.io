@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:50-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:17-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The Sage cell below has a function <code class="code-inline tex2jax_ignore">find_closest_eigenvalue(A, s, x, N)</code> that implements \(N\) steps of the inverse power method using the matrix \(A-sI\) and an initial vector \(x\text{.}\)  This function prints approximations to the eigenvalues and eigenvectors of \(A\text{.}\) By trying different values in the gray regions of the number line, find the other two eigenvalues of \(A\text{.}\) <div class="sagecell-sage" id="sage-138"><script type="text/x-sage">def find_closest_eigenvalue(A, s, x, N):
-    B = A-s*identity_matrix(A.nrows())
-    for i in range(N):
-        x = B \ x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (1/float(m)+s, x)
-### define the matrix A and vector x0
-A =
-x0 =
-find_closest_eigenvalue(A, 2, x0, 20)
-</script></div></p>
-<span class="incontext"><a href="sec-power-method.html#p-5100">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Let's now modify the linear system by simplying interchanging the equations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{alignedat}{3}
+x \amp  {}+{}  \amp y \amp  {}={}  \amp 2 \\
+0.0001x \amp  {}+{}  \amp y \amp  {}={}  \amp 1\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+<p class="continuation">Of course, this doesn't change the actual solution.  Let's imagine we use our computer to find the solution using Gaussian elimination.  Perform the first step where we multiply the first equation by 0.0001 and subtract from the second equation.  What does this give for <span class="process-math">\(y\)</span> if we represent numbers using only three decimal digits?</p>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-5100" class="internal">in-context</a></span>
 </body>
 </html>

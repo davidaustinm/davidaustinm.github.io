@@ -1,48 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:41-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:10-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">4.5.5.2.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.4.5.9.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li>
-<p>The diagram tells us that</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{alignedat}{4}
-R_{k+1} \amp {}={} \amp 0.85R_k \amp {}+{} \amp 0.06S_k \amp
-{}+{} \amp 0.05U_k \\
-S_{k+1} \amp {}={} \amp 0.07R_k \amp {}+{} \amp 0.86S_k \amp
-{}+{} \amp 0.07U_k \\
-U_{k+1} \amp {}={} \amp 0.08R_k \amp {}+{} \amp 0.08S_k \amp
-{}+{} \amp 0.88U_k \\
-\end{alignedat}
-\end{equation*}
-</div>
-<p>giving the stochastic matrix \(A=
-\left[\begin{array}{rrr}
-0.85 \amp 0.06 \amp 0.05 \\
-0.07 \amp 0.86 \amp 0.07 \\
-0.08 \amp 0.08 \amp 0.88 \\
-\end{array}\right]
-\text{.}\)</p>
-</li>
-<li><p>Since all the entries of \(A\) are positive, we know that \(A\) is a positive matrix.  Therefore, the Perron-Frobenius theorem tells us that there is a uniqe steady-state vector \(\qvec\) and that any Markov chain will converge to \(\qvec\text{.}\)</p></li>
-<li><p>Any Markov chain we create will converge to \(\qvec=\threevec{0.267}{0.333}{0.400}\text{.}\)</p></li>
-<li><p>Eventually, about \(26.7\)% of the population will be rural, \(33.3\)% will be suburban, and \(40.0\)% will be urban.</p></li>
+<li><p>If <span class="process-math">\(A=\mattwo{\frac12}{\frac12}10\text{,}\)</span> then we have <span class="process-math">\(\xvec_{n+1} = A\xvec_n\text{.}\)</span></p></li>
+<li><p>The eigenvalues are <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2=-\frac12\)</span> with associated eigenvectors <span class="process-math">\(\vvec_1=\twovec11\)</span> and <span class="process-math">\(\vvec_2=\twovec{1}{-2}\text{.}\)</span></p></li>
+<li><p>We have one eigenvalue <span class="process-math">\(|\lambda_1| = 1\text{,}\)</span> which means this system does not fall into any of our cases.</p></li>
+<li><p>After constructing an augmented matrix and row reducing, we find <span class="process-math">\(\xvec_0 = \frac23\vvec_1 +
+\frac13\vvec_2\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(\xvec_n=\frac23\vvec_1+
+\frac13\left(-\frac12\right)^n\vvec_n\text{.}\)</span></p></li>
+<li><p>As <span class="process-math">\(n\)</span> becomes large, the coefficient <span class="process-math">\(\left(-\frac12\right)^n\)</span> becomes very small.  Therefore, <span class="process-math">\(\xvec_n\approx \frac23\vvec_1 =
+\twovec{\frac23}{\frac23}\text{.}\)</span> This shows that <span class="process-math">\(G_n\)</span> stabilizes at <span class="process-math">\(\frac23\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-stochastic.html#solution-239">in-context</a></span>
+<span class="incontext"><a href="sec-dynamical.html#solution-239" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,46 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:44-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:12-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<article class="listitem"><h6 class="heading">
-<span class="type">Item</span> <span class="codenumber">4.5.5.10.b</span>.</h6>
-<p>We will now modify the game by adding one chute and one ladder as shown in <a data-knowl="./knowl/fig-chutes-ladders.html" title="Figure 4.5.14">Figure 4.5.14</a>.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/chutes-ladders.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.5.14.</span> A version of Chutes and Ladders with one chute and one ladder.</figcaption></figure><p>Even though there are eight squares, we only need to consider six of them.  For instance, if we arrive at the first white square, we move up to square 4. Similarly, if we arrive at the second white square, we move down to square 1.</p>
-<p>Once again, construct the \(6\times6\) stochastic matrix that records the probability that we move from one square to another on a given turn and generate some terms in the Markov chain that begins with \(\xvec_0=\evec_1\text{.}\) <div class="sagecell-sage" id="sage-127"><script type="text/x-sage">def markov_chain(A, x0, N):
-    for i in range(N):
-        x0 = A*x0
-        print x0.numerical_approx(digits=3)
-## define the matrix A and x0
-A =
-x0 =
-markov_chain(A, x0, 10)
-</script></div></p>
-<ol class="lower-roman">
-<li><p>What is the smallest number of moves we can make and arrive at square 6?  What is the probability that we arrive at square 6 using this number of moves?</p></li>
-<li><p>What is the probability that we arrive at square 6 after five moves?</p></li>
-<li><p>What is the probability that we are still on square 1 after five moves?  After seven moves?  After nine moves?</p></li>
-<li><p>After how many moves do we have a 90% chance of having arrived at square 6?</p></li>
-<li><p>Find the steady-state vector and discuss what this vector implies about the game.</p></li>
-</ol></article><span class="incontext"><a href="sec-stochastic.html#li-3298">in-context</a></span>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">e</span><span class="period">.</span>
+</h5>
+<p>As before, find the first 10 terms in the Markov chain beginning with <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and <span class="process-math">\(\xvec_{k+1} = B\xvec_k\text{.}\)</span>  What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(B\text{?}\)</span></p></article><span class="incontext"><a href="sec-stochastic.html#li-3298" class="internal">in-context</a></span>
 </body>
 </html>

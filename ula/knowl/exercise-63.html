@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:58-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:41-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">3.</span>
-</h6>
-<p>This problem concerns the identification of matrix transformations.</p>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span>
+</h4>
+<p>Given a set of linearly dependent vectors, we can eliminate some of the vectors to create a smaller, linearly independent set of vectors.</p>
 <ol class="lower-alpha">
+<li><p>Suppose that <span class="process-math">\(\wvec\)</span> is a linear combination of the vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span> Explain why <span class="process-math">\(\laspan{\vvec_1,\vvec_2, \wvec} =
+\laspan{\vvec_1,\vvec_2}\text{.}\)</span></p></li>
 <li>
-<p>Check that the following function \(T:\real^3\to\real^2\) is a matrix transformation by finding a matrix \(A\) such that \(T(\xvec) = A\xvec\text{.}\)</p>
-<div class="displaymath">
+<p>Consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-T\left(\threevec{x_1}{x_2}{x_3}\right) =
-\left[\begin{array}{c}
-3x_1 - x_2 + 4x_3 \\ 5x_2 - x_3 \\
-\end{array}\right]\text{.}
+\vvec_1 = \threevec{2}{-1}{0},
+\vvec_2 = \threevec{1}{2}{1},
+\vvec_3 = \threevec{-2}{6}{2},
+\vvec_4 = \threevec{7}{-1}{1}\text{.}
 \end{equation*}
 </div>
+<p class="continuation">Write one of the vectors as a linear combination of the others.  Find a set of three vectors whose span is the same as <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</span></p>
 </li>
-<li>
-<p>Explain why</p>
-<div class="displaymath">
-\begin{equation*}
-T\left(\threevec{x_1}{x_2}{x_3}\right) =
-\left[\begin{array}{c}
-3x_1^4 - x_2 + 4x_3 \\ 5x_2 - x_3 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>is not a matrix transformation.</p>
-</li>
-</ol></article><span class="incontext"><a href="sec-linear-trans.html#exercise-63">in-context</a></span>
+<li><p>Are the three vectors you are left with linearly independent?  If not, express one of the vectors as a linear combination of the others and find a set of two vectors whose span is the same as <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</span></p></li>
+<li><p>Give a geometric description of <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\)</span> in <span class="process-math">\(\real^3\)</span> as we did in <a href="sec-span.html" class="internal" title="Section 2.3: The span of a set of vectors">Section 2.3</a>.</p></li>
+</ol></article><span class="incontext"><a href="sec-linear-dep.html#exercise-63" class="internal">in-context</a></span>
 </body>
 </html>

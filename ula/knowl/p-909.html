@@ -1,68 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:52-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:37-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In addition, Sage can find the product of a matrix and vector using the <code class="code-inline tex2jax_ignore">*</code> operator.  For example, <div class="sagecell-sage" id="sage-37"><script type="text/x-sage">A = matrix(2,2,[1,2,2,1])
-v = vector([3,-1])
-A*v
-</script></div></p>
-<ol class="lower-alpha">
-<li><p>Use Sage to evaluate the product <a data-knowl="./knowl/li-example-product.html" title="Item a">Item a</a> yet again. <div class="sagecell-sage" id="sage-38"><script type="text/x-sage">
-</script></div></p></li>
-<li>
-<p>In Sage, define the matrix and vectors</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>A theme that will later unfold concerns the use of coordinate systems.  We can identify the point <span class="process-math">\((x,y)\)</span> with the tip of the vector <span class="process-math">\(\left[\begin{array}{r}x\\y\end{array}\right]\text{,}\)</span> drawn emanating from the origin. We can then think of the usual Cartesian coordinate system in terms of linear combinations of the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-ex-coords-1.html">
 \begin{equation*}
-A = \left[
-\begin{array}{rrr}
--2 \amp 0 \\
-3 \amp 1 \\
-4 \amp 2 \\
-\end{array}
-\right],
-\zerovec = \left[
-\begin{array}{r} 0 \\ 0 \end{array}
-\right],
-\vvec = \left[
-\begin{array}{r} -2 \\ 3 \end{array}
-\right],
-\wvec = \left[
-\begin{array}{r} 1 \\ 2 \end{array}
-\right]\text{.}
+\evec_1 = \left[\begin{array}{r} 1 \\ 0 \end{array}\right],
+\evec_2 = \left[\begin{array}{r} 0 \\ 1 \end{array}\right].
 \end{equation*}
 </div>
-<p><div class="sagecell-sage" id="sage-39"><script type="text/x-sage">
-</script></div></p>
-</li>
-<li><p>What do you find when you evaluate \(A\zerovec\text{?}\)</p></li>
-<li><p>What do you find when you evaluate \(A(3\vvec)\) and \(3(A\vvec)\) and compare your results?</p></li>
-<li><p>What do you find when you evaluate \(A(\vvec+\wvec)\) and \(A\vvec + A\wvec\) and compare your results?</p></li>
-<li><p>If \(I=\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\) is the \(3\times3\) identity matrix, what is the product \(IA\text{?}\)</p></li>
-</ol>
-<span class="incontext"><a href="sec-matrices-lin-combs.html#p-909">in-context</a></span>
+<p class="continuation">For instance, the point <span class="process-math">\((2,-3)\)</span> is identified with the vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-ex-coords-1.html">
+\begin{equation*}
+\left[\begin{array}{r} 2 \\ -3 
+\end{array}\right] = 2\evec_1 - 3\evec_2,
+\end{equation*}
+</div>
+<p class="continuation">as shown on the left in <a href="" class="xref" data-knowl="./knowl/fig-ex-coords-1.html" title="Figure 2.1.15">Figure 2.1.15</a>.</p>
+<span class="incontext"><a href="sec-vectors-lin-combs.html#p-909" class="internal">in-context</a></span>
 </body>
 </html>

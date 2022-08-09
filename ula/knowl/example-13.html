@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:40-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+</h4>
+<p>Let's consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vvec_1 = \fourvec2{-4}10,~~~
+\vvec_2 = \fourvec113{-2},~~~
+\vvec_3 = \fourvec3{-3}4{-2}
+\end{equation*}
+</div>
+<p class="continuation">and their associated matrix <span class="process-math">\(A = \begin{bmatrix}
+\vvec_1 \amp \vvec_2 \amp \vvec_3
+\end{bmatrix}
+\text{.}\)</span></p>
+<p>The homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> has the associated augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+2 \amp 1 \amp 3 \amp 0 \\
+-4 \amp 1 \amp -3 \amp 0 \\
+1 \amp 3 \amp 4 \amp 0 \\
+0 \amp -2 \amp -2 \amp 0 \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{rrr|r}
+1 \amp 0 \amp 1 \amp 0 \\
+0 \amp 1 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">Therefore, <span class="process-math">\(A\)</span> has a column without a pivot position, which tells us that the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> are linearly dependent.  However, we can also see this fact in another way.</p>
+<p>The reduced row echelon matrix tells us that the homogeneous equation has a free variable so that there must be infinitely many solutions.  In particular, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+x_1 \amp {}={} -x_3 \\
+x_2 \amp {}={} -x_3 \\
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">so the solutions have the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec = \threevec{x_1}{x_2}{x_3} =
+\threevec{-x_3}{-x_3}{x_3} = x_3\threevec{-1}{-1}1.
+\end{equation*}
+</div>
+<p>If we choose <span class="process-math">\(x_3=1\text{,}\)</span> then we obtain the nonzero solution to the homogeneous equation <span class="process-math">\(\xvec =
+\threevec{-1}{-1}1\text{,}\)</span> which implies that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A\threevec{-1}{-1}1 =
+\begin{bmatrix}
+\vvec_1\amp\vvec_2\amp\vvec_3
+\end{bmatrix}
+\threevec{-1}{-1}1 =
+-\vvec_1 -\vvec_2 + \vvec_3 = \zerovec.
+\end{equation*}
+</div>
+<p class="continuation">In other words,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+-\vvec_1 -\vvec_2 + \vvec_3 \amp{}={} \zerovec \\
+\vvec_3 \amp{}={} \vvec_1 + \vvec_2. \\
+\end{aligned}
+\end{equation*}
+</div>
+<p>Because <span class="process-math">\(\vvec_3\)</span> is a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{,}\)</span> we know that this set of vectors is linearly dependent.</p></article><span class="incontext"><a href="sec-linear-dep.html#example-13" class="internal">in-context</a></span>
+</body>
+</html>

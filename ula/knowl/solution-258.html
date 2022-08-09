@@ -1,99 +1,83 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:48-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:17-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">5.1.4.7.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.1.1.1</span><span class="period">.</span>
+</h3>
 <ol class="lower-alpha">
 <li>
-<p>We begin with \(E_1A=A_1\) where</p>
-<div class="displaymath">
+<p>We first multiply the first row by <span class="process-math">\(-1\)</span> and add to the second row.  This can be represented by multiplying <span class="process-math">\(E_1A=A_1\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-E_1=\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
--1 \amp 1 \amp 0 \amp 0 \\
--1 \amp 0 \amp 1 \amp 0 \\
--1 \amp 0 \amp 0 \amp 1 \\
+E_1=\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-1 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
 \end{array}\right],
 A_1=
 \left[\begin{array}{rrrr}
-a \amp a \amp a \amp a \\
-0 \amp b-a \amp b-a \amp b-a \\
-0 \amp b-a \amp c-a \amp c-a \\
-0 \amp b-a \amp c-a \amp d-a \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>Next we have \(E_2A_1=A_2\) where</p>
-<div class="displaymath">
-\begin{equation*}
-E_2=\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \amp 0 \\
-0 \amp -1 \amp 1 \amp 0 \\
-0 \amp -1 \amp 0 \amp 1 \\
-\end{array}\right],
-A_2=
-\left[\begin{array}{rrrr}
-a \amp a \amp a \amp a \\
-0 \amp b-a \amp b-a \amp b-a \\
-0 \amp 0 \amp c-b \amp c-b \\
-0 \amp 0 \amp c-b \amp d-b \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>Finally, we have \(E_3A_2=U\text{,}\) an upper triangular matrix where</p>
-<div class="displaymath">
-\begin{equation*}
-E_3=\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \amp 0 \\
-0 \amp 0 \amp -1 \amp 1 \\
-\end{array}\right],
-U =
-\left[\begin{array}{rrrr}
-a \amp a \amp a \amp a \\
-0 \amp b-a \amp b-a \amp b-a \\
-0 \amp 0 \amp c-b \amp c-b \\
-0 \amp 0 \amp 0 \amp d-c \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>This gives</p>
-<div class="displaymath">
-\begin{equation*}
-L = \left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
-1 \amp 1 \amp 0 \amp 0 \\
-1 \amp 1 \amp 1 \amp 0 \\
-1 \amp 1 \amp 1 \amp 1 \\
-\end{array}\right],
-U =
-\left[\begin{array}{rrrr}
-a \amp a \amp a \amp a \\
-0 \amp b-a \amp b-a \amp b-a \\
-0 \amp 0 \amp c-b \amp c-b \\
-0 \amp 0 \amp 0 \amp d-c \\
+1 \amp 2 \amp -1 \amp 2 \\
+0 \amp -2 \amp -1 \amp -1 \\
+3 \amp 2 \amp 1 \amp 0
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
 </li>
-<li><p>Notice that \(A\) is invertible if and only if \(U\) is invertible and \(U\) is invertible if and only all the diagonal terms are not equal.  This means that \(A\) is invertible provided that \(a\neq0\text{,}\) \(b\neq
-a\text{,}\) \(c\neq b\text{,}\) and \(d\neq c\text{.}\)</p></li>
+<li><p>To undo the row operation, we multiply the first row by <span class="process-math">\(1\)</span> and add to the second row.  This shows that <span class="process-math">\(E_1^{-1} =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+1 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{array}\right]\text{.}\)</span></p></li>
+<li>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{c}
+E_2 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+-3 \amp 0 \amp 1
+\end{array}\right],
+E_3=\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp -2 \amp 1
+\end{array}\right], \\
+A_3=\left[\begin{array}{rrrr}
+1 \amp 2 \amp -1 \amp 2 \\
+0 \amp -2 \amp -1 \amp -1 \\
+0 \amp 0 \amp 6 \amp -4
+\end{array}\right]\text{.}
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li><p>The matrix performing this scaling is <span class="process-math">\(\left[\begin{array}{rrr} 1 \amp 0 \amp 0 \\
+0 \amp -2 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p>The matrix performing this interchange is <span class="process-math">\(\left[\begin{array}{rrr}
+0 \amp 1 \amp 0 \\
+1 \amp 0 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-gaussian-revisited.html#solution-258">in-context</a></span>
+<span class="incontext"><a href="sec-gaussian-revisited.html#solution-258" class="internal">in-context</a></span>
 </body>
 </html>

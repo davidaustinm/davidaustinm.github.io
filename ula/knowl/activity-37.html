@@ -1,83 +1,137 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:12-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:51-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.4.4</span>.</h6>
-<p>We will explore cofactor expansions through some examples.</p>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+</h4>
+<p>We will investigate the connection between the determinant of a matrix and its invertibility using Gaussian elimination.</p>
 <ol class="lower-alpha">
 <li>
-<p>Using a cofactor expansion, show that the determinant of the following matrix</p>
-<div class="displaymath">
+<p>Consider the two upper triangular matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proposition-triangular-invertibility.html">
 \begin{equation*}
-\det
+U_1 =
 \left[\begin{array}{rrr}
-2 \amp 0 \amp -1 \\
-3 \amp 1 \amp 2 \\
--2 \amp 4 \amp -3 \\
-\end{array}\right] = -36\text{.}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right],~~~
+U_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right].
 \end{equation*}
 </div>
-<p>Remember that you can choose any row or column to create the expansion, but the choice of a particular row or column may simplify the computation.</p>
+<p class="continuation">Remembering <a href="" class="xref" data-knowl="./knowl/proposition-triangular-invertibility.html" title="Proposition 3.1.9">Proposition 3.1.9</a>, which of the matrices <span class="process-math">\(U_1\)</span> and <span class="process-math">\(U_2\)</span> are invertible?  What are the determinants <span class="process-math">\(\det(U_1)\)</span> and <span class="process-math">\(\det(U_2)\text{?}\)</span></p>
+</li>
+<li><p>Explain why an upper triangular matrix is invertible if and only if its determinant is not zero.</p></li>
+<li>
+<p>Let's now consider the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">and begin the Gaussian elimination process with a row replacement operation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+= A_1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">What is the relationship between <span class="process-math">\(\det(A)\)</span> and <span class="process-math">\(\det(A_1)\text{?}\)</span></p>
 </li>
 <li>
-<p>Use a cofactor expansion to find the determinant of</p>
-<div class="displaymath">
+<p>Next we perform another row replacement operation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left[\begin{array}{rrrr}
--3 \amp 0 \amp 0 \amp 0 \\
-4 \amp 1 \amp 0  \amp 0 \\
--1 \amp 4 \amp -4 \amp 0\\
-0 \amp 3 \amp 2 \amp 3 \\
-\end{array}\right]\text{.}
+A_1=
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+= A_2\text{.}
 \end{equation*}
 </div>
-<p>Explain how the cofactor expansion technique shows that the determinant of a triangular matrix is equal to the product of its diagonal entries.</p>
+<p class="continuation">What is the relationship between <span class="process-math">\(\det(A)\)</span> and <span class="process-math">\(\det(A_2)\text{?}\)</span></p>
 </li>
 <li>
-<p>Use a cofactor expansion to determine whether the following vectors form a basis of \(\real^3\text{:}\)</p>
-<div class="displaymath">
+<p>Finally, we perform an interchange:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\threevec{2}{-1}{-2},
-\threevec{1}{-1}{2},
-\threevec{1}{0}{-4}\text{.}
+A_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right]
+= U
 \end{equation*}
 </div>
+<p class="continuation">to arrive at an upper triangular matrix <span class="process-math">\(U\text{.}\)</span>  What is the relationship between <span class="process-math">\(\det(A)\)</span> and <span class="process-math">\(\det(U)\text{?}\)</span></p>
 </li>
+<li><p>Since <span class="process-math">\(U\)</span> is upper triangular, we can compute its determinant, which allows us to find <span class="process-math">\(\det(A)\text{.}\)</span>  What is <span class="process-math">\(\det(A)\text{?}\)</span>  Is <span class="process-math">\(A\)</span> invertible?</p></li>
 <li>
-<p>Sage will compute the determinant of a matrix <code class="code-inline tex2jax_ignore">A</code> with the command <code class="code-inline tex2jax_ignore">A.det()</code>.  Use Sage to find the determinant of the matrix</p>
-<div class="displaymath">
+<p>Now consider the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left[\begin{array}{rrrr}
-2 \amp 1 \amp -2 \amp -3 \\
-3 \amp 0 \amp -1  \amp -2 \\
--3 \amp 4 \amp 1 \amp 2\\
-1 \amp 3 \amp 3 \amp -1 \\
-\end{array}\right]\text{.}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 3 \\
+0 \amp 2 \amp -2 \\
+2 \amp 1 \amp 3 \\
+\end{array}\right].
 \end{equation*}
 </div>
-<p><div class="sagecell-sage" id="sage-97"><script type="text/x-sage">
-</script></div></p>
+<p class="continuation">Perform a sequence of row operations to find an upper triangular matrix <span class="process-math">\(U\)</span> that is row equivalent to <span class="process-math">\(A\text{.}\)</span>  Use this to determine <span class="process-math">\(\det(A)\)</span> and whether <span class="process-math">\(A\)</span> invertible?</p>
 </li>
-</ol></article><span class="incontext"><a href="sec-determinants.html#activity-37">in-context</a></span>
+<li><p>Suppose we apply a sequence of row operations on a matrix <span class="process-math">\(A\)</span> to obtain <span class="process-math">\(A'\text{.}\)</span>  Explain why <span class="process-math">\(\det(A)
+\neq 0\)</span> if and only if <span class="process-math">\(\det(A') \neq 0\text{.}\)</span></p></li>
+<li><p>Explain why an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\det(A) \neq 0\text{.}\)</span></p></li>
+</ol></article><span class="incontext"><a href="sec-determinants.html#activity-37" class="internal">in-context</a></span>
 </body>
 </html>

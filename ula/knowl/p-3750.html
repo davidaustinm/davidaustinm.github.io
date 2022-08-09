@@ -1,59 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:22-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:57-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>There are three eigenvalues, \(\lambda=2\) has multiplicity \(3\text{,}\) \(\lambda=-3\) has multiplicity \(10\text{,}\) and \(\lambda=5\) has multiplicity \(1\text{.}\) We know that</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>In particular, this shows us that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{aligned}
-1 \leq \dim E_2 \amp {}\leq{} 3 \\
-1 \leq \dim E_{-3} \amp {}\leq{} 10 \\
-1 \leq \dim E_5 \amp {}\leq{} 1\text{.} \\
-\end{aligned}
+\xvec_5 = 250\vvec_1 - (0.2)^5250\vvec_2 =
+\twovec{250\cdot 3 - (0.2)^5250\cdot(-1)}
+{250\cdot 1 - (0.2)^5250\cdot 1}
+= \twovec{750.09}{249.92}\text{.}
 \end{equation*}
 </div>
-<p>We can guarantee that \(\dim E_{5} = 1\text{,}\) but we can say nothing further about the other two eigenspaces.</p>
-<p>The dimension of the matrix is \(14\times14\) since the degree of the characteristic polynomial is \(14\text{.}\)  We cannot guarantee that we can form a basis for \(\real^{14}\) consisting of eigenvectors, however.</p>
-</li>
-<li><p>There is one eigenvalue \(\lambda=-2\) having multiplicity two.  Because the eigenspace \(E_{-2}\) is one-dimensional, however, we cannot find a basis for \(\real^2\) consisting of eigenvectors of \(A\text{.}\)</p></li>
-<li>
-<p>For the \(3\times3\) matrix \(A\text{,}\)</p>
-<ol class="lower-roman">
-<li><p>We have eigenvalues \(\lambda=-2\) with multiplicty \(2\) and \(\lambda=-1\) with multiplicity \(1\text{.}\)</p></li>
-<li><p>The eigenspace \(E_{-2}\) is two-dimensional with basis \(\left\{\threevec{-2}{0}{1},\threevec010\right\}\text{.}\) The eigenspace \(E_{-1}\) is one-dimensional with basis vector \(\threevec{-1}20\text{.}\)</p></li>
-<li><p>We are able to form a basis for \(\real^3\) consisting of eigenvectors of \(A\text{.}\)</p></li>
-</ol>
-</li>
-<li>
-<p>For the \(3\times3\) matrix \(A\text{,}\)</p>
-<ol class="lower-roman">
-<li><p>We have eigenvalues \(\lambda=-2\) with multiplicty \(2\) and \(\lambda=-1\) with multiplicity \(1\text{.}\)</p></li>
-<li><p>The eigenspace \(E_{-2}\) is one-dimensional with basis vector \(\threevec{-2}01\text{.}\)  The eigenspace \(E_{-1}\) is also one-dimensional with basis vector \(\threevec{-1}{2}{0}\text{.}\)</p></li>
-<li><p>It is not possible to form a basis for \(\real^3\) consisting of eigenvectors of \(A\text{.}\)</p></li>
-</ol>
-</li>
-<li>
-<p>For this matrix,</p>
-<ol class="lower-roman">
-<li><p>There are three eigenvalues \(\lambda=-2\text{,}\) \(-1\text{,}\) and \(1\text{,}\) each having multiplicity \(1\text{.}\)</p></li>
-<li><p>A basis vector for the eigenspace \(E_{-2}\) is \(\threevec{-2}01\text{.}\) A basis vector for the eigenspace \(E_{-1}\) is \(\threevec{1}{-2}0\text{.}\) A basis vector for the eigenspace \(E_{1}\) is \(\threevec{-2}{3}{1}\text{.}\)</p></li>
-<li><p>We can form a basis for \(\real^3\) consisting of eigenvectors of \(A\text{.}\)</p></li>
-</ol>
-</li>
-</ol>
-<span class="incontext"><a href="sec-eigen-find.html#p-3750">in-context</a></span>
+<p class="continuation">Taking notice of the pattern, we may write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec_k = 250\vvec_1 - (0.2)^k250\vvec_2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Multiplying a number by <span class="process-math">\(0.2\)</span> is the same as taking 20% of that number.  As each day goes by, the second term is multiplied by <span class="process-math">\(0.2\)</span> so the coefficient of <span class="process-math">\(\vvec_2\)</span> in the expression for <span class="process-math">\(\xvec_k\)</span> will eventually become extremely small.  We therefore see that the distribution of cars will stabilize at <span class="process-math">\(\xvec=250\vvec_1=\twovec{750}{250}\text{.}\)</span></p>
+<span class="incontext"><a href="sec-eigen-intro.html#p-3750" class="internal">in-context</a></span>
 </body>
 </html>

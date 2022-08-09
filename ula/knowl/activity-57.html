@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:39-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:12-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.5.4</span>.</h6>
-<p>We will explore the meaning of the Perron-Frobenius theorem in this activity.</p>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
+</h4>
+<p>Consider the matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=\left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right],\qquad
+B=\left[\begin{array}{rr}
+0.4 \amp 0.3 \\
+0.6 \amp 0.7 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
 <ol class="lower-alpha">
-<li><p>Consider the matrix \(C = \left[\begin{array}{rr}
-0 \amp 0.5 \\
-1 \amp 0.5 \\
-\end{array}\right]
-\text{.}\) This is a positive matrix, as we saw in the previous example.  Find the eigenvectors of \(C\) and verify there is a unique steady-state vector.</p></li>
-<li><p>Using the Sage cell below, construct the Markov chain with initial vector \(\xvec_0= \twovec{1}{0}\) and describe what happens to \(\xvec_k\) as \(k\) becomes large. <div class="sagecell-sage" id="sage-117"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li><p>Verify that both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are stochastic matrices.</p></li>
+<li><p>Find the eigenvalues of <span class="process-math">\(A\)</span> and then find a steady-state vector for <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p>We will form the Markov chain beginning with the vector <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and defining <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>  The Sage cell below constructs the first <span class="process-math">\(N\)</span> terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix <code class="code-inline tex2jax_ignore">A</code> and vector <code class="code-inline tex2jax_ignore">x0</code> and evaluate the cell to find the first 10 terms of the Markov chain. <pre class="ptx-sagecell sagecell-sage" id="sage-123"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0)
-## define the matrix C and x0
-C =
+## define the matrix A and x0
+A =
 x0 =
-markov_chain(C, x0, 10)
-</script></div></p></li>
-<li><p>Construct another Markov chain with initial vector \(\xvec_0=\twovec{0.2}{0.8}\) and describe what happens to \(\xvec_k\) as \(k\) becomes large.</p></li>
-<li><p>Consider the matrix \(D = \left[\begin{array}{rrr}
-0 \amp 0.5 \amp 0 \\
-1 \amp 0.5 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\) and compute several powers of \(D\) below. <div class="sagecell-sage" id="sage-118"><script type="text/x-sage">
-</script></div> Determine whether \(D\) is a positive matrix.</p></li>
-<li><p>Find the eigenvalues of \(D\) and then find the steady-state vectors.  Is there a unique steady-state vector?</p></li>
-<li><p>What happens to the Markov chain defined by \(D\) with initial vector \(\xvec_0 =\threevec{1}{0}{0}\text{?}\)  What happens to the Markov chain with initial vector \(\xvec_0=\threevec{0}{0}{1}\text{.}\)</p></li>
-<li><p>Explain how the matrices \(C\) and \(D\text{,}\) which we have considered in this activity, relate to the Perron-Frobenius theorem.</p></li>
-</ol></article><span class="incontext"><a href="sec-stochastic.html#activity-57">in-context</a></span>
+markov_chain(A, x0, 10)
+</script></pre> What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(A\text{?}\)</span></p></li>
+<li><p>Now find the eigenvalues of <span class="process-math">\(B\)</span> along with a steady-state vector for <span class="process-math">\(B\text{.}\)</span></p></li>
+<li><p>As before, find the first 10 terms in the Markov chain beginning with <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and <span class="process-math">\(\xvec_{k+1} = B\xvec_k\text{.}\)</span>  What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(B\text{?}\)</span></p></li>
+<li><p>What condition on the eigenvalues of a stochastic matrix will guarantee that a Markov chain will converge to a steady-state vector?</p></li>
+</ol></article><span class="incontext"><a href="sec-stochastic.html#activity-57" class="internal">in-context</a></span>
 </body>
 </html>

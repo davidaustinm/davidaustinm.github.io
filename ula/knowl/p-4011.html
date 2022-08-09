@@ -1,87 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:27-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:01-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>We will rewrite \(C\) in terms of \(r\) and \(\theta\text{.}\)  Explain why</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rr}
-a \amp -b \\
-b \amp a \\
-\end{array}\right]
-= 
-\left[\begin{array}{rr}
-r\cos\theta \amp -r\sin\theta \\
-r\sin\theta \amp r\cos\theta \\
-\end{array}\right]
-=
-\left[\begin{array}{rr}
-r \amp 0 \\
-0 \amp r \\
-\end{array}\right]
-\left[\begin{array}{rr}
-\cos\theta \amp -\sin\theta \\
-\sin\theta \amp \cos\theta \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>Explain why \(C\) has the geometric effect of rotating vectors by \(\theta\) and stretching them by a factor of \(r\text{.}\)</p></li>
-<li>
-<p>Let's now consider the matrix \(A\) from <a data-knowl="./knowl/example-eigen-complex.html" title="Example 4.3.8">Example 4.3.8</a>:</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rr}
--2 \amp 2  \\
--5 \amp 4 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>whose eigenvalues are \(\lambda_1 = 1+i\) and \(\lambda_2 =
-1-i\text{.}\)  We will choose to focus on one of the eigenvalues \(\lambda_1 = a+bi= 1+i. \)</p>
-<p>Form the matrix \(C\) using these values of \(a\) and \(b\text{.}\)  Then rewrite the point \((a,b)\) in polar coordinates by identifying the values of \(r\) and \(\theta\text{.}\)  Explain the geometric effect of multiplying vectors of \(C\text{.}\)</p>
-</li>
-<li>
-<p>Suppose that \(P=\left[\begin{array}{rr}
-1 \amp 1 \\
-2 \amp 1 \\
-\end{array}\right]
-\text{.}\)  Verify that \(A = PCP^{-1}\text{.}\)</p>
-<div class="sagecell-sage" id="sage-110"><script type="text/x-sage">C = 
-P = 
-P*C*P.inverse()
-</script></div>
-</li>
-<li><p>Explain why \(A^k = PC^kP^{-1}\text{.}\)</p></li>
-<li><p>We formed the matrix \(C\) by choosing the eigenvalue \(\lambda_1=1+i\text{.}\)  Suppose we had instead chosen \(\lambda_2 = 1-i\text{.}\)  Form the matrix \(C'\) and use polar coordinates to describe the geometric effect of \(C\text{.}\)</p></li>
-<li><p>Using the matrix \(P' = \left[\begin{array}{rr}
-1 \amp -1 \\
-2 \amp -1 \\
-\end{array}\right]
-\text{,}\) show that \(A = P'C'P'^{-1}\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="sec-eigen-diag.html#p-4011">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities.  The factored characteristic polynomial is found with <code class="code-inline tex2jax_ignore">A.fcp('lambda')</code>.</p>
+<span class="incontext"><a href="sec-eigen-find.html#p-4011" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,23 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:27-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:00-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In case a matrix \(A\) has complex eigenvalues, we will find a simpler matrix \(C\) that is similar to \(A\text{.}\)  In particular, if \(A\) has an eigenvalue \(\lambda = a+bi\text{,}\) then \(A\) is similar to \(C=\left[\begin{array}{rr}
-a \amp -b \\
-b \amp a \\
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>We will use Sage to find the eigenvalues and eigenvectors of a matrix.  Let's begin with the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
+1 \amp 2 \\
+2 \amp 1 \\
 \end{array}\right]
-\text{.}\)</p>
-<span class="incontext"><a href="sec-eigen-diag.html#p-4009">in-context</a></span>
+\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li>
+<p>We can find the characteristic polynomial of a matrix <span class="process-math">\(A\)</span> by writing <code class="code-inline tex2jax_ignore">A.charpoly('lambda')</code>.  Notice that we have to give Sage a variable in which to write the polynomial;  here, we use <code class="code-inline tex2jax_ignore">lambda</code> though <code class="code-inline tex2jax_ignore">x</code> works just as well.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-107"><script type="text/x-sage">A = matrix(2,2,[1,2,2,1])
+A.charpoly('lambda')
+</script></pre>
+<p>The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities.  The factored characteristic polynomial is found with <code class="code-inline tex2jax_ignore">A.fcp('lambda')</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-108"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.fcp('lambda')
+</script></pre>
+</li>
+<li>
+<p>If we only want the eigenvalues, we can use <code class="code-inline tex2jax_ignore">A.eigenvalues()</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-109"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.eigenvalues()
+</script></pre>
+<p>Notice that the multiplicity of an eigenvalue is the number of times it is repeated in the list of eigenvalues.</p>
+</li>
+<li>
+<p>Finally, we can find eigenvectors by <code class="code-inline tex2jax_ignore">A.eigenvectors_right()</code>.  (We are looking for <em class="emphasis">right</em> eigenvalues since the vector <span class="process-math">\(\vvec\)</span> appears to the right of <span class="process-math">\(A\)</span> in the definition <span class="process-math">\(A\vvec=\lambda \vvec\text{.}\)</span>)</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-110"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
+A.eigenvectors_right()
+</script></pre>
+<p>At first glance, the result of this command can be a little confusing to interpret.  What we see is a list with one entry for each eigenvalue.  For each eigenvalue, there is a triple consisting of (i) the eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> (ii) a basis for <span class="process-math">\(E_\lambda\text{,}\)</span> and (iii) the multiplicity of <span class="process-math">\(\lambda\text{.}\)</span></p>
+</li>
+<li>
+<p>When working with decimal entries, which are called <em class="emphasis">floating point numbers</em> in computer science, we must remember that computers perform only approximate arithmetic. This is a problem when we wish to find the eigenvectors of such a matrix.  To illustrate, consider the matrix <span class="process-math">\(A=\left[\begin{array}{rr}
+0.4 \amp 0.3 \\
+0.6 \amp 0.7 \\
+\end{array}\right]
+\text{.}\)</span></p>
+<ol class="decimal">
+<li><p>Without using Sage, find the eigenvalues of this matrix.</p></li>
+<li><p>What do you find for the reduced row echelon form of <span class="process-math">\(A-I\text{?}\)</span></p></li>
+<li>
+<p>Let's now use Sage to determine the reduced row echelon form of <span class="process-math">\(A-I\text{:}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-111"><script type="text/x-sage">A = matrix(2,2,[0.4,0.3,0.6,0.7])
+(A-identity_matrix(2)).rref()
+</script></pre>
+<p>What result does Sage report for the reduced row echelon form?  Why is this result not correct?</p>
+</li>
+<li>
+<p>Because the arithmetic Sage performs with floating point entries is only approximate, we are not able to find the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  In this next chapter, we will learn how to address this issue.  In the meantime, we can get around this problem by writing the entries in the matrix as rational numbers:</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-112"><script type="text/x-sage">A = matrix(2,2,[4/10,3/10,6/10,7/10])
+A.eigenvectors_right()
+</script></pre>
+</li>
+</ol>
+</li>
+</ol>
+<span class="incontext"><a href="sec-eigen-find.html#p-4009" class="internal">in-context</a></span>
 </body>
 </html>

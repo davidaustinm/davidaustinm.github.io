@@ -1,58 +1,76 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:32-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:07-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.4.4</span>.</h6>
-<p>In this activity, we will consider several ways in which two species might interact with one another.  Throughout, we will consider two species \(R\) and \(S\) whose populations in year \(k\) form a vector \(\xvec_k=\twovec{R_k}{S_k}\) and which evolve according to the rule</p>
-<div class="displaymath">
-\begin{equation*}
-\xvec_{k+1}=A\xvec_k\text{.}
-\end{equation*}
-</div>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
+</h4>
+<p>We will now look at several more examples of dynamical systems.  If <span class="process-math">\(P = \left[\begin{array}{rr}
+1 \amp -1 \\
+1 \amp 1 \\
+\end{array}\right]
+\text{,}\)</span> we note that the columns of <span class="process-math">\(P\)</span> form a basis <span class="process-math">\(\bcal\)</span> of <span class="process-math">\(\real^2\text{.}\)</span>  Given below are several matrices <span class="process-math">\(A\)</span> written in the form <span class="process-math">\(A=PEP^{-1}\)</span> for some matrix <span class="process-math">\(E\text{.}\)</span>  For each matrix, state the eigenvalues of <span class="process-math">\(A\)</span> and sketch a phase portrait for the matrix <span class="process-math">\(E\)</span> on the left and a phase portrait for <span class="process-math">\(A\)</span> on the right. Describe the behavior of <span class="process-math">\(A^k\xvec_0\)</span> as <span class="process-math">\(k\)</span> becomes very large for a typical initial vector <span class="process-math">\(\xvec_0\text{.}\)</span></p>
 <ol class="lower-alpha">
 <li>
-<p>Suppose that \(A = \left[\begin{array}{rr}
+<p><span class="process-math">\(A=PEP^{-1}\)</span> where <span class="process-math">\(E = \left[\begin{array}{rr}
+1.3 \amp 0 \\
+0 \amp 1.5 \\
+\end{array}\right]
+\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-activity.svg" role="img" class="contained"></div></div></div>
+</li>
+<li>
+<p><span class="process-math">\(A=PEP^{-1}\)</span> where <span class="process-math">\(E = \left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right]
+\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-activity.svg" role="img" class="contained"></div></div></div>
+</li>
+<li>
+<p><span class="process-math">\(A=PEP^{-1}\)</span> where <span class="process-math">\(E = \left[\begin{array}{rr}
 0.7 \amp 0 \\
-0 \amp 1.6 \\
+0 \amp 1.5 \\
 \end{array}\right]
-\text{.}\)</p>
-<p>Explain why the species do not interact with one another.  Which of the six types of dynamical systems do we have?  What happens to both species after a long time?</p>
+\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-activity.svg" role="img" class="contained"></div></div></div>
 </li>
 <li>
-<p>Suppose now that \(A = \left[\begin{array}{rr}
-0.7 \amp 0.3 \\
-0 \amp 1.6 \\
+<p><span class="process-math">\(A=PEP^{-1}\)</span> where <span class="process-math">\(E = \left[\begin{array}{rr}
+0.3 \amp 0 \\
+0 \amp 0.7 \\
 \end{array}\right]
-\text{.}\)</p>
-<p>Explain why \(S\) is a beneficial species for \(R\text{.}\) Which of the six types of dynamical systems do we have?  What happens to both species after a long time?</p>
+\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-activity.svg" role="img" class="contained"></div></div></div>
 </li>
 <li>
-<p>Suppose now that \(A = \left[\begin{array}{rr}
-0.7 \amp 0.5 \\
--0.4 \amp 1.6 \\
+<p><span class="process-math">\(A=PEP^{-1}\)</span> where <span class="process-math">\(E = \left[\begin{array}{rr}
+1 \amp -0.9 \\
+0.9 \amp 1 \\
 \end{array}\right]
-\text{.}\)</p>
-<p>Explain why this describes a predator-prey system. Which of the species is the predator and which is the prey? Which of the six types of dynamical systems do we have?  What happens to both species after a long time?</p>
+\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-activity.svg" role="img" class="contained"></div></div></div>
 </li>
 <li>
-<p>Suppose now that \(A = \left[\begin{array}{rr}
-0.5 \amp 0.2 \\
--0.4 \amp 1.1 \\
+<p><span class="process-math">\(A=PEP^{-1}\)</span> where <span class="process-math">\(E = \left[\begin{array}{rr}
+0.6 \amp -0.2 \\
+0.2 \amp 0.6 \\
 \end{array}\right]
-\text{.}\)</p>
-<p>Compare this predator-prey system to the one in the previous part.  Which of the six types of dynamical systems do we have?  What happens to both species after a long time?</p>
+\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-activity.svg" role="img" class="contained"></div></div></div>
 </li>
-</ol></article><span class="incontext"><a href="sec-dynamical.html#activity-53">in-context</a></span>
+</ol></article><span class="incontext"><a href="sec-dynamical.html#activity-53" class="internal">in-context</a></span>
 </body>
 </html>

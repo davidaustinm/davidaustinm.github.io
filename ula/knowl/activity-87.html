@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:56-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.6</span><span class="period">.</span>
+</h4>
+<p>This activity explores a dataset describing Arctic sea ice and that comes from <a class="external" href="http://sustainabilitymath.org/" target="_blank">Sustainability Math.</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-2-hidden.html" title="Footnote 6.5.1"><sup> 1 </sup></a></p>
+<p>Evaluating the cell below will plot the extent of Arctic sea ice, in millions of square kilometers, during the twelve months of 2012. <pre class="ptx-sagecell sagecell-sage" id="sage-191"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py', globals())
+df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/sea_ice.csv')
+data = [vector([row[0], row[2]]) for row in df.values]
+month = vector(df['Month'])
+ice = vector(df['2012'])
+print(df[['Month', '2012']])
+list_plot(data, color='blue', size=40)
+</script></pre> In addition, you have access to a few special variables and commands:</p>
+<ul class="disc">
+<li><p><code class="code-inline tex2jax_ignore">month</code> is the vector of month values and <code class="code-inline tex2jax_ignore">ice</code> is the vector of sea ice values from the table above.</p></li>
+<li><p><code class="code-inline tex2jax_ignore">vandermonde(x, k)</code> constructs the Vandermonde matrix of degree <span class="process-math">\(k\)</span> using the points in the vector <code class="code-inline tex2jax_ignore">x</code>.</p></li>
+<li><p><code class="code-inline tex2jax_ignore">Q, R = QR(A)</code> provides the <span class="process-math">\(QR\)</span> factorization of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p><code class="code-inline tex2jax_ignore">demean(v)</code> returns the demeaned vector <span class="process-math">\(\widetilde{\vvec}\text{.}\)</span></p></li>
+</ul>
+<ol class="lower-alpha">
+<li><p>Find the vector <span class="process-math">\(\xhat\text{,}\)</span> the least squares approximate solution to the linear system that results from fitting a degree 5 polynomial to the data. <pre class="ptx-sagecell sagecell-sage" id="sage-192"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>If your result is stored in the variable <code class="code-inline tex2jax_ignore">xhat</code>, you may plot the polynomial and the data together using the following cell. <pre class="ptx-sagecell sagecell-sage" id="sage-193"><script type="text/x-sage">plot_model(xhat, data)
+</script></pre></p></li>
+<li><p>Find the coefficient of determination <span class="process-math">\(R^2\)</span> for this polynomial fit.</p></li>
+<li><p>Repeat these steps to fit a degree 8 polynomial to the data, plot the polynomial with the data, and find <span class="process-math">\(R^2\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-194"><script type="text/x-sage">
+</script></pre></p></li>
+<li>
+<p>Repeat one more time by fitting a degree 11 polynomial to the data, creating a plot, and finding <span class="process-math">\(R^2\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-195"><script type="text/x-sage">
+</script></pre></p>
+<p>It's certainly true that higher degree polynomials fit the data better, as seen by the increasing values of <span class="process-math">\(R^2\text{,}\)</span> but that's not always a good thing. For instance, when <span class="process-math">\(k=11\text{,}\)</span> you may notice that the graph of the polynomial wiggles a little more than we would expect. In this case, the polynomial is trying too hard to fit the data, which usually contains some uncertainty, especially if it's obtained from measurements.  The error built in to the data is called <em class="emphasis">noise,</em> and its presence means that we shouldn't expect our polynomial to fit the data perfectly.  When we choose a polynomial whose degree is too high, we give the noise too much weight in the model, which leads to some undesirable behavior, like the wiggles in the graph.</p>
+<p>Fitting the data with a polynomial whose degree is too high is called <em class="emphasis">overfitting</em>, a phenomenon that can appear in many machine learning applications. Generally speaking, we would like to choose <span class="process-math">\(k\)</span> large enough to capture the essential features of the data but not so large that we overfit and build the noise into the model.  There are ways to determine the optimal value of <span class="process-math">\(k\text{,}\)</span> but we won't pursue that here.</p>
+</li>
+<li><p>Choosing a reasonable value of <span class="process-math">\(k\text{,}\)</span> estimate the extent of Arctic sea ice at month 6.5, roughly at the Summer Solstice.</p></li>
+</ol></article><span class="incontext"><a href="sec-least-squares.html#activity-87" class="internal">in-context</a></span>
+</body>
+</html>

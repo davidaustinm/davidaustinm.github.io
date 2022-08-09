@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:53-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:37-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the linear system</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Suppose we have the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\xvec\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{alignedat}{4}
-2x \amp {}+{} \amp y \amp {}-{} \amp 3z \amp {}={} \amp 4 \\
--x \amp {}+{} \amp 2y \amp {}+{} \amp z \amp {}={} \amp 3 \\
-3x \amp {}-{} \amp y \amp \amp \amp {}={} \amp -4 \\
-\end{alignedat}\text{.}
+A = \left[\begin{array}{rr}
+-2 \amp 3 \\
+0 \amp 2 \\
+3 \amp 1 \\
+\end{array}\right],~~~
+\xvec = \left[\begin{array}{r}
+2 \\ 3 \\ \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Identify the matrix \(A\) and vector \(\bvec\) to express this system in the form \(A\xvec = \bvec\text{.}\)</p>
-<span class="incontext"><a href="sec-matrices-lin-combs.html#p-950">in-context</a></span>
+<p class="continuation">Their product will be defined to be the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\xvec\)</span> as weights.  This means that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+A\xvec = 
+\left[\begin{array}{rr}
+-2 \amp 3 \\
+0 \amp 2 \\
+3 \amp 1 \\
+\end{array}\right]
+\left[\begin{array}{r} 2 \\ 3 \\ \end{array}\right]
+{}={} \amp
+2 \left[\begin{array}{r} -2 \\ 0 \\ 3 \\ \end{array}\right] +
+3 \left[\begin{array}{r} 3 \\ 2 \\ 1 \\ \end{array}\right]
+\\ \\
+{}={} \amp
+\left[\begin{array}{r} -4 \\ 0 \\ 6 \\ \end{array}\right] +
+\left[\begin{array}{r} 9 \\ 6 \\ 3 \\ \end{array}\right] \\ \\
+{}={} \amp
+\left[\begin{array}{r} 5 \\ 6 \\ 9 \\ \end{array}\right]. \\
+\end{aligned}
+\end{equation*}
+</div>
+<span class="incontext"><a href="sec-matrices-lin-combs.html#p-950" class="internal">in-context</a></span>
 </body>
 </html>

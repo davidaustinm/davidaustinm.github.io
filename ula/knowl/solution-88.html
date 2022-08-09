@@ -1,60 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:58-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:41-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">2.5.4.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.4.5.9.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>If 1000 trucks begin at \(P\text{,}\) that evening we find that 70% of them are at \(P\) with the remaining 30% at \(Q\text{.}\)  Therefore, \(T\left(\twovec{1000}{0}\right) =
-\twovec{700}{300}\text{.}\)  Since \(T\left(\twovec{1000}{0}\right) =
-1000T\left(\twovec{1}{0}\right)\text{,}\) we see that \(T\left(\twovec{1}{0}\right) = \twovec{0.7}{0.3}\text{.}\)</p></li>
-<li><p>In the same way, we see that \(T\left(\twovec{0}{1000}\right) = \twovec{500}{500}\) so that \(T\left(\twovec{0}{1}\right) =
-\twovec{0.5}{0.5}\text{.}\)</p></li>
-<li><p>The columns of \(A\) are \(T\left(\twovec{1}{0}\right)\) and \(T\left(\twovec{0}{1}\right)\) so that \(A=\left[\begin{array}{rr}
-0.7 \amp 0.5 \\
-0.3 \amp 0.5 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>Evaluate \(T\left(\twovec{100}{900}\right) =
-A\twovec{100}{900} = \twovec{520}{480}\text{.}\)</p></li>
-<li><p>We solve \(T(\xvec) = A\xvec = \twovec{550}{450}\) to find \(\xvec=\twovec{250}{750}\text{.}\)</p></li>
 <li>
-<p>We denote the distribution of trucks Monday morning by \(\xvec_0 = \twovec{0}{1000}\text{.}\)</p>
-<ol class="lower-roman">
-<li><p>Monday evening, we have \(\xvec_1=A\xvec_0 =
-\twovec{500}{500}\text{.}\)</p></li>
-<li><p>Tuesday evening, we have \(\xvec_2=A\xvec_1 =
-\twovec{600}{400}\text{.}\)</p></li>
-<li><p>Wednesday evening, we have \(\xvec_3=A\xvec_2 =
-\twovec{620}{380}\text{.}\)</p></li>
-</ol>
+<p>We construct the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrr}
+2 \amp 4 \amp 0 \\
+0 \amp -2 \amp 2 \\
+1 \amp -1 \amp k \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 2 \amp 0 \\
+0 \amp 1 \amp -1 \\
+0 \amp 0 \amp k-3 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">If the vectors are linearly dependent, we cannot have a pivot position in the third column.  This means that <span class="process-math">\(k=3\text{.}\)</span></p>
 </li>
-<li><p>Because \(S(\xvec) = T(T(\xvec)) = AA\xvec =
-A^2\xvec\text{,}\) the matrix representing \(S\) is \(A^2 =
-\left[\begin{array}{rr}
-0.64 \amp 0.60 \\
-0.36 \amp 0.40 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>The matrix is \(A^7 \approx \left[\begin{array}{rr}
-0.625 \amp 0.625 \\
-0.375 \amp 0.375 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>If we compute \(A^k\xvec_0\) for some very large powers \(k\text{,}\) we find that \(\xvec\approx\twovec{625}{375}\) so there are 625 trucks at location \(P\) and 375 at \(Q\text{.}\)</p></li>
+<li><p>If the vectors span <span class="process-math">\(\real^3\text{,}\)</span> there must be a pivot in the third row, which means that <span class="process-math">\(k\neq 3\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-linear-trans.html#solution-88">in-context</a></span>
+<span class="incontext"><a href="sec-linear-dep.html#solution-88" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.1.5.9.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.1.5.2.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>Since \(BA\) is defined, \(B\) must have \(n\) columns.  And since \(BA\) has \(n\) rows, \(B\) must have \(n\) rows.  This means that \(B\) is a square \(n\times n\) matrix.</p></li>
-<li><p>Every row of \(B\) must have a pivot position, which means that \(B\) is row equivalent to the identity matrix \(I\text{.}\)</p></li>
-<li><p>Because every row of \(B\) has a pivot position, every column of \(B\) does as well.  Therefore, the homogeneous equation \(B\xvec=\zerovec\) has only the trivial solution \(\xvec=\zerovec\text{.}\)</p></li>
-<li><p>If we choose any vector \(\yvec\text{,}\) we have \(B(AB-I)\yvec = B[(AB-I)\yvec]=\zerovec\text{.}\)  Therefore, \((AB-I)\yvec\) is a solution to the homogeneous equation \(B\xvec=\zerovec\text{,}\) and we can conclude that \((AB-I)\yvec = \zerovec\text{.}\)  This means that \(AB\yvec -
-\yvec = \zerovec\) or \(AB\yvec = \yvec\) for every vector \(\yvec\text{.}\)  Therefore, \(AB=I\text{,}\) which shows that \(B^{-1} = A\text{.}\)</p></li>
+<li><p><span class="process-math">\(A=\left[\begin{array}{rr}
+\frac1{\sqrt{2}} \amp -\frac1{\sqrt{2}} \\
+\frac1{\sqrt{2}} \amp \frac1{\sqrt{2}} \\
+\end{array}\right]\text{.}\)</span>  To undo the rotation, we will perform a <span class="process-math">\(45^\circ\)</span> clockwise rotation, which is defined by the matrix <span class="process-math">\(A^{-1}=\left[\begin{array}{rr}
+\frac1{\sqrt{2}} \amp \frac1{\sqrt{2}} \\
+-\frac1{\sqrt{2}} \amp \frac1{\sqrt{2}} \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A=\left[\begin{array}{rr}
+-1 \amp 0 \\
+0 \amp -1 \\
+\end{array}\right]\text{.}\)</span>  We see that <span class="process-math">\(A^2=I\)</span> because rotating by <span class="process-math">\(180^\circ\)</span> is its own inverse.</p></li>
+<li>
+<p>We can do this by constructing matrices that define reflections, such as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp -1 \\
+\end{array}\right],
+\left[\begin{array}{rr}
+-1 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right],
+\left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-matrix-inverse.html#solution-122">in-context</a></span>
+<span class="incontext"><a href="sec-matrix-inverse.html#solution-122" class="internal">in-context</a></span>
 </body>
 </html>

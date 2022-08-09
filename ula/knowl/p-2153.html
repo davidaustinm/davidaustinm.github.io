@@ -1,23 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:01-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\left[\begin{array}{rr}
-\frac1{\sqrt{2}} \amp \frac1{\sqrt{2}} \\
-\frac1{\sqrt{2}} \amp \frac1{\sqrt{2}} \\
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>We use the fact that the columns of the requested matrices have the form <span class="process-math">\(\left[\begin{array}{rr} T(\evec_1) \amp
+T(\evec_2) \end{array}\right]\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li><p><span class="process-math">\(\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp 1 \\
 \end{array}\right]
-\text{.}\)</p>
-<span class="incontext"><a href="sec-transforms-geom.html#p-2153">in-context</a></span>
+\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li><p>The composition of this reflection with itself is described by multiplying the matrix by itself.  This produces the matrix <span class="process-math">\(\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right]
+\text{,}\)</span> which we just saw is the matrix for the identity transformation.  This means that reflecting a vector in the line <span class="process-math">\(y=x\)</span> twice produces the original vector.</p></li>
+<li><p><span class="process-math">\(\left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li>
+<p>If we first rotate and then reflect, we obtain the matrix transformation defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right]
+=
+\left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp -1 \\
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is the matrix for reflecting in the horizontal axis.</p>
+<p>If we first reflect and then rotate, we obtain the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right]
+\left[\begin{array}{rr}
+0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right]
+=
+\left[\begin{array}{rr}
+-1 \amp 0 \\
+0 \amp 1 \\
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is the matrix for reflecting in the vertical axis.</p>
+</li>
+<li><p>Composing four times corresponds to raising the matrix to the fourth power, which gives us the identity matrix <span class="process-math">\(I\text{.}\)</span></p></li>
+<li><p>If we consider the effect of rotating the vector <span class="process-math">\(\twovec{1}{0}\)</span> by an angle <span class="process-math">\(\theta\text{,}\)</span> we obtain the vector <span class="process-math">\(\twovec{\cos\theta}{\sin\theta}\text{.}\)</span></p></li>
+</ol>
+<span class="incontext"><a href="sec-transforms-geom.html#p-2153" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,78 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:36-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:06-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>We have</p>
-<div class="displaymath">
-\begin{equation*}
-\xvec_{n+1}=\twovec{F_{n+2}}{F_{n+1}} =
-\twovec{F_{n+1}+F_n}{F_{n+1}}
-= \left[\begin{array}{rr}
-1 \amp 1 \\
-1 \amp 0 \\
-\end{array}\right]
-\xvec_n\text{.}
-\end{equation*}
-</div>
-</li>
-<li>
-<p>The characteristic equation is</p>
-<div class="displaymath">
-\begin{equation*}
-\det(A-\lambda I) = (1-\lambda)(-\lambda)-1 =
-\lambda^2-\lambda-1 = 0\text{.}
-\end{equation*}
-</div>
-<p>Applying the quadratic formula, we see that the two eigenvalues are \(\lambda_1=\frac{1+\sqrt5}{2}\) and \(\lambda_2=\frac{1-\sqrt{5}}2\text{.}\)</p>
-<p>We find the eigenvectors by row reducing the matrices \(A-\lambda_jI\text{.}\)</p>
-</li>
-<li><p>Because \(|\lambda_1| \gt 1\) and \(|\lambda_2|
-\lt 1\text{,}\) this is a saddle.</p></li>
-<li><p>We find \(\xvec_0=\twovec10 = \frac1{\sqrt{5}}\vvec_1
--\frac1{\sqrt{5}}\vvec_2\text{.}\)</p></li>
-<li>
-<p>We have</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
-\xvec_n \amp =\frac1{\sqrt5}\lambda_1^n\vvec_1 -
-\frac1{\sqrt5}\lambda_2^n\vvec_2 \\
-\twovec{F_{n+1}}{F_n} \amp =
-\frac1{\sqrt5}\left(\frac{1+\sqrt5}{2}\right)^n
-\twovec{\lambda_1}{1} - 
-\frac1{\sqrt5}\left(\frac{1-\sqrt5}{2}\right)^n
-\twovec{\lambda_2}{1}\text{.} \\
+A \amp {}={} \left[\begin{array}{rr}
+0.6 \amp 0 \\
+0 \amp 0.9 \\
+\end{array}\right] \\ \\
+\xvec \amp {}={} \twovec{4}{3}\text{.}
 \end{aligned}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>From the second component, we see that</p>
-<div class="displaymath">
-\begin{equation*}
-F_{n} = \frac{1}{\sqrt{5}}\left[
-\left(\frac{1+\sqrt{5}}{2}\right)^n -
-\left(\frac{1-\sqrt{5}}{2}\right)^n\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>Using this relationship, we compute that \(F_{20} =
-6765\text{.}\)</p></li>
-<li><p>For large values of \(n\text{,}\) we have \(\xvec_n\approx\frac1{\sqrt5}\lambda_1^n\twovec{\lambda_1}{1}\text{,}\) which says that \(F_{n+1} \approx \frac1{\sqrt5}\lambda_1^{n+1}\) and \(F_{n} \approx \frac1{\sqrt5}\lambda_1^{n}\text{.}\)  This gives the ratio \(F_{n+1}/F_n\approx \lambda_1\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="sec-dynamical.html#p-4431">in-context</a></span>
+<span class="incontext"><a href="sec-eigen-diag.html#p-4431" class="internal">in-context</a></span>
 </body>
 </html>

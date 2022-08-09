@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:54-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:37-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>Since the solution is unique, there must be a pivot position in every column of \(A\text{.}\)  This means that there are four pivot positions so there is a pivot position in every row.  In other words, \(A \sim \left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 0 \amp 1 \\
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li>
+<p>We construct the augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrr|r}
+1 \amp 0 \amp 2 \amp 0 \\
+2 \amp 2 \amp 2 \amp 0 \\
+-1 \amp -3 \amp 1 \amp 0
 \end{array}\right]
-\text{.}\)</p></li>
-<li><p>No, because \(A\) has a pivot in every row.</p></li>
-<li><p>There is only one solution, which is \(\xvec=\zerovec\text{.}\)</p></li>
-<li><p>If \(\bvec\) is a four-dimensional vector, then \(A\xvec=\bvec\) has a unique solution since \(A\) has a pivot position in every row and every column.  This means that \(\bvec\) can be written as a linear combination of the columns of \(A\) in exactly one way.</p></li>
+\sim
+\left[\begin{array}{rrr|r}
+1 \amp 0 \amp 2 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec=\threevec{-2x_3}{x_3}{x_3} = x_3\threevec{-2}{1}{1}\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>We form <span class="process-math">\(B\)</span> by choosing two vectors in the solution space to <span class="process-math">\(A\xvec=\zerovec\text{.}\)</span>  For instance, <span class="process-math">\(B = \left[\begin{array}{rr}
+-2 \amp 2 \\
+1 \amp -1 \\
+1 \amp -1 \\
+\end{array}\right]\text{.}\)</span></p></li>
 </ol></div></body>
 </html>

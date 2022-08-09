@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:09-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:48-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>\(C_{\bcal}^{-1}\xvec=\fourvec{F_0}{F_1}{\vdots}{F_7} =
-\left[\begin{array}{c}
-100\\ -5.99 \\ 3.98 \\ 4.46 \\ 1.94 \\ -0.97 \\ 0.84 \\
-1.07 \\
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li>
+<p>Form the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P_{\bcal} =
+\left[\begin{array}{rrrr}
+1 \amp 0 \amp 0 \amp 0 \\
+1 \amp 1 \amp 0 \amp 0 \\
+1 \amp 1 \amp 1 \amp 0 \\
+1 \amp 1 \amp 1 \amp 1
 \end{array}\right]
-\text{.}\)</p></li>
+\sim
+\left[\begin{array}{rrrr}
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0 \\
+0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows that the vectors are linearly independent and span <span class="process-math">\(\real^4\text{.}\)</span></p>
+</li>
+<li><p>We have <span class="process-math">\(\xvec = P_{\bcal}\coords{\xvec}{\bcal}\text{.}\)</span></p></li>
 <li>
-<p>We round the Fourier coefficients to the vector \(\left[\begin{array}{c}
-100 \\ -6 \\ 4 \\ 4 \\ 2 \\ -1 \\ 1 \\ 1
-\end{array}\right]\) and find the approximation \(\yvec\text{,}\) which compares to the original vector \(\xvec\text{.}\)</p>
-<div class="displaymath">
+<p>We have <span class="process-math">\(\coords{\xvec}{\bcal} =
+P_{\bcal}^{-1}\xvec\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\yvec=\left[\begin{array}{c}
-103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
-\end{array}\right],
-\xvec=\left[\begin{array}{c}
-103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
+P_{\bcal}^{-1} = 
+\left[\begin{array}{rrrr}
+1 \amp 0 \amp 0 \amp 0 \\
+-1 \amp 1 \amp 0 \amp 0 \\
+0 \amp -1 \amp 1 \amp 0 \\
+0 \amp 0 \amp -1 \amp 1
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>In this case, the approximation \(\yvec\) is the same as the original vector \(\xvec\text{.}\)</p>
 </li>
-<li>
-<p>Now we found the Fourier coefficients to \(\left[\begin{array}{c}
-100 \\ -6 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
-\end{array}\right]\) and find the approximation \(\yvec\text{,}\) which compares to the original vector \(\xvec\text{.}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\yvec=\left[\begin{array}{c}
-94 \\ 95 \\ 97 \\ 99 \\ 101 \\ 103 \\ 105 \\ 106
-\end{array}\right],
-\xvec=\left[\begin{array}{c}
-103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>Now we see that the approximating vector \(\yvec\) differs from the original vector \(\xvec\text{.}\)</p>
-</li>
-<li><p>In the first approximation, the reconstructed vector \(\yvec\) agrees with the original vector \(\xvec\text{.}\)  In the second approximation, there are only two nonzero Fourier coefficients, and we see that the approximating vector differs from the original vector.  In the second case, however, we are using only one quarter of the Fourier coefficients.  Though the entries in the vector \(\yvec\) differ from those in the original vector \(\xvec\text{,}\) the difference is probably not visually noticeable since the possible values range from 0 to 255.</p></li>
+<li><p>We find <span class="process-math">\(\coords{\xvec}{\bcal}=\fourvec{23}{-11}{-2}{9}\text{.}\)</span></p></li>
+<li><p>We find <span class="process-math">\(\xvec=\fourvec{3}{4}{1}{-3}\text{.}\)</span></p></li>
 </ol></div></body>
 </html>

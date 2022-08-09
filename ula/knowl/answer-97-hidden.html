@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:03-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>\(A^{-1}=
-\left[\begin{array}{rrr}
-0 \amp -\frac13 \amp 0 \\
-\frac12 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>\(A^{-1} = 
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
--2 \amp 1 \amp 0 \amp 0 \\
--6 \amp 3 \amp 1 \amp 0 \\
-12 \amp -6 \amp -2 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>\(A^{-1} = 
-\left[\begin{array}{rrr}
-1 \amp -1 \amp 0 \\
-0 \amp 1 \amp -\frac12 \\
-0 \amp 0 \amp \frac12 \\
-\end{array}\right]
-\text{.}\)</p></li>
+<body class="ignore-math"><div class="answer solution-like"><ol class="lower-alpha">
+<li><p>It stretches vectors by <span class="process-math">\(r\text{.}\)</span></p></li>
+<li><p>This matrix rotates vectors by an angle <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li>
+<p>No matter which order we multiply the matrices, we find that their product is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr}
+r\cos\theta \amp -r\sin\theta \\
+r\sin\theta \amp r\sin\theta \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>This follows from the previous part.</p></li>
+<li><p>If we use polar coordinates to write <span class="process-math">\(\twovec{a}{b} =
+\twovec{r\cos\theta}{r\sin\theta}\text{,}\)</span> multiplying a vector by <span class="process-math">\(A\)</span> will stretch the vector by <span class="process-math">\(r\)</span> and rotate it by <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li>
+<p>If</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\twovec{a}{b} =
+\twovec{r\cos\theta}{r\sin\theta},
+\twovec{c}{d} =
+\twovec{s\cos\phi}{s\sin\phi}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">then <span class="process-math">\(S\circ T\)</span> has the effect of stretching a vector by <span class="process-math">\(rs\)</span> and rotating it by <span class="process-math">\(\theta + \phi\text{.}\)</span></p>
+</li>
 </ol></div></body>
 </html>

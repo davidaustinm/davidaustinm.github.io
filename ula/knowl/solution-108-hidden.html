@@ -1,56 +1,107 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:01-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>The matrix \(\left[\begin{array}{rr}
-r \amp 0 \\
-0 \amp r \\
-\end{array}\right]\) stretches vectors by \(r\text{.}\)  It has the same effect as scalar multiplication by \(r\text{.}\)</p></li>
-<li><p>This matrix rotates vectors by an angle \(\theta\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
 <li>
-<p>No matter which order we multiply the matrices, we find that their product is</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left[\begin{array}{rr}
-r \amp 0 \\
-0 \amp r \\
+\left[\begin{array}{rrr}
+a \amp b \amp c \\
+d \amp e \amp f \\
+0 \amp 0 \amp 1 \\
 \end{array}\right]
-\left[\begin{array}{rr}
-\cos\theta \amp -\sin\theta \\
-\sin\theta \amp \sin\theta \\
+\threevec{x}{y}{1} =
+\cthreevec{ax+by+c}{dx+ey+f}{1}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{alignedat}{2}
+x' \amp {}={} ax+by+c \\
+y' \amp {}={} dx+ey+f\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li><p>Notice that the entries <span class="process-math">\(c\)</span> and <span class="process-math">\(f\)</span> are responsible for the translation.  Therefore, we need the matrix transformation defined by <span class="process-math">\(\left[\begin{array}{rrr}
+1 \amp 0 \amp 2 \\
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li><p>We would like to reflect in the vertical axis so we use the matrix <span class="process-math">\(\left[\begin{array}{rrr}
+-1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li><p>The character is successively rotated by <span class="process-math">\(45^\circ\)</span> using the matrix <span class="process-math">\(\left[\begin{array}{rrr}
+\cos(45^\circ) \amp -\sin(45^\circ) \amp 0 \\
+\sin(45^\circ) \amp  \sin(45^\circ) \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right] =
+\left[\begin{array}{rrr}
+\frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}} \amp 0 \\
+\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li>
+<p>We first translate the character down two units using the matrix <span class="process-math">\(\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -2 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span> Then we zoom in by uniformly stretching by a factor of <span class="process-math">\(2\)</span> using the matrix <span class="process-math">\(\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp 2 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span> The net effect is the transformation described by the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp 2 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp -2 \\
+0 \amp 0 \amp 1 \\
 \end{array}\right]
 =
-\left[\begin{array}{rr}
-r\cos\theta \amp -r\sin\theta \\
-r\sin\theta \amp r\sin\theta \\
+\left[\begin{array}{rrr}
+2 \amp 0 \amp 0 \\
+0 \amp 2 \amp -4 \\
+0 \amp 0 \amp 1 \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
 </li>
-<li><p>This follows from the previous part.</p></li>
-<li><p>If we use polar coordinates to write \(\twovec{a}{b} =
-\twovec{r\cos\theta}{r\sin\theta}\text{,}\) multiplying a vector by \(A\) will stretch the vector by \(r\) and rotate it by \(\theta\text{.}\)</p></li>
-<li>
-<p>If</p>
-<div class="displaymath">
-\begin{equation*}
-\twovec{a}{b} =
-\twovec{r\cos\theta}{r\sin\theta},
-\twovec{c}{d} =
-\twovec{s\cos\phi}{s\sin\phi}\text{,}
-\end{equation*}
-</div>
-<p>then \(S\circ T\) has the effect of stretching a vector by \(rs\) and rotating it by \(\theta + \phi\text{.}\)</p>
-</li>
+<li><p>The shadow is first created using the shear <span class="process-math">\(\left[\begin{array}{rrr}
+1 \amp 1 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span> Then the vertical scale is compressed using the matrix <span class="process-math">\(\left[\begin{array}{rrr}
+\frac12 \amp 0 \amp 0 \\
+0 \amp \frac12 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
 </ol></div></body>
 </html>

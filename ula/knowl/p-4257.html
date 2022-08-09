@@ -1,73 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:32-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:03-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We will now look at several more examples of dynamical systems.  If \(P = \left[\begin{array}{rr}
-1 \amp -1 \\
-1 \amp 1 \\
-\end{array}\right]
-\text{,}\) we note that the columns of \(P\) form a basis \(\bcal\) of \(\real^2\text{.}\)  Given below are several matrices \(A\) written in the form \(A=PEP^{-1}\) for some matrix \(E\text{.}\)  For each matrix, state the eigenvalues of \(A\) and sketch a phase portrait for the matrix \(E\) on the left and a phase portrait for \(A\) on the right. Describe the behavior of \(A^k\xvec_0\) as \(k\) becomes very large for a typical initial vector \(\xvec_0\text{.}\)</p>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <ol class="lower-alpha">
-<li>
-<p>\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
-1.3 \amp 0 \\
-0 \amp 1.5 \\
-\end{array}\right]
-\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-</li>
-<li>
-<p>\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
-0 \amp -1 \\
-1 \amp 0 \\
-\end{array}\right]
-\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-</li>
-<li>
-<p>\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
-0.7 \amp 0 \\
-0 \amp 1.5 \\
-\end{array}\right]
-\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-</li>
-<li>
-<p>\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
-0.3 \amp 0 \\
-0 \amp 0.7 \\
-\end{array}\right]
-\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-</li>
-<li>
-<p>\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
-1 \amp -0.9 \\
-0.9 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-</li>
-<li>
-<p>\(A=PEP^{-1}\) where \(E = \left[\begin{array}{rr}
-0.6 \amp -0.2 \\
-0.2 \amp 0.6 \\
-\end{array}\right]
-\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-activity.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-</li>
+<li><p>The matrix <span class="process-math">\(S=\mattwo r00r\)</span> has the geometric effect of scaling vectors uniformly by a factor of <span class="process-math">\(r\)</span> while the matrix <span class="process-math">\(R=\mattwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}\)</span> rotates vectors by <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(a=b=1\)</span> so we form the matrix <span class="process-math">\(C=\mattwo1{-1}11 =
+\mattwo{\sqrt{2}}00{\sqrt{2}}
+\mattwo{\cos(45^\circ)}{-\sin(45^\circ)}
+{\sin(45^\circ)}{\cos(45^\circ)}\text{.}\)</span>  This shows that <span class="process-math">\(C\)</span> will scale vectors by a factor of <span class="process-math">\(\sqrt2\)</span> while rotating them by <span class="process-math">\(45^\circ\text{.}\)</span></p></li>
+<li><p>Sage will verify this relationship.</p></li>
+<li><p>As we saw earlier, we have <span class="process-math">\(A^2 =
+(PCP^{-1})(PCP^{-1}) = PC^2P^{-1}\)</span> and hence <span class="process-math">\(A^k =
+PC^kP^{-1}\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(a=1\)</span> and <span class="process-math">\(b=-1\)</span> so we form the matrix <span class="process-math">\(C'=\mattwo1{1}{-1}1 =
+\mattwo{\sqrt{2}}00{\sqrt{2}}
+\mattwo{\cos(-45^\circ)}{-\sin(-45^\circ)}
+{\sin(-45^\circ)}{\cos(-45^\circ)}\text{.}\)</span>  This shows that <span class="process-math">\(C\)</span> will scale vectors by a factor of <span class="process-math">\(\sqrt2\)</span> while rotating them by <span class="process-math">\(-45^\circ\text{.}\)</span></p></li>
 </ol>
-<span class="incontext"><a href="sec-dynamical.html#p-4257">in-context</a></span>
+<span class="incontext"><a href="sec-eigen-diag.html#p-4257" class="internal">in-context</a></span>
 </body>
 </html>

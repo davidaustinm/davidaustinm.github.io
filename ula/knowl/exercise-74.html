@@ -1,56 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:01-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">5.</span>
-</h6>
-<p>We have seen that the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rr}
-\cos\theta \amp -\sin\theta \\
-\sin\theta \amp \cos\theta \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>performs a rotation through an angle \(\theta\) about the origin.  Suppose instead that we would like to rotate by \(90^\circ\) about the point \((1,2)\text{.}\)  Using homogeneous coordinates, we will develop a matrix that performs this operation.</p>
-<p>Our strategy is to</p>
-<ul class="disc">
-<li><p>begin with a vector whose tail is at the point \((1,2)\text{,}\)</p></li>
-<li><p>translate the vector so that its tail is at the origin,</p></li>
-<li><p>rotate by \(90^\circ\text{,}\) and</p></li>
-<li><p>translate the vector so that its tail is back at \((1,2)\text{.}\)</p></li>
-</ul>
-<p>This is shown in <a data-knowl="./knowl/fig-ex-rotate-about-p.html" title="Figure 2.6.19">Figure 2.6.19</a>.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-rotate-about-p.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.19.</span> A sequence of matrix transformations that, when read right to left and top to bottom, rotate a vector about the point \((1,2)\text{.}\)</figcaption></figure><p>Remember that, when working with homogeneous coordinates, we consider matrices of the form</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rrr}
-a \amp b \amp c \\
-d \amp e \amp f \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
+</h4>
+<p>For each of the following geometric operations in the plane, find a <span class="process-math">\(2\times 2\)</span> matrix that defines the matrix transformation performing the operation.</p>
 <ol class="lower-alpha">
-<li><p>The first operation is a translation by \((-1,-2)\text{.}\)  Find the matrix that performs this translation.</p></li>
-<li><p>The second operation is a \(90^\circ\) rotation about the origin.  Find the matrix that performs this rotation.</p></li>
-<li><p>The third operation is a translation by \((1,2)\text{.}\) Find the matrix that performs this translation.</p></li>
-<li><p>Use these matrices to find the matrix that performs a \(90^\circ\) rotation about \((1,2)\text{.}\)</p></li>
-<li><p>Use your matrix to determine where the point \((-10,
-5)\) ends up if rotated by \(90^\circ\) about the \((1,2)\text{.}\)</p></li>
-</ol></article><span class="incontext"><a href="sec-transforms-geom.html#exercise-74">in-context</a></span>
+<li><p>Rotates vectors by <span class="process-math">\(180^\circ\text{.}\)</span></p></li>
+<li><p>Reflects vectors across the vertical axis.</p></li>
+<li><p>Reflects vectors across the line <span class="process-math">\(y=-x\text{.}\)</span></p></li>
+<li><p>Rotates vectors counterclockwise by <span class="process-math">\(60^\circ\text{.}\)</span></p></li>
+<li><p>First rotates vectors counterclockwise by <span class="process-math">\(60^\circ\)</span> and then reflects in the line <span class="process-math">\(y=x\text{.}\)</span></p></li>
+</ol></article><span class="incontext"><a href="sec-transforms-geom.html#exercise-74" class="internal">in-context</a></span>
 </body>
 </html>

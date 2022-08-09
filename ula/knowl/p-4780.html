@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:43-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:11-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>Remember that multiplying a matrix \(B\) by \(S\) gives a \(1\times n\) matrix whose entries are the sum of the columns of \(B\text{.}\)  Therefore, \(S(A-I)=SA-SI =
-S-S = \left[\begin{array}{rrrr}0\amp0\amp\ldots\amp 0
-\end{array}\right]\text{.}\)</p></li>
-<li><p>Any vector in \(\col(A-I)\) can be written as \((A-I)\xvec\text{.}\)  However, we have \(S[(A-I)\xvec] =
-[S(A-I)]\xvec = [0]\text{,}\) which means that \((A-I)\xvec\) is in \(\nul(S)\text{.}\)</p></li>
-<li><p>Since the components of \(\evec_1\) add to \(1\text{,}\) \(S\evec_1=[1]\text{.}\)</p></li>
-<li><p>From the previous part, we see that \(\evec_1\) is not in \(\nul(S)\) which says it is not in \(\col(A-I)\text{.}\)</p></li>
-<li><p>If \(A-I\) is invertible, then \(\col(A-I)=\real^n\text{.}\)  However, we have seen that \(\evec_1\) is not in \(\col(A-I)\) so \(A-I\) cannot be invertible.</p></li>
-</ol>
-<span class="incontext"><a href="sec-stochastic.html#p-4780">in-context</a></span>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>First, to determine <span class="process-math">\(P_{k+1}\text{,}\)</span> we note that in election <span class="process-math">\(k+1\text{,}\)</span> party <span class="process-math">\(P\)</span> retains 60% of its voters from the previous election and adds 20% of those who voted for party <span class="process-math">\(R\text{.}\)</span> In this way, we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{alignedat}{6}
+P_{k+1} \amp {}={} 0.6P_k \amp \amp \amp + 0.2 R_k \\
+Q_{k+1} \amp {}={} 0.4P_k \amp {}+{} \amp 0.6Q_k \amp {}+{}
+0.2R_k \\
+R_{k+1} \amp {}={} \amp {}{} \amp 0.4Q_k \amp {}+{}
+0.6R_k\\
+\end{alignedat}
+\end{equation*}
+</div>
+<p class="continuation">We therefore define the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+0.6 \amp 0 \amp 0.2 \\
+0.4 \amp 0.6 \amp 0.2 \\
+0 \amp 0.4 \amp 0.6 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">and note that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span></p>
+<span class="incontext"><a href="sec-stochastic.html#p-4780" class="internal">in-context</a></span>
 </body>
 </html>

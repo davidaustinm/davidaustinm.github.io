@@ -1,113 +1,72 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:02-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.1.4</span>.</h6>
-<p>As an example, we will consider the matrix</p>
-<div class="displaymath">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h4>
+<p>We'll begin by considering the square matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proposition-invertible-rref.html">
 \begin{equation*}
-A = \left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-2 \amp 0 \amp -2 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>When performing Gaussian elimination on \(A\text{,}\) we first apply a row replacement operation in which we multiply the first row by \(-2\) and add to the second row.  After this step, we have a new matrix \(A_1\text{.}\)</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-2 \amp 0 \amp -2 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]
-\sim
-\left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-0 \amp -4 \amp -4 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]
-= A_1\text{.}
+A = \begin{bmatrix}
+1 \amp 0 \amp 2 \\
+2 \amp 2 \amp 1 \\
+1 \amp 1 \amp 1 \\
+\end{bmatrix}.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
+<li><p>Describe the solution space to the equation <span class="process-math">\(A\xvec
+= \threevec343\)</span> by augmenting <span class="process-math">\(A\)</span> and finding the reduced row echelon form. <pre class="ptx-sagecell sagecell-sage" id="sage-78"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>Using <a href="" class="xref" data-knowl="./knowl/proposition-invertible-rref.html" title="Proposition 3.1.5">Proposition 3.1.5</a>, explain why <span class="process-math">\(A\)</span> is invertible and find its inverse.</p></li>
+<li><p>Now use the inverse to solve the equation <span class="process-math">\(A\xvec =
+\threevec343\)</span> and verify that your result agrees with what you found in part a.</p></li>
 <li>
-<p>Show that multiplying \(A\) by the lower triangular matrix</p>
-<div class="displaymath">
+<p>If you have defined a matrix <code class="code-inline tex2jax_ignore">B</code> in Sage, you can find it's inverse as <code class="code-inline tex2jax_ignore">B.inverse()</code> or <code class="code-inline tex2jax_ignore">B^-1</code>.  Use Sage to find the inverse of the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-L_1 = \left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
--2 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
+B = \left[\begin{array}{rrr}
+1 \amp -2 \amp -1 \\
+-1 \amp 5 \amp 6 \\
+5 \amp -4 \amp 6 \\
 \end{array}\right]
 \end{equation*}
 </div>
-<p>has the same effect as this row operation;  that is, show that \(L_1A = A_1\text{.}\)</p>
+<p class="continuation">and use it to solve the equation <span class="process-math">\(B\xvec =
+\threevec83{36}\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-79"><script type="text/x-sage">
+</script></pre></p>
 </li>
-<li><p>Explain why \(L_1\) is invertible and find its inverse \(L_1^{-1}\text{.}\) <div class="sagecell-sage" id="sage-77"><script type="text/x-sage">
-</script></div></p></li>
-<li><p>You should see that there is a simple relationship between \(L_1\) and \(L_1^{-1}\text{.}\)  Describe this relationship and explain why it holds.</p></li>
+<li><p>If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are the two matrices defined in this activity, find their product <span class="process-math">\(AB\)</span> and verify that it is invertible.</p></li>
+<li><p>Compute the products <span class="process-math">\(A^{-1}B^{-1}\)</span> and <span class="process-math">\(B^{-1}A^{-1}\text{.}\)</span>  Which one agrees with <span class="process-math">\((AB)^{-1}\text{?}\)</span></p></li>
 <li>
-<p>To continue the Gaussian elimination algorithm, we need to apply two more row replacements to bring \(A\) into a triangular form \(U\) where</p>
-<div class="displaymath">
+<p>Explain your finding by considering the product</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = \left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-2 \amp 0 \amp -2 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]
-\sim
-\left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-0 \amp -4 \amp -4 \\
-0 \amp 0 \amp -4 \\
-\end{array}\right] = U\text{.}
+(AB)(B^{-1}A^{-1})
 \end{equation*}
 </div>
-<p>Find the matrices \(L_2\) and \(L_3\) that perform these row replacement operations so that \(L_3L_2L_1 A = U\text{.}\)</p>
+<p class="continuation">and using associativity to regroup the products so that the middle two terms are multiplied first.</p>
 </li>
-<li><p>Explain why the matrix product \(L_3L_2L_1\) is invertible and use this fact to write \(A = LU\text{.}\)  What is the matrix \(L\) that you find?  Why do you think we denote it by \(L\text{?}\) <div class="sagecell-sage" id="sage-78"><script type="text/x-sage">
-</script></div></p></li>
-<li>
-<p>Row replacement operations may always be performed by multiplying by a lower triangular matrix.  It turns out the other two row operations, scaling and interchange, may also be performed using matrix multiplication.  For instance, consider the two matrices</p>
-<div class="displaymath">
-\begin{equation*}
-S = \left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 3 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right],
-\hspace{24pt}
-P = \left[\begin{array}{rrr}
-0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \\
-1 \amp 0 \amp 0 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>Show that multiplying \(A\) by \(S\) performs a scaling operation and that multiplying by \(P\) performs a row interchange.</p>
-</li>
-<li><p>Explain why the matrices \(S\) and \(P\) are invertible and state their inverses.</p></li>
-</ol></article><span class="incontext"><a href="sec-matrix-inverse.html#activity-29">in-context</a></span>
+</ol></article><span class="incontext"><a href="sec-matrix-inverse.html#activity-29" class="internal">in-context</a></span>
 </body>
 </html>

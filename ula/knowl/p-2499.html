@@ -1,74 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:05-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can easily see that there is a jump in brightness between pixels 4 and 5, but how can we detect it computationally?  We will introduce a new basis \(\bcal\) for \(\real^6\) with vectors:</p>
-<div class="displaymath">
-\begin{equation*}
-\vvec_1=\left[\begin{array}{r} 1 \\ 0 \\ 0 \\ 0 \\ 0
-\\ 0 \end{array}\right],
-\vvec_2=\left[\begin{array}{r} 1 \\ 1 \\ 0 \\ 0 \\ 0
-\\ 0 \end{array}\right],
-\vvec_3=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 0 \\ 0
-\\ 0 \end{array}\right],
-\vvec_4=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 1 \\ 0
-\\ 0 \end{array}\right],
-\vvec_5=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 1 \\ 1
-\\ 0 \end{array}\right],
-\vvec_6=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 1 \\ 1
-\\ 1 \end{array}\right]\text{.}
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li><p>Construct the matrix \(C_\bcal\) that relates the standard coordinate system with the coordinates in the basis \(\bcal\text{.}\)</p></li>
-<li><p>Determine the matrix \(C_\bcal^{-1}\) that converts the representation of \(\xvec\) in standard coordinates into the coordinate system defined by \(\bcal\text{.}\) <div class="sagecell-sage" id="sage-82"><script type="text/x-sage">
-</script></div></p></li>
-<li>
-<p>Suppose the vectors are expressed in general terms as</p>
-<div class="displaymath">
-\begin{equation*}
-\xvec = \left[\begin{array}{r}
-x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \end{array}\right],
-\coords{\xvec}{\bcal} = \left[\begin{array}{r}
-c_1 \\ c_2 \\ c_3 \\ c_4 \\ c_5 \\ c_6 \end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>Using the relationship \(\coords{\xvec}{\bcal} =
-C_{\bcal}^{-1}\xvec\text{,}\) determine an expression for the coefficient \(c_2\) in terms of \(x_1,x_2,\ldots,x_6\text{.}\) What does \(c_2\) measure in terms of the grayscale values of the pixels?  What does \(c_4\) measure in terms of the grayscale values of the pixels?</p>
-</li>
-<li>
-<p>Now for the specific vector</p>
-<div class="displaymath">
-\begin{equation*}
-\xvec = \left[\begin{array}{r}
-25 \\ 34 \\ 30 \\ 45 \\ 190 \\ 200
-\end{array}\right]\text{,}
-\end{equation*}
-</div>
-<p>determine the representation of \(\xvec\) in the \(\bcal\)-coordinate system.</p>
-</li>
-<li><p>Explain how the coefficients in \(\coords{\xvec}{\bcal}\) determine the location of the jump in brightness in the grayscale values represented by the vector \(\xvec\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="sec-bases.html#p-2499">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>In the same way, we compute <span class="process-math">\(CA=I_2\text{.}\)</span></p>
+<span class="incontext"><a href="sec-matrix-inverse.html#p-2499" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:09-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:48-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.3.4.2.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.2.5.4.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>The goal is to represent the image in a format that requires less storage but still allows us to reconstruct the image with most of the visual information preserved.</p></li>
-<li><p>In the \(YC_bC_r\) color model, the most significant visual information is stored in the \(Y\) channel. Therefore, we should store most of this information.  The information in the \(C_b\) and \(C_r\) channels is not as visually significant so we can store a smaller amount of that data without noticing the effect.</p></li>
-<li><p>As seen in an image, these blocks are relatively small, which means that the approximations we reconstruct are probably not noticeably different from the original.  Also, the blocks are small enough so that the image does not typically change a lot over the block.  At the same time, the blocks are large enough to allow us to save storage by throwing away some of the Fourier coefficients.</p></li>
-<li><p>The Discrete Fourier Transform represents the data in a block as its average and variations from the average. Since the blocks are relatively small, there will typically be small variations away from the average.  Therefore, we can often ignore those variations without visually detecting the approximation.</p></li>
-<li><p>Our eyes do not detect individual pixels so we do not detect differences from one pixel to the next.  This means that we do not typically notice rapid variations.</p></li>
+<li>
+<p>Looking at the reduced row echelon form, we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrrrr}
+\vvec_1 \amp 
+\vvec_2 \amp 
+\vvec_3 \amp 
+\vvec_4 \amp 
+\vvec_5 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrrr}
+1 \amp 0 \amp - 2 \amp 0 \amp -1 \\
+0 \amp 1 \amp 1 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1 \amp -1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This shows that the vectors are not linearly independent since there is not a pivot position in every column.  Therefore, the set of vectors does not form a basis for <span class="process-math">\(\real^3\text{.}\)</span>  Of course, we also know this because a set of vectors for <span class="process-math">\(\real^3\)</span> must contain exactly three vectors.</p>
+</li>
+<li><p>From the reduced row echelon form, we see that the set of vectors spans <span class="process-math">\(\real^3\)</span> because there is a pivot position in every row.  We also see that <span class="process-math">\(\vvec_3 = -2\vvec_1+\vvec_2\)</span> and <span class="process-math">\(\vvec_5 =
+-\vvec_1-\vvec_4\text{.}\)</span>  This means that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> will span <span class="process-math">\(\real^3\)</span> and therefore form a basis.</p></li>
+<li><p>In the same way, we see that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_4\text{,}\)</span> and <span class="process-math">\(\vvec_6\)</span> for a basis for <span class="process-math">\(\real^4\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-jpeg.html#solution-140">in-context</a></span>
+<span class="incontext"><a href="sec-bases.html#solution-140" class="internal">in-context</a></span>
 </body>
 </html>

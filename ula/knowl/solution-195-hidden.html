@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:24-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:58-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>False.  This is true for a diagonal matrix, but it is not generally true as we see by considering the matrix \(\mattwo{1}{2}{2}{1}\) whose eigenvalues are \(\lambda =
-3\) and \(\lambda=-1\text{.}\)</p></li>
-<li><p>True.  If \(m\) is the multiplicity, we have \(1\leq\dim E_\lambda \leq m=1\) so we must have \(\dim
-E_\lambda = 1\text{.}\)</p></li>
-<li><p>True.  If \(\lambda=0\) is an eigenvalue, then an associated eigenvector \(\vvec\) is a nonzero solution to the homogeneous equation \(A\xvec=\zerovec\text{.}\)  This would say that \(A\) is not invertible.</p></li>
-<li><p>True.  The degree of the characteristic polynomial equals the dimension of the square matrix.</p></li>
-<li><p>True.  An eigenvector \(\vvec\) associated to the eigenvalue \(\lambda\) satisfies \((A-\lambda
-I)\vvec=\zerovec\text{.}\)  This is the same equation that characterizes the null space \(\nul(A-\lambda I)\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>In this case, we have <span class="process-math">\(A\vvec = \lambda\vvec\)</span> or <span class="process-math">\(A\left(\frac1\lambda\vvec\right) = \vvec\text{,}\)</span> which says that the equation <span class="process-math">\(A\xvec = \vvec\)</span> is consistent.</p></li>
+<li><p>With this assumption, <span class="process-math">\(A\vvec = 0\vvec = \zerovec\text{,}\)</span> which means that <span class="process-math">\(\vvec\)</span> is a solution to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span></p></li>
+<li>
+<p>The column space of <span class="process-math">\(A\)</span> is spanned by <span class="process-math">\(\vvec_1=\threevec{1}{1}{1}\)</span> and we notice that <span class="process-math">\(A\vvec_1 = 3\vvec_1\text{.}\)</span>  Therefore, <span class="process-math">\(\vvec_1\)</span> is an eigenvector with associated eigenvalue <span class="process-math">\(\lambda_1=3\text{.}\)</span></p>
+<p>We also know that that the rank of this matrix is 1 so <span class="process-math">\(\nul(A)\)</span> is two-dimensional.  A basis for the null space is <span class="process-math">\(\vvec_2=\threevec{-1}{1}{0}\)</span> and <span class="process-math">\(\vvec_3=\threevec{-1}{0}{1}\)</span> so these vectors are eigenvectors with associated eigenvalue <span class="process-math">\(\lambda_2=\lambda_3 =
+0\text{.}\)</span> In the same way, <span class="process-math">\(\vvec_1=\threevec{1}{2}{3}\)</span> is an eigenvector of <span class="process-math">\(B\)</span> with associated eigenvalue <span class="process-math">\(\lambda_1=6\)</span> and <span class="process-math">\(\vvec_2=\threevec{-1}{1}{0}\)</span> and <span class="process-math">\(\vvec_3=\threevec{-1}{0}{1}\)</span> are eigenvectors with associated eigenvalue <span class="process-math">\(\lambda_2=\lambda_3=0\text{.}\)</span></p>
+</li>
 </ol></div></body>
 </html>

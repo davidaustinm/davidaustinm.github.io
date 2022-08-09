@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:11-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:50-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The determinant of an upper triangular matrix \(U\) is equal to the product of its diagonal entries.  Of course, the matrix \(U\) is invertible if and only if there is a pivot position in every row, which means each of the diagonal entries must be nonzero. Therefore, an upper triangular matrix \(U\) is invertible if and only \(\det U \neq 0\text{.}\)</p>
-<span class="incontext"><a href="sec-determinants.html#p-3005">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The Sage cell below will construct the vector <span class="process-math">\(P_{\bcal}\text{,}\)</span> which is denoted <code class="code-inline tex2jax_ignore">P</code>, and its inverse <span class="process-math">\(P_{\bcal}^{-1}\text{,}\)</span> which is denoted <code class="code-inline tex2jax_ignore">Pinv</code>.  Evaluate this Sage cell and notice that it prints the matrix <span class="process-math">\(P_{\bcal}^{-1}\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-dct-def"><script type="text/x-sage">mat = [[cos((2*i+1)*j*pi/16) for j in range(8)] for i in range(8)]
+P = matrix(mat).numerical_approx()
+Pinv = P.inverse()	
+print (Pinv.numerical_approx(digits=3))
+</script></pre> Now look at the form of <span class="process-math">\(P_{\bcal}^{-1}\)</span> and explain why <span class="process-math">\(F_0\)</span> is the average of the luminance values in the vector <span class="process-math">\(\xvec\text{.}\)</span></p>
+<span class="incontext"><a href="sec-jpeg.html#p-3005" class="internal">in-context</a></span>
 </body>
 </html>

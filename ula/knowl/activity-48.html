@@ -1,102 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:26-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:02-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">4.3.3</span>.</h6>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4>
+<p>Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix having eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2 = -6\text{.}\)</span> Because the eigenvalues are real and distinct, we know by <a href="" class="xref" data-knowl="./knowl/prop-eigen-basis.html" title="Proposition 4.2.9">Proposition 4.2.9</a> that these eigenvectors form a basis of <span class="process-math">\(\real^2\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li>
-<p>Find a diagonalization of \(A\text{,}\) if one exists, when</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rr}
-3 \amp -2 \\
-6 \amp -5 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Can the diagonal matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rr}
-2 \amp 0 \\
-0 \amp -5 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>be diagonalized?  If so, explain how to find the matrices \(P\) and \(D\text{.}\)</p>
-</li>
-<li>
-<p>Find a diagonalization of \(A\text{,}\) if one exists, when</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rrr}
--2 \amp 0 \amp 0 \\
-1 \amp -3\amp 0 \\
-2 \amp 0 \amp -3 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<div class="sagecell-sage" id="sage-108"><script type="text/x-sage">
-</script></div>
-</li>
-<li>
-<p>Find a diagonalization of \(A\text{,}\) if one exists, when</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rrr}
--2 \amp 0 \amp 0 \\
-1 \amp -3\amp 0 \\
-2 \amp 1 \amp -3 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<div class="sagecell-sage" id="sage-109"><script type="text/x-sage">
-</script></div>
-</li>
-<li>
-<p>Suppose that \(A=PDP^{-1}\) where</p>
-<div class="displaymath">
-\begin{equation*}
-D = \left[\begin{array}{rr}
+<li><p>What are the products <span class="process-math">\(A\vvec_1\)</span> and <span class="process-math">\(A\vvec_2\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span></p></li>
+<li><p>If we form the matrix <span class="process-math">\(P = \begin{bmatrix}
+\vvec_1 \amp \vvec_2
+\end{bmatrix}
+\text{,}\)</span> what is the product <span class="process-math">\(AP\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span></p></li>
+<li><p>Use the eigenvalues to form the diagonal matrix <span class="process-math">\(D
+= \begin{bmatrix}
 3 \amp 0 \\
-0 \amp -1 \\
-\end{array}\right],\qquad
-P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
-\end{array}\right] = 
-\left[\begin{array}{rr}
-2 \amp 2 \\
-1 \amp -1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<ol class="lower-roman">
-<li><p>Explain why \(A\) is invertible.</p></li>
-<li><p>Find a diagonalization of \(A^{-1}\text{.}\)</p></li>
-<li><p>Find a diagonalization of \(A^3\text{.}\)</p></li>
-</ol>
+0 \amp -6 
+\end{bmatrix}\)</span> and determine the product <span class="process-math">\(PD\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+<li><p>The results from the previous two parts of this activity demonstrate that <span class="process-math">\(AP=PD\text{.}\)</span> Using the fact that the eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> form a basis of <span class="process-math">\(\real^2\text{,}\)</span> explain why <span class="process-math">\(P\)</span> is invertible and that we must have <span class="process-math">\(A=PDP^{-1}\text{.}\)</span></p></li>
+<li><p>Suppose that <span class="process-math">\(A=\begin{bmatrix}
+-3 \amp 6 \\
+3 \amp 0 \\
+\end{bmatrix}\text{.}\)</span>  Verify that <span class="process-math">\(\vvec_1=\twovec11\)</span> and <span class="process-math">\(\vvec_2=\twovec2{-1}\)</span> are eigenvectors of <span class="process-math">\(A\)</span> with eigenvalues <span class="process-math">\(\lambda_1 = 3\)</span> and <span class="process-math">\(\lambda_2=-6\text{.}\)</span></p></li>
+<li>
+<p>Use the Sage cell below to define the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> and then verify that <span class="process-math">\(A=PDP^{-1}\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-114"><script type="text/x-sage"># enter the matrices P and D below	    
+P =
+D =	    
+P*D*P.inverse()
+</script></pre>
 </li>
-</ol></article><span class="incontext"><a href="sec-eigen-diag.html#activity-48">in-context</a></span>
+</ol></article><span class="incontext"><a href="sec-eigen-diag.html#activity-48" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:09-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:48-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Answer</span> <span class="codenumber">3.3.4.2.1</span>.</h6>
+<body class="ignore-math">
+<div class="answer solution-like">
+<h4 class="heading">
+<span class="type">Answer</span><span class="space"> </span><span class="codenumber">3.2.5.2.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>The goal is to represent the image in a format that requires less storage but still allows us to reconstruct the image with most of the visual information preserved.</p></li>
-<li><p>In the \(YC_bC_r\) color model, the most significant visual information is stored in the \(Y\) channel. Therefore, we should store most of this information.  The information in the \(C_b\) and \(C_r\) channels is not as visually significant so we can store a smaller amount of that data without noticing the effect.</p></li>
-<li><p>As seen in an image, these blocks are relatively small, which means that the approximations we reconstruct are probably not noticeably different from the original.  Also, the blocks are small enough so that the image does not typically change a lot over the block.  At the same time, the blocks are large enough to allow us to save storage by throwing away some of the Fourier coefficients.</p></li>
-<li><p>The Discrete Fourier Transform represents the data in a block as its average and variations from the average. Since the blocks are relatively small, there will typically be small variations away from the average.  Therefore, we can often ignore those variations without visually detecting the approximation.</p></li>
-<li><p>Our eyes do not detect individual pixels so we do not detect differences from one pixel to the next.  This means that we do not typically notice rapid variations.</p></li>
+<li><p>The sets of the vectors are both linearly independent and span <span class="process-math">\(\real^2\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\coords{\xvec}{\bcal}=\twovec{12/5}{13/5}\)</span> and <span class="process-math">\(\coords{\xvec}{\ccal}=\twovec{13}{21}\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\xvec=
+\twovec{-2}{16}\)</span> and <span class="process-math">\(\coords{\xvec}{\ccal}=\twovec{-20}{-38}\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\xvec=\twovec{-8}{-13}\)</span> and <span class="process-math">\(\coords{\xvec}{\ccal}=\twovec{-37/5}{-3/5}\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(Q = 
+\left[\begin{array}{rr}
+\frac95 \amp -1 \\
+\frac15 \amp 0 \\
+\end{array}\right]
+\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-jpeg.html#answer-112">in-context</a></span>
+<span class="incontext"><a href="sec-bases.html#answer-112" class="internal">in-context</a></span>
 </body>
 </html>

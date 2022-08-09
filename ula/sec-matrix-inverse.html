@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-15T11:44:48-04:00       *-->
+<!--*       on 2022-08-08T13:56:05-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,25 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Invertibility</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Understanding Linear Algebra">
+<meta property="book:author" content=" David Austin ">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -49,29 +51,58 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
 \newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
@@ -120,7 +151,7 @@
 \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
-\newcommand{\rank}{\text{rank}}
+\newcommand{\rank}{\operatorname{rank}}
 \newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
 \renewcommand{\row}{\text{Row}}
@@ -139,7 +170,9 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
@@ -147,7 +180,7 @@
 </div>
 <div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-bases.html" title="Next">Next</a></span>
@@ -157,355 +190,363 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap3.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-bases.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1" class="internal">Our goals</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
-<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
-<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
-<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
-<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+<a href="chap1.html" data-scroll="chap1" class="internal"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect" class="internal">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions" class="internal">Finding solutions to linear systems</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction" class="internal">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots" class="internal">Pivots and their influence on solution spaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
-<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
-<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
-<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
-<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
-<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
-<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+<a href="chap2.html" data-scroll="chap2" class="internal"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs" class="internal">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs" class="internal">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span" class="internal">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep" class="internal">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans" class="internal">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom" class="internal">The geometry of matrix transformations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
+<a href="chap3.html" data-scroll="chap3" class="internal"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
 <li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse" class="active">Invertibility</a></li>
-<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
-<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
-<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
-<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases" class="internal">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg" class="internal">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants" class="internal">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces" class="internal">Subspaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
-<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
-<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
-<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+<a href="chap4.html" data-scroll="chap4" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro" class="internal">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find" class="internal">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag" class="internal">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical" class="internal">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic" class="internal">Markov chains and Google's PageRank algorithm</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
-<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
-<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+<a href="chap5.html" data-scroll="chap5" class="internal"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited" class="internal">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method" class="internal">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
-<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
-<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
-<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
-<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
-<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+<a href="chap6.html" data-scroll="chap6" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product" class="internal">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose" class="internal">Orthogonal complements and the matrix transpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases" class="internal">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt" class="internal">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares" class="internal">Orthogonal least squares</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
-<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
-<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
-<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
-<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
-<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+<a href="chap7.html" data-scroll="chap7" class="internal"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices" class="internal">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms" class="internal">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro" class="internal">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses" class="internal">Using Singular Value Decompositions</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app-sage-reference.html" data-scroll="app-sage-reference" class="internal"><span class="codenumber">A</span> <span class="title">Sage Reference</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-matrix-inverse"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-matrix-inverse"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Invertibility</span>
 </h2>
-<section class="introduction" id="introduction-13"><p id="p-2192">In previous sections, we have found solutions to linear systems using the Gaussian elimination algorithm.  We will now investigate another way of finding solutions to a specific type of equation \(A\xvec=\bvec\) when the matrix \(A\) has the same number of rows and columns.  To get started, let's look at some familiar examples.</p>
-<article class="exploration project-like" id="exploration-9"><h6 class="heading">
+<section class="introduction" id="introduction-13"><p id="p-2330">Up to this point, we have used the Gaussian elimination algorithm to find solutions to linear systems.  We now investigate another way to find solutions to the equation <span class="process-math">\(A\xvec=\bvec\)</span> when the matrix <span class="process-math">\(A\)</span> has the same number of rows and columns.  To get started, let's look at some familiar examples.</p>
+<article class="exploration project-like" id="exploration-9"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h6>
-<ol id="p-2193" class="lower-alpha">
-<li id="li-1485"><p id="p-2194">Explain how you would solve the equation \(3x =
-5\) without using the concept of division.</p></li>
-<li id="li-1486"><p id="p-2195">Find the \(2\times2\) matrix \(A\) that rotates vectors counterclockwise by \(90^\circ\text{.}\)</p></li>
-<li id="li-1487"><p id="p-2196">Find the \(2\times2\) matrix \(B\) that rotates vectors <em class="emphasis">clockwise</em> by \(90^\circ\text{.}\)</p></li>
-<li id="li-1488"><p id="p-2197">What do you expect the product \(BA\) to be? Explain the reasoning behind your expectation and then compute \(BA\) to verify it.</p></li>
-<li id="li-1489"><p id="p-2198">Solve the equation \(A\xvec = \twovec{3}{-2}\) using Gaussian elimination. <div class="sagecell-sage" id="sage-71"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-1490"><p id="p-2199">Explain why your solution may also be found by computing \(\xvec = B\twovec{3}{-2}\text{.}\)</p></li>
-</ol></article></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+</h3>
+<ol id="p-2331" class="lower-alpha">
+<li id="li-1583"><p id="p-2332">Explain how you would solve the equation <span class="process-math">\(3x =
+5\)</span> using multiplication rather than division.</p></li>
+<li id="li-1584"><p id="p-2333">Find the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A\)</span> that rotates vectors counterclockwise by <span class="process-math">\(90^\circ\text{.}\)</span></p></li>
+<li id="li-1585"><p id="p-2334">Find the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(B\)</span> that rotates vectors <em class="emphasis">clockwise</em> by <span class="process-math">\(90^\circ\text{.}\)</span></p></li>
+<li id="li-1586"><p id="p-2335">What do you expect the product <span class="process-math">\(AB\)</span> to be? Explain the reasoning behind your expectation and then compute <span class="process-math">\(AB\)</span> to verify it.</p></li>
+<li id="li-1587"><p id="p-2336">Solve the equation <span class="process-math">\(A\xvec = \twovec{3}{-2}\)</span> using Gaussian elimination. <pre class="ptx-sagecell sagecell-sage" id="sage-75"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-1588"><p id="p-2337">Explain why your solution may also be found by computing <span class="process-math">\(\xvec = B\twovec{3}{-2}\text{.}\)</span></p></li>
+</ol></article></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Invertible matrices</span>
 </h3>
-<p id="p-2207">The preview activity began with a familiar type of equation, \(3x = 5\text{,}\) and asked for a strategy to solve it. One possible response is to divide both sides by 3; instead, let's rephrase this as multiplying by \(3^{-1} = \frac
-13\text{,}\) the multiplicative inverse of 3.</p>
-<p id="p-2208">Now that we are interested in solving equations of the form \(A\xvec = \bvec\text{,}\) we might try to find a similar approach. Is there a matrix \(A^{-1}\) that plays the role of the multiplicative inverse?  Of course, we can't expect every matrix to have a multiplicative inverse; after all, the real number \(0\) doesn't have an inverse.  We will see, however, that many matrices do.</p>
-<article class="definition definition-like" id="definition-8"><h6 class="heading">
+<p id="p-2345">The preview activity began with a familiar type of equation, <span class="process-math">\(3x = 5\text{,}\)</span> and asked for a strategy to solve it. One possible response is to divide both sides by 3. Instead, let's rephrase this as multiplying by <span class="process-math">\(3^{-1} = \frac
+13\text{,}\)</span> the multiplicative inverse of 3.</p>
+<p id="p-2346">Now that we are interested in solving equations of the form <span class="process-math">\(A\xvec = \bvec\text{,}\)</span> we might try to find a similar approach. Is there a matrix <span class="process-math">\(A^{-1}\)</span> that plays the role of the multiplicative inverse of <span class="process-math">\(A\text{?}\)</span>  Of course, the real number <span class="process-math">\(0\)</span> does not have a multiplicative inverse so we probably shouldn't expect every matrix to have a multiplicative inverse. We will see, however, that many do.</p>
+<article class="definition definition-like" id="definition-12"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h6>
-<p id="p-2209">An \(n\times n\) matrix \(A\) is called <em class="emphasis">invertible</em> if there is a matrix \(B\) such that \(BA = I_n\text{,}\) where \(I_n\) is the \(n\times n\) identity matrix.  The matrix \(B\) is called the <em class="emphasis">inverse</em> of \(A\) and denoted \(A^{-1}\text{.}\)</p></article><p id="p-2210">In the preview activity, we considered the matrices</p>
-<div class="displaymath">
+</h4>
+<p id="p-2347">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is called <em class="emphasis">invertible</em> if there is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(AB = I_n\text{,}\)</span> where <span class="process-math">\(I_n\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix.  The matrix <span class="process-math">\(B\)</span> is called the <em class="emphasis">inverse</em> of <span class="process-math">\(A\)</span> and denoted <span class="process-math">\(A^{-1}\text{.}\)</span></p></article><p id="p-2348"> Notice that we only define invertibility for matrices that have the same number of rows and columns in which case we say that the matrix is <em class="emphasis">square</em>.</p>
+<article class="example example-like" id="example-17"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-2349">Suppose that <span class="process-math">\(A\)</span> is the matrix that rotates two-dimensional vectors counterclockwise by <span class="process-math">\(90^\circ\)</span> and that <span class="process-math">\(B\)</span> rotates vectors by <span class="process-math">\(-90^\circ\text{.}\)</span>  We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A=\left[\begin{array}{rr}
 0 \amp -1 \\
 1 \amp 0 \\
-\end{array}\right],
+\end{array}\right],~~~
 B=\left[\begin{array}{rr}
 0 \amp 1 \\
 -1 \amp 0 \\
-\end{array}\right],
+\end{array}\right].
 \end{equation*}
 </div>
-<p class="continuation">since \(A\) rotates vectors in \(\real^2\) by \(90^\circ\) and \(B\) rotates vectors by \(-90^\circ\text{.}\)  It's easy to check that</p>
-<div class="displaymath">
+<p class="continuation">We can check that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-BA=\left[\begin{array}{rr}
-0 \amp 1 \\
--1 \amp 0 \\
-\end{array}\right]
-\left[\begin{array}{rr}
+AB = \begin{bmatrix}
 0 \amp -1 \\
 1 \amp 0 \\
-\end{array}\right] =
-\left[\begin{array}{rr}
+\end{bmatrix}
+\begin{bmatrix}
+0 \amp 1 \\
+-1 \amp 0 \\
+\end{bmatrix}
+= \begin{bmatrix}
 1 \amp 0 \\
 0 \amp 1 \\
-\end{array}\right] = I\text{.}
+\end{bmatrix}
+= I 
 \end{equation*}
 </div>
-<p class="continuation">This shows that \(B = A^{-1}\text{.}\)</p>
-<p id="p-2211">The preview also indicates the use of matrix inverses.  Since we have \(A^{-1}A = I\text{,}\) we can solve the equation \(A\xvec =
-\bvec\) by multiplying both sides on the left by \(A^{-1}\text{:}\)</p>
-<div class="displaymath">
+<p class="continuation">which shows that <span class="process-math">\(A\)</span> is invertible and that <span class="process-math">\(A^{-1}=B\text{.}\)</span></p>
+<p id="p-2350">Notice that if we multiply the matrices in the opposite order, we find that <span class="process-math">\(BA=I\text{,}\)</span> which says that <span class="process-math">\(B\)</span> is also invertible and that <span class="process-math">\(B^{-1} = A\text{.}\)</span>  In other words, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are inverses of each other.</p></article><article class="activity project-like" id="activity-28"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<p id="p-2351">This activity demonstrates a procedure for finding the inverse of a matrix <span class="process-math">\(A\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-1595">
+<p id="p-2352">Suppose that <span class="process-math">\(A = \begin{bmatrix}
+3 \amp -2 \\
+1 \amp -1 \\
+\end{bmatrix}
+\text{.}\)</span>  To find an inverse <span class="process-math">\(B\text{,}\)</span> we write its columns as <span class="process-math">\(B = \begin{bmatrix}\bvec_1 \amp \bvec_2
+\end{bmatrix}\)</span> and require that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
-A^{-1}(A\xvec) \amp {}={} A^{-1}\bvec \\
-(A^{-1}A)\xvec \amp {}={} A^{-1}\bvec \\
-I\xvec \amp {}={} A^{-1}\bvec \\
-\xvec \amp {}={}  A^{-1}\bvec\text{.} \\
+AB \amp = I \\
+\begin{bmatrix}
+A\bvec_1 \amp A\bvec_2
+\end{bmatrix}
+\amp = 
+\begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix}.
 \end{aligned}
 \end{equation*}
 </div>
-<p class="continuation">Notice that this is similar to finding the solution to \(3x=5\) as \(x=\frac13 5\text{.}\)</p>
-<article class="activity project-like" id="activity-27"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
-</h6>
-<p id="p-2212">Let's consider the matrices</p>
-<div class="displaymath">
+<p class="continuation">In other words, we can find the columns of <span class="process-math">\(B\)</span> by solving the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = \left[\begin{array}{rrr}
+A\bvec_1 = \twovec10,~~~
+A\bvec_2 = \twovec01.
+\end{equation*}
+</div>
+<p class="continuation">Solve these equations to find <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\text{.}\)</span>  Then write the matrix <span class="process-math">\(B\)</span> and verify that <span class="process-math">\(AB=I\text{.}\)</span>  This is enough for us to conclude that <span class="process-math">\(B\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-76"><script type="text/x-sage">
+</script></pre></p>
+</li>
+<li id="li-1596"><p id="p-2353">Find the product <span class="process-math">\(BA\)</span> and explain why we now know that <span class="process-math">\(B\)</span> is invertible and <span class="process-math">\(B^{-1}=A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-77"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-1597"><p id="p-2354">What happens when you try to find the inverse of <span class="process-math">\(C = \begin{bmatrix}
+-2 \amp 1 \\
+4 \amp -2 \\
+\end{bmatrix}\text{?}\)</span></p></li>
+<li id="li-1598">
+<p id="p-2355">We now develop a condition that must be satisfied by an invertible matrix. Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\)</span> and suppose that <span class="process-math">\(\bvec\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector. Since <span class="process-math">\(AB=I\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A(B\bvec) = (AB)\bvec = I\bvec = \bvec.
+\end{equation*}
+</div>
+<p class="continuation">This says that the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent and that <span class="process-math">\(\xvec=B\bvec\)</span> is a solution.</p>
+<p id="p-2356">Since we know that <span class="process-math">\(A\xvec = \bvec\)</span> is consistent for any vector <span class="process-math">\(\bvec\text{,}\)</span> what does this say about the span of the columns of <span class="process-math">\(A\text{?}\)</span></p>
+</li>
+<li id="li-1599"><p id="p-2357">Since <span class="process-math">\(A\)</span> is a square matrix, what does this say about the pivot positions of <span class="process-math">\(A\text{?}\)</span> What is the reduced row echelon form of <span class="process-math">\(A\text{?}\)</span></p></li>
+<li id="li-1600">
+<p id="p-2358">In this activity, we have studied the matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp -2 \\
+1 \amp -1 \\
+\end{bmatrix},~~~
+C = \begin{bmatrix}
+-2 \amp 1 \\
+4 \amp -2 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Find the reduced row echelon form of each and explain how those forms enable us to conclude that one matrix is invertible and the other is not.</p>
+</li>
+</ol></article><article class="example example-like" id="example-inverse-augment-I"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h4>
+<p id="p-2366">We can reformulate this procedure for finding the inverse of a matrix.  For the sake of convenience, suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> invertible matrix with inverse <span class="process-math">\(B=\begin{bmatrix} \bvec_1 \amp \bvec_2 \end{bmatrix}\text{.}\)</span> Rather than solving the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A\bvec_1 = \twovec10,~~~
+A\bvec_2 = \twovec01
+\end{equation*}
+</div>
+<p class="continuation">separately, we can solve them at the same time by augmenting <span class="process-math">\(A\)</span> by both vectors <span class="process-math">\(\twovec10\)</span> and <span class="process-math">\(\twovec01\)</span> and finding the reduced row echelon form.</p>
+<p id="p-2367">For example, if <span class="process-math">\(A =
+\begin{bmatrix}
+1 \amp 2 \\
+1 \amp 1 \\
+\end{bmatrix}\text{,}\)</span> we form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[
+\begin{array}{rr|rr}
+1 \amp 2 \amp 1 \amp 0 \\
+1 \amp 1 \amp 0 \amp 1 \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{rr|rr}
+1 \amp 0 \amp -1 \amp 2 \\
+0 \amp 1 \amp 1 \amp -1 \\
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">This shows that the matrix <span class="process-math">\(B =
+\begin{bmatrix}
+-1 \amp 2 \\
+1 \amp 1 \\
+\end{bmatrix}\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-2368">In other words, beginning with <span class="process-math">\(A\text{,}\)</span> we augment by the identify and find the reduced row echelon form to determine <span class="process-math">\(A^{-1}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[
+\begin{array}{r|r}
+A \amp I \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{r|r}
+I \amp A^{-1} \\
+\end{array}
+\right].
+\end{equation*}
+</div></article><p id="p-2369">In fact, this reformulation will always work.  Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\text{.}\)</span>  Suppose furthermore that <span class="process-math">\(\bvec\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector and consider the equation <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>  We know that <span class="process-math">\(x=B\bvec\)</span> is a solution because <span class="process-math">\(A(B\bvec) = (AB)\bvec = I\bvec = \bvec.\)</span></p>
+<article class="proposition theorem-like" id="proposition-inverse-solve"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h4>
+<p id="p-2370">If <span class="process-math">\(A\)</span> is an invertible matrix with inverse <span class="process-math">\(B\text{,}\)</span> then any equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent and <span class="process-math">\(\xvec = B\bvec\)</span> is a solution.  In other words, the solution to <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec =
+A^{-1}\bvec\text{.}\)</span></p></article><p id="p-2371">Notice that this is similar to saying that the solution to <span class="process-math">\(3x=5\)</span> is <span class="process-math">\(x = \frac13\cdot 5\text{,}\)</span> as we saw in the preview activity.</p>
+<p id="p-2372">Now since <span class="process-math">\(A\xvec=\bvec\)</span> is consistent for every vector <span class="process-math">\(\bvec\text{,}\)</span> the columns of <span class="process-math">\(A\)</span> must span <span class="process-math">\(\real^n\)</span> so there is a pivot position in every row.  Since <span class="process-math">\(A\)</span> is also square, this means that the reduced row echelon form of <span class="process-math">\(A\)</span> is the identity matrix.</p>
+<article class="proposition theorem-like" id="proposition-invertible-rref"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h4>
+<p id="p-2373">The matrix <span class="process-math">\(A\)</span> is invertible if and only if the reduced row echelon form of <span class="process-math">\(A\)</span> is the identity matrix:  <span class="process-math">\(A\sim I\text{.}\)</span> In addition, we can find the inverse by augmenting <span class="process-math">\(A\)</span> by the identity and finding the reduced row echelon form:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[
+\begin{array}{r|r}
+A \amp I \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{r|r}
+I \amp A^{-1} \\
+\end{array}
+\right].
+\end{equation*}
+</div></article><p id="p-2374">You may have noticed that <a href="" class="xref" data-knowl="./knowl/proposition-inverse-solve.html" title="Proposition 3.1.4">Proposition 3.1.4</a> says that <em class="emphasis">the</em> solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec =
+A^{-1}\bvec\text{.}\)</span>  Indeed, we know that this equation has a unique solution because <span class="process-math">\(A\)</span> has a pivot position in every column.</p>
+<p id="p-2375">It is important to remember that the product of two matrices depends on the order in which they are multiplied.  That is, if <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are matrices, then it sometimes happens that <span class="process-math">\(CD \neq DC\text{.}\)</span>  However, something fortunate happens when we consider invertibility.  It turns that if <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and that <span class="process-math">\(AB=I\text{,}\)</span> then it is also true that <span class="process-math">\(BA=I\text{.}\)</span>  We have verified this in a few examples so far, and <a href="" class="xref" data-knowl="./knowl/ex-right-inverse.html" title="Exercise 3.1.5.12">Exercise 3.1.5.12</a> explains why it always happens.  This leads to the following proposition.</p>
+<article class="proposition theorem-like" id="proposition-inverse-inverse"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h4>
+<p id="p-2376">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(n\times n\)</span> invertible matrix with inverse <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(BA=I\text{,}\)</span> which tells us that <span class="process-math">\(B\)</span> is invertible with inverse <span class="process-math">\(A\text{.}\)</span>  In other words,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(A^{-1})^{-1} = A.
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">Solving equations with an inverse</span>
+</h3>
+<p id="p-2377">If <span class="process-math">\(A\)</span> is an invertible matrix, then <a href="" class="xref" data-knowl="./knowl/proposition-inverse-solve.html" title="Proposition 3.1.4">Proposition 3.1.4</a> shows us how to use <span class="process-math">\(A^{-1}\)</span> to solve equations involving <span class="process-math">\(A\text{.}\)</span>  In particular, the solution to <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec = A^{-1}\bvec\text{.}\)</span></p>
+<article class="activity project-like" id="activity-29"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h4>
+<p id="p-2378">We'll begin by considering the square matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/proposition-invertible-rref.html">
+\begin{equation*}
+A = \begin{bmatrix}
 1 \amp 0 \amp 2 \\
 2 \amp 2 \amp 1 \\
 1 \amp 1 \amp 1 \\
-\end{array}\right],
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-1607"><p id="p-2379">Describe the solution space to the equation <span class="process-math">\(A\xvec
+= \threevec343\)</span> by augmenting <span class="process-math">\(A\)</span> and finding the reduced row echelon form. <pre class="ptx-sagecell sagecell-sage" id="sage-78"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-1608"><p id="p-2380">Using <a href="" class="xref" data-knowl="./knowl/proposition-invertible-rref.html" title="Proposition 3.1.5">Proposition 3.1.5</a>, explain why <span class="process-math">\(A\)</span> is invertible and find its inverse.</p></li>
+<li id="li-1609"><p id="p-2381">Now use the inverse to solve the equation <span class="process-math">\(A\xvec =
+\threevec343\)</span> and verify that your result agrees with what you found in part a.</p></li>
+<li id="li-1610">
+<p id="p-2382">If you have defined a matrix <code class="code-inline tex2jax_ignore">B</code> in Sage, you can find it's inverse as <code class="code-inline tex2jax_ignore">B.inverse()</code> or <code class="code-inline tex2jax_ignore">B^-1</code>.  Use Sage to find the inverse of the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
 B = \left[\begin{array}{rrr}
-1 \amp 2 \amp -4 \\
--1 \amp -1 \amp 3 \\
-0 \amp -1 \amp 2 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li id="li-1497"><p id="p-2213">Define these matrices in Sage and verify that \(BA =
-I\) so that \(B=A^{-1}\text{.}\) <div class="sagecell-sage" id="sage-72"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-1498"><p id="p-2214">Find the solution to the equation \(A\xvec =
-\threevec{4}{-1}{4}\) using \(A^{-1}\text{.}\)</p></li>
-<li id="li-1499"><p id="p-2215">Using your Sage cell above, multiply \(A\) and \(B\) in the opposite order;  that is, what do you find when you evaluate \(AB\text{?}\)</p></li>
-<li id="li-1500"><p id="p-2216">Suppose that \(A\) is an \(n\times n\) invertible matrix with inverse \(A^{-1}\text{.}\)  This means that every equation of the form \(A\xvec=\bvec\) has a solution, namely, \(\xvec = A^{-1}\bvec\text{.}\)  What can you conclude about the span of the columns of \(A\text{?}\)</p></li>
-<li id="li-1501"><p id="p-2217">What can you conclude about the pivot positions of the matrix \(A\text{?}\)</p></li>
-<li id="li-1502"><p id="p-2218">If \(A\) is an invertible \(4\times4\) matrix, what is its reduced row echelon form?</p></li>
-</ol></article><p id="p-2226">This activity demonstrates a few important things.  First, we said that \(A\) is invertible if there is a matrix \(B\) such that \(BA = I\text{.}\)  In general, multiplying matrices requires care because the product depends on the order in which the matrices are multiplied.  However, in this case, we can check that \(BA = I\) implies that \(AB = I\) as well.  This means that \(B\) is also invertible and that \(A=B^{-1}\text{.}\) This is the subject of <a class="xref" data-knowl="./knowl/ex-right-inverse.html" title="Exercise 3.1.5.9">Exercise 3.1.5.9</a>.</p>
-<p id="p-2227">Also, if the matrix \(A\) is invertible, then every equation \(A\xvec = \bvec\) has a solution \(\xvec =
-A^{-1}\bvec\text{.}\)  This means that the span of the columns of \(A\) is \(\real^n\) so that \(A\) has a pivot in every row.  Since the matrix \(A\) has \(n\) rows and \(n\) columns, there must be a pivot in every row and every column. Therefore, the reduced row echelon form of \(A\) is</p>
-<div class="displaymath">
-\begin{equation*}
-A \sim \left[\begin{array}{cccc}
-1 \amp 0 \amp \ldots \amp 0 \\
-0 \amp 1 \amp \ldots \amp 0 \\
-\vdots \amp \vdots \amp \ddots \amp \vdots \\
-0 \amp 0 \amp \ldots \amp 1 \\
-\end{array}\right] = I\text{.}
-\end{equation*}
-</div>
-<p class="continuation">This provides us with a useful characterization of invertible matrices.</p></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">Constructing a matrix inverse</span>
-</h3>
-<p id="p-2228">We have seen that an invertible matrix \(A\) has the property that its reduced row echelon form is the identity;  that is, \(A\sim I\text{.}\)  Here, we will use this fact to construct the inverse of a matrix \(A\text{.}\)</p>
-<article class="activity project-like" id="activity-28"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-2229">In this activity, we will begin with the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rr}
-1 \amp 2 \\
-1 \amp 3 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p class="continuation">and construct its inverse \(A^{-1}\text{.}\) For the time being, let's denote the inverse by \(B\) so that \(B=A^{-1}\text{.}\)</p>
-<ol class="lower-alpha">
-<li id="li-1509">
-<p id="p-2230">We know that \(AB = I\text{.}\)  If we write \(B = \left[\begin{array}{rr}\bvec_1\amp
-\bvec_2\end{array}\right]\text{,}\) then we have</p>
-<div class="displaymath">
-\begin{equation*}
-AB = \left[\begin{array}{rr}
-A\bvec_1 \amp A\bvec_2
-\end{array}\right] =
-\left[\begin{array}{rr}
-\evec_1 \amp \evec_2
-\end{array}\right] = I\text{.}
-\end{equation*}
-</div>
-<p class="continuation">This means that we need to solve the equations</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-A\bvec_1 \amp {}={} \evec_1 \\
-A\bvec_2 \amp {}={} \evec_2 \\
-\end{aligned}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Using the Sage cell below, solve these equations for the columns of \(B\text{.}\) <div class="sagecell-sage" id="sage-73"><script type="text/x-sage">
-</script></div></p>
-</li>
-<li id="li-1510"><p id="p-2231">What is the matrix \(B\text{?}\)  Check that \(AB = I\) and \(BA = I\text{.}\) <div class="sagecell-sage" id="sage-74"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-1511">
-<p id="p-2232">To find the columns of \(B\text{,}\) we solved two equations, \(A\bvec_1=\evec_1\) and \(A\bvec_2=\evec_2\text{.}\)  We could do this by augmenting \(A\) two separate times, forming matrices</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-\left[\begin{array}{r|r} A \amp \evec_1 \end{array}\right] \amp
-\\
-\left[\begin{array}{r|r} A \amp \evec_2 \end{array}\right] \amp
-\\
-\end{aligned}
-\end{equation*}
-</div>
-<p class="continuation">and finding their reduced row echelon forms. But instead of solving these two equations separately, we could also solve them together by forming the augmented matrix \(\left[\begin{array}{r|rr} A \amp \evec_1 \amp \evec_2
-\end{array}\right]\) and finding the row reduced echelon form.  In other words, we augment \(A\) by the matrix \(I\) to form \(\left[\begin{array}{r|r}
-A \amp I \end{array}
-\right]
-\text{.}\)</p>
-<p id="p-2233">Form this augmented matrix and find its reduced row echelon form to find \(A^{-1}\text{.}\) <div class="sagecell-sage" id="sage-75"><script type="text/x-sage">
-</script></div></p>
-<p id="p-2234">Assuming \(A\) is invertible, we have shown that</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{r|r}
-A \amp I
-\end{array}\right]
-\sim 
-\left[\begin{array}{r|r}
-I \amp A^{-1}
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li id="li-1512">
-<p id="p-2235">If you have defined a matrix \(A\) in Sage, you can find it's inverse as <code class="code-inline tex2jax_ignore">A.inverse()</code>.  Use Sage to find the inverse of the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rrr}
 1 \amp -2 \amp -1 \\
 -1 \amp 5 \amp 6 \\
 5 \amp -4 \amp 6 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p class="continuation"><div class="sagecell-sage" id="sage-76"><script type="text/x-sage">
-</script></div></p>
-</li>
-<li id="li-1513">
-<p id="p-2236">What happens when we try to find the inverse of the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rr}
--4 \amp 2 \\
--2 \amp 1 \\
-\end{array}\right]\text{?}
-\end{equation*}
-</div>
-</li>
-<li id="li-1514"><p id="p-2237">Suppose that \(n\times n\) matrices \(C\) and \(D\) are both invertible.  What do you find when you simplify the product \((D^{-1}C^{-1})(CD)\text{?}\)  Explain why the product \(CD\) is invertible and \((CD)^{-1} =
-D^{-1}C^{-1}\text{.}\)</p></li>
-</ol></article><p id="p-2245">Finding the inverse of an \(n\times n\) matrix \(A\) requires us to solve \(n\) equations.  If we write the inverse as</p>
-<div class="displaymath">
-\begin{equation*}
-B = \left[\begin{array}{rrrr}
-\bvec_1 \amp 
-\bvec_2 \amp 
-\ldots \amp 
-\bvec_n
-\end{array}\right]\text{,}
-\end{equation*}
-</div>
-<p class="continuation">then we need to solve</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-A\bvec_1 \amp {}={} \evec_1 \\
-A\bvec_2 \amp {}={} \evec_2 \\
-\vdots \amp \\
-A\bvec_n \amp {}={} \evec_n \\
-\end{aligned}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">We can, of course, solve each equation separately, but it is more efficient to bundle the equations together by forming the augmented matrix \(\left[\begin{array}{r|r} A \amp I
-\end{array}\right]\) and finding its row reduced echelon form. We then find</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-\left[\begin{array}{r|r} A \amp I
 \end{array}\right]
-\amp {}={}
-\left[\begin{array}{r|rrrr} A \amp \evec_1 \amp \evec_2 \amp
-\ldots \evec_n 
-\end{array}\right] \\
-\amp {}\sim{}
-\left[\begin{array}{r|rrrr} I \amp \bvec_1 \amp \bvec_2 \amp
-\ldots \bvec_n 
-\end{array}\right]
-= 
-\left[\begin{array}{r|r} I \amp A^{-1}
-\end{array}\right]\text{.}
-\end{aligned}
 \end{equation*}
 </div>
-<p class="continuation">We saw earlier that, if \(A\) has an inverse, then \(A\sim
-I\text{.}\)  We have now seen that, if \(A\sim
-I\text{,}\) then \(A\) has an inverse.</p>
-<p id="p-2246">Finally, we see that the product of two invertible matrices \(A\) and \(B\) is also invertible.  This is because</p>
-<div class="displaymath">
+<p class="continuation">and use it to solve the equation <span class="process-math">\(B\xvec =
+\threevec83{36}\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-79"><script type="text/x-sage">
+</script></pre></p>
+</li>
+<li id="li-1611"><p id="p-2383">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are the two matrices defined in this activity, find their product <span class="process-math">\(AB\)</span> and verify that it is invertible.</p></li>
+<li id="li-1612"><p id="p-2384">Compute the products <span class="process-math">\(A^{-1}B^{-1}\)</span> and <span class="process-math">\(B^{-1}A^{-1}\text{.}\)</span>  Which one agrees with <span class="process-math">\((AB)^{-1}\text{?}\)</span></p></li>
+<li id="li-1613">
+<p id="p-2385">Explain your finding by considering the product</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(B^{-1}A^{-1})(AB) = B^{-1}(A^{-1}A)B = B^{-1}IB = B^{-1}B = I\text{.}
+(AB)(B^{-1}A^{-1})
 \end{equation*}
 </div>
-<p class="continuation">Therefore, we have \((AB)^{-1} = B^{-1}A^{-1}\text{.}\)  Because the matrix product depends on the order in which we multiply matrices, use care when applying this relationship.  The inverse of a product is the product of the inverses with the order of multiplication reversed.</p>
-<article class="assemblage assemblage-like" id="assemblage-7"><h6 class="heading"><span class="title">Properties of invertible matrices.</span></h6>
-<ul id="p-2247" class="disc">
-<li id="li-1521"><p id="p-2248">An \(n\times n\) matrix \(A\) is invertible if and only if \(A\sim I\text{.}\)</p></li>
-<li id="li-1522"><p id="p-2249">If \(A\) is invertible, then the solution to the equation \(A\xvec = \bvec\) is given by \(\xvec =
-A^{-1}\bvec\text{.}\)</p></li>
-<li id="li-1523">
-<p id="p-2250">We can find \(A^{-1}\) by finding the reduced row echelon form of \(\left[\begin{array}{r|r} A \amp I
-\end{array}\right]\text{;}\) namely,</p>
-<div class="displaymath">
+<p class="continuation">and using associativity to regroup the products so that the middle two terms are multiplied first.</p>
+</li>
+</ol></article><p id="p-2394">The next proposition summarizes much of what we have found about invertible matrices.</p>
+<article class="proposition theorem-like" id="proposition-invertible-properties"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of invertible matrices.</span>
+</h4>
+<ul id="p-2395" class="disc">
+<li id="li-1621"><p id="p-2396">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(A\sim I\text{.}\)</span></p></li>
+<li id="li-1622"><p id="p-2397">If <span class="process-math">\(A\)</span> is invertible, then the solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is given by <span class="process-math">\(\xvec =
+A^{-1}\bvec\text{.}\)</span></p></li>
+<li id="li-1623">
+<p id="p-2398">We can find <span class="process-math">\(A^{-1}\)</span> by finding the reduced row echelon form of <span class="process-math">\(\left[\begin{array}{r|r} A \amp I
+\end{array}\right]\text{;}\)</span> namely,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{r|r} A \amp I \end{array}\right]
 \sim
@@ -513,10 +554,10 @@ A^{-1}\bvec\text{.}\)</p></li>
 \end{equation*}
 </div>
 </li>
-<li id="li-1524"><p id="p-2251">If \(A\) and \(B\) are two invertible \(n\times
-n\) matrices, then their product \(AB\) is also invertible and \((AB)^{-1} = B^{-1}A^{-1}\text{.}\)</p></li>
-</ul></article><p id="p-2252">There is a simple formula for finding the inverse of a \(2\times2\) matrix:</p>
-<div class="displaymath">
+<li id="li-1624"><p id="p-2399">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are two invertible <span class="process-math">\(n\times
+n\)</span> matrices, then their product <span class="process-math">\(AB\)</span> is also invertible and <span class="process-math">\((AB)^{-1} = B^{-1}A^{-1}\text{.}\)</span></p></li>
+</ul></article><p id="p-2400">There is a simple formula for finding the inverse of a <span class="process-math">\(2\times2\)</span> matrix:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-determinants.html">
 \begin{equation*}
 \left[\begin{array}{rr}
 a \amp b \\
@@ -530,18 +571,16 @@ d \amp -b \\
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p class="continuation">which can be easily checked.  The condition that \(A\) be invertible is, in this case, reduced to the condition that \(ad-bc\neq 0\text{.}\)  We will understand this condition better once we have explored determinants in <a href="sec-determinants.html" class="internal" title="Section 3.4: Determinants">Section 3.4</a>. There is a similar formula for the inverse of a \(3\times
-3\) matrix, but there is not a good reason to write it here.</p></section><section class="subsection" id="subsec-triangular-invertible"><h3 class="heading hide-type">
+<p class="continuation">which can be easily checked.  The condition that <span class="process-math">\(A\)</span> be invertible is, in this case, reduced to the condition that <span class="process-math">\(ad-bc\neq 0\text{.}\)</span>  We will understand this condition better once we have explored determinants in <a href="sec-determinants.html" class="internal" title="Section 3.4: Determinants">Section 3.4</a>. There is a similar formula for the inverse of a <span class="process-math">\(3\times
+3\)</span> matrix, but there is not a good reason to write it here.</p></section><section class="subsection" id="subsec-triangular-invertible"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">Triangular matrices and Gaussian elimination</span>
 </h3>
-<p id="p-2253">Generally speaking, solving an equation \(A\xvec=\bvec\) by first finding \(A^{-1}\) and then evaluating \(\xvec =
-A^{-1}\bvec\) is not the best strategy since row reducing the augmented matrix \(\left[\begin{array}{r|r} A \amp \bvec \end{array}\right]\) involves considerably less work.  This becomes clear once we remember that finding the inverse \(A^{-1}\) requires us to solve \(n\) equations of this form.</p>
-<p id="p-2254">For the class of triangular matrices, however, finding inverses is relatively efficient and useful, as we will see in <a href="sec-gaussian-revisited.html" class="internal" title="Section 5.1: Gaussian elimination revisited">Section 5.1</a>.</p>
-<article class="definition definition-like" id="definition-9"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
-</h6>
-<p id="p-2255">We say that a matrix \(A\) is <em class="emphasis">lower triangular</em> if all its entries above the diagaonal are zero.  Similarly, \(A\) is <em class="emphasis">upper triangular</em> if all the entries below the diagonal are zero.</p></article><p id="p-2256">For example, the matrix \(L\) below is a lower triangular matrix while \(U\) is an upper triangular one.</p>
-<div class="displaymath">
+<p id="p-2401">With some of the ideas we've developed, we can recast the Gaussian elimination algorithm in terms of matrix multiplication and invertibility.  This will be especially helpful later when we consider <a href="sec-determinants.html" class="internal" title="Section 3.4: Determinants">determinants</a> and <a href="sec-gaussian-revisited.html" class="internal" title="Section 5.1: Gaussian elimination revisited">LU factorizations.</a> Triangular matrices will play an important role.</p>
+<article class="definition definition-like" id="definition-13"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+</h4>
+<p id="p-2402">We say that a matrix <span class="process-math">\(A\)</span> is <em class="emphasis">lower triangular</em> if all its entries above the diagonal are zero.  Similarly, <span class="process-math">\(A\)</span> is <em class="emphasis">upper triangular</em> if all the entries below the diagonal are zero.</p></article><p id="p-2403">For example, the matrix <span class="process-math">\(L\)</span> below is a lower triangular matrix while <span class="process-math">\(U\)</span> is an upper triangular one.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 L = \left[\begin{array}{rrrr}
 * \amp 0 \amp 0 \amp 0 \\
@@ -559,8 +598,8 @@ U =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p id="p-2257">We can develop a simple test to determine whether an \(n\times n\) lower triangular matrix is invertible.  Let's use Gaussian elimination to find the reduced row echelon form of the lower triangular matrix</p>
-<div class="displaymath">
+<p id="p-2404">We can develop a simple test to determine whether an <span class="process-math">\(n\times n\)</span> lower triangular matrix is invertible.  Let's use Gaussian elimination to find the reduced row echelon form of the lower triangular matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \left[\begin{array}{rrr}
@@ -590,8 +629,9 @@ U =
 \end{aligned}
 \end{equation*}
 </div>
-<p id="p-2258">Because the entries on the diagonal are nonzero, we find a pivot position in every row, which tells us that the matrix is invertible.  If, however, there is a zero entry on the diagonal, the matrix cannot be invertible.  Considering the matrix below, we see that having a zero on the diagonal leads to a row without a pivot position.</p>
-<div class="displaymath">
+<p class="continuation">Because the entries on the diagonal are nonzero, we find a pivot position in every row, which tells us that the matrix is invertible.</p>
+<p id="p-2405">If, however, there is a zero entry on the diagonal, the matrix cannot be invertible.  Considering the matrix below, we see that having a zero on the diagonal leads to a row without a pivot position.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{rrr}
 1 \amp 0 \amp 0 \\
@@ -612,60 +652,54 @@ U =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<article class="proposition theorem-like" id="proposition-15"><h6 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-2259">An \(n\times n\) triangular matrix is invertible if and only if the entries on the diagonal are all nonzero.</p></article><p id="p-2260">Up to this point, our primary tool for studying linear systems, sets of vectors, and matrices has been Gaussian elimination.  As the next activity demonstrates, we can express the row operations performed in Gaussian elimination in terms of matrix multiplication.  In <a href="sec-gaussian-revisited.html" class="internal" title="Section 5.1: Gaussian elimination revisited">Section 5.1</a>, we will use this observation to create an efficient way to solve equations of the form \(A\xvec=\bvec\text{.}\)</p>
-<article class="activity project-like" id="activity-29"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
-</h6>
-<p id="p-2261">As an example, we will consider the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-2 \amp 0 \amp -2 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p class="continuation">When performing Gaussian elimination on \(A\text{,}\) we first apply a row replacement operation in which we multiply the first row by \(-2\) and add to the second row.  After this step, we have a new matrix \(A_1\text{.}\)</p>
-<div class="displaymath">
+<article class="proposition theorem-like" id="proposition-triangular-invertibility"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+</h4>
+<p id="p-2406">An <span class="process-math">\(n\times n\)</span> triangular matrix is invertible if and only if the entries on the diagonal are all nonzero.</p></article><article class="activity project-like" id="activity-30"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian elimination and matrix multiplication.</span>
+</h4>
+<p id="p-2407">This activity explores how the row operations of scaling, interchange, and replacement can be performed using matrix multiplication.</p>
+<p id="p-2408">As an example, we consider the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 1 \amp 2 \amp 1 \\
 2 \amp 0 \amp -2 \\
 -1 \amp 2 \amp -1 \\
 \end{array}\right]
-\sim
-\left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-0 \amp -4 \amp -4 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]
-= A_1\text{.}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
-<li id="li-1525">
-<p id="p-2262">Show that multiplying \(A\) by the lower triangular matrix</p>
-<div class="displaymath">
+<p class="continuation">and apply a replacement operation that multiplies the first row by <span class="process-math">\(-2\)</span> and adds it to the second row.  Rather than performing this operation in the usual way, we construct a new matrix by applying the desired replacement operation to the identity matrix.  To illustrate, we begin with the identity matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-L_1 = \left[\begin{array}{rrr}
+I = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">and form a new matrix by multiplying the first row by <span class="process-math">\(-2\)</span> and adding it to the second row to obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R = \begin{bmatrix}
 1 \amp 0 \amp 0 \\
 -2 \amp 1 \amp 0 \\
 0 \amp 0 \amp 1 \\
-\end{array}\right]
+\end{bmatrix}.
 \end{equation*}
 </div>
-<p class="continuation">has the same effect as this row operation;  that is, show that \(L_1A = A_1\text{.}\)</p>
-</li>
-<li id="li-1526"><p id="p-2263">Explain why \(L_1\) is invertible and find its inverse \(L_1^{-1}\text{.}\) <div class="sagecell-sage" id="sage-77"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-1527"><p id="p-2264">You should see that there is a simple relationship between \(L_1\) and \(L_1^{-1}\text{.}\)  Describe this relationship and explain why it holds.</p></li>
-<li id="li-1528">
-<p id="p-2265">To continue the Gaussian elimination algorithm, we need to apply two more row replacements to bring \(A\) into a triangular form \(U\) where</p>
-<div class="displaymath">
+<ol class="lower-alpha">
+<li id="li-1625"><p id="p-2409">Show that the product <span class="process-math">\(RA\)</span> is the result of applying the replacement operation to <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-80"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-1626"><p id="p-2410">Explain why <span class="process-math">\(R\)</span> is invertible and find its inverse <span class="process-math">\(R^{-1}\text{.}\)</span></p></li>
+<li id="li-1627"><p id="p-2411">Describe the relationship between <span class="process-math">\(R\)</span> and <span class="process-math">\(R^{-1}\)</span> and use the connection to replacement operations to explain why it holds.</p></li>
+<li id="li-1628"><p id="p-2412">Other row operations can be performed using a similar procedure.  For instance, suppose we want to scale the second row of <span class="process-math">\(A\)</span> by <span class="process-math">\(4\text{.}\)</span>  Find a matrix <span class="process-math">\(S\)</span> so that <span class="process-math">\(SA\)</span> is the same as that obtained from the scaling operation.  Why is <span class="process-math">\(S\)</span> invertible and what is <span class="process-math">\(S^{-1}\text{?}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-81"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-1629"><p id="p-2413">Finally, suppose we want to interchange the first and third rows of <span class="process-math">\(A\text{.}\)</span>  Find a matrix <span class="process-math">\(P\text{,}\)</span> usually called a <em class="emphasis">permutation matrix</em> that performs this operation.  What is <span class="process-math">\(P^{-1}\text{?}\)</span></p></li>
+<li id="li-1630">
+<p id="p-2414">The original matrix <span class="process-math">\(A\)</span> is seen to be row equivalent to the upper triangular matrix <span class="process-math">\(U\)</span> by performing three replacement operations on <span class="process-math">\(A\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 1 \amp 2 \amp 1 \\
@@ -677,76 +711,71 @@ A = \left[\begin{array}{rrr}
 1 \amp 2 \amp 1 \\
 0 \amp -4 \amp -4 \\
 0 \amp 0 \amp -4 \\
-\end{array}\right] = U\text{.}
+\end{array}\right] = U.
 \end{equation*}
 </div>
-<p class="continuation">Find the matrices \(L_2\) and \(L_3\) that perform these row replacement operations so that \(L_3L_2L_1 A = U\text{.}\)</p>
+<p class="continuation">Find the matrices <span class="process-math">\(L_1\text{,}\)</span> <span class="process-math">\(L_2\text{,}\)</span> and <span class="process-math">\(L_3\)</span> that perform these row replacement operations so that <span class="process-math">\(L_3L_2L_1 A = U\text{.}\)</span></p>
 </li>
-<li id="li-1529"><p id="p-2266">Explain why the matrix product \(L_3L_2L_1\) is invertible and use this fact to write \(A = LU\text{.}\)  What is the matrix \(L\) that you find?  Why do you think we denote it by \(L\text{?}\) <div class="sagecell-sage" id="sage-78"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-1530">
-<p id="p-2267">Row replacement operations may always be performed by multiplying by a lower triangular matrix.  It turns out the other two row operations, scaling and interchange, may also be performed using matrix multiplication.  For instance, consider the two matrices</p>
-<div class="displaymath">
+<li id="li-1631"><p id="p-2415">Explain why the matrix product <span class="process-math">\(L_3L_2L_1\)</span> is invertible and use this fact to write <span class="process-math">\(A = LU\text{.}\)</span>  What is the matrix <span class="process-math">\(L\)</span> that you find?  Why do you think we denote it by <span class="process-math">\(L\text{?}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-82"><script type="text/x-sage">
+</script></pre></p></li>
+</ol></article><p id="p-2424"> The following are examples of matrices, known as <em class="emphasis">elementary matrices</em>, that perform the row operations on a matrix having three rows.</p>
+<dl class="description-list">
+<dt id="li-1639">Replacement</dt>
+<dd>
+<p id="p-2425">Multiplying the second row by 3 and adding it to the third row is performed by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-S = \left[\begin{array}{rrr}
+L = \begin{bmatrix}
 1 \amp 0 \amp 0 \\
-0 \amp 3 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right],
-\hspace{24pt}
-P = \left[\begin{array}{rrr}
-0 \amp 0 \amp 1 \\
+0 \amp 1 \amp 0 \\
+0 \amp 3 \amp 1 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">We often use <span class="process-math">\(L\)</span> to describe these matrices because they are lower triangular.</p>
+</dd>
+<dt id="li-1640">Scaling</dt>
+<dd>
+<p id="p-2426">Multiplying the third row by 2 is performed by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 2 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+</dd>
+<dt id="li-1641">Interchange</dt>
+<dd>
+<p id="p-2427">Interchanging the first two rows is performed by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P = \begin{bmatrix}
 0 \amp 1 \amp 0 \\
 1 \amp 0 \amp 0 \\
-\end{array}\right]\text{.}
+0 \amp 0 \amp 1 \\
+\end{bmatrix}.
 \end{equation*}
 </div>
-<p class="continuation">Show that multiplying \(A\) by \(S\) performs a scaling operation and that multiplying by \(P\) performs a row interchange.</p>
-</li>
-<li id="li-1531"><p id="p-2268">Explain why the matrices \(S\) and \(P\) are invertible and state their inverses.</p></li>
-</ol></article><p id="p-2277">We will demonstrate the ideas in this activity again using the matrix</p>
-<div class="displaymath">
+</dd>
+</dl>
+<article class="example example-like" id="example-19"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h4>
+<p id="p-2428">Suppose we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 1 \amp 3 \amp -2 \\
 -3 \amp -6 \amp 3 \\
 2 \amp 0 \amp -2 \\
-\end{array}\right]\text{.}
+\end{array}\right].
 \end{equation*}
 </div>
-<p class="continuation">After performing three row replacement operations, we find the row equivalent upper triangular matrix \(U\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-A =
-\left[\begin{array}{rrr}
-1 \amp 3 \amp -2 \\
--3 \amp -6 \amp 3 \\
-2 \amp 0 \amp -1 \\
-\end{array}\right]
-\amp {}\sim{}
-\left[\begin{array}{rrr}
-1 \amp 3 \amp -2 \\
-0 \amp 3 \amp -3 \\
-2 \amp 0 \amp -1 \\
-\end{array}\right] = A_1 \\
-\amp {}\sim{}
-\left[\begin{array}{rrr}
-1 \amp 3 \amp -2 \\
-0 \amp 3 \amp -3 \\
-0 \amp -6 \amp 3 \\
-\end{array}\right] = A_2 \\
-\amp {}\sim{}
-\left[\begin{array}{rrr}
-1 \amp 3 \amp -2 \\
-0 \amp 3 \amp -3 \\
-0 \amp 0 \amp -3 \\
-\end{array}\right] = U \\
-\end{aligned}\text{.}
-\end{equation*}
-</div>
-<p id="p-2278">The first row replacement operation multiplies the first row by \(3\) and adds the result to the second row.  We can perfom this operation by multiplying \(A\) by the lower triangular matrix \(L_1\) where</p>
-<div class="displaymath">
+<p class="continuation">For the forward substitution phase of Gaussian elimination, we perform a sequence of three replacement operations. The first replacement operation multiplies the first row by <span class="process-math">\(3\)</span> and adds the result to the second row.  We can perform this operation by multiplying <span class="process-math">\(A\)</span> by the lower triangular matrix <span class="process-math">\(L_1\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 L_1A =
 \left[\begin{array}{rrr}
@@ -764,11 +793,11 @@ L_1A =
 1 \amp 3 \amp -2 \\
 0 \amp 3 \amp -3 \\
 2 \amp 0 \amp -1 \\
-\end{array}\right] = A_1\text{.}
+\end{array}\right].
 \end{equation*}
 </div>
-<p id="p-2279">The next two row replacement operations are performed by the matrices</p>
-<div class="displaymath">
+<p id="p-2429">The next two replacement operations are performed by the matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 L_2 = \left[\begin{array}{rrr}
 1 \amp 0 \amp 0 \\
@@ -783,9 +812,18 @@ L_3 = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">so that \(L_3L_2L_1A = U\text{.}\)</p>
-<p id="p-2280">Notice that the inverse of \(L_1\) has the simple form:</p>
-<div class="displaymath">
+<p class="continuation">so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L_3L_2L_1A = U = \begin{bmatrix}
+1 \amp 3 \amp -2 \\
+0 \amp 3 \amp -3 \\
+0 \amp 0 \amp -3 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p id="p-2430">Notice that the inverse of <span class="process-math">\(L_1\)</span> has the simple form:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 L_1 = \left[\begin{array}{rrr}
 1 \amp 0 \amp 0 \\
@@ -800,59 +838,54 @@ L_1^{-1} = \left[\begin{array}{rrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p class="continuation">This makes sense;  if we want to undo the operation of multiplying the first row by \(3\) and adding to the second row, we should multiply the first row by \(-3\) and add it to the second row. This is the effect of \(L_1^{-1}\text{.}\)</p>
-<p id="p-2281">The other row operations we use in implementing Gaussian elimination can also be performed by multiplying by an invertible matrix.  In particular, if we scale a row by a nonzero number \(s\text{,}\) we can undo this operation by scaling by \(\frac
-1s\text{.}\)  This leads to the invertible diagonal matrices, such as</p>
-<div class="displaymath">
+<p class="continuation">This says that if we want to undo the operation of multiplying the first row by <span class="process-math">\(3\)</span> and adding to the second row, we should multiply the first row by <span class="process-math">\(-3\)</span> and add it to the second row. That is the effect of <span class="process-math">\(L_1^{-1}\text{.}\)</span></p>
+<p id="p-2431">Notice that we now have <span class="process-math">\(L_3L_2L_1A = U\text{,}\)</span> which gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-gaussian-revisited.html">
 \begin{equation*}
-S = \left[\begin{array}{rrr}
-s \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right],
-\hspace{24pt}
-S^{-1} = \left[\begin{array}{rrr}
-\frac 1s \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\text{.}
+\begin{aligned}
+(L_3L_2L_1)A \amp = U \\
+(L_3L_2L_1)^{-1}(L_3L_2L_1)A \amp = 
+(L_3L_2L_1)^{-1}U \\
+A \amp = (L_3L_2L_1)^{-1}U = LU\\
+\end{aligned}
 \end{equation*}
 </div>
-<p id="p-2282">Similarly, a row interchange leads to a matrix \(P\text{,}\) which is its own inverse.  An example is</p>
-<div class="displaymath">
+<p class="continuation">where <span class="process-math">\(L\)</span> is the lower triangular matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-gaussian-revisited.html">
 \begin{equation*}
-P = \left[\begin{array}{rrr}
-0 \amp 1 \amp 0 \\
+L = (L_3L_2L_1)^{-1}=\begin{bmatrix}
 1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-=
-P^{-1}\text{.}
+-3 \amp 1 \amp 0 \\
+2 \amp -2 \amp 1 \\
+\end{bmatrix}.
 \end{equation*}
-</div></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+</div>
+<p class="continuation">This way of writing <span class="process-math">\(A=LU\)</span> as the product of a lower and an upper triangular matrix is known as an <span class="process-math">\(LU\)</span> factorization of <span class="process-math">\(A\text{,}\)</span> and its usefulness will be explored in <a href="sec-gaussian-revisited.html" class="internal" title="Section 5.1: Gaussian elimination revisited">Section 5.1</a>.</p></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.1.4</span> <span class="title">Summary</span>
 </h3>
-<p id="p-2283">In this section, we found conditions guaranteeing that a matrix has an inverse.  When these conditions hold, we also found an algorithm for finding the inverse.</p>
+<p id="p-2432">In this section, we found conditions guaranteeing that a matrix has an inverse.  When these conditions hold, we also found an algorithm for finding the inverse.</p>
 <ul class="disc">
-<li id="li-1539"><p id="p-2284">The \(n\times n\) matrix \(A\) is invertible if and only if it is row equivalent to \(I_n\text{,}\) the \(n\times n\) identity matrix.</p></li>
-<li id="li-1540"><p id="p-2285">If a matrix \(A\) is invertible, then the solution to the equation \(A\xvec = \bvec\) is \(\xvec =
-A^{-1}\bvec\text{.}\)</p></li>
-<li id="li-1541">
-<p id="p-2286">If a matrix \(A\) is invertible, we can use Gaussian elimination to find its inverse:</p>
-<div class="displaymath">
+<li id="li-1642"><p id="p-2433">A square matrix is invertible if there is a matrix <span class="process-math">\(B\text{,}\)</span> known as the inverse of <span class="process-math">\(A\text{,}\)</span> such that <span class="process-math">\(AB =
+I\text{.}\)</span>  We usually write <span class="process-math">\(A^{-1} = B\text{.}\)</span></p></li>
+<li id="li-1643"><p id="p-2434">The <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if it is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> identity matrix.</p></li>
+<li id="li-1644">
+<p id="p-2435">If a matrix <span class="process-math">\(A\)</span> is invertible, we can use Gaussian elimination to find its inverse:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[\begin{array}{r|r} A \amp I \end{array}\right] \sim 
 \left[\begin{array}{r|r} I \amp A^{-1} \end{array}\right]\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-1542"><p id="p-2287">The row operations used in performing Gaussian elimination can be performed by multiplying by invertible matrices.  More specifically, a row replacement operation may be performed by multiplying by an invertible lower triangular matrix.</p></li>
+<li id="li-1645"><p id="p-2436">If a matrix <span class="process-math">\(A\)</span> is invertible, then the solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec =
+A^{-1}\bvec\text{.}\)</span></p></li>
+<li id="li-1646"><p id="p-2437">The row operations of replacement, scaling, and interchange can be performed by multiplying by elementary matrices.</p></li>
 </ul></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.1.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-2288">Consider the matrix</p>
-<div class="displaymath">
+<article class="exercise exercise-like" id="exercise-82"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-2438">Consider the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rrrr}
 3 \amp -1 \amp 1 \amp 4 \\
@@ -862,29 +895,51 @@ A = \left[\begin{array}{rrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p class="continuation"><div class="sagecell-sage" id="sage-79"><script type="text/x-sage">
-</script></div></p>
+<p class="continuation"><pre class="ptx-sagecell sagecell-sage" id="sage-83"><script type="text/x-sage">
+</script></pre></p>
 <ol class="lower-alpha">
-<li id="li-1543"><p id="p-2289">Explain why \(A\) has an inverse.</p></li>
-<li id="li-1544"><p id="p-2290">Find the inverse of \(A\) by augmenting by the identity \(I\) to form \(\left[\begin{array}{r|r}A \amp
-I \end{array}\right]\text{.}\)</p></li>
-<li id="li-1545"><p id="p-2291">Use your inverse to solve the equation \(A\xvec =
-\fourvec{3}{2}{-3}{-1}\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-2300">In this exercise, we will consider \(2\times 2\) matrices as defining linear transformations.</p>
+<li id="li-1647"><p id="p-2439">Explain why <span class="process-math">\(A\)</span> has an inverse.</p></li>
+<li id="li-1648"><p id="p-2440">Find the inverse of <span class="process-math">\(A\)</span> by augmenting by the identity <span class="process-math">\(I\)</span> to form <span class="process-math">\(\left[\begin{array}{r|r}A \amp
+I \end{array}\right]\text{.}\)</span></p></li>
+<li id="li-1649"><p id="p-2441">Use your inverse to solve the equation <span class="process-math">\(A\xvec =
+\fourvec{3}{2}{-3}{-1}\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-83"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-2450">In this exercise, we will consider <span class="process-math">\(2\times 2\)</span> matrices as defining matrix transformations.</p>
 <ol class="lower-alpha">
-<li id="li-1552"><p id="p-2301">Write the matrix \(A\) that performs a \(45^\circ\) rotation.  What geometric operation undoes this rotation? Find the matrix that perform this operation and verify that it is \(A^{-1}\text{.}\)</p></li>
-<li id="li-1553"><p id="p-2302">Write the matrix \(A\) that performs a \(180^\circ\) rotation.  Verify that \(A^2 = I\) so that \(A^{-1} = A\text{,}\) and explain geometrically why this is the case.</p></li>
-<li id="li-1554"><p id="p-2303">Find three more matrices \(A\) that satisfy \(A^2
-= I\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-2312">Suppose that \(A\) is an \(n\times n\) matrix.</p>
+<li id="li-1656"><p id="p-2451">Write the matrix <span class="process-math">\(A\)</span> that performs a <span class="process-math">\(45^\circ\)</span> rotation.  What geometric operation undoes this rotation? Find the matrix that perform this operation and verify that it is <span class="process-math">\(A^{-1}\text{.}\)</span></p></li>
+<li id="li-1657"><p id="p-2452">Write the matrix <span class="process-math">\(A\)</span> that performs a <span class="process-math">\(180^\circ\)</span> rotation.  Verify that <span class="process-math">\(A^2 = I\)</span> so that <span class="process-math">\(A^{-1} = A\text{,}\)</span> and explain geometrically why this is the case.</p></li>
+<li id="li-1658"><p id="p-2453">Find three more matrices <span class="process-math">\(A\)</span> that satisfy <span class="process-math">\(A^2
+= I\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-84"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-2462">Inverses for certain types of matrices can be found in a relatively straightforward fashion.</p>
 <ol class="lower-alpha">
-<li id="li-1561"><p id="p-2313">Suppose that \(A^2 = AA\) is invertible with inverse \(B\text{.}\)  This means that \(BA^2 = BAA = I\text{.}\) Explain why \(A\) must be invertible with inverse \(BA\text{.}\)</p></li>
-<li id="li-1562"><p id="p-2314">Suppose that \(A^{100}\) is invertible with inverse \(B\text{.}\)  Explain why \(A\) is invertible.  What is \(A^{-1}\) in terms of \(A\) and \(B\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-2321">Our definition of an invertible matrix requires that \(A\) be a square \(n\times n\) matrix.  Let's examine what happens when \(A\) is not square.  For instance, suppose that</p>
-<div class="displaymath">
+<li id="li-1665">
+<p id="p-2463">The matrix <span class="process-math">\(D=\begin{bmatrix}
+2 \amp 0 \amp 0 \\
+0 \amp -1 \amp 0 \\
+0 \amp 0 \amp -4 \\
+\end{bmatrix}\)</span> is called <em class="emphasis">diagonal</em> since the only nonzero entries are on the diagonal of the matrix.</p>
+<ol id="p-2464" class="decimal">
+<li id="li-1666"><p id="p-2465">Find <span class="process-math">\(D^{-1}\)</span> by augmenting <span class="process-math">\(D\)</span> by the identity and finding its reduced row echelon form.</p></li>
+<li id="li-1667"><p id="p-2466">Under what conditions is a diagonal matrix invertible?</p></li>
+<li id="li-1668"><p id="p-2467">Explain why the inverse of a diagonal matrix is also diagonal and explain the relationship between the diagonal entries in <span class="process-math">\(D\)</span> and <span class="process-math">\(D^{-1}\text{.}\)</span></p></li>
+</ol>
+</li>
+<li id="li-1669">
+<p id="p-2468">Consider the lower triangular matrix <span class="process-math">\(L = \begin{bmatrix}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+3 \amp -4 \amp 1 \\
+\end{bmatrix}
+\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-1670"><p id="p-2469">Find <span class="process-math">\(L^{-1}\)</span> by augmenting <span class="process-math">\(L\)</span> by the identity and finding its reduced row echelon form.</p></li>
+<li id="li-1671"><p id="p-2470">Explain why the inverse of a lower triangular matrix is also lower triangular.</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-85"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-2487">Our definition of an invertible matrix requires that <span class="process-math">\(A\)</span> be a square <span class="process-math">\(n\times n\)</span> matrix.  Let's examine what happens when <span class="process-math">\(A\)</span> is not square.  For instance, suppose that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rr}
 -1 \amp -1 \\
@@ -899,15 +954,15 @@ B = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-1567"><p id="p-2322">Verify that \(BA = I_2\text{.}\)  In this case, we say that \(B\) is a <em class="emphasis">left</em> inverse of \(A\text{.}\) <div class="sagecell-sage" id="sage-80"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-1568">
-<p id="p-2323">If \(A\) has a left inverse \(B\text{,}\) we can still use it to find solutions to linear equations.  If we know there is a solution to the equation \(A\xvec = \bvec\text{,}\) we can multiply both sides of the equation by \(B\) to find \(\xvec = B\bvec\text{.}\)</p>
-<p id="p-2324">Suppose you know there is a solution to the equation \(A\xvec = \threevec{-1}{-3}{6}\text{.}\)  Use the left inverse \(B\) to find \(\xvec\) and verify that it is a solution.</p>
+<li id="li-1686"><p id="p-2488">Verify that <span class="process-math">\(BA = I_2\text{.}\)</span>  In this case, we say that <span class="process-math">\(B\)</span> is a <em class="emphasis">left</em> inverse of <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-84"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-1687">
+<p id="p-2489">If <span class="process-math">\(A\)</span> has a left inverse <span class="process-math">\(B\text{,}\)</span> we can still use it to find solutions to linear equations.  If we know there is a solution to the equation <span class="process-math">\(A\xvec = \bvec\text{,}\)</span> we can multiply both sides of the equation by <span class="process-math">\(B\)</span> to find <span class="process-math">\(\xvec = B\bvec\text{.}\)</span></p>
+<p id="p-2490">Suppose you know there is a solution to the equation <span class="process-math">\(A\xvec = \threevec{-1}{-3}{6}\text{.}\)</span>  Use the left inverse <span class="process-math">\(B\)</span> to find <span class="process-math">\(\xvec\)</span> and verify that it is a solution.</p>
 </li>
-<li id="li-1569">
-<p id="p-2325">Now consider the matrix</p>
-<div class="displaymath">
+<li id="li-1688">
+<p id="p-2491">Now consider the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 C = \left[\begin{array}{rrr}
 1 \amp -1 \amp 0 \\
@@ -915,25 +970,24 @@ C = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">and verify that \(C\) is also a left inverse of \(A\text{.}\)  This shows that the matrix \(A\) may have more than one left inverse.</p>
+<p class="continuation">and verify that <span class="process-math">\(C\)</span> is also a left inverse of <span class="process-math">\(A\text{.}\)</span>  This shows that the matrix <span class="process-math">\(A\)</span> may have more than one left inverse.</p>
 </li>
-<li id="li-1570"><p id="p-2326">When \(A\) is a <em class="emphasis">square</em> matrix, we said that \(BA=I\) implies that \(AB=I\text{.}\) In this problem, we have a non-square matrix \(A\) with \(BA = I\text{.}\)  What happens when we compute \(AB\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-2337">If a matrix \(A\) is invertible, there is a sequence of row operations that transform \(A\) into the identity matrix \(I\text{.}\)  We have seen that every row operation can be performed by matrix multiplication.  If the \(j^{th}\) step in the Gaussian elimination process is performed by multiplying by \(E_j\text{,}\) then we have</p>
-<div class="displaymath">
+</ol></article><article class="exercise exercise-like" id="exercise-86"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-2500">If a matrix <span class="process-math">\(A\)</span> is invertible, there is a sequence of row operations that transforms <span class="process-math">\(A\)</span> into the identity matrix <span class="process-math">\(I\text{.}\)</span>  We have seen that every row operation can be performed by matrix multiplication.  If the <span class="process-math">\(j^{th}\)</span> step in the Gaussian elimination process is performed by multiplying by <span class="process-math">\(E_j\text{,}\)</span> then we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-E_p\ldots E_2E_1 A = I\text{,}
+E_p\cdots E_2E_1 A = I\text{,}
 \end{equation*}
 </div>
 <p class="continuation">which means that</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A^{-1} = E_p\ldots E_2E_1\text{.}
+A^{-1} = E_p\cdots E_2E_1\text{.}
 \end{equation*}
 </div>
-<p class="continuation">For each of the following matrices, find a sequence of row operations that transforms the matrix to the identity \(I\text{.}\) Write the matrices \(E_j\) that perform the steps and use them to find \(A^{-1}\text{.}\)</p>
+<p class="continuation">For each of the following matrices, find a sequence of row operations that transforms the matrix to the identity <span class="process-math">\(I\text{.}\)</span> Write the matrices <span class="process-math">\(E_j\)</span> that perform the steps and use them to find <span class="process-math">\(A^{-1}\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-1579"><div class="displaymath" id="p-2338">
+<li id="li-1695"><div class="displaymath process-math" data-contains-math-knowls="" id="p-2501">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 0 \amp 2 \amp 0 \\
@@ -942,7 +996,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div></li>
-<li id="li-1580"><div class="displaymath" id="p-2339">
+<li id="li-1696"><div class="displaymath process-math" data-contains-math-knowls="" id="p-2502">
 \begin{equation*}
 A = \left[\begin{array}{rrrr}
 1 \amp 0 \amp 0 \amp 0 \\
@@ -952,7 +1006,7 @@ A = \left[\begin{array}{rrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div></li>
-<li id="li-1581"><div class="displaymath" id="p-2340">
+<li id="li-1697"><div class="displaymath process-math" data-contains-math-knowls="" id="p-2503">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 1 \amp 1 \amp 1 \\
@@ -961,67 +1015,90 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div></li>
-</ol></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-2349">Determine whether the following statements are true or false and explain your reasoning.</p>
+</ol></article><article class="exercise exercise-like" id="exercise-87"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-2512">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix.</p>
 <ol class="lower-alpha">
-<li id="li-1588"><p id="p-2350">If \(A\) is invertible, then the columns of \(A\) are linearly independent.</p></li>
-<li id="li-1589"><p id="p-2351">If \(A\) is a square matrix whose diagonal entries are all nonzero, then \(A\) is invertible.</p></li>
-<li id="li-1590"><p id="p-2352">If \(A\) is an invertible \(n\times n\) matrix, then the columns of \(A\) span \(\real^n\text{.}\)</p></li>
-<li id="li-1591"><p id="p-2353">If \(A\) is invertible, then there is a nontrivial solution to the homogeneous equation \(A\xvec =
-\zerovec\text{.}\)</p></li>
-<li id="li-1592"><p id="p-2354">If \(A\) is an \(n\times n\) matrix and the equation \(A\xvec = \bvec\) has a solution for every vector \(\bvec\text{,}\) then \(A\) is invertible.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-2367">Provide a justification for your response to the following questions.</p>
+<li id="li-1704"><p id="p-2513">Suppose that <span class="process-math">\(A^2 = AA\)</span> is invertible with inverse <span class="process-math">\(B\text{.}\)</span>  This means that <span class="process-math">\(A^2B = AAB = I\text{.}\)</span> Explain why <span class="process-math">\(A\)</span> must be invertible with inverse <span class="process-math">\(AB\text{.}\)</span></p></li>
+<li id="li-1705"><p id="p-2514">Suppose that <span class="process-math">\(A^{100}\)</span> is invertible with inverse <span class="process-math">\(B\text{.}\)</span>  Explain why <span class="process-math">\(A\)</span> is invertible.  What is <span class="process-math">\(A^{-1}\)</span> in terms of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-88"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-2521">Determine whether the following statements are true or false and explain your reasoning.</p>
 <ol class="lower-alpha">
-<li id="li-1603"><p id="p-2368">Suppose that \(A\) is a square matrix with two identical columns.  Can \(A\) be invertible?</p></li>
-<li id="li-1604"><p id="p-2369">Suppose that \(A\) is a square matrix with two identical rows.  Can \(A\) be invertible?</p></li>
-<li id="li-1605"><p id="p-2370">Suppose that \(A\) is an invertible matrix and that \(AB = AC\text{.}\)  Can you conclude that \(B = C\text{?}\)</p></li>
-<li id="li-1606"><p id="p-2371">Suppose that \(A\) is an invertible \(n\times
-n\) matrix.  What can you say about the span of the columns of \(A^{-1}\text{?}\)</p></li>
-<li id="li-1607"><p id="p-2372">Suppose that \(A\) is an invertible matrix and that \(B\) is row equivalent to \(A\text{.}\) Can you guarantee that \(B\) is invertible?</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-2385">Suppose that we start with the \(3\times3\) matrix \(A\) and perform the following sequence of row operations:</p>
+<li id="li-1710"><p id="p-2522">If <span class="process-math">\(A\)</span> is invertible, then the columns of <span class="process-math">\(A\)</span> are linearly independent.</p></li>
+<li id="li-1711"><p id="p-2523">If <span class="process-math">\(A\)</span> is a square matrix whose diagonal entries are all nonzero, then <span class="process-math">\(A\)</span> is invertible.</p></li>
+<li id="li-1712"><p id="p-2524">If <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix, then span of the columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\real^n\text{.}\)</span></p></li>
+<li id="li-1713"><p id="p-2525">If <span class="process-math">\(A\)</span> is invertible, then there is a nonzero solution to the homogeneous equation <span class="process-math">\(A\xvec =
+\zerovec\text{.}\)</span></p></li>
+<li id="li-1714"><p id="p-2526">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and the equation <span class="process-math">\(A\xvec = \bvec\)</span> has a solution for every vector <span class="process-math">\(\bvec\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-89"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-2539">Provide a justification for your response to the following questions.</p>
+<ol class="lower-alpha">
+<li id="li-1725"><p id="p-2540">Suppose that <span class="process-math">\(A\)</span> is a square matrix with two identical columns.  Can <span class="process-math">\(A\)</span> be invertible?</p></li>
+<li id="li-1726"><p id="p-2541">Suppose that <span class="process-math">\(A\)</span> is a square matrix with two identical rows.  Can <span class="process-math">\(A\)</span> be invertible?</p></li>
+<li id="li-1727"><p id="p-2542">Suppose that <span class="process-math">\(A\)</span> is an invertible matrix and that <span class="process-math">\(AB = AC\text{.}\)</span>  Can you conclude that <span class="process-math">\(B = C\text{?}\)</span></p></li>
+<li id="li-1728"><p id="p-2543">Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times
+n\)</span> matrix.  What can you say about the span of the columns of <span class="process-math">\(A^{-1}\text{?}\)</span></p></li>
+<li id="li-1729"><p id="p-2544">Suppose that <span class="process-math">\(A\)</span> is an invertible matrix and that <span class="process-math">\(B\)</span> is row equivalent to <span class="process-math">\(A\text{.}\)</span> Can you guarantee that <span class="process-math">\(B\)</span> is invertible?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-90"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-2557">Suppose that we start with the <span class="process-math">\(3\times3\)</span> matrix <span class="process-math">\(A\text{,}\)</span> perform the following sequence of row operations:</p>
 <ol class="decimal">
-<li id="li-1618"><p id="p-2386">Multiply row 1 by -2 and add to row 2.</p></li>
-<li id="li-1619"><p id="p-2387">Multiply row 1 by 4 and add to row 3.</p></li>
-<li id="li-1620"><p id="p-2388">Scale row 2 by \(1/2\text{.}\)</p></li>
-<li id="li-1621"><p id="p-2389">Multiply row 2 by -1 and add to row 3.</p></li>
+<li id="li-1740"><p id="p-2558">Multiply row 1 by -2 and add to row 2.</p></li>
+<li id="li-1741"><p id="p-2559">Multiply row 1 by 4 and add to row 3.</p></li>
+<li id="li-1742"><p id="p-2560">Scale row 2 by <span class="process-math">\(1/2\text{.}\)</span></p></li>
+<li id="li-1743"><p id="p-2561">Multiply row 2 by -1 and add to row 3,</p></li>
 </ol>
-<p class="continuation">Suppose we arrive at the upper triangular matrix</p>
-<div class="displaymath">
+<p class="continuation">and arrive at the upper triangular matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 U = \left[\begin{array}{rrr}
 3 \amp 2 \amp -1 \\
 0 \amp 1 \amp 3 \\
 0 \amp 0 \amp -4 \\
-\end{array}\right]\text{.}
+\end{array}\right].
 \end{equation*}
 </div>
-<p class="continuation"><div class="sagecell-sage" id="sage-81"><script type="text/x-sage">
-</script></div></p>
+<p class="continuation"><pre class="ptx-sagecell sagecell-sage" id="sage-85"><script type="text/x-sage">
+</script></pre></p>
 <ol class="lower-alpha">
-<li id="li-1622"><p id="p-2390">Write the matrices \(E_1\text{,}\) \(E_2\text{,}\) \(E_3\text{,}\) and \(E_4\) that perform the four row operations.</p></li>
-<li id="li-1623"><p id="p-2391">Find the matrix \(E = E_4E_3E_2E_1\text{.}\)</p></li>
-<li id="li-1624"><p id="p-2392">We then have \(E_4E_3E_2E_1 A = EA = U\text{.}\)  Now that we have the matrix \(E\text{,}\) find the original matrix \(A = E^{-1}U\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="ex-right-inverse"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-2401">We defined an \(n\times n\) matrix to be invertible if there is a matrix \(B\) such that \(BA=I_n\text{.}\)  In this exercise, we will explain why \(B\) is also invertible and that \(AB = I\text{.}\)  This means that, if \(B=A^{-1}\text{,}\) then \(A = B^{-1}\text{.}\)</p>
+<li id="li-1744"><p id="p-2562">Write the matrices <span class="process-math">\(E_1\text{,}\)</span> <span class="process-math">\(E_2\text{,}\)</span> <span class="process-math">\(E_3\text{,}\)</span> and <span class="process-math">\(E_4\)</span> that perform the four row operations.</p></li>
+<li id="li-1745"><p id="p-2563">Find the matrix <span class="process-math">\(E = E_4E_3E_2E_1\text{.}\)</span></p></li>
+<li id="li-1746"><p id="p-2564">We then have <span class="process-math">\(E_4E_3E_2E_1 A = EA = U\text{.}\)</span>  Now that we have the matrix <span class="process-math">\(E\text{,}\)</span> find the original matrix <span class="process-math">\(A = E^{-1}U\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-91"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-2573">We say that two square matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <em class="emphasis">similar</em> if there is an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B = PAP^{-1}\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-1631"><p id="p-2402">Given the fact that \(BA = I_n\text{,}\) explain why the matrix \(B\) must also be a square \(n\times n\) matrix.</p></li>
-<li id="li-1632"><p id="p-2403">Suppose that \(\bvec\) is a vector in \(\real^n\text{.}\)  Since we have \(BA = I\text{,}\) it follows that \(B(A\bvec) = \bvec\text{.}\)  Use this to explain why the columns of \(B\) span \(\real^n\text{.}\)  What does this say about the pivot positions of \(B\text{?}\)</p></li>
-<li id="li-1633"><p id="p-2404">Explain why the equation \(B\xvec = \zerovec\) has only the trivial solution.</p></li>
-<li id="li-1634">
-<p id="p-2405">Beginning with the equation, \(BA=I\text{,}\) multiply both sides by \(B\) to obtain \(BAB = B\text{.}\)  We will rearrange this equation:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-BAB \amp {}={} B \\
-BAB - B\amp {}={} 0 \\
-B(AB-I) \amp {}={} 0\text{.} \\
-\end{aligned}
-\end{equation*}
-</div>
-<p class="continuation">Since the homogeneous equation \(B\xvec =\zerovec\) has only the trivial solution, explain why \(AB-I = 0\) and therefore, \(AB = I\text{.}\)</p>
+<li id="li-1753"><p id="p-2574">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, explain why <span class="process-math">\(A^2\)</span> and <span class="process-math">\(B^2\)</span> are similar as well.  In particular, if <span class="process-math">\(B = PAP^{-1}\text{,}\)</span> explain why <span class="process-math">\(B^2 =
+PA^2P^{-1}\text{.}\)</span></p></li>
+<li id="li-1754"><p id="p-2575">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar and <span class="process-math">\(A\)</span> is invertible, explain why <span class="process-math">\(B\)</span> is also invertible.</p></li>
+<li id="li-1755"><p id="p-2576">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar and both are invertible, explain why <span class="process-math">\(A^{-1}\)</span> and <span class="process-math">\(B^{-1}\)</span> are similar.</p></li>
+<li id="li-1756"><p id="p-2577">If <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(B\)</span> and <span class="process-math">\(B\)</span> is similar to <span class="process-math">\(C\text{,}\)</span> explain why <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(C\text{.}\)</span>  To begin, you may wish to assume that <span class="process-math">\(B =
+PAP^{-1}\)</span> and <span class="process-math">\(C = QBQ^{-1}\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-92"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-2588">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are two <span class="process-math">\(n\times n\)</span> matrices and that <span class="process-math">\(AB\)</span> is invertible.  We would like to explain why both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible.</p>
+<ol class="lower-alpha">
+<li id="li-1765">
+<p id="p-2589">We first explain why <span class="process-math">\(B\)</span> is invertible.</p>
+<ol class="decimal">
+<li id="li-1766"><p id="p-2590">Since <span class="process-math">\(AB\)</span> is invertible, explain why any solution to the homogeneous equation <span class="process-math">\(AB\xvec = \zerovec\)</span> is <span class="process-math">\(\xvec=\zerovec\text{.}\)</span></p></li>
+<li id="li-1767"><p id="p-2591">Use this fact to explain why any solution to <span class="process-math">\(B\xvec = \zerovec\)</span> must be <span class="process-math">\(\xvec=\zerovec\text{.}\)</span></p></li>
+<li id="li-1768"><p id="p-2592">Explain why <span class="process-math">\(B\)</span> must be invertible.</p></li>
+</ol>
 </li>
+<li id="li-1769">
+<p id="p-2593">Now we explain why <span class="process-math">\(A\)</span> is invertible.</p>
+<ol class="decimal">
+<li id="li-1770"><p id="p-2594">Since <span class="process-math">\(AB\)</span> is invertible, explain why the equation <span class="process-math">\(AB\xvec=\bvec\)</span> is consistent for every vector <span class="process-math">\(\bvec\text{.}\)</span></p></li>
+<li id="li-1771"><p id="p-2595">Using the fact that <span class="process-math">\(AB\xvec = A(B\xvec) =
+\bvec\)</span> is consistent for every <span class="process-math">\(\bvec\text{,}\)</span> explain why every equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent.</p></li>
+<li id="li-1772"><p id="p-2596">Explain why <span class="process-math">\(A\)</span> must be invertible.</p></li>
+</ol>
+</li>
+</ol></article><article class="exercise exercise-like" id="ex-right-inverse"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<p id="p-2615">We defined an <span class="process-math">\(n\times n\)</span> matrix to be invertible if there is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(AB=I_n\text{.}\)</span>  In this exercise, we will explain why it is also true that <span class="process-math">\(BA = I\text{,}\)</span> which is the statement of <a href="" class="xref" data-knowl="./knowl/proposition-inverse-inverse.html" title="Proposition 3.1.6">Proposition 3.1.6</a>. This means that, if <span class="process-math">\(B=A^{-1}\text{,}\)</span> then <span class="process-math">\(A = B^{-1}\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-1789"><p id="p-2616">Suppose that <span class="process-math">\(\xvec\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector.  Since <span class="process-math">\(AB=I\text{,}\)</span> explain why <span class="process-math">\(AB\xvec =
+\xvec\)</span> and use this to explain why the only vector for which <span class="process-math">\(B\xvec = \zerovec\)</span> is <span class="process-math">\(\xvec = \zerovec\text{.}\)</span></p></li>
+<li id="li-1790"><p id="p-2617">Explain why this implies that <span class="process-math">\(B\)</span> must be invertible.  We will call the inverse <span class="process-math">\(C\)</span> so that <span class="process-math">\(BC =
+I\text{.}\)</span></p></li>
+<li id="li-1791"><p id="p-2618">Beginning with <span class="process-math">\(AB = I\text{,}\)</span> explain why <span class="process-math">\(B(AB)C = BIC\)</span> and why this tells us that <span class="process-math">\(BA = I\text{.}\)</span></p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

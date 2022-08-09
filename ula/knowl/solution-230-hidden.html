@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:37-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:08-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>We have \(\xvec_{k+1} = A\xvec_k\) where \(A =
-\left[\begin{array}{rrr}
-0 \amp 0 \amp 8 \\
-\frac 12 \amp 0 \amp 0 \\
-0 \amp \frac 14 \amp 0 \\
-\end{array}\right]\text{.}\)</p></li>
-<li><p>We can use Sage to compute that \(A^3=I\text{.}\)</p></li>
-<li><p>The only eigenvalues of \(I\) are \(1\) so any eigenvalue \(\lambda\) of \(A\) must satisfy \(\lambda^3=1\text{.}\)</p></li>
-<li><p>Sage tells us that the eigenvalues are \(\lambda_1=1\) and \(\lambda_{2,3} =
--\frac12\pm\frac{\sqrt3}{2}i\text{.}\)</p></li>
-<li><p>The eigenvector \(\vvec_1=\threevec841\) satisfies \(A\vvec_1 = \vvec_1\) so it is unchanged.  The complex eigenvalues cause a \(120^\circ\) rotation about the axis defined by \(\vvec_1\text{.}\)  Therefore, the trajectories lie on circles about this line.</p></li>
-<li><p>After every three years, the populations return to their initial values.</p></li>
-<li><p>If \(\xvec_0=\vvec_1 = \threevec841\text{,}\) we know that \(A\xvec_0 = \xvec_0\) so this population vector is unchanged.</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li>
+<p>We have the relationships</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{alignedat}{4}
+J_{k+1} \amp {}={} \amp \amp \amp \amp \amp 0.4 A_k \\
+Y_{k+1} \amp {}={} \amp 0.8 J_k \\
+A_{k+1} \amp {}={} \amp \amp \amp 0.9Y_k \amp {}+{} \amp
+0.8A_k\text{.} \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li><p>The matrix <span class="process-math">\(A=\left[\begin{array}{rrr}
+0 \amp 0 \amp 0.4 \\
+0.8 \amp 0 \amp 0 \\
+0 \amp 0.9 \amp 0.8 \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p>There is a real eigenvalue <span class="process-math">\(\lambda_1=1.058\text{,}\)</span> which is larger than <span class="process-math">\(1\text{.}\)</span>  The other eigenvalues are complex <span class="process-math">\(\lambda_{2,3} = -0.128\pm 0.506i\)</span> and satisfy <span class="process-math">\(|\lambda_{2,3}| \lt 1\text{.}\)</span>  Therefore, the complex eigenvalues will pull vectors in toward the line defined by the eigenvector <span class="process-math">\(\vvec_1\text{.}\)</span>  After a long time, the population is <span class="process-math">\(\xvec_k\approx
+c_1(1.058)^k\vvec_1\text{.}\)</span>  All the populations grow annually by a factor of <span class="process-math">\(1.058\)</span> or 5.8%, and there are approximately 38 juveniles and 29 yearlings for every 100 adults.</p></li>
+<li><p>We now have eigenvalues <span class="process-math">\(\lambda_1=1.011\)</span> and <span class="process-math">\(\lambda_{2,3} = -0.106\pm 0.450i\text{.}\)</span>  This shows that the growth rate is lowered to <span class="process-math">\(1.011\)</span> or <span class="process-math">\(1.1\)</span>% annually.</p></li>
+<li><p>The first eigenvalue is <span class="process-math">\(\lambda_1=0.957\)</span> so the growth rate is about <span class="process-math">\(96\)</span>%.  In other words, the population decreases every year.</p></li>
+<li><p>To be stable, we need the first eigenvalue <span class="process-math">\(\lambda_1=1\text{.}\)</span>  If we experiment with different birth rates, we see that a birth rate of about 0.278 gives this eigenvalue.</p></li>
 </ol></div></body>
 </html>

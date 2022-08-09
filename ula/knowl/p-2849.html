@@ -1,45 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:09-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:48-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>The Sage cell below defines the matrix <code class="code-inline tex2jax_ignore">S</code> whose columns are the vectors in the basis \(\scal\) as well as the matrix <code class="code-inline tex2jax_ignore">C</code> whose columns form the basis \(\ccal\) used in the Fourier Cosine Transform.</p>
-<div class="sagecell-sage" id="sage-93"><script type="text/x-sage">sinmat = []
-cosmat = []	  
-for i in range(4):
-    for j in range(1,5):
-        sinmat.append(sin((2*i+1)*j*pi/8.0))
-        cosmat.append(cos((2*i+1)*(j-1)*pi/8.0))
-S = matrix(4,4,sinmat).numerical_approx()    
-C = matrix(4,4,cosmat).numerical_approx()
-</script></div>
-<p>In the \(8\times8\) block of luminance values we considered in this section, the first column begins with the four entries 176, 181, 165, and 139, as seen in <a data-knowl="./knowl/fig-jpeg-block-luminance.html" title="Figure 3.3.6">Figure 3.3.6</a>.  These form the vector \(\xvec=\fourvec{176}{181}{165}{139}\text{.}\)  Find both \(\coords{\xvec}{\scal}\) and \(\coords{\xvec}{\ccal}\text{.}\)</p>
-</li>
-<li><p>Write a sentence or two comparing the values for the Fourier Sine coefficients \(\coords{\xvec}{\scal}\) and the Fourier Cosine coefficients \(\coords{\xvec}{\ccal}\text{.}\)</p></li>
-<li><p>Suppose now that \(\xvec=\fourvec{100}{100}{100}{100}\text{.}\) Find the Fourier Sine coefficients \(\coords{\xvec}{\scal}\) and the Fourie Cosine coefficients \(\coords{\xvec}{\ccal}\text{.}\)</p></li>
-<li><p>Write a few sentences explaining why we use the Fourier Cosine Transform in the JPEG compression algorithm rather than the Fourier Sine Transform.</p></li>
-</ol>
-<span class="incontext"><a href="sec-jpeg.html#p-2849">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Yes</p>
+<span class="incontext"><a href="sec-bases.html#p-2849" class="internal">in-context</a></span>
 </body>
 </html>

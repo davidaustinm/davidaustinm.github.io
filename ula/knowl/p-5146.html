@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:52-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:18-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We see that neither the power method nor the inverse power method converge.</p>
-<span class="incontext"><a href="sec-power-method.html#p-5146">in-context</a></span>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>In fact, solving an equation with an <span class="process-math">\(n\times n\)</span> triangular matrix requires approximately <span class="process-math">\(\frac 12 n^2\)</span> operations. Once we have the factorization <span class="process-math">\(A=LU\text{,}\)</span> we solve the equation <span class="process-math">\(A\xvec=\bvec\)</span> by solving two equations involving triangular matrices, which requires about <span class="process-math">\(n^2\)</span> operations. For example, if <span class="process-math">\(A\)</span> is a <span class="process-math">\(1000\times1000\)</span> matrix, we solve the equation <span class="process-math">\(A\xvec = \bvec\)</span> using about one million steps.  The compares with roughly a billion operations needed to perform Gaussian elimination, which represents a significant savings.  Of course, we have to first find the <span class="process-math">\(LU\)</span> factorization of <span class="process-math">\(A\)</span> and this requires roughly the same amount of work as performing Gaussian elimination. However, once we have the <span class="process-math">\(LU\)</span> factorization, we can use it to solve <span class="process-math">\(A\xvec=\bvec\)</span> for different right hand sides <span class="process-math">\(\bvec\text{.}\)</span></p>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-5146" class="internal">in-context</a></span>
 </body>
 </html>

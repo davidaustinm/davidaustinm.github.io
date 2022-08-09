@@ -1,21 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:55-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:39-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>True.  If \(\xvec\) is a solution to \(A\xvec=\bvec\text{,}\) then the components of \(\xvec\) are weights whose linear combination is \(\bvec\text{.}\)</p></li>
-<li><p>True, because \(x=\fourvec{1}{0}{\vdots}{0}\) is a solution.</p></li>
-<li><p>False.  The span could be a smaller set.</p></li>
-<li><p>True.  This is the definition of the span.</p></li>
-<li><p>False.  The span is a set of vectors in \(\real^{8032}\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p><span class="process-math">\(\laspan{\vvec}\)</span> is the line defined by <span class="process-math">\(\vvec\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\laspan{\evec_1,\evec_2}\)</span> is the <span class="process-math">\(xy\)</span>-plane.</p></li>
+<li><p>For the linear system to be consistent, we need <span class="process-math">\(b_3=0\text{,}\)</span> which means that the third coordinate of the vector <span class="process-math">\(\bvec\)</span> must be 0 for <span class="process-math">\(\bvec\)</span> to be in <span class="process-math">\(\laspan{\evec_1,\evec_2}\text{.}\)</span>  In other words, <span class="process-math">\(\bvec\)</span> must lie in the <span class="process-math">\(xy\)</span>-plane.</p></li>
+<li>
+<p>We consider the two cases.</p>
+<ol class="decimal">
+<li>
+<p>We have the augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 1 \\
+1 \amp 2 \amp -2 \\
+-1 \amp 1 \amp 4
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows that the system is inconsistent.  Therefore, <span class="process-math">\(\bvec\)</span> is not in <span class="process-math">\(\laspan{\vvec_1, \vvec_2}\text{.}\)</span></p>
+</li>
+<li>
+<p>We have the augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp -2 \\
+1 \amp 2 \amp 0 \\
+-1 \amp 1 \amp 3
+\end{array}\right]
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp -2 \\
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows that the system is consistent.  Therefore, <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\vvec_1, \vvec_2}\text{.}\)</span></p>
+</li>
+<li><p>The span is the plane in <span class="process-math">\(\real^3\)</span> defined by <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+</ol>
+</li>
+<li>
+<p>We have the reduced row echelon form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 1 \\
+1 \amp 2 \amp -2 \\
+-1 \amp 1 \amp 4
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Since there is a pivot position in every row, this says that every equation <span class="process-math">\(A\xvec=\bvec\)</span> is consistent. The <span class="process-math">\(\laspan{\vvec_1, \vvec_2, \vvec_3}\)</span> is therefore <span class="process-math">\(\real^3\text{.}\)</span></p>
+</li>
+<li><p>There must be a pivot position in every row.</p></li>
+<li><p>If a set of vectors spans <span class="process-math">\(\real^3\text{,}\)</span> its corresponding matrix must have a pivot position in every row. Because there can be at most one pivot position in a column, there must be at least three columns. Therefore, the smallest number of vectors that span <span class="process-math">\(\real^3\)</span> is three.</p></li>
 </ol></div></body>
 </html>

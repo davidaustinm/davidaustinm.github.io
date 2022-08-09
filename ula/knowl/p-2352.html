@@ -1,19 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(A\) is an invertible \(n\times n\) matrix, then the columns of \(A\) span \(\real^n\text{.}\)</p>
-<span class="incontext"><a href="sec-matrix-inverse.html#p-2352">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Suppose that <span class="process-math">\(A = \begin{bmatrix}
+3 \amp -2 \\
+1 \amp -1 \\
+\end{bmatrix}
+\text{.}\)</span>  To find an inverse <span class="process-math">\(B\text{,}\)</span> we write its columns as <span class="process-math">\(B = \begin{bmatrix}\bvec_1 \amp \bvec_2
+\end{bmatrix}\)</span> and require that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+AB \amp = I \\
+\begin{bmatrix}
+A\bvec_1 \amp A\bvec_2
+\end{bmatrix}
+\amp = 
+\begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix}.
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">In other words, we can find the columns of <span class="process-math">\(B\)</span> by solving the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A\bvec_1 = \twovec10,~~~
+A\bvec_2 = \twovec01.
+\end{equation*}
+</div>
+<p class="continuation">Solve these equations to find <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\text{.}\)</span>  Then write the matrix <span class="process-math">\(B\)</span> and verify that <span class="process-math">\(AB=I\text{.}\)</span>  This is enough for us to conclude that <span class="process-math">\(B\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-76"><script type="text/x-sage">
+</script></pre></p>
+<span class="incontext"><a href="sec-matrix-inverse.html#p-2352" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:43-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:12-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">4.5.5.7.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.5.4.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>If both \(A\) and \(B\) are stochastic, all the entries of both \(A\) and \(B\) are nonnegative. Therefore, the entries of \(AB\) are also nonnegative.  In addition, we have \(S(AB) = (SA)B = SB = S\text{,}\) which shows that \(AB\) is stochastic.</p></li>
-<li><p>This follows from the previous part, which shows that the product of two stochastic matrices is stochastic.</p></li>
-<li>
-<p>If \(\qvec\) is a steady-state vector for \(A\text{,}\) it will be a steady-state vector for \(A^2\) as well because \(A^2\qvec = A\qvec=\qvec\text{.}\)</p>
-<p>However, it is possible that there are steady-state vectors of \(A^2\) that are not steady-state vectors of \(A\text{.}\)  If the eigenvalues of \(A\) are \(\lambda_j\text{,}\) remember that the eigenvalues of \(A^2\) are \(\lambda_j^2\text{.}\)  Therefore, \(A^2\) can have more steady-state vectors if \(\lambda_j=-1\) is an eigenvalue of \(A\text{,}\) which leads to \(\lambda_j^2=1\text{.}\)  For instance, \(A=\mattwo0110\) has a unique steady-state vector \(\twovec{\frac12}{\frac12}\) whereas every probability vector \(\twovec{p}{1-p}\) is a steady-state vector for \(A^2=\mattwo1001\text{.}\)</p>
-</li>
+<li><p>We find that <span class="process-math">\(C\)</span> has eigenvalues <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2 = -\frac12\)</span> with eigenvectors <span class="process-math">\(\vvec_1=\twovec12\)</span> and <span class="process-math">\(\vvec_2 =
+\twovec{-1}{1}\text{.}\)</span>  Therefore, the unique steady-state vector is <span class="process-math">\(\qvec=\twovec{\frac13}{\frac23}\)</span> for this is the only probability vector in the eigenspace <span class="process-math">\(E_1\text{.}\)</span></p></li>
+<li><p>We see that the Markov chain converges to the steady-state vector <span class="process-math">\(\qvec=\twovec{\frac13}{\frac23}\)</span> as the Perron-Frobenius theorem tells us to expect.</p></li>
+<li><p>Another Markov chain converges to the unique steady-state vector <span class="process-math">\(\qvec=\twovec{\frac13}{\frac23}\)</span> as the Perron-Frobenius theorem tells us to expect.</p></li>
+<li><p>The matrix <span class="process-math">\(D\)</span> is not positive because the first two entries in the bottom row of any power <span class="process-math">\(D^k\)</span> are zero.</p></li>
+<li><p>The eigenvalues are <span class="process-math">\(\lambda_1=1\text{,}\)</span> which has multiplicity two, and <span class="process-math">\(\lambda_2=-1\text{.}\)</span>  The eigenspace <span class="process-math">\(E_1\)</span> is two-dimensional and spanned by the probability vectors <span class="process-math">\(\qvec_1=\threevec{\frac13}{\frac23}0\)</span> and <span class="process-math">\(\qvec_2=\threevec001\text{.}\)</span>  Both of these vectors are steady-state vectors so there is not a unique steady-state vector.</p></li>
+<li><p>If <span class="process-math">\(\xvec_0=\threevec100\text{,}\)</span> then the Markov chain converges to <span class="process-math">\(\qvec_1=\threevec{\frac13}{\frac23}0\text{.}\)</span>  If <span class="process-math">\(\xvec_0=\threevec001\text{,}\)</span> then the Markov chain converges to <span class="process-math">\(\qvec_1=\threevec001\text{.}\)</span></p></li>
+<li><p>Because <span class="process-math">\(C\)</span> is a positive matrix, the Perron-Frobenius theorem tells us that there is a unique steady-state vector to which any Markov chain will converge.  Because <span class="process-math">\(D\)</span> is not a positive matrix, the Perron-Frobenius theorem does not tell us anything, and, indeed, we see that there is not a unique steady-state vector and different Markov chains can converge to different vectors.</p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-stochastic.html#solution-244">in-context</a></span>
+<span class="incontext"><a href="sec-stochastic.html#solution-244" class="internal">in-context</a></span>
 </body>
 </html>

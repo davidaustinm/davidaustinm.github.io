@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:17-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:54-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.5.5.9.1</span>.</h6>
-<p>We know that \(\det A = -6\) so \(A\) is invertible. Therefore, \(\nul(A)=\{\zerovec\}\) and \(\col(A)=\real^3\text{.}\)</p>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.3.1</span><span class="period">.</span>
+</h4>
+<ol class="lower-alpha">
+<li>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=\left[\begin{array}{rrr}
+1 \amp 3 \amp -1 \\
+-2 \amp 0 \amp -4 \\
+1 \amp 2 \amp 0 \\
+\end{array}\right]\sim
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 2 \\
+0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{,}
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-subspaces.html#solution-173">in-context</a></span>
+<p class="continuation">which shows that the vectors are not linearly independent and, in fact, that <span class="process-math">\(\vvec_3 = 2\vvec_1 -
+\vvec_2\text{.}\)</span>  As we've seen several times, this means that any linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> can be written as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> alone and hence that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\col(A)=\laspan{\vvec_1,\vvec_2,\vvec_3} =
+\laspan{\vvec_1,\vvec_2}.
+\end{equation*}
+</div>
+</li>
+<li><p>The reduced row echelon form of <span class="process-math">\(A\)</span> shows that <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are linearly independent. We also know that the span of these two vectors is <span class="process-math">\(\col(A)\text{.}\)</span>  Therefore, they form a basis for <span class="process-math">\(\col(A)\text{.}\)</span></p></li>
+<li><p>Denoting the columns of <span class="process-math">\(B\)</span> as <span class="process-math">\(\vvec_i\text{,}\)</span> the reduced row echelon form shows that <span class="process-math">\(\vvec_2=2\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_3=0\vvec_1\text{,}\)</span> and <span class="process-math">\(\vvec_4 = -3\vvec_1\text{.}\)</span> Therefore, any linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> can be written as a linear combination of <span class="process-math">\(\vvec_1\)</span> alone.  This means that <span class="process-math">\(\vvec_1\)</span> forms a basis for <span class="process-math">\(\col(A)\text{,}\)</span> which is then the line consisting of all scalar multiples of <span class="process-math">\(\vvec_1\text{.}\)</span> p</p></li>
+<li><p>The number of vectors in a basis of <span class="process-math">\(\col(A)\)</span> equals the number of pivot positions.  Therefore, <span class="process-math">\(\dim~\col(A)\)</span> equals the number of pivot positions in <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p>As the examples in this activity illustrate, the columns of <span class="process-math">\(A\)</span> that contain pivot positions form a basis for <span class="process-math">\(\col(A)\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(A\)</span> is invertible, then it has a pivot position in every row, which means that the span of the columns is <span class="process-math">\(\real^9\text{.}\)</span>  Therefore, <span class="process-math">\(\col(A) =
+\real^9\text{.}\)</span></p></li>
+<li><p>Since <span class="process-math">\(\col(A)=\real^8\text{,}\)</span> we know that every 8-dimensional vector <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\col(A)\text{.}\)</span> This means that <span class="process-math">\(\bvec\)</span> is in the span of the columns of <span class="process-math">\(A\)</span> so the equation <span class="process-math">\(A\xvec = \bvec\)</span> must be consistent.</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-subspaces.html#solution-173" class="internal">in-context</a></span>
 </body>
 </html>

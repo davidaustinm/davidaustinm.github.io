@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:45-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:13-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When the equations are written in their original order and we multiply the first equation by 10000 and subtract from the second, we find</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>To make sense of this, suppose that there are <span class="process-math">\(N\)</span> pages on our internet.  The matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{aligned}
-(1-10000)y \amp {}={}2-10000 \\
--9999 y \amp {}={} -9998 \\
--10000y\amp {}\approx{} -10000 \\
-y \amp {}\approx{} 1.00\text{.} \\
-\end{aligned}
+H_n = \left[\begin{array}{rrrr}
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+\frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
+\end{array}\right]
 \end{equation*}
 </div>
-<span class="incontext"><a href="sec-gaussian-revisited.html#p-4881">in-context</a></span>
+<p class="continuation">is a positive stochastic matrix describing a process where we can move from any page to another with equal probability.  To form the modified Google matrix <span class="process-math">\(G'\text{,}\)</span> we choose a parameter <span class="process-math">\(\alpha\)</span> that is used to mix <span class="process-math">\(G\)</span> and <span class="process-math">\(H_n\)</span> together;  that is, <span class="process-math">\(G'\)</span> is the positive stochastic matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+G' = \alpha G +(1-\alpha)H_n\text{.}
+\end{equation*}
+</div>
+<p class="continuation">In practice, it is thought that Google uses a value of <span class="process-math">\(\alpha=0.85\)</span> (Google doesn't publish this number as it is a trade secret) so that we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+G' = 0.85 G + 0.15H_n\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Intuitively, this means that an Internet user will randomly follow a link from one page to another 85% of the time and will randomly jump to any other page on the Internet 15% of the time.  Since the matrix <span class="process-math">\(G'\)</span> is positive, the Perron-Frobenius theorem tells us that any Markov chain will converge to a unique steady-state vector that we call the PageRank vector.</p>
+<span class="incontext"><a href="sec-stochastic.html#p-4881" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:51-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:18-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This Sage cell has the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> that we have developed in this section.  After evaluating this cell, these commands will be available in any other cell on this page. <div class="sagecell-sage" id="sage-139"><script type="text/x-sage">def power(A, x, N):
-    for i in range(N):
-        x = A*x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print m, x
-def find_closest_eigenvalue(A, s, x, N):
-    B = A-s*identity_matrix(A.nrows())
-    for i in range(N):
-        x = B \ x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print 1/float(m)+s, x
-def inverse_power(A, x, N):
-    find_closest_eigenvalue(A, 0, x, N)
-</script></div></p>
-<span class="incontext"><a href="sec-power-method.html#p-5115">in-context</a></span>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>In fact, we find the same value for <span class="process-math">\(y\)</span> when we interchange the equations.  Here we multiply the first equation by 0.0001 and subtract from the second equation.  We then find</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+(1-0.0001)y \amp {}={}2-0.0001 \\
+-0.9999 y \amp {}={} -0.9998 \\
+-y\amp {}\approx{} -1.00 \\
+y \amp {}\approx{} 1.00\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-5115" class="internal">in-context</a></span>
 </body>
 </html>

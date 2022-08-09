@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:05-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:47-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.2.7</span>.</h6>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
+</h4>
 <p>Suppose we work for a company that records its quarterly revenue, in millions of dollars, as:</p>
-<figure class="figure-like"><table>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.10<span class="period">.</span></span><span class="space"> </span>A company's quarterly revenue</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b1 r0 l0 t3 lines">Quarter</td>
 <td class="c m b1 r0 l0 t3 lines">Revenue</td>
@@ -36,89 +39,114 @@
 <td class="c m b2 r0 l0 t0 lines">4</td>
 <td class="c m b2 r0 l0 t0 lines">8.2</td>
 </tr>
-</table>
-<figcaption><span class="type">Table</span> <span class="codenumber">3.2.8.</span> Quarterly revenue</figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
-<p>Rather than using a table to record the data, we could display it in a graph or write it as a vector in \(\real^4\text{:}\)</p>
-<div class="displaymath">
+</table></div></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;">
+<p>Rather than using a table to record the data, we could display it in a graph or write it as a vector in <span class="process-math">\(\real^4\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \xvec=\fourvec{10.3}{13.1}{7.5}{8.2}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/basis-revenue.svg" role="img" class="contained"></div>
 </div></div>
-<p>Let's now consider a new basis \(\bcal\) for \(\real^4\) using vectors</p>
-<div class="displaymath">
+<p>Let's consider a new basis <span class="process-math">\(\bcal\)</span> for <span class="process-math">\(\real^4\)</span> using vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-basis-revenue-elements.html">
 \begin{equation*}
-\vvec_1=\fourvec{1}{1}{1}{1},
-\vvec_2=\fourvec{1}{1}{-1}{-1},
-\vvec_3=\fourvec{1}{-1}{0}{0},
+\vvec_1=\fourvec{1}{1}{1}{1},~~~
+\vvec_2=\fourvec{1}{1}{-1}{-1},~~~
+\vvec_3=\fourvec{1}{-1}{0}{0},~~~
 \vvec_4=\fourvec{0}{0}{1}{-1}\text{.}
 \end{equation*}
 </div>
-<p>We may view these basis elements graphically, as in <a data-knowl="./knowl/fig-basis-revenue-elements.html" title="Figure 3.2.9">Figure 3.2.9</a></p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/basis-revenue-elements.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">3.2.9.</span> A representation of the basis elements of \(\bcal\text{.}\)</figcaption></figure><p>As we wish to convert our revenue vectors into the coordinates given by \(\bcal\text{,}\) we form the matrices:</p>
-<div class="displaymath">
+<p class="continuation">We may view these basis elements graphically, as in <a href="" class="xref" data-knowl="./knowl/fig-basis-revenue-elements.html" title="Figure 3.2.11">Figure 3.2.11</a></p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/basis-revenue-elements.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.11<span class="period">.</span></span><span class="space"> </span>A representation of the basis elements of <span class="process-math">\(\bcal\text{.}\)</span></figcaption></figure><p>To convert our revenue vectors into the coordinates given by <span class="process-math">\(\bcal\text{,}\)</span> we form the matrices:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-C_{\bcal} =
+P_{\bcal} =
 \left[\begin{array}{rrrr}
 1 \amp 1 \amp 1 \amp 0 \\
 1 \amp 1 \amp -1 \amp 0 \\
 1 \amp -1 \amp 0 \amp 1 \\
 1 \amp -1 \amp 0 \amp -1 \\
-\end{array}\right],
-C_{\bcal}^{-1} =
+\end{array}\right],~~~
+P_{\bcal}^{-1} =
 \left[\begin{array}{rrrr}
 \frac14 \amp \frac14 \amp \frac14 \amp \frac14 \\
 \frac14 \amp \frac14 \amp -\frac14 \amp -\frac14 \\
 \frac12 \amp -\frac12 \amp 0 \amp 0 \\
 0 \amp 0 \amp \frac12 \amp -\frac12 \\
-\end{array}\right]
+\end{array}\right].
 \end{equation*}
 </div>
-<p>and compute</p>
-<div class="displaymath">
+<p class="continuation">In particular, if the revenue vector is <span class="process-math">\(\xvec =
+\fourvec{x_1}{x_2}{x_3}{x_4}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\coords{\xvec}{\bcal} = C_{\bcal}^{-1} \xvec =
-C_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
-\fourvec{9.775}{1.925}{-1.400}{-0.350}\text{.}
+\coords{\xvec}{\bcal} = \cfourvec
+{\frac14 x_1 + \frac14 x_2 + \frac14 x_3 + \frac14 x_4}
+{\frac14 x_1 + \frac14 x_2 - \frac14 x_3 - \frac14 x_4}
+{\frac12 x_1 - \frac12 x_2}
+{\frac12 x_3 - \frac12 x_4}.
 \end{equation*}
 </div>
-<p>This means that our revenue vector is</p>
-<div class="displaymath">
+<p class="continuation">Notice that the first component of <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> is the average of the components of <span class="process-math">\(\xvec\text{.}\)</span></p>
+<p>For our particular revenue vector <span class="process-math">\(\xvec = 
+\fourvec{10.3}{13.1}{7.5}{8.2}\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\coords{\xvec}{\bcal} = P_{\bcal}^{-1} \xvec =
+P_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
+\fourvec{9.775}{1.925}{-1.400}{-0.350}.
+\end{equation*}
+</div>
+<p class="continuation">This means that our revenue vector is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \xvec = 9.775 \vvec_1 + 1.925 \vvec_2 - 1.400\vvec_3 -
 0.350 \vvec_4\text{.}
 \end{equation*}
 </div>
-<p>We will think about what these coordinates mean by adding the basis vectors together one at a time.</p>
+<p class="continuation">We will think about what these terms mean by adding them together one at a time.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-2490">The first coordinate gives us the average revenue over the year: \(9.775\vvec_1\text{.}\)</p></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue-approx-1.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><p id="p-2491">Adding in the second component shows how the averages in the first and second halves of year differ from the annual average: \(9.775\vvec_1 + 1.925\vvec_2\text{.}\)</p></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue-approx-2.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
-<p id="p-2492">The third and fourth components break down the behavior in the first and second halves of the year into quarters:</p>
-<div class="displaymath">
+<div class="sbspanel top" style="width:47.3684210526316%;">
+<p id="p-2700">The first term,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{aligned}
-\xvec = \amp 9.775 \vvec_1 + 1.925 \vvec_2 \\
-\amp - 1.400\vvec_3 -
-0.350 \vvec_4\text{.}
-\end{aligned}
+9.775\vvec_1 = \fourvec{9.775}{9.775}{9.775}{9.775},
+\end{equation*}
+</div>
+<p class="continuation">gives us the average revenue over the year.</p>
+</div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/basis-revenue-approx-1.svg" role="img" class="contained"></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;">
+<p id="p-2701">The average revenue for the first two quarters is 11.7, which is 1.925 million dollars above the yearly average.  Similarly, the average revenue for the last two quarters is 1.925 million dollars below the yearly average.  This is recorded by the second term</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1.925\vvec_2 =
+\cfourvec{1.925}{1.925}{-1.925}{-1.925}.
 \end{equation*}
 </div>
 </div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/basis-revenue-approx-3.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/basis-revenue-approx-2.svg" role="img" class="contained"></div>
 </div></div>
-<p>If we write \(\coords{\xvec}{\bcal} =
-\fourvec{c_1}{c_2}{c_3}{c_4}\text{,}\) we see that the coefficient \(c_1\) measures the average revenue over the year, \(c_2\) measures the deviation from the annual average in the first and second halves of the year, and \(c_3\) measures how the revenue in the first and second quarter differs from the average in the first half of the year.  In this way, the coefficients provide a view of the revenue over different time scales, from an annual summary to a finer view of quarterly behavior.</p>
-<p>This basis is sometimes called a <em class="emphasis">Haar</em> wavelet basis, and the change of basis is known as a <em class="emphasis">Haar</em> wavelet transform.  In the next section, we will see how this basis provides a useful way to store digital images.</p></article><span class="incontext"><a href="sec-bases.html#example-wavelet-basis">in-context</a></span>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;">
+<p id="p-2702">Finally, the first quarter's revenue is 1.400 million dollars below the average over the first two quarters and the second quarter's revenue is 1.400 million dollars above that average.  This, and the corresponding data for the last two quarters, is captured by the last two terms:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-1.400\vvec_3 - 0.350\vvec_4 = \cfourvec
+{-1.400}{1.400}{-0.350}{0.350},
+\end{equation*}
+</div>
+</div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/basis-revenue-approx-3.svg" role="img" class="contained"></div>
+</div></div>
+<p>If we write <span class="process-math">\(\coords{\xvec}{\bcal} =
+\fourvec{c_1}{c_2}{c_3}{c_4}\text{,}\)</span> we see that the coefficient <span class="process-math">\(c_1\)</span> measures the average revenue over the year, <span class="process-math">\(c_2\)</span> measures the deviation from the annual average in the first and second halves of the year, and <span class="process-math">\(c_3\)</span> measures how the revenue in the first and second quarter differs from the average in the first half of the year.  In this way, the coefficients provide a view of the revenue over different time scales, from an annual summary to a finer view of quarterly behavior.</p>
+<p>This basis is sometimes called a <em class="emphasis">Haar</em> wavelet basis, and the change of basis is known as a <em class="emphasis">Haar</em> wavelet transform.  In the next section, we will see how this basis provides a useful way to store digital images.</p></article><span class="incontext"><a href="sec-bases.html#example-wavelet-basis" class="internal">in-context</a></span>
 </body>
 </html>

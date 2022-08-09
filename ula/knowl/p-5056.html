@@ -1,62 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:49-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:17-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's begin by considering the matrix \(A = \left[\begin{array}{rr}
-0.5 \amp 0.2 \\
-0.4 \amp 0.7 \\
-\end{array}\right]\) and the initial vector \(\xvec_0 = \twovec{1}{0}\text{.}\) <div class="sagecell-sage" id="sage-135"><script type="text/x-sage">
-</script></div></p>
-<ol class="lower-alpha">
-<li><p>Compute the vector \(\xvec_1 =
-A\xvec_0\text{.}\)</p></li>
-<li><p>Find \(m_1\text{,}\) the component of \(\xvec_1\) that has the largest absolute value.  Then form \(\overline{\xvec}_1 =
-\frac 1{m_1} \xvec_1\text{.}\)  Notice that the component having the largest absolute value of \(\overline{\xvec}_1\) is \(1\text{.}\)</p></li>
-<li><p>Find the vector \(\xvec_2 = A\overline{\xvec}_1\text{.}\) Identify the component \(m_2\) of \(\xvec_2\) having the largest absolute value.  Then form \(\overline{\xvec}_2 =
-\frac1{m_2}\overline{\xvec}_1\) to obtain a vector in which the component with the largest absolute value is \(1\text{.}\)</p></li>
-<li>
-<p>The Sage cell below defines a function that implements the power method.  Define the matrix \(A\) and initial vector \(\xvec_0\) below.  The command <code class="code-inline tex2jax_ignore">power(A, x0,	N)</code> will print out the multiplier \(m\) and the vectors \(\overline{\xvec}_k\) for \(N\) steps of the power method. <div class="sagecell-sage" id="sage-136"><script type="text/x-sage">def power(A, x, N):
-    for i in range(N):
-        x = A*x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (m, x)
-
-### Define the matrix A and initial vector x0 below
-A =
-x0 =
-power(A, x0, 20)
-</script></div></p>
-<p>How does this computation identify an eigenvector of the matrix \(A\text{?}\)</p>
-</li>
-<li><p>What is the corresponding eigenvalue of this eigenvector?</p></li>
-<li><p>How do the values of the multipliers \(m_k\) tell us the eigenvalue associated to the eigenvector we have found?</p></li>
-<li><p>Consider now the matrix \(A=\left[\begin{array}{rr}
--5.1 \amp 5.7 \\
--3.8 \amp 4.4 \\
-\end{array}\right]
-\text{.}\) Use the power method to find the dominant eigenvalue of \(A\) and an associated eigenvector.</p></li>
-</ol>
-<span class="incontext"><a href="sec-power-method.html#p-5056">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>After how many moves do we have a 90% chance of having arrived at square 6?</p>
+<span class="incontext"><a href="sec-stochastic.html#p-5056" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:05-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Most of the coefficients that measure changes are relatively small in absolute value.  The coefficient \(c_4\text{,}\) however, which measures the change in brightness between the fourth and fifth pixel, has a large absolute value.  This tells us that there is a large change in brightness between the fourth and fifth pixel, which points to a edge in the image.</p>
-<span class="incontext"><a href="sec-bases.html#p-2511">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>We use a scaling followed by replacement operations:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp \frac12 \\
+\end{array}\right],
+U_1 =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp -1 \\
+0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right],
+U_2 = \begin{bmatrix}
+1 \amp 0 \amp -1 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{bmatrix},
+U_3 = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This gives <span class="process-math">\(U_3U_2U_1SA = I\)</span> so that <span class="process-math">\(A^{-1} = U_3U_2U_1S =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 0 \\
+0 \amp 1 \amp -\frac12 \\
+0 \amp 0 \amp \frac12 \\
+\end{array}\right]
+\text{.}\)</span></p>
+<span class="incontext"><a href="sec-matrix-inverse.html#p-2511" class="internal">in-context</a></span>
 </body>
 </html>

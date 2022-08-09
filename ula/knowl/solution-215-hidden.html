@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:31-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:03-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>Vectors are expanded horizontally and compressed vertically.</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-power-a.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>Vectors are compressed both horizontally and vertically.</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-power-b.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>Vectors are expanded both horizontally and vertically.</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-power-c.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p>There are eigenvectors \(\vvec_1=\twovec11\) with \(\lambda_1 = 1.2\) and \(\vvec_2=\twovec{-1}1\) with \(\lambda_2=0.7\text{.}\)  Vectors are expanded in the direction of \(\vvec_1\) and compressed in the direction of \(\vvec_2\text{.}\)</p></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/ex-power-d.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><p>Because both eigenvalues have an absolute value smaller than \(1\text{,}\) vectors will be compressed in the direction of both eigenvectors and hence be pulled into the origin.</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>The matrix <span class="process-math">\(S=\mattwo r00r\)</span> has the geometric effect of scaling vectors uniformly by a factor of <span class="process-math">\(r\)</span> while the matrix <span class="process-math">\(R=\mattwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}\)</span> rotates vectors by <span class="process-math">\(\theta\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(a=b=1\)</span> so we form the matrix <span class="process-math">\(C=\mattwo1{-1}11 =
+\mattwo{\sqrt{2}}00{\sqrt{2}}
+\mattwo{\cos(45^\circ)}{-\sin(45^\circ)}
+{\sin(45^\circ)}{\cos(45^\circ)}\text{.}\)</span>  This shows that <span class="process-math">\(C\)</span> will scale vectors by a factor of <span class="process-math">\(\sqrt2\)</span> while rotating them by <span class="process-math">\(45^\circ\text{.}\)</span></p></li>
+<li><p>Sage will verify this relationship.</p></li>
+<li><p>As we saw earlier, we have <span class="process-math">\(A^2 =
+(PCP^{-1})(PCP^{-1}) = PC^2P^{-1}\)</span> and hence <span class="process-math">\(A^k =
+PC^kP^{-1}\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(a=1\)</span> and <span class="process-math">\(b=-1\)</span> so we form the matrix <span class="process-math">\(C'=\mattwo1{1}{-1}1 =
+\mattwo{\sqrt{2}}00{\sqrt{2}}
+\mattwo{\cos(-45^\circ)}{-\sin(-45^\circ)}
+{\sin(-45^\circ)}{\cos(-45^\circ)}\text{.}\)</span>  This shows that <span class="process-math">\(C\)</span> will scale vectors by a factor of <span class="process-math">\(\sqrt2\)</span> while rotating them by <span class="process-math">\(-45^\circ\text{.}\)</span></p></li>
 </ol></div></body>
 </html>

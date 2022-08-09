@@ -1,99 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:00-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:43-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rrr}
-a \amp b \amp c \\
-d \amp e \amp f \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\threevec{x}{y}{1} =
-\threevec{ax+by+c}{dx+ey+f}{1}\text{,}
-\end{equation*}
-</div>
-<p>which shows that</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{alignedat}{2}
-x' \amp {}={} ax+by+c \\
-y' \amp {}={} dx+ey+f\text{.} \\
-\end{alignedat}
-\end{equation*}
-</div>
-</li>
-<li><p>We would like to reflect in the vertical axis so we use the matrix \(\left[\begin{array}{rrr}
--1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>The character is successively rotated by \(45^\circ\) using the matrix \(\left[\begin{array}{rrr}
-\cos(45^\circ) \amp -\sin(45^\circ) \amp 0 \\
-\sin(45^\circ) \amp  \sin(45^\circ) \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right] =
-\left[\begin{array}{rrr}
-\frac{1}{\sqrt{2}} \amp -\frac{1}{\sqrt{2}} \amp 0 \\
-\frac{1}{\sqrt{2}} \amp \frac{1}{\sqrt{2}} \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li>
-<p>We first translate the character down two units using the matrix \(\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp -2 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\) Then we zoom in by uniformly stretching by a factor of \(2\) using the matrix \(\left[\begin{array}{rrr}
-2 \amp 0 \amp 0 \\
-0 \amp 2 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\) The net effect is the transformation described by the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rrr}
-2 \amp 0 \amp 0 \\
-0 \amp 2 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp -2 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-=
-\left[\begin{array}{rrr}
-2 \amp 0 \amp 0 \\
-0 \amp 2 \amp -4 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>The shadow is first created using the shear \(\left[\begin{array}{rrr}
-1 \amp 1 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\) Then the vertical scale is compressed using the matrix \(\left[\begin{array}{rrr}
-\frac12 \amp 0 \amp 0 \\
-0 \amp \frac12 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>The first column of the matrix is <span class="process-math">\(T\left(\threevec{1}{0}{0}\right)=\twovec{20}{15}\text{.}\)</span>  This shows us that the matrix is <span class="process-math">\(A = \left[\begin{array}{rrr}
+20 \amp 30 \amp 0 \\
+15 \amp 5 \amp 40 \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p>In the same way, the matrix is <span class="process-math">\(B = \left[\begin{array}{rr}
+5 \amp 6 \\
+8 \amp 10 \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\twovec{M}{Y}=T\left(\threevec{30}{20}{10}\right) =
+\twovec{1200}{950}\)</span> and <span class="process-math">\(\twovec{E}{L}=S\left(T\left(\threevec{30}{20}{10}\right)\right)
+= \twovec{11700}{19100}\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(C=BA = \left[\begin{array}{rrr}
+190 \amp 180 \amp 240 \\
+310 \amp 290 \amp 400 \\
+\end{array}\right]\text{.}\)</span></p></li>
 </ol></div></body>
 </html>

@@ -1,42 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:47-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:15-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We obtain the decomposition</p>
-<div class="displaymath">
-\begin{equation*}
-P=
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0
-\end{array}\right],
-L=
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
--1 \amp 1 \amp 0 \\
-\frac{2}{3} \amp \frac{4}{15} \amp 1
-\end{array}\right],
-U = 
-\left[\begin{array}{rrr}
-3 \amp 4 \amp -1 \\
-0 \amp 5 \amp 3 \\
-0 \amp 0 \amp \frac{13}{15}
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>To solve the equation \(A\xvec=\bvec=\threevec{-3}{-3}{-4}\text{,}\) we first find \(P\bvec= \threevec{-3}{-4}{-3}\text{,}\) then solve \(L\cvec=P\bvec\) to find \(\cvec=\threevec{-3}{-7}{\frac{13}{15}}\text{,}\) and finally solve \(U\xvec=\cvec\) to find \(\xvec=\threevec2{-2}1\text{.}\)</p>
-<span class="incontext"><a href="sec-gaussian-revisited.html#p-4958">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="lower-alpha">
+<li><p>The eigenvalues are <span class="process-math">\(\lambda_1=1\text{,}\)</span> <span class="process-math">\(\lambda_2=0.8\text{,}\)</span> and <span class="process-math">\(\lambda_3=0.4\)</span> with associated eigenvectors <span class="process-math">\(\vvec_1=\threevec100\text{,}\)</span> <span class="process-math">\(\vvec_2=\threevec{-2}11\text{,}\)</span> and <span class="process-math">\(\vvec_3=\threevec01{-1}\text{.}\)</span></p></li>
+<li><p>The conditions of the Perron-Frobenius theorem do not apply because the matrix is not positive.  The first column of any power of <span class="process-math">\(A\)</span> will be <span class="process-math">\(\threevec100\text{.}\)</span></p></li>
+<li><p>Since <span class="process-math">\(\lambda_1=1\)</span> has multiplicity <span class="process-math">\(1\text{,}\)</span> we know that <span class="process-math">\(E_1\)</span> is one-dimensional.  There is, therefore, a unique steady-state vector <span class="process-math">\(\qvec=\threevec100\text{.}\)</span></p></li>
+<li><p>Any Markov chain will converge to <span class="process-math">\(\qvec\)</span> because the eigenvalues <span class="process-math">\(\lambda_2\)</span> and <span class="process-math">\(\lambda_2\)</span> are less than <span class="process-math">\(1\text{.}\)</span></p></li>
+</ol>
+<span class="incontext"><a href="sec-stochastic.html#p-4958" class="internal">in-context</a></span>
 </body>
 </html>

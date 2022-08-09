@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:09-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:48-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>By forming the matrix <span class="process-math">\(P_{\bcal}=\left[\begin{array}{rrr}
+\vvec_1 \amp \vvec_2 \amp \vvec_3 \end{array}\right]\)</span> and finding its reduced row echelon form, we see that the vectors are linearly independent and span <span class="process-math">\(\real^3\text{.}\)</span>  They therefore form a basis of <span class="process-math">\(\real^3\text{.}\)</span></p></li>
+<li><p>We solve <span class="process-math">\(P_{\bcal}\coords{\xvec}{\bcal} = \xvec\)</span> to find <span class="process-math">\(\coords{\xvec}{\bcal} = \threevec{15}{0}{0}\text{.}\)</span></p></li>
 <li>
-<p>We find that</p>
-<div class="displaymath">
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\coords{\xvec}{\scal} =
-\left[\begin{array}{c}
-220 \\ 18.7 \\ 79.3 \\ 5.3 \\
-\end{array}\right],
-\coords{\xvec}{\ccal} =
-\left[\begin{array}{c}
-165 \\ 20.1 \\ -11.0 \\ -0.3 \\
+P_{\bcal}=
+\left[\begin{array}{rrr}
+1 \amp \frac{\sqrt{3}}{2} \amp \frac{1}{2} \\
+1 \amp 0 \amp -1 \\
+1 \amp -\frac{\sqrt{3}}{2} \amp \frac{1}{2}
+\end{array}\right],~~~
+P_{\bcal}^{-1}=
+\left[\begin{array}{rrr}
+\frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{3} \\
+\frac{\sqrt{3}}{3} \amp 0 \amp -\frac{\sqrt{3}}{3} \\
+\frac{1}{3} \amp -\frac{2}{3} \amp \frac{1}{3}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
+<p class="continuation">Since we have <span class="process-math">\(\coords{\xvec}{\bcal}=C_{\bcal}^{-1}\xvec\text{,}\)</span> we have <span class="process-math">\(c_1=\frac13 x_1 + \frac13 x_2 + \frac13 x_3 =
+\frac13(x_1+x_2+x_3)
+\text{.}\)</span></p>
 </li>
-<li><p>The higher Fourier Cosine coefficients are smaller than their counterparts in the Fourier Sine transform.  This means that we can ignore these coefficients in the Fourier Cosine transform without losing too much information.</p></li>
-<li>
-<p>We find that</p>
-<div class="displaymath">
-\begin{equation*}
-\coords{\xvec}{\scal} =
-\left[\begin{array}{c}
-131 \\ 0 \\ 54.1 \\ 0 \\
-\end{array}\right],
-\coords{\xvec}{\ccal} =
-\left[\begin{array}{c}
-100 \\ 0 \\ 0 \\ 0
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>Generally speaking, the coefficients in the Fourier Cosine transform are smaller, which means that they can be safely ignored.  Most of the important important is channeled into the first coefficient, which records the average of the components of the vector \(\xvec\text{.}\)</p></li>
 </ol></div></body>
 </html>

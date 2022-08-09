@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:41-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:11-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>True.  Every stochastic matrix has an eigenvalue \(\lambda_1=1\text{,}\) and we can find a steady-state vector inside the eigenspace \(E_1\text{.}\)</p></li>
-<li><p>False. We have seen examples, such as \(A=\mattwo0110\text{,}\) for which this is not true.  We need to know that \(A\) is a positive matrix so that the Perron-Frobenius theorem applies if we want to reach this conclusion.</p></li>
-<li><p>False.  Again, we can only guarantee this if the matrix is positive so that the Perron-Frobenius theorem applies.</p></li>
-<li><p>True.  This follows from the Perron-Frobenius theorem.</p></li>
-<li><p>False.  If \(A\) is an invertible stochastic matrix, the eigenvalues of \(A\) must satisfy \(0\lt
-|\lambda_j| \leq 1\text{.}\)  The eigenvalues of \(A^{-1}\) are \(\frac1{\lambda_j}\text{,}\) which satisfy \(1\leq \left|\frac1{\lambda_j}\right|\) so \(A^{-1}\) is most likely not stochastic.</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>We have <span class="process-math">\(\xvec_{k+1} = A\xvec_k\)</span> where <span class="process-math">\(A =
+\left[\begin{array}{rrr}
+0 \amp 0 \amp 8 \\
+\frac 12 \amp 0 \amp 0 \\
+0 \amp \frac 14 \amp 0 \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p>We can use Sage to compute that <span class="process-math">\(A^3=I\text{.}\)</span></p></li>
+<li><p>The only eigenvalues of <span class="process-math">\(I\)</span> are <span class="process-math">\(1\)</span> so any eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(A\)</span> must satisfy <span class="process-math">\(\lambda^3=1\text{.}\)</span></p></li>
+<li><p>Sage tells us that the eigenvalues are <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_{2,3} =
+-\frac12\pm\frac{\sqrt3}{2}i\text{.}\)</span></p></li>
+<li><p>The eigenvector <span class="process-math">\(\vvec_1=\threevec841\)</span> satisfies <span class="process-math">\(A\vvec_1 = \vvec_1\)</span> so it is unchanged.  The complex eigenvalues cause a <span class="process-math">\(120^\circ\)</span> rotation about the axis defined by <span class="process-math">\(\vvec_1\text{.}\)</span>  Therefore, the trajectories lie on circles about this line.</p></li>
+<li><p>After every three years, the populations return to their initial values.</p></li>
+<li><p>If <span class="process-math">\(\xvec_0=\vvec_1 = \threevec841\text{,}\)</span> we know that <span class="process-math">\(A\xvec_0 = \xvec_0\)</span> so this population vector is unchanged.</p></li>
 </ol></div></body>
 </html>

@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:40-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:09-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The modified Google matrix has the steady-state vector \(\threevec{0.433}{0.333}{0.234}\text{,}\) which compares to \(\threevec{0.444}{0.333}{0.222}\text{,}\) the steady-state vector of the original Google matrix.  These vectors are quite close so it appears that the modification does not change the PageRank significantly.</p>
-<span class="incontext"><a href="sec-stochastic.html#p-4654">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="lower-alpha">
+<li><p>If we write <span class="process-math">\(\xvec_n = \twovec{F_{n+1}}{F_n}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{n+1} =
+A\xvec_n\text{.}\)</span></p></li>
+<li>
+<p>Show that <span class="process-math">\(A\)</span> has eigenvalues</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+\lambda_1 \amp {}={} \frac{1+\sqrt{5}}{2}\approx 1.61803\ldots \\
+\lambda_2 \amp {}={} \frac{1-\sqrt{5}}{2}\approx
+-0.61803\ldots \\
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">with associated eigenvectors <span class="process-math">\(\vvec_1=\twovec{\lambda_1}{1}\)</span> and <span class="process-math">\(\vvec_2=\twovec{\lambda_2}{1}\text{.}\)</span></p>
+</li>
+<li><p>Classify this dynamical system as one of the six types that we have seen in this section.  What happens to <span class="process-math">\(\xvec_n\)</span> as <span class="process-math">\(n\)</span> becomes very large?</p></li>
+<li><p>Write the initial vector <span class="process-math">\(\xvec_0 =
+\twovec{1}{0}\)</span> as a linear combination of eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+<li><p>Write the vector <span class="process-math">\(\xvec_n\)</span> as a linear combinations of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+<li>
+<p>Explain why the <span class="process-math">\(n^{th}\)</span> Fibonacci number</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F_{n} = \frac{1}{\sqrt{5}}\left[
+\left(\frac{1+\sqrt{5}}{2}\right)^n -
+\left(\frac{1-\sqrt{5}}{2}\right)^n\right]\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>Use this relationship to compute <span class="process-math">\(F_{20}\text{.}\)</span></p></li>
+<li><p>Explain why <span class="process-math">\(F_{n+1}/F_{n}\approx \lambda_1\)</span> when <span class="process-math">\(n\)</span> is very large.</p></li>
+</ol>
+<span class="incontext"><a href="sec-dynamical.html#p-4654" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:15-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:53-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.5.3</span>.</h6>
-<p>We will explore some null spaces in this activity.</p>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
+</h4>
+<p>We will look at some sets of vectors and the subspaces they form.</p>
 <ol class="lower-alpha">
+<li><p>If <span class="process-math">\(\vvec_1, \vvec_2,\ldots,\vvec_n\)</span> is a set of vectors in <span class="process-math">\(\real^m\text{,}\)</span> explain why <span class="process-math">\(\zerovec\)</span> can be expressed as a linear combination of these vectors.  Use this fact to explain why the zero vector <span class="process-math">\(\zerovec\)</span> belongs to any subspace in <span class="process-math">\(\real^m\text{.}\)</span></p></li>
 <li>
-<p>Consider the matrix</p>
-<div class="displaymath">
+<p>Explain why the line on the left of <a href="" class="xref" data-knowl="./knowl/figure-lines-r2.html" title="Figure 3.5.3">Figure 3.5.3</a> is not a subspace of <span class="process-math">\(\real^2\)</span> and why the line on the right is.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/subspace-line-skew.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/subspace-line-origin.svg" role="img" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.3<span class="period">.</span></span><span class="space"> </span>Two lines in <span class="process-math">\(\real^2\text{,}\)</span> one of which is a subspace and one of which is not.</figcaption></figure>
+</li>
+<li>
+<p>Consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A=\left[\begin{array}{rrr}
-1 \amp 3 \amp -1 \\
--2 \amp 0 \amp -4 \\
-1 \amp 2 \amp 0 \\
-\end{array}\right]
+\vvec_1=\threevec101,~~~
+\vvec_2=\threevec011,~~~
+\vvec_3=\threevec110,
 \end{equation*}
 </div>
-<p>and give a parametric description of the null space \(\nul(A)\text{.}\)</p>
+<p class="continuation">and describe the subspace <span class="process-math">\(S=\laspan{\vvec_1,\vvec_2,\vvec_3}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-103"><script type="text/x-sage">
+</script></pre></p>
 </li>
-<li><p>Give a basis for and state the dimension of \(\nul(A)\text{.}\)</p></li>
-<li><p>The null space \(\nul(A)\) is a subspace of \(\real^p\) for which \(p\text{?}\)</p></li>
 <li>
-<p>Now consider the matrix \(A\) whose reduced row echelon form is given:</p>
-<div class="displaymath">
+<p>Consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A \sim
-\left[\begin{array}{rrrr}
-1 \amp 2 \amp 0 \amp -3 \\
-0 \amp 0 \amp 1 \amp 2 \\
-\end{array}\right]\text{.}
+\wvec_1=\threevec210,~~~
+\wvec_2=\threevec{-1}1{-1},~~~
+\wvec_3=\threevec03{-2}
 \end{equation*}
 </div>
-<p>Give a parametric description of \(\nul(A)\text{.}\)</p>
+<ol class="decimal">
+<li><p>Write <span class="process-math">\(\wvec_3\)</span> as a linear combination of <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span></p></li>
+<li><p>Explain why <span class="process-math">\(\laspan{\wvec_1,\wvec_2,\wvec_3} =
+\laspan{\wvec_1, \wvec_2}\text{.}\)</span></p></li>
+<li><p>Describe the subspace <span class="process-math">\(S =
+\laspan{\wvec_1,\wvec_2,\wvec_3}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span></p></li>
+</ol>
 </li>
-<li><p>Notice that the parametric description gives a set of vectors that span \(\nul(A)\text{.}\)  Explain why this set of vectors is linearly independent and hence forms a basis.  What is the dimension of \(\nul(A)\text{?}\)</p></li>
-<li><p>For this matrix, \(\nul(A)\) is a subspace of \(\real^p\) for what \(p\text{?}\)</p></li>
-<li><p>What is the relationship between the dimensions of the matrix \(A\text{,}\) the number of pivot positions of \(A\) and the dimension of \(\nul(A)\text{?}\)</p></li>
-<li><p>Suppose that the columns of a matrix \(A\) are linearly independent.  What can you say about \(\nul(A)\text{?}\)</p></li>
-<li><p>If \(A\) is an invertible \(n\times n\) matrix, what can you say about \(\nul(A)\text{?}\)</p></li>
-<li><p>Suppose that \(A\) is a \(5\times 10\) matrix and that \(\nul(A) = \real^{10}\text{.}\)  What can you say about the matrix \(A\text{?}\)</p></li>
-</ol></article><span class="incontext"><a href="sec-subspaces.html#activity-39">in-context</a></span>
+<li>
+<p>Suppose that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> are four vectors in <span class="process-math">\(\real^3\)</span> and that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix}
+\vvec_1 \amp \vvec_2 \amp \vvec_3 \amp \vvec_4
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 \amp 2 \amp 0 \amp -2 \\
+0 \amp 0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Give a description of the subspace <span class="process-math">\(S=\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span></p>
+</li>
+</ol></article><span class="incontext"><a href="sec-subspaces.html#activity-39" class="internal">in-context</a></span>
 </body>
 </html>

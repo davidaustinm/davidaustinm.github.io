@@ -1,66 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:06-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li>
-<p>The vectors are linearly independent and span \(\real^2\text{.}\) We can see this by forming the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rr}
-\vvec_1 \amp \vvec_2
-\end{array}\right]
-=
-\left[\begin{array}{rr}
--2 \amp 2 \\
-2 \amp 1 \\
-\end{array}\right]
-\sim
-\left[\begin{array}{rr}
-1 \amp 0 \\
-0 \amp 1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li>
-<p>The grid on the figure indicates that</p>
-<ol class="lower-roman">
-<li><p>\(\xvec = \twovec{-6}{3}\text{.}\)</p></li>
-<li><p>\(\xvec = \twovec{-2}{-4}\text{.}\)</p></li>
-<li><p>\(\xvec = \twovec63\text{.}\)</p></li>
-</ol>
-</li>
-<li>
-<p>The grid on the figure indicates that</p>
-<ol class="lower-roman">
-<li><p>\(\coords{\xvec}{\bcal} = \twovec{0}{-1}\text{.}\)</p></li>
-<li><p>\(\coords{\xvec}{\bcal} = \twovec{1}{2}\text{.}\)</p></li>
-<li><p>\(\coords{\xvec}{\bcal} = \twovec{-2}{-1}\text{.}\)</p></li>
-</ol>
-</li>
-<li>
-<p>We can form the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-C_{\bcal}=\left[\begin{array}{rr}
-\vvec_1 \amp \vvec_2 \end{array}\right]
-= \left[\begin{array}{rr}
--2 \amp 2 \\
-2 \amp 1 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>so that \(\xvec=C_{\bcal}\coords{\xvec}{\bcal}\text{.}\)  We then need to solve the equation \(C_{\bcal}\coords{\xvec}{\bcal} = \twovec{60}{90}\text{.}\) This gives \(\coords{\xvec}{\bcal} = \twovec{20}{50}\text{.}\)</p>
-</li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>True.  If <span class="process-math">\(A\)</span> is invertible, then it has a pivot position in every column, which implies that the columns are linearly independent.</p></li>
+<li><p>False.  We only know this if <span class="process-math">\(A\)</span> is a triangular matrix.  For instance, the matrix <span class="process-math">\(\left[\begin{array}{rr}
+1 \amp 1 \\
+1 \amp 1 \\
+\end{array}\right]\)</span> is not invertible.</p></li>
+<li><p>True.  If <span class="process-math">\(A\)</span> is invertible, then it has a pivot position in every row, which implies that the columns span <span class="process-math">\(\real^n\text{.}\)</span></p></li>
+<li><p>False. Since there is a pivot position in every column, the homogeneous equation <span class="process-math">\(A\xvec=\zerovec\)</span> has only the zero solution <span class="process-math">\(\xvec=\zerovec\text{.}\)</span></p></li>
+<li><p>True.  In this case, the columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\real^n\)</span> so there must be a pivot position in every row.  Because <span class="process-math">\(A\)</span> is a square matrix, it must be row equivalent to the identity matrix <span class="process-math">\(I\text{.}\)</span></p></li>
 </ol></div></body>
 </html>

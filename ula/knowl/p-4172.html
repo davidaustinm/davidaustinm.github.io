@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:30-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:02-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For each of the following matrices, sketch the vector \(\xvec = \twovec{1}{0}\) and powers \(A^k\xvec\) for \(k=1,2,3,4\text{.}\)</p>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix having eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2 = -6\text{.}\)</span> Because the eigenvalues are real and distinct, we know by <a href="" class="xref" data-knowl="./knowl/prop-eigen-basis.html" title="Proposition 4.2.9">Proposition 4.2.9</a> that these eigenvectors form a basis of <span class="process-math">\(\real^2\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><p>\(A = \left[\begin{array}{rr}
-0 \amp -1.4 \\
-1.4 \amp 0 \\
-\end{array}\right]
-\text{.}\)</p></div>
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/empty.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><p>\(A = \left[\begin{array}{rr}
-0 \amp -0.8 \\
-0.8 \amp 0 \\
-\end{array}\right]
-\text{.}\)</p></div>
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/empty.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
-<li><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><p>\(A = \left[\begin{array}{rr}
-0 \amp -1 \\
-1 \amp 0 \\
-\end{array}\right]
-\text{.}\)</p></div>
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/empty.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></li>
+<li><p>What are the products <span class="process-math">\(A\vvec_1\)</span> and <span class="process-math">\(A\vvec_2\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span></p></li>
+<li><p>If we form the matrix <span class="process-math">\(P = \begin{bmatrix}
+\vvec_1 \amp \vvec_2
+\end{bmatrix}
+\text{,}\)</span> what is the product <span class="process-math">\(AP\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span></p></li>
+<li><p>Use the eigenvalues to form the diagonal matrix <span class="process-math">\(D
+= \begin{bmatrix}
+3 \amp 0 \\
+0 \amp -6 
+\end{bmatrix}\)</span> and determine the product <span class="process-math">\(PD\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+<li><p>The results from the previous two parts of this activity demonstrate that <span class="process-math">\(AP=PD\text{.}\)</span> Using the fact that the eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> form a basis of <span class="process-math">\(\real^2\text{,}\)</span> explain why <span class="process-math">\(P\)</span> is invertible and that we must have <span class="process-math">\(A=PDP^{-1}\text{.}\)</span></p></li>
+<li><p>Suppose that <span class="process-math">\(A=\begin{bmatrix}
+-3 \amp 6 \\
+3 \amp 0 \\
+\end{bmatrix}\text{.}\)</span>  Verify that <span class="process-math">\(\vvec_1=\twovec11\)</span> and <span class="process-math">\(\vvec_2=\twovec2{-1}\)</span> are eigenvectors of <span class="process-math">\(A\)</span> with eigenvalues <span class="process-math">\(\lambda_1 = 3\)</span> and <span class="process-math">\(\lambda_2=-6\text{.}\)</span></p></li>
 <li>
-<p>Consider a matrix of the form \(C=\left[\begin{array}{rr}
-a \amp -b \\
-b \amp a \\
-\end{array}\right]\) with \(r=\sqrt{a^2+b^2}\text{.}\)  What happens when \(k\) becomes very large when</p>
-<ol class="lower-roman">
-<li><p>\(r \lt 1\text{.}\)</p></li>
-<li><p>\(r = 1\text{.}\)</p></li>
-<li><p>\(r \gt 1\text{.}\)</p></li>
-</ol>
+<p>Use the Sage cell below to define the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> and then verify that <span class="process-math">\(A=PDP^{-1}\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-114"><script type="text/x-sage"># enter the matrices P and D below	    
+P =
+D =	    
+P*D*P.inverse()
+</script></pre>
 </li>
 </ol>
-<span class="incontext"><a href="sec-eigen-diag.html#p-4172">in-context</a></span>
+<span class="incontext"><a href="sec-eigen-diag.html#p-4172" class="internal">in-context</a></span>
 </body>
 </html>

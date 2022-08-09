@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:43-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:11-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">7.</span>
-</h6>
-<p>Using the results of the previous exercise, we would like to explain why \(A^2\) is a stochastic matrix if \(A\) is stochastic.</p>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span>
+</h4>
+<p>Consider a small rodent that lives for three years.  Once again, we can separate a population of females into juveniles, yearlings, and adults.  Suppose that, each year,</p>
+<ul class="disc">
+<li><p>Half of the juveniles live to be yearlings.</p></li>
+<li><p>One quarter of the yearlings live to be adults.</p></li>
+<li><p>Adult females produce eight female offspring.</p></li>
+<li><p>None of the adults survive to the next year.</p></li>
+</ul>
 <ol class="lower-alpha">
-<li><p>Suppose that \(A\) and \(B\) are stochastic matrices.  Explain why the product \(AB\) is a stochastic matrix by considering the product \(SAB\text{.}\)</p></li>
-<li><p>Explain why \(A^2\) is a stochastic matrix.</p></li>
-<li><p>How do the steady-state vectors of \(A^2\) compare to the steady-state vectors of \(A\text{?}\)</p></li>
-</ol></article><span class="incontext"><a href="sec-stochastic.html#exercise-168">in-context</a></span>
+<li><p>Writing the populations of juveniles, yearlings, and adults in year <span class="process-math">\(k\)</span> using the vector <span class="process-math">\(\xvec_k=\threevec{J_k}{Y_k}{A_k}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span></p></li>
+<li><p>Show that <span class="process-math">\(A^3=I\text{.}\)</span></p></li>
+<li><p>What are the eigenvalues of <span class="process-math">\(A^3\text{?}\)</span>  What does this say about the eigenvalues of <span class="process-math">\(A\text{?}\)</span></p></li>
+<li><p>Verify your observation by finding the eigenvalues of <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-121"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>What can you say about the trajectories of this dynamical system?</p></li>
+<li><p>What does this mean about the population of rodents?</p></li>
+<li><p>Find a population vector <span class="process-math">\(\xvec_0\)</span> that is unchanged from year to year.</p></li>
+</ol></article><span class="incontext"><a href="sec-dynamical.html#exercise-168" class="internal">in-context</a></span>
 </body>
 </html>

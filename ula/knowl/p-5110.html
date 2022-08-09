@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:51-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:18-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We have explored the power method as a tool for numerically approximating the eigenvalues and eigenvectors of a matrix.</p>
-<ul class="disc">
-<li><p>After choosing an initial vector \(\xvec_0\text{,}\) we define the sequence \(\xvec_{k+1}=A\xvec_k\text{.}\)  As \(k\) becomes increasingly large, the direction of the vectors \(\xvec_k\) increasingly closely approximates the direction of the eigenspace corresponding to the eigenvalue \(\lambda_1\) having the largest absolute value.</p></li>
-<li><p>We normalize the vectors \(\xvec_k\) by multiplying by \(\frac{1}{m_k}\text{,}\) where \(m_k\) is the component having the largest absolute value.  In this way, the vectors \(\overline{\xvec}_k\) approach an eigenvector associated to \(\lambda_1\text{.}\)  The multipliers \(m_k\) approach the eigenvalue \(\lambda_1\text{.}\)</p></li>
-<li><p>To find the eigenvalue having the smallest absolute value, we apply the power method using the matrix \(A^{-1}\text{.}\)</p></li>
-<li><p>To find the eigenvalue closest to some number \(s\text{,}\) we apply the power method using the matrix \((A-sI)^{-1}\text{.}\)</p></li>
-</ul>
-<span class="incontext"><a href="sec-power-method.html#p-5110">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Performing one more row operation gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp 1 \\
+0 \amp 1 \amp 1 \\
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows the approximate solution as <span class="process-math">\(x=1.00\)</span> and <span class="process-math">\(y=1.00\text{.}\)</span></p>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-5110" class="internal">in-context</a></span>
 </body>
 </html>

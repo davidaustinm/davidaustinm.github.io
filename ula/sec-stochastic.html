@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-15T11:45:35-04:00       *-->
+<!--*       on 2022-08-08T13:56:11-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,25 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Markov chains and Google's PageRank algorithm</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Understanding Linear Algebra">
+<meta property="book:author" content=" David Austin ">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -49,29 +51,58 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
 \newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
@@ -120,7 +151,7 @@
 \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
-\newcommand{\rank}{\text{rank}}
+\newcommand{\rank}{\operatorname{rank}}
 \newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
 \renewcommand{\row}{\text{Row}}
@@ -139,7 +170,9 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
@@ -147,7 +180,7 @@
 </div>
 <div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-dynamical.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap4.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap5.html" title="Next">Next</a></span>
@@ -157,91 +190,93 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-dynamical.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap4.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap5.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1" class="internal">Our goals</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
-<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
-<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
-<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
-<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+<a href="chap1.html" data-scroll="chap1" class="internal"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect" class="internal">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions" class="internal">Finding solutions to linear systems</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction" class="internal">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots" class="internal">Pivots and their influence on solution spaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
-<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
-<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
-<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
-<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
-<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
-<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+<a href="chap2.html" data-scroll="chap2" class="internal"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs" class="internal">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs" class="internal">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span" class="internal">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep" class="internal">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans" class="internal">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom" class="internal">The geometry of matrix transformations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
-<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
-<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
-<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
-<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
-<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+<a href="chap3.html" data-scroll="chap3" class="internal"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse" class="internal">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases" class="internal">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg" class="internal">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants" class="internal">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces" class="internal">Subspaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
-<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
-<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
+<a href="chap4.html" data-scroll="chap4" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro" class="internal">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find" class="internal">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag" class="internal">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical" class="internal">Dynamical systems</a></li>
 <li><a href="sec-stochastic.html" data-scroll="sec-stochastic" class="active">Markov chains and Google's PageRank algorithm</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
-<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
-<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+<a href="chap5.html" data-scroll="chap5" class="internal"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited" class="internal">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method" class="internal">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
-<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
-<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
-<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
-<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
-<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+<a href="chap6.html" data-scroll="chap6" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product" class="internal">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose" class="internal">Orthogonal complements and the matrix transpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases" class="internal">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt" class="internal">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares" class="internal">Orthogonal least squares</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
-<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
-<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
-<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
-<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
-<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+<a href="chap7.html" data-scroll="chap7" class="internal"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices" class="internal">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms" class="internal">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro" class="internal">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses" class="internal">Using Singular Value Decompositions</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app-sage-reference.html" data-scroll="app-sage-reference" class="internal"><span class="codenumber">A</span> <span class="title">Sage Reference</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-stochastic"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-stochastic"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Markov chains and Google's PageRank algorithm</span>
 </h2>
-<section class="introduction" id="introduction-23"><p id="p-4516">In the last section, we used our understanding of eigenvalues and eigenvectors to describe the long-term behavior of some discrete dynamical systems.  The state of the sytem, which could record, say, the populations of a few interacting species, at one time was described by a vector \(\xvec_k\text{.}\)  The state vector then evolved according to a linear rule \(\xvec_{k+1} =
-A\xvec_k\text{.}\)</p>
-<p id="p-4517">We continue our exploration in this section by looking at Markov chains, which form a specific type of discrete dynamical system.  For instance, we could be interested in a rental car company that rents cars from several locations.  From one day to the next, the number of cars at different locations can change, but the total number of cars stays the same.  Once again, an understanding of eigenvalues and eigenvectors will help us make predictions about the long-term behavior of the system.</p>
-<article class="exploration project-like" id="exploration-18"><h6 class="heading">
+<section class="introduction" id="introduction-23"><p id="p-4749">In the last section, we used our understanding of eigenvalues and eigenvectors to describe the long-term behavior of some discrete dynamical systems.  The state of the system, which could record, say, the populations of a few interacting species, at one time is described by a vector <span class="process-math">\(\xvec_k\text{.}\)</span>  The state vector then evolves according to a linear rule <span class="process-math">\(\xvec_{k+1} =
+A\xvec_k\text{.}\)</span></p>
+<p id="p-4750">This section continues this exploration by looking at <em class="emphasis">Markov chains</em>, which form a specific type of discrete dynamical system.  For instance, we could be interested in a rental car company that rents cars from several locations.  From one day to the next, the number of cars at different locations can change, but the total number of cars stays the same.  Once again, an understanding of eigenvalues and eigenvectors will help us make predictions about the long-term behavior of the system.</p>
+<article class="exploration project-like" id="exploration-18"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span>
-</h6>
-<p id="p-4518">Suppose that our rental car company rents from two locations \(P\) and \(Q\text{.}\)  We find that 80% of the cars rented from location \(P\) are returned to \(P\) while the other 20% are returned to \(Q\text{.}\)  For cars rented from location \(Q\text{,}\) 60% are returned to \(Q\) and 40% to \(P\text{.}\)</p>
-<p id="p-4519">We will use \(P_k\) and \(Q_k\) to denote the number of cars at the two locations on day \(k\text{.}\)  The following day, the number of cars at \(P\) equals 80% of \(P_k\) and 40% of \(Q_k\text{.}\)  This shows that</p>
-<div class="displaymath">
+</h3>
+<p id="p-4751">Suppose that our rental car company rents from two locations <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span>  We find that 80% of the cars rented from location <span class="process-math">\(P\)</span> are returned to <span class="process-math">\(P\)</span> while the other 20% are returned to <span class="process-math">\(Q\text{.}\)</span>  For cars rented from location <span class="process-math">\(Q\text{,}\)</span> 60% are returned to <span class="process-math">\(Q\)</span> and 40% to <span class="process-math">\(P\text{.}\)</span></p>
+<p id="p-4752">We will use <span class="process-math">\(P_k\)</span> and <span class="process-math">\(Q_k\)</span> to denote the number of cars at the two locations on day <span class="process-math">\(k\text{.}\)</span>  The following day, the number of cars at <span class="process-math">\(P\)</span> equals 80% of <span class="process-math">\(P_k\)</span> and 40% of <span class="process-math">\(Q_k\text{.}\)</span>  This shows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 P_{k+1} \amp {}={} 0.8 P_k + 0.4Q_k \\
@@ -250,17 +285,17 @@ Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3104"><p id="p-4520">If we use the vector \(\xvec_k =
-\twovec{P_k}{Q_k}\) to represent the distribution of cars on day \(k\text{,}\) find a matrix \(A\) such that \(\xvec_{k+1} = A\xvec_k\text{.}\)</p></li>
-<li id="li-3105"><p id="p-4521">Find the eigenvalues and associated eigenvectors of \(A\text{.}\)</p></li>
-<li id="li-3106"><p id="p-4522">Suppose that there are initially 1500 cars, all of which are at location \(P\text{.}\)  Write the vector \(\xvec_0\) as a linear combination of eigenvectors of \(A\text{.}\)</p></li>
-<li id="li-3107"><p id="p-4523">Write the vectors \(\xvec_k\) as a linear combination of eigenvectors of \(A\text{.}\)</p></li>
-<li id="li-3108"><p id="p-4524">What happens to the distribution of cars after a long time?</p></li>
-</ol></article></section><section class="subsection" id="subsection-71"><h3 class="heading hide-type">
+<li id="li-3276"><p id="p-4753">If we use the vector <span class="process-math">\(\xvec_k =
+\twovec{P_k}{Q_k}\)</span> to represent the distribution of cars on day <span class="process-math">\(k\text{,}\)</span> find a matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span></p></li>
+<li id="li-3277"><p id="p-4754">Find the eigenvalues and associated eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-3278"><p id="p-4755">Suppose that there are initially 1500 cars, all of which are at location <span class="process-math">\(P\text{.}\)</span>  Write the vector <span class="process-math">\(\xvec_0\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-3279"><p id="p-4756">Write the vectors <span class="process-math">\(\xvec_k\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-3280"><p id="p-4757">What happens to the distribution of cars after a long time?</p></li>
+</ol></article></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">A first example</span>
 </h3>
-<p id="p-4531">In the preview activity, the distribution of rental cars was described by the discrete dynamical system</p>
-<div class="displaymath">
+<p id="p-4764">In the preview activity, the distribution of rental cars was described by the discrete dynamical system</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \xvec_{k+1} = A\xvec_k=\left[\begin{array}{rr}
 0.8 \amp 0.4 \\
@@ -269,33 +304,33 @@ Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
 \xvec_k\text{.}
 \end{equation*}
 </div>
-<p class="continuation">This matrix has some special properties.  First, each entry represents the probability that a car rented at one location is returned to another.  For instance, there is an 80% chance that a car rented at \(P\) is returned to \(P\text{,}\) which explains the entry of 0.8 in the upper left corner.  Therefore, the entries of the matrix are between 0 and 1.</p>
-<p id="p-4532">Second, a car rented at one location must be returned to one of the locations.  For example, since 80% of the cars rented at \(P\) are returned to \(P\text{,}\) it follows that the other 20% of cars rented at \(P\) are returned to \(Q\text{.}\)  This implies that the entries in each column must add to 1.  This will occur frequently in our discussion so we introduce the following definitions.</p>
-<article class="definition definition-like" id="definition-20"><h6 class="heading">
+<p class="continuation">This matrix has some special properties.  First, each entry represents the probability that a car rented at one location is returned to another.  For instance, there is an 80% chance that a car rented at <span class="process-math">\(P\)</span> is returned to <span class="process-math">\(P\text{,}\)</span> which explains the entry of 0.8 in the upper left corner.  Therefore, the entries of the matrix are between 0 and 1.</p>
+<p id="p-4765">Second, a car rented at one location must be returned to one of the locations.  For example, since 80% of the cars rented at <span class="process-math">\(P\)</span> are returned to <span class="process-math">\(P\text{,}\)</span> it follows that the other 20% of cars rented at <span class="process-math">\(P\)</span> are returned to <span class="process-math">\(Q\text{.}\)</span>  This implies that the entries in each column must add to 1.  This will occur frequently in our discussion so we introduce the following definitions.</p>
+<article class="definition definition-like" id="definition-24"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span>
-</h6>
-<p id="p-4533">A vector whose entries are nonnegative and add to 1 is called a <em class="emphasis">probability vector</em>.  A square matrix whose columns are probability vectors is called a <em class="emphasis">stochastic</em> matrix.</p></article><article class="activity project-like" id="activity-55"><h6 class="heading">
+</h4>
+<p id="p-4766">A vector whose entries are nonnegative and add to 1 is called a <em class="emphasis">probability vector</em>.  A square matrix whose columns are probability vectors is called a <em class="emphasis">stochastic</em> matrix.</p></article><article class="activity project-like" id="activity-56"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span>
-</h6>
-<p id="p-4534">Suppose you live in a country with three political parties \(P\text{,}\) \(Q\text{,}\) and \(R\text{.}\)  We use \(P_k\text{,}\) \(Q_k\text{,}\) and \(R_k\) to denote the percentage of voters voting for that party in election \(k\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4535">Voters will change parties from one election to the next as shown in the figure.  We see that 60% of voters stay with the same party.  However, 40% of those who vote for party \(P\) will vote for party \(Q\) in the next election.</p></div>
-<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/stoch-parties.svg" role="img" class="contained" alt=""></div>
+</h4>
+<p id="p-4767">Suppose you live in a country with three political parties <span class="process-math">\(P\text{,}\)</span> <span class="process-math">\(Q\text{,}\)</span> and <span class="process-math">\(R\text{.}\)</span>  We use <span class="process-math">\(P_k\text{,}\)</span> <span class="process-math">\(Q_k\text{,}\)</span> and <span class="process-math">\(R_k\)</span> to denote the percentage of voters voting for that party in election <span class="process-math">\(k\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:55%;"><p id="p-4768">Voters will change parties from one election to the next as shown in the figure.  We see that 60% of voters stay with the same party.  However, 40% of those who vote for party <span class="process-math">\(P\)</span> will vote for party <span class="process-math">\(Q\)</span> in the next election.</p></div>
+<div class="sbspanel top" style="width:45%;"><img src="external/images/stoch-parties.svg" role="img" class="contained"></div>
 </div></div>
-<ol id="p-4536" class="lower-alpha">
-<li id="li-3114"><p id="p-4537">Write expressions for \(P_{k+1}\text{,}\) \(Q_{k+1}\text{,}\) and \(R_{k+1}\) in terms of \(P_k\text{,}\) \(Q_k\text{,}\) and \(R_k\text{.}\)</p></li>
-<li id="li-3115"><p id="p-4538">If we write \(\xvec_k =
-\threevec{P_k}{Q_k}{R_k}\text{,}\) find the matrix \(A\) such that \(\xvec_{k+1} = A\xvec_k\text{.}\)</p></li>
-<li id="li-3116"><p id="p-4539">Explain why \(A\) is a stochastic matrix.</p></li>
-<li id="li-3117"><p id="p-4540">Suppose that initially 40% of citizens vote for party \(P\text{,}\) 30% vote for party \(Q\text{,}\) and 30% vote for party \(R\text{.}\)  Form the vector \(\xvec_0\) and explain why \(\xvec_0\) is a probability vector.</p></li>
-<li id="li-3118"><p id="p-4541">Find \(\xvec_1\text{,}\) the percentages who vote for the three parties in the next election.  Verify that \(\xvec_1\) is also a probabilty vector and explain why \(\xvec_k\) will be a probability vector for every \(k\text{.}\) <div class="sagecell-sage" id="sage-115"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-3119"><p id="p-4542">Find the eigenvalues of the matrix \(A\) and explain why the eigenspace \(E_1\) is a one-dimensional subspace of \(\real^3\text{.}\)  Then verify that \(\vvec=\threevec{1}{2}{2}\) is a basis vector for \(E_1\text{.}\)</p></li>
-<li id="li-3120"><p id="p-4543">As every vector in \(E_1\) is a scalar multiple of \(\vvec\text{,}\) find a probability vector in \(E_1\) and explain why it is the only probability vector in \(E_1\text{.}\)</p></li>
-<li id="li-3121"><p id="p-4544">Describe what happens to \(\xvec_k\) after a very long time.</p></li>
-</ol></article><p id="p-4546">The previous activity illustrates some important points that we wish to emphasize.</p>
-<p id="p-4547">First, to determine \(P_{k+1}\text{,}\) we note that in election \(k+1\text{,}\) party \(P\) retains 60% of its voters from the previous election and adds 20% of those who voted for party \(R\text{.}\) In this way, we see that</p>
-<div class="displaymath">
+<ol id="p-4769" class="lower-alpha">
+<li id="li-3286"><p id="p-4770">Write expressions for <span class="process-math">\(P_{k+1}\text{,}\)</span> <span class="process-math">\(Q_{k+1}\text{,}\)</span> and <span class="process-math">\(R_{k+1}\)</span> in terms of <span class="process-math">\(P_k\text{,}\)</span> <span class="process-math">\(Q_k\text{,}\)</span> and <span class="process-math">\(R_k\text{.}\)</span></p></li>
+<li id="li-3287"><p id="p-4771">If we write <span class="process-math">\(\xvec_k =
+\threevec{P_k}{Q_k}{R_k}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span></p></li>
+<li id="li-3288"><p id="p-4772">Explain why <span class="process-math">\(A\)</span> is a stochastic matrix.</p></li>
+<li id="li-3289"><p id="p-4773">Suppose that initially 40% of citizens vote for party <span class="process-math">\(P\text{,}\)</span> 30% vote for party <span class="process-math">\(Q\text{,}\)</span> and 30% vote for party <span class="process-math">\(R\text{.}\)</span>  Form the vector <span class="process-math">\(\xvec_0\)</span> and explain why <span class="process-math">\(\xvec_0\)</span> is a probability vector.</p></li>
+<li id="li-3290"><p id="p-4774">Find <span class="process-math">\(\xvec_1\text{,}\)</span> the percentages who vote for the three parties in the next election.  Verify that <span class="process-math">\(\xvec_1\)</span> is also a probability vector and explain why <span class="process-math">\(\xvec_k\)</span> will be a probability vector for every <span class="process-math">\(k\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-122"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-3291"><p id="p-4775">Find the eigenvalues of the matrix <span class="process-math">\(A\)</span> and explain why the eigenspace <span class="process-math">\(E_1\)</span> is a one-dimensional subspace of <span class="process-math">\(\real^3\text{.}\)</span>  Then verify that <span class="process-math">\(\vvec=\threevec{1}{2}{2}\)</span> is a basis vector for <span class="process-math">\(E_1\text{.}\)</span></p></li>
+<li id="li-3292"><p id="p-4776">As every vector in <span class="process-math">\(E_1\)</span> is a scalar multiple of <span class="process-math">\(\vvec\text{,}\)</span> find a probability vector in <span class="process-math">\(E_1\)</span> and explain why it is the only probability vector in <span class="process-math">\(E_1\text{.}\)</span></p></li>
+<li id="li-3293"><p id="p-4777">Describe what happens to <span class="process-math">\(\xvec_k\)</span> after a very long time.</p></li>
+</ol></article><p id="p-4779">The previous activity illustrates some important points that we wish to emphasize.</p>
+<p id="p-4780">First, to determine <span class="process-math">\(P_{k+1}\text{,}\)</span> we note that in election <span class="process-math">\(k+1\text{,}\)</span> party <span class="process-math">\(P\)</span> retains 60% of its voters from the previous election and adds 20% of those who voted for party <span class="process-math">\(R\text{.}\)</span> In this way, we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{alignedat}{6}
 P_{k+1} \amp {}={} 0.6P_k \amp \amp \amp + 0.2 R_k \\
@@ -307,7 +342,7 @@ R_{k+1} \amp {}={} \amp {}{} \amp 0.4Q_k \amp {}+{}
 \end{equation*}
 </div>
 <p class="continuation">We therefore define the matrix</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 0.6 \amp 0 \amp 0.2 \\
@@ -316,11 +351,11 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">and note that \(\xvec_{k+1} = A\xvec_k\text{.}\)</p>
-<p id="p-4548">If we consider the first column of \(A\text{,}\) we see that the entries represent the percentages of party \(P\)'s voters in the last election who vote for each of the three parties in the next election.  Since everyone who voted for party \(P\) previously votes for one of the three parties in the next election, the sum of these percentages must be 1.  This is true for each of the columns of \(A\text{,}\) which explains why \(A\) is a stochastic matrix.</p>
-<p id="p-4549">We begin with the vector \(\xvec_0 =
-\threevec{0.4}{0.3}{0.3}\text{,}\) the entries of which represent the percentage of voters voting for each of the three parties.  Since every voter votes for one of the three parties, the sum of these entries must be 1, which means that \(\xvec_0\) is a probability vector. We then find that</p>
-<div class="displaymath">
+<p class="continuation">and note that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span></p>
+<p id="p-4781">If we consider the first column of <span class="process-math">\(A\text{,}\)</span> we see that the entries represent the percentages of party <span class="process-math">\(P\)</span>'s voters in the last election who vote for each of the three parties in the next election.  Since everyone who voted for party <span class="process-math">\(P\)</span> previously votes for one of the three parties in the next election, the sum of these percentages must be 1.  This is true for each of the columns of <span class="process-math">\(A\text{,}\)</span> which explains why <span class="process-math">\(A\)</span> is a stochastic matrix.</p>
+<p id="p-4782">We begin with the vector <span class="process-math">\(\xvec_0 =
+\threevec{0.4}{0.3}{0.3}\text{,}\)</span> the entries of which represent the percentage of voters voting for each of the three parties.  Since every voter votes for one of the three parties, the sum of these entries must be 1, which means that <span class="process-math">\(\xvec_0\)</span> is a probability vector. We then find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{cccc}
 \xvec_1=\threevec{0.300}{0.400}{0.300},\amp
@@ -334,20 +369,20 @@ A = \left[\begin{array}{rrr}
 \end{array}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Notice that the vectors \(\xvec_k\) are also probability vectors and that the sequence \(\xvec_k\) seems to be converging to \(\threevec{0.2}{0.4}{0.4}\text{.}\)  It is this behavior that we would like to understand more fully by investigating the eigenvalues and eigenvectors of \(A\text{.}\)</p>
-<p id="p-4550">We find that the eigenvalues of \(A\) are</p>
-<div class="displaymath">
+<p class="continuation">Notice that the vectors <span class="process-math">\(\xvec_k\)</span> are also probability vectors and that the sequence <span class="process-math">\(\xvec_k\)</span> seems to be converging to <span class="process-math">\(\threevec{0.2}{0.4}{0.4}\text{.}\)</span>  It is this behavior that we would like to understand more fully by investigating the eigenvalues and eigenvectors of <span class="process-math">\(A\text{.}\)</span></p>
+<p id="p-4783">We find that the eigenvalues of <span class="process-math">\(A\)</span> are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lambda_1 = 1, \qquad \lambda_2 = 0.4 + 0.2i, \qquad\lambda_3 =
 0.4-0.2i \text{.}
 \end{equation*}
 </div>
-<p class="continuation">Notice that if \(\vvec\) is an eigenvector of \(A\) with associated eigenvalue \(\lambda_1=1\text{,}\) then \(A\vvec = 1\vvec
-= \vvec\text{.}\)  That is, \(\vvec\) is unchanged when we multiply it by \(A\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:51.2820512820513%;">
-<p id="p-4551">Otherwise, we have \(A=PEP^{-1}\) where</p>
-<div class="displaymath">
+<p class="continuation">Notice that if <span class="process-math">\(\vvec\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with associated eigenvalue <span class="process-math">\(\lambda_1=1\text{,}\)</span> then <span class="process-math">\(A\vvec = 1\vvec
+= \vvec\text{.}\)</span>  That is, <span class="process-math">\(\vvec\)</span> is unchanged when we multiply it by <span class="process-math">\(A\text{.}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:55%;">
+<p id="p-4784">Otherwise, we have <span class="process-math">\(A=PEP^{-1}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 E = \left[\begin{array}{rrr}
 1 \amp 0 \amp 0 \\
@@ -356,29 +391,29 @@ E = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">Notice that \(|\lambda_2| = |\lambda_3| \lt 1\) so the trajectories \(\xvec_k\) spiral into the eigenspace \(E_1\) as indicated in the figure.</p>
+<p class="continuation">Notice that <span class="process-math">\(|\lambda_2| = |\lambda_3| \lt 1\)</span> so the trajectories <span class="process-math">\(\xvec_k\)</span> spiral into the eigenspace <span class="process-math">\(E_1\)</span> as indicated in the figure.</p>
 </div>
-<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/eigen-3d-stoch.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:45%;"><img src="external/images/eigen-3d-stoch.svg" role="img" class="contained"></div>
 </div></div>
-<p id="p-4552">This tells us that the sequence \(\xvec_k\) converges to a vector in \(E_1\text{.}\) It is straightforward to see that \(\vvec=\threevec{1}{2}{2}\) is a basis vector for \(E_1\) because \(A\vvec = \vvec\) so we expect that \(\xvec_k\) will converge to a scalar multiple of \(\vvec\text{.}\) Indeed, since the vectors \(\xvec_k\) are probability vectors, we expect them to converge to a probability vector in \(E_1\text{.}\)</p>
-<p id="p-4553">We can find the probability vector in \(E_1\) by finding the appropriate scalar multiple of \(\vvec\text{.}\)  Notice that \(c\vvec = \threevec{c}{2c}{2c}\) is a probability vector when \(c+2c+2c=5c = 1\text{,}\) which implies that \(c = 1/5\text{.}\) Therefore, \(\qvec=\threevec{0.2}{0.4}{0.4}\) is the unique probability vector in \(E_1\text{.}\)  Since the sequence \(\xvec_k\) converges to a probability vector in \(E_1\text{,}\) we see that \(\xvec_k\) converges to \(\qvec\text{,}\) which agrees with the computations we showed above.</p>
-<p id="p-4554">The role of the eigenvalues is important in this example. Since \(\lambda_1=1\text{,}\) we can find a probability vector \(\qvec\) that is unchanged by multiplication by \(A\text{.}\) Also, the other eigenvalues satisfy \(|\lambda_j| \lt 1\text{,}\) which means that all the trajectories get pulled in to the eigenspace \(E_1\text{.}\)  Since \(\xvec_k\) is a sequence of probability vectors, these vectors converge to the probability vector \(\qvec\) as they are pulled into \(E_1\text{.}\)</p></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
+<p id="p-4785">This tells us that the sequence <span class="process-math">\(\xvec_k\)</span> converges to a vector in <span class="process-math">\(E_1\text{.}\)</span> In the usual way, we see that <span class="process-math">\(\vvec=\threevec{1}{2}{2}\)</span> is a basis vector for <span class="process-math">\(E_1\)</span> because <span class="process-math">\(A\vvec = \vvec\)</span> so we expect that <span class="process-math">\(\xvec_k\)</span> will converge to a scalar multiple of <span class="process-math">\(\vvec\text{.}\)</span> Indeed, since the vectors <span class="process-math">\(\xvec_k\)</span> are probability vectors, we expect them to converge to a probability vector in <span class="process-math">\(E_1\text{.}\)</span></p>
+<p id="p-4786">We can find the probability vector in <span class="process-math">\(E_1\)</span> by finding the appropriate scalar multiple of <span class="process-math">\(\vvec\text{.}\)</span>  Notice that <span class="process-math">\(c\vvec = \threevec{c}{2c}{2c}\)</span> is a probability vector when <span class="process-math">\(c+2c+2c=5c = 1\text{,}\)</span> which implies that <span class="process-math">\(c = 1/5\text{.}\)</span> Therefore, <span class="process-math">\(\qvec=\threevec{0.2}{0.4}{0.4}\)</span> is the unique probability vector in <span class="process-math">\(E_1\text{.}\)</span>  Since the sequence <span class="process-math">\(\xvec_k\)</span> converges to a probability vector in <span class="process-math">\(E_1\text{,}\)</span> we see that <span class="process-math">\(\xvec_k\)</span> converges to <span class="process-math">\(\qvec\text{,}\)</span> which agrees with the computations we showed above.</p>
+<p id="p-4787">The role of the eigenvalues is important in this example. Since <span class="process-math">\(\lambda_1=1\text{,}\)</span> we can find a probability vector <span class="process-math">\(\qvec\)</span> that is unchanged by multiplication by <span class="process-math">\(A\text{.}\)</span> Also, the other eigenvalues satisfy <span class="process-math">\(|\lambda_j| \lt 1\text{,}\)</span> which means that all the trajectories get pulled in to the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  Since <span class="process-math">\(\xvec_k\)</span> is a sequence of probability vectors, these vectors converge to the probability vector <span class="process-math">\(\qvec\)</span> as they are pulled into <span class="process-math">\(E_1\text{.}\)</span></p></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Markov chains</span>
 </h3>
-<p id="p-4555">If we have a stochastic matrix \(A\) and a probability vector \(\xvec_0\text{,}\) we can form the sequence \(\xvec_k\) where \(\xvec_{k+1} = A \xvec_k\text{.}\)  We call this sequence of vectors a <em class="emphasis">Markov chain</em>. <a class="xref" data-knowl="./knowl/exercise-stochastic-probability.html" title="Exercise 4.5.5.6">Exercise 4.5.5.6</a> explains why we can guarantee that the vectors \(\xvec_k\) are probability vectors. </p>
-<p id="p-4556">In the example that studied voting patterns, we constructed a Markov chain that described how the percentages of voters choosing different parties changed from one election to the next.  We saw that the Markov chain converges to \(\qvec=\threevec{0.2}{0.4}{0.4}\text{,}\) a probability vector in the eigenspace \(E_1\text{.}\)  In other words, \(\qvec\) is a probability vector that is unchanged under multiplication by \(A\text{;}\) that is, \(A\qvec = \qvec\text{.}\)  This implies that, after a long time, 20% of voters choose party \(P\text{,}\) 40% choose \(Q\text{,}\) and 40% choose \(R\text{.}\)</p>
-<article class="definition definition-like" id="definition-21"><h6 class="heading">
+<p id="p-4788">If we have a stochastic matrix <span class="process-math">\(A\)</span> and a probability vector <span class="process-math">\(\xvec_0\text{,}\)</span> we can form the sequence <span class="process-math">\(\xvec_k\)</span> where <span class="process-math">\(\xvec_{k+1} = A \xvec_k\text{.}\)</span>  We call this sequence of vectors a <em class="emphasis">Markov chain</em>. <a href="" class="xref" data-knowl="./knowl/exercise-stochastic-probability.html" title="Exercise 4.5.5.6">Exercise 4.5.5.6</a> explains why we can guarantee that the vectors <span class="process-math">\(\xvec_k\)</span> are probability vectors. </p>
+<p id="p-4789">In the example that studied voting patterns, we constructed a Markov chain that described how the percentages of voters choosing different parties changed from one election to the next.  We saw that the Markov chain converges to <span class="process-math">\(\qvec=\threevec{0.2}{0.4}{0.4}\text{,}\)</span> a probability vector in the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  In other words, <span class="process-math">\(\qvec\)</span> is a probability vector that is unchanged under multiplication by <span class="process-math">\(A\text{;}\)</span> that is, <span class="process-math">\(A\qvec = \qvec\text{.}\)</span>  This implies that, after a long time, 20% of voters choose party <span class="process-math">\(P\text{,}\)</span> 40% choose <span class="process-math">\(Q\text{,}\)</span> and 40% choose <span class="process-math">\(R\text{.}\)</span></p>
+<article class="definition definition-like" id="definition-25"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span>
-</h6>
-<p id="p-4557">If \(A\) is a stochastic matrix, we say that a probability vector \(\qvec\) is a <em class="emphasis">steady-state</em> or <em class="emphasis">stationary</em> vector if \(A\qvec = \qvec\text{.}\)</p></article><p id="p-4558">An important question that arises from our previous example is</p>
-<article class="question example-like" id="question-3"><h6 class="heading">
+</h4>
+<p id="p-4790">If <span class="process-math">\(A\)</span> is a stochastic matrix, we say that a probability vector <span class="process-math">\(\qvec\)</span> is a <em class="emphasis">steady-state</em> or <em class="emphasis">stationary</em> vector if <span class="process-math">\(A\qvec = \qvec\text{.}\)</span></p></article><p id="p-4791">An important question that arises from our previous example is</p>
+<article class="question example-like" id="question-3"><h4 class="heading">
 <span class="type">Question</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
-</h6>
-<p id="p-4559">If \(A\) is a stochastic matrix and \(\xvec_k\) a Markov chain, does \(\xvec_k\) converge to a steady-state vector?</p></article><article class="activity project-like" id="activity-56"><h6 class="heading">
+</h4>
+<p id="p-4792">If <span class="process-math">\(A\)</span> is a stochastic matrix and <span class="process-math">\(\xvec_k\)</span> a Markov chain, does <span class="process-math">\(\xvec_k\)</span> converge to a steady-state vector?</p></article><article class="activity project-like" id="activity-57"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
-</h6>
-<p id="p-4560">Consider the matrices</p>
-<div class="displaymath">
+</h4>
+<p id="p-4793">Consider the matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A=\left[\begin{array}{rr}
 0 \amp 1 \\
@@ -391,9 +426,9 @@ B=\left[\begin{array}{rr}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3122"><p id="p-4561">Verify that both \(A\) and \(B\) are stochastic matrices.</p></li>
-<li id="li-3123"><p id="p-4562">Find the eigenvalues of \(A\) and then find a steady-state vector for \(A\text{.}\)</p></li>
-<li id="li-3124"><p id="p-4563">We will form the Markov chain beginning with the vector \(\xvec_0 = \twovec{1}{0}\) and defining \(\xvec_{k+1} = A\xvec_k\text{.}\)  The Sage cell below constructs the first \(N\) terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix \(A\) and vector \(x0\) and evaluate the cell to find the first 10 terms of the Markov chain. <div class="sagecell-sage" id="sage-116"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="li-3294"><p id="p-4794">Verify that both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are stochastic matrices.</p></li>
+<li id="li-3295"><p id="p-4795">Find the eigenvalues of <span class="process-math">\(A\)</span> and then find a steady-state vector for <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-3296"><p id="p-4796">We will form the Markov chain beginning with the vector <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and defining <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>  The Sage cell below constructs the first <span class="process-math">\(N\)</span> terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix <code class="code-inline tex2jax_ignore">A</code> and vector <code class="code-inline tex2jax_ignore">x0</code> and evaluate the cell to find the first 10 terms of the Markov chain. <pre class="ptx-sagecell sagecell-sage" id="sage-123"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0)
@@ -401,67 +436,67 @@ B=\left[\begin{array}{rr}
 A =
 x0 =
 markov_chain(A, x0, 10)
-</script></div> What do you notice about the Markov chain?  Does it converge to the steady-state vector for \(A\text{?}\)</p></li>
-<li id="li-3125"><p id="p-4564">Now find the eigenvalues of \(B\) along with a steady-state vector for \(B\text{.}\)</p></li>
-<li id="li-3126"><p id="p-4565">As before, find the first 10 terms in the Markov chain beginning with \(\xvec_0 = \twovec{1}{0}\) and \(\xvec_{k+1} = B\xvec_k\text{.}\)  What do you notice about the Markov chain?  Does it converge to the steady-state vector for \(B\text{?}\)</p></li>
-<li id="li-3127"><p id="p-4566">What condition on the eigenvalues of a stochastic matrix will guarantee that a Markov chain will converge to a steady-state vector?</p></li>
-</ol></article><p id="p-4574">As this activity implies, the eigenvalues of a stochastic matrix tell us whether a Markov chain will converge to a steady-state vector. Here are a few important facts about the eigenvalues of a stochastic matrix.</p>
+</script></pre> What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(A\text{?}\)</span></p></li>
+<li id="li-3297"><p id="p-4797">Now find the eigenvalues of <span class="process-math">\(B\)</span> along with a steady-state vector for <span class="process-math">\(B\text{.}\)</span></p></li>
+<li id="li-3298"><p id="p-4798">As before, find the first 10 terms in the Markov chain beginning with <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and <span class="process-math">\(\xvec_{k+1} = B\xvec_k\text{.}\)</span>  What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(B\text{?}\)</span></p></li>
+<li id="li-3299"><p id="p-4799">What condition on the eigenvalues of a stochastic matrix will guarantee that a Markov chain will converge to a steady-state vector?</p></li>
+</ol></article><p id="p-4807">As this activity implies, the eigenvalues of a stochastic matrix tell us whether a Markov chain will converge to a steady-state vector. Here are a few important facts about the eigenvalues of a stochastic matrix.</p>
 <ul class="disc">
-<li id="li-3134"><p id="p-4575">As is demonstrated in <a class="xref" data-knowl="./knowl/exercise-stochastic-eigenvalue.html" title="Exercise 4.5.5.8">Exercise 4.5.5.8</a>, \(\lambda=1\) is an eigenvalue of any stochastic matrix.  We usually order the eigenvalues so it is the first eigenvalue meaning that \(\lambda_1=1\text{.}\)</p></li>
-<li id="li-3135"><p id="p-4576">All other eigenvalues satisfy the property that \(|\lambda_j| \leq 1\text{.}\)</p></li>
-<li id="li-3136"><p id="p-4577">Any stochastic matrix has at least one steady-state vector \(\qvec\text{.}\)</p></li>
+<li id="li-3306"><p id="p-4808">As is demonstrated in <a href="" class="xref" data-knowl="./knowl/exercise-stochastic-eigenvalue.html" title="Exercise 4.5.5.8">Exercise 4.5.5.8</a>, <span class="process-math">\(\lambda=1\)</span> is an eigenvalue of any stochastic matrix.  We usually order the eigenvalues so it is the first eigenvalue meaning that <span class="process-math">\(\lambda_1=1\text{.}\)</span></p></li>
+<li id="li-3307"><p id="p-4809">All other eigenvalues satisfy the property that <span class="process-math">\(|\lambda_j| \leq 1\text{.}\)</span></p></li>
+<li id="li-3308"><p id="p-4810">Any stochastic matrix has at least one steady-state vector <span class="process-math">\(\qvec\text{.}\)</span></p></li>
 </ul>
-<p id="p-4578">As illustrated in the activity, a Markov chain could fail to converge to a steady-state vector if \(|\lambda_2| = 1\text{.}\)  This happens for the matrix \(A = \left[\begin{array}{rr}
+<p id="p-4811">As illustrated in the activity, a Markov chain could fail to converge to a steady-state vector if <span class="process-math">\(|\lambda_2| = 1\text{.}\)</span>  This happens for the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
 0 \amp 1 \\
 1 \amp 0 \\
 \end{array}\right]
-\text{,}\) whose eigenvalues are \(\lambda_1=1\) and \(\lambda_2 =
--1\text{.}\)</p>
-<p id="p-4579">However, if all but the first eigenvalue satisfy \(|\lambda_j|\lt 1\text{,}\) then there is a unique steady-state vector \(\qvec\) and any Markov chain will converge to \(\qvec\text{.}\)  This was the case for the matrix \(B = \left[\begin{array}{rr}
+\text{,}\)</span> whose eigenvalues are <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2 =
+-1\text{.}\)</span></p>
+<p id="p-4812">However, if all but the first eigenvalue satisfy <span class="process-math">\(|\lambda_j|\lt 1\text{,}\)</span> then there is a unique steady-state vector <span class="process-math">\(\qvec\)</span> and any Markov chain will converge to <span class="process-math">\(\qvec\text{.}\)</span>  This was the case for the matrix <span class="process-math">\(B = \left[\begin{array}{rr}
 0.4 \amp 0.3 \\
 0.6 \amp 0.7 \\
 \end{array}\right]
-\text{,}\) whose eigenvalues are \(\lambda_1=1\) and \(\lambda_2 =
-0.1\text{.}\)  In this case, any Markov chain will converge to the unique steady-state vector \(\qvec =
-\twovec{\frac13}{\frac23}\text{.}\)</p>
-<p id="p-4580">In this way, we see that the eigenvalues of a stochastic matrix tell us whether a Markov chain will converge to a steady-state vector.  However, it is somewhat inconvenient to compute the eigenvalues to answer this question.  Is there some way to conclude that every Markov chain will converge to a steady-state vector without actually computing the eigenvalues?  It turns out that there is a simple condition on the matrix \(A\) that guarantees this.</p>
-<article class="definition definition-like" id="definition-22"><h6 class="heading">
+\text{,}\)</span> whose eigenvalues are <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2 =
+0.1\text{.}\)</span>  In this case, any Markov chain will converge to the unique steady-state vector <span class="process-math">\(\qvec =
+\twovec{\frac13}{\frac23}\text{.}\)</span></p>
+<p id="p-4813">In this way, we see that the eigenvalues of a stochastic matrix tell us whether a Markov chain will converge to a steady-state vector.  However, it is somewhat inconvenient to compute the eigenvalues to answer this question.  Is there some way to conclude that every Markov chain will converge to a steady-state vector without actually computing the eigenvalues?  It turns out that there is a simple condition on the matrix <span class="process-math">\(A\)</span> that guarantees this.</p>
+<article class="definition definition-like" id="definition-26"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span>
-</h6>
-<p id="p-4581">We say that a matrix \(A\) is <em class="emphasis">positive</em> if either \(A\) or some power \(A^k\) has all positive entries.</p></article><article class="example example-like" id="example-28"><h6 class="heading">
+</h4>
+<p id="p-4814">We say that a matrix <span class="process-math">\(A\)</span> is <em class="emphasis">positive</em> if either <span class="process-math">\(A\)</span> or some power <span class="process-math">\(A^k\)</span> has all positive entries.</p></article><article class="example example-like" id="example-48"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span>
-</h6>
-<p id="p-4582">The matrix \(A = \left[\begin{array}{rr}
+</h4>
+<p id="p-4815">The matrix <span class="process-math">\(A = \left[\begin{array}{rr}
 0 \amp 1 \\
 1 \amp 0 \\
-\end{array}\right]\) is not positive.  We can see this because some of the entries of \(A\) are zero and therefore not positive.  In addition, we see that \(A^2 = I\text{,}\) \(A^3 = A\) and so forth.  Therefore, every power of \(A\) also has some zero entries, which means that \(A\) is not positive.</p>
-<p id="p-4583">The matrix \(B = \left[\begin{array}{rr}
+\end{array}\right]\)</span> is not positive.  We can see this because some of the entries of <span class="process-math">\(A\)</span> are zero and therefore not positive.  In addition, we see that <span class="process-math">\(A^2 = I\text{,}\)</span> <span class="process-math">\(A^3 = A\)</span> and so forth.  Therefore, every power of <span class="process-math">\(A\)</span> also has some zero entries, which means that <span class="process-math">\(A\)</span> is not positive.</p>
+<p id="p-4816">The matrix <span class="process-math">\(B = \left[\begin{array}{rr}
 0.4 \amp 0.3 \\
 0.6 \amp 0.7 \\
-\end{array}\right]\) is positive because every entry of \(B\) is positive.</p>
-<p id="p-4584">Also, the matrix \(C = \left[\begin{array}{rr}
+\end{array}\right]\)</span> is positive because every entry of <span class="process-math">\(B\)</span> is positive.</p>
+<p id="p-4817">Also, the matrix <span class="process-math">\(C = \left[\begin{array}{rr}
 0 \amp 0.5 \\
 1 \amp 0.5 \\
-\end{array}\right]\) clearly has a zero entry.  However, \(C^2 = \left[\begin{array}{rr}
+\end{array}\right]\)</span> clearly has a zero entry.  However, <span class="process-math">\(C^2 = \left[\begin{array}{rr}
 0.5 \amp 0.25 \\
 0.5 \amp 0.75 \\
 \end{array}\right]
-\text{,}\) which has all positive entries.  Therefore, we see that \(C\) is a positive matrix.</p></article><p id="p-4585">Positive matrices are important because of the following theorem.</p>
-<article class="theorem theorem-like" id="theorem-perron"><h6 class="heading">
+\text{,}\)</span> which has all positive entries.  Therefore, we see that <span class="process-math">\(C\)</span> is a positive matrix.</p></article><p id="p-4818">Positive matrices are important because of the following theorem.</p>
+<article class="theorem theorem-like" id="theorem-perron"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Perron-Frobenius.</span>
-</h6>
-<p id="p-4586">If \(A\) is a positive stochastic matrix, then the eigenvalues satisfy \(\lambda_1=1\) and \(|\lambda_j| \lt
-1\) for \(j\gt 1\text{.}\)  This means that \(A\) has a unique positive, steady-state vector \(\qvec\) and that every Markov chain defined by \(A\) will converge to \(\qvec\text{.}\)</p></article><article class="activity project-like" id="activity-57"><h6 class="heading">
+</h4>
+<p id="p-4819">If <span class="process-math">\(A\)</span> is a positive stochastic matrix, then the eigenvalues satisfy <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(|\lambda_j| \lt
+1\)</span> for <span class="process-math">\(j\gt 1\text{.}\)</span>  This means that <span class="process-math">\(A\)</span> has a unique positive, steady-state vector <span class="process-math">\(\qvec\)</span> and that every Markov chain defined by <span class="process-math">\(A\)</span> will converge to <span class="process-math">\(\qvec\text{.}\)</span></p></article><article class="activity project-like" id="activity-58"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span>
-</h6>
-<p id="p-4587">We will explore the meaning of the Perron-Frobenius theorem in this activity.</p>
+</h4>
+<p id="p-4820">We will explore the meaning of the Perron-Frobenius theorem in this activity.</p>
 <ol class="lower-alpha">
-<li id="li-3137"><p id="p-4588">Consider the matrix \(C = \left[\begin{array}{rr}
+<li id="li-3309"><p id="p-4821">Consider the matrix <span class="process-math">\(C = \left[\begin{array}{rr}
 0 \amp 0.5 \\
 1 \amp 0.5 \\
 \end{array}\right]
-\text{.}\) This is a positive matrix, as we saw in the previous example.  Find the eigenvectors of \(C\) and verify there is a unique steady-state vector.</p></li>
-<li id="li-3138"><p id="p-4589">Using the Sage cell below, construct the Markov chain with initial vector \(\xvec_0= \twovec{1}{0}\) and describe what happens to \(\xvec_k\) as \(k\) becomes large. <div class="sagecell-sage" id="sage-117"><script type="text/x-sage">def markov_chain(A, x0, N):
+\text{.}\)</span> This is a positive matrix, as we saw in the previous example.  Find the eigenvectors of <span class="process-math">\(C\)</span> and verify there is a unique steady-state vector.</p></li>
+<li id="li-3310"><p id="p-4822">Using the Sage cell below, construct the Markov chain with initial vector <span class="process-math">\(\xvec_0= \twovec{1}{0}\)</span> and describe what happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> becomes large. <pre class="ptx-sagecell sagecell-sage" id="sage-124"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0)
@@ -469,48 +504,48 @@ markov_chain(A, x0, 10)
 C =
 x0 =
 markov_chain(C, x0, 10)
-</script></div></p></li>
-<li id="li-3139"><p id="p-4590">Construct another Markov chain with initial vector \(\xvec_0=\twovec{0.2}{0.8}\) and describe what happens to \(\xvec_k\) as \(k\) becomes large.</p></li>
-<li id="li-3140"><p id="p-4591">Consider the matrix \(D = \left[\begin{array}{rrr}
+</script></pre></p></li>
+<li id="li-3311"><p id="p-4823">Construct another Markov chain with initial vector <span class="process-math">\(\xvec_0=\twovec{0.2}{0.8}\)</span> and describe what happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> becomes large.</p></li>
+<li id="li-3312"><p id="p-4824">Consider the matrix <span class="process-math">\(D = \left[\begin{array}{rrr}
 0 \amp 0.5 \amp 0 \\
 1 \amp 0.5 \amp 0 \\
 0 \amp 0 \amp 1 \\
-\end{array}\right]\) and compute several powers of \(D\) below. <div class="sagecell-sage" id="sage-118"><script type="text/x-sage">
-</script></div> Determine whether \(D\) is a positive matrix.</p></li>
-<li id="li-3141"><p id="p-4592">Find the eigenvalues of \(D\) and then find the steady-state vectors.  Is there a unique steady-state vector?</p></li>
-<li id="li-3142"><p id="p-4593">What happens to the Markov chain defined by \(D\) with initial vector \(\xvec_0 =\threevec{1}{0}{0}\text{?}\)  What happens to the Markov chain with initial vector \(\xvec_0=\threevec{0}{0}{1}\text{.}\)</p></li>
-<li id="li-3143"><p id="p-4594">Explain how the matrices \(C\) and \(D\text{,}\) which we have considered in this activity, relate to the Perron-Frobenius theorem.</p></li>
+\end{array}\right]\)</span> and compute several powers of <span class="process-math">\(D\)</span> below. <pre class="ptx-sagecell sagecell-sage" id="sage-125"><script type="text/x-sage">
+</script></pre> Determine whether <span class="process-math">\(D\)</span> is a positive matrix.</p></li>
+<li id="li-3313"><p id="p-4825">Find the eigenvalues of <span class="process-math">\(D\)</span> and then find the steady-state vectors.  Is there a unique steady-state vector?</p></li>
+<li id="li-3314"><p id="p-4826">What happens to the Markov chain defined by <span class="process-math">\(D\)</span> with initial vector <span class="process-math">\(\xvec_0 =\threevec{1}{0}{0}\text{?}\)</span>  What happens to the Markov chain with initial vector <span class="process-math">\(\xvec_0=\threevec{0}{0}{1}\text{.}\)</span></p></li>
+<li id="li-3315"><p id="p-4827">Explain how the matrices <span class="process-math">\(C\)</span> and <span class="process-math">\(D\text{,}\)</span> which we have considered in this activity, relate to the Perron-Frobenius theorem.</p></li>
 </ol></article></section><section class="subsection" id="subsec-google"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">Google's PageRank algorithm</span>
 </h3>
-<p id="p-4603">Markov chains and the Perron-Frobenius theorem are the central ingredients in Google's PageRank algorithm, developed by Google to assess the quality of web pages.</p>
-<p id="p-4604">Suppose we enter “linear algebra” into Google's search engine.  Google responds by telling us there are 24.9 million web pages containing those terms.  On the first page, however, there are links to ten web pages that Google judges to have the highest quality and therefore the ones we are most likely to be interested in. How does Google assess the quality of web pages?</p>
-<p id="p-4605">As the time this is being written, Google is tracking 30 trillion web pages.  Clearly, this is too many for humans to evaluate.  Plus, human evaluators may inject their own biases into their evaluations, perhaps even unintentionally.  Google's idea is to use the structure of the Internet to assess the quality of web pages without any human intervention.  For instance, if a web page has quality content, other web pages will link to it.  This means that the number of links to a page reflect the quality of that page.  In addition, we would expect a page to have even higher quality content if those links are coming from pages that are themselves assessed to have high quality.  Simply said, if many quality pages link to a page, that page must itself be of high quality.  This is the essence of the PageRank algorithm, which we introduce in the next activity.</p>
-<article class="activity project-like" id="activity-58"><h6 class="heading">
+<p id="p-4836">Markov chains and the Perron-Frobenius theorem are the central ingredients in Google's PageRank algorithm, developed by Google to assess the quality of web pages.</p>
+<p id="p-4837">Suppose we enter “linear algebra” into Google's search engine.  Google responds by telling us there are 138 million web pages containing those terms.  On the first page, however, there are links to ten web pages that Google judges to have the highest quality and to be the ones we are most likely to be interested in. How does Google assess the quality of web pages?</p>
+<p id="p-4838">At the time this is being written, Google is tracking 35 trillion web pages.  Clearly, this is too many for humans to evaluate.  Plus, human evaluators may inject their own biases into their evaluations, perhaps even unintentionally.  Google's idea is to use the structure of the Internet to assess the quality of web pages without any human intervention.  For instance, if a web page has quality content, other web pages will link to it.  This means that the number of links to a page reflect the quality of that page.  In addition, we would expect a page to have even higher quality content if those links are coming from pages that are themselves assessed to have high quality.  Simply said, if many quality pages link to a page, that page must itself be of high quality.  This is the essence of the PageRank algorithm, which we introduce in the next activity.</p>
+<article class="activity project-like" id="activity-59"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span>
-</h6>
+</h4>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4606">We will consider a simple model of the Internet that has three pages and links between them as shown here.  For instance, page 1 links to both pages 2 and 3, but page 2 only links to page 1.</p></div>
-<div class="sbspanel top" style="width:46.1538461538462%;"><figure class="figure figure-like" id="fig-google-intro"><img src="images/google-intro.svg" role="img" class="contained" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.7<span class="period">.</span></span><span class="space"> </span>Our first Internet.</figcaption></figure></div>
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4839">We will consider a simple model of the Internet that has three pages and links between them as shown here.  For instance, page 1 links to both pages 2 and 3, but page 2 only links to page 1.</p></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><figure class="figure figure-like" id="fig-google-intro"><img src="external/images/google-intro.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.7<span class="period">.</span></span><span class="space"> </span>Our first Internet.</figcaption></figure></div>
 </div></div>
-<p id="p-4607">We will measure the quality of the \(j^{th}\) page with a number \(x_j\text{,}\) which is called the PageRank of page \(j\text{.}\)  The PageRank is determined by the following rule:  each page divides its PageRank into equal pieces, one for each outgoing link, and gives one piece to each of the pages it links to.  A page's PageRank is the sum of all the PageRank it receives from pages linking to it.</p>
-<p id="p-4608">For instance, page 3 has two outgoing links.  It therefore divides its PageRank \(x_3\) in half and gives half to page 1.  Page 2 has only one outgoing link so it gives all of its PageRank \(x_2\) to page 1.  We therefore have</p>
-<div class="displaymath">
+<p id="p-4840">We will measure the quality of the <span class="process-math">\(j^{th}\)</span> page with a number <span class="process-math">\(x_j\text{,}\)</span> which is called the PageRank of page <span class="process-math">\(j\text{.}\)</span>  The PageRank is determined by the following rule:  each page divides its PageRank into equal pieces, one for each outgoing link, and gives one piece to each of the pages it links to.  A page's PageRank is the sum of all the PageRank it receives from pages linking to it.</p>
+<p id="p-4841">For instance, page 3 has two outgoing links.  It therefore divides its PageRank <span class="process-math">\(x_3\)</span> in half and gives half to page 1.  Page 2 has only one outgoing link so it gives all of its PageRank <span class="process-math">\(x_2\)</span> to page 1.  We therefore have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x_1 = x_2 + \frac12 x_3\text{.}
 \end{equation*}
 </div>
-<ol id="p-4609" class="lower-alpha">
-<li id="li-3151"><p id="p-4610">Find similar expressions for \(x_2\) and \(x_3\text{.}\)</p></li>
-<li id="li-3152"><p id="p-4611">We now form the PageRank vector \(\xvec =
-\threevec{x_1}{x_2}{x_3}\text{.}\)  Find a matrix \(G\) such that the expressions for \(x_1\text{,}\) \(x_2\text{,}\) and \(x_3\) can be written in the form \(G\xvec = \xvec\text{.}\)  The matrix \(G\) is called the “Google matrix”.</p></li>
-<li id="li-3153"><p id="p-4612">Explain why \(G\) is a stochastic matrix.</p></li>
-<li id="li-3154"><p id="p-4613">Since \(\xvec\) is defined by the equation \(G\xvec = \xvec\text{,}\) any vector in the eigenspace \(E_1\) satisfies this equation.  So that we might work with a specific vector, we will define the PageRank vector to be the steady-state vector of the stochastic matrix \(G\text{.}\)  Find this steady state vector. <div class="sagecell-sage" id="sage-119"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-3155"><p id="p-4614">The PageRank vector \(\xvec\) is composed of the PageRanks for each of the three pages.  Which page of the three is assessed to have the highest quality?  By referring to the structure of this small model of the Internet, explain why this is a good choice.</p></li>
-<li id="li-3156"><p id="p-4615">If we begin with the initial vector \(\xvec_0 =
-\threevec{1}{0}{0}\) and form the Markov chain \(\xvec_{k+1} = G\xvec_k\text{,}\) what does the Perron-Frobenius theorem tell us about the long-term behavior of the Markov chain?</p></li>
-<li id="li-3157"><p id="p-4616">Verify that this Markov chain converges to the steady-state PageRank vector. <div class="sagecell-sage" id="sage-120"><script type="text/x-sage">def markov_chain(A, x0, N):
+<ol id="p-4842" class="lower-alpha">
+<li id="li-3323"><p id="p-4843">Find similar expressions for <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\text{.}\)</span></p></li>
+<li id="li-3324"><p id="p-4844">We now form the PageRank vector <span class="process-math">\(\xvec =
+\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find a matrix <span class="process-math">\(G\)</span> such that the expressions for <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> and <span class="process-math">\(x_3\)</span> can be written in the form <span class="process-math">\(G\xvec = \xvec\text{.}\)</span>  The matrix <span class="process-math">\(G\)</span> is called the “Google matrix”.</p></li>
+<li id="li-3325"><p id="p-4845">Explain why <span class="process-math">\(G\)</span> is a stochastic matrix.</p></li>
+<li id="li-3326"><p id="p-4846">Since <span class="process-math">\(\xvec\)</span> is defined by the equation <span class="process-math">\(G\xvec = \xvec\text{,}\)</span> any vector in the eigenspace <span class="process-math">\(E_1\)</span> satisfies this equation.  So that we might work with a specific vector, we will define the PageRank vector to be the steady-state vector of the stochastic matrix <span class="process-math">\(G\text{.}\)</span>  Find this steady state vector. <pre class="ptx-sagecell sagecell-sage" id="sage-126"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-3327"><p id="p-4847">The PageRank vector <span class="process-math">\(\xvec\)</span> is composed of the PageRanks for each of the three pages.  Which page of the three is assessed to have the highest quality?  By referring to the structure of this small model of the Internet, explain why this is a good choice.</p></li>
+<li id="li-3328"><p id="p-4848">If we begin with the initial vector <span class="process-math">\(\xvec_0 =
+\threevec{1}{0}{0}\)</span> and form the Markov chain <span class="process-math">\(\xvec_{k+1} = G\xvec_k\text{,}\)</span> what does the Perron-Frobenius theorem tell us about the long-term behavior of the Markov chain?</p></li>
+<li id="li-3329"><p id="p-4849">Verify that this Markov chain converges to the steady-state PageRank vector. <pre class="ptx-sagecell sagecell-sage" id="sage-127"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0.numerical_approx(digits=3))
@@ -518,16 +553,16 @@ x_1 = x_2 + \frac12 x_3\text{.}
 G =
 x0 =
 markov_chain(G, x0, 20)
-</script></div></p></li>
-</ol></article><p id="p-4627">This activity shows us two ways to find the PageRank vector. In the first, we determine a steady-state vector directly by finding a description of the eigenspace \(E_1\) and then finding the appropriate scalar multiple of a basis vector that gives us the steady-state vector.  To find a description of the eigenspace \(E_1\text{,}\) however, we need to find the null space \(\nul(G-I)\text{.}\)  Remember that the real Internet has 30 trillion pages so finding \(\nul(G-I)\) requires us to row reduce a matrix with 30 trillion rows and columns.  As we saw in <a href="sec-sage-introduction.html#subsec-compute-effort" class="internal" title="Subsection 1.3.3: Computational effort">Subsection 1.3.3</a>, that is not computationally feasible.</p>
-<p id="p-4628">As suggested by the activity, the second way to find the PageRank vector is to use a Markov chain that converges to the PageRank vector.  Since multiplying a vector by a matrix is significantly less work than row reducing the matrix, this approach is computationally feasible, and it is, in fact, how Google computes the PageRank vector.</p>
-<article class="activity project-like" id="activity-59"><h6 class="heading">
+</script></pre></p></li>
+</ol></article><p id="p-4860">This activity shows us two ways to find the PageRank vector. In the first, we determine a steady-state vector directly by finding a description of the eigenspace <span class="process-math">\(E_1\)</span> and then finding the appropriate scalar multiple of a basis vector that gives us the steady-state vector.  To find a description of the eigenspace <span class="process-math">\(E_1\text{,}\)</span> however, we need to find the null space <span class="process-math">\(\nul(G-I)\text{.}\)</span>  Remember that the real Internet has 35 trillion pages so finding <span class="process-math">\(\nul(G-I)\)</span> requires us to row reduce a matrix with 35 trillion rows and columns.  As we saw in <a href="sec-sage-introduction.html#subsec-compute-effort" class="internal" title="Subsection 1.3.3: Computational effort">Subsection 1.3.3</a>, that is not computationally feasible.</p>
+<p id="p-4861">As suggested by the activity, the second way to find the PageRank vector is to use a Markov chain that converges to the PageRank vector.  Since multiplying a vector by a matrix is significantly less work than row reducing the matrix, this approach is computationally feasible, and it is, in fact, how Google computes the PageRank vector.</p>
+<article class="activity project-like" id="activity-60"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span>
-</h6>
-<p id="p-4629">Consider the Internet with eight web pages, shown in <a class="xref" data-knowl="./knowl/fig-google-irreducible.html" title="Figure 4.5.8">Figure 4.5.8</a>.</p>
-<figure class="figure figure-like" id="fig-google-irreducible"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/google-irreducible.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.8<span class="period">.</span></span><span class="space"> </span>A simple model of the Internet with eight web pages.</figcaption></figure><ol id="p-4630" class="lower-alpha">
-<li id="li-3165"><p id="p-4631">Construct the Google matrix \(G\) for this Internet.  Then use a Markov chain to find the steady-state PageRank vector \(\xvec\text{.}\) <div class="sagecell-sage" id="sage-121"><script type="text/x-sage">def markov_chain(A, x0, N):
+</h4>
+<p id="p-4862">Consider the Internet with eight web pages, shown in <a href="" class="xref" data-knowl="./knowl/fig-google-irreducible.html" title="Figure 4.5.8">Figure 4.5.8</a>.</p>
+<figure class="figure figure-like" id="fig-google-irreducible"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-irreducible.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.8<span class="period">.</span></span><span class="space"> </span>A simple model of the Internet with eight web pages.</figcaption></figure><ol id="p-4863" class="lower-alpha">
+<li id="li-3337"><p id="p-4864">Construct the Google matrix <span class="process-math">\(G\)</span> for this Internet.  Then use a Markov chain to find the steady-state PageRank vector <span class="process-math">\(\xvec\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-128"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0.numerical_approx(digits=3))
@@ -535,26 +570,26 @@ markov_chain(G, x0, 20)
 G =
 x0 =
 markov_chain(G, x0, 20)
-</script></div></p></li>
-<li id="li-3166"><p id="p-4632">What does this vector tell us about the relative quality of the pages in this Internet?  Which page has the highest quality and which the lowest?</p></li>
-<li id="li-3167">
-<p id="p-4633">Now consider the Internet with five pages, shown in <a class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.</p>
-<figure class="figure figure-like" id="fig-google-cyclic"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/google-cyclic.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.9<span class="period">.</span></span><span class="space"> </span>A model of the Internet with five web pages.</figcaption></figure><p id="p-4634">What happens when you begin the Markov chain with the vector \(\xvec_0=\fivevec{1}{0}{0}{0}{0}\text{?}\)  Explain why this behavior is consistent with the Perron-Frobenius theorem.</p>
+</script></pre></p></li>
+<li id="li-3338"><p id="p-4865">What does this vector tell us about the relative quality of the pages in this Internet?  Which page has the highest quality and which the lowest?</p></li>
+<li id="li-3339">
+<p id="p-4866">Now consider the Internet with five pages, shown in <a href="" class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.</p>
+<figure class="figure figure-like" id="fig-google-cyclic"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-cyclic.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.9<span class="period">.</span></span><span class="space"> </span>A model of the Internet with five web pages.</figcaption></figure><p id="p-4867">What happens when you begin the Markov chain with the vector <span class="process-math">\(\xvec_0=\fivevec{1}{0}{0}{0}{0}\text{?}\)</span>  Explain why this behavior is consistent with the Perron-Frobenius theorem.</p>
 </li>
-<li id="li-3168"><p id="p-4635">What do you think the PageRank vector for this Internet should be?  Is any one page of a higher quality than another?</p></li>
-<li id="li-3169">
-<p id="p-4636">Now consider the Internet with eight web pages, shown in <a class="xref" data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a>.</p>
-<figure class="figure figure-like" id="fig-google-reducible"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/google-reducible.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.10<span class="period">.</span></span><span class="space"> </span>Another model of the Internet with eight web pages.</figcaption></figure><p id="p-4637">Notice that this version of the Internet is identical to the first one that we saw in this activity, except that a single link from page 7 to page 1 has been removed.  We can therefore find its Google matrix \(G\) by slightly modifying the earlier matrix.</p>
-<p id="p-4638">What is the long-term behavior of a Markov chain defined by \(G\) and why is this behavior not desirable?  How is this behavior consistent with the Perron-Frobenius theorem?</p>
+<li id="li-3340"><p id="p-4868">What do you think the PageRank vector for this Internet should be?  Is any one page of a higher quality than another?</p></li>
+<li id="li-3341">
+<p id="p-4869">Now consider the Internet with eight web pages, shown in <a href="" class="xref" data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a>.</p>
+<figure class="figure figure-like" id="fig-google-reducible"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-reducible.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.10<span class="period">.</span></span><span class="space"> </span>Another model of the Internet with eight web pages.</figcaption></figure><p id="p-4870">Notice that this version of the Internet is identical to the first one that we saw in this activity, except that a single link from page 7 to page 1 has been removed.  We can therefore find its Google matrix <span class="process-math">\(G\)</span> by slightly modifying the earlier matrix.</p>
+<p id="p-4871">What is the long-term behavior of a Markov chain defined by <span class="process-math">\(G\)</span> and why is this behavior not desirable?  How is this behavior consistent with the Perron-Frobenius theorem?</p>
 </li>
-</ol></article><p id="p-4645">The Perron-Frobenius theorem <a class="xref" data-knowl="./knowl/theorem-perron.html" title="Theorem 4.5.6: Perron-Frobenius">Theorem 4.5.6</a> tells us that a Markov chain \(\xvec_{k+1}=G\xvec_k\) converges to a unique steady-state vector when the matrix \(G\) is positive.  This means that \(G\) or some power of \(G\) should have only positive entries.  Clearly, this is not the case for the matrix formed from the Internet in <a class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.</p>
-<p id="p-4646">We can understand the problem with the Internet shown in <a class="xref" data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a> by adding a box around some of the pages as shown in <a class="xref" data-knowl="./knowl/fig-google-reducible-box.html" title="Figure 4.5.11">Figure 4.5.11</a>.  Here we see that the pages outside of the box give up all of their PageRank to the pages inside the box.  This is not desirable because the PageRanks of the pages outside of the box are found to be zero.  Once again, the Google matrix \(G\) is not a positive matrix.</p>
-<figure class="figure figure-like" id="fig-google-reducible-box"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="images/google-reducible-box.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.11<span class="period">.</span></span><span class="space"> </span>The pages outside the box give up all of their PageRank to the pages inside the box.</figcaption></figure><p id="p-4647">Google solves this problem by slightly modifying the Google matrix \(G\) to obtain a positive matrix \(G'\text{.}\)  To understand this, think of the entries in the Google matrix as giving the probabilty that an Internet user follows a link from one page of another.  To create a positive matrix, we will allow that user to randomly jump to any other page on the Internet with a small probability.</p>
-<p id="p-4648">To make sense of this, suppose that there are \(N\) pages on our internet.  The matrix</p>
-<div class="displaymath">
+</ol></article><p id="p-4878">The Perron-Frobenius theorem <a href="" class="xref" data-knowl="./knowl/theorem-perron.html" title="Theorem 4.5.6: Perron-Frobenius">Theorem 4.5.6</a> tells us that a Markov chain <span class="process-math">\(\xvec_{k+1}=G\xvec_k\)</span> converges to a unique steady-state vector when the matrix <span class="process-math">\(G\)</span> is positive.  This means that <span class="process-math">\(G\)</span> or some power of <span class="process-math">\(G\)</span> should have only positive entries.  Clearly, this is not the case for the matrix formed from the Internet in <a href="" class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.</p>
+<p id="p-4879">We can understand the problem with the Internet shown in <a href="" class="xref" data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a> by adding a box around some of the pages as shown in <a href="" class="xref" data-knowl="./knowl/fig-google-reducible-box.html" title="Figure 4.5.11">Figure 4.5.11</a>.  Here we see that the pages outside of the box give up all of their PageRank to the pages inside the box.  This is not desirable because the PageRanks of the pages outside of the box are found to be zero.  Once again, the Google matrix <span class="process-math">\(G\)</span> is not a positive matrix.</p>
+<figure class="figure figure-like" id="fig-google-reducible-box"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-reducible-box.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.11<span class="period">.</span></span><span class="space"> </span>The pages outside the box give up all of their PageRank to the pages inside the box.</figcaption></figure><p id="p-4880">Google solves this problem by slightly modifying the Google matrix <span class="process-math">\(G\)</span> to obtain a positive matrix <span class="process-math">\(G'\text{.}\)</span>  To understand this, think of the entries in the Google matrix as giving the probability that an Internet user follows a link from one page of another.  To create a positive matrix, we will allow that user to randomly jump to any other page on the Internet with a small probability.</p>
+<p id="p-4881">To make sense of this, suppose that there are <span class="process-math">\(N\)</span> pages on our internet.  The matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 H_n = \left[\begin{array}{rrrr}
 \frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
@@ -564,23 +599,23 @@ H_n = \left[\begin{array}{rrrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<p class="continuation">is a positive stochastic matrix describing a process where we can move from any page to another with equal probability.  To form the modified Google matrix \(G'\text{,}\) we choose a parameter \(\alpha\) that is used to mix \(G\) and \(H_n\) together;  that is, \(G'\) is the positive stochastic matrix</p>
-<div class="displaymath">
+<p class="continuation">is a positive stochastic matrix describing a process where we can move from any page to another with equal probability.  To form the modified Google matrix <span class="process-math">\(G'\text{,}\)</span> we choose a parameter <span class="process-math">\(\alpha\)</span> that is used to mix <span class="process-math">\(G\)</span> and <span class="process-math">\(H_n\)</span> together;  that is, <span class="process-math">\(G'\)</span> is the positive stochastic matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 G' = \alpha G +(1-\alpha)H_n\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In practice, it is thought that Google uses a value of \(\alpha=0.85\) (Google doesn't publish this number as it is a trade secret) so that we have</p>
-<div class="displaymath">
+<p class="continuation">In practice, it is thought that Google uses a value of <span class="process-math">\(\alpha=0.85\)</span> (Google doesn't publish this number as it is a trade secret) so that we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 G' = 0.85 G + 0.15H_n\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Intuitively, this means that an Internet user will randomly follow a link from one page to another 85% of the time and will randomly jump to any other page on the Internet 15% of the time.  Since the matrix \(G'\) is positive, the Perron-Frobenius theorem tells us that any Markov chain will converge to a unique steady-state vector that we call the PageRank vector.</p>
-<article class="activity project-like" id="activity-60"><h6 class="heading">
+<p class="continuation">Intuitively, this means that an Internet user will randomly follow a link from one page to another 85% of the time and will randomly jump to any other page on the Internet 15% of the time.  Since the matrix <span class="process-math">\(G'\)</span> is positive, the Perron-Frobenius theorem tells us that any Markov chain will converge to a unique steady-state vector that we call the PageRank vector.</p>
+<article class="activity project-like" id="activity-61"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span>
-</h6>
-<p id="p-4649">The following Sage cell will generate the Markov chain for the modified Google matrix \(G\) if you simply enter the original Google matrix \(G\) in the appropriate line. <div class="sagecell-sage" id="sage-122"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+</h4>
+<p id="p-4882">The following Sage cell will generate the Markov chain for the modified Google matrix <span class="process-math">\(G\)</span> if you simply enter the original Google matrix <span class="process-math">\(G\)</span> in the appropriate line. <pre class="ptx-sagecell sagecell-sage" id="sage-129"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
     r = A.nrows()
     A = 0.85*A + 0.15*matrix(r,r,[1.0/r]*(r*r))	      
     for i in range(N):
@@ -592,59 +627,59 @@ G' = 0.85 G + 0.15H_n\text{.}
 G =
 x0 =
 modified_markov_chain(G, x0, 20)
-</script></div></p>
+</script></pre></p>
 <ol class="lower-alpha">
-<li id="li-3175"><p id="p-4650">Consider the original Internet with three pages shown in <a class="xref" data-knowl="./knowl/fig-google-intro.html" title="Figure 4.5.7">Figure 4.5.7</a> and find the PageRank vector \(\xvec\) using the modified Google matrix in the Sage cell above. How does this modified PageRank vector compare to the vector we found using the original Google matrix \(G\text{?}\)</p></li>
-<li id="li-3176"><p id="p-4651">Find the modified PageRank vector for the Internet shown in <a class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.  Explain why this vector seems to be the correct one.</p></li>
-<li id="li-3177"><p id="p-4652">Find the modified PageRank vector for the Internet shown in <a class="xref" data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a>.  Explain why this modified PageRank vector fixes the problem that appeared with the original PageRank vector.</p></li>
-</ol></article><p id="p-4657">The ability to access almost anything we want to know through the Internet is something we take for granted in today's society. Without Google's PageRank algorithm, however, the Internet would be a chaotic place indeed; imagine trying to find a useful web page among the 30 trillion available pages without it.  (There are, of course, other search algorithms, but Google's is the most widely used.)  The fundamental role that Markov chains and the Perron-Frobenius theorem play in Google's algorithm demonstrates the vast power that mathematics has to shape our society.</p></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<li id="li-3347"><p id="p-4883">Consider the original Internet with three pages shown in <a href="" class="xref" data-knowl="./knowl/fig-google-intro.html" title="Figure 4.5.7">Figure 4.5.7</a> and find the PageRank vector <span class="process-math">\(\xvec\)</span> using the modified Google matrix in the Sage cell above. How does this modified PageRank vector compare to the vector we found using the original Google matrix <span class="process-math">\(G\text{?}\)</span></p></li>
+<li id="li-3348"><p id="p-4884">Find the modified PageRank vector for the Internet shown in <a href="" class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a>.  Explain why this vector seems to be the correct one.</p></li>
+<li id="li-3349"><p id="p-4885">Find the modified PageRank vector for the Internet shown in <a href="" class="xref" data-knowl="./knowl/fig-google-reducible.html" title="Figure 4.5.10">Figure 4.5.10</a>.  Explain why this modified PageRank vector fixes the problem that appeared with the original PageRank vector.</p></li>
+</ol></article><p id="p-4890">The ability to access almost anything we want to know through the Internet is something we take for granted in today's society. Without Google's PageRank algorithm, however, the Internet would be a chaotic place indeed; imagine trying to find a useful web page among the 30 trillion available pages without it.  (There are, of course, other search algorithms, but Google's is the most widely used.)  The fundamental role that Markov chains and the Perron-Frobenius theorem play in Google's algorithm demonstrates the vast power that mathematics has to shape our society.</p></section><section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.4</span> <span class="title">Summary</span>
 </h3>
-<p id="p-4658">This section explored stochastic matrices and Markov chains.</p>
+<p id="p-4891">This section explored stochastic matrices and Markov chains.</p>
 <ul class="disc">
-<li id="li-3181"><p id="p-4659">A probability vector is one whose entries are nonnegative and whose columns add to 1.  A stochastic matrix is a square matrix whose columns are probability vectors.</p></li>
-<li id="li-3182"><p id="p-4660">A Markov chain is formed from a stochastic matrix \(A\) and an initial probability vector \(\xvec_0\) using the rule \(\xvec_{k+1}=A\xvec_k\text{.}\)  We may think of the sequence \(\xvec_k\) as describing the evolution of some conserved quantity, such as the number of rental cars or voters, among a number of possible states over time.</p></li>
-<li id="li-3183"><p id="p-4661">A steady-state vector \(\qvec\) for a stochastic matrix \(A\) is a probability vector that satisfies \(A\qvec
-= \qvec\text{.}\)</p></li>
-<li id="li-3184"><p id="p-4662">The Perron-Frobenius theorem tells us that, if \(A\) is a positive stochastic matrix, then every Markov chain defined by \(A\) converges to a unique, positive steady-state vector.</p></li>
-<li id="li-3185"><p id="p-4663">Google's PageRank algorithm uses Markov chains and the Perron-Frobenius theorem to assess the relative quality of web pages on the Internet.</p></li>
+<li id="li-3353"><p id="p-4892">A probability vector is one whose entries are nonnegative and whose columns add to 1.  A stochastic matrix is a square matrix whose columns are probability vectors.</p></li>
+<li id="li-3354"><p id="p-4893">A Markov chain is formed from a stochastic matrix <span class="process-math">\(A\)</span> and an initial probability vector <span class="process-math">\(\xvec_0\)</span> using the rule <span class="process-math">\(\xvec_{k+1}=A\xvec_k\text{.}\)</span>  We may think of the sequence <span class="process-math">\(\xvec_k\)</span> as describing the evolution of some conserved quantity, such as the number of rental cars or voters, among a number of possible states over time.</p></li>
+<li id="li-3355"><p id="p-4894">A steady-state vector <span class="process-math">\(\qvec\)</span> for a stochastic matrix <span class="process-math">\(A\)</span> is a probability vector that satisfies <span class="process-math">\(A\qvec
+= \qvec\text{.}\)</span></p></li>
+<li id="li-3356"><p id="p-4895">The Perron-Frobenius theorem tells us that, if <span class="process-math">\(A\)</span> is a positive stochastic matrix, then every Markov chain defined by <span class="process-math">\(A\)</span> converges to a unique, positive steady-state vector.</p></li>
+<li id="li-3357"><p id="p-4896">Google's PageRank algorithm uses Markov chains and the Perron-Frobenius theorem to assess the relative quality of web pages on the Internet.</p></li>
 </ul></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.5.5</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-162"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-4664">Consider the following \(2\times2\) stochastic matrices.</p>
+<article class="exercise exercise-like" id="exercise-169"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-4897">Consider the following <span class="process-math">\(2\times2\)</span> stochastic matrices.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4665">For each, make a copy of the diagram and label each edge to indicate the probability of that transition.  Then find all the steady-state vectors and describe what happens to a Markov chain defined by that matrix.</p></div>
-<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/ex-stoch.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4898">For each, make a copy of the diagram and label each edge to indicate the probability of that transition.  Then find all the steady-state vectors and describe what happens to a Markov chain defined by that matrix.</p></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="external/images/ex-stoch.svg" role="img" class="contained"></div>
 </div></div>
-<ol id="p-4666" class="lower-alpha">
-<li id="li-3186"><p id="p-4667">\(\left[\begin{array}{rr}
+<ol id="p-4899" class="lower-alpha">
+<li id="li-3358"><p id="p-4900"><span class="process-math">\(\left[\begin{array}{rr}
 1 \amp 1 \\
 0 \amp 0 \\
 \end{array}\right]
-\text{.}\)</p></li>
-<li id="li-3187"><p id="p-4668">\(\left[\begin{array}{rr}
+\text{.}\)</span></p></li>
+<li id="li-3359"><p id="p-4901"><span class="process-math">\(\left[\begin{array}{rr}
 0.8 \amp 1 \\
 0.2 \amp 0 \\
 \end{array}\right]
-\text{.}\)</p></li>
-<li id="li-3188"><p id="p-4669">\(\left[\begin{array}{rr}
+\text{.}\)</span></p></li>
+<li id="li-3360"><p id="p-4902"><span class="process-math">\(\left[\begin{array}{rr}
 1 \amp 0 \\
 0 \amp 1 \\
 \end{array}\right]
-\text{.}\)</p></li>
-<li id="li-3189"><p id="p-4670">\(\left[\begin{array}{rr}
+\text{.}\)</span></p></li>
+<li id="li-3361"><p id="p-4903"><span class="process-math">\(\left[\begin{array}{rr}
 0.7 \amp 0.6 \\
 0.3 \amp 0.4 \\
 \end{array}\right]
-\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-163"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-4681">Every year, people move between urban (U), suburban (S), and rural (R) populations with the probabilities given in <a class="xref" data-knowl="./knowl/fig-stoch-pops.html" title="Figure 4.5.12">Figure 4.5.12</a>.</p>
-<figure class="figure figure-like" id="fig-stoch-pops"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/stoch-pops.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.12<span class="period">.</span></span><span class="space"> </span>The flow between urban, suburban, and rural populations.</figcaption></figure><ol id="p-4682" class="lower-alpha">
-<li id="li-3198"><p id="p-4683">Construct the stochastic matrix \(A\) describing the movement of people.</p></li>
-<li id="li-3199"><p id="p-4684">Explain what the Perron-Frobenius theorem tells us about the existence of a steady-state vector \(\qvec\) and the behavior of a Markov chain.</p></li>
-<li id="li-3200"><p id="p-4685">Use the Sage cell below to find the some terms of a Markov chain. <div class="sagecell-sage" id="sage-123"><script type="text/x-sage">def markov_chain(A, x0, N):
+\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-170"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-4914">Every year, people move between urban (U), suburban (S), and rural (R) populations with the probabilities given in <a href="" class="xref" data-knowl="./knowl/fig-stoch-pops.html" title="Figure 4.5.12">Figure 4.5.12</a>.</p>
+<figure class="figure figure-like" id="fig-stoch-pops"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/stoch-pops.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.12<span class="period">.</span></span><span class="space"> </span>The flow between urban, suburban, and rural populations.</figcaption></figure><ol id="p-4915" class="lower-alpha">
+<li id="li-3370"><p id="p-4916">Construct the stochastic matrix <span class="process-math">\(A\)</span> describing the movement of people.</p></li>
+<li id="li-3371"><p id="p-4917">Explain what the Perron-Frobenius theorem tells us about the existence of a steady-state vector <span class="process-math">\(\qvec\)</span> and the behavior of a Markov chain.</p></li>
+<li id="li-3372"><p id="p-4918">Use the Sage cell below to find the some terms of a Markov chain. <pre class="ptx-sagecell sagecell-sage" id="sage-130"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0.numerical_approx(digits=3))
@@ -652,20 +687,20 @@ modified_markov_chain(G, x0, 20)
 A =
 x0 =
 markov_chain(A, x0, 20)
-</script></div></p></li>
-<li id="li-3201"><p id="p-4686">Describe the long-term distribution of people among urban, suburban, and rural populations.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-164"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-4697">Determine whether the following statements are true or false and provide a justification of your response.</p>
+</script></pre></p></li>
+<li id="li-3373"><p id="p-4919">Describe the long-term distribution of people among urban, suburban, and rural populations.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-171"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-4930">Determine whether the following statements are true or false and provide a justification of your response.</p>
 <ol class="lower-alpha">
-<li id="li-3210"><p id="p-4698">Every stochastic matrix has a steady-state vector.</p></li>
-<li id="li-3211"><p id="p-4699">If \(A\) is a stochastic matrix, then any Markov chain defined by \(A\) converges to a steady-state vector.</p></li>
-<li id="li-3212"><p id="p-4700">If \(A\) is a stochastic matrix, then \(\lambda=1\) is an eigenvalue and all the other eigenvalues satisfy \(|\lambda| \lt
-1\text{.}\)</p></li>
-<li id="li-3213"><p id="p-4701">A positive stochastic matrix has a unique steady-state vector.</p></li>
-<li id="li-3214"><p id="p-4702">If \(A\) is an invertible stochastic matrix, then so is \(A^{-1}\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-165"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-4715">Consider the stochastic matrix</p>
-<div class="displaymath">
+<li id="li-3382"><p id="p-4931">Every stochastic matrix has a steady-state vector.</p></li>
+<li id="li-3383"><p id="p-4932">If <span class="process-math">\(A\)</span> is a stochastic matrix, then any Markov chain defined by <span class="process-math">\(A\)</span> converges to a steady-state vector.</p></li>
+<li id="li-3384"><p id="p-4933">If <span class="process-math">\(A\)</span> is a stochastic matrix, then <span class="process-math">\(\lambda=1\)</span> is an eigenvalue and all the other eigenvalues satisfy <span class="process-math">\(|\lambda| \lt
+1\text{.}\)</span></p></li>
+<li id="li-3385"><p id="p-4934">A positive stochastic matrix has a unique steady-state vector.</p></li>
+<li id="li-3386"><p id="p-4935">If <span class="process-math">\(A\)</span> is an invertible stochastic matrix, then so is <span class="process-math">\(A^{-1}\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-172"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-4948">Consider the stochastic matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
 1 \amp 0.2 \amp 0.2 \\
@@ -675,45 +710,45 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3225"><p id="p-4716">Find the eigenvalues of \(A\text{.}\) <div class="sagecell-sage" id="sage-124"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-3226"><p id="p-4717">Do the conditions of the Perron-Frobenius theorem apply to this matrix?</p></li>
-<li id="li-3227"><p id="p-4718">Find the steady-state vectors of \(A\text{.}\)</p></li>
-<li id="li-3228"><p id="p-4719">What can we guarantee about the long-term behavior of a Markov chain defined by the matrix \(A\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-166"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-4730">Explain your responses to the following.</p>
+<li id="li-3397"><p id="p-4949">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-131"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-3398"><p id="p-4950">Do the conditions of the Perron-Frobenius theorem apply to this matrix?</p></li>
+<li id="li-3399"><p id="p-4951">Find the steady-state vectors of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-3400"><p id="p-4952">What can we guarantee about the long-term behavior of a Markov chain defined by the matrix <span class="process-math">\(A\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-173"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-4963">Explain your responses to the following.</p>
 <ol class="lower-alpha">
-<li id="li-3237"><p id="p-4731">Why does Google use a Markov chain to compute the PageRank vector?</p></li>
-<li id="li-3238"><p id="p-4732">Describe two problems that can happen when Google constructs a Markov chain using the Google matrix \(G\text{.}\)</p></li>
-<li id="li-3239"><p id="p-4733">Describe how these problems are consistent with the Perron-Frobenius theorem.</p></li>
-<li id="li-3240"><p id="p-4734">Describe why the Perron-Frobenius theorem suggests creating a Markov chain using the modified Google matrix \(G' =
-\alpha G + (1-\alpha)H_n\text{.}\)</p></li>
-</ol></article><p id="p-4745">In the next few exercises, we will consider the \(1\times n\) matrix \(S = \left[\begin{array}{rrrr} 1 \amp 1 \amp \ldots \amp 1
-\end{array}\right]\text{.}\)</p>
-<article class="exercise exercise-like" id="exercise-stochastic-probability"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-4746">Suppose that \(A\) is a stochastic matrix and that \(\xvec\) is a probability vector.  We would like to explain why the product \(A\xvec\) is a probability vector.</p>
+<li id="li-3409"><p id="p-4964">Why does Google use a Markov chain to compute the PageRank vector?</p></li>
+<li id="li-3410"><p id="p-4965">Describe two problems that can happen when Google constructs a Markov chain using the Google matrix <span class="process-math">\(G\text{.}\)</span></p></li>
+<li id="li-3411"><p id="p-4966">Describe how these problems are consistent with the Perron-Frobenius theorem.</p></li>
+<li id="li-3412"><p id="p-4967">Describe why the Perron-Frobenius theorem suggests creating a Markov chain using the modified Google matrix <span class="process-math">\(G' =
+\alpha G + (1-\alpha)H_n\text{.}\)</span></p></li>
+</ol></article><p id="p-4978">In the next few exercises, we will consider the <span class="process-math">\(1\times n\)</span> matrix <span class="process-math">\(S = \left[\begin{array}{rrrr} 1 \amp 1 \amp \ldots \amp 1
+\end{array}\right]\text{.}\)</span></p>
+<article class="exercise exercise-like" id="exercise-stochastic-probability"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-4979">Suppose that <span class="process-math">\(A\)</span> is a stochastic matrix and that <span class="process-math">\(\xvec\)</span> is a probability vector.  We would like to explain why the product <span class="process-math">\(A\xvec\)</span> is a probability vector.</p>
 <ol class="lower-alpha">
-<li id="li-3249"><p id="p-4747">Explain why \(\xvec=\threevec{0.4}{0.5}{0.1}\) is a probability vector and then find the product \(S\xvec\text{.}\)</p></li>
-<li id="li-3250"><p id="p-4748">More generally, if \(\xvec\) is any probability vector, what is the product \(S\xvec\text{?}\)</p></li>
-<li id="li-3251"><p id="p-4749">If \(A\) is a stochastic matrix, explain why \(SA=S\text{.}\)</p></li>
-<li id="li-3252"><p id="p-4750">Explain why \(A\xvec\) is a probability vector by considering the product \(SA\xvec\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-168"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-4761">Using the results of the previous exercise, we would like to explain why \(A^2\) is a stochastic matrix if \(A\) is stochastic.</p>
+<li id="li-3421"><p id="p-4980">Explain why <span class="process-math">\(\xvec=\threevec{0.4}{0.5}{0.1}\)</span> is a probability vector and then find the product <span class="process-math">\(S\xvec\text{.}\)</span></p></li>
+<li id="li-3422"><p id="p-4981">More generally, if <span class="process-math">\(\xvec\)</span> is any probability vector, what is the product <span class="process-math">\(S\xvec\text{?}\)</span></p></li>
+<li id="li-3423"><p id="p-4982">If <span class="process-math">\(A\)</span> is a stochastic matrix, explain why <span class="process-math">\(SA=S\text{.}\)</span></p></li>
+<li id="li-3424"><p id="p-4983">Explain why <span class="process-math">\(A\xvec\)</span> is a probability vector by considering the product <span class="process-math">\(SA\xvec\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-175"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-4994">Using the results of the previous exercise, we would like to explain why <span class="process-math">\(A^2\)</span> is a stochastic matrix if <span class="process-math">\(A\)</span> is stochastic.</p>
 <ol class="lower-alpha">
-<li id="li-3261"><p id="p-4762">Suppose that \(A\) and \(B\) are stochastic matrices.  Explain why the product \(AB\) is a stochastic matrix by considering the product \(SAB\text{.}\)</p></li>
-<li id="li-3262"><p id="p-4763">Explain why \(A^2\) is a stochastic matrix.</p></li>
-<li id="li-3263"><p id="p-4764">How do the steady-state vectors of \(A^2\) compare to the steady-state vectors of \(A\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-stochastic-eigenvalue"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-4774">This exercise explains why \(\lambda=1\) is an eigenvalue of a stochastic matrix \(A\text{.}\)  To conclude that \(\lambda=1\) is an eigenvalue, we need to know that \(A-I\) is not invertible.</p>
+<li id="li-3433"><p id="p-4995">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are stochastic matrices.  Explain why the product <span class="process-math">\(AB\)</span> is a stochastic matrix by considering the product <span class="process-math">\(SAB\text{.}\)</span></p></li>
+<li id="li-3434"><p id="p-4996">Explain why <span class="process-math">\(A^2\)</span> is a stochastic matrix.</p></li>
+<li id="li-3435"><p id="p-4997">How do the steady-state vectors of <span class="process-math">\(A^2\)</span> compare to the steady-state vectors of <span class="process-math">\(A\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-stochastic-eigenvalue"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-5007">This exercise explains why <span class="process-math">\(\lambda=1\)</span> is an eigenvalue of a stochastic matrix <span class="process-math">\(A\text{.}\)</span>  To conclude that <span class="process-math">\(\lambda=1\)</span> is an eigenvalue, we need to know that <span class="process-math">\(A-I\)</span> is not invertible.</p>
 <ol class="lower-alpha">
-<li id="li-3270"><p id="p-4775">What is the product \(S(A-I)\text{?}\)</p></li>
-<li id="li-3271"><p id="p-4776">Explain why \(\col(A-I)\) is contained in \(\nul(S)\text{.}\)</p></li>
-<li id="li-3272"><p id="p-4777">What is the product \(S\evec_1\text{?}\)</p></li>
-<li id="li-3273"><p id="p-4778">Explain why \(\evec_1\) is not contained in the column space \(\col(A-I)\text{.}\)</p></li>
-<li id="li-3274"><p id="p-4779">Explain why we can conclude that \(A-I\) is not invertible and that \(\lambda=1\) is an eigenvalue of \(A\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-170"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-4792">We saw a couple of model Internets in which a Markov chain defined by the Google matrix \(G\) did not converge to an appropriate PageRank vector.  For this reason, Google defines the matrix</p>
-<div class="displaymath">
+<li id="li-3442"><p id="p-5008">What is the product <span class="process-math">\(S(A-I)\text{?}\)</span></p></li>
+<li id="li-3443"><p id="p-5009">What is the product <span class="process-math">\(S\evec_1\text{?}\)</span></p></li>
+<li id="li-3444"><p id="p-5010">Consider the equation <span class="process-math">\((A-I)\xvec = \evec_1\text{.}\)</span> Explain why this equation cannot be consistent by multiplying by <span class="process-math">\(S\)</span> to obtain <span class="process-math">\(S(A-I)\xvec = S\evec_1\text{.}\)</span></p></li>
+<li id="li-3445"><p id="p-5011">What can you say about the span of the columns of <span class="process-math">\(A-I\text{?}\)</span></p></li>
+<li id="li-3446"><p id="p-5012">Explain why we can conclude that <span class="process-math">\(A-I\)</span> is not invertible and that <span class="process-math">\(\lambda=1\)</span> is an eigenvalue of <span class="process-math">\(A\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-177"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-5025">We saw a couple of model Internets in which a Markov chain defined by the Google matrix <span class="process-math">\(G\)</span> did not converge to an appropriate PageRank vector.  For this reason, Google defines the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 H_n = \left[\begin{array}{rrrr}
 \frac1n \amp \frac1n \amp \ldots \amp \frac1n \\
@@ -723,14 +758,14 @@ H_n = \left[\begin{array}{rrrr}
 \end{array}\right]\text{,}
 \end{equation*}
 </div>
-<p class="continuation">where \(n\) is the number of web pages, and constructs a Markov chain from the modified Google matrix</p>
-<div class="displaymath">
+<p class="continuation">where <span class="process-math">\(n\)</span> is the number of web pages, and constructs a Markov chain from the modified Google matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 G' = \alpha G + (1-\alpha)H_n\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Since \(G'\) is positive, the Markov chain is guaranteed to converge to a unique steady-state vector.</p>
-<p id="p-4793">We said that Google chooses \(\alpha = 0.85\) so we might wonder why this is a good choice.  We will explore the role of \(\alpha\) in this exercise.  Let's consider the model Internet described in <a class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a> and construct the Google matrix \(G\text{.}\)  In the Sage cell below, you can enter the matrix \(G\) and choose a value for \(\alpha\text{.}\) <div class="sagecell-sage" id="sage-125"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+<p class="continuation">Since <span class="process-math">\(G'\)</span> is positive, the Markov chain is guaranteed to converge to a unique steady-state vector.</p>
+<p id="p-5026">We said that Google chooses <span class="process-math">\(\alpha = 0.85\)</span> so we might wonder why this is a good choice.  We will explore the role of <span class="process-math">\(\alpha\)</span> in this exercise.  Let's consider the model Internet described in <a href="" class="xref" data-knowl="./knowl/fig-google-cyclic.html" title="Figure 4.5.9">Figure 4.5.9</a> and construct the Google matrix <span class="process-math">\(G\text{.}\)</span>  In the Sage cell below, you can enter the matrix <span class="process-math">\(G\)</span> and choose a value for <span class="process-math">\(\alpha\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-132"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
     r = A.nrows()
     A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
     for i in range(N):
@@ -743,25 +778,25 @@ alpha = 0
 G =
 x0 = vector([1,0,0,0,0])
 modified_markov_chain(G, x0, 20)
-</script></div></p>
+</script></pre></p>
 <ol class="lower-alpha">
-<li id="li-3285"><p id="p-4794">Let's begin with \(\alpha=0\text{.}\)  With this choice, what is the matrix \(G'=\alpha G + (1-\alpha)H_n\text{?}\) Construct a Markov chain using the Sage cell above.  How many steps are required for the Markov chain to converge to the accuracy with which the vectors \(\xvec_k\) are displayed?</p></li>
-<li id="li-3286"><p id="p-4795">Now choose \(\alpha=0.25\text{.}\)  How many steps are required for the Markov chain to converge to the accuracy at which the vectors \(\xvec_k\) are displayed?</p></li>
-<li id="li-3287"><p id="p-4796">Repeat this experiment with \(\alpha = 0.5\) and \(\alpha=0.75\text{.}\)</p></li>
-<li id="li-3288"><p id="p-4797">What happens if \(\alpha = 1\text{?}\)</p></li>
+<li id="li-3457"><p id="p-5027">Let's begin with <span class="process-math">\(\alpha=0\text{.}\)</span>  With this choice, what is the matrix <span class="process-math">\(G'=\alpha G + (1-\alpha)H_n\text{?}\)</span> Construct a Markov chain using the Sage cell above.  How many steps are required for the Markov chain to converge to the accuracy with which the vectors <span class="process-math">\(\xvec_k\)</span> are displayed?</p></li>
+<li id="li-3458"><p id="p-5028">Now choose <span class="process-math">\(\alpha=0.25\text{.}\)</span>  How many steps are required for the Markov chain to converge to the accuracy at which the vectors <span class="process-math">\(\xvec_k\)</span> are displayed?</p></li>
+<li id="li-3459"><p id="p-5029">Repeat this experiment with <span class="process-math">\(\alpha = 0.5\)</span> and <span class="process-math">\(\alpha=0.75\text{.}\)</span></p></li>
+<li id="li-3460"><p id="p-5030">What happens if <span class="process-math">\(\alpha = 1\text{?}\)</span></p></li>
 </ol>
-<p id="p-4798">This experiment gives some insight into the choice of \(\alpha\text{.}\)  The smaller \(\alpha\) is, the faster the Markov chain converges.  This is important; since the matrix \(G'\) that Google works with is so large, we would like to minimize the number of terms in the Markov chain that we need to compute.  On the other hand, as we lower \(\alpha\text{,}\) the matrix \(G' = \alpha G + (1-\alpha)H_n\) begins to resemble \(H_n\) more and \(G\) less.  The value \(\alpha=0.85\) is chosen so that the matrix \(G'\) sufficiently resembles \(G\) while having the Markov chain converge in a reasonable amount of steps.</p></article><article class="exercise exercise-like" id="exercise-171"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-4809">This exercise will analyze the board game <em class="emphasis">Chutes and Ladders</em>, or at least a simplified version of it.</p>
+<p id="p-5031">This experiment gives some insight into the choice of <span class="process-math">\(\alpha\text{.}\)</span>  The smaller <span class="process-math">\(\alpha\)</span> is, the faster the Markov chain converges.  This is important; since the matrix <span class="process-math">\(G'\)</span> that Google works with is so large, we would like to minimize the number of terms in the Markov chain that we need to compute.  On the other hand, as we lower <span class="process-math">\(\alpha\text{,}\)</span> the matrix <span class="process-math">\(G' = \alpha G + (1-\alpha)H_n\)</span> begins to resemble <span class="process-math">\(H_n\)</span> more and <span class="process-math">\(G\)</span> less.  The value <span class="process-math">\(\alpha=0.85\)</span> is chosen so that the matrix <span class="process-math">\(G'\)</span> sufficiently resembles <span class="process-math">\(G\)</span> while having the Markov chain converge in a reasonable amount of steps.</p></article><article class="exercise exercise-like" id="exercise-178"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-5042">This exercise will analyze the board game <em class="emphasis">Chutes and Ladders</em>, or at least a simplified version of it.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-4810">The board for this game consists of 100 squares arranged in a \(10\times10\) grid and numbered 1 to 100.  There are pairs of squares joined by a ladder and pairs joined by a chute.  All players begin in square 1 and take turns rolling a die.  On their turn, a player will move ahead the number of squares indicated on the die.  If they arrive at a square at the bottom of a ladder, they move to the square at the top of the ladder.  If they arrive at a square at the top of a chute, the move down to the square at the bottom of the chute.  The winner is the first player to reach square 100.</p></div>
-<div class="sbspanel top" style="width:46.1538461538462%;"><img src="images/chutes.jpg" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:51.2820512820513%;"><p id="p-5043">The board for this game consists of 100 squares arranged in a <span class="process-math">\(10\times10\)</span> grid and numbered 1 to 100.  There are pairs of squares joined by a ladder and pairs joined by a chute.  All players begin in square 1 and take turns rolling a die.  On their turn, a player will move ahead the number of squares indicated on the die.  If they arrive at a square at the bottom of a ladder, they move to the square at the top of the ladder.  If they arrive at a square at the top of a chute, they move down to the square at the bottom of the chute.  The winner is the first player to reach square 100.</p></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><img src="external/images/chutes.jpg" class="contained"></div>
 </div></div>
-<ol id="p-4811" class="lower-alpha">
-<li id="li-3297">
-<p id="p-4812">We begin by playing a simpler version of this game with only eight squares laid out in a row as shown in <a class="xref" data-knowl="./knowl/fig-chutes-plain.html" title="Figure 4.5.13">Figure 4.5.13</a> and containing neither chutes nor ladders.  Rather than a six-sided die, we will flip a coin and move ahead one or two squares depending on the result whether we have heads or tails.  If we are on square 7, we move ahead to square 8 regardless of the coin flip, and if we are on square 8, we will stay there forever.</p>
-<figure class="figure figure-like" id="fig-chutes-plain"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/chutes-plain.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.13<span class="period">.</span></span><span class="space"> </span>A simple version of Chutes and Ladders with neither chutes nor ladders.</figcaption></figure><p id="p-4813">Construct the \(8\times8\) matrix \(A\) that records the probability that a player moves from one square to another on one move.  For instance, if a player is on square 2, there is a 50% chance they are on square 3 and a 50% chance they are on square 4 at the end of the next move.</p>
-<p id="p-4814">Since we begin the game on square 1, the initial vector \(\xvec_0 = \evec_1\text{.}\)  Generate a few terms of the Markov chain \(\xvec_{k+1} = A\xvec_k\text{.}\) <div class="sagecell-sage" id="sage-126"><script type="text/x-sage">def markov_chain(A, x0, N):
+<ol id="p-5044" class="lower-alpha">
+<li id="li-3469">
+<p id="p-5045">We begin by playing a simpler version of this game with only eight squares laid out in a row as shown in <a href="" class="xref" data-knowl="./knowl/fig-chutes-plain.html" title="Figure 4.5.13">Figure 4.5.13</a> and containing neither chutes nor ladders.  Rather than a six-sided die, we will toss a coin and move ahead one or two squares depending on the result of the coin toss.  If we are on square 7, we move ahead to square 8 regardless of the coin flip, and if we are on square 8, we will stay there forever.</p>
+<figure class="figure figure-like" id="fig-chutes-plain"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/chutes-plain.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.13<span class="period">.</span></span><span class="space"> </span>A simple version of Chutes and Ladders with neither chutes nor ladders.</figcaption></figure><p id="p-5046">Construct the <span class="process-math">\(8\times8\)</span> matrix <span class="process-math">\(A\)</span> that records the probability that a player moves from one square to another on one move.  For instance, if a player is on square 2, there is a 50% chance they move to square 3 and a 50% chance they move to square 4 on the next move.</p>
+<p id="p-5047">Since we begin the game on square 1, the initial vector <span class="process-math">\(\xvec_0 = \evec_1\text{.}\)</span>  Generate a few terms of the Markov chain <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-133"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0.numerical_approx(digits=3))
@@ -769,14 +804,14 @@ modified_markov_chain(G, x0, 20)
 A =
 x0 =
 markov_chain(A, x0, 10)
-</script></div></p>
-<p id="p-4815">What is the probability that we arrive at square 8 by the fourth move?  By the sixth move?  By the seventh move?</p>
+</script></pre></p>
+<p id="p-5048">What is the probability that we arrive at square 8 by the fourth move?  By the sixth move?  By the seventh move?</p>
 </li>
-<li id="li-3298">
-<p id="p-4816">We will now modify the game by adding one chute and one ladder as shown in <a class="xref" data-knowl="./knowl/fig-chutes-ladders.html" title="Figure 4.5.14">Figure 4.5.14</a>.</p>
-<figure class="figure figure-like" id="fig-chutes-ladders"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/chutes-ladders.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.14<span class="period">.</span></span><span class="space"> </span>A version of Chutes and Ladders with one chute and one ladder.</figcaption></figure><p id="p-4817">Even though there are eight squares, we only need to consider six of them.  For instance, if we arrive at the first white square, we move up to square 4. Similarly, if we arrive at the second white square, we move down to square 1.</p>
-<p id="p-4818">Once again, construct the \(6\times6\) stochastic matrix that records the probability that we move from one square to another on a given turn and generate some terms in the Markov chain that begins with \(\xvec_0=\evec_1\text{.}\) <div class="sagecell-sage" id="sage-127"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="li-3470">
+<p id="p-5049">We will now modify the game by adding one chute and one ladder as shown in <a href="" class="xref" data-knowl="./knowl/fig-chutes-ladders.html" title="Figure 4.5.14">Figure 4.5.14</a>.</p>
+<figure class="figure figure-like" id="fig-chutes-ladders"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/chutes-ladders.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.14<span class="period">.</span></span><span class="space"> </span>A version of Chutes and Ladders with one chute and one ladder.</figcaption></figure><p id="p-5050">Even though there are eight squares, we only need to consider six of them.  For instance, if we arrive at the first white square, we move up to square 4. Similarly, if we arrive at the second white square, we move down to square 1.</p>
+<p id="p-5051">Once again, construct the <span class="process-math">\(6\times6\)</span> stochastic matrix that records the probability that we move from one square to another on a given turn and generate some terms in the Markov chain that begins with <span class="process-math">\(\xvec_0=\evec_1\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-134"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0.numerical_approx(digits=3))
@@ -784,17 +819,17 @@ markov_chain(A, x0, 10)
 A =
 x0 =
 markov_chain(A, x0, 10)
-</script></div></p>
-<ol id="p-4819" class="lower-roman">
-<li id="li-3299"><p id="p-4820">What is the smallest number of moves we can make and arrive at square 6?  What is the probability that we arrive at square 6 using this number of moves?</p></li>
-<li id="li-3300"><p id="p-4821">What is the probability that we arrive at square 6 after five moves?</p></li>
-<li id="li-3301"><p id="p-4822">What is the probability that we are still on square 1 after five moves?  After seven moves?  After nine moves?</p></li>
-<li id="li-3302"><p id="p-4823">After how many moves do we have a 90% chance of having arrived at square 6?</p></li>
-<li id="li-3303"><p id="p-4824">Find the steady-state vector and discuss what this vector implies about the game.</p></li>
+</script></pre></p>
+<ol id="p-5052" class="decimal">
+<li id="li-3471"><p id="p-5053">What is the smallest number of moves we can make and arrive at square 6?  What is the probability that we arrive at square 6 using this number of moves?</p></li>
+<li id="li-3472"><p id="p-5054">What is the probability that we arrive at square 6 after five moves?</p></li>
+<li id="li-3473"><p id="p-5055">What is the probability that we are still on square 1 after five moves?  After seven moves?  After nine moves?</p></li>
+<li id="li-3474"><p id="p-5056">After how many moves do we have a 90% chance of having arrived at square 6?</p></li>
+<li id="li-3475"><p id="p-5057">Find the steady-state vector and discuss what this vector implies about the game.</p></li>
 </ol>
 </li>
 </ol>
-<p id="p-4825">One can analyze the full version of Chutes and Ladders having 100 squares in the same way.  Without any chutes or ladders, one finds that the average number of moves required to reach square 100 is 29.0.  Once we add the chutes and ladders back in, the average number of moves required to reach square 100 is 27.1.  This shows that the average number of moves does not change significantly when we add the chutes and ladders.  There is, however, much more variation in the possibilities because it is possible to reach square 100 much more quickly and much more slowly.</p></article></section></section></div></main>
+<p id="p-5058">One can analyze the full version of Chutes and Ladders having 100 squares in the same way.  Without any chutes or ladders, one finds that the average number of moves required to reach square 100 is 29.0.  Once we add the chutes and ladders back in, the average number of moves required to reach square 100 is 27.1.  This shows that the average number of moves does not change significantly when we add the chutes and ladders.  There is, however, much more variation in the possibilities because it is possible to reach square 100 much more quickly and much more slowly.</p></article></section></section></div></main>
 </div>
 </body>
 </html>

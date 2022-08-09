@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:51-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:35-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">3.</span>
-</h6>
-<p>A typical problem in thermodynamics is to find the steady-state temperature distribution inside a thin plate if we know the temperature around the boundary.  Let \(T_1, T_2, \ldots,
-T_6\) be the temperatures at the six nodes inside the plate as shown below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/heat.svg" style="width: 100%; height: auto;" alt=""></div></div></div> The temperature at a node is approximately the average of the four nearest nodes: for instance,</p>
-<div class="displaymath">
-\begin{equation*}
-T_1 = (10 + 15 + T_2 + T_4)/4\text{,}
-\end{equation*}
-</div>
-<p>which we may rewrite as</p>
-<div class="displaymath">
-\begin{equation*}
-4T_1 - T_2 - T_4
-= 25\text{.}
-\end{equation*}
-</div>
-<p>Set up a linear system to find the temperature at these six points inside the plate.  Then use Sage to solve the linear system.  If all the entries of the matrix are integers, Sage will compute the reduced row echelon form using rational numbers.  To view a decimal approximation of the results, you may use</p>
-<pre class="code-block tex2jax_ignore">
-A.rref().numerical_approx(digits=4)
-      </pre>
-<p><div class="sagecell-sage" id="sage-16"><script type="text/x-sage">
-</script></div></p>
-<p>In the real world, the approximation becomes better the closer the points are together, which happens as we add more and more points into the grid.  This is a situtation where we would want to solve linear systems having millions of equations and millions of unknowns.</p></article><span class="incontext"><a href="sec-sage-introduction.html#exercise-8">in-context</a></span>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
+</h4>
+<p>Shown below are some traffic patterns in the downtown area of a large city.  The figures give the number of cars per hour traveling along each road.  Any car that drives into an intersection must also leave the intersection.  This means that the number of cars entering an intersection in an hour is equal to the number of cars leaving the intersection.</p>
+<ol class="lower-alpha">
+<li>
+<p>Let's begin with the following traffic pattern.</p>
+<ol class="lower-roman">
+<li><p>How many cars per hour enter the upper left intersection?  How many cars per hour leave this intersection?  Use this to form a linear equation in the variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(z\text{,}\)</span> and <span class="process-math">\(w\text{.}\)</span> <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/traffic-b.svg" role="img" class="contained"></div></div></div></p></li>
+<li><p>Form three more linear equations from the other three intersections to form a linear system having four equations in four variables.  Then use Sage to find the solution space to this system. <pre class="ptx-sagecell sagecell-sage" id="sage-14"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>Is there exactly one solution or infinitely many solutions?  Explain why you would expect this given the information provided.</p></li>
+</ol>
+</li>
+<li>
+<p>Another traffic pattern is shown below. <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/traffic-a.svg" role="img" class="contained"></div></div></div></p>
+<ol class="lower-roman">
+<li><p>Once again, write a linear system for the quantities <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(z\text{,}\)</span> and <span class="process-math">\(w\)</span> and solve the system using the Sage cell below. <pre class="ptx-sagecell sagecell-sage" id="sage-15"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>What can you say about the solution of this linear system?  Is there exactly one solution or infinitely many solutions?  Explain why you would expect this given the information provided.</p></li>
+<li><p>What is the smallest possible amount of traffic flowing through <span class="process-math">\(x\text{?}\)</span></p></li>
+</ol>
+</li>
+</ol></article><span class="incontext"><a href="sec-sage-introduction.html#exercise-8" class="internal">in-context</a></span>
 </body>
 </html>

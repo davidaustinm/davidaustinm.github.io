@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:11-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:50-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Now consider the matrix</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p> The JPEG compression algorithm uses the <em class="emphasis">Discrete Fourier Transform</em>, which is defined using the basis <span class="process-math">\(\bcal\)</span> whose basis vectors are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = 
-\left[\begin{array}{rrr}
-1 \amp -1 \amp 3 \\
-0 \amp 2 \amp -2 \\
-2 \amp 1 \amp 3 \\
-\end{array}\right]\text{.}
+\begin{aligned}
+\vvec_0 = \left[\begin{array}{c}
+\cos\left(\frac{(2\cdot0+1)\cdot0\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot1+1)\cdot0\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot2+1)\cdot0\pi}{16}\right) \\
+\vdots \\
+\cos\left(\frac{(2\cdot7+1)\cdot0\pi}{16}\right) \\
+\end{array}\right], \amp 
+\vvec_1 = \left[\begin{array}{c}
+\cos\left(\frac{(2\cdot0+1)\cdot1\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot1+1)\cdot1\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot2+1)\cdot1\pi}{16}\right) \\
+\vdots \\
+\cos\left(\frac{(2\cdot7+1)\cdot1\pi}{16}\right) \\
+\end{array}\right], \\ \\
+\ldots, 
+\vvec_6 = \left[\begin{array}{c}
+\cos\left(\frac{(2\cdot0+1)\cdot6\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot1+1)\cdot6\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot2+1)\cdot6\pi}{16}\right) \\
+\vdots \\
+\cos\left(\frac{(2\cdot7+1)\cdot6\pi}{16}\right) \\
+\end{array}\right], \amp
+\vvec_7 = \left[\begin{array}{c}
+\cos\left(\frac{(2\cdot0+1)\cdot7\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot1+1)\cdot7\pi}{16}\right) \\
+\cos\left(\frac{(2\cdot2+1)\cdot7\pi}{16}\right) \\
+\vdots \\
+\cos\left(\frac{(2\cdot7+1)\cdot7\pi}{16}\right) \\
+\end{array}\right]\text{.} \\
+\end{aligned}
 \end{equation*}
 </div>
-<p>Perform a sequence of row operations to find an upper triangular matrix \(U\) that is row equivalent to \(A\text{.}\)  Use this to determine \(\det A\text{.}\)  Is the matrix \(A\) invertible?</p>
-<span class="incontext"><a href="sec-determinants.html#p-2988">in-context</a></span>
+<span class="incontext"><a href="sec-jpeg.html#p-2988" class="internal">in-context</a></span>
 </body>
 </html>

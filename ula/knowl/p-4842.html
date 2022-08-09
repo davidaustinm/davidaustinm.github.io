@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:45-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:12-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Underneath everything we have looked at so far, we have been concerned with finding solutions to systems of linear equations.  Our principal tool for doing that has been Gaussian elimination, which we first met back in <a href="sec-finding-solutions.html" class="internal" title="Section 1.2: Finding solutions to systems of linear equations">Section 1.2</a>.  When confronted with a linear system, we frequently find the reduced row echelon form of the system's augmented matrix to read off the solution.</p>
-<span class="incontext"><a href="chap5.html#p-4842">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="lower-alpha">
+<li><p>Find similar expressions for <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\text{.}\)</span></p></li>
+<li><p>We now form the PageRank vector <span class="process-math">\(\xvec =
+\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find a matrix <span class="process-math">\(G\)</span> such that the expressions for <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> and <span class="process-math">\(x_3\)</span> can be written in the form <span class="process-math">\(G\xvec = \xvec\text{.}\)</span>  The matrix <span class="process-math">\(G\)</span> is called the “Google matrix”.</p></li>
+<li><p>Explain why <span class="process-math">\(G\)</span> is a stochastic matrix.</p></li>
+<li><p>Since <span class="process-math">\(\xvec\)</span> is defined by the equation <span class="process-math">\(G\xvec = \xvec\text{,}\)</span> any vector in the eigenspace <span class="process-math">\(E_1\)</span> satisfies this equation.  So that we might work with a specific vector, we will define the PageRank vector to be the steady-state vector of the stochastic matrix <span class="process-math">\(G\text{.}\)</span>  Find this steady state vector. <pre class="ptx-sagecell sagecell-sage" id="sage-126"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>The PageRank vector <span class="process-math">\(\xvec\)</span> is composed of the PageRanks for each of the three pages.  Which page of the three is assessed to have the highest quality?  By referring to the structure of this small model of the Internet, explain why this is a good choice.</p></li>
+<li><p>If we begin with the initial vector <span class="process-math">\(\xvec_0 =
+\threevec{1}{0}{0}\)</span> and form the Markov chain <span class="process-math">\(\xvec_{k+1} = G\xvec_k\text{,}\)</span> what does the Perron-Frobenius theorem tell us about the long-term behavior of the Markov chain?</p></li>
+<li><p>Verify that this Markov chain converges to the steady-state PageRank vector. <pre class="ptx-sagecell sagecell-sage" id="sage-127"><script type="text/x-sage">def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0.numerical_approx(digits=3))
+## define the matrix G and x0
+G =
+x0 =
+markov_chain(G, x0, 20)
+</script></pre></p></li>
+</ol>
+<span class="incontext"><a href="sec-stochastic.html#p-4842" class="internal">in-context</a></span>
 </body>
 </html>

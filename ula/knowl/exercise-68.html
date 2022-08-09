@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:59-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:43-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">8.</span>
-</h6>
-<p>Suppose that two species \(P\) and \(Q\) interact with one another and that we measure their populations every month.  We record their populations in a state vector \(\xvec = \twovec{p}{q}\text{,}\) where \(p\) and \(q\) are the populations of \(P\) and \(Q\text{,}\) respectively.  We observe that there is a matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rr}
-0.8 \amp 0.3 \\
-0.7 \amp 1.2 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>such that the matrix transformation \(T(\xvec)=A\xvec\) is the transition function describing how the state vector evolves from month to month.  We also observe that, at the beginning of July, the populations are described by the state vector \(\xvec=\twovec{1}{2}\text{.}\) <div class="sagecell-sage" id="sage-69"><script type="text/x-sage">
-</script></div></p>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span>
+</h4>
+<p>In <a href="" class="xref" data-knowl="./knowl/example-mt-to-matrix.html" title="Example 2.5.5">Example 2.5.5</a> and <a href="" class="xref" data-knowl="./knowl/example-matrix-to-mt.html" title="Example 2.5.4">Example 2.5.4</a>, we wrote matrix transformations in terms of the components of <span class="process-math">\(T(\xvec)\text{.}\)</span>  This exercise makes use of that form.</p>
 <ol class="lower-alpha">
-<li><p>What will the populations be at the beginning of August?</p></li>
-<li><p>What were the populations at the beginning of June?</p></li>
-<li><p>What will the populations be at the beginning of December?</p></li>
-<li><p>What will the populations be at the beginning of July in the following year?</p></li>
-</ol></article><span class="incontext"><a href="sec-linear-trans.html#exercise-68">in-context</a></span>
+<li>
+<p>Let's return to the example in <a href="" class="xref" data-knowl="./knowl/activity-mt-intro.html" title="Activity 2.5.3">Activity 2.5.3</a> concerning the company that operates two bakeries.  We used a matrix transformation with input <span class="process-math">\(\xvec\text{,}\)</span> which recorded the amount of time the two bakeries operated, and output <span class="process-math">\(T(\xvec)\text{,}\)</span> the number of cakes, doughnuts, and eclairs produced.  The associated matrix is <span class="process-math">\(A=\begin{bmatrix}
+10 \amp 20 \\
+50 \amp 30 \\
+30 \amp 30 \\
+\end{bmatrix}
+\text{.}\)</span></p>
+<ol class="decimal">
+<li><p>If <span class="process-math">\(\xvec=\twovec{x_1}{x_2}\text{,}\)</span> write the output <span class="process-math">\(T(\xvec)\)</span> as a three-dimensional vector in terms of <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\text{.}\)</span></p></li>
+<li><p>If Bakery 1 operates for <span class="process-math">\(x_1\)</span> hours and Bakery 2 for <span class="process-math">\(x_2\)</span> hours, how many cakes are produced?</p></li>
+<li><p>Explain how you may have discovered this expression by considering the rates at which the two locations make cakes.</p></li>
+</ol>
+</li>
+<li>
+<p>Suppose that a bicycle sharing program has two locations <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span>  Bicycles are rented from some location in the morning and returned to a location in the evening.  Suppose that</p>
+<ul class="disc">
+<li><p>60% of bicycles that begin at <span class="process-math">\(P\)</span> in the morning are returned to <span class="process-math">\(P\)</span> in the evening while the other 40% are returned to <span class="process-math">\(Q\text{.}\)</span></p></li>
+<li><p>30% of bicycles that begin at <span class="process-math">\(Q\)</span> are returned to <span class="process-math">\(Q\)</span> and the other 70% are returned to <span class="process-math">\(P\text{.}\)</span></p></li>
+</ul>
+<ol class="decimal">
+<li><p>If <span class="process-math">\(x_1\)</span> is the number of bicycles at location <span class="process-math">\(P\)</span> and <span class="process-math">\(x_2\)</span> the number at <span class="process-math">\(Q\)</span> in the morning, write an expression for the number of bicycles at <span class="process-math">\(P\)</span> in the evening.</p></li>
+<li><p>Write an expression for the number of bicycles at <span class="process-math">\(Q\)</span> in the evening.</p></li>
+<li><p>Write an expression for <span class="process-math">\(T\left(\twovec{x_1}{x_2}\right)\text{,}\)</span> the vector that describs the distribution of bicycles in the evening.</p></li>
+<li><p>Use this expression to identify the matrix <span class="process-math">\(A\)</span> associated to the matrix transformation <span class="process-math">\(T\text{.}\)</span></p></li>
+</ol>
+</li>
+</ol></article><span class="incontext"><a href="sec-linear-trans.html#exercise-68" class="internal">in-context</a></span>
 </body>
 </html>

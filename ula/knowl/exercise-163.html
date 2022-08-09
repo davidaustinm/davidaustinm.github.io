@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:41-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:09-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">2.</span>
-</h6>
-<p>Every year, people move between urban (U), suburban (S), and rural (R) populations with the probabilities given in <a data-knowl="./knowl/fig-stoch-pops.html" title="Figure 4.5.12">Figure 4.5.12</a>.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/stoch-pops.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">4.5.12.</span> The flow between urban, suburban, and rural populations.</figcaption></figure><ol class="lower-alpha">
-<li><p>Construct the stochastic matrix \(A\) describing the movement of people.</p></li>
-<li><p>Explain what the Perron-Frobenius theorem tells us about the existence of a steady-state vector \(\qvec\) and the behavior of a Markov chain.</p></li>
-<li><p>Use the Sage cell below to find the some terms of a Markov chain. <div class="sagecell-sage" id="sage-123"><script type="text/x-sage">def markov_chain(A, x0, N):
-    for i in range(N):
-        x0 = A*x0
-        print x0.numerical_approx(digits=3)
-## define the matrix G and x0
-A =
-x0 =
-markov_chain(A, x0, 20)
-</script></div></p></li>
-<li><p>Describe the long-term distribution of people among urban, suburban, and rural populations.</p></li>
-</ol></article><span class="incontext"><a href="sec-stochastic.html#exercise-163">in-context</a></span>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span>
+</h4>
+<p>Suppose we have the female population of a species is divided into juveniles, yearlings, and adults and that each year</p>
+<ul class="disc">
+<li><p>90% of the juveniles live to be yearlings.</p></li>
+<li><p>80% of the yearlings live to be adults.</p></li>
+<li><p>60% of the adults survive to the next year.</p></li>
+<li><p>50% of the adults give birth to a juvenile.</p></li>
+</ul>
+<ol class="lower-alpha">
+<li><p>Set up a system of the form <span class="process-math">\(\xvec_{k+1}=A\xvec_k\)</span> that describes this situation.</p></li>
+<li><p>Find the eigenvalues of the matrix <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-120"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>What prediction can you make about these populations after a very long time?</p></li>
+<li><p>If the birth rate goes up to 80%, what prediction can you make about these populations after a very long time? For every 100 adults, how many juveniles, and yearlings are there?</p></li>
+</ol></article><span class="incontext"><a href="sec-dynamical.html#exercise-163" class="internal">in-context</a></span>
 </body>
 </html>

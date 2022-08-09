@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:53-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:37-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Answer</span> <span class="codenumber">2.2.6.3.1</span>.</h6>
+<body class="ignore-math">
+<div class="answer solution-like">
+<h4 class="heading">
+<span class="type">Answer</span><span class="space"> </span><span class="codenumber">2.2.3.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>Both \(\vvec_1\) and \(\vvec_2\) are three-dimensional.</p></li>
-<li><p>\(A\twovec{1}{0} = \vvec_1\) and \(A\twovec{0}{1} = \vvec_2\text{.}\)  Also, \(A\twovec{2}{3} = 2\vvec_1+3\vvec_3\text{.}\)</p></li>
-<li><p>\(A = \left[\begin{array}{rr}
-3 \amp 0 \\
--2 \amp 3 \\
-1 \amp 2 \\
-\end{array}\right]\)</p></li>
+<li>
+<p>We define</p>
+<pre class="code-display tex2jax_ignore">
+A = matrix(3, 4, [1, 2, 0, -1,
+                  2, 4, -3, -2,
+                  -1, -2, 6, 1])
+v = vector([3, 1, -1, 1])
+A*v		  
+	    </pre>
+</li>
+<li>
+<p>We define</p>
+<pre class="code-display tex2jax_ignore">
+A = matrix(2, 3, [-2, 0, 3, 1, 4, 2])
+zero = vector([0, 0])
+v = vector([-2, 3])
+w = vector([1, 2])
+	    </pre>
+</li>
+<li><p><span class="process-math">\(A\zerovec = \zerovec\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A(3\vvec) = 3(A\vvec)\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle A(\vvec+\wvec) = A\vvec + A\wvec\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-matrices-lin-combs.html#answer-44">in-context</a></span>
+<span class="incontext"><a href="sec-matrices-lin-combs.html#answer-44" class="internal">in-context</a></span>
 </body>
 </html>

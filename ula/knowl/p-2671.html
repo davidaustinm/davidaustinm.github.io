@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:07-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:47-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>The vectors are linearly independent and span \(\real^2\text{.}\)</p></li>
-<li><p>We compute that \(A\vvec_1 = 3\vvec_1\) and \(A\vvec_2=\vvec_2\text{.}\)</p></li>
-<li><p>\(\coords{A\vvec_1}{\bcal} = \twovec{3}{0}\) and \(\coords{A\vvec_2}{\bcal} = \twovec{0}{1}\text{.}\)</p></li>
-<li><p>We know that \(\xvec = \vvec_1-5\vvec_2\text{,}\) which means that \(A\xvec = 3\vvec_1-5\vvec_2\text{.}\)  Therefore, \(\coords{A\xvec}{\bcal}=\twovec{3}{-5}\text{.}\)</p></li>
-<li><p>If \(\coords{\xvec}{\bcal} = \twovec{c_1}{c_2}\text{,}\) then \(\xvec=c_1\vvec_1+c_2\vvec_2\) and \(A\xvec=3c_1\vvec_1+c_2\vvec_2\text{.}\)  Therefore, \(D\twovec{c_1}{c_2} = \twovec{3c_1}{c_2}\text{,}\) which says that \(D=
-\left[\begin{array}{rr}
-3 \amp 0 \\
-0 \amp 1 \\
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Suppose we know the expression of a vector <span class="process-math">\(\xvec\)</span> in standard coordinates.  How can we find its coordinates in the basis <span class="process-math">\(\bcal\text{?}\)</span>  For instance, suppose <span class="process-math">\(\xvec=\twovec{-8}{2}\)</span> and that we would like to find <span class="process-math">\(\coords{\xvec}{\bcal}\text{.}\)</span>  We can write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\coords{\twovec{-8}{2}}{\bcal}=\twovec{c_1}{c_2},
+\end{equation*}
+</div>
+<p class="continuation">which means that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\twovec{-8}{2} = c_1\vvec_1 + c_2\vvec_2
+\end{equation*}
+</div>
+<p class="continuation">or</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
+\end{equation*}
+</div>
+<p class="continuation">This linear system for the weights defines an augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rr|r}
+2 \amp 1 \amp -8 \\
+1 \amp 2 \amp 2 \\
 \end{array}\right]
-\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="sec-bases.html#p-2671">in-context</a></span>
+\sim
+\left[\begin{array}{rr|r}
+1 \amp 0 \amp -6 \\
+0 \amp 1 \amp 4 \\
+\end{array}\right],\text{.}
+\end{equation*}
+</div>
+<p class="continuation">which means that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\coords{\twovec{-8}{2}}{\bcal} = \twovec{-6}{4}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="sec-bases.html#p-2671" class="internal">in-context</a></span>
 </body>
 </html>

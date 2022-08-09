@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:42-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:11-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">4.5.5.4.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.5.1.1</span><span class="period">.</span>
+</h3>
 <ol class="lower-alpha">
-<li><p>The eigenvalues are \(\lambda_1=1\text{,}\) \(\lambda_2=0.8\text{,}\) and \(\lambda_3=0.4\) with associated eigenvectors \(\vvec_1=\threevec100\text{,}\) \(\vvec_2=\threevec{-2}11\text{,}\) and \(\vvec_3=\threevec01{-1}\text{.}\)</p></li>
-<li><p>The conditions of the Perron-Frobenius theorem do not apply because the matrix is not postive.  The first column of any power of \(A\) will be \(\threevec100\text{.}\)</p></li>
-<li><p>Since \(\lambda_1=1\) has multiplicity \(1\text{,}\) we know that \(E_1\) is one-dimensional.  There is, therefore, a unique steady-state vector \(\qvec=\threevec100\text{.}\)</p></li>
-<li><p>Any Markov chain will converge to \(\qvec\) because the eigenvalues \(\lambda_2\) and \(\lambda_2\) are less than \(1\text{.}\)</p></li>
+<li><p>Expressing the set of equations in matrix form, we see that <span class="process-math">\(A = \mattwo{0.8}{0.4}{0.2}{0.6}\text{.}\)</span></p></li>
+<li><p>We have eigenvalues <span class="process-math">\(\lambda_1 = 1\)</span> and <span class="process-math">\(\lambda_2 = 0.4\)</span> with associated eigenvectors <span class="process-math">\(\vvec_1 = \twovec21\)</span> and <span class="process-math">\(\vvec_2=\twovec{-1}{1}\text{.}\)</span></p></li>
+<li><p>We find that <span class="process-math">\(\xvec_0=\twovec{1500}{0} = 500\vvec_1-500\vvec_2\text{.}\)</span></p></li>
+<li><p>Multiplying by the matrix <span class="process-math">\(A\)</span> has the effect of multiplying the eigenvectors by their associated eigenvalues.  Therefore, <span class="process-math">\(\xvec_k=500\vvec_1-500(0.4)^k\vvec_2\text{.}\)</span></p></li>
+<li><p>As <span class="process-math">\(k\)</span> becomes large, <span class="process-math">\(0.4^k\)</span> becomes very close to zero.  Therefore <span class="process-math">\(\xvec_k\approx500\vvec_1 =
+\twovec{1000}{500}\text{.}\)</span>  This tells us that <span class="process-math">\(1000\)</span> cars are at location <span class="process-math">\(P\)</span> and <span class="process-math">\(500\)</span> are at <span class="process-math">\(Q\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-stochastic.html#solution-241">in-context</a></span>
+<span class="incontext"><a href="sec-stochastic.html#solution-241" class="internal">in-context</a></span>
 </body>
 </html>

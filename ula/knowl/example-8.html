@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:00-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:38-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.6.3</span>.</h6>
-<p>In this example, we will find the matrix defining a matrix transformation that performs a \(45^\circ\) counterclockwise rotation.</p>
-<p>We first need to know that this geometric operation can be represented by a matrix transformation.  To begin, we will define the function \(T:\real^2\to\real^2\) where \(T(\xvec)\) is obtained by rotating \(\xvec\) counterclockwise by \(45^\circ\text{,}\) as shown in <a data-knowl="./knowl/fig-45-rotation.html" title="Figure 2.6.4">Figure 2.6.4</a>.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.4.</span> The function \(T\) rotates a vector counterclockwise by \(45^\circ\text{.}\)</figcaption></figure><p>We need to check that \(T\) is a matrix transformation; by <a data-knowl="./knowl/prop-linear-trans-characterization.html" title="Proposition 2.6.2">Proposition 2.6.2</a>, this means that we should make sure that</p>
-<div class="displaymath">
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h4>
+<p>Considering the set of vectors <span class="process-math">\(\vvec=\twovec{-2}{1}\)</span> and <span class="process-math">\(\wvec = \twovec{8}{-4}\text{,}\)</span> we see that the vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{aligned}
-T(c\vvec) \amp {}={} cT(\vvec) \\
-T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
-\end{aligned}
+\bvec = 3\vvec + \wvec = \twovec2{-1}
 \end{equation*}
 </div>
-<p>The next two figures illustrate these properties.  For instance, <a data-knowl="./knowl/fig-45-rotation-linear-mult.html" title="Figure 2.6.5">Figure 2.6.5</a> shows that relationship between \(T(\vvec)\) and \(T(c\vvec)\) when \(c\) is a scalar.  We easily see that \(T(c\vvec)\) is a scalar multiple of \(T(\vvec)\) and hence that \(T(c\vvec) = cT(\vvec)\text{.}\)</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-linear-a.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.5.</span> We see that the vector \(T(c\vvec)\) is a scalar multiple to \(T(\vvec)\) so that \(T(c\vvec) =
-cT(\vvec)\text{.}\)</figcaption></figure><p>Similarly, <a data-knowl="./knowl/fig-45-rotation-linear-add.html" title="Figure 2.6.6">Figure 2.6.6</a> shows the relationship between \(T(\vvec+\wvec)\text{,}\) \(T(\vvec)\text{,}\) and \(T(\wvec)\text{.}\)  In this way, we see that \(T(\vvec+\wvec) = T(\vvec) + T(\wvec)\text{.}\)</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-linear-b.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.6.</span> We see that the vector \(T(\vvec+\wvec)\) is the sum of \(T(\vvec)\) and \(T(\wvec)\) so that \(T(\vvec + \wvec) = T(\vvec) + T(\wvec)\text{.}\)</figcaption></figure><p>This shows that the function \(T\text{,}\) which rotates vectors by \(45^\circ\) is a matrix transformation.  We may therefore write it as \(T(\xvec) = A\xvec\) where \(A\) is the \(2\times2\) matrix \(A=\left[\begin{array}{rr} T(\evec_1) \amp T(\evec_2)
-\end{array}\right]\text{.}\)  The columns of this matrix, \(T(\evec_1)\) and \(T(\evec_2)\text{,}\) are shown in <a data-knowl="./knowl/fig-45-rotation-basis.html" title="Figure 2.6.7">Figure 2.6.7</a>.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-basis.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.7.</span> The effect of \(T\) on \(\evec_1\) and \(\evec_2\text{.}\)</figcaption></figure><p>To find the components of these vectors, notice that they form an isosceles right triangle, as shown in <a data-knowl="./knowl/fig-45-rotation-e1.html" title="Figure 2.6.8">Figure 2.6.8</a>.  Since the length of \(\evec_1\) is 1, the length of \(T(\evec_1)\text{,}\) the hypotenuse of the triangle, is 1.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/45-rotation-e1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.8.</span> The vector \(T(\evec_1)\) forms a right isosceles triangle whose hypotenuse has length 1.</figcaption></figure><p>This leads to</p>
-<div class="displaymath">
+<p class="continuation">is one vector in the span of the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> because it is a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></p>
+<p>To determine whether the vector <span class="process-math">\(\bvec=\twovec{5}{2}\)</span> is in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{,}\)</span> we form the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-T(\evec_1) = \twovec{\frac1{\sqrt{2}}}
-{\frac1{\sqrt{2}}},
-T(\evec_2) = \twovec{-\frac1{\sqrt{2}}}
-{\frac1{\sqrt{2}}}\text{.}
+A = \begin{bmatrix} \vvec \amp \wvec \end{bmatrix} = 
+\begin{bmatrix}
+-2 \amp 8 \\
+1 \amp -4 \\
+\end{bmatrix}
 \end{equation*}
 </div>
-<p>Hence, the matrix \(A\) is</p>
-<div class="displaymath">
+<p class="continuation">and consider the equation <span class="process-math">\(A\xvec=\bvec\text{.}\)</span>  We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = \left[\begin{array}{rr}
-\frac{1}{\sqrt{2}} \amp 
--\frac{1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}} \amp 
-\frac{1}{\sqrt{2}} \\
-\end{array}\right]\text{.}
+\left[
+\begin{array}{rr|r}
+-2 \amp 8 \amp 5 \\
+1 \amp -4 \amp 2 \\
+\end{array}
+\right]
+\sim
+\left[
+\begin{array}{rr|r}
+1 \amp -4 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}
+\right],
 \end{equation*}
 </div>
-<p>You may wish to check this using the interactive diagram in the previous activity using the approximation \(1/\sqrt{2} \approx 0.7\text{.}\)</p></article><span class="incontext"><a href="sec-transforms-geom.html#example-8">in-context</a></span>
+<p class="continuation">which shows that the equation <span class="process-math">\(A\xvec = \bvec\)</span> is inconsistent.  Therefore, <span class="process-math">\(\bvec=\twovec52\)</span> is one vector that is not in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></p></article><span class="incontext"><a href="sec-span.html#example-8" class="internal">in-context</a></span>
 </body>
 </html>

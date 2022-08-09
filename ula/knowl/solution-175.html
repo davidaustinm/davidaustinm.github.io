@@ -1,43 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:18-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:54-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">4.1.1.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.5.1.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>The vectors are as shown. <div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-eigen-intro-vec.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li><p>Scalar multiplication has the effect of stretching and possibly flipping \(\vvec\) along the line defined by \(\vvec\text{.}\)</p></li>
-<li><p>This matrix transformation stretches vectors by a factor of \(3\) in the horizontal direction and flips vectors vertically.</p></li>
+<li><p><span class="process-math">\(\nul(A)\)</span> is a subspace of <span class="process-math">\(\real^6\)</span> and <span class="process-math">\(\col(A)\)</span> is a subspace of <span class="process-math">\(\real^4\text{.}\)</span></p></li>
+<li><p>Because there are three pivot positions, we see that <span class="process-math">\(\rank(A) = 3\text{.}\)</span>  Therefore, <span class="process-math">\(\dim~\nul(A) = 6-3=3\)</span> and <span class="process-math">\(\dim~\col(A)=3\text{.}\)</span></p></li>
 <li>
-<p>Applying linearity, we see that</p>
-<ol class="lower-roman">
-<li><p>\(A(4\vvec_1) = 4A\vvec_1 =
-12\vvec_1\text{.}\)</p></li>
-<li><p>\(A(\vvec_1+\vvec_2) = A\vvec_1 + A\vvec_2 =
-3\vvec_1 - \vvec_2\text{.}\)</p></li>
-<li><p>\(A(4\vvec_1-3\vvec_2) = 4A\vvec_1 -3A\vvec_2 =
-12\vvec_1 + 3\vvec_2\text{.}\)</p></li>
-<li><p>\(A^2\vvec_1 = A(3\vvec_1) =
-9\vvec_1\text{.}\)</p></li>
-<li><p>\(A^2(4\vvec_1-3\vvec_2) = A(12\vvec_1 +3\vvec_2) =
-36\vvec_1 - 3\vvec_2\text{.}\)</p></li>
-<li><p>\(A^4\vvec_1 = 3^4\vvec_1 =
-81\vvec_1\text{.}\)</p></li>
-</ol>
+<p>A basis for <span class="process-math">\(\col(A)\)</span> is given by the columns of <span class="process-math">\(A\)</span> that contain pivot positions.  Therefore, a basis is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fourvec{2}{-4}{6}{4},
+\fourvec{0}{-1}{0}{-1},
+\fourvec{0}{0}{3}{0}\text{.}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>We can write a parametric description for the solution space to the homogeneous equation as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec =
+\left[\begin{array}{r}
+x_1 \\ 2x_4 - 3x_6 \\ -x_4-4x_6 \\ x_4 \\ x_6 \\ x_6
+\end{array}\right]
+=
+x_1
+\left[\begin{array}{r}
+1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\
+\end{array}\right]
++x_4
+\left[\begin{array}{r}
+0 \\ 2 \\ -1 \\ 1 \\ 0 \\ 0 \\
+\end{array}\right] + x_6
+\left[\begin{array}{r}
+0 \\ -3 \\ -4 \\ 0 \\ 1 \\ 1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Therefore, a basis for <span class="process-math">\(\nul(A)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{r}
+1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\
+\end{array}\right],
+\left[\begin{array}{r}
+0 \\ 2 \\ -1 \\ 1 \\ 0 \\ 0 \\
+\end{array}\right],
+\left[\begin{array}{r}
+0 \\ -3 \\ -4 \\ 0 \\ 1 \\ 1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
 </li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-eigen-intro.html#solution-175">in-context</a></span>
+<span class="incontext"><a href="sec-subspaces.html#solution-175" class="internal">in-context</a></span>
 </body>
 </html>

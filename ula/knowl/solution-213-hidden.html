@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:30-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:03-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>The eigenvalues are \(\lambda = 3\pm i\text{.}\)</p></li>
-<li><p>We will choose \(\lambda=3+i\) so that \(C=\mattwo3{-1}13\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>We find that <span class="process-math">\(A\)</span> has eigenvectors <span class="process-math">\(\vvec_1=\twovec11\)</span> with associated eigenvalue <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\vvec_2=\twovec{1}{3}\)</span> with associated eigenvalue <span class="process-math">\(\lambda_2=-3\text{.}\)</span>  We then have <span class="process-math">\(P=\mattwo1113\)</span> and <span class="process-math">\(D=\mattwo100{-3}\text{.}\)</span></p></li>
+<li><p>Yes.  We know that the eigenvectors are <span class="process-math">\(\vvec_1=\twovec10\)</span> with associated eigenvalue <span class="process-math">\(\lambda_1=2\)</span> and <span class="process-math">\(\vvec_2=\twovec01\)</span> with associated eigenvalue <span class="process-math">\(\lambda_2=-5\text{.}\)</span>  Therefore, <span class="process-math">\(P
+= \left[\begin{array}{rr}\vvec_1 \amp \vvec_2
+\end{array}\right] = \mattwo1001=I\)</span> and <span class="process-math">\(D=\mattwo200{-5}=A\text{.}\)</span>  This shows that the diagonalization is <span class="process-math">\(A=IAI^{-1}\text{;}\)</span> that is, since <span class="process-math">\(A\)</span> is already diagonal, it is diagonalized by the identity matrix.</p></li>
 <li>
-<p>Construct the matrix</p>
-<div class="displaymath">
+<p>We find eigenvectors <span class="process-math">\(\vvec_1=\threevec112\text{,}\)</span> <span class="process-math">\(\vvec_2=\threevec010\text{,}\)</span> and <span class="process-math">\(\vvec_3=\threevec001\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=-2\text{,}\)</span> <span class="process-math">\(\lambda_2=-3\text{,}\)</span> and <span class="process-math">\(\lambda_3=-3\text{.}\)</span>  Therefore, <span class="process-math">\(A = PDP^{-1}\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A-(3+i)I = \mattwo{-1-i}{2}{-1}{1-i}
-\sim
-\mattwo{1}{-1+i}00
+P = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+1 \amp 1 \amp 0 \\
+2 \amp 0 \amp 1 \\
+\end{array}\right], 
+D = \left[\begin{array}{rrr}
+-2 \amp 0 \amp 0 \\
+0 \amp -3 \amp 0 \\
+0 \amp 0 \amp -3 \\
+\end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>so that a basis vector for the null space is \(\vvec =
-\twovec{1-i}{1}\text{.}\)</p>
 </li>
-<li><p>We have \(\vvec=\twovec{1-i}{1} =
-\twovec11-i\twovec{1}{0}\) giving \(\vvec_1=\twovec11\) and \(\vvec_2=\twovec{1}{0}\text{.}\)</p></li>
-<li><p>We let \(P = \mattwo1110\) and verify that \(A=PCP^{-1}\text{.}\)</p></li>
+<li><p>Once again, we see that <span class="process-math">\(\lambda=-2\)</span> is an eigenvalue with multiplicity one and <span class="process-math">\(\lambda=-3\)</span> is an eigenvalue with multiplicity two.  However, <span class="process-math">\(\dim E_{-3} =
+1\)</span> so we are not able to find a basis for <span class="process-math">\(\real^3\)</span> consisting of eigenvalues of <span class="process-math">\(A\text{.}\)</span>  Therefore, <span class="process-math">\(A\)</span> is not diagonalizable.</p></li>
+<li>
+<p>If <span class="process-math">\(A=PDP^{-1}\text{,}\)</span></p>
+<ol class="decimal">
+<li><p><span class="process-math">\(A\)</span> is invertible since <span class="process-math">\(\det A = \det D =
+-3\text{.}\)</span></p></li>
+<li><p>We know that <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are eigenvectors of <span class="process-math">\(A\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span>  If <span class="process-math">\(\vvec\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with associated eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> then <span class="process-math">\(\vvec\)</span> is an eigenvector of <span class="process-math">\(A^{-1}\)</span> with associated eigenvalue <span class="process-math">\(\frac1{\lambda}\text{.}\)</span>  Therefore, <span class="process-math">\(A^{-1} =
+PEP^{-1}\)</span> where <span class="process-math">\(E =
+\mattwo{\frac13}00{-1}\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(A^3=PFP^{-1}\)</span> where <span class="process-math">\(F=\mattwo{27}00{-1}\text{.}\)</span></p></li>
+</ol>
+</li>
 </ol></div></body>
 </html>

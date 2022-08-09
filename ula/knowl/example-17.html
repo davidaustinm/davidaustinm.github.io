@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:18-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.2</span>.</h6>
-<p>Consider the matrix \(A = \left[\begin{array}{rr}
-7 \amp 6 \\
-6 \amp -2 \\
-\end{array}\right]\) and the vector \(\vvec=\twovec{2}{1}\text{.}\)  We find that</p>
-<div class="displaymath">
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<p>Suppose that <span class="process-math">\(A\)</span> is the matrix that rotates two-dimensional vectors counterclockwise by <span class="process-math">\(90^\circ\)</span> and that <span class="process-math">\(B\)</span> rotates vectors by <span class="process-math">\(-90^\circ\text{.}\)</span>  We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A\vvec = \left[\begin{array}{rr}
-7 \amp 6 \\
-6 \amp -2 \\
-\end{array}\right]
-\twovec{2}{1}
-=
-\twovec{20}{10}
-=10\twovec{2}{1}
-=10\vvec\text{.}
+A=\left[\begin{array}{rr}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{array}\right],~~~
+B=\left[\begin{array}{rr}
+0 \amp 1 \\
+-1 \amp 0 \\
+\end{array}\right].
 \end{equation*}
 </div>
-<p>In other words, \(A\vvec = 10\vvec\text{,}\) which says that \(\vvec\) is an eigenvector of the matrix \(A\) with associated eigenvalue \(\lambda = 10\text{.}\)</p>
-<p>Similarly, if \(\wvec = \twovec{-1}{2}\text{,}\) we find that</p>
-<div class="displaymath">
+<p class="continuation">We can check that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A\wvec = \left[\begin{array}{rr}
-7 \amp 6 \\
-6 \amp -2 \\
-\end{array}\right]
-\twovec{-1}{2}
-=
-\twovec{5}{-10}
-=-5\twovec{-1}{2}
-=-5\wvec\text{.}
+AB = \begin{bmatrix}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+0 \amp 1 \\
+-1 \amp 0 \\
+\end{bmatrix}
+= \begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix}
+= I 
 \end{equation*}
 </div>
-<p>Here again, we have \(A\wvec = -5\wvec\) showing that \(\wvec\) is an eigenvector of \(A\) with associated eigenvalue \(\lambda=-5\text{.}\)</p></article><span class="incontext"><a href="sec-eigen-intro.html#example-17">in-context</a></span>
+<p class="continuation">which shows that <span class="process-math">\(A\)</span> is invertible and that <span class="process-math">\(A^{-1}=B\text{.}\)</span></p>
+<p>Notice that if we multiply the matrices in the opposite order, we find that <span class="process-math">\(BA=I\text{,}\)</span> which says that <span class="process-math">\(B\)</span> is also invertible and that <span class="process-math">\(B^{-1} = A\text{.}\)</span>  In other words, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are inverses of each other.</p></article><span class="incontext"><a href="sec-matrix-inverse.html#example-17" class="internal">in-context</a></span>
 </body>
 </html>

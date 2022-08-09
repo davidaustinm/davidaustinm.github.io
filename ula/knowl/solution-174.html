@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:17-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:54-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.5.5.10.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.4.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
 <li>
 <p>We have</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = \left[\begin{array}{rr}
-2 \amp -4 \\
--1 \amp 2 \\
-\end{array}\right]
-\sim
-\left[\begin{array}{rr}
-1 \amp -2 \\
-0 \amp 0 \\
-\end{array}\right]\text{,}
+A=\begin{bmatrix}
+1 \amp 3 \amp -1 \amp 2 \\
+-2 \amp 0 \amp -4 \amp 2 \\
+1 \amp 2 \amp 0 \amp 1 \\
+\end{bmatrix}\sim
+\begin{bmatrix}
+1 \amp 0 \amp 2 \amp -1 \\
+0 \amp 1 \amp -1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 0\\
+\end{bmatrix},
 \end{equation*}
 </div>
-<p>which shows that \(\xvec=x_2\twovec{2}{1}\) describes the solution space to the homogeneous equation.</p>
+<p class="continuation">which leads to the parametric description of the solution space to the homogeneous equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec=x_3\fourvec{-2}{1}{1}0 +
+x_4\fourvec{1}{-1}01.
+\end{equation*}
+</div>
 </li>
-<li><p>The solution space forms a line through the origin.</p></li>
-<li><p>The solution space has the parametric description \(\xvec=\twovec{2}{0}+x_2\twovec{2}{1}\text{,}\) which is a line parallel to the solution space to the homogeneous equation.</p></li>
-<li><p>This cannot form a subspace since it does not contain the vector \(\zerovec\text{.}\)</p></li>
-<li><p>The solution space has the parametric description \(\xvec=\twovec{-4}{0}+x_2\twovec{2}{1}\text{,}\) which is a line parallel to the solution space to the homogeneous equation.  The graph of the solution spaces is shown below. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-3-5.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li><p>They are all parallel to the solution space to the homogeneous equation.</p></li>
-<li><p>If the solution space is a subspace, then \(\xvec=\zerovec\) must be in the solution space.  This means that \(A\xvec = A\zerovec = \zerovec =
-\bvec\text{.}\)</p></li>
+<li><p>The parametric description shows that every solution to the equation <span class="process-math">\(A\xvec=\zerovec\)</span> is a linear combination of <span class="process-math">\(\wvec_1=\fourvec{-2}110\)</span> and <span class="process-math">\(\wvec_2=\fourvec1{-1}01\text{.}\)</span></p></li>
+<li><p>The vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> are linearly independent so they form a basis for <span class="process-math">\(\nul(A)\text{.}\)</span>  Therefore, <span class="process-math">\(\nul(A)\)</span> is 2-dimensional.</p></li>
+<li><p>The vectors in <span class="process-math">\(\nul(A)\)</span> are 4-dimensional so <span class="process-math">\(\nul(A)\)</span> is a subspace of <span class="process-math">\(\real^4\text{.}\)</span></p></li>
+<li>
+<p>A parametric description of the null space is <span class="process-math">\(\xvec=x_2\fourvec{-2}{1}{0}{0} + x_3\fourvec0010 + 
+x_4\fourvec{3}{0}{-2}{1}\text{.}\)</span>  We can check that the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\fourvec{-2}100,~~~\fourvec0010,~~~\fourvec30{-2}1
+\end{equation*}
+</div>
+<p class="continuation">are linearly independent so they form a basis for <span class="process-math">\(\nul(A)\text{.}\)</span>  This means that <span class="process-math">\(\nul(A)\)</span> is 3-dimensional.</p>
+</li>
+<li><p>The number of vectors in a basis of the null space equals the number of free variables that appear in the equation <span class="process-math">\(A\xvec=\zerovec\text{,}\)</span> which is the number of columns that do not have pivot positions.  This says that <span class="process-math">\(\dim~\nul(A)\)</span> equals the number of columns of <span class="process-math">\(A\)</span> minus the number of pivot positions.</p></li>
+<li><p>If the columns are linearly independent, then the homogeneous equation <span class="process-math">\(A\xvec=\zerovec\)</span> has only the zero solution <span class="process-math">\(\xvec=\zerovec\text{.}\)</span>  Therefore, <span class="process-math">\(\nul(A) = \{\zerovec\}\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-subspaces.html#solution-174">in-context</a></span>
+<span class="incontext"><a href="sec-subspaces.html#solution-174" class="internal">in-context</a></span>
 </body>
 </html>

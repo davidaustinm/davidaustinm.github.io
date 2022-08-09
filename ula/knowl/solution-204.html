@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:27-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:01-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">4.3.4.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.2.6.2.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
+<li><p>There is a single eigenvalue <span class="process-math">\(\lambda=2\)</span> and <span class="process-math">\(\dim E_2=1\)</span> so it is not possible to find a basis for <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
 <li>
-<p>We have</p>
-<div class="displaymath">
+<p>The three eigenvalues each have multiplicity one so we know that their eigenspaces are one-dimensional.  We find a basis vector for <span class="process-math">\(E_3\)</span> is <span class="process-math">\(\threevec100\text{,}\)</span> for <span class="process-math">\(E_4\)</span> is <span class="process-math">\(\threevec{-1}10\text{,}\)</span> and for <span class="process-math">\(E_{-6}\)</span> is <span class="process-math">\(\threevec10{-3}\text{.}\)</span>  A basis for <span class="process-math">\(\real^3\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> is therefore</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-D^2=\mattwo4001, D^3=\mattwo800{-1}, \ldots,
-D^k=\mattwo{2^k}00{(-1)^k}\text{.}
+\left\{
+\threevec100, \threevec{-1}{1}0, \threevec10{-3}
+\right\}\text{.}
 \end{equation*}
 </div>
 </li>
-<li><p>We know that \(A^2\vvec = \lambda A\vvec =
-\lambda^2\vvec\) so that \(\vvec\) is also an eigenvector of \(A^2\) with associated eigenvalue \(\lambda^2\text{.}\)</p></li>
-<li><p>Since eigenvectors of \(A\) are also eigenvectors of \(A^2\text{,}\) we can use the matrix \(P\) to diagonalize \(A^2\text{.}\)  The eigenvalues are squared, however, so we have \(A^2=PEP^{-1}\) where \(E=D^2=\mattwo4001\text{.}\)</p></li>
-<li>
-<p>We can also see this by noting that</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-A^2 \amp = (PDP^{-1})(PDP^{-1})
-= PD(P^{-1}P)DP^{-1} \\
-\amp = PDIDP^{-1}
-= PD^2P^{-1}\text{.}\\
-\end{aligned}
-\end{equation*}
-</div>
-</li>
-<li><p>\(A^3=PD^3P^{-1}\text{,}\) \(A^4=PD^4P^{-1}\text{,}\) and \(A^k=PD^kP^{-1}\text{.}\)</p></li>
-<li><p>We can write \(A=PDP^{-1}\) where \(D=\mattwo{0.5}00{0.1}\text{.}\)  Therefore, \(A^k=PD^kP^{-1}\) where \(D^k=\mattwo{0.5^k}00{0.1^k}\text{.}\)  As \(k\) becomes very large, \(0.5^k\) and \(0.1^k\) become very close to zero.  Hence \(D^k\) and \(A^k\) become very close to the zero matrix.</p></li>
+<li><p>Since <span class="process-math">\(A-(-2)I\)</span> is the zero matrix, every vector is an eigenvector of <span class="process-math">\(A\text{.}\)</span>  This means that <span class="process-math">\(\left\{\twovec10, \twovec01\right\}\)</span> is a basis of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors.</p></li>
+<li><p>The multiplicity of each eigenvalue is one so there will be a basis of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors. In particular, a basis vector for <span class="process-math">\(E_3\)</span> is <span class="process-math">\(\twovec12\)</span> and a basis vector for <span class="process-math">\(E_{-2}\)</span> is <span class="process-math">\(\twovec{-2}1\text{.}\)</span>  This means that <span class="process-math">\(\left\{\twovec12,\twovec{-2}1\right\}\)</span> is a basis for <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-eigen-diag.html#solution-204">in-context</a></span>
+<span class="incontext"><a href="sec-eigen-find.html#solution-204" class="internal">in-context</a></span>
 </body>
 </html>

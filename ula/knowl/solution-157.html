@@ -1,72 +1,84 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:13-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:52-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.4.5.10.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.4.4.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
 <li>
-<p>The columns of \(AR\) are found by multiplying the columns of \(R\) by \(A\text{.}\)  If we remember that a vector multiplied by a matrix forms a linear combination of the columns of \(A\text{,}\) we see that the first column of \(AR\) is \(\vvec_1-3\vvec_2\) and that the other two columns are unchanged.</p>
-<p>Since \(\det R = 1\text{,}\) we have \(\det(AR) = \det A\text{,}\) which says that this operation does not change the determinant.</p>
+<p>We will using a cofactor expanion along the first row so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{rl}
+\det\left[\begin{array}{rrr}
+2 \amp 0 \amp -1 \\
+3 \amp 1 \amp 2 \\
+-2 \amp 4 \amp -3 \\
+\end{array}\right]
+= \amp
+(-1)^{1+1}\cdot 2 \det\left[\begin{array}{rr}
+1 \amp 2 \\
+4 \amp -3 \\
+\end{array}\right] \\
+\amp 
++ (-1)^{1+3}\cdot (-1) \det\left[\begin{array}{rr}
+3 \amp 1 \\
+-2 \amp 4 \\
+\end{array}\right] \\
+= \amp
+2(-11) - 14 = -36\text{.}
+\end{array}
+\end{equation*}
+</div>
 </li>
-<li><p>Multiplying by \(S\) multiplies the determinant by \(3\) since \(\det S=3\text{.}\)</p></li>
-<li><p>Multiplying by \(P\) changes the sign of the determinant since \(\det P = -1\text{.}\)</p></li>
 <li>
-<p>If we interchange the first and third columns of \(A\text{,}\) we have</p>
-<div class="displaymath">
+<p>Expanding along the first row gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A_1=\left[\begin{array}{rrr}
-1 \amp -3 \amp 0 \\
-4 \amp 1 \amp 1 \\
-0 \amp 1 \amp 1 \\
-\end{array}\right]
+\begin{array}{rl}
+\det
+\left[\begin{array}{rrrr}
+-3 \amp 0 \amp 0 \amp 0 \\
+4 \amp 1 \amp 0  \amp 0 \\
+-1 \amp 4 \amp -4 \amp 0\\
+0 \amp 3 \amp 2 \amp 3 \\
+\end{array}\right] \amp
+= 3\det
+\left[\begin{array}{rrr}
+1 \amp 0  \amp 0 \\
+4 \amp -4 \amp 0\\
+3 \amp 2 \amp 3 \\
+\end{array}\right] \\
+\amp
+=-3(1)\det
+\left[\begin{array}{rr}
+-4 \amp 0 \\
+2 \amp 3 \\
+\end{array}\right] \\
+\amp
+=-3(1)(-4)(3) = 36\text{.}
+\end{array}
 \end{equation*}
 </div>
-<p>and \(\det A = -\det A_1\text{.}\)  Now we will multiply the first column by \(3\) and add to the second column to obtain</p>
-<div class="displaymath">
-\begin{equation*}
-A_2=\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-4 \amp 13 \amp 1 \\
-0 \amp 1 \amp 1 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>and \(\det A = -\det A_2\text{.}\)  Let's interchange the second and third columns so that</p>
-<div class="displaymath">
-\begin{equation*}
-A_3=\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-4 \amp 1 \amp 13 \\
-0 \amp 1 \amp 1 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>so that \(\det A = \det A_3\) and then multiply the second column by \(-13\) and add to the third column so that</p>
-<div class="displaymath">
-\begin{equation*}
-A_4=\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-4 \amp 1 \amp 0 \\
-0 \amp 1 \amp -12 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>This gives \(\det A = \det A_4 = -12\text{.}\)</p>
 </li>
+<li><p>We form the matrix <span class="process-math">\(A\)</span> whose columns are the three given vectors.  Expanding along either the second row or third column to take advantage of the zero in the <span class="process-math">\((2,3)\)</span> entry, we see that <span class="process-math">\(\det(A) = 0\text{,}\)</span> which means that <span class="process-math">\(A\)</span> is not invertible.  Therefore, the vectors do not form a basis for <span class="process-math">\(\real^3\text{.}\)</span></p></li>
+<li><p>Sage tells us that <span class="process-math">\(\det(A) = 72\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-determinants.html#solution-157">in-context</a></span>
+<span class="incontext"><a href="sec-determinants.html#solution-157" class="internal">in-context</a></span>
 </body>
 </html>

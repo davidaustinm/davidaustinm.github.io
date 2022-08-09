@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:48-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:19-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">8.</span>
-</h6>
-<p>In the \(LU\) factorization of a matrix, the diagonal entries of \(L\) are all \(1\) while the diagonal entries of \(U\) are not necessarily \(1\text{.}\)  This exercise will explore that observation by considering the matrix</p>
-<div class="displaymath">
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
+</h4>
+<p>In this section, we saw that errors made in computer arithmetic can produce approximate solutions that are far from the exact solutions.  Here is another example in which this can happen.  Consider the matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = \left[\begin{array}{rrr}
-3 \amp 1 \amp 1 \\
--6 \amp -4 \amp -1 \\
-0 \amp -4 \amp 1 \\
+A = \left[\begin{array}{cc}
+1 \amp 1 \\
+1 \amp 1.0001 \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li><p>Perform Gaussian elimination without partial pivoting to find \(U\text{,}\) an upper triangular matrix that is row equivalent to \(A\text{.}\)</p></li>
-<li><p>The diagonal entries of \(U\) are called <em class="emphasis">pivots</em>.  Explain why \(\det A\) equals the product of the pivots.</p></li>
-<li><p>What is \(\det A\) for our matrix \(A\text{?}\)</p></li>
-<li><p>More generally, if we have \(PA=LU\text{,}\) explain why \(\det A\) equals plus or minus the product of the pivots.</p></li>
-</ol></article><span class="incontext"><a href="sec-gaussian-revisited.html#exercise-179">in-context</a></span>
+<li><p>Find the exact solution to the equation <span class="process-math">\(A\xvec = \twovec{2}{2}\text{.}\)</span></p></li>
+<li><p>Suppose that this linear system arises in the midst of a larger computation except that, due to some error in the computation of the right hand side of the equation, our computer thinks we want to solve <span class="process-math">\(A\xvec = \ctwovec{2}{2.0001}\text{.}\)</span>  Find the solution to this equation and compare it to the solution of the equation in the previous part of this exericse.</p></li>
+</ol>
+<p>Notice how a small change in the right hand side of the equation leads to a large change in the solution.  In this case, we say that the matrix <span class="process-math">\(A\)</span> is <em class="emphasis">ill-conditioned</em> because the solutions are extremely sensitive to small changes in the right hand side of the equation.  Though we will not do so here, it is possible to create a measure of the matrix that tells us when a matrix is ill-conditioned.  Regrettably, there is not much we can do to remedy this problem.</p></article><span class="incontext"><a href="sec-gaussian-revisited.html#exercise-179" class="internal">in-context</a></span>
 </body>
 </html>

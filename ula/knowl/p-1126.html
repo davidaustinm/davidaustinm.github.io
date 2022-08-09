@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:54-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:38-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that \(A\) is an \(4\times4\) matrix and that the equation \(A\xvec = \bvec\) has a unique solution for some vector \(\bvec\text{.}\)</p>
-<ol class="lower-alpha">
-<li><p>What does this say about the pivots of the matrix \(A\text{?}\)  Write the reduced row echelon form of \(A\text{.}\)</p></li>
-<li><p>Can you find another vector \(\cvec\) such that \(A\xvec = \cvec\) is inconsistent?</p></li>
-<li><p>What can you say about the solution space to the equation \(A\xvec = \zerovec\text{?}\)</p></li>
-<li><p>Suppose \(A=\left[\begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \vvec_3 \amp \vvec_4
-\end{array}\right]\text{.}\)  Explain why every four-dimensional vector can be written as a linear combination of the vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\text{,}\) and \(\vvec_4\) in exactly one way.</p></li>
-</ol>
-<span class="incontext"><a href="sec-matrices-lin-combs.html#p-1126">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>We construct the augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[\begin{array}{rrr|r}
+1 \amp 0 \amp 2 \amp 0 \\
+2 \amp 2 \amp 2 \amp 0 \\
+-1 \amp -3 \amp 1 \amp 0
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr|r}
+1 \amp 0 \amp 2 \amp 0 \\
+0 \amp 1 \amp -1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which shows that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec=\threevec{-2x_3}{x_3}{x_3} = x_3\threevec{-2}{1}{1}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="sec-matrices-lin-combs.html#p-1126" class="internal">in-context</a></span>
 </body>
 </html>

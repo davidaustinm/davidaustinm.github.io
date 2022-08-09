@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-15T11:45:48-04:00       *-->
+<!--*       on 2022-08-08T13:56:14-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,25 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The dot product</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Understanding Linear Algebra">
+<meta property="book:author" content=" David Austin ">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -49,29 +51,58 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
 \newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
@@ -120,7 +151,7 @@
 \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
-\newcommand{\rank}{\text{rank}}
+\newcommand{\rank}{\operatorname{rank}}
 \newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
 \renewcommand{\row}{\text{Row}}
@@ -139,7 +170,9 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
@@ -147,7 +180,7 @@
 </div>
 <div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap6.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap6.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-transpose.html" title="Next">Next</a></span>
@@ -157,119 +190,121 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap6.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap6.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-transpose.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1" class="internal">Our goals</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
-<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
-<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
-<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
-<li><a href="sec-pivots.html" data-scroll="sec-pivots">Pivots and their influence on solution spaces</a></li>
+<a href="chap1.html" data-scroll="chap1" class="internal"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect" class="internal">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions" class="internal">Finding solutions to linear systems</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction" class="internal">Computation with Sage</a></li>
+<li><a href="sec-pivots.html" data-scroll="sec-pivots" class="internal">Pivots and their influence on solution spaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
-<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
-<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
-<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
-<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
-<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
-<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+<a href="chap2.html" data-scroll="chap2" class="internal"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs" class="internal">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs" class="internal">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span" class="internal">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep" class="internal">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans" class="internal">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom" class="internal">The geometry of matrix transformations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
-<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
-<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
-<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
-<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
-<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+<a href="chap3.html" data-scroll="chap3" class="internal"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse" class="internal">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases" class="internal">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg" class="internal">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants" class="internal">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces" class="internal">Subspaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
-<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
-<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
-<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+<a href="chap4.html" data-scroll="chap4" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro" class="internal">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find" class="internal">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag" class="internal">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical" class="internal">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic" class="internal">Markov chains and Google's PageRank algorithm</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
-<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
-<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+<a href="chap5.html" data-scroll="chap5" class="internal"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited" class="internal">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method" class="internal">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<a href="chap6.html" data-scroll="chap6" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
 <li><a href="sec-dot-product.html" data-scroll="sec-dot-product" class="active">The dot product</a></li>
-<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
-<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
-<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
-<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose" class="internal">Orthogonal complements and the matrix transpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases" class="internal">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt" class="internal">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares" class="internal">Orthogonal least squares</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
-<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
-<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
-<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
-<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
-<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+<a href="chap7.html" data-scroll="chap7" class="internal"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices" class="internal">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms" class="internal">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro" class="internal">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses" class="internal">Using Singular Value Decompositions</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app-sage-reference.html" data-scroll="app-sage-reference" class="internal"><span class="codenumber">A</span> <span class="title">Sage Reference</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-dot-product"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-dot-product"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">The dot product</span>
 </h2>
-<section class="introduction" id="introduction-28"><p id="p-5186">In this section, we introduce a simple algebraic operation, known as the <em class="emphasis">dot product</em>, that helps us measure the length of vectors and the angle formed by a pair of vectors.  For two-dimensional vectors \(\vvec\) and \(\wvec\text{,}\) their dot product \(\vvec\cdot\wvec\) is the scalar defined to be</p>
-<div class="displaymath">
+<section class="introduction" id="introduction-28"><p id="p-5421">In this section, we introduce a simple algebraic operation, known as the <em class="emphasis">dot product</em>, that helps us measure the length of vectors and the angle formed by a pair of vectors.  For two-dimensional vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{,}\)</span> their dot product <span class="process-math">\(\vvec\cdot\wvec\)</span> is the scalar defined to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\wvec = \twovec{v_1}{v_2}\cdot\twovec{w_1}{w_2} =
 v_1w_1 + v_2w_2\text{.}
 \end{equation*}
 </div>
 <p class="continuation">For instance,</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \twovec{2}{-3}\cdot\twovec{4}{1} = 2\cdot 4 + (-3)\cdot 1 = 5.
 \end{equation*}
 </div>
-<article class="exploration project-like" id="exploration-21"><h6 class="heading">
+<article class="exploration project-like" id="exploration-21"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span>
-</h6>
-<ol id="p-5187" class="lower-alpha">
-<li id="li-3533">
-<p id="p-5188">Compute the dot product</p>
-<div class="displaymath">
+</h3>
+<ol id="p-5422" class="lower-alpha">
+<li id="li-3705">
+<p id="p-5423">Compute the dot product</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \twovec{3}{4}\cdot\twovec{2}{-2}\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-3534"><p id="p-5189">Sketch the vector \(\vvec=\twovec{3}{4}\) below.  Then use the Pythagorean theorem to find the length of \(\vvec\text{.}\) <figure class="figure figure-like" id="figure-88"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/empty-6.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span>Sketch the vector \(\vvec\) and find its length.</figcaption></figure></p></li>
-<li id="li-3535"><p id="p-5190">Compute the dot product \(\vvec\cdot\vvec\text{.}\)  How is the dot product related to the length of \(\vvec\text{?}\)</p></li>
-<li id="li-3536"><p id="p-5191">Remember that the matrix \(\mattwo0{-1}10\) represents the matrix transformation that rotates vectors counterclockwise by \(90^\circ\text{.}\)  Beginning with the vector \(\vvec = \twovec34\text{,}\) find \(\wvec\text{,}\) the result of rotating \(\vvec\) by \(90^\circ\text{,}\) and sketch it above.</p></li>
-<li id="li-3537"><p id="p-5192">What is the dot product \(\vvec\cdot\wvec\text{?}\)</p></li>
-<li id="li-3538"><p id="p-5193">Suppose that \(\vvec=\twovec ab\text{.}\)  Find the vector \(\wvec\) that results from rotating \(\vvec\) by \(90^\circ\) and find the dot product \(\vvec\cdot\wvec\text{.}\)</p></li>
-<li id="li-3539"><p id="p-5194">Suppose that \(\vvec\) and \(\wvec\) are two perpendicular vectors.  What do you think their dot product \(\vvec\cdot\wvec\) is?</p></li>
-</ol></article></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
+<li id="li-3706"><p id="p-5424">Sketch the vector <span class="process-math">\(\vvec=\twovec{3}{4}\)</span> below.  Then use the Pythagorean theorem to find the length of <span class="process-math">\(\vvec\text{.}\)</span> <figure class="figure figure-like" id="figure-113"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/empty-6.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span>Sketch the vector <span class="process-math">\(\vvec\)</span> and find its length.</figcaption></figure></p></li>
+<li id="li-3707"><p id="p-5425">Compute the dot product <span class="process-math">\(\vvec\cdot\vvec\text{.}\)</span>  How is the dot product related to the length of <span class="process-math">\(\vvec\text{?}\)</span></p></li>
+<li id="li-3708"><p id="p-5426">Remember that the matrix <span class="process-math">\(\mattwo0{-1}10\)</span> represents the matrix transformation that rotates vectors counterclockwise by <span class="process-math">\(90^\circ\text{.}\)</span>  Beginning with the vector <span class="process-math">\(\vvec = \twovec34\text{,}\)</span> find <span class="process-math">\(\wvec\text{,}\)</span> the result of rotating <span class="process-math">\(\vvec\)</span> by <span class="process-math">\(90^\circ\text{,}\)</span> and sketch it above.</p></li>
+<li id="li-3709"><p id="p-5427">What is the dot product <span class="process-math">\(\vvec\cdot\wvec\text{?}\)</span></p></li>
+<li id="li-3710"><p id="p-5428">Suppose that <span class="process-math">\(\vvec=\twovec ab\text{.}\)</span>  Find the vector <span class="process-math">\(\wvec\)</span> that results from rotating <span class="process-math">\(\vvec\)</span> by <span class="process-math">\(90^\circ\)</span> and find the dot product <span class="process-math">\(\vvec\cdot\wvec\text{.}\)</span></p></li>
+<li id="li-3711"><p id="p-5429">Suppose that <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> are two perpendicular vectors.  What do you think their dot product <span class="process-math">\(\vvec\cdot\wvec\)</span> is?</p></li>
+</ol></article></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">The geometry of the dot product</span>
 </h3>
-<p id="p-5195"> The dot product is defined, more generally, for any two \(m\)-dimensional vectors:</p>
-<div class="displaymath">
+<p id="p-5438"> The dot product is defined, more generally, for any two <span class="process-math">\(m\)</span>-dimensional vectors:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\wvec =
 \left[
@@ -286,12 +321,12 @@ w_1 \\ w_2 \\ \vdots \\ w_m \\
 = v_1w_1 + v_2w_2 + \ldots + v_mw_m\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The important thing to remember is that the dot product will produce a scalar.  In other words, the two vectors are combined in such a way as to create a number, and, as we'll see, this number conveys important geometric information.</p>
-<article class="example example-like" id="example-29"><h6 class="heading">
+<p class="continuation">The important thing to remember is that the dot product will produce a scalar.  In other words, the two vectors are combined in such a way as to create a number, and, as we'll see, this number conveys useful geometric information.</p>
+<article class="example example-like" id="example-52"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
-</h6>
-<p id="p-5196">We compute the dot product between two four-dimensional vectors as</p>
-<div class="displaymath">
+</h4>
+<p id="p-5439">We compute the dot product between two four-dimensional vectors as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{c}
@@ -306,30 +341,30 @@ w_1 \\ w_2 \\ \vdots \\ w_m \\
 \right]
 = 2(-1) + 0(3) + (-3)(1) + 1(2) = -3\text{.}
 \end{equation*}
-</div></article><article class="assemblage assemblage-like" id="assemblage-9"><h6 class="heading"><span class="title">Properties of dot products.</span></h6>
-<p id="p-5197">As with ordinary multiplication, the dot product enjoys some familiar algebraic properties, such as commutativity and distributivity.  More specifically, it doesn't matter in which order we compute the dot product of two vectors:</p>
-<div class="displaymath">
+</div></article><article class="assemblage assemblage-like" id="assemblage-9"><h4 class="heading"><span class="title">Properties of dot products.</span></h4>
+<p id="p-5440">As with ordinary multiplication, the dot product enjoys some familiar algebraic properties, such as commutativity and distributivity.  More specifically, it doesn't matter in which order we compute the dot product of two vectors:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\wvec = \wvec\cdot\vvec\text{.}
 \end{equation*}
 </div>
-<p class="continuation">If \(s\) is a scalar, we have</p>
-<div class="displaymath">
+<p class="continuation">If <span class="process-math">\(s\)</span> is a scalar, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 (s\vvec)\cdot\wvec = s(\vvec\cdot\wvec)\text{.}
 \end{equation*}
 </div>
 <p class="continuation">We may also distribute the dot product across linear combinations:</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 (c_1\vvec_1+c_2\vvec_2)\cdot\wvec = c_1\vvec_1\cdot\wvec +
 c_2\vvec_2\cdot\wvec\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="example-30"><h6 class="heading">
+</div></article><article class="example example-like" id="example-53"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-5198">Suppose that \(\vvec_1\cdot\wvec = 4\) and \(\vvec_2\cdot\wvec = -7\text{.}\)  Then</p>
-<div class="displaymath">
+</h4>
+<p id="p-5441">Suppose that <span class="process-math">\(\vvec_1\cdot\wvec = 4\)</span> and <span class="process-math">\(\vvec_2\cdot\wvec = -7\text{.}\)</span>  Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 (2\vvec_1)\cdot\wvec \amp {}={} 2(\vvec_1\cdot\wvec) =
@@ -339,25 +374,25 @@ c_2\vvec_2\cdot\wvec\text{.}
 -26\text{.}
 \end{aligned}
 \end{equation*}
-</div></article><p id="p-5199">The most important property of the dot product, and the real reason for our interest in it, is that it gives us geometric information about vectors and their relationship to one another.  Let's first think about the length of a vector by looking at the vector \(\vvec = \twovec32\) as shown in <a class="xref" data-knowl="./knowl/fig-dot-length.html" title="Figure 6.1.4">Figure 6.1.4</a></p>
-<figure class="figure figure-like" id="fig-dot-length"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/dot-length.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>The vector \(\vvec\text{.}\)</figcaption></figure><p id="p-5200">We may find the length of this vector using the Pythagorean theorem as the vector forms the hyptonuse of a right triangle having a horizontal leg of length 3 and a vertical leg of length 2.  The length of \(\vvec\text{,}\) which we denote as \(\len{\vvec}\text{,}\) is therefore \(\len{\vvec} = \sqrt{3^2 +
-2^2} = \sqrt{13}\text{.}\)  Now notice that the dot product of \(\vvec\) with itself is</p>
-<div class="displaymath">
+</div></article><p id="p-5442">The most important property of the dot product, and the real reason for our interest in it, is that it gives us geometric information about vectors and their relationship to one another.  Let's first think about the length of a vector by looking at the vector <span class="process-math">\(\vvec = \twovec32\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/fig-dot-length.html" title="Figure 6.1.4">Figure 6.1.4</a></p>
+<figure class="figure figure-like" id="fig-dot-length"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/dot-length.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>The vector <span class="process-math">\(\vvec=\twovec32\text{.}\)</span></figcaption></figure><p id="p-5443">We may find the length of this vector using the Pythagorean theorem since the vector forms the hypotenuse of a right triangle having a horizontal leg of length 3 and a vertical leg of length 2.  The length of <span class="process-math">\(\vvec\text{,}\)</span> which we denote as <span class="process-math">\(\len{\vvec}\text{,}\)</span> is therefore <span class="process-math">\(\len{\vvec} = \sqrt{3^2 +
+2^2} = \sqrt{13}\text{.}\)</span>  Now notice that the dot product of <span class="process-math">\(\vvec\)</span> with itself is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\vvec = 3(3) + 2(2) = 13 = \len{\vvec}^2\text{.}
 \end{equation*}
 </div>
 <p class="continuation">This is true in general;  that is, we have</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\vvec = \len{\vvec}^2\text{.}
 \end{equation*}
 </div>
-<p id="p-5201">More than that, the dot product of two vectors records information about the angle between them.  Consider <a class="xref" data-knowl="./knowl/fig-dot-angle.html" title="Figure 6.1.5">Figure 6.1.5</a>.</p>
-<figure class="figure figure-like" id="fig-dot-angle"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/dot-angle.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.5<span class="period">.</span></span><span class="space"> </span>The dot product \(\vvec\cdot\wvec\) measures the angle \(\theta\text{.}\)</figcaption></figure><p id="p-5202">To see this, we will apply the Law of Cosines, which says that</p>
-<div class="displaymath">
+<p id="p-5444">More than that, the dot product of two vectors records information about the angle between them.  Consider <a href="" class="xref" data-knowl="./knowl/fig-dot-angle.html" title="Figure 6.1.5">Figure 6.1.5</a>.</p>
+<figure class="figure figure-like" id="fig-dot-angle"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/dot-angle.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.5<span class="period">.</span></span><span class="space"> </span>The dot product <span class="process-math">\(\vvec\cdot\wvec\)</span> measures the angle <span class="process-math">\(\theta\text{.}\)</span></figcaption></figure><p id="p-5445">To see this, we will apply the Law of Cosines, which says that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \len{\wvec-\vvec}^2 \amp = \len{\vvec}^2 + \len{\wvec}^2 -
@@ -374,15 +409,15 @@ c_2\vvec_2\cdot\wvec\text{.}
 \end{equation*}
 </div>
 <p class="continuation">The upshot of this reasoning is that</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\wvec = \len{\vvec}\len{\wvec}\cos\theta\text{.}
 \end{equation*}
 </div>
-<p id="p-5203">To summarize:</p>
-<article class="assemblage assemblage-like" id="assemblage-10"><h6 class="heading"><span class="title">Geometric properties of the dot product.</span></h6>
-<p id="p-5204">The dot product gives us the following geometric information:</p>
-<div class="displaymath">
+<p id="p-5446">To summarize:</p>
+<article class="assemblage assemblage-like" id="assemblage-10"><h4 class="heading"><span class="title">Geometric properties of the dot product.</span></h4>
+<p id="p-5447">The dot product gives us the following geometric information:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \vvec\cdot\vvec\amp = \len{\vvec}^2 \\
@@ -390,132 +425,132 @@ c_2\vvec_2\cdot\wvec\text{.}
 \end{aligned}
 \end{equation*}
 </div>
-<p class="continuation">where \(\theta\) is the angle between \(\vvec\) and \(\wvec\text{.}\)</p></article><article class="activity project-like" id="activity-67"><h6 class="heading">
+<p class="continuation">where <span class="process-math">\(\theta\)</span> is the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></p></article><article class="activity project-like" id="activity-68"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
-</h6>
-<ol id="p-5205" class="lower-alpha">
-<li id="li-3540">
-<p id="p-5206">Sketch the vectors \(\vvec=\twovec32\) and \(\wvec=\twovec{-1}3\) using <a class="xref" data-knowl="./knowl/fig-dot-empty.html" title="Figure 6.1.6">Figure 6.1.6</a>.</p>
-<figure class="figure figure-like" id="fig-dot-empty"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/empty-4.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span>Sketch the vectors \(\vvec\) and \(\wvec\) here.</figcaption></figure>
+</h4>
+<ol id="p-5448" class="lower-alpha">
+<li id="li-3719">
+<p id="p-5449">Sketch the vectors <span class="process-math">\(\vvec=\twovec32\)</span> and <span class="process-math">\(\wvec=\twovec{-1}3\)</span> using <a href="" class="xref" data-knowl="./knowl/fig-dot-empty.html" title="Figure 6.1.6">Figure 6.1.6</a>.</p>
+<figure class="figure figure-like" id="fig-dot-empty"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/empty-4.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span>Sketch the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> here.</figcaption></figure>
 </li>
-<li id="li-3541"><p id="p-5207">Find the lengths \(\len{\vvec}\) and \(\len{\wvec}\) using the dot product.</p></li>
-<li id="li-3542"><p id="p-5208">Find the dot product \(\vvec\cdot\wvec\) and use it to find the angle between \(\vvec\) and \(\wvec\text{.}\)</p></li>
-<li id="li-3543"><p id="p-5209">Consider the vector \(\xvec = \twovec{-2}{3}\text{.}\) Include it in your sketch in <a class="xref" data-knowl="./knowl/fig-dot-empty.html" title="Figure 6.1.6">Figure 6.1.6</a> and find the angle between \(\vvec\) and \(\xvec\text{.}\)</p></li>
-<li id="li-3544"><p id="p-5210">If two vectors are perpendicular, what can you say about their dot product?  Explain your thinking.</p></li>
-<li id="li-3545"><p id="p-5211">For what value of \(k\) is the vector \(\twovec6k\) perpendicular to \(\wvec\text{?}\)</p></li>
-<li id="li-3546">
-<p id="p-5212">Sage can be used to find lengths of vectors and their dot products.  For instance, if <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">w</code> are vectors, then <code class="code-inline tex2jax_ignore">v.norm()</code> gives the length of <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">v * w</code> gives \(\vvec\cdot\wvec\text{.}\)</p>
-<p id="p-5213">Suppose that</p>
-<div class="displaymath">
+<li id="li-3720"><p id="p-5450">Find the lengths <span class="process-math">\(\len{\vvec}\)</span> and <span class="process-math">\(\len{\wvec}\)</span> using the dot product.</p></li>
+<li id="li-3721"><p id="p-5451">Find the dot product <span class="process-math">\(\vvec\cdot\wvec\)</span> and use it to find the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></p></li>
+<li id="li-3722"><p id="p-5452">Consider the vector <span class="process-math">\(\xvec = \twovec{-2}{3}\text{.}\)</span> Include it in your sketch in <a href="" class="xref" data-knowl="./knowl/fig-dot-empty.html" title="Figure 6.1.6">Figure 6.1.6</a> and find the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\xvec\text{.}\)</span></p></li>
+<li id="li-3723"><p id="p-5453">If two vectors are perpendicular, what can you say about their dot product?  Explain your thinking.</p></li>
+<li id="li-3724"><p id="p-5454">For what value of <span class="process-math">\(k\)</span> is the vector <span class="process-math">\(\twovec6k\)</span> perpendicular to <span class="process-math">\(\wvec\text{?}\)</span></p></li>
+<li id="li-3725">
+<p id="p-5455">Sage can be used to find lengths of vectors and their dot products.  For instance, if <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">w</code> are vectors, then <code class="code-inline tex2jax_ignore">v.norm()</code> gives the length of <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">v * w</code> gives <span class="process-math">\(\vvec\cdot\wvec\text{.}\)</span></p>
+<p id="p-5456">Suppose that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec=\fourvec203{-2}, \hspace{24pt}
 \wvec=\fourvec1{-3}41\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Use the Sage cell below to find \(\len{\vvec}\text{,}\) \(\len{\wvec}\text{,}\) \(\vvec\cdot\wvec\text{,}\) and the angle between \(\vvec\) and \(\wvec\text{.}\)  You may use <code class="code-inline tex2jax_ignore">arccos</code> to find the angle's measure expressed in radians. <div class="sagecell-sage" id="sage-144"><script type="text/x-sage"></script></div></p>
+<p class="continuation">Use the Sage cell below to find <span class="process-math">\(\len{\vvec}\text{,}\)</span> <span class="process-math">\(\len{\wvec}\text{,}\)</span> <span class="process-math">\(\vvec\cdot\wvec\text{,}\)</span> and the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  You may use <code class="code-inline tex2jax_ignore">arccos</code> to find the angle's measure expressed in radians. <pre class="ptx-sagecell sagecell-sage" id="sage-151"><script type="text/x-sage"></script></pre></p>
 </li>
-</ol></article><p id="p-5228">As we move forward, it will be important for us to recognize when vectors are perpendicular to one another.  For instance, when vectors \(\vvec\) and \(\wvec\) are perpendicular, the angle between them \(\theta=90^\circ\) and we have</p>
-<div class="displaymath">
+</ol></article><p id="p-5471">As we move forward, it will be important for us to recognize when vectors are perpendicular to one another.  For instance, when vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> are perpendicular, the angle between them <span class="process-math">\(\theta=90^\circ\)</span> and we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\wvec=\len{\vvec}\len{\wvec}\cos\theta =
 \len{\vvec}\len{\wvec}\cos90^\circ = 0\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Therefore, the dot product between perpendicular vectors must be zero. This leads to the following definition.</p>
-<article class="definition definition-like" id="definition-23"><h6 class="heading">
+<article class="definition definition-like" id="definition-27"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span>
-</h6> We say that vectors \(\vvec\) and \(\wvec\) are orthogonal if \(\vvec\cdot\wvec=0\text{.}\)</article><p id="p-5229">In practical terms, two perpendicular vectors are orthogonal.  However, the concept of orthogonality is somewhat more general because it allows one or both of the vectors to be the zero vector \(\zerovec\text{.}\)</p>
-<p id="p-5230">We've now seen that the dot product gives us geometric information about vectors.  It also provides a way to compare vectors.  For example, consider the vectors \(\uvec\text{,}\) \(\vvec\text{,}\) and \(\wvec\text{,}\) shown in <a class="xref" data-knowl="./knowl/fig-similar-vectors.html" title="Figure 6.1.8">Figure 6.1.8</a>.  The vectors \(\vvec\) and \(\wvec\) seem somewhat similar as the directions they define are nearly the same.  By comparison, \(\uvec\) appears rather dissimilar to both \(\vvec\) and \(\wvec\text{.}\)  We will measure the similarity of vectors by finding the angle between them; the smaller the angle, the more similar the vectors.</p>
-<figure class="figure figure-like" id="fig-similar-vectors"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/similar-vectors.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span>Which of the vectors are most similar?</figcaption></figure><article class="activity project-like" id="activity-68"><h6 class="heading">
+</h4> We say that vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> are orthogonal if <span class="process-math">\(\vvec\cdot\wvec=0\text{.}\)</span></article><p id="p-5472">In practical terms, two perpendicular vectors are orthogonal.  However, the concept of orthogonality is somewhat more general because it allows one or both of the vectors to be the zero vector <span class="process-math">\(\zerovec\text{.}\)</span></p>
+<p id="p-5473">We've now seen that the dot product gives us geometric information about vectors.  It also provides a way to compare vectors.  For example, consider the vectors <span class="process-math">\(\uvec\text{,}\)</span> <span class="process-math">\(\vvec\text{,}\)</span> and <span class="process-math">\(\wvec\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/fig-similar-vectors.html" title="Figure 6.1.8">Figure 6.1.8</a>.  The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> seem somewhat similar as the directions they define are nearly the same.  By comparison, <span class="process-math">\(\uvec\)</span> appears rather dissimilar to both <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  We will measure the similarity of vectors by finding the angle between them; the smaller the angle, the more similar the vectors.</p>
+<figure class="figure figure-like" id="fig-similar-vectors"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/similar-vectors.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span>Which of the vectors are most similar?</figcaption></figure><article class="activity project-like" id="activity-69"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-5231">This activity explores two further uses of the dot product beginning with the similarity of vectors.</p>
+</h4>
+<p id="p-5474">This activity explores two further uses of the dot product beginning with the similarity of vectors.</p>
 <ol class="lower-alpha">
-<li id="li-3561">
-<p id="p-5232">Our first task is to assess the similarity between various Wikipedia articles by forming vectors from each of five articles.  In particular, one may download the text from a Wikipedia article, remove common words, such as “the” and “then,”, count the number of times the remaining words appear in the article, and represent these counts in a vector.</p>
-<p id="p-5233">For example, evaluate the following cell that loads in some special commands along with the vectors constructed from the Wikipedia articles on Veteran's Day, Memorial Day, Labor Day, the Golden Globe Awards, and the Super Bowl.  For each of the five articles, you will see a list of the number of times 10 words appear in these articles. For instance, the word “act” appears 3 times in the Veteran's Day article and 0 times in the Labor Day article. <div class="sagecell-sage" id="sage-145"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/dot_similarity.py", globals())
+<li id="li-3740">
+<p id="p-5475">Our first task is to assess the similarity between various Wikipedia articles by forming vectors from each of five articles.  In particular, one may download the text from a Wikipedia article, remove common words, such as “the” and “and”, count the number of times the remaining words appear in the article, and represent these counts in a vector.</p>
+<p id="p-5476">For example, evaluate the following cell that loads some special commands along with the vectors constructed from the Wikipedia articles on Veteran's Day, Memorial Day, Labor Day, the Golden Globe Awards, and the Super Bowl.  For each of the five articles, you will see a list of the number of times 10 words appear in these articles. For instance, the word “act” appears 3 times in the Veteran's Day article and 0 times in the Labor Day article. <pre class="ptx-sagecell sagecell-sage" id="sage-152"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/dot_similarity.py", globals())
 events.head(int(10))
-</script></div> For each of the five articles, we obtain 604-dimensional vectors, which are named <code class="code-inline tex2jax_ignore">veterans</code>, <code class="code-inline tex2jax_ignore">memorial</code>, <code class="code-inline tex2jax_ignore">labor</code>, <code class="code-inline tex2jax_ignore">golden</code>, and <code class="code-inline tex2jax_ignore">super</code>.</p>
-<ol id="p-5234" class="lower-roman">
-<li id="li-3562"><p id="p-5235">Suppose that two articles have no words in common.  What is the value of the dot product between their corresponding vectors?  What does this say about the angle between these vectors?</p></li>
-<li id="li-3563"><p id="p-5236">Suppose there are two articles on the same subject, yet one article is twice is long.  What approximate relationship would you expect to hold between the two vectors?  What does this say about the angle between them?</p></li>
-<li id="li-3564"><p id="p-5237">Use the Sage cell below to find the angle between the vector <code class="code-inline tex2jax_ignore">veterans</code> and the other four vectors.  To express the angle in degrees, use the <code class="code-inline tex2jax_ignore">degrees(x)</code> command, which gives the number of degrees in <code class="code-inline tex2jax_ignore">x</code> radians. <div class="sagecell-sage" id="sage-146"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-3565"><p id="p-5238">Compare the four angles you have found and discuss what they mean about the similarity between the Veteran's Day article and the other four.  Does your result reflect the nature of these five events?</p></li>
+</script></pre> For each of the five articles, we obtain 604-dimensional vectors, which are named <code class="code-inline tex2jax_ignore">veterans</code>, <code class="code-inline tex2jax_ignore">memorial</code>, <code class="code-inline tex2jax_ignore">labor</code>, <code class="code-inline tex2jax_ignore">golden</code>, and <code class="code-inline tex2jax_ignore">super</code>.</p>
+<ol id="p-5477" class="decimal">
+<li id="li-3741"><p id="p-5478">Suppose that two articles have no words in common.  What is the value of the dot product between their corresponding vectors?  What does this say about the angle between these vectors?</p></li>
+<li id="li-3742"><p id="p-5479">Suppose there are two articles on the same subject, yet one article is twice as long.  What approximate relationship would you expect to hold between the two vectors?  What does this say about the angle between them?</p></li>
+<li id="li-3743"><p id="p-5480">Use the Sage cell below to find the angle between the vector <code class="code-inline tex2jax_ignore">veterans</code> and the other four vectors.  To express the angle in degrees, use the <code class="code-inline tex2jax_ignore">degrees(x)</code> command, which gives the number of degrees in <code class="code-inline tex2jax_ignore">x</code> radians. <pre class="ptx-sagecell sagecell-sage" id="sage-153"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-3744"><p id="p-5481">Compare the four angles you have found and discuss what they mean about the similarity between the Veteran's Day article and the other four.  How do your findings reflect the nature of these five events?</p></li>
 </ol>
 </li>
-<li id="li-3566">
-<p id="p-5239">Vectors are often used to represent how a quantity changes over time.  For instance, the vector \(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\) might represent the value of a company's stock on four consecutive days.  When interpreted in this way, we call a vector a <em class="emphasis">time series.</em> Evaluate the Sage cell below to see a representation of two time series \(\svec_1\text{,}\) in blue, and \(\svec_2\text{,}\) in orange, which we imagine represent the value of two stocks over a period of time.  (This cell relies on some data loaded by the first cell in this activity.) <div class="sagecell-sage" id="sage-147"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s2, 'orange')
-</script></div> Even though one stock has a higher value than the other, the two appear to be related since they seem to rise and fall at roughly similar ways.  We often say that they are <em class="emphasis">correlated</em>, and we would like to measure the degree to which they are correlated.</p>
-<ol class="lower-roman">
-<li id="li-3567"><p id="p-5240">In order to compare the ways in which they rise and fall, we will first <em class="emphasis">demean</em> the time series;  that is, for each time series, we will subtract its average value to obtain a new time series.  There is a command <code class="code-inline tex2jax_ignore">demean(s)</code> that returns the demeaned time series of <code class="code-inline tex2jax_ignore">s</code>.  Use the Sage cell below to demean the series \(\svec_1\) and \(\svec_2\) and plot. <div class="sagecell-sage" id="sage-148"><script type="text/x-sage">ds1 = demean(s1)
+<li id="li-3745">
+<p id="p-5482">Vectors are often used to represent how a quantity changes over time.  For instance, the vector <span class="process-math">\(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\)</span> might represent the value of a company's stock on four consecutive days.  When interpreted in this way, we call the vector a <em class="emphasis">time series.</em> Evaluate the Sage cell below to see a representation of two time series <span class="process-math">\(\svec_1\text{,}\)</span> in blue, and <span class="process-math">\(\svec_2\text{,}\)</span> in orange, which we imagine represent the value of two stocks over a period of time.  (This cell relies on some data loaded by the first cell in this activity.) <pre class="ptx-sagecell sagecell-sage" id="sage-154"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s2, 'orange')
+</script></pre> Even though one stock has a higher value than the other, the two appear to be related since they seem to rise and fall at roughly similar ways.  We often say that they are <em class="emphasis">correlated</em>, and we would like to measure the degree to which they are correlated.</p>
+<ol class="decimal">
+<li id="li-3746"><p id="p-5483">In order to compare the ways in which they rise and fall, we will first <em class="emphasis">demean</em> the time series;  that is, for each time series, we will subtract its average value to obtain a new time series.  There is a command <code class="code-inline tex2jax_ignore">demean(s)</code> that returns the demeaned time series of <code class="code-inline tex2jax_ignore">s</code>.  Use the Sage cell below to demean the series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\)</span> and plot. <pre class="ptx-sagecell sagecell-sage" id="sage-155"><script type="text/x-sage">ds1 = demean(s1)
 ds2 = demean(s2)
 series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
-</script></div></p></li>
-<li id="li-3568">
-<p id="p-5241">If the demeaned series are \(\tilde{\svec}_1\) and \(\tilde{\svec}_2\text{,}\) then the correlation between \(\svec_1\) and \(\svec_2\) is defined to be</p>
-<div class="displaymath">
+</script></pre></p></li>
+<li id="li-3747">
+<p id="p-5484">If the demeaned series are <span class="process-math">\(\tilde{\svec}_1\)</span> and <span class="process-math">\(\tilde{\svec}_2\text{,}\)</span> then the correlation between <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\)</span> is defined to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \corr(\svec_1, \svec_2) =
 \frac{\tilde{\svec}_1\cdot\tilde{\svec}_2}
 {\len{\tilde{\svec}_1}\len{\tilde{\svec}_2}}.
 \end{equation*}
 </div>
-<p class="continuation">Given the geometric interpretation of the dot product, the correlation equals the cosine of the agle between the demeaned time series, and therefore \(\corr(\svec_1,\svec_2)\) is between -1 and 1.</p>
-<p id="p-5242">Find the correlation between \(\svec_1\) and \(\svec_2\text{.}\) <div class="sagecell-sage" id="sage-149"><script type="text/x-sage">
-</script></div></p>
+<p class="continuation">Given the geometric interpretation of the dot product, the correlation equals the cosine of the angle between the demeaned time series, and therefore <span class="process-math">\(\corr(\svec_1,\svec_2)\)</span> is between -1 and 1.</p>
+<p id="p-5485">Find the correlation between <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-156"><script type="text/x-sage">
+</script></pre></p>
 </li>
-<li id="li-3569">
-<p id="p-5243">Suppose that two time series are such that their demeaned time series are scalar multiples of one another, as in <a class="xref" data-knowl="./knowl/fig-correlation.html" title="Figure 6.1.9">Figure 6.1.9</a></p>
+<li id="li-3748">
+<p id="p-5486">Suppose that two time series are such that their demeaned time series are scalar multiples of one another, as in <a href="" class="xref" data-knowl="./knowl/fig-correlation.html" title="Figure 6.1.9">Figure 6.1.9</a></p>
 <figure class="figure figure-like" id="fig-correlation"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel top" style="width:44.4444444444444%;"><img src="images/correlation-pos.svg" role="img" class="contained" alt=""></div>
-<div class="sbspanel top" style="width:44.4444444444444%;"><img src="images/correlation-neg.svg" role="img" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/correlation-pos.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/correlation-neg.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.9<span class="period">.</span></span><span class="space"> </span>On the left, the demeaned time series are positive scalar multiples of one another.  On the right, they are negative scalar multiples.</figcaption></figure><p id="p-5244">Suppose we have time series \(\tvec_1\) and \(\tvec_2\) whose demeaned time series \(\tilde{\tvec}_1\) and \(\tilde{\tvec}_2\) are positive scalar multiples of one another.  What is the angle between the demeaned vectors?  What does this say about the correlation \(\corr(\tvec_1, \tvec_2)\text{?}\)</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.9<span class="period">.</span></span><span class="space"> </span>On the left, the demeaned time series are positive scalar multiples of one another.  On the right, they are negative scalar multiples.</figcaption></figure><p id="p-5487">For instance, suppose we have time series <span class="process-math">\(\tvec_1\)</span> and <span class="process-math">\(\tvec_2\)</span> whose demeaned time series <span class="process-math">\(\tilde{\tvec}_1\)</span> and <span class="process-math">\(\tilde{\tvec}_2\)</span> are positive scalar multiples of one another.  What is the angle between the demeaned vectors?  What does this say about the correlation <span class="process-math">\(\corr(\tvec_1, \tvec_2)\text{?}\)</span></p>
 </li>
-<li id="li-3570"><p id="p-5245">Suppose the demeaned time series \(\tilde{\tvec}_1\) and \(\tilde{\tvec}_2\) are negative scalar multiples of one another, what is the angle between the demeaned vectors?  What does this say about the correlation \(\corr(\tvec_1, \tvec_2)\text{?}\)</p></li>
-<li id="li-3571"><p id="p-5246">Use the Sage cell below to plot the time series \(\svec_1\) and \(\svec_3\) and find their correlation. <div class="sagecell-sage" id="sage-150"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s3, 'orange')
-</script></div></p></li>
-<li id="li-3572"><p id="p-5247">Use the Sage cell below to plot the time series \(\svec_1\) and \(\svec_4\) and find their correlation. <div class="sagecell-sage" id="sage-151"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s4, 'orange')
-</script></div></p></li>
+<li id="li-3749"><p id="p-5488">Suppose the demeaned time series <span class="process-math">\(\tilde{\tvec}_1\)</span> and <span class="process-math">\(\tilde{\tvec}_2\)</span> are negative scalar multiples of one another, what is the angle between the demeaned vectors?  What does this say about the correlation <span class="process-math">\(\corr(\tvec_1, \tvec_2)\text{?}\)</span></p></li>
+<li id="li-3750"><p id="p-5489">Use the Sage cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_3\)</span> and find their correlation. <pre class="ptx-sagecell sagecell-sage" id="sage-157"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s3, 'orange')
+</script></pre></p></li>
+<li id="li-3751"><p id="p-5490">Use the Sage cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_4\)</span> and find their correlation. <pre class="ptx-sagecell sagecell-sage" id="sage-158"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s4, 'orange')
+</script></pre></p></li>
 </ol>
 </li>
-</ol></article></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.2</span> <span class="title">\(k\)-means clustering</span>
+</ol></article></section><section class="subsection" id="subsection-83"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.1.2</span> <span class="title"><span class="process-math">\(k\)</span>-means clustering</span>
 </h3>
-<p id="p-5274">A typical problem in data science is to find some underlying patterns in a dataset.  Suppose, for instance, that we have the set of 177 data points plotted in <a class="xref" data-knowl="./knowl/fig-clusters.html" title="Figure 6.1.10">Figure 6.1.10</a>. Notice that the points are not scattered around haphazardly; instead, they seem to form clusters.  Our goal here is to develop a strategy for detecting the clusters.</p>
-<figure class="figure figure-like" id="fig-clusters"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="images/cluster-plot.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.10<span class="period">.</span></span><span class="space"> </span>A set of 177 data points.</figcaption></figure><p id="p-5275">To see how this could be useful, suppose we have medical data describing a group of patients, some of whom have been diagnosed with a specific condition, such as diabetes.  Perhaps we have a record of age, weight, blood sugar, cholestrol, and other attributes for each patient.  It could be that the data points for the group diagnosed as having the condition form a cluster that is somewhat distinct from the rest of the data.  Suppose that we are able to identify that cluster and that we are then presented with a new patient that has not been tested for the condition.  If the attributes for that patient place them in that cluster, we might identify them as being at risk for the condition and prioritize them for appropriate screenings.</p>
-<p id="p-5276">If there are many attributes for each patient, the data may be high-dimensional and not easily visualized.  We would therefore like to develop an algorithm that separates the data points into clusters without human intervention.  We call the result a <em class="emphasis">clustering</em>.</p>
-<p id="p-5277">The next activity introduces a technique, called \(k\)-means clustering, that helps us find clusterings.  To do so, we will view the data points as vectors so that the distance between two data points equals the length of the vector joining them.</p>
-<article class="activity project-like" id="activity-69"><h6 class="heading">
+<p id="p-5517">A typical problem in data science is to find some underlying patterns in a dataset.  Suppose, for instance, that we have the set of 177 data points plotted in <a href="" class="xref" data-knowl="./knowl/fig-clusters.html" title="Figure 6.1.10">Figure 6.1.10</a>. Notice that the points are not scattered around haphazardly; instead, they seem to form clusters.  Our goal here is to develop a strategy for detecting the clusters.</p>
+<figure class="figure figure-like" id="fig-clusters"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/cluster-plot.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.10<span class="period">.</span></span><span class="space"> </span>A set of 177 data points.</figcaption></figure><p id="p-5518">To see how this could be useful, suppose we have medical data describing a group of patients, some of whom have been diagnosed with a specific condition, such as diabetes.  Perhaps we have a record of age, weight, blood sugar, cholesterol, and other attributes for each patient.  It could be that the data points for the group diagnosed as having the condition form a cluster that is somewhat distinct from the rest of the data.  Suppose that we are able to identify that cluster and that we are then presented with a new patient that has not been tested for the condition.  If the attributes for that patient place them in that cluster, we might identify them as being at risk for the condition and prioritize them for appropriate screenings.</p>
+<p id="p-5519">If there are many attributes for each patient, the data may be high-dimensional and not easily visualized.  We would therefore like to develop an algorithm that separates the data points into clusters without human intervention.  We call the result a <em class="emphasis">clustering</em>.</p>
+<p id="p-5520">The next activity introduces a technique, called <span class="process-math">\(k\)</span>-means clustering, that helps us find clusterings.  To do so, we will view the data points as vectors so that the distance between two data points equals the length of the vector joining them.  That is, if two points are represented by the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{,}\)</span> then the distance between the points is <span class="process-math">\(\len{\vvec-\wvec}\text{.}\)</span></p>
+<article class="activity project-like" id="activity-70"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
-</h6>
-<p id="p-5278">To begin, we identify the <em class="emphasis">centroid</em>, or the average, of a set of vectors \(\vvec_1, \vvec_2, \ldots,\vvec_n\) as</p>
-<div class="displaymath">
+</h4>
+<p id="p-5521">To begin, we identify the <em class="emphasis">centroid</em>, or the average, of a set of vectors <span class="process-math">\(\vvec_1, \vvec_2, \ldots,\vvec_n\)</span> as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-centroid-plot.html ./knowl/fig-clustering-ex.html ./knowl/fig-clustering-ex.html ./knowl/fig-clustering-ex.html ./knowl/fig-clustering-ex-2.html ./knowl/fig-clustering-ex-2.html ./knowl/fig-clustering-ex-3.html">
 \begin{equation*}
 \frac1n\left(\vvec_1+\vvec_2+\ldots+\vvec_n\right).
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3597">
-<p id="p-5279">Find the centroid of the vectors</p>
-<div class="displaymath">
+<li id="li-3776">
+<p id="p-5522">Find the centroid of the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-centroid-plot.html">
 \begin{equation*}
 \vvec_1=\twovec11,
 \vvec_2=\twovec41,
 \vvec_3=\twovec44.
 \end{equation*}
 </div>
-<p class="continuation">and sketch the vectors and the centroid using <a class="xref" data-knowl="./knowl/fig-centroid-plot.html" title="Figure 6.1.11">Figure 6.1.11</a>.  You may wish to simply plot the points represented by the tips of the vectors rather than drawing the vectors themselves.</p>
-<figure class="figure figure-like" id="fig-centroid-plot"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/empty-5-k.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.11<span class="period">.</span></span><span class="space"> </span>The vectors \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) \(\vvec_3\) and their centroid.</figcaption></figure><p id="p-5280">Notice that the centroid lies in the center of the points defined by the vectors.</p>
+<p class="continuation">and sketch the vectors and the centroid using <a href="" class="xref" data-knowl="./knowl/fig-centroid-plot.html" title="Figure 6.1.11">Figure 6.1.11</a>.  You may wish to simply plot the points represented by the tips of the vectors rather than drawing the vectors themselves.</p>
+<figure class="figure figure-like" id="fig-centroid-plot"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/empty-5-k.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.11<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\)</span> and their centroid.</figcaption></figure><p id="p-5523">Notice that the centroid lies in the center of the points defined by the vectors.</p>
 </li>
-<li id="li-3598">
-<p id="p-5281">Now we'll illustrate an algorithm that forms clusterings.  To begin, consider the following points, represented as vectors,</p>
-<div class="displaymath">
+<li id="li-3777">
+<p id="p-5524">Now we'll illustrate an algorithm that forms clusterings.  To begin, consider the following points, represented as vectors,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-clustering-ex.html">
 \begin{equation*}
 \vvec_1=\twovec{-2}{1},
 \vvec_2=\twovec11,
@@ -523,37 +558,37 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 \vvec_4=\twovec32,
 \end{equation*}
 </div>
-<p class="continuation">which are shown in <a class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.</p>
-<figure class="figure figure-like" id="fig-clustering-ex"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/kmeans-data.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.12<span class="period">.</span></span><span class="space"> </span>We will group this set of four points into two clusters.</figcaption></figure><p id="p-5282">Suppose that we would like to group these points into \(k=2\) clusters. (Later on, we'll see how to choose an appropriate value for \(k\text{,}\) the number of clusters.)  We begin by choosing two points \(c_1\) and \(c_2\) at random and declaring them to be the “centers”' of the two clusters.</p>
-<p id="p-5283">For example, suppose we randomly choose \(c_1=\vvec_2\) and \(c_2=\vvec_3\) as the center of two clusters.  The cluster centered on \(c_1=\vvec_2\) will be the set of points that are closer to \(c_1=\vvec_2\) than to \(c_2=\vvec_3\text{.}\) Determine which of the four data points are in this cluster, which we denote by \(C_1\text{,}\) and circle them in <a class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.</p>
+<p class="continuation">which are shown in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.</p>
+<figure class="figure figure-like" id="fig-clustering-ex"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/kmeans-data.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.12<span class="period">.</span></span><span class="space"> </span>We will group this set of four points into two clusters.</figcaption></figure><p id="p-5525">Suppose that we would like to group these points into <span class="process-math">\(k=2\)</span> clusters. (Later on, we'll see how to choose an appropriate value for <span class="process-math">\(k\text{,}\)</span> the number of clusters.)  We begin by choosing two points <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> at random and declaring them to be the “centers”' of the two clusters.</p>
+<p id="p-5526">For example, suppose we randomly choose <span class="process-math">\(c_1=\vvec_2\)</span> and <span class="process-math">\(c_2=\vvec_3\)</span> as the center of two clusters.  The cluster centered on <span class="process-math">\(c_1=\vvec_2\)</span> will be the set of points that are closer to <span class="process-math">\(c_1=\vvec_2\)</span> than to <span class="process-math">\(c_2=\vvec_3\text{.}\)</span> Determine which of the four data points are in this cluster, which we denote by <span class="process-math">\(C_1\text{,}\)</span> and circle them in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.</p>
 </li>
-<li id="li-3599"><p id="p-5284">The second cluster will consist of the data points that are closer to \(c_2=\vvec_3\) than \(c_1=\vvec_2\text{.}\)  Determine which of the four points are in this cluster, which we denote by \(C_2\text{,}\) and circle them in <a class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.</p></li>
-<li id="li-3600">
-<p id="p-5285">We now have a clustering with two clusters, but we will try to improve upon it in the following way.  First, find the centroids of the two clusters;  that is, redefine \(c_1\) to be the centroid of cluster \(C_1\) and \(c_2\) to be the centroid of \(C_2\text{.}\) Find those centroids and indicate them in <a class="xref" data-knowl="./knowl/fig-clustering-ex-2.html" title="Figure 6.1.13">Figure 6.1.13</a></p>
-<figure class="figure figure-like" id="fig-clustering-ex-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/kmeans-data.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.13<span class="period">.</span></span><span class="space"> </span>Indicate the new centroids and clusters.</figcaption></figure><p id="p-5286">Now update the cluster \(C_1\) to be the set of points closer to \(c_1\) than \(c_2\text{.}\) Update the cluster \(C_2\) in a similar way and indicate the clusters in <a class="xref" data-knowl="./knowl/fig-clustering-ex-2.html" title="Figure 6.1.13">Figure 6.1.13</a>.</p>
+<li id="li-3778"><p id="p-5527">The second cluster will consist of the data points that are closer to <span class="process-math">\(c_2=\vvec_3\)</span> than <span class="process-math">\(c_1=\vvec_2\text{.}\)</span>  Determine which of the four points are in this cluster, which we denote by <span class="process-math">\(C_2\text{,}\)</span> and circle them in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.</p></li>
+<li id="li-3779">
+<p id="p-5528">We now have a clustering with two clusters, but we will try to improve upon it in the following way.  First, find the centroids of the two clusters;  that is, redefine <span class="process-math">\(c_1\)</span> to be the centroid of cluster <span class="process-math">\(C_1\)</span> and <span class="process-math">\(c_2\)</span> to be the centroid of <span class="process-math">\(C_2\text{.}\)</span> Find those centroids and indicate them in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex-2.html" title="Figure 6.1.13">Figure 6.1.13</a></p>
+<figure class="figure figure-like" id="fig-clustering-ex-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/kmeans-data.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.13<span class="period">.</span></span><span class="space"> </span>Indicate the new centroids and clusters.</figcaption></figure><p id="p-5529">Now update the cluster <span class="process-math">\(C_1\)</span> to be the set of points closer to <span class="process-math">\(c_1\)</span> than <span class="process-math">\(c_2\text{.}\)</span> Update the cluster <span class="process-math">\(C_2\)</span> in a similar way and indicate the clusters in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex-2.html" title="Figure 6.1.13">Figure 6.1.13</a>.</p>
 </li>
-<li id="li-3601">
-<p id="p-5287">Let's perform this last step again.  That is, update the centroids \(c_1\) and \(c_2\) from the new clusters and then update the clusters \(C_1\) and \(C_2\text{.}\)  Indicate your centroids and clusters in <a class="xref" data-knowl="./knowl/fig-clustering-ex-3.html" title="Figure 6.1.14">Figure 6.1.14</a></p>
-<figure class="figure figure-like" id="fig-clustering-ex-3"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/kmeans-data.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.14<span class="period">.</span></span><span class="space"> </span>Indicate the new centroids and clusters.</figcaption></figure><p id="p-5288">Notice that this last step produces the same set of clusters so there is no point in repeating it.  We declare this to be our final clustering.</p>
+<li id="li-3780">
+<p id="p-5530">Let's perform this last step again.  That is, update the centroids <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> from the new clusters and then update the clusters <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{.}\)</span>  Indicate your centroids and clusters in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex-3.html" title="Figure 6.1.14">Figure 6.1.14</a>.</p>
+<figure class="figure figure-like" id="fig-clustering-ex-3"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/kmeans-data.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.14<span class="period">.</span></span><span class="space"> </span>Indicate the new centroids and clusters.</figcaption></figure><p id="p-5531">Notice that this last step produces the same set of clusters so there is no point in repeating it.  We declare this to be our final clustering.</p>
 </li>
-</ol></article><p id="p-5302">This activity demonstrates our algorithm for finding a clustering.  We first choose a value \(k\) and seek to break the data points into \(k\) clusters. The algorithm proceeds in the following way:</p>
+</ol></article><p id="p-5545">This activity demonstrates our algorithm for finding a clustering.  We first choose a value <span class="process-math">\(k\)</span> and seek to break the data points into <span class="process-math">\(k\)</span> clusters. The algorithm proceeds in the following way:</p>
 <ul class="disc">
-<li id="li-3612"><p id="p-5303">Choose \(k\) points \(c_1, c_2, \ldots, c_k\) at random from our data set.</p></li>
-<li id="li-3613"><p id="p-5304">Construct the cluster \(C_1\) as the set of data points closest to \(c_1\text{,}\) \(C_2\) as the set of data points closest to \(c_2\text{,}\) and so forth.</p></li>
-<li id="li-3614">
-<p id="p-5305">Repeat the following until the clusters no longer change:</p>
+<li id="li-3791"><p id="p-5546">Choose <span class="process-math">\(k\)</span> points <span class="process-math">\(c_1, c_2, \ldots, c_k\)</span> at random from our data set.</p></li>
+<li id="li-3792"><p id="p-5547">Construct the cluster <span class="process-math">\(C_1\)</span> as the set of data points closest to <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(C_2\)</span> as the set of data points closest to <span class="process-math">\(c_2\text{,}\)</span> and so forth.</p></li>
+<li id="li-3793">
+<p id="p-5548">Repeat the following until the clusters no longer change:</p>
 <ul class="circle">
-<li id="li-3615"><p id="p-5306">Find the centroids \(c_1, c_2,\ldots,c_k\) of the current clusters.</p></li>
-<li id="li-3616"><p id="p-5307">Update the clusters \(C_1,C_2,\ldots,C_k\text{.}\)</p></li>
+<li id="li-3794"><p id="p-5549">Find the centroids <span class="process-math">\(c_1, c_2,\ldots,c_k\)</span> of the current clusters.</p></li>
+<li id="li-3795"><p id="p-5550">Update the clusters <span class="process-math">\(C_1,C_2,\ldots,C_k\text{.}\)</span></p></li>
 </ul>
 </li>
 </ul>
-<p id="p-5308">The clusterings we find depend on the initial random choice of points \(c_1, c_2,\ldots, c_k\text{.}\)  For instance, in the previous activity, we arrived, with the initial choice \(c_1=
-\vvec_2\) and \(c_2=\vvec_3\text{,}\) at the clustering:</p>
-<div class="displaymath">
+<p id="p-5551">The clusterings we find depend on the initial random choice of points <span class="process-math">\(c_1, c_2,\ldots, c_k\text{.}\)</span>  For instance, in the previous activity, we arrived, with the initial choice <span class="process-math">\(c_1=
+\vvec_2\)</span> and <span class="process-math">\(c_2=\vvec_3\text{,}\)</span> at the clustering:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{rcl}
 C_1 \amp {}={} \amp \{\vvec_1\} \\
@@ -561,9 +596,9 @@ C_2 \amp {}={} \amp \{\vvec_2, \vvec_3,\vvec_4\}.
 \end{array}
 \end{equation*}
 </div>
-<p id="p-5309">If we instead choose the initial points to be \(c_1 =
-\vvec_3\) and \(c_2=\vvec_4\text{,}\) we eventually find the clustering:</p>
-<div class="displaymath">
+<p id="p-5552">If we instead choose the initial points to be <span class="process-math">\(c_1 =
+\vvec_3\)</span> and <span class="process-math">\(c_2=\vvec_4\text{,}\)</span> we eventually find the clustering:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{rcl}
 C_1 \amp {}={} \amp \{\vvec_1, \vvec_2, \vvec_3\} \\
@@ -571,9 +606,9 @@ C_2 \amp {}={} \amp \{\vvec_4\}.
 \end{array}
 \end{equation*}
 </div>
-<p id="p-5310">Is there a way that we can determine which clustering is the better of the two?  It seems like a better clustering will be one for which the points in a cluster are, on average, closer to the centroid of their cluster.  If we have a clustering, we therefore define a function, called the <em class="emphasis">objective</em>, which measures the average of the square of the distance from each point to the centroid of the cluster to which that point belongs.  A clustering with a smaller objective will have clusters more tightly centered around their centroids, which should result in a better clustering.</p>
-<p id="p-5311">For example, when we obtain the clustering:</p>
-<div class="displaymath">
+<p id="p-5553">Is there a way that we can determine which clustering is the better of the two?  It seems like a better clustering will be one for which the points in a cluster are, on average, closer to the centroid of their cluster.  If we have a clustering, we therefore define a function, called the <em class="emphasis">objective</em>, which measures the average of the square of the distance from each point to the centroid of the cluster to which that point belongs.  A clustering with a smaller objective will have clusters more tightly centered around their centroids, which should result in a better clustering.</p>
+<p id="p-5554">For example, when we obtain the clustering:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{rcl}
 C_1 \amp {}={} \amp \{\vvec_1, \vvec_2, \vvec_3\} \\
@@ -581,8 +616,8 @@ C_2 \amp {}={} \amp \{\vvec_4\}.
 \end{array}
 \end{equation*}
 </div>
-<p class="continuation">with centroids \(c_1=\twovec{0}{4/3}\) and \(c_2=\vvec_4=\twovec32\text{,}\) we find the objective to be</p>
-<div class="displaymath">
+<p class="continuation">with centroids <span class="process-math">\(c_1=\ctwovec{0}{4/3}\)</span> and <span class="process-math">\(c_2=\vvec_4=\twovec32\text{,}\)</span> we find the objective to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \frac14\left(
 \len{\vvec_1-c_1}^2 + 
@@ -593,14 +628,14 @@ C_2 \amp {}={} \amp \{\vvec_4\}.
 = \frac 53.
 \end{equation*}
 </div>
-<article class="activity project-like" id="activity-70"><h6 class="heading">
+<article class="activity project-like" id="activity-71"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span>
-</h6>
-<p id="p-5312">We'll now use the objective to compare clusterings and to choose an appropriate value of \(k\text{.}\)</p>
+</h4>
+<p id="p-5555">We'll now use the objective to compare clusterings and to choose an appropriate value of <span class="process-math">\(k\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-3617">
-<p id="p-5313">In the previous activity, one initial choice of \(c_1\) and \(c_2\) led to the clustering:</p>
-<div class="displaymath">
+<li id="li-3796">
+<p id="p-5556">In the previous activity, one initial choice of <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> led to the clustering:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{rcl}
 C_1 \amp {}={} \amp \{\vvec_1\} \\
@@ -608,37 +643,37 @@ C_2 \amp {}={} \amp \{\vvec_2, \vvec_3,\vvec_4\}
 \end{array}
 \end{equation*}
 </div>
-<p class="continuation">with centroids \(c_1=\vvec_1\) and \(c_2=\twovec{5/3}{5/3}\text{.}\) Find the objective of this clustering.</p>
+<p class="continuation">with centroids <span class="process-math">\(c_1=\vvec_1\)</span> and <span class="process-math">\(c_2=\twovec{5/3}{5/3}\text{.}\)</span> Find the objective of this clustering.</p>
 </li>
-<li id="li-3618"><p id="p-5314">We have now seen two clusterings and computed their objectives.  Recall that our data set is shown in <a class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.  Which of the two clusterings feels like the better fit?  How is this fit reflected in the values of the objectives?</p></li>
-<li id="li-guess-clusters"><p id="p-5315">Evaluating the following cell will load and display a data set consisting of 177 data points.  This data set has the name <code class="code-inline tex2jax_ignore">data</code>. <div class="sagecell-sage" id="sage-152"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/k_means.py", globals())
+<li id="li-3797"><p id="p-5557">We have now seen two clusterings and computed their objectives.  Recall that our data set is shown in <a href="" class="xref" data-knowl="./knowl/fig-clustering-ex.html" title="Figure 6.1.12">Figure 6.1.12</a>.  Which of the two clusterings feels like the better fit?  How is this fit reflected in the values of the objectives?</p></li>
+<li id="li-guess-clusters"><p id="p-5558">Evaluating the following cell will load and display a data set consisting of 177 data points.  This data set has the name <code class="code-inline tex2jax_ignore">data</code>. <pre class="ptx-sagecell sagecell-sage" id="sage-159"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/k_means.py", globals())
 list_plot(data, color='blue', size=20, aspect_ratio=1)
-</script></div> Given this plot of the data, what would seem like a reasonable number of clusters?</p></li>
-<li id="li-3620"><p id="p-5316">In the following cell, you may choose a value of \(k\) and then run the algorithm to determine and display a clustering and its objective.  If you run the algorithm a few times with the same value of \(k\text{,}\) you will likely see different clusterings having different objectives. This is natural since our algorithm starts by making a random choice of points \(c_1,c_2,\ldots,c_k\text{,}\) and a different choices may lead to different clusterings. Choose a value of \(k\) and run the algorithm a few times.  Notice that clusterings having lower objectives seem to fit the data better.  Repeat this experiment with a few different values of \(k\text{.}\) <div class="sagecell-sage" id="sage-153"><script type="text/x-sage">k = 2  # you may change the value of k here
+</script></pre> Given this plot of the data, what would seem like a reasonable number of clusters?</p></li>
+<li id="li-3799"><p id="p-5559">In the following cell, you may choose a value of <span class="process-math">\(k\)</span> and then run the algorithm to determine and display a clustering and its objective.  If you run the algorithm a few times with the same value of <span class="process-math">\(k\text{,}\)</span> you will likely see different clusterings having different objectives. This is natural since our algorithm starts by making a random choice of points <span class="process-math">\(c_1,c_2,\ldots,c_k\text{,}\)</span> and a different choices may lead to different clusterings. Choose a value of <span class="process-math">\(k\)</span> and run the algorithm a few times.  Notice that clusterings having lower objectives seem to fit the data better.  Repeat this experiment with a few different values of <span class="process-math">\(k\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-160"><script type="text/x-sage">k = 2  # you may change the value of k here
 clusters, centroids, objective = kmeans(data, k)
 print('Objective =', objective)
 plotclusters(clusters, centroids)
-</script></div></p></li>
-<li id="li-3621">
-<p id="p-5317">For a given value of \(k\text{,}\) our strategy is to run the algorithm several times and choose the clustering with the smallest objective.  After choosing a value of \(k\text{,}\) the following cell will run the algorithm 10 times and display the clustering having the smallest objective. <div class="sagecell-sage" id="sage-154"><script type="text/x-sage">k = 2  # you may change the value of k here
+</script></pre></p></li>
+<li id="li-3800">
+<p id="p-5560">For a given value of <span class="process-math">\(k\text{,}\)</span> our strategy is to run the algorithm several times and choose the clustering with the smallest objective.  After choosing a value of <span class="process-math">\(k\text{,}\)</span> the following cell will run the algorithm 10 times and display the clustering having the smallest objective. <pre class="ptx-sagecell sagecell-sage" id="sage-161"><script type="text/x-sage">k = 2  # you may change the value of k here
 clusters, centroids, objective = minimalobjective(data, k)
 print('Objective =', objective)
 plotclusters(clusters, centroids)
-</script></div></p>
-<p id="p-5318">For each value of \(k\) between 2 and 9, find the clustering having the smallest objective and plot your findings in <a class="xref" data-knowl="./knowl/fig-clustering-elbow.html" title="Figure 6.1.15">Figure 6.1.15</a>.</p>
-<figure class="figure figure-like" id="fig-clustering-elbow"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="images/clustering-elbow.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.15<span class="period">.</span></span><span class="space"> </span>Construct a plot of the minimal objective as it depends on the choice of \(k\text{.}\)</figcaption></figure><p id="p-5319">This plot is called an <em class="emphasis">elbow plot</em> due to its shape.  Notice how the objective decreases sharply when \(k\) is small, but then flattens out. This leads to a location, called the elbow, where the objective transitions from being sharply decreasing to relatively flat.  This means that increasing \(k\) beyond the elbow does not significantly decrease the objective, which makes the elbow a good choice for \(k\text{.}\)</p>
-<p id="p-5320">Where does the elbow occur in your plot above?  How does this compare to the best value of \(k\) that you estimated by simply looking at the data in <a class="xref" data-knowl="./knowl/li-guess-clusters.html" title="Item c">Item c</a>.</p>
+</script></pre></p>
+<p id="p-5561">For each value of <span class="process-math">\(k\)</span> between 2 and 9, find the clustering having the smallest objective and plot your findings in <a href="" class="xref" data-knowl="./knowl/fig-clustering-elbow.html" title="Figure 6.1.15">Figure 6.1.15</a>.</p>
+<figure class="figure figure-like" id="fig-clustering-elbow"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/clustering-elbow.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.15<span class="period">.</span></span><span class="space"> </span>Construct a plot of the minimal objective as it depends on the choice of <span class="process-math">\(k\text{.}\)</span></figcaption></figure><p id="p-5562">This plot is called an <em class="emphasis">elbow plot</em> due to its shape.  Notice how the objective decreases sharply when <span class="process-math">\(k\)</span> is small and then flattens out. This leads to a location, called the elbow, where the objective transitions from being sharply decreasing to relatively flat.  This means that increasing <span class="process-math">\(k\)</span> beyond the elbow does not significantly decrease the objective, which makes the elbow a good choice for <span class="process-math">\(k\text{.}\)</span></p>
+<p id="p-5563">Where does the elbow occur in your plot above?  How does this compare to the best value of <span class="process-math">\(k\)</span> that you estimated by simply looking at the data in <a href="" class="xref" data-knowl="./knowl/li-guess-clusters.html" title="Item c">Item c</a>.</p>
 </li>
 </ol>
-<p id="p-5321">Of course, we could increase \(k\) until each data point is its own cluster.  However, this defeats the point of the technique, which is to group together nearby data points in the hope that they share common features, thus providing insight into the structure of the data.</p></article><p id="p-5334">We have now seen how our algorithm and the objective identify a reasonable value for \(k\text{,}\) the number of the clusters, and produce a good clustering having \(k\) clusters.  Notice that we don't claim to have found the best clustering as the true test of any clustering will be in how it helps us understand the dataset and helps us make predictions for any new data that we may encounter.</p></section><section class="subsection" id="subsection-83"><h3 class="heading hide-type">
+<p id="p-5564">Of course, we could increase <span class="process-math">\(k\)</span> until each data point is its own cluster.  However, this defeats the point of the technique, which is to group together nearby data points in the hope that they share common features, thus providing insight into the structure of the data.</p></article><p id="p-5577">We have now seen how our algorithm and the objective identify a reasonable value for <span class="process-math">\(k\text{,}\)</span> the number of the clusters, and produce a good clustering having <span class="process-math">\(k\)</span> clusters.  Notice that we don't claim to have found the best clustering as the true test of any clustering will be in how it helps us understand the dataset and helps us make predictions about any new data that we may encounter.</p></section><section class="subsection" id="subsection-84"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.3</span> <span class="title">Summary</span>
 </h3>
-<p id="p-5335">This section introduced the dot product and the ability to investigate geometric relationships between vectors.</p>
+<p id="p-5578">This section introduced the dot product and the ability to investigate geometric relationships between vectors.</p>
 <ul class="disc">
-<li id="li-3632">
-<p id="p-5336">The dot product of two vectors \(\vvec\) and \(\wvec\) satisfies these properties:</p>
-<div class="displaymath">
+<li id="li-3811">
+<p id="p-5579">The dot product of two vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> satisfies these properties:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{rcl}
 \vvec\cdot\vvec \amp {}={} \amp \len{\vvec}^2 \\
@@ -647,27 +682,27 @@ plotclusters(clusters, centroids)
 \end{array}
 \end{equation*}
 </div>
-<p class="continuation">where \(\theta\) is the angle between \(\vvec\) and \(\wvec\text{.}\)</p>
+<p class="continuation">where <span class="process-math">\(\theta\)</span> is the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></p>
 </li>
-<li id="li-3633"><p id="p-5337">The vectors \(\vvec\) and \(\wvec\) are orthogonal when \(\vvec\cdot\wvec= 0\text{.}\)</p></li>
-<li id="li-3634"><p id="p-5338">We explored some applications of the dot product to the similarity of vectors, correlation of time series, and \(k\)-means clustering.</p></li>
+<li id="li-3812"><p id="p-5580">The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> are orthogonal when <span class="process-math">\(\vvec\cdot\wvec= 0\text{.}\)</span></p></li>
+<li id="li-3813"><p id="p-5581">We explored some applications of the dot product to the similarity of vectors, correlation of time series, and <span class="process-math">\(k\)</span>-means clustering.</p></li>
 </ul></section><section class="exercises" id="exercises-22"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">6.1.4</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-191"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-5339">Consider the vectors</p>
-<div class="displaymath">
+<article class="exercise exercise-like" id="exercise-198"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-5582">Consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec=\fourvec203{-2}, \hspace{24pt}
 \wvec=\fourvec1{-3}41.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3635"><p id="p-5340">Find the lengths of the vectors, \(\len{\vvec}\) and \(\len{\wvec}\text{.}\)</p></li>
-<li id="li-3636"><p id="p-5341">Find the dot product \(\vvec\cdot\wvec\) and use it to find the angle \(\theta\) between \(\vvec\) and \(\wvec\text{.}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-192"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-5348">Consider the three vectors</p>
-<div class="displaymath">
+<li id="li-3814"><p id="p-5583">Find the lengths of the vectors, <span class="process-math">\(\len{\vvec}\)</span> and <span class="process-math">\(\len{\wvec}\text{.}\)</span></p></li>
+<li id="li-3815"><p id="p-5584">Find the dot product <span class="process-math">\(\vvec\cdot\wvec\)</span> and use it to find the angle <span class="process-math">\(\theta\)</span> between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-199"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-5591">Consider the three vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \uvec = \threevec1{-2}2, \hspace{24pt}
 \vvec = \threevec111, \hspace{24pt}
@@ -675,20 +710,20 @@ plotclusters(clusters, centroids)
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3641"><p id="p-5349">Find the dot products \(\uvec\cdot\uvec\text{,}\) \(\uvec\cdot\vvec\text{,}\) and \(\uvec\cdot\wvec\text{.}\)</p></li>
-<li id="li-3642">
-<p id="p-5350">Use the dot products you just found to evaluate:</p>
-<ol class="lower-roman">
-<li id="li-3643"><p id="p-5351">\(\len{\uvec}\text{.}\)</p></li>
-<li id="li-3644"><p id="p-5352">\((-5\uvec)\cdot\vvec\text{.}\)</p></li>
-<li id="li-3645"><p id="p-5353">\(\uvec\cdot(-3\vvec+2\wvec)\text{.}\)</p></li>
-<li id="li-3646"><p id="p-5354">\(\len{\frac1{\len{\uvec}} \uvec}\text{.}\)</p></li>
+<li id="li-3820"><p id="p-5592">Find the dot products <span class="process-math">\(\uvec\cdot\uvec\text{,}\)</span> <span class="process-math">\(\uvec\cdot\vvec\text{,}\)</span> and <span class="process-math">\(\uvec\cdot\wvec\text{.}\)</span></p></li>
+<li id="li-3821">
+<p id="p-5593">Use the dot products you just found to evaluate:</p>
+<ol class="decimal">
+<li id="li-3822"><p id="p-5594"><span class="process-math">\(\len{\uvec}\text{.}\)</span></p></li>
+<li id="li-3823"><p id="p-5595"><span class="process-math">\((-5\uvec)\cdot\vvec\text{.}\)</span></p></li>
+<li id="li-3824"><p id="p-5596"><span class="process-math">\(\uvec\cdot(-3\vvec+2\wvec)\text{.}\)</span></p></li>
+<li id="li-3825"><p id="p-5597"><span class="process-math">\(\len{\frac1{\len{\uvec}} \uvec}\text{.}\)</span></p></li>
 </ol>
 </li>
-<li id="li-3647"><p id="p-5355">For what value of \(k\) is \(\uvec\) orthogonal to \(k\vvec+5\wvec\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-193"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-5370">Suppose that \(\vvec\) and \(\wvec\) are vectors where</p>
-<div class="displaymath">
+<li id="li-3826"><p id="p-5598">For what value of <span class="process-math">\(k\)</span> is <span class="process-math">\(\uvec\)</span> orthogonal to <span class="process-math">\(k\vvec+5\wvec\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-200"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-5613">Suppose that <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> are vectors where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\vvec = 4, \hspace{24pt}
 \wvec\cdot\wvec = 20,\hspace{24pt}
@@ -696,105 +731,105 @@ plotclusters(clusters, centroids)
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-3660"><p id="p-5371">What is \(\len{\vvec}\text{?}\)</p></li>
-<li id="li-3661"><p id="p-5372">What is the angle between \(\vvec\) and \(\wvec\text{?}\)</p></li>
-<li id="li-3662"><p id="p-5373">Suppose that \(t\) is a scalar.  Find the value of \(t\) for which \(\vvec\) is orthogonal to \(\wvec+t\vvec\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-194"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-5382">Suppose that \(\vvec=3\wvec\text{.}\)</p>
+<li id="li-3839"><p id="p-5614">What is <span class="process-math">\(\len{\vvec}\text{?}\)</span></p></li>
+<li id="li-3840"><p id="p-5615">What is the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span></p></li>
+<li id="li-3841"><p id="p-5616">Suppose that <span class="process-math">\(t\)</span> is a scalar.  Find the value of <span class="process-math">\(t\)</span> for which <span class="process-math">\(\vvec\)</span> is orthogonal to <span class="process-math">\(\wvec+t\vvec\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-201"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-5625">Suppose that <span class="process-math">\(\vvec=3\wvec\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-3669"><p id="p-5383">What is the relationship between \(\vvec\cdot\vvec\) and \(\wvec\cdot\wvec\text{?}\)</p></li>
-<li id="li-3670"><p id="p-5384">What is the relationship between \(\len{\vvec}\) and \(\len{\wvec}\text{?}\)</p></li>
-<li id="li-3671"><p id="p-5385">If \(\vvec=s\wvec\) for some scalar \(s\text{,}\) what is the relationship between \(\vvec\cdot\vvec\) and \(\wvec\cdot\wvec\text{?}\)  What is the relationship between \(\len{\vvec}\) and \(\len{\wvec}\text{?}\)</p></li>
-<li id="li-3672"><p id="p-5386">Suppose that \(\vvec=\threevec{3}{-2}2\text{.}\)  Find a scalar \(s\) so that \(s\vvec\) has length 1.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-195"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-5397">Given vectors \(\vvec\) and \(\wvec\text{,}\) explain why</p>
-<div class="displaymath">
+<li id="li-3848"><p id="p-5626">What is the relationship between <span class="process-math">\(\vvec\cdot\vvec\)</span> and <span class="process-math">\(\wvec\cdot\wvec\text{?}\)</span></p></li>
+<li id="li-3849"><p id="p-5627">What is the relationship between <span class="process-math">\(\len{\vvec}\)</span> and <span class="process-math">\(\len{\wvec}\text{?}\)</span></p></li>
+<li id="li-3850"><p id="p-5628">If <span class="process-math">\(\vvec=s\wvec\)</span> for some scalar <span class="process-math">\(s\text{,}\)</span> what is the relationship between <span class="process-math">\(\vvec\cdot\vvec\)</span> and <span class="process-math">\(\wvec\cdot\wvec\text{?}\)</span>  What is the relationship between <span class="process-math">\(\len{\vvec}\)</span> and <span class="process-math">\(\len{\wvec}\text{?}\)</span></p></li>
+<li id="li-3851"><p id="p-5629">Suppose that <span class="process-math">\(\vvec=\threevec{3}{-2}2\text{.}\)</span>  Find a scalar <span class="process-math">\(s\)</span> so that <span class="process-math">\(s\vvec\)</span> has length 1.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-202"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-5640">Given vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{,}\)</span> explain why</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \len{\vvec+\wvec}^2 + \len{\vvec-\wvec}^2 = 2\len{\vvec}^2 +
 2\len{\wvec}^2.
 \end{equation*}
 </div>
-<p class="continuation">Sketch two vectors \(\vvec\) and \(\wvec\) and explain why this fact is called the <em class="emphasis">parallelogam law</em>.</p></article><article class="exercise exercise-like" id="exercise-196"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-5400">Consider the vectors</p>
-<div class="displaymath">
+<p class="continuation">Sketch two vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> and explain why this fact is called the <em class="emphasis">parallelogram law</em>.</p></article><article class="exercise exercise-like" id="exercise-203"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-5643">Consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec_1=\threevec204,\hspace{24pt}
 \vvec_2=\threevec{-1}2{-4}.
 \end{equation*}
 </div>
-<p class="continuation">and a general vector \(\xvec=\threevec xyz\text{.}\)</p>
+<p class="continuation">and a general vector <span class="process-math">\(\xvec=\threevec xyz\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-3681"><p id="p-5401">Write an equation in terms of \(x\text{,}\) \(y\text{,}\) and \(z\) that describes all the vectors \(\xvec\) orthogonal to \(\vvec_1\text{.}\)</p></li>
-<li id="li-3682"><p id="p-5402">Write a linear system that describes all the vectors \(\xvec\) orthogonal to both \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
-<li id="li-3683"><p id="p-5403">Write the solution set to this linear system in parametric form.  What type of geometric object does this solution set represent?  Indicate with a rough sketch why this makes sense.</p></li>
-<li id="li-3684"><p id="p-5404">Give a parametric description of all vectors orthogonal to \(\vvec_1\text{.}\)  What type of geometric object does this represent?  Indicate with a rough sketch why this makes sense.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-197"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-5415">Explain your responses to these questions.</p>
+<li id="li-3860"><p id="p-5644">Write an equation in terms of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> that describes all the vectors <span class="process-math">\(\xvec\)</span> orthogonal to <span class="process-math">\(\vvec_1\text{.}\)</span></p></li>
+<li id="li-3861"><p id="p-5645">Write a linear system that describes all the vectors <span class="process-math">\(\xvec\)</span> orthogonal to both <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+<li id="li-3862"><p id="p-5646">Write the solution set to this linear system in parametric form.  What type of geometric object does this solution set represent?  Indicate with a rough sketch why this makes sense.</p></li>
+<li id="li-3863"><p id="p-5647">Give a parametric description of all vectors orthogonal to <span class="process-math">\(\vvec_1\text{.}\)</span>  What type of geometric object does this represent?  Indicate with a rough sketch why this makes sense.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-204"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-5658">Explain your responses to these questions.</p>
 <ol class="lower-alpha">
-<li id="li-3693"><p id="p-5416">Suppose that \(\vvec\) is orthogonal to both \(\wvec_1\) and \(\wvec_2\text{.}\)  Can you guarantee that \(\vvec\) is also orthogonal to any linear combination \(c_1\wvec_1+c_2\wvec_2\text{?}\)</p></li>
-<li id="li-3694"><p id="p-5417">Suppose that \(\vvec\) is orthogonal to itself.  What can you say about \(\vvec\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-198"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-5424">Suppose that \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) form a basis for \(\real^3\) and that each vector is orthogonal to the other two.  Suppose also that \(\vvec\) is another vector in \(\real^3\text{.}\)</p>
+<li id="li-3872"><p id="p-5659">Suppose that <span class="process-math">\(\vvec\)</span> is orthogonal to both <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span>  Can you guarantee that <span class="process-math">\(\vvec\)</span> is also orthogonal to any linear combination <span class="process-math">\(c_1\wvec_1+c_2\wvec_2\text{?}\)</span></p></li>
+<li id="li-3873"><p id="p-5660">Suppose that <span class="process-math">\(\vvec\)</span> is orthogonal to itself.  What can you say about <span class="process-math">\(\vvec\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-205"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-5667">Suppose that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> form a basis for <span class="process-math">\(\real^3\)</span> and that each vector is orthogonal to the other two.  Suppose also that <span class="process-math">\(\vvec\)</span> is another vector in <span class="process-math">\(\real^3\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-3699"><p id="p-5425">Explain why \(\vvec=c_1\vvec_1+c_2\vvec_2+c_3\vvec_3\) for some scalars \(c_1\text{,}\) \(c_2\text{,}\) and \(c_3\text{.}\)</p></li>
-<li id="li-3700">
-<p id="p-5426">Beginning with the expression</p>
-<div class="displaymath">
+<li id="li-3878"><p id="p-5668">Explain why <span class="process-math">\(\vvec=c_1\vvec_1+c_2\vvec_2+c_3\vvec_3\)</span> for some scalars <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> and <span class="process-math">\(c_3\text{.}\)</span></p></li>
+<li id="li-3879">
+<p id="p-5669">Beginning with the expression</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec\cdot\vvec_1 =
 (c_1\vvec_1+c_2\vvec_2+c_3\vvec_3)\cdot\vvec_1,
 \end{equation*}
 </div>
 <p class="continuation">apply the distributive property of dot products to explain why</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 c_1=\frac{\vvec\cdot\vvec_1}{\vvec_1\cdot\vvec_1}.
 \end{equation*}
 </div>
-<p class="continuation">Find similar expressions for \(c_2\) and \(c_3\text{.}\)</p>
+<p class="continuation">Find similar expressions for <span class="process-math">\(c_2\)</span> and <span class="process-math">\(c_3\text{.}\)</span></p>
 </li>
-<li id="li-3701">
-<p id="p-5427">Verify that</p>
-<div class="displaymath">
+<li id="li-3880">
+<p id="p-5670">Verify that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \vvec_1=\threevec121,\hspace{24pt}
 \vvec_2=\threevec1{-1}1,\hspace{24pt}
 \vvec_3=\threevec10{-1}
 \end{equation*}
 </div>
-<p class="continuation">form a basis for \(\real^3\) and that each vector is orthogonal to the other two.  Use what you've discovered in this problem to write the vector \(\vvec=\threevec35{-1}\) as a linear combination of \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\text{.}\)</p>
+<p class="continuation">form a basis for <span class="process-math">\(\real^3\)</span> and that each vector is orthogonal to the other two.  Use what you've discovered in this problem to write the vector <span class="process-math">\(\vvec=\threevec35{-1}\)</span> as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span></p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-199"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-5438">Suppose that \(\vvec_1\text{,}\) \(\vvec_2\text{,}\) and \(\vvec_3\) are three nonzero vectors that are pairwise orthogonal;  that is, each vector is orthogonal to the other two.</p>
+</ol></article><article class="exercise exercise-like" id="exercise-206"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-5681">Suppose that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> are three nonzero vectors that are pairwise orthogonal;  that is, each vector is orthogonal to the other two.</p>
 <ol class="lower-alpha">
-<li id="li-3708"><p id="p-5439">Explain why \(\vvec_3\) cannot be a linear combination of \(\vvec_1\) and \(\vvec_2\text{.}\)</p></li>
-<li id="li-3709"><p id="p-5440">Explain why this set of three vectors is linearly independent.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-200"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-5447">In the next chapter, we will consider certain \(n\times n\) matrices \(A\) and define a function</p>
-<div class="displaymath">
+<li id="li-3887"><p id="p-5682">Explain why <span class="process-math">\(\vvec_3\)</span> cannot be a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
+<li id="li-3888"><p id="p-5683">Explain why this set of three vectors is linearly independent.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-207"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-5690">In the next chapter, we will consider certain <span class="process-math">\(n\times n\)</span> matrices <span class="process-math">\(A\)</span> and define a function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 q(\xvec) = \xvec\cdot(A\xvec),
 \end{equation*}
 </div>
-<p class="continuation">where \(\xvec\) is a vector in \(\real^n\text{.}\)</p>
+<p class="continuation">where <span class="process-math">\(\xvec\)</span> is a vector in <span class="process-math">\(\real^n\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-3714"><p id="p-5448">Suppose that \(A=\begin{bmatrix}
+<li id="li-3893"><p id="p-5691">Suppose that <span class="process-math">\(A=\begin{bmatrix}
 1 \amp 2 \\
 2 \amp 1 \\
-\end{bmatrix}\) and \(\xvec=\twovec21\text{.}\)  Evaluate \(q(\xvec) = \xvec\cdot(A\xvec)\text{.}\)</p></li>
-<li id="li-3715"><p id="p-5449">For a general vector \(\xvec=\twovec xy\text{,}\) evaluate \(q(\xvec) = \xvec\cdot(A\xvec)\) as an expression involving \(x\) and \(y\text{.}\)</p></li>
-<li id="li-3716"><p id="p-5450">Suppose that \(\vvec\) is an eigenvector of a matrix \(A\) with associated eigenvalue \(\lambda\) and that \(\vvec\) has length 1.  What is the value of the function \(q(\xvec)\text{?}\)</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-201"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<p id="p-5459">Back in <a href="sec-expect.html" class="internal" title="Section 1.1: What can we expect">Section 1.1</a>, we saw that equations of the form \(Ax+By = C\) represent lines in the plane.  In this exericse, we will see how this expression arises geometrically. <figure class="figure figure-like" id="fig-ex-eq-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="images/ex-eq-line.svg" role="img" class="contained" alt=""></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.16<span class="period">.</span></span><span class="space"> </span>A line, a point \(\pvec\) on the line, and a vector \(\nvec\) perpendicular to the line.</figcaption></figure></p>
+\end{bmatrix}\)</span> and <span class="process-math">\(\xvec=\twovec21\text{.}\)</span>  Evaluate <span class="process-math">\(q(\xvec) = \xvec\cdot(A\xvec)\text{.}\)</span></p></li>
+<li id="li-3894"><p id="p-5692">For a general vector <span class="process-math">\(\xvec=\twovec xy\text{,}\)</span> evaluate <span class="process-math">\(q(\xvec) = \xvec\cdot(A\xvec)\)</span> as an expression involving <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></p></li>
+<li id="li-3895"><p id="p-5693">Suppose that <span class="process-math">\(\vvec\)</span> is an eigenvector of a matrix <span class="process-math">\(A\)</span> with associated eigenvalue <span class="process-math">\(\lambda\)</span> and that <span class="process-math">\(\vvec\)</span> has length 1.  What is the value of the function <span class="process-math">\(q(\xvec)\text{?}\)</span></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-208"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<p id="p-5702">Back in <a href="sec-expect.html" class="internal" title="Section 1.1: What can we expect">Section 1.1</a>, we saw that equations of the form <span class="process-math">\(Ax+By = C\)</span> represent lines in the plane.  In this exercise, we will see how this expression arises geometrically. <figure class="figure figure-like" id="fig-ex-eq-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-eq-line.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.16<span class="period">.</span></span><span class="space"> </span>A line, a point <span class="process-math">\(\pvec\)</span> on the line, and a vector <span class="process-math">\(\nvec\)</span> perpendicular to the line.</figcaption></figure></p>
 <ol class="lower-alpha">
-<li id="li-3723"><p id="p-5460">Find the slope and vertical intercept of the line shown in <a class="xref" data-knowl="./knowl/fig-ex-eq-line.html" title="Figure 6.1.16">Figure 6.1.16</a>.  Then write an equation for the line in the form \(y=mx+b\text{.}\)</p></li>
-<li id="li-3724"><p id="p-5461">Suppose that \(\pvec\) is a point on the line, that \(\nvec\) is a vector perpendicular to the line, and that \(\xvec=\twovec xy\) is a general point on the line.  Sketch the vector \(\xvec-\pvec\) and describe the angle between this vector and the vector \(\nvec\text{.}\)</p></li>
-<li id="li-3725"><p id="p-5462">What is the value of the dot product \(\nvec\cdot(\xvec
-- \pvec)\text{?}\)</p></li>
-<li id="li-3726"><p id="p-5463">Explain why the equation of the line can be written in the form \(\nvec\cdot\xvec = \nvec\cdot\pvec\text{.}\)</p></li>
-<li id="li-3727"><p id="p-5464">Identify the vectors \(\pvec\) and \(\nvec\) for the line illustrated in <a class="xref" data-knowl="./knowl/fig-ex-eq-line.html" title="Figure 6.1.16">Figure 6.1.16</a> and use them to write the equation of the line in terms of \(x\) and \(y\text{.}\)  Verify that this expression is algebraically equivalent to the equation \(y=mx+b\) that you earlier found for this line.</p></li>
-<li id="li-3728"><p id="p-5465">Explain why any line in the plane can be described by an equation having the form \(Ax+By = C\text{.}\)  What is the significance of the vector \(\twovec AB\text{?}\)</p></li>
+<li id="li-3902"><p id="p-5703">Find the slope and vertical intercept of the line shown in <a href="" class="xref" data-knowl="./knowl/fig-ex-eq-line.html" title="Figure 6.1.16">Figure 6.1.16</a>.  Then write an equation for the line in the form <span class="process-math">\(y=mx+b\text{.}\)</span></p></li>
+<li id="li-3903"><p id="p-5704">Suppose that <span class="process-math">\(\pvec\)</span> is a point on the line, that <span class="process-math">\(\nvec\)</span> is a vector perpendicular to the line, and that <span class="process-math">\(\xvec=\twovec xy\)</span> is a general point on the line.  Sketch the vector <span class="process-math">\(\xvec-\pvec\)</span> and describe the angle between this vector and the vector <span class="process-math">\(\nvec\text{.}\)</span></p></li>
+<li id="li-3904"><p id="p-5705">What is the value of the dot product <span class="process-math">\(\nvec\cdot(\xvec
+- \pvec)\text{?}\)</span></p></li>
+<li id="li-3905"><p id="p-5706">Explain why the equation of the line can be written in the form <span class="process-math">\(\nvec\cdot\xvec = \nvec\cdot\pvec\text{.}\)</span></p></li>
+<li id="li-3906"><p id="p-5707">Identify the vectors <span class="process-math">\(\pvec\)</span> and <span class="process-math">\(\nvec\)</span> for the line illustrated in <a href="" class="xref" data-knowl="./knowl/fig-ex-eq-line.html" title="Figure 6.1.16">Figure 6.1.16</a> and use them to write the equation of the line in terms of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span>  Verify that this expression is algebraically equivalent to the equation <span class="process-math">\(y=mx+b\)</span> that you earlier found for this line.</p></li>
+<li id="li-3907"><p id="p-5708">Explain why any line in the plane can be described by an equation having the form <span class="process-math">\(Ax+By = C\text{.}\)</span>  What is the significance of the vector <span class="process-math">\(\twovec AB\text{?}\)</span></p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

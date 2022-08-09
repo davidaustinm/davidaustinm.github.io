@@ -1,59 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:01-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:43-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution">
-<p>We construct the matrices as \(\left[\begin{array}{rrr} T(\evec_1) \amp
-T(\evec_2) \amp T(\evec_3) \\ \end{array}\right]\text{.}\)</p>
-<ol class="lower-alpha">
-<li><p>\(\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\ 
-0 \amp 0 \amp 1  \\
-0 \amp -1 \amp 0 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>\(\left[\begin{array}{rrr}
-0 \amp 0 \amp 1 \\ 
-0 \amp 1 \amp 0  \\
--1 \amp 0 \amp 0 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>\(\left[\begin{array}{rrr}
-0 \amp -1 \amp 0 \\ 
-1 \amp 0 \amp 0  \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p></li>
-<li><p>\(\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\ 
-0 \amp 0 \amp -1  \\
-0 \amp 1 \amp 0 \\
-\end{array}\right]
-\left[\begin{array}{rrr}
-0 \amp 0 \amp 1 \\ 
-0 \amp 1 \amp 0  \\
--1 \amp 0 \amp 0 \\
-\end{array}\right]
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\ 
-0 \amp 0 \amp -1  \\
-0 \amp 1 \amp 0 \\
-\end{array}\right]=
-\left[\begin{array}{rrr}
-0 \amp 1 \amp 0 \\ 
--1 \amp 0 \amp 0  \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{,}\) which is a \(-90^\circ\) rotation about the \(z\) axis.</p></li>
-</ol>
-</div></body>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p><span class="process-math">\(T\left(\twovec{1000}{0}\right) = \twovec{950}{0}\)</span> so that <span class="process-math">\(T\left(\twovec{1}{0}\right) = \twovec{0.95}{0}\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(T\left(\twovec{0}{1000}\right) = \twovec{500}{500}\)</span> so that <span class="process-math">\(T\left(\twovec{1}{0}\right) = \twovec{0.5}{0.5}\text{.}\)</span></p></li>
+<li><p>The matrix <span class="process-math">\(A=\left[\begin{array}{rr}0.95 \amp 0.50 \\
+0.05 \amp 0.50 \\
+\end{array}\right]\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(T(\xvec) = A\xvec = \twovec{1665}{135}\)</span> meaning that 1665 students are present and 135 are absent.</p></li>
+<li><p>We want to solve the equation <span class="process-math">\(T(\xvec) =
+A\xvec=\twovec{1700}{100}\text{,}\)</span> which gives <span class="process-math">\(\xvec =
+\twovec{1778}{22}\text{.}\)</span>  There were 1778 students present on Monday.</p></li>
+<li><p>The following Tuesday, the state will be described by the vector <span class="process-math">\(A^7\twovec{1700}{100} = \twovec{1636}{163}\text{.}\)</span> This means that there were 1636 students present the following Tuesday.</p></li>
+<li><p>If we compute <span class="process-math">\(A^k\twovec{1700}{100}\)</span> for some large powers <span class="process-math">\(k\text{,}\)</span> we find that there are about 1636 students present every day after a very long time.</p></li>
+</ol></div></body>
 </html>

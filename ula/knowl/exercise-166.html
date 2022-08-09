@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:42-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:10-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">5.</span>
-</h6>
-<p>Explain your responses to the following.</p>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span>
+</h4>
+<p>This exercise is a continuation of the previous one.</p>
+<p>The Lucas numbers <span class="process-math">\(L_n\)</span> are defined by the same relationship as the Fibonacci numbers: <span class="process-math">\(L_{n+2}=L_{n+1}+L_n\text{.}\)</span>  However, we begin with <span class="process-math">\(L_0=2\)</span> and <span class="process-math">\(L_1=1\text{,}\)</span> which leads to the sequence <span class="process-math">\(2,1,3,4,7,11,\ldots\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li><p>Why does Google use a Markov chain to compute the PageRank vector?</p></li>
-<li><p>Describe two problems that can happen when Google constructs a Markov chain using the Google matrix \(G\text{.}\)</p></li>
-<li><p>Describe how these problems are consistent with the Perron-Frobenius theorem.</p></li>
-<li><p>Describe why the Perron-Frobenius theorem suggests creating a Markov chain using the modified Google matrix \(G' =
-\alpha G + (1-\alpha)H_n\text{.}\)</p></li>
-</ol></article><span class="incontext"><a href="sec-stochastic.html#exercise-166">in-context</a></span>
+<li><p>As before, form the vector <span class="process-math">\(\xvec_n=\twovec{L_{n+1}}{L_n}\)</span> so that <span class="process-math">\(\xvec_{n+1}=A\xvec_n\text{.}\)</span>  Express <span class="process-math">\(\xvec_0\)</span> as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{,}\)</span> eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li>
+<p>Explain why</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L_n = 
+\left(\frac{1+\sqrt{5}}{2}\right)^n +
+\left(\frac{1-\sqrt{5}}{2}\right)^n\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>Explain why <span class="process-math">\(L_n\)</span> is the closest integer to <span class="process-math">\(\phi^n\)</span> when <span class="process-math">\(n\)</span> is large, where <span class="process-math">\(\phi =
+\lambda_1\)</span> is the golden ratio.</p></li>
+<li><p>Use this observation to find <span class="process-math">\(L_{20}\text{.}\)</span></p></li>
+</ol></article><span class="incontext"><a href="sec-dynamical.html#exercise-166" class="internal">in-context</a></span>
 </body>
 </html>

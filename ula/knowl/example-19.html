@@ -1,26 +1,118 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:22-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:46-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.2.2</span>.</h6>
-<p>If a matrix has the characteristic equation</p>
-<div class="displaymath">
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h4>
+<p>Suppose we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(4-\lambda)^2(-5-\lambda)(1-\lambda)^7(3-\lambda)^2 = 0\text{,}
+A = \left[\begin{array}{rrr}
+1 \amp 3 \amp -2 \\
+-3 \amp -6 \amp 3 \\
+2 \amp 0 \amp -2 \\
+\end{array}\right].
 \end{equation*}
 </div>
-<p>then that matrix has four eigenvalues:  \(\lambda=4\) having multiplicity 2; \(\lambda=-5\) having multiplicity 1; \(\lambda=1\) having multiplicty 7; and \(\lambda=3\) having multiplicty 2.  The degree of the characteristic polynomial is the sum of the multiplicities \(2+1+7+2 =
-12\) so this matrix must be a \(12\times12\) matrix.</p></article><span class="incontext"><a href="sec-eigen-find.html#example-19">in-context</a></span>
+<p class="continuation">For the forward substitution phase of Gaussian elimination, we perform a sequence of three replacement operations. The first replacement operation multiplies the first row by <span class="process-math">\(3\)</span> and adds the result to the second row.  We can perform this operation by multiplying <span class="process-math">\(A\)</span> by the lower triangular matrix <span class="process-math">\(L_1\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L_1A =
+\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+3 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\left[\begin{array}{rrr}
+1 \amp 3 \amp -2 \\
+-3 \amp -6 \amp 3 \\
+2 \amp 0 \amp -2 \\
+\end{array}\right]
+= 
+\left[\begin{array}{rrr}
+1 \amp 3 \amp -2 \\
+0 \amp 3 \amp -3 \\
+2 \amp 0 \amp -1 \\
+\end{array}\right].
+\end{equation*}
+</div>
+<p>The next two replacement operations are performed by the matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L_2 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+-2 \amp 0 \amp 1 \\
+\end{array}\right],
+\hspace{24pt}
+L_3 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 2 \amp 1 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">so that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L_3L_2L_1A = U = \begin{bmatrix}
+1 \amp 3 \amp -2 \\
+0 \amp 3 \amp -3 \\
+0 \amp 0 \amp -3 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p>Notice that the inverse of <span class="process-math">\(L_1\)</span> has the simple form:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L_1 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+3 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right],
+\hspace{24pt}
+L_1^{-1} = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-3 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This says that if we want to undo the operation of multiplying the first row by <span class="process-math">\(3\)</span> and adding to the second row, we should multiply the first row by <span class="process-math">\(-3\)</span> and add it to the second row. That is the effect of <span class="process-math">\(L_1^{-1}\text{.}\)</span></p>
+<p>Notice that we now have <span class="process-math">\(L_3L_2L_1A = U\text{,}\)</span> which gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-gaussian-revisited.html">
+\begin{equation*}
+\begin{aligned}
+(L_3L_2L_1)A \amp = U \\
+(L_3L_2L_1)^{-1}(L_3L_2L_1)A \amp = 
+(L_3L_2L_1)^{-1}U \\
+A \amp = (L_3L_2L_1)^{-1}U = LU\\
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(L\)</span> is the lower triangular matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec-gaussian-revisited.html">
+\begin{equation*}
+L = (L_3L_2L_1)^{-1}=\begin{bmatrix}
+1 \amp 0 \amp 0 \\
+-3 \amp 1 \amp 0 \\
+2 \amp -2 \amp 1 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">This way of writing <span class="process-math">\(A=LU\)</span> as the product of a lower and an upper triangular matrix is known as an <span class="process-math">\(LU\)</span> factorization of <span class="process-math">\(A\text{,}\)</span> and its usefulness will be explored in <a href="sec-gaussian-revisited.html" class="internal" title="Section 5.1: Gaussian elimination revisited">Section 5.1</a>.</p></article><span class="incontext"><a href="sec-matrix-inverse.html#example-19" class="internal">in-context</a></span>
 </body>
 </html>

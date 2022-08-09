@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:47-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:15-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>We find the solution \(\xvec=\twovec22\text{.}\)</p></li>
-<li><p>Here we find the solution \(\xvec=\twovec11\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>The modified Google matrix <span class="process-math">\(G'\)</span> is huge, roughly 30 trillion <span class="process-math">\(\times\)</span> 30 trillion, so it is not computationally feasible to compute the steady-state vector by finding a basis for <span class="process-math">\(\nul(G'-I)\text{.}\)</span></p></li>
+<li><p>It may happen that a Markov chain does not converge. We saw this with the cyclic web where a Markov chain just moved PageRank from one page to the next around a loop.  Also, it may happen that a Markov chain converges to a probability vector with some zero entries.  This happens when PageRank drains out of one part of the web.</p></li>
+<li><p>In both of these situations, the Google matrix is not positive so the Perron-Frobenius theorem does not apply.</p></li>
+<li><p>When we create <span class="process-math">\(G'\)</span> in this way, we are guaranteed of having a positive stochastic matrix because all the entries of <span class="process-math">\(G'\)</span> are positive.</p></li>
 </ol></div></body>
 </html>

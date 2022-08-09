@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:33-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:05-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>There are two real eigenvalues \(\lambda_1=4\) and \(\lambda_2=2\) with associated eigenvectors \(\vvec_1=\twovec11\) and \(\vvec=\twovec{-1}{1}\text{.}\) This dynamical system is a repellor so trajectories are pushed away from the origin. <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-dynam-sol-a.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li><p>This is a spiral repellor because there are complex eigenvalues \(1\pm 2i\) whose length is greater than one.  Trajectories will spiral away from the origin. <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/eigen-phase-spiralr.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li><p>This is a saddle because there are two real eigenvalues \(\lambda_1=1.2\) and \(\lambda_2=0.5\) with associated eigenvectors \(\vvec_1=\twovec{-2}1\) and \(\vvec_2=\twovec{-1}1\text{.}\) Most trajectories will move away from the origin along the line defined by the eigenvector \(\vvec_1\text{.}\) <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-dynam-sol-c.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-<li><p>This is an attractor because there are two real eigenvalues \(0.9\) and \(0.7\) with associated eigenvectors \(\vvec_1=\twovec11\) and \(\vvec_2=\twovec12\text{.}\) Trajectories will be pulled in toward the origin. <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/ex-dynam-sol-d.svg" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>If <span class="process-math">\(A=PBP^{-1}\text{,}\)</span> then <span class="process-math">\(B=P^{-1}AP\text{.}\)</span>  If we call <span class="process-math">\(Q=P^{-1}\text{,}\)</span> then <span class="process-math">\(B=QAQ^{-1}\text{,}\)</span> which shows that <span class="process-math">\(B\)</span> is similar to <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(A=PBP^{-1}\)</span> and <span class="process-math">\(B=QCQ^{-1}\text{,}\)</span> then <span class="process-math">\(A=PQCP^{-1}Q^{-1} = (PQ)C(PQ)^{-1}\text{,}\)</span> which shows that <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(C\text{.}\)</span></p></li>
+<li><p>If <span class="process-math">\(B\)</span> is diagonalizable, then it is similar to a diagonal matrix <span class="process-math">\(D\text{.}\)</span>  Since <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(B\)</span> and <span class="process-math">\(B\)</span> is similar to <span class="process-math">\(D\text{,}\)</span> we know that <span class="process-math">\(A\)</span> is also similar to <span class="process-math">\(D\)</span> so that <span class="process-math">\(A\)</span> is diagonalizable.</p></li>
+<li>
+<p>If <span class="process-math">\(A=PBP^{-1}\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+\det(A-\lambda I) \amp = \det(PBP^{-1}-\lambda PP^{-1}) \\
+\amp = \det[P(B-\lambda I)P^{-1}] \\
+\amp = \det(B-\lambda I)\text{.} \\
+\end{aligned}
+\end{equation*}
+</div>
+</li>
+<li><p>The eigenvalues of a matrix are the roots of its characteristic polynomial.  If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are similar, then they have the same characteristic polynomial and hence the same eigenvalues.</p></li>
 </ol></div></body>
 </html>

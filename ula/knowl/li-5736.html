@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:58:43-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">a</span><span class="period">.</span>
+</h5>
+<p>If we interpret 0 as black and 1 as white, this matrix represents an image as shown below. <pre class="ptx-sagecell sagecell-sage" id="sage-257"><script type="text/x-sage">display_matrix(A)
+</script></pre> We will explore how the singular value decomposition helps us to compress this image.</p>
+<ol class="decimal">
+<li><p>By inspecting the image represented by <span class="process-math">\(A\text{,}\)</span> identify a basis for <span class="process-math">\(\col(A)\)</span> and determine <span class="process-math">\(\rank(A)\text{.}\)</span></p></li>
+<li><p>The following cell plots the singular values of <span class="process-math">\(A\text{.}\)</span>  Explain how this plot verifies that the rank is what you found in the previous part. <pre class="ptx-sagecell sagecell-sage" id="sage-258"><script type="text/x-sage">plot_sv(A)
+</script></pre></p></li>
+<li><p>There is a command <code class="code-inline tex2jax_ignore">approximate(A, k)</code> that creates the approximation <span class="process-math">\(A_k\text{.}\)</span>  Use the cell below to define <span class="process-math">\(k\)</span> and look at the images represented by the first few approximations.  What is the smallest value of <span class="process-math">\(k\)</span> for which <span class="process-math">\(A=A_k\text{?}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-259"><script type="text/x-sage">k = 
+display_matrix(approximate(A, k))
+</script></pre></p></li>
+<li>
+<p>Now we can see how the singular value decomposition allows us to compress images. Since this is a <span class="process-math">\(25\times15\)</span> matrix, we need <span class="process-math">\(25\cdot15=375\)</span> numbers to represent the image.  However, we can also reconstruct the image using a small number of singular values and vectors:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = A_k = \sigma_1\uvec_1\vvec_1^T +
+\sigma_2\uvec_2\vvec_2^T + \ldots +
+\sigma_k\uvec_k\vvec_k^T.
+\end{equation*}
+</div>
+<p class="continuation">What are the dimensions of the singular vectors <span class="process-math">\(\uvec_i\)</span> and <span class="process-math">\(\vvec_i\text{?}\)</span>  Between the singular vectors and singular values, how many numbers do we need to reconstruct <span class="process-math">\(A_k\)</span> for the smallest <span class="process-math">\(k\)</span> for which <span class="process-math">\(A=A_k\text{?}\)</span>  This is the compressed size of the image.</p>
+</li>
+<li><p>The <em class="emphasis">compression ratio</em> is the ratio of the uncompressed size to the compressed size.  What compression ratio does this represent?</p></li>
+</ol></article><span class="incontext"><a href="sec-svd-uses.html#li-5736" class="internal">in-context</a></span>
+</body>
+</html>

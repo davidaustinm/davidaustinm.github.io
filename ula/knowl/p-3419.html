@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:17-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:53-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that \(A\) is a matrix and there is an invertible matrix \(P\) such that</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<ol class="lower-alpha">
+<li><p>The columns of <span class="process-math">\(A\)</span> are not linearly independent since there is not a pivot position in every column.  Also, the span of the columns is not <span class="process-math">\(\real^3\)</span> because there is not a pivot position in every row.</p></li>
+<li>
+<p>From the reduced row echelon form, we see that the homogeneous equation leads to the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-A = P~\left[\begin{array}{rrr}
-2 \amp 0 \amp 0 \\
-0 \amp -3 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]~P^{-1}\text{.}
+\begin{alignedat}{5}
+x_1 \amp  \amp  \amp  \amp  \amp  {}+{}  \amp 2x_4 \amp
+{}={}  \amp 0 \\ 
+\amp  \amp x_2 \amp  {}-{}  \amp 2x_3 \amp  {}+{}  \amp
+x_4 \amp {}={}  \amp 0\text{,} \\ 
+\end{alignedat}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
-<li><p>What can you conclude about \(\nul(A)\text{?}\)</p></li>
-<li><p>What can you conclude about \(\col(A)\text{?}\)</p></li>
+<p class="continuation">which leads to the parametric description</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec=\fourvec{x_1}{x_2}{x_3}{x_4} =
+\fourvec{-2x_4}{2x_3-x_4}{x_3}{x_4} =
+x_3\fourvec{0}{2}{1}{0} + x_4\fourvec{2}{-1}{0}{1}\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>We see that every vector in the solution space is a linear combination of the vectors <span class="process-math">\(\wvec_1=\fourvec{0}{2}{1}{0}\)</span> and <span class="process-math">\(\wvec_2 =
+\fourvec{2}{-1}{0}{1}\text{.}\)</span></p></li>
+<li><p>This pair of vectors is linearly independent because one is not a scalar multiple of the other.</p></li>
+<li><p>From the reduced row echelon form of <span class="process-math">\(A\text{,}\)</span> we see that <span class="process-math">\(\vvec_3 = -2\vvec_2\)</span> and <span class="process-math">\(\vvec_4=2\vvec_1+\vvec_2\text{.}\)</span></p></li>
+<li><p>We see that <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are linearly independent from the reduced row echelon form of <span class="process-math">\(A\text{.}\)</span>  Moreover, we know that <span class="process-math">\(\vvec_3\)</span> and <span class="process-math">\(\vvec_4\)</span> can be written as linear combinations of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  Therefore, any linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> can be written as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> alone.</p></li>
 </ol>
-<span class="incontext"><a href="sec-subspaces.html#p-3419">in-context</a></span>
+<span class="incontext"><a href="sec-subspaces.html#p-3419" class="internal">in-context</a></span>
 </body>
 </html>

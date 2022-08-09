@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:28-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:02-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>False.  A matrix can be invertible without us being able to form a basis consisting of eigenvectors.  An example is \(\mattwo2102\text{.}\)</p></li>
-<li><p>True.  If \(A\) and \(B\) are similar, then \(A=PBP^{-1}\) so that \(\det A = \det B\text{.}\)  If \(A\) is invertible, we know that \(\det A \neq 0\text{,}\) which also tells us that \(\det B\neq 0\) and hence that \(B\) is invertible.</p></li>
-<li><p>True.  If \(A=PDP^{-1}\text{,}\) then the columns of \(P\) are eigenvectors of \(A\) that form a basis for \(\real^n\text{.}\)</p></li>
-<li><p>True.  If \(A=PDP^{-1}\text{,}\) then \(A^{10}=PD^{10}P^{-1}\text{.}\)</p></li>
-<li><p>False.  It is possible that \(A\) has eigenvalue \(\lambda=0\text{,}\) which would imply that \(A\) is not invertible.</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>We have <span class="process-math">\(\det A = -3\text{,}\)</span> and the product of the eigenvalues is <span class="process-math">\(-3\text{.}\)</span></p></li>
+<li><p>We have <span class="process-math">\(\det A = 12\text{,}\)</span> and the product of the eigenvalues is <span class="process-math">\(12\)</span></p></li>
+<li><p>We suspect that <span class="process-math">\(\det A\)</span> equals the product of the eigenvalues.</p></li>
+<li>
+<p>Setting <span class="process-math">\(\lambda=0\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{aligned}
+\det(A-0I) \amp {}={} 
+(\lambda_1-0)(\lambda_2-0)\ldots(\lambda_m-0) \\
+\det A \amp {}={}\lambda_1\lambda_2\ldots\lambda_n\text{.}
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">Notice that we mean the product of the eigenvalues, including their multiplicities.</p>
+</li>
 </ol></div></body>
 </html>

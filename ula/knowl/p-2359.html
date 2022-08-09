@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>False. Since there is a pivot position in every column, the homogeneous equation \(A\xvec=\zerovec\) has only the trivial solution \(\xvec=\zerovec\text{.}\)</p>
-<span class="incontext"><a href="sec-matrix-inverse.html#p-2359">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<ol class="lower-alpha">
+<li><p>Solving the two equations for <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\)</span> gives <span class="process-math">\(B = \begin{bmatrix}
+1 \amp -2 \\
+1 \amp -3 \\
+\end{bmatrix}\text{.}\)</span>  We can verify that, as we expect, <span class="process-math">\(AB=I\text{.}\)</span></p></li>
+<li><p>We find that <span class="process-math">\(BA=I\text{,}\)</span> which is the condition that tells us that <span class="process-math">\(B\)</span> is invertible.</p></li>
+<li><p>Seeking the first column of <span class="process-math">\(C^{-1}\text{,}\)</span> we see that the equation <span class="process-math">\(C\xvec = \twovec10\)</span> is not consistent. This means that <span class="process-math">\(C\)</span> is not invertible.</p></li>
+<li><p>Since the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent for every <span class="process-math">\(\bvec\text{,}\)</span> we know that the span of the columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\real^n\text{.}\)</span></p></li>
+<li><p>Because the span of the columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\real^n\text{,}\)</span> there is a pivot position in every row. Since <span class="process-math">\(A\)</span> is square, there is also a pivot position in every column.  This means that the reduced row echelon form of <span class="process-math">\(A\)</span> must be the identity matrix <span class="process-math">\(I_n\text{.}\)</span></p></li>
+<li>
+<p>We see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A\sim \begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix},~~~
+C\sim
+\begin{bmatrix}
+1 \amp -\frac12 \\
+0 \amp 0 \\
+\end{bmatrix},
+\end{equation*}
+</div>
+<p class="continuation">which shows that <span class="process-math">\(A\)</span> is invertible and <span class="process-math">\(C\)</span> is not.</p>
+</li>
+</ol>
+<span class="incontext"><a href="sec-matrix-inverse.html#p-2359" class="internal">in-context</a></span>
 </body>
 </html>

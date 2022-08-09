@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:41-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:10-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>Construct the stochastic matrix \(A\) describing the movement of people.</p></li>
-<li><p>Explain what the Perron-Frobenius theorem tells us about the existence of a steady-state vector \(\qvec\) and the behavior of a Markov chain.</p></li>
-<li><p>Use the Sage cell below to find the some terms of a Markov chain. <div class="sagecell-sage" id="sage-123"><script type="text/x-sage">def markov_chain(A, x0, N):
-    for i in range(N):
-        x0 = A*x0
-        print x0.numerical_approx(digits=3)
-## define the matrix G and x0
-A =
-x0 =
-markov_chain(A, x0, 20)
-</script></div></p></li>
-<li><p>Describe the long-term distribution of people among urban, suburban, and rural populations.</p></li>
-</ol>
-<span class="incontext"><a href="sec-stochastic.html#p-4682">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>For large values of <span class="process-math">\(n\text{,}\)</span> we have <span class="process-math">\(\xvec_n\approx\frac1{\sqrt5}\lambda_1^n\twovec{\lambda_1}{1}\text{,}\)</span> which says that <span class="process-math">\(F_{n+1} \approx \frac1{\sqrt5}\lambda_1^{n+1}\)</span> and <span class="process-math">\(F_{n} \approx \frac1{\sqrt5}\lambda_1^{n}\text{.}\)</span>  This gives the ratio <span class="process-math">\(F_{n+1}/F_n\approx \lambda_1\text{.}\)</span></p>
+<span class="incontext"><a href="sec-dynamical.html#p-4682" class="internal">in-context</a></span>
 </body>
 </html>

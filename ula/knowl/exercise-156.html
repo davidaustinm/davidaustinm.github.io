@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:35-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-07-08T10:34:32-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">5.</span>
-</h6>
-<p>Suppose we have the female population of a species is divided into juveniles, yearlings, and adults and that each year</p>
-<ul class="disc">
-<li><p>90% of the juveniles live to be yearlings.</p></li>
-<li><p>80% of the yearlings live to be adults.</p></li>
-<li><p>60% of the adults survive to the next year.</p></li>
-<li><p>50% of the adults give birth to a juvenile.</p></li>
-</ul>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span>
+</h4>
+<p>When <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix with a complex eigenvalue <span class="process-math">\(\lambda = a+bi\text{,}\)</span> we have said that there is a matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(A=PCP^{-1}\)</span> where <span class="process-math">\(C=\left[\begin{array}{rr}
+a \amp -b \\
+b \amp a \\
+\end{array}\right]
+\text{.}\)</span>  In this exercise, we will learn how to find the matrix <span class="process-math">\(P\text{.}\)</span>  As an example, we will consider the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
+2 \amp 2 \\
+-1 \amp 4 \\
+\end{array}\right]
+\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li><p>Set up a system of the form \(\xvec_{k+1}=A\xvec_k\) that describes this situation.</p></li>
-<li><p>Find the eigenvalues of the matrix \(A\text{.}\) <div class="sagecell-sage" id="sage-113"><script type="text/x-sage">
-</script></div></p></li>
-<li><p>What prediction can you make about these populations after a very long time?</p></li>
-<li><p>If the birth rate goes up to 80%, what prediction can you make about these populations after a very long time? For every 100 adults, how many juveniles, and yearlings are there?</p></li>
-</ol></article><span class="incontext"><a href="sec-dynamical.html#exercise-156">in-context</a></span>
+<li><p>Show that the eigenvalues of <span class="process-math">\(A\)</span> are complex.</p></li>
+<li><p>Choose one of the complex eigenvalues <span class="process-math">\(\lambda=a+bi\)</span> and construct the usual matrix <span class="process-math">\(C\text{.}\)</span></p></li>
+<li><p>Using the same eigenvalue, we will find an eigenvector <span class="process-math">\(\vvec\)</span> where the entries of <span class="process-math">\(\vvec\)</span> are complex numbers.  As always, we will describe <span class="process-math">\(\nul(A-\lambda I)\)</span> by constructing the matrix <span class="process-math">\(A-\lambda I\)</span> and finding its reduced row echelon form.  In doing so, we will necessarily need to use complex arithmetic.</p></li>
+<li><p>We have now found a complex eigenvector <span class="process-math">\(\vvec\text{.}\)</span> Write <span class="process-math">\(\vvec = \vvec_1 - i \vvec_2\)</span> to identify vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> having real entries.</p></li>
+<li><p>Construct the matrix <span class="process-math">\(P = \left[\begin{array}{rr}
+\vvec_1 \amp \vvec_2
+\end{array}\right]\)</span> and verify that <span class="process-math">\(A=PCP^{-1}\text{.}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" class="answer-knowl original" data-knowl="./knowl/answer-173-hidden.html" title="Answer 4.3.5.8.1"><span class="type">Answer</span><span class="period">.</span></a><a href="" class="solution-knowl original" data-knowl="./knowl/solution-223-hidden.html" title="Solution 4.3.5.8.1"><span class="type">Solution</span><span class="period">.</span></a>
+</div></article><span class="incontext"><a href="sec-eigen-diag.html#exercise-156" class="internal">in-context</a></span>
 </body>
 </html>

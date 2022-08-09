@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:52-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:36-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">8.</span>
-</h6>
-<p>A theme that will later unfold concerns the use of coordinate systems.  We can identify the point \((x,y)\) with the tip of the vector \(\left[\begin{array}{r}x\\y\end{array}\right]\text{,}\) drawn emanating from the origin. We can then think of the usual Cartesian coordinate system in terms of linear combinations of the vectors</p>
-<div class="displaymath">
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span>
+</h4>
+<p>Consider the vectors</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\evec_1 = \left[\begin{array}{r} 1 \\ 0 \end{array}\right],
-\evec_2 = \left[\begin{array}{r} 0 \\ 1 \end{array}\right]\text{.}
+\vvec_1 = \left[\begin{array}{r} 2 \\ -1 \\ -2
+\end{array}\right],
+\vvec_2 = \left[\begin{array}{r} 0 \\ 3 \\ 1
+\end{array}\right],
+\vvec_3 = \left[\begin{array}{r} 4 \\ 4 \\ -2
+\end{array}\right].
 \end{equation*}
 </div>
-<p><figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/ex-coord-std.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/ex-coord-nonstd.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.1.8.</span> The usual Cartesian coordinate system, defined by the vectors \(\evec_1\) and \(\evec_2\text{,}\) is shown on the left along with the representation of the point \((2,-3)\text{.}\)  The right shows a nonstandard coordinate system defined by vectors \(\vvec_1\) and \(\vvec_2\text{.}\)</figcaption></figure> <p>The point \((2,-3)\) is identified with the vector</p><div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{r} 2 \\ -3 
-\end{array}\right] = 2\evec_1 - 3\evec_2\text{.}
-\end{equation*}
-</div> <p>If we have vectors</p><div class="displaymath">
-\begin{equation*}
-\vvec_1 = \left[\begin{array}{r} 2 \\ 1 \end{array}\right],
-\vvec_2 = \left[\begin{array}{r} 1 \\ 2 \end{array}\right]\text{,}
-\end{equation*}
-</div><p>we may define a new coordinate system, such that a point \(\{x,y\}\) will correspond to the vector</p><div class="displaymath">
-\begin{equation*}
-x\vvec_1 + y\vvec_2\text{.}
-\end{equation*}
-</div><p>For instance, the point \(\{2,-3\}\) is shown on the right side of <a data-knowl="./knowl/fig-ex-coords-1.html" title="Figure 2.1.8">Figure 2.1.8</a></p></p>
+<p class="continuation"><pre class="ptx-sagecell sagecell-sage" id="sage-37"><script type="text/x-sage">
+</script></pre></p>
 <ol class="lower-alpha">
+<li><p>Can you express the vector <span class="process-math">\(\bvec=\left[\begin{array}{r} 10 \\ 1 \\ -8
+\end{array}\right]\)</span> as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{?}\)</span> If so, describe all the ways in which you can do so.</p></li>
+<li><p>Can you express the vector <span class="process-math">\(\bvec=\left[\begin{array}{r} 3 \\ 7 \\ 1
+\end{array}\right]\)</span> as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{?}\)</span> If so, describe all the ways in which you can do so.</p></li>
+<li><p>Show that <span class="process-math">\(\vvec_3\)</span> can be written as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
 <li>
-<p>Write the point \(\{2,-3\}\) in standard coordinates;  that is, find \(x\) and \(y\) such that</p>
-<div class="displaymath">
+<p>Explain why any linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(x,y) = \{2,-3\}\text{.}
+a\vvec_1 + b\vvec_2 + c\vvec_3,
 \end{equation*}
 </div>
+<p class="continuation">can be rewritten as a linear combination of just <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p>
 </li>
-<li>
-<p>Write the point \((2,-3)\) in the new coordinate system;  that is, find \(a\) and \(b\) such that</p>
-<div class="displaymath">
-\begin{equation*}
-\{a,b\} = (2,-3)\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>Convert a general point \(\{a,b\}\text{,}\) expressed in the new coordinate system, into standard Cartesian coordinates \((x,y)\text{.}\)</p></li>
-<li><p>What is the general strategy for converting a point from standard Cartesian coordinates \((x,y)\) to the new coordinates \(\{a,b\}\text{?}\)  Actually implementing this strategy in general may take a bit of work so just describe the strategy.  We will study this in more detail later.</p></li>
-</ol></article><span class="incontext"><a href="sec-vectors-lin-combs.html#exercise-26">in-context</a></span>
+</ol></article><span class="incontext"><a href="sec-vectors-lin-combs.html#exercise-26" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:50-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:17-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>If \(\lambda\) is an eigenvalue of \(A\text{,}\) then \(A\vvec=\lambda\vvec\) for an associated eigenvector \(\vvec\text{.}\)  Multiplying by \(A^{-1}\) and \(\lambda^{-1}\text{,}\) we obtain \(\lambda^{-1}\vvec =
-A^{-1}\vvec\text{,}\) which shows that \(\lambda^{-1}\) is an eigenvalue of \(A^{-1}\text{.}\)</p></li>
-<li><p>If \(|\lambda_2| \lt |\lambda_1|\text{,}\) then \(|\lambda_2^{-1}| \gt |\lambda_1^{-1}|\text{.}\)  Therefore, the reciprocal of the smallest eigenvalue of \(A\) is the dominant eigenvalue of \(A^{-1}\text{.}\)</p></li>
-<li><p>If we apply the power method to the matrix \(A^{-1}\text{,}\) we will find the dominant eigenvalue \(\lambda\) and an associated eigenvector \(\vvec\) of \(A^{-1}\text{.}\)  We know, however, that \(\lambda^{-1}\) will be the eigenvalue of \(A\) having the smallest absolute value and \(\vvec\) will be an associated eigenvector.</p></li>
-<li><p>We would like to solve equations of the form \(A\xvec = \bvec\) for many different vectors \(\bvec\text{.}\)  Using an \(LU\) factorization allows us to recycle for subsequent equations the effort we expend performing Gaussian elimination to solve the first equation.</p></li>
-<li><p>We obtain the eigenvector \(\vvec_2=\twovec11\) and associated eigenvalue \(\lambda_2=0.6\text{.}\)</p></li>
-<li><p>If \(A\) is not invertible, then \(\lambda=0\) is the eigenvalue having the smallest absolute value.</p></li>
-<li><p>We find the dominant eigenvalue to be \(\lambda_1=2.195\) with associated eigenvector \(\vvec_1=\twovec{-0.961}1\text{.}\)  The smallest eigenvalue is \(\lambda_2=-1.345\) with associated eigenvector \(\vvec_2=\twovec1{0.478}\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="sec-power-method.html#p-5085">in-context</a></span>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>We first multiply the first row by <span class="process-math">\(-1\)</span> and add to the second row.  This can be represented by multiplying <span class="process-math">\(E_1A=A_1\)</span> where</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E_1=\left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-1 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right],
+A_1=
+\left[\begin{array}{rrrr}
+1 \amp 2 \amp -1 \amp 2 \\
+0 \amp -2 \amp -1 \amp -1 \\
+3 \amp 2 \amp 1 \amp 0
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="sec-gaussian-revisited.html#p-5085" class="internal">in-context</a></span>
 </body>
 </html>

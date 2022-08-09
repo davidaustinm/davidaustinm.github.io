@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-15T11:44:18-04:00       *-->
+<!--*       on 2022-08-08T13:56:02-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,25 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Pivots and their influence on solution spaces</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Understanding Linear Algebra">
+<meta property="book:author" content=" David Austin ">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -49,29 +51,58 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_grey.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\avec}{{\mathbf a}}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
 \newcommand{\bvec}{{\mathbf b}}
 \newcommand{\cvec}{{\mathbf c}}
 \newcommand{\dvec}{{\mathbf d}}
@@ -120,7 +151,7 @@
 \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
-\newcommand{\rank}{\text{rank}}
+\newcommand{\rank}{\operatorname{rank}}
 \newcommand{\row}{\text{Row}}
 \newcommand{\col}{\text{Col}}
 \renewcommand{\row}{\text{Row}}
@@ -139,7 +170,9 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
@@ -147,7 +180,7 @@
 </div>
 <div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-sage-introduction.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap2.html" title="Next">Next</a></span>
@@ -157,94 +190,108 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-sage-introduction.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap2.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="preface-1.html" data-scroll="preface-1">Our goals</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1" class="internal">Our goals</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
-<li><a href="sec-expect.html" data-scroll="sec-expect">What can we expect</a></li>
-<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions">Finding solutions to systems of linear equations</a></li>
-<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction">Computation with Sage</a></li>
+<a href="chap1.html" data-scroll="chap1" class="internal"><span class="codenumber">1</span> <span class="title">Systems of equations</span></a><ul>
+<li><a href="sec-expect.html" data-scroll="sec-expect" class="internal">What can we expect</a></li>
+<li><a href="sec-finding-solutions.html" data-scroll="sec-finding-solutions" class="internal">Finding solutions to linear systems</a></li>
+<li><a href="sec-sage-introduction.html" data-scroll="sec-sage-introduction" class="internal">Computation with Sage</a></li>
 <li><a href="sec-pivots.html" data-scroll="sec-pivots" class="active">Pivots and their influence on solution spaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
-<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs">Vectors and linear combinations</a></li>
-<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs">Matrix multiplication and linear combinations</a></li>
-<li><a href="sec-span.html" data-scroll="sec-span">The span of a set of vectors</a></li>
-<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep">Linear independence</a></li>
-<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans">Matrix transformations</a></li>
-<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom">The geometry of matrix transformations</a></li>
+<a href="chap2.html" data-scroll="chap2" class="internal"><span class="codenumber">2</span> <span class="title">Vectors, matrices, and linear combinations</span></a><ul>
+<li><a href="sec-vectors-lin-combs.html" data-scroll="sec-vectors-lin-combs" class="internal">Vectors and linear combinations</a></li>
+<li><a href="sec-matrices-lin-combs.html" data-scroll="sec-matrices-lin-combs" class="internal">Matrix multiplication and linear combinations</a></li>
+<li><a href="sec-span.html" data-scroll="sec-span" class="internal">The span of a set of vectors</a></li>
+<li><a href="sec-linear-dep.html" data-scroll="sec-linear-dep" class="internal">Linear independence</a></li>
+<li><a href="sec-linear-trans.html" data-scroll="sec-linear-trans" class="internal">Matrix transformations</a></li>
+<li><a href="sec-transforms-geom.html" data-scroll="sec-transforms-geom" class="internal">The geometry of matrix transformations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
-<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse">Invertibility</a></li>
-<li><a href="sec-bases.html" data-scroll="sec-bases">Bases and coordinate systems</a></li>
-<li><a href="sec-jpeg.html" data-scroll="sec-jpeg">Image compression</a></li>
-<li><a href="sec-determinants.html" data-scroll="sec-determinants">Determinants</a></li>
-<li><a href="sec-subspaces.html" data-scroll="sec-subspaces">Subspaces of \(\real^p\)</a></li>
+<a href="chap3.html" data-scroll="chap3" class="internal"><span class="codenumber">3</span> <span class="title">Invertibility, bases, and coordinate systems</span></a><ul>
+<li><a href="sec-matrix-inverse.html" data-scroll="sec-matrix-inverse" class="internal">Invertibility</a></li>
+<li><a href="sec-bases.html" data-scroll="sec-bases" class="internal">Bases and coordinate systems</a></li>
+<li><a href="sec-jpeg.html" data-scroll="sec-jpeg" class="internal">Image compression</a></li>
+<li><a href="sec-determinants.html" data-scroll="sec-determinants" class="internal">Determinants</a></li>
+<li><a href="sec-subspaces.html" data-scroll="sec-subspaces" class="internal">Subspaces</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
-<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro">An introduction to eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find">Finding eigenvalues and eigenvectors</a></li>
-<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag">Diagonalization, similarity, and powers of a matrix</a></li>
-<li><a href="sec-dynamical.html" data-scroll="sec-dynamical">Dynamical systems</a></li>
-<li><a href="sec-stochastic.html" data-scroll="sec-stochastic">Markov chains and Google's PageRank algorithm</a></li>
+<a href="chap4.html" data-scroll="chap4" class="internal"><span class="codenumber">4</span> <span class="title">Eigenvalues and eigenvectors</span></a><ul>
+<li><a href="sec-eigen-intro.html" data-scroll="sec-eigen-intro" class="internal">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-find.html" data-scroll="sec-eigen-find" class="internal">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="sec-eigen-diag.html" data-scroll="sec-eigen-diag" class="internal">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="sec-dynamical.html" data-scroll="sec-dynamical" class="internal">Dynamical systems</a></li>
+<li><a href="sec-stochastic.html" data-scroll="sec-stochastic" class="internal">Markov chains and Google's PageRank algorithm</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
-<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited">Gaussian elimination revisited</a></li>
-<li><a href="sec-power-method.html" data-scroll="sec-power-method">Finding eigenvectors numerically</a></li>
+<a href="chap5.html" data-scroll="chap5" class="internal"><span class="codenumber">5</span> <span class="title">Linear algebra and computing</span></a><ul>
+<li><a href="sec-gaussian-revisited.html" data-scroll="sec-gaussian-revisited" class="internal">Gaussian elimination revisited</a></li>
+<li><a href="sec-power-method.html" data-scroll="sec-power-method" class="internal">Finding eigenvectors numerically</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
-<li><a href="sec-dot-product.html" data-scroll="sec-dot-product">The dot product</a></li>
-<li><a href="sec-transpose.html" data-scroll="sec-transpose">Orthogonal complements and the matrix tranpose</a></li>
-<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases">Orthogonal bases and projections</a></li>
-<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt">Finding orthogonal bases</a></li>
-<li><a href="sec-least-squares.html" data-scroll="sec-least-squares">Orthogonal least squares</a></li>
+<a href="chap6.html" data-scroll="chap6" class="internal"><span class="codenumber">6</span> <span class="title">Orthogonality and Least Squares</span></a><ul>
+<li><a href="sec-dot-product.html" data-scroll="sec-dot-product" class="internal">The dot product</a></li>
+<li><a href="sec-transpose.html" data-scroll="sec-transpose" class="internal">Orthogonal complements and the matrix transpose</a></li>
+<li><a href="sec-orthogonal-bases.html" data-scroll="sec-orthogonal-bases" class="internal">Orthogonal bases and projections</a></li>
+<li><a href="sec-gram-schmidt.html" data-scroll="sec-gram-schmidt" class="internal">Finding orthogonal bases</a></li>
+<li><a href="sec-least-squares.html" data-scroll="sec-least-squares" class="internal">Orthogonal least squares</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
-<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices">Symmetric matrices and variance</a></li>
-<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms">Quadratic forms</a></li>
-<li><a href="sec-pca.html" data-scroll="sec-pca">Principal Component Analysis</a></li>
-<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro">Singular Value Decompositions</a></li>
-<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses">Using Singular Value Decompositions</a></li>
+<a href="chap7.html" data-scroll="chap7" class="internal"><span class="codenumber">7</span> <span class="title">The Spectral Theorem and singular value decompositions</span></a><ul>
+<li><a href="sec-symmetric-matrices.html" data-scroll="sec-symmetric-matrices" class="internal">Symmetric matrices and variance</a></li>
+<li><a href="sec-quadratic-forms.html" data-scroll="sec-quadratic-forms" class="internal">Quadratic forms</a></li>
+<li><a href="sec-pca.html" data-scroll="sec-pca" class="internal">Principal Component Analysis</a></li>
+<li><a href="sec-svd-intro.html" data-scroll="sec-svd-intro" class="internal">Singular Value Decompositions</a></li>
+<li><a href="sec-svd-uses.html" data-scroll="sec-svd-uses" class="internal">Using Singular Value Decompositions</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app-sage-reference.html" data-scroll="app-sage-reference" class="internal"><span class="codenumber">A</span> <span class="title">Sage Reference</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-pivots"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-pivots"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Pivots and their influence on solution spaces</span>
 </h2>
-<section class="introduction" id="introduction-4"><p id="p-467">By now, we have seen many examples illustrating how the reduced row echelon matrix provides a convenient description of the solution space to a system of linear equations.  In this section, we will use this understanding to make some general observations about how certain features of the reduced row echelon matrix reflect the nature of the solution space.</p>
-<p id="p-468">We begin with the following definition.</p>
-<article class="definition definition-like" id="definition-3"><h6 class="heading">
+<section class="introduction" id="introduction-4"><p id="p-513">By now, we have seen several examples illustrating how the reduced row echelon matrix leads to a convenient description of the solution space to a linear system.  In this section, we will use this understanding to make some general observations about how certain features of the reduced row echelon matrix reflect the nature of the solution space.</p>
+<p id="p-514">Remember that a leading entry in a reduced row echelon matrix is the leftmost nonzero entry in a row of the matrix.  As we'll see, the positions of these leading entries encode a lot of information about the solution space of the corresponding linear system.  For this reason, we make the following definition.</p>
+<article class="definition definition-like" id="definition-5"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
-</h6>
-<p id="p-469">A <em class="emphasis">pivot position</em> in a matrix \(A\) is the position of a leading entry in the reduced row echelon matrix of \(A\text{.}\)</p></article><article class="exploration project-like" id="exploration-2"><h6 class="heading">
+</h3>
+<p id="p-515">A <dfn class="terminology">pivot position</dfn> in a matrix <span class="process-math">\(A\)</span> is the position of a leading entry in the reduced row echelon matrix of <span class="process-math">\(A\text{.}\)</span></p></article><p id="p-516">For instance, in this reduced row echelon matrix, the pivot positions are indicated in bold:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{bmatrix}
+{\mathbf 1} \amp \gray{0} \amp \gray{*} \amp \gray{0} \\
+\gray{0} \amp {\mathbf 1} \amp \gray{*} \amp \gray{0} \\
+\gray{0} \amp \gray{0} \amp \gray{0} \amp {\mathbf 1} \\
+\gray{0} \amp \gray{0} \amp \gray{0} \amp \gray{0} \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">We can refer to pivot positions by their row and column number saying, for instance, that there is a pivot position in the second row and fourth column.</p>
+<article class="exploration project-like" id="exploration-2"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Some basic observations about pivots.</span>
-</h6>
-<ol id="p-470" class="lower-alpha">
-<li id="li-273">
-<p id="p-471">Given below is a matrix and its reduced row echelon form.  Indicate the pivot positions.</p>
-<div class="displaymath">
+</h3>
+<ol id="p-517" class="lower-alpha">
+<li id="li-306">
+<p id="p-518">Shown below is a matrix and its reduced row echelon form.  Indicate the pivot positions.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{rrrr}
@@ -264,30 +311,30 @@
 \end{equation*}
 </div>
 </li>
-<li id="li-274"><p id="p-472">How many pivot positions can there be in one row?  In a \(3\times5\) matrix, what is the largest possible number of pivot positions?  Give an example of a matrix that has the largest possible number of pivot positions.</p></li>
-<li id="li-275"><p id="p-473">How many pivots can there be in one column?  In a \(5\times3\) matrix, what is the largest possible number of pivot positions?  Give an example of a matrix that has the largest possible number of pivot positions.</p></li>
-<li id="li-276"><p id="p-474">Give an example of a matrix with a pivot position in every row and every column.  What is special about such a matrix?</p></li>
-</ol></article><p id="p-485">When we have looked at solution spaces of systems of linear equations, we have frequently asked whether there are infinitely many solutions, exactly one solution, or no solutions.  We will now break this question down into two separate questions.</p>
-<article class="question example-like" id="fundamental-questions"><h6 class="heading">
-<span class="type">Question</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
-</h6>
-<p id="p-486">When we encounter a system of linear equations, we will ask</p>
+<li id="li-307"><p id="p-519">How many pivot positions can there be in one row?  In a <span class="process-math">\(3\times5\)</span> matrix, what is the largest possible number of pivot positions?  Give an example of a <span class="process-math">\(3\times5\)</span> matrix that has the largest possible number of pivot positions.</p></li>
+<li id="li-308"><p id="p-520">How many pivots can there be in one column?  In a <span class="process-math">\(5\times3\)</span> matrix, what is the largest possible number of pivot positions?  Give an example of a <span class="process-math">\(5\times3\)</span> matrix that has the largest possible number of pivot positions.</p></li>
+<li id="li-309"><p id="p-521">Give an example of a matrix with a pivot position in every row and every column.  What is special about such a matrix?</p></li>
+</ol></article><p id="p-532">When we have looked at solution spaces of linear systems, we have frequently asked whether there are infinitely many solutions, exactly one solution, or no solutions.  We will now break this question into two separate questions.</p>
+<article class="question example-like" id="fundamental-questions"><h3 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Two Fundamental Questions.</span>
+</h3>
+<p id="p-533">When we encounter a linear system, we often ask</p>
 <dl class="description-list">
-<dt id="li-285">Existence</dt>
-<dd><p id="p-487">Is there a solution to the system of linear equations?  If so, we say that the system is <em class="emphasis">consistent</em>; if not, we say it is <em class="emphasis">inconsistent</em>. </p></dd>
-<dt id="li-286">Uniqueness</dt>
-<dd><p id="p-488">If the system of equations is consistent, is the solution unique or are there infinitely many solutions?</p></dd>
-</dl></article><p id="p-489">These two questions represent two sides of a coin that appear in many variations throughout our explorations.  In this section, we will study how the location of the pivots influence the answers to these two questions.  We begin by considering the question concerning  the existence of solutions.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<dt id="li-318">Existence</dt>
+<dd><p id="p-534">Is there a solution to the linear system?  If so, we say that the system is <em class="emphasis">consistent</em>; if not, we say it is <em class="emphasis">inconsistent</em>. </p></dd>
+<dt id="li-319">Uniqueness</dt>
+<dd><p id="p-535">If the linear system is consistent, is the solution unique or are there infinitely many solutions?</p></dd>
+</dl></article><p id="p-536">These two questions represent two sides of a coin that appear in many variations throughout our explorations.  In this section, we will study how the location of the pivots influence the answers to these two questions.  We begin by considering the first question concerning the existence of solutions.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">The existence of solutions</span>
 </h3>
-<article class="activity project-like" id="activity-9"><h6 class="heading">
+<article class="activity project-like" id="activity-9"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
-</h6>
-<ol id="p-490" class="lower-alpha">
+</h4>
+<ol id="p-537" class="lower-alpha">
 <li id="li-existence-examples">
-<p id="p-491">Shown below are three augmented matrices in reduced row echelon form.</p>
+<p id="p-538">Shown below are three augmented matrices in reduced row echelon form.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath" id="p-492">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-539">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -299,7 +346,7 @@
 \right]
 \end{equation*}
 </div></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath" id="p-493">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-540">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -311,7 +358,7 @@
 \right]
 \end{equation*}
 </div></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath" id="p-494">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-541">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -324,15 +371,15 @@
 \end{equation*}
 </div></div>
 </div></div>
-<p id="p-495">For each matrix, identify the pivot positions and determine if the corresponding linear system is consistent. Explain how the location of the pivots determine consistency or inconsistency.</p>
+<p id="p-542">For each matrix, identify the pivot positions and determine if the corresponding linear system is consistent. Explain how the location of the pivots determines whether the system is consistent or inconsistent.</p>
 </li>
-<li id="li-288"><p id="p-496">Each of these augmented matrices above has a row in which each entry is zero.  What, if anything, does the presence of such a row tell us about the consistency of the corresponding linear system?</p></li>
-<li id="li-289"><p id="p-497">Give an example of a \(3\times5\) augmented matrix in reduced row echelon form that represents a consistent system.  Indicate the pivot positions in your matrix and explain why these pivot positions guarantee a consistent system.</p></li>
-<li id="li-pivots-existence"><p id="p-498">Give an example of a \(3\times5\) augmented matrix in reduced row echelon form that represents an inconsistent system.  Indicate the pivot positions in your matrix and explain why these pivot positions guarantee an inconsistent system.</p></li>
-<li id="li-291"><p id="p-499">Write the reduced row echelon form of the coefficient matrix of the corresponding linear system in <a class="xref" data-knowl="./knowl/li-pivots-existence.html" title="Item d">Item d</a>?  (Remember that <a class="xref" data-knowl="./knowl/principle-augmentation-principle.html" title="Proposition 1.3.1: Augmentation Principle">Proposition 1.3.1</a> says that the reduced row echelon form of the coefficient matrix simply consists of the first four columns of the augmented matrix.) What do you notice about the pivot positions in this coefficient matrix?</p></li>
-<li id="li-292">
-<p id="p-500">Suppose we have a linear system for which the <em class="emphasis">coefficient</em> matrix has the following reduced row echelon form.</p>
-<div class="displaymath">
+<li id="li-321"><p id="p-543">Each of the augmented matrices above has a row in which each entry is zero.  What, if anything, does the presence of such a row tell us about the consistency of the corresponding linear system?</p></li>
+<li id="li-322"><p id="p-544">Give an example of a <span class="process-math">\(3\times5\)</span> augmented matrix in reduced row echelon form that represents a consistent system.  Indicate the pivot positions in your matrix and explain why these pivot positions guarantee a consistent system.</p></li>
+<li id="li-pivots-existence"><p id="p-545">Give an example of a <span class="process-math">\(3\times5\)</span> augmented matrix in reduced row echelon form that represents an inconsistent system.  Indicate the pivot positions in your matrix and explain why these pivot positions guarantee an inconsistent system.</p></li>
+<li id="li-324"><p id="p-546">Write the reduced row echelon form of the coefficient matrix of the corresponding linear system in <a href="" class="xref" data-knowl="./knowl/li-pivots-existence.html" title="Item d">Item d</a>?  (Remember that the <a href="" class="xref" data-knowl="./knowl/principle-augmentation-principle.html" title="Proposition 1.3.1: Augmentation Principle">Augmentation Principle</a> says that the reduced row echelon form of the coefficient matrix simply consists of the first four columns of the augmented matrix.) What do you notice about the pivot positions in this coefficient matrix?</p></li>
+<li id="li-325">
+<p id="p-547">Suppose we have a linear system for which the <em class="emphasis">coefficient</em> matrix has the following reduced row echelon form.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{rrrrr}
@@ -346,52 +393,52 @@
 </div>
 <p class="continuation">What can you say about the consistency of the linear system?</p>
 </li>
-</ol></article><p id="p-512">The third example in <a class="xref" data-knowl="./knowl/li-existence-examples.html" title="Item a">Item a</a> above asks us to consider the reduced row echelon matrix</p>
-<div class="displaymath">
+</ol></article><p id="p-559">Let's summarize the results of this activity by considering the following reduced row echelon matrix:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
-1 \amp 0 \amp * \amp 0 \\
-0 \amp 1 \amp * \amp 0 \\
+1 \amp * \amp 0 \amp 0 \\
+0 \amp 0 \amp 1 \amp 0 \\
 0 \amp 0 \amp 0 \amp 1 \\
 0 \amp 0 \amp 0 \amp 0 \\
 \end{array}
 \right]\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In terms of the variables \(x\text{,}\) \(y\text{,}\) and \(z\text{,}\) the final equation says</p>
-<div class="displaymath">
+<p class="continuation">In terms of variables <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> the final equation says</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 0x + 0y + 0z = 0\text{.}
 \end{equation*}
 </div>
-<p class="continuation">If we evaluate the left-hand side with any values of \(x\text{,}\) \(y\text{,}\) and \(z\text{,}\) we get 0, which means that the equation always holds.  Therefore, its presence has no effect on the solution space defined by the other three equations.</p>
-<p id="p-513">The third equation, however, says that</p>
-<div class="displaymath">
+<p class="continuation">If we evaluate the left-hand side with any values of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> we get 0, which means that the equation always holds.  Therefore, its presence has no effect on the solution space defined by the other three equations.</p>
+<p id="p-560">The third equation, however, says that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 0x + 0y + 0z = 1\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Again, if we evaluate the left-hand side with any values of \(x\text{,}\) \(y\text{,}\) and \(z\text{,}\) we get 0 so this equation cannot be satisfied for any \((x,y,z)\text{.}\)  This means that the entire system of equations has no solution and is therefore inconsistent.</p>
-<p id="p-514">An equation like this appears in the reduced row echelon matrix as</p>
-<div class="displaymath">
+<p class="continuation">Again, if we evaluate the left-hand side with any values of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\text{,}\)</span> we get 0 so this equation cannot be satisfied for any <span class="process-math">\((x,y,z)\text{.}\)</span>  This means that the entire linear system has no solution and is therefore inconsistent.</p>
+<p id="p-561">An equation like this appears in the reduced row echelon matrix as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
-\begin{array}{rrrr|r}
+\begin{array}{cccc|c}
 \vdots \amp \vdots \amp \vdots \amp \vdots \amp \vdots \\
-0 \amp 0 \amp \ldots \amp 0 \amp 1 \\
+0 \amp 0 \amp \cdots \amp 0 \amp 1 \\
 \vdots \amp \vdots \amp \vdots \amp \vdots \amp \vdots \\
 \end{array}
 \right]\text{.}
 \end{equation*}
 </div>
-<p class="continuation">The pivot positions make this condition clear: <em class="emphasis">the system is inconsistent if there is a pivot in the rightmost column of the corresponding augmented matrix.</em></p>
-<p id="p-515">In fact, we will soon see that the system is consistent if there is not a pivot in the rightmost column of the corresponding augmented matrix.  This leaves us with the following</p>
-<article class="proposition theorem-like" id="thm-pivot-inconsistency"><h6 class="heading">
+<p class="continuation">The pivot positions make this condition clear: <em class="emphasis">the system is inconsistent if there is a pivot position in the rightmost column of the corresponding augmented matrix.</em></p>
+<p id="p-562">In fact, we will soon see that the system is consistent if there is not a pivot in the rightmost column of the corresponding augmented matrix.  This leaves us with the following</p>
+<article class="proposition theorem-like" id="thm-pivot-inconsistency"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
-</h6>
-<p id="p-516">A system of linear equations is inconsistent if and only if there is a pivot position in the rightmost column of the corresponding augmented matrix.</p></article><p id="p-517">This also says something about the pivot positions of the coefficient matrix.  Consider an example of an inconsistent system corresponding to the reduced row echelon form of the following augmented matrix</p>
-<div class="displaymath">
+</h4>
+<p id="p-563">A linear system is inconsistent if and only if there is a pivot position in the rightmost column of the corresponding augmented matrix.</p></article><p id="p-564">This also says something about the pivot positions of the coefficient matrix.  Consider an example of an inconsistent system corresponding to the reduced row echelon form of the following augmented matrix</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/principle-augmentation-principle.html">
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -402,8 +449,8 @@
 \right]\text{.}
 \end{equation*}
 </div>
-<p class="continuation"><a class="xref" data-knowl="./knowl/principle-augmentation-principle.html" title="Proposition 1.3.1: Augmentation Principle">Proposition 1.3.1</a> says that that the reduced row echelon form of the coefficient matrix is</p>
-<div class="displaymath">
+<p class="continuation">The <a href="" class="xref" data-knowl="./knowl/principle-augmentation-principle.html" title="Proposition 1.3.1: Augmentation Principle">Augmentation Principle</a> says that that the reduced row echelon form of the coefficient matrix is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/principle-augmentation-principle.html">
 \begin{equation*}
 \left[
 \begin{array}{ccc}
@@ -411,11 +458,11 @@
 0 \amp 1 \amp * \\
 0 \amp 0 \amp 0 \\
 \end{array}
-\right]\text{.}
+\right],
 \end{equation*}
 </div>
-<p class="continuation">This situation can only happen if the coefficient matrix has a row without a pivot position.  To turn this around, we see: <em class="emphasis">if every row of the coefficient matrix has a pivot position, then the system must be consistent.</em> For instance, if our system of equations has a coefficient matrix whose reduced row echelon form is</p>
-<div class="displaymath">
+<p class="continuation">which shows that the coefficient matrix has a row without a pivot position.  To turn this around, we see that <em class="emphasis">if every row of the coefficient matrix has a pivot position, then the system must be consistent.</em> For instance, if our linear system has a coefficient matrix whose reduced row echelon form is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/principle-augmentation-principle.html">
 \begin{equation*}
 \left[
 \begin{array}{ccc}
@@ -426,20 +473,20 @@
 \right]\text{,}
 \end{equation*}
 </div>
-<p class="continuation">then we can guarantee that the system of equations is consistent because there is no way to obtain a pivot in the rightmost column of the augmented matrix.</p>
-<article class="proposition theorem-like" id="proposition-3"><h6 class="heading">
+<p class="continuation">then we can guarantee that the linear system is consistent because there is no way to obtain a pivot in the rightmost column of the augmented matrix.</p>
+<article class="proposition theorem-like" id="proposition-3"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
-</h6>If every row of the coefficient matrix has a pivot position, then the corresponding system of linear equations is consistent.</article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+</h4>If every row of the coefficient matrix has a pivot position, then the corresponding system of linear equations is consistent.</article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">The uniqueness of solutions</span>
 </h3>
-<p id="p-518">Now that we have studied the role that pivot positions play in the existence of solutions, let's turn to the question of uniqueness.</p>
-<article class="activity project-like" id="activity-10"><h6 class="heading">
+<p id="p-565">Now that we have studied the role that pivot positions play in the existence of solutions, let's turn to the question of uniqueness.</p>
+<article class="activity project-like" id="activity-10"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
-</h6>
-<ol id="p-519" class="lower-alpha">
-<li id="li-299">
-<p id="p-520">Here are the three augmented matrices in reduced row echelon form that we considered in the previous section. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath" id="p-521">
+</h4>
+<ol id="p-566" class="lower-alpha">
+<li id="li-332">
+<p id="p-567">Here are the three augmented matrices in reduced row echelon form that we considered in the previous section. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-568">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -451,7 +498,7 @@
 \right]
 \end{equation*}
 </div></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath" id="p-522">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-569">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -463,7 +510,7 @@
 \right]
 \end{equation*}
 </div></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath" id="p-523">
+<div class="sbspanel top" style="width:33.3333333333333%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-570">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -476,99 +523,97 @@
 \end{equation*}
 </div></div>
 </div></div></p>
-<p id="p-524">For each matrix, identify the pivot positions and state whether the corresponding system of linear equations is consistent.  If the system is consistent, explain whether the solution is unique or whether there are infinitely many solutions.</p>
+<p id="p-571">For each matrix, identify the pivot positions and state whether the corresponding linear system is consistent.  If the system is consistent, explain whether the solution is unique or whether there are infinitely many solutions.</p>
 </li>
-<li id="li-300"><p id="p-525">If possible, give an example of a \(3\times5\) augmented matrix that corresponds to a system of linear equations having a unique solution.  If it is not possible, explain why.</p></li>
-<li id="li-301"><p id="p-526">If possible, give an example of a \(5\times3\) augmented matrix that corresponds to a system of linear equations having a unique solution.  If it is not possible, explain why.</p></li>
-<li id="li-302"><p id="p-527">What condition on the pivot positions guarantees that a system of linear equations has a unique solution?</p></li>
-<li id="li-303"><p id="p-528">If a system of linear equations has a unique solution, what can we say about the relationship between the number of equations and the number of unknowns?</p></li>
-</ol></article><p id="p-538">Let's consider what we've learned in this activity.  Since we are interested in the question of whether a consistent linear system has a unique solution or infinitely many, we will only consider consistent systems.  By the results of the previous section, this means that there is not a pivot in the rightmost column of the augmented matrix.  Here are two possible examples: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><div class="displaymath" id="p-539">
+<li id="li-333"><p id="p-572">If possible, give an example of a <span class="process-math">\(3\times5\)</span> augmented matrix that corresponds to a linear system having a unique solution.  If it is not possible, explain why.</p></li>
+<li id="li-334"><p id="p-573">If possible, give an example of a <span class="process-math">\(5\times3\)</span> augmented matrix that corresponds to a linear system having a unique solution.  If it is not possible, explain why.</p></li>
+<li id="li-335"><p id="p-574">What condition on the pivot positions guarantees that a linear system has a unique solution?</p></li>
+<li id="li-336"><p id="p-575">If a linear system has a unique solution, what can we say about the relationship between the number of equations and the number of variables?</p></li>
+</ol></article><p id="p-585">Let's consider what we've learned in this activity.  Since we are interested in the question of whether a consistent linear system has a unique solution or infinitely many, we will only consider consistent systems.  By the results of the previous section, this means that there is not a pivot in the rightmost column of the augmented matrix.  Here are two possible examples: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-586">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
-1 \amp 0 \amp 0 \amp 3 \\
-0 \amp 1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \amp -2 \\
-0 \amp 0 \amp 0 \amp 0 \\
+1 \amp 0 \amp 0 \amp 4 \\
+0 \amp 1 \amp 0 \amp -1 \\
+0 \amp 0 \amp 1 \amp 2 \\
 \end{array}
 \right]
 \end{equation*}
 </div></div>
-<div class="sbspanel top" style="width:50%;"><div class="displaymath" id="p-540">
+<div class="sbspanel top" style="width:50%;"><div class="displaymath process-math" data-contains-math-knowls="" id="p-587">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
-1 \amp 0 \amp 2 \amp 3 \\
-0 \amp 1 \amp -1 \amp 0 \\
-0 \amp 0 \amp 0 \amp 0 \\
+1 \amp 0 \amp 2 \amp -2 \\
+0 \amp 1 \amp 1 \amp 4 \\
 0 \amp 0 \amp 0 \amp 0 \\
 \end{array}
 \right]
 \end{equation*}
 </div></div>
 </div></div></p>
-<p id="p-541">In the first example, we have the equations</p>
-<div class="displaymath">
+<p id="p-588">In the first example, we have the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{alignedat}{4}
-x_1 \amp \amp \amp \amp \amp {}={} \amp 3 \\
-\amp \amp x_2 \amp \amp \amp {}={} \amp 0 \\
-\amp \amp \amp \amp x_3\amp {}={} \amp -2 \\
+x_1 \amp {}={} \amp 4 \\
+x_2 \amp {}={} \amp -1 \\
+x_3 \amp {}={} \amp 2 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p class="continuation">demonstrating the fact that there is a unique solution \((x_1,x_2,x_3) = (3,0,-2)\text{.}\)</p>
-<p id="p-542">In the second example, we have the equations</p>
-<div class="displaymath">
+<p class="continuation">demonstrating the fact that there is a unique solution <span class="process-math">\((x_1,x_2,x_3) = (4,-1,2)\text{.}\)</span></p>
+<p id="p-589">In the second example, we have the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{alignedat}{4}
-x_1 \amp \amp \amp {}+{} \amp 2x_3\amp {}={} \amp 3 \\
-\amp \amp x_2 \amp {}-{} \amp x_3\amp {}={} \amp 0 \\
+x_1 \amp \amp \amp {}+{} \amp 2x_3\amp {}={} \amp -2 \\
+\amp \amp x_2 \amp {}+{} \amp x_3\amp {}={} \amp 4 \\
 \end{alignedat}
 \end{equation*}
 </div>
-<p class="continuation">that we may rewrite as</p>
-<div class="displaymath">
+<p class="continuation">that we may rewrite in parametric form as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{alignedat}{4}
-x_1 \amp \amp \amp \amp \amp {}={} \amp 3-2x_3 \\
-\amp \amp x_2 \amp \amp \amp {}={} \amp x_3 \\
+x_1 \amp {}={} \amp -2-2x_3 \\
+x_2 \amp {}={} \amp 4-x_3 \\
 \end{alignedat}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">From here, we see that \(x_1\) and \(x_2\) are basic variables that may be expressed in terms of the free variable \(x_3\text{.}\)  In this case, the presence of the free variable leads to infinitely many solutions.</p>
-<p id="p-543">Remember that every column of the coefficient matrix corresponds to a variable in our linear system.  In the first example, we see that every column of the coefficient contains a pivot position, which means that every variable is uniquely determined.  In the second example, the column of the coefficient matrix corresponding to \(x_3\) does not contain a pivot position, which  results in \(x_3\) appearing as a free variable.  This illustrates the following principle.</p>
-<article class="principle theorem-like" id="principle-1"><h6 class="heading">
+<p class="continuation">Here we see that <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> are basic variables that may be expressed in terms of the free variable <span class="process-math">\(x_3\text{.}\)</span>  In this case, the presence of the free variable leads to infinitely many solutions.</p>
+<p id="p-590">Remember that every column of the coefficient matrix corresponds to a variable in our linear system.  In the first example, we see that every column of the coefficient contains a pivot position, which means that every variable is uniquely determined.  In the second example, the column of the coefficient matrix corresponding to <span class="process-math">\(x_3\)</span> does not contain a pivot position, which  results in <span class="process-math">\(x_3\)</span> appearing as a free variable.  This illustrates the following principle.</p>
+<article class="principle theorem-like" id="principle-1"><h4 class="heading">
 <span class="type">Principle</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
-</h6>
-<p id="p-544">Suppose that we consider a consistent linear system.</p>
+</h4>
+<p id="p-591">Suppose that we consider a consistent linear system.</p>
 <ul class="disc">
-<li id="li-309"><p id="p-545">If every column of the coefficient matrix contains a pivot position, then the system has a unique solution.</p></li>
-<li id="li-310"><p id="p-546">If there is a column in the coefficient matrix that contains no pivot position, then the system has infinitely many solutions.</p></li>
-<li id="li-311"><p id="p-547">Moreover, columns that contain a pivot position correspond to basic variables while columns that do not correspond to free variables.</p></li>
-</ul></article><p id="p-548">When a linear system has a unique solution, every column of the coefficient matrix has a pivot position.  Since every row contains at most one pivot position, there must be at least as many rows as columns in the coefficient matrix.  Therefore, the linear system has at least as many equations as unknowns, which is something we intuitively suspected in <a href="sec-expect.html" class="internal" title="Section 1.1: What can we expect">Section 1.1</a>.</p>
-<p id="p-549">It is reasonable to ask how we choose the free variables.  For instance, if we have a single equation</p>
-<div class="displaymath">
+<li id="li-342"><p id="p-592">If every column of the coefficient matrix contains a pivot position, then the system has a unique solution.</p></li>
+<li id="li-343"><p id="p-593">If there is a column in the coefficient matrix that contains no pivot position, then the system has infinitely many solutions.</p></li>
+<li id="li-344"><p id="p-594">Columns that contain a pivot position correspond to basic variables while columns that do not correspond to free variables.</p></li>
+</ul></article><p id="p-595">When a linear system has a unique solution, every column of the coefficient matrix has a pivot position.  Since every row contains at most one pivot position, there must be at least as many rows as columns in the coefficient matrix.  Therefore, the linear system has at least as many equations as variables, which is something we intuitively suspected in <a href="sec-expect.html" class="internal" title="Section 1.1: What can we expect">Section 1.1</a>.</p>
+<p id="p-596">It is reasonable to ask how we choose the free variables.  For instance, if we have a single equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x + 2y = 4\text{,}
 \end{equation*}
 </div>
 <p class="continuation">then we may write</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x = 4-2y
 \end{equation*}
 </div>
 <p class="continuation">or, equivalently,</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 y = 2 - \frac12 x\text{.}
 \end{equation*}
 </div>
 <p class="continuation">Clearly, either variable may be considered as a free variable in this case.</p>
-<p id="p-550">We will see in the future that we are more interested in the <em class="emphasis">number</em> of free variables rather than in their choice. For convenience, we will adopt the convention of calling the variables corresponding to columns that contain no pivot position free, which allows us to quickly identify them.  In particular, the variables \(x_2\) and \(x_4\) appear as free variables in the following linear system:</p>
-<div class="displaymath">
+<p id="p-597">As we'll see in the future, we are more interested in the <em class="emphasis">number</em> of free variables rather than in their choice. For convenience, we will adopt the convention that free variables correspond to columns without a pivot position, which allows us to quickly identify them.  For example, the variables <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_4\)</span> appear as free variables in the following linear system:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{rrrr|r}
@@ -580,18 +625,18 @@ y = 2 - \frac12 x\text{.}
 </div></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Summary</span>
 </h3>
-<p id="p-551">We have seen how the location of pivot positions, in both the augmented and coefficient matrices, gives vital information about the existence and uniqueness of solutions to linear systems.  More specifically,</p>
-<ul id="p-552" class="disc">
-<li id="li-312"><p id="p-553">A linear system is inconsistent exactly when a pivot position appears in the rightmost column of the <em class="emphasis">augmented</em> matrix.</p></li>
-<li id="li-313"><p id="p-554">If a linear system is consistent, the solution is unique when every column of the <em class="emphasis">coefficient</em> matrix contains a pivot position.  There are infinitely solutions when there is a column of the <em class="emphasis">coefficient</em> matrix without a pivot position.</p></li>
-<li id="li-314"><p id="p-555">If a linear system if consistent, the columns of the coefficient matrix containing pivot positions correspond to basic variables and the columns without pivot positions correspond to free variables.</p></li>
+<p id="p-598">We have seen how the locations of pivot positions, in both the augmented and coefficient matrices, give vital information about the existence and uniqueness of solutions to linear systems.  More specifically,</p>
+<ul id="p-599" class="disc">
+<li id="li-345"><p id="p-600">A linear system is inconsistent exactly when a pivot position appears in the rightmost column of the <em class="emphasis">augmented</em> matrix.</p></li>
+<li id="li-346"><p id="p-601">If a linear system is consistent, the solution is unique when every column of the <em class="emphasis">coefficient</em> matrix contains a pivot position.  There are infinitely solutions when there is a column of the <em class="emphasis">coefficient</em> matrix without a pivot position.</p></li>
+<li id="li-347"><p id="p-602">If a linear system is consistent, the columns of the coefficient matrix containing pivot positions correspond to basic variables and the columns without pivot positions correspond to free variables.</p></li>
 </ul></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">1.4.4</span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-556">For each of the augmented matrices in reduced row echelon form given below, determine whether the corresponding linear system is consistent and, if it is, determine whether the solution is unique.  If the system is consistent, identify the free variables and the basic variables and give a description of the solution space in parametric form.</p>
+<article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-603">For each of the augmented matrices in reduced row echelon form given below, determine whether the corresponding linear system is consistent and, if so, determine whether the solution is unique.  If the system is consistent, identify the free variables and the basic variables and give a description of the solution space in parametric form.</p>
 <ol class="lower-alpha">
-<li id="li-315"><div class="displaymath" id="p-557">
+<li id="li-348"><div class="displaymath process-math" data-contains-math-knowls="" id="p-604">
 \begin{equation*}
 \left[
 \begin{array}{rrrr|r}
@@ -602,7 +647,7 @@ y = 2 - \frac12 x\text{.}
 \right]\text{.}
 \end{equation*}
 </div></li>
-<li id="li-316"><div class="displaymath" id="p-558">
+<li id="li-349"><div class="displaymath process-math" data-contains-math-knowls="" id="p-605">
 \begin{equation*}
 \left[
 \begin{array}{rrrr|r}
@@ -614,7 +659,7 @@ y = 2 - \frac12 x\text{.}
 \right]\text{.}
 \end{equation*}
 </div></li>
-<li id="li-317"><div class="displaymath" id="p-559">
+<li id="li-350"><div class="displaymath process-math" data-contains-math-knowls="" id="p-606">
 \begin{equation*}
 \left[
 \begin{array}{rrrr|r}
@@ -627,7 +672,7 @@ y = 2 - \frac12 x\text{.}
 \right]\text{.}
 \end{equation*}
 </div></li>
-<li id="li-318"><div class="displaymath" id="p-560">
+<li id="li-351"><div class="displaymath process-math" data-contains-math-knowls="" id="p-607">
 \begin{equation*}
 \left[
 \begin{array}{rrr|r}
@@ -638,26 +683,78 @@ y = 2 - \frac12 x\text{.}
 \right]\text{.}
 \end{equation*}
 </div></li>
-</ol></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-571">Include an example of an appropriate matrix as you justify your responses to the following questions.</p>
+</ol></article><article class="exercise exercise-like" id="exercise-14"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-618">For each of the following linear systems, determine whether the system is consistent, and, if so, determine whether there are infinitely many solutions. <pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage">
+</script></pre></p>
 <ol class="lower-alpha">
-<li id="li-327"><p id="p-572">Suppose a linear system having six equations and three unknowns is consistent.  Can you guarantee that the solution is unique? Can you guarantee that there are infinitely solutions?</p></li>
-<li id="li-328"><p id="p-573">Suppose that a linear system having three equations and six unknowns is consistent.  Can you guarantee that the solution is unique? Can you guarantee that there are infinitely solutions?</p></li>
-<li id="li-329"><p id="p-574">Suppose that a linear system is consistent and has a unique solution.  What can you guarantee about the pivot positions in the augmented matrix?</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-583">Determine whether the following statements are true or false and provide a justification for your response.</p>
+<li id="li-360"><div class="displaymath process-math" data-contains-math-knowls="" id="p-619">
+\begin{equation*}
+\begin{alignedat}{5}
+2x_1\amp{}-{}\amp x_2\amp {}+{}\amp 3x_3 \amp {}{}
+\amp \amp {}={} \amp 10 \\
+-x_1\amp{}+{}\amp x_2\amp \amp \amp {}+{}
+\amp 3x_4 \amp {}={} \amp 8 \\
+\amp{}{}\amp 2x_2\amp {}+{}\amp 2x_3 \amp {}-{}
+\amp x_4 \amp {}={} \amp -4 \\
+3x_1\amp{}+{}\amp 2x_2\amp {}-{}\amp x_3 \amp {}+{}
+\amp x_4 \amp {}={} \amp 10 \\
+\end{alignedat}
+\end{equation*}
+</div></li>
+<li id="li-361"><div class="displaymath process-math" data-contains-math-knowls="" id="p-620">
+\begin{equation*}
+\begin{alignedat}{5}
+2x_1\amp{}-{}\amp x_2\amp {}+{}\amp 3x_3 \amp {}+{}
+\amp 3x_4 \amp {}={} \amp 8 \\
+-x_1\amp{}+{}\amp x_2\amp \amp \amp {}+{}
+\amp 2x_4 \amp {}={} \amp -1 \\
+\amp{}{}\amp 2x_2\amp {}+{}\amp 2x_3 \amp {}+{}
+\amp 6x_4 \amp {}={} \amp 4 \\
+3x_1\amp{}+{}\amp 2x_2\amp {}-{}\amp x_3 \amp {}-{}
+\amp 3x_4 \amp {}={} \amp 1 \\
+\end{alignedat}
+\end{equation*}
+</div></li>
+<li id="li-362"><div class="displaymath process-math" data-contains-math-knowls="" id="p-621">
+\begin{equation*}
+\begin{alignedat}{5}
+2x_1\amp{}-{}\amp x_2\amp {}+{}\amp 3x_3 \amp {}+{}
+\amp 3x_4 \amp {}={} \amp 8 \\
+-x_1\amp{}+{}\amp x_2\amp \amp \amp {}+{}
+\amp 2x_4 \amp {}={} \amp -1 \\
+\amp{}{}\amp 2x_2\amp {}+{}\amp 2x_3 \amp {}+{}
+\amp 6x_4 \amp {}={} \amp 4 \\
+3x_1\amp{}+{}\amp 2x_2\amp {}-{}\amp x_3 \amp {}-{}
+\amp 3x_4 \amp {}={} \amp 0 \\
+\end{alignedat}
+\end{equation*}
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-15"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-630">Include an example of an appropriate matrix as you justify your responses to the following questions.</p>
 <ol class="lower-alpha">
-<li id="li-336"><p id="p-584">If the coefficient matrix of a system of linear equations has a pivot in the rightmost column, then the system is inconsistent.</p></li>
-<li id="li-337"><p id="p-585">If a system of equations has two equations and four unknowns, then it must be consistent.</p></li>
-<li id="li-338"><p id="p-586">If a system of equations having four equations and three unknowns is consistent, then the solution is unique.</p></li>
-<li id="li-339"><p id="p-587">Suppose that a linear system has four equations and four unknowns and that the coefficient matrix has four pivots. Then the linear system is consistent and has a unique solution.</p></li>
-<li id="li-340"><p id="p-588">Suppose that a linear system has five equations and three unknowns and that the coefficient matrix has a pivot in every column.  Then the linear system is consistent and has a unique solution.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-601">The following systems contain either one or two parameters.</p>
+<li id="li-369"><p id="p-631">Suppose a linear system having six equations and three variables is consistent.  Can you guarantee that the solution is unique? Can you guarantee that there are infinitely solutions?</p></li>
+<li id="li-370"><p id="p-632">Suppose that a linear system having three equations and six variables is consistent.  Can you guarantee that the solution is unique? Can you guarantee that there are infinitely solutions?</p></li>
+<li id="li-371"><p id="p-633">Suppose that a linear system is consistent and has a unique solution.  What can you guarantee about the pivot positions in the augmented matrix?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-642">Determine whether the following statements are true or false and provide a justification for your response.</p>
 <ol class="lower-alpha">
-<li id="li-351">
-<p id="p-602">For what values of the parameter \(k\) is the following system consistent?  For which of those values is the solution unique?</p>
-<div class="displaymath">
+<li id="li-378"><p id="p-643">If the coefficient matrix of a linear system has a pivot in the rightmost column, then the system is inconsistent.</p></li>
+<li id="li-379"><p id="p-644">If a linear system has two equations and four variables, then it must be consistent.</p></li>
+<li id="li-380"><p id="p-645">If a linear system having four equations and three variables is consistent, then the solution is unique.</p></li>
+<li id="li-381"><p id="p-646">Suppose that a linear system has four equations and four variables and that the coefficient matrix has four pivots. Then the linear system is consistent and has a unique solution.</p></li>
+<li id="li-382"><p id="p-647">Suppose that a linear system has five equations and three variables and that the coefficient matrix has a pivot position in every column.  Then the linear system is consistent and has a unique solution.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-17"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-660">We began our explorations in <a href="sec-expect.html" class="internal" title="Section 1.1: What can we expect">Section 1.1</a> by noticing that the solution spaces of linear systems with more equations seem to be smaller.  Let's reexamine this idea using what we know about pivot positions.</p>
+<ol class="lower-alpha">
+<li id="li-393"><p id="p-661">Remember that the solution space of a single linear equation in three variables is a plane.  Can two planes ever intersect in a single point?  What are the possible ways in which two planes can intersect?  How can our understanding of pivot positions help answer these questions?</p></li>
+<li id="li-394"><p id="p-662">Suppose that a consistent linear system has more variables than equations.  By considering the possible pivot positions, what can you say with certainty about the solution space?</p></li>
+<li id="li-395"><p id="p-663">If a linear system has many more equations than variables, why is it reasonable to expect the system to be inconsistent?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-18"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-672">The following linear systems contain either one or two parameters.</p>
+<ol class="lower-alpha">
+<li id="li-402">
+<p id="p-673">For what values of the parameter <span class="process-math">\(k\)</span> is the following system consistent?  For which of those values is the solution unique?</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{alignedat}{3}
 -x_1 \amp {}+{} \amp 2x_2 \amp {}={} \amp 3 \\
@@ -666,9 +763,9 @@ y = 2 - \frac12 x\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-352">
-<p id="p-603">For what values of the parameters \(k\) and <em class="emphasis">l</em> is the following system consistent?  For which of those values is the solution unique?</p>
-<div class="displaymath">
+<li id="li-403">
+<p id="p-674">For what values of the parameters <span class="process-math">\(k\)</span> and <em class="emphasis">l</em> is the following system consistent?  For which of those values is the solution unique?</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{alignedat}{3}
 2x_1 \amp {}+{} \amp 4x_2 \amp {}={} \amp 3 \\
@@ -677,9 +774,9 @@ y = 2 - \frac12 x\text{.}
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-610">Consider the system of equations described by the following augmented matrix.</p>
-<div class="displaymath">
+</ol></article><article class="exercise exercise-like" id="exercise-19"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-681">Consider the linear system described by the following augmented matrix.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -691,12 +788,12 @@ a \amp b \amp c \amp 9 \\
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-357"><p id="p-611">Find a choice for the parameters \(a\text{,}\) \(b\text{,}\) and \(c\) that causes the linear system to be inconsistent.  Explain why your choice has this property.</p></li>
-<li id="li-358"><p id="p-612">Find a choice for the parameters \(a\text{,}\) \(b\text{,}\) and \(c\) that causes the linear system to have a unique solution. Explain why your choice has this property.</p></li>
-<li id="li-359"><p id="p-613">Find a choice for the parameters \(a\text{,}\) \(b\text{,}\) and \(c\) that causes the linear system to have infinitely many solutions.  Explain why your choice has this property.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-622">A system of equations where the right hand side of every equation is 0 is called <em class="emphasis">homogeneous</em>.  The augmented matrix of a homogeneous system, for instance, has the following form:</p>
-<div class="displaymath">
+<li id="li-408"><p id="p-682">Find a choice for the parameters <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> that causes the linear system to be inconsistent.  Explain why your choice has this property.</p></li>
+<li id="li-409"><p id="p-683">Find a choice for the parameters <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> that causes the linear system to have a unique solution. Explain why your choice has this property.</p></li>
+<li id="li-410"><p id="p-684">Find a choice for the parameters <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> that causes the linear system to have infinitely many solutions.  Explain why your choice has this property.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-20"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-693">A linear system where the right hand side of every equation is 0 is called <em class="emphasis">homogeneous</em>.  The augmented matrix of a homogeneous system, for instance, has the following form:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left[
 \begin{array}{cccc|c}
@@ -708,61 +805,61 @@ a \amp b \amp c \amp 9 \\
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-366"><p id="p-623">Using the concepts we've seen in this section, explain why a  homogeneous system of equations must be consistent.</p></li>
-<li id="li-367"><p id="p-624">What values for the unknowns are guaranteed to give a solution?  Use this to offer another explanation for why a homogeneous system of equations is consistent.</p></li>
-<li id="li-368">
-<p id="p-625">Suppose that a homogeneous system of equations has a unique solution.</p>
-<ol class="lower-roman">
-<li id="li-369"><p id="p-626">Give an example of such a system by writing its augmented matrix in reduced row echelon form.</p></li>
-<li id="li-370"><p id="p-627">Write just the coefficient matrix for the example you gave in the previous part.  What can you say about the pivot positions in the coefficient matrix?  Explain why your observation must hold for any homogeneous system having a unique solution.</p></li>
-<li id="li-371"><p id="p-628">If a homogenous system of equations has a unique solution, what can you say about the number of equations compared to the number of unknowns?</p></li>
+<li id="li-417"><p id="p-694">Using the concepts we've seen in this section, explain why a homogeneous linear system must be consistent.</p></li>
+<li id="li-418"><p id="p-695">What values for the variables are guaranteed to give a solution?  Use this to offer another explanation for why a homogeneous linear system is consistent.</p></li>
+<li id="li-419">
+<p id="p-696">Suppose that a homogeneous linear system has a unique solution.</p>
+<ol class="decimal">
+<li id="li-420"><p id="p-697">Give an example of such a system by writing its augmented matrix in reduced row echelon form.</p></li>
+<li id="li-421"><p id="p-698">Write just the coefficient matrix for the example you gave in the previous part.  What can you say about the pivot positions in the coefficient matrix?  Explain why your observation must hold for any homogeneous system having a unique solution.</p></li>
+<li id="li-422"><p id="p-699">If a homogeneous system of equations has a unique solution, what can you say about the number of equations compared to the number of variables?</p></li>
 </ol>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-poly-fit"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-637">In a previous math class, you have probably seen the fact that, if we are given two points in the plane, then there is a unique line passing through both of them.  In this problem, we will begin with the four points on the left below and ask to find a polynomial that passes through these four points as shown on the right. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/interpolation-0.svg" role="img" class="contained" alt=""></div>
-<div class="sbspanel top" style="width:47.3684210526316%;"><img src="images/interpolation-1.svg" role="img" class="contained" alt=""></div>
+</ol></article><article class="exercise exercise-like" id="exercise-poly-fit"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-708">In a previous math class, you have probably seen the fact that, if we are given two points in the plane, then there is a unique line passing through both of them.  In this problem, we will begin with the four points on the left below and ask to find a polynomial that passes through these four points as shown on the right. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/interpolation-0.svg" role="img" class="contained"></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/interpolation-1.svg" role="img" class="contained"></div>
 </div></div></p>
-<p id="p-638">A degree three polynomial can be written as</p>
-<div class="displaymath">
+<p id="p-709">A degree three polynomial can be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p(x) = a + bx + cx^2 + dx^3
 \end{equation*}
 </div>
-<p class="continuation">where \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\) are coefficients that we would like to determine. Since we want the polynomial to pass through the point \((3,1)\text{,}\) we should require that</p>
-<div class="displaymath">
+<p class="continuation">where <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(d\)</span> are coefficients that we would like to determine. Since we want the polynomial to pass through the point <span class="process-math">\((3,1)\text{,}\)</span> we should require that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p(3) = a + 3b + 9c + 27d = 1\text{.}
 \end{equation*}
 </div>
-<p class="continuation">In this way, we obtain a linear equation for the coefficients \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\text{.}\)</p>
+<p class="continuation">In this way, we obtain a linear equation for the coefficients <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(d\text{.}\)</span></p>
 <ol class="lower-alpha">
-<li id="li-378"><p id="p-639">Write the four linear equations for the coefficients obtained by requiring that the graph of the polynomial \(p(x)\) passes through the four points above.</p></li>
-<li id="li-379"><p id="p-640">Write the augmented matrix corresponding to this system of equations and use the Sage cell below to solve for the coefficients. <div class="sagecell-sage" id="sage-24"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-380"><p id="p-641">Write the polynomial \(p(x)\) that you found and check your work by graphing it in the Sage cell below and verifying that it passes through the four points.  To plot a function over a range, you may use a command like <code class="code-inline tex2jax_ignore"> plot(1 + x- 2*x^2, xmin = -1, xmax = 4)</code>. <div class="sagecell-sage" id="sage-25"><script type="text/x-sage">
-</script></div></p></li>
-<li id="li-381">
-<p id="p-642">Rather than looking for a degree three polynomial, suppose we wanted to find a polynomial that passes through the four points and that has degree two, such as</p>
-<div class="displaymath">
+<li id="li-429"><p id="p-710">Write the four linear equations for the coefficients obtained by requiring that the graph of the polynomial <span class="process-math">\(p(x)\)</span> passes through the four points above.</p></li>
+<li id="li-430"><p id="p-711">Write the augmented matrix corresponding to this system of equations and use the Sage cell below to solve for the coefficients. <pre class="ptx-sagecell sagecell-sage" id="sage-25"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-431"><p id="p-712">Write the polynomial <span class="process-math">\(p(x)\)</span> that you found and check your work by graphing it in the Sage cell below and verifying that it passes through the four points.  To plot a function over a range, you may use a command like <code class="code-inline tex2jax_ignore"> plot(1 + x- 2*x^2, xmin = -1, xmax = 4)</code>. <pre class="ptx-sagecell sagecell-sage" id="sage-26"><script type="text/x-sage">
+</script></pre></p></li>
+<li id="li-432">
+<p id="p-713">Rather than looking for a degree three polynomial, suppose we wanted to find a polynomial that passes through the four points and that has degree two, such as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p(x) = a + bx + cx^2\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Solve the system of equations for the coefficients. What can you say about the existence and uniqueness of a degree two polynomial passing through these four points? <div class="sagecell-sage" id="sage-26"><script type="text/x-sage">
-</script></div></p>
+<p class="continuation">Solve the linear system for the coefficients. What can you say about the existence and uniqueness of a degree two polynomial passing through these four points? <pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">
+</script></pre></p>
 </li>
-<li id="li-382">
-<p id="p-643">Rather than looking for a degree three polynomial, suppose we wanted to find a polynomial that passes through the four points and that has degree four, such as</p>
-<div class="displaymath">
+<li id="li-433">
+<p id="p-714">Rather than looking for a degree three polynomial, suppose we wanted to find a polynomial that passes through the four points and that has degree four, such as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p(x) = a + bx + cx^2 + dx^3 + ex^4\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Solve the system of equations for the coefficients. What can you say about the existence and uniqueness of a degree four polynomial passing through these four points? <div class="sagecell-sage" id="sage-27"><script type="text/x-sage">
-</script></div></p>
+<p class="continuation">Solve the linear system for the coefficients. What can you say about the existence and uniqueness of a degree four polynomial passing through these four points? <pre class="ptx-sagecell sagecell-sage" id="sage-28"><script type="text/x-sage">
+</script></pre></p>
 </li>
-<li id="li-383"><p id="p-644">Suppose you had 10 points and you wanted to find a polynomial passing through each of them.  What should the degree of the polynomial be to guarantee that there is exactly one such polynomial?  Explain your response.</p></li>
+<li id="li-434"><p id="p-715">Suppose you had 10 points and you wanted to find a polynomial passing through each of them.  What should the degree of the polynomial be to guarantee that there is exactly one such polynomial?  Explain your response.</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

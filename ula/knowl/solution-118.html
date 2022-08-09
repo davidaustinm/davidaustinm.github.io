@@ -1,125 +1,51 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:03-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.1.5.5.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.1.2.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
+<li><p>Solving the two equations for <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\)</span> gives <span class="process-math">\(B = \begin{bmatrix}
+1 \amp -2 \\
+1 \amp -3 \\
+\end{bmatrix}\text{.}\)</span>  We can verify that, as we expect, <span class="process-math">\(AB=I\text{.}\)</span></p></li>
+<li><p>We find that <span class="process-math">\(BA=I\text{,}\)</span> which is the condition that tells us that <span class="process-math">\(B\)</span> is invertible.</p></li>
+<li><p>Seeking the first column of <span class="process-math">\(C^{-1}\text{,}\)</span> we see that the equation <span class="process-math">\(C\xvec = \twovec10\)</span> is not consistent. This means that <span class="process-math">\(C\)</span> is not invertible.</p></li>
+<li><p>Since the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent for every <span class="process-math">\(\bvec\text{,}\)</span> we know that the span of the columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\real^n\text{.}\)</span></p></li>
+<li><p>Because the span of the columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\real^n\text{,}\)</span> there is a pivot position in every row. Since <span class="process-math">\(A\)</span> is square, there is also a pivot position in every column.  This means that the reduced row echelon form of <span class="process-math">\(A\)</span> must be the identity matrix <span class="process-math">\(I_n\text{.}\)</span></p></li>
 <li>
-<p>If</p>
-<div class="displaymath">
+<p>We see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-P =
-\left[\begin{array}{rrr}
-0 \amp 1 \amp 0 \\
-1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right],
-S_1 =
-\left[\begin{array}{rrr}
--\frac13 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right],
-S_2 =
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp \frac12 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\text{,}
+A\sim \begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix},~~~
+C\sim
+\begin{bmatrix}
+1 \amp -\frac12 \\
+0 \amp 0 \\
+\end{bmatrix},
 \end{equation*}
 </div>
-<p>then \(S_2S_1P A = I\) so that \(A^{-1}=S_2S_1P=
-\left[\begin{array}{rrr}
-0 \amp -\frac13 \amp 0 \\
-\frac12 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p>
-</li>
-<li>
-<p>We use three replacement operations</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{l}
-L_1 =
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
--2 \amp 1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 0 \amp 1 \\
-\end{array}\right],
-L_2 =
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \amp 0 \\
-0 \amp 3 \amp 1 \amp 0 \\
-0 \amp 0 \amp 0 \amp 1 \\
-\end{array}\right], \\
-L_3 =
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \amp 0 \\
-0 \amp 0 \amp -2 \amp 1 \\
-\end{array}\right]\text{.}
-\end{array}
-\end{equation*}
-</div>
-<p>Therefore, \(L_3L_2L_1A = I\) so \(A^{-1} = L_3L_2L_1 =
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 0 \\
--2 \amp 1 \amp 0 \amp 0 \\
--6 \amp 3 \amp 1 \amp 0 \\
-12 \amp -6 \amp -2 \amp 1 \\
-\end{array}\right]
-\text{.}\)</p>
-</li>
-<li>
-<p>We use a scaling followed by replacement operations:</p>
-<div class="displaymath">
-\begin{equation*}
-S =
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp \frac12 \\
-\end{array}\right],
-U_1 =
-\left[\begin{array}{rrr}
-1 \amp 0 \amp -1 \\
-0 \amp 1 \amp -1 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right],
-U_2 = 
-\left[\begin{array}{rrr}
-1 \amp -1 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>This gives \(U_2U_1SA = I\) so that \(A^{-1} = U_2U_1S =
-\left[\begin{array}{rrr}
-1 \amp -1 \amp 0 \\
-0 \amp 1 \amp -\frac12 \\
-0 \amp 0 \amp \frac12 \\
-\end{array}\right]
-\text{.}\)</p>
+<p class="continuation">which shows that <span class="process-math">\(A\)</span> is invertible and <span class="process-math">\(C\)</span> is not.</p>
 </li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-matrix-inverse.html#solution-118">in-context</a></span>
+<span class="incontext"><a href="sec-matrix-inverse.html#solution-118" class="internal">in-context</a></span>
 </body>
 </html>

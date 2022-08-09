@@ -1,60 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:59-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:42-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li><p>We have \(T(\xvec) = A\xvec = \zerovec\text{.}\)  The reduced row echelon form of \(A\) is \(A \sim \left[\begin{array}{rrr}
-1 \amp 0 \amp -2 \\
-0 \amp 1 \amp 1 \\
-0 \amp 0 \amp 0 \\
-\end{array}\right]\text{.}\)  Therefore, the solutions have the form \(\xvec=x_3\threevec{2}{-1}{1}\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><ol class="decimal">
+<li><p>Since both the inputs and the outputs of <span class="process-math">\(T\)</span> are two-dimensional, it follows that <span class="process-math">\(T:\real^2\to\real^2\)</span> and that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix.</p></li>
 <li>
-<p>We see that</p>
-<div class="displaymath">
+<p>Since</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left[\begin{array}{rrr|r}
-1 \amp 3 \amp 1 \amp -8 \\
--2 \amp 1 \amp 5 \amp 9 \\
-0 \amp 2 \amp 2 \amp 2 \\
-\end{array}\right]
-\sim
-\left[\begin{array}{rrr|r}
-1 \amp 0 \amp -2 \amp 0 \\
-0 \amp 1 \amp 1 \amp 0 \\
-0 \amp 0 \amp 0 \amp 1 \\
-\end{array}\right]\text{.}
+T\left(\twovec10\right) = \twovec01,~~~
+T\left(\twovec01\right) = \twovec{-1}0,
 \end{equation*}
 </div>
-<p>Since this is an inconsistent system, there are no vectors \(\xvec\) satisfying the equation.</p>
+<p class="continuation">we have <span class="process-math">\(A=\begin{bmatrix}
+0 \amp -1 \\
+1 \amp 0 \\
+\end{bmatrix}\text{.}\)</span></p>
 </li>
-<li>
-<p>In the same way, we have</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rrr|r}
-1 \amp 3 \amp 1 \amp -8 \\
--2 \amp 1 \amp 5 \amp 2 \\
-0 \amp 2 \amp 2 \amp -4
-\end{array}\right]
-\sim
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp -2 \amp -2 \\
-0 \amp 1 \amp 1 \amp -2 \\
-0 \amp 0 \amp 0 \amp 0 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>This shows that \(\xvec=\threevec{-2}{-2}{0} +
-x_3\threevec{2}{-1}{1}\text{.}\)</p>
-</li>
+<li><p>Multiplying <span class="process-math">\(T(\vvec) = A\vvec =
+\twovec{1}{-2}\text{,}\)</span> which agrees with the vector shown in the figure.</p></li>
+<li><p><span class="process-math">\(T\left(\twovec xy\right) =
+\twovec{-y}{x}\text{.}\)</span></p></li>
+</ol></li>
+<li><ol class="decimal">
+<li><p>The shape of matrix <span class="process-math">\(A\)</span> is <span class="process-math">\(3\times
+2\text{,}\)</span> and <span class="process-math">\(T:\real^2\to\real^3\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(T\left(\twovec10\right) =
+\threevec{10}{50}{30}\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(A = \begin{bmatrix}
+10 \amp 20 \\
+50 \amp 30 \\
+30 \amp 30 \\
+\end{bmatrix}
+\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(T\left(\twovec{120}{180}\right) =
+\threevec{4800}{11400}{9000}\text{.}\)</span></p></li>
+<li><p>We solve the equation <span class="process-math">\(T(\xvec) = A\xvec =
+\threevec{5060}{14310}{10470}\)</span> to obtain <span class="process-math">\(\xvec = \twovec{192}{157}.\)</span></p></li>
+<li><p>No, you cannot guarantee this because the two columns of <span class="process-math">\(A\)</span> cannot span <span class="process-math">\(\real^3\text{.}\)</span>  If we view an order received as a three-dimensional vector <span class="process-math">\(\bvec\text{,}\)</span> then a solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> tells us how long to operate the two bakeries to produce this order.  However, since <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 2\)</span> matrix, it must have a row without a pivot position, which means that the equation <span class="process-math">\(A\xvec = \bvec\)</span> will be inconsistent for some vectors <span class="process-math">\(\bvec\text{.}\)</span></p></li>
+</ol></li>
 </ol></div></body>
 </html>

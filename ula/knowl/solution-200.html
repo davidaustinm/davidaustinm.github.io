@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:25-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:59-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">4.2.6.8.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.2.3.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>We have eigenvalues \(\lambda_1=1\) with associated eigenvector \(\vvec_1=\twovec12\) and \(\lambda_2=0.1\) with associated eigenvector \(\vvec_2=\twovec{-1}{1}\text{.}\)</p></li>
-<li><p>After constructing an augmented matrix, we find \(\xvec_0=\frac13\vvec_1+\frac13\vvec_2\text{.}\)</p></li>
 <li>
-<p>Since \(A(c_1\vvec_1+c_2\vvec_2) = c_1\vvec_1 +
-0.1c_2\vvec_2\text{,}\) we have</p>
-<div class="displaymath">
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{aligned}
-\xvec_1 \amp {}={} \frac13\vvec_1+0.1\frac13\vvec_2 \\
-\xvec_2 \amp {}={} \frac13\vvec_1+0.1^2\frac13\vvec_2 \\
-\xvec_3 \amp {}={} \frac13\vvec_1+0.1^3\frac13\vvec_2. \\
-\end{aligned}
+A - 3I =
+\mattwo{-2}{2}{2}{-2}
+\sim
+\mattwo{1}{-1}{0}{0}\text{.}
 \end{equation*}
 </div>
+<p class="continuation">The null space <span class="process-math">\(\nul(A-3I)\)</span> is one-dimensional with basis <span class="process-math">\(\twovec{1}{1}\text{.}\)</span></p>
 </li>
-<li><p>We have \(\xvec_k =
-\frac13\vvec_1+0.1^k\frac13\vvec_2\text{.}\)  As \(k\) grows larger, \(0.1^k\) becomes less significant.  Eventually, \(\xvec_k \approx \frac13\vvec_1=
-\twovec{\frac13}{\frac23}\text{.}\)</p></li>
+<li>
+<p>We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A - (-1)I =
+\mattwo{2}{2}{2}{2}
+\sim
+\mattwo{1}{1}{0}{0}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The null space <span class="process-math">\(\nul(A+I)\)</span> is one-dimensional with basis <span class="process-math">\(\twovec{-1}{1}\text{.}\)</span></p>
+</li>
+<li><p>We can form a basis for <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> by taking <span class="process-math">\(\left\{\twovec{1}{1},
+\twovec{-1}{1}\right\}\text{.}\)</span></p></li>
+<li><p>The characteristic equation is <span class="process-math">\((3-\lambda)^2 =
+0\text{,}\)</span> which means that there is a single eigenvalue <span class="process-math">\(\lambda=3\text{.}\)</span>  This eigenspace is two-dimensional with basis <span class="process-math">\(\left\{\twovec{1}{0},\twovec{0}{1}\right\}\text{.}\)</span>  In this case, we can form a basis for <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span></p></li>
+<li><p>The characteristic equation is <span class="process-math">\((2-\lambda)^2 =
+0\)</span> so there is again a single eigenvalue <span class="process-math">\(\lambda=2\text{.}\)</span>  In this case, the eigenspace is one-dimensional with basis vector <span class="process-math">\(\twovec{1}{0}\text{.}\)</span>  It is not possible to form a basis for <span class="process-math">\(\real^2\)</span> consisting of eigenvectors.</p></li>
+<li><p>We have eigenvectors <span class="process-math">\(\twovec10\)</span> with associated eigenvector <span class="process-math">\(\lambda=4\)</span> and <span class="process-math">\(\twovec01\)</span> with associated eigenvector <span class="process-math">\(\lambda=-1\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-eigen-find.html#solution-200">in-context</a></span>
+<span class="incontext"><a href="sec-eigen-find.html#solution-200" class="internal">in-context</a></span>
 </body>
 </html>

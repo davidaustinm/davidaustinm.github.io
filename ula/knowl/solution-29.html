@@ -1,22 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:51-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:36-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">2.1.1.1</span>.</h6>
-<p>Solutions to this preview activity are given in the text below.</p>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.4.4.5.1</span><span class="period">.</span>
+</h4>
+<ol class="lower-alpha">
+<li>
+<p>The intersection of two planes are described by a linear system having two equations and three variables.  Two possible reduced row echelon forms are</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{cc}
+\left[
+\begin{array}{rrr|r}
+1 \amp 0 \amp * \amp * \\
+0 \amp 1 \amp * \amp * \\
+\end{array}
+\right]
+\amp
+\left[
+\begin{array}{rrr|r}
+1 \amp * \amp * \amp * \\
+0 \amp 0 \amp 0 \amp 1 \\
+\end{array}
+\right]
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-vectors-lin-combs.html#solution-29">in-context</a></span>
+<p class="continuation">indicating that the planes either intersect in a line or do not intersect at all.  In particular, it is not possible for there to be a single point of intersection.</p>
+</li>
+<li>
+<p>If there are more variables than equations, there must be a column in the coefficient matrix that does not contain a pivot position:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+1 \amp 0 \amp * \amp * \\
+0 \amp 1 \amp * \amp * \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">so we can guarantee that there are infinitely many solutions.</p>
+</li>
+<li>
+<p>If there are many more equations than variables, the coefficient matrix will have many rows without a pivot position:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+1 \amp 0 \amp * \\
+0 \amp 1 \amp * \\
+0 \amp 0 \amp * \\
+0 \amp 0 \amp * \\
+0 \amp 0 \amp * \\
+0 \amp 0 \amp * \\
+0 \amp 0 \amp * \\
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">This makes it likely that there will be a pivot position in the rightmost column of the augmented matrix, which means that the linear system is inconsistent.</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-pivots.html#solution-29" class="internal">in-context</a></span>
 </body>
 </html>

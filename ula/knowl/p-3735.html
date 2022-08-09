@@ -1,79 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:22-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:57-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>Identify the eigenvalues, and their multiplicities, of an \(n\times n\) matrix whose characteristic polynomial is \((2-\lambda)^3(-3-\lambda)^{10}(5-\lambda)\text{.}\)  What can you conclude about the dimensions of the eigenspaces?  What is the dimension of the matrix?  Do you have enough information to guarantee that there is a basis of \(\real^n\) consisting of eigenvectors?</p></li>
-<li><p>Find the eigenvalues of \(\left[\begin{array}{rr}
-0 \amp -1 \\
-4 \amp -4 \\
-\end{array}\right]\) and state their multiplicities.  Can you find a basis of \(\real^2\) consisting of eigenvectors of this matrix?</p></li>
-<li>
-<p>Consider the matrix \(A =
-\left[\begin{array}{rrr}
--1 \amp 0 \amp 2 \\
--2 \amp -2 \amp -4 \\
-0 \amp 0 \amp -2 \\
-\end{array}\right]\) whose characteristic equation is</p>
-<div class="displaymath">
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>If we let <span class="process-math">\(P_k\)</span> and <span class="process-math">\(Q_k\)</span> be the number of cars at locations <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> respectively, at the end of day <span class="process-math">\(k\text{,}\)</span> we then have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(-2-\lambda)^2(-1-\lambda) = 0\text{.}
+\begin{aligned}
+P_{k+1}\amp {}={} 0.8P_k + 0.6Q_k \\
+Q_{k+1}\amp {}={} 0.2P_k + 0.4Q_k\text{.} \\
+\end{aligned}
 \end{equation*}
 </div>
-<ol class="lower-roman">
-<li><p>Identify the eigenvalues and their multiplicities.</p></li>
-<li><p>For each eigenvalue \(\lambda\text{,}\) find a basis of the eigenspace \(E_\lambda\) and state its dimension.</p></li>
-<li><p>Is there a basis of \(\real^3\) consisting of eigenvectors of \(A\text{?}\)</p></li>
-</ol>
-</li>
-<li>
-<p>Now consider the matrix \(A =
-\left[\begin{array}{rrr}
--5 \amp -2 \amp -6 \\
--2 \amp -2 \amp -4 \\
-2 \amp 1 \amp 2 \\
-\end{array}\right]\) whose characteristic equation is also</p>
-<div class="displaymath">
+<p class="continuation">We can write the vector <span class="process-math">\(\xvec_k = \twovec{P_k}{Q_k}\)</span> to reflect the number of cars at the two locations at the end of day <span class="process-math">\(k\text{,}\)</span> which says that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-(-2-\lambda)^2(-1-\lambda) = 0\text{.}
+\xvec_{k+1} =
+\left[\begin{array}{rr}
+0.8 \amp 0.6 \\
+0.2 \amp 0.4 \\
+\end{array}\right]
+\xvec_k
 \end{equation*}
 </div>
-<ol class="lower-roman">
-<li><p>Identify the eigenvalues and their multiplicities.</p></li>
-<li><p>For each eigenvalue \(\lambda\text{,}\) find a basis of the eigenspace \(E_\lambda\) and state its dimension.</p></li>
-<li><p>Is there a basis of \(\real^3\) consisting of eigenvectors of \(A\text{?}\)</p></li>
-</ol>
-</li>
-<li>
-<p>Consider the matrix \(A = 
-\left[\begin{array}{rrr}
--5 \amp -2 \amp -6 \\
-4 \amp 1 \amp 8 \\
-2 \amp 1 \amp 2 \\
-\end{array}\right]\) whose characteristic equation is</p>
-<div class="displaymath">
-\begin{equation*}
-(-2-\lambda)(1-\lambda)(-1-\lambda) = 0\text{.}
-\end{equation*}
-</div>
-<ol class="lower-roman">
-<li><p>Identify the eigenvalues and their multiplicities.</p></li>
-<li><p>For each eigenvalue \(\lambda\text{,}\) find a basis of the eigenspace \(E_\lambda\) and state its dimension.</p></li>
-<li><p>Is there a basis of \(\real^3\) consisting of eigenvectors of \(A\text{?}\)</p></li>
-</ol>
-</li>
-</ol>
-<span class="incontext"><a href="sec-eigen-find.html#p-3735">in-context</a></span>
+<p class="continuation">or <span class="process-math">\(\xvec_{k+1} = A\xvec_k\)</span> where <span class="process-math">\(A=\left[\begin{array}{rr}0.8 \amp 0.6 \\ 0.2 \amp 0.4
+\end{array}\right]\text{.}\)</span></p>
+<span class="incontext"><a href="sec-eigen-intro.html#p-3735" class="internal">in-context</a></span>
 </body>
 </html>

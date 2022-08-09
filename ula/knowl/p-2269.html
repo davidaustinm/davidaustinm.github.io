@@ -1,95 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:03-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
 <ol class="lower-alpha">
-<li>
-<p>Performing the matrix multiplication, we find that</p>
-<div class="displaymath">
-\begin{equation*}
-L_1A = 
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
--2 \amp 1 \amp 0 \\
+<li><p><span class="process-math">\(\left[\begin{array}{rrr}
+1 \amp 0 \amp -1 \\
+0 \amp 1 \amp -2 \\
 0 \amp 0 \amp 1 \\
 \end{array}\right]
-\left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-2 \amp 0 \amp -2 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]
-=
-\left[\begin{array}{rrr}
-1 \amp 2 \amp 1 \\
-0 \amp -4 \amp -4 \\
--1 \amp 2 \amp -1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>The replacement operation is reversible;  that is, multiplying the first row by \(-2\) and adding it to the second row can be undone by multiplying the first row by \(2\) and adding it to the second row.  We then expect that \(L_1^{-1}
-= \left[\begin{array}{rrr}
+\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\left[\begin{array}{rrr}
+0 \amp -1 \amp 0 \\
 1 \amp 0 \amp 0 \\
-2 \amp 1 \amp 0 \\
 0 \amp 0 \amp 1 \\
 \end{array}\right]
-\text{,}\) which can be verified.</p></li>
-<li><p>We simply change the sign of the term that is not on the diagonal.</p></li>
-<li>
-<p>Continuing with the Gaussian elimination algorithm, we have</p>
-<div class="displaymath">
-\begin{equation*}
-L_2 = \left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
+\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\left[\begin{array}{rrr}
 1 \amp 0 \amp 1 \\
-\end{array}\right],
-L_3 = \left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 1 \amp 1 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>we then have \(L_3L_2L_1A = U\text{.}\)</p>
-</li>
-<li><p>Each of the matrices \(L_1\text{,}\) \(L_2\text{,}\) and \(L_3\) is invertible so their product will be as well.  In addition, \(L = (L_3L_2L_1)^{-1} = L_1^{-1}L_2^{-1}L_3^{-1}\) gives \(L=\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-2 \amp 1 \amp 0 \\
--1 \amp -1 \amp 1 \\
-\end{array}\right]\text{.}\)</p></li>
-<li><p>If we perform the matrix multiplications, we verify that multiplication performs the desired operation.</p></li>
-<li>
-<p>The matrices \(S\) and \(P\) are invertible because each operation can be undone.  For instance, the scaling operation can be undone by multiplying the second row by \(\frac13\text{.}\)  The interchange operation can be undone by repeating the same operation.  This shows that</p>
-<div class="displaymath">
-\begin{equation*}
-S^{-1}=
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp \frac13 \amp 0 \\
+0 \amp 1 \amp 2 \\
 0 \amp 0 \amp 1 \\
-\end{array}\right],
-P^{-1} = P =
-\left[\begin{array}{rrr}
+\end{array}\right]
+\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle \left[\begin{array}{rrr}
+0 \amp -1 \amp 3 \\
+1 \amp 0 \amp 3 \\
 0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \\
-1 \amp 0 \amp 0 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-</li>
+\end{array}\right].\)</span></p></li>
+<li><p>The point <span class="process-math">\((-10,5)\)</span> is rotated to <span class="process-math">\((-2,-9)\text{.}\)</span></p></li>
 </ol>
-<span class="incontext"><a href="sec-matrix-inverse.html#p-2269">in-context</a></span>
+<span class="incontext"><a href="sec-transforms-geom.html#p-2269" class="internal">in-context</a></span>
 </body>
 </html>

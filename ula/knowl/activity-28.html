@@ -1,125 +1,96 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:02-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:45-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.1.3</span>.</h6>
-<p>In this activity, we will begin with the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rr}
-1 \amp 2 \\
-1 \amp 3 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p>and construct its inverse \(A^{-1}\text{.}\) For the time being, let's denote the inverse by \(B\) so that \(B=A^{-1}\text{.}\)</p>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<p>This activity demonstrates a procedure for finding the inverse of a matrix <span class="process-math">\(A\text{.}\)</span></p>
 <ol class="lower-alpha">
 <li>
-<p>We know that \(AB = I\text{.}\)  If we write \(B = \left[\begin{array}{rr}\bvec_1\amp
-\bvec_2\end{array}\right]\text{,}\) then we have</p>
-<div class="displaymath">
+<p>Suppose that <span class="process-math">\(A = \begin{bmatrix}
+3 \amp -2 \\
+1 \amp -1 \\
+\end{bmatrix}
+\text{.}\)</span>  To find an inverse <span class="process-math">\(B\text{,}\)</span> we write its columns as <span class="process-math">\(B = \begin{bmatrix}\bvec_1 \amp \bvec_2
+\end{bmatrix}\)</span> and require that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-AB = \left[\begin{array}{rr}
+\begin{aligned}
+AB \amp = I \\
+\begin{bmatrix}
 A\bvec_1 \amp A\bvec_2
-\end{array}\right] =
-\left[\begin{array}{rr}
-\evec_1 \amp \evec_2
-\end{array}\right] = I\text{.}
-\end{equation*}
-</div>
-<p>This means that we need to solve the equations</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-A\bvec_1 \amp {}={} \evec_1 \\
-A\bvec_2 \amp {}={} \evec_2 \\
-\end{aligned}\text{.}
-\end{equation*}
-</div>
-<p>Using the Sage cell below, solve these equations for the columns of \(B\text{.}\) <div class="sagecell-sage" id="sage-73"><script type="text/x-sage">
-</script></div></p>
-</li>
-<li><p>What is the matrix \(B\text{?}\)  Check that \(AB = I\) and \(BA = I\text{.}\) <div class="sagecell-sage" id="sage-74"><script type="text/x-sage">
-</script></div></p></li>
-<li>
-<p>To find the columns of \(B\text{,}\) we solved two equations, \(A\bvec_1=\evec_1\) and \(A\bvec_2=\evec_2\text{.}\)  We could do this by augmenting \(A\) two separate times, forming matrices</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{aligned}
-\left[\begin{array}{r|r} A \amp \evec_1 \end{array}\right] \amp
-\\
-\left[\begin{array}{r|r} A \amp \evec_2 \end{array}\right] \amp
-\\
+\end{bmatrix}
+\amp = 
+\begin{bmatrix}
+1 \amp 0 \\
+0 \amp 1 \\
+\end{bmatrix}.
 \end{aligned}
 \end{equation*}
 </div>
-<p>and finding their reduced row echelon forms. But instead of solving these two equations separately, we could also solve them together by forming the augmented matrix \(\left[\begin{array}{r|rr} A \amp \evec_1 \amp \evec_2
-\end{array}\right]\) and finding the row reduced echelon form.  In other words, we augment \(A\) by the matrix \(I\) to form \(\left[\begin{array}{r|r}
-A \amp I \end{array}
-\right]
-\text{.}\)</p>
-<p>Form this augmented matrix and find its reduced row echelon form to find \(A^{-1}\text{.}\) <div class="sagecell-sage" id="sage-75"><script type="text/x-sage">
-</script></div></p>
-<p>Assuming \(A\) is invertible, we have shown that</p>
-<div class="displaymath">
+<p class="continuation">In other words, we can find the columns of <span class="process-math">\(B\)</span> by solving the equations</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left[\begin{array}{r|r}
-A \amp I
-\end{array}\right]
-\sim 
-\left[\begin{array}{r|r}
-I \amp A^{-1}
-\end{array}\right]\text{.}
+A\bvec_1 = \twovec10,~~~
+A\bvec_2 = \twovec01.
 \end{equation*}
 </div>
+<p class="continuation">Solve these equations to find <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\text{.}\)</span>  Then write the matrix <span class="process-math">\(B\)</span> and verify that <span class="process-math">\(AB=I\text{.}\)</span>  This is enough for us to conclude that <span class="process-math">\(B\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-76"><script type="text/x-sage">
+</script></pre></p>
 </li>
-<li>
-<p>If you have defined a matrix \(A\) in Sage, you can find it's inverse as <code class="code-inline tex2jax_ignore">A.inverse()</code>.  Use Sage to find the inverse of the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A = \left[\begin{array}{rrr}
-1 \amp -2 \amp -1 \\
--1 \amp 5 \amp 6 \\
-5 \amp -4 \amp 6 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p><div class="sagecell-sage" id="sage-76"><script type="text/x-sage">
-</script></div></p>
-</li>
-<li>
-<p>What happens when we try to find the inverse of the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rr}
--4 \amp 2 \\
+<li><p>Find the product <span class="process-math">\(BA\)</span> and explain why we now know that <span class="process-math">\(B\)</span> is invertible and <span class="process-math">\(B^{-1}=A\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-77"><script type="text/x-sage">
+</script></pre></p></li>
+<li><p>What happens when you try to find the inverse of <span class="process-math">\(C = \begin{bmatrix}
 -2 \amp 1 \\
-\end{array}\right]\text{?}
+4 \amp -2 \\
+\end{bmatrix}\text{?}\)</span></p></li>
+<li>
+<p>We now develop a condition that must be satisfied by an invertible matrix. Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\)</span> and suppose that <span class="process-math">\(\bvec\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector. Since <span class="process-math">\(AB=I\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A(B\bvec) = (AB)\bvec = I\bvec = \bvec.
 \end{equation*}
 </div>
+<p class="continuation">This says that the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent and that <span class="process-math">\(\xvec=B\bvec\)</span> is a solution.</p>
+<p>Since we know that <span class="process-math">\(A\xvec = \bvec\)</span> is consistent for any vector <span class="process-math">\(\bvec\text{,}\)</span> what does this say about the span of the columns of <span class="process-math">\(A\text{?}\)</span></p>
 </li>
-<li><p>Suppose that \(n\times n\) matrices \(C\) and \(D\) are both invertible.  What do you find when you simplify the product \((D^{-1}C^{-1})(CD)\text{?}\)  Explain why the product \(CD\) is invertible and \((CD)^{-1} =
-D^{-1}C^{-1}\text{.}\)</p></li>
-</ol></article><span class="incontext"><a href="sec-matrix-inverse.html#activity-28">in-context</a></span>
+<li><p>Since <span class="process-math">\(A\)</span> is a square matrix, what does this say about the pivot positions of <span class="process-math">\(A\text{?}\)</span> What is the reduced row echelon form of <span class="process-math">\(A\text{?}\)</span></p></li>
+<li>
+<p>In this activity, we have studied the matrices</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = \begin{bmatrix}
+3 \amp -2 \\
+1 \amp -1 \\
+\end{bmatrix},~~~
+C = \begin{bmatrix}
+-2 \amp 1 \\
+4 \amp -2 \\
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Find the reduced row echelon form of each and explain how those forms enable us to conclude that one matrix is invertible and the other is not.</p>
+</li>
+</ol></article><span class="incontext"><a href="sec-matrix-inverse.html#activity-28" class="internal">in-context</a></span>
 </body>
 </html>

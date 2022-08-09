@@ -1,91 +1,93 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:08-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:47-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">3.3.2</span>.</h6>
-<p>In this activity, we will explore the difference between these two coordinate systems.</p>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Edge detection.</span>
+</h4>
+<p>An important problem in the field of computer vision is to detect edges in a digital photograph, as is shown in <a href="" class="xref" data-knowl="./knowl/fig-edge-detection.html" title="Figure 3.2.12">Figure 3.2.12</a>.  Edge detection algorithms are useful when, say, we want a robot to locate an object in its field of view.  Graphic designers also use these algorithms to create artist effects.</p>
+<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/spring-canyon-cropped.jpg" class="contained"></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/spring-canyon-edges.jpg" class="contained"></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.12<span class="period">.</span></span><span class="space"> </span>A canyon wall in Capitol Reef National Park and the result of an edge detection algorithm.</figcaption></figure><p>We will consider a very simple version of an edge detection algorithm to give a sense of how this works.  Rather than considering a two-dimensional photograph, we will think about a one-dimensional row of pixels in a photograph.  The grayscale values of a pixel measure the brightness of a pixel;  a grayscale value of 0 corresponds to black, and a value of 255 corresponds to white.</p>
+<p>Suppose, for simplicity, that the grayscale values for a row of six pixels are represented by a vector <span class="process-math">\(\xvec\)</span> in <span class="process-math">\(\real^6\text{:}\)</span></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec = \left[\begin{array}{r}
+25 \\ 34 \\ 30 \\ 45 \\ 190 \\ 200
+\end{array}\right]\text{.}
+\end{equation*}
+</div></div>
+<div class="sbspanel top" style="width:50%;"><img src="external/images/edges-grayscale.svg" role="img" class="contained"></div>
+</div></div>
+<p>We can easily see that there is a jump in brightness between pixels 4 and 5, but how can we detect it computationally?  We will introduce a new basis <span class="process-math">\(\bcal\)</span> for <span class="process-math">\(\real^6\)</span> with vectors:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vvec_1=\left[\begin{array}{r} 1 \\ 0 \\ 0 \\ 0 \\ 0
+\\ 0 \end{array}\right],
+\vvec_2=\left[\begin{array}{r} 1 \\ 1 \\ 0 \\ 0 \\ 0
+\\ 0 \end{array}\right],
+\vvec_3=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 0 \\ 0
+\\ 0 \end{array}\right],
+\vvec_4=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 1 \\ 0
+\\ 0 \end{array}\right],
+\vvec_5=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 1 \\ 1
+\\ 0 \end{array}\right],
+\vvec_6=\left[\begin{array}{r} 1 \\ 1 \\ 1 \\ 1 \\ 1
+\\ 1 \end{array}\right]\text{.}
+\end{equation*}
+</div>
 <ol class="lower-alpha">
+<li><p>Construct the matrix <span class="process-math">\(P_\bcal\)</span> that relates the standard coordinate system with the coordinates in the basis <span class="process-math">\(\bcal\text{.}\)</span></p></li>
+<li><p>Determine the matrix <span class="process-math">\(P_\bcal^{-1}\)</span> that converts the representation of <span class="process-math">\(\xvec\)</span> in standard coordinates into the coordinate system defined by <span class="process-math">\(\bcal\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-87"><script type="text/x-sage">
+</script></pre></p></li>
 <li>
-<p>First, we will explore the \(RGB\) color model.</p>
-<p>COLOR-RGB</p>
-<ol class="lower-roman">
-<li><p>What happens when \(G=0\text{,}\) \(B=0\) (pushed all the way to the left), and \(R\) is allowed to vary?</p></li>
-<li><p>What happens when \(R=0\text{,}\) \(G=0\text{,}\) and \(B\) is allowed to vary?</p></li>
-<li><p>How can you create black in this color model?</p></li>
-<li><p>How can you create white?</p></li>
-</ol>
+<p>Suppose the vectors are expressed in general terms as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec = \left[\begin{array}{r}
+x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \end{array}\right],~~~
+\coords{\xvec}{\bcal} = \left[\begin{array}{r}
+c_1 \\ c_2 \\ c_3 \\ c_4 \\ c_5 \\ c_6 \end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using the relationship <span class="process-math">\(\coords{\xvec}{\bcal} =
+P_{\bcal}^{-1}\xvec\text{,}\)</span> determine an expression for the coefficient <span class="process-math">\(c_2\)</span> in terms of <span class="process-math">\(x_1,x_2,\ldots,x_6\text{.}\)</span> What does <span class="process-math">\(c_2\)</span> measure in terms of the grayscale values of the pixels?  What does <span class="process-math">\(c_4\)</span> measure in terms of the grayscale values of the pixels?</p>
 </li>
 <li>
-<p>Next, we will explore the \(YC_bC_r\) color model.</p>
-<p>COLOR-YCbCr</p>
-<ol class="lower-roman">
-<li><p>What happens when \(C_b=0\) and \(C_r=0\) (kept in the center) and \(Y\) is allowed to vary?</p></li>
-<li><p>What happens when \(Y=0\) (pushed to the left), \(C_r=0\) (kept in the center), and \(C_b\) is allowed to increase between 0 and 127.5?</p></li>
-<li><p>What happens when \(Y=0\text{,}\) \(C_b=0\text{,}\) and \(C_r\) is allowed to increase between 0 and 127.5?</p></li>
-<li><p>How can you create black in this color model?</p></li>
-<li><p>How can you create white?</p></li>
-</ol>
+<p>Now for the specific vector</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\xvec = \left[\begin{array}{r}
+25 \\ 34 \\ 30 \\ 45 \\ 190 \\ 200
+\end{array}\right]\text{,}
+\end{equation*}
+</div>
+<p class="continuation">determine the representation of <span class="process-math">\(\xvec\)</span> in the <span class="process-math">\(\bcal\)</span>-coordinate system.</p>
 </li>
-<li><p>Verify that \(\bcal\) is a basis for \(\real^3\text{.}\) <div class="sagecell-sage" id="sage-86"><script type="text/x-sage">
-</script></div></p></li>
-<li><p>Find the matrix \(C_{\bcal}\) that converts from \(\threevec{Y}{C_b}{C_r}\) coordinates into \(\threevec{R}{G}{B}\) coordinates.  Then find the matrix \(C_{\bcal}^{-1}\) that converts from \(\threevec{R}{G}{B}\) coordinates back into \(\threevec{Y}{C_b}{C_r}\) coordinates.</p></li>
-<li>
-<p>Find the \(\threevec{Y}{C_b}{C_r}\) coordinates for the following colors and check, using the diagrams above, that the two representations agree.</p>
-<ol class="lower-roman">
-<li><p>Pure red is \(\threevec{R}{G}{B}=
-\threevec{255}{0}{0}\text{.}\)</p></li>
-<li><p>Pure green is \(\threevec{R}{G}{B}=
-\threevec{0}{255}{0}\text{.}\)</p></li>
-<li><p>Pure blue is \(\threevec{R}{G}{B}=
-\threevec{0}{0}{255}\text{.}\)</p></li>
-<li><p>Pure white is \(\threevec{R}{G}{B}=
-\threevec{255}{255}{255}\text{.}\)</p></li>
-<li><p>Pure black is \(\threevec{R}{G}{B}=
-\threevec{0}{0}{0}\text{.}\)</p></li>
+<li><p>Explain how the coefficients in <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> determine the location of the jump in brightness in the grayscale values represented by the vector <span class="process-math">\(\xvec\text{.}\)</span></p></li>
 </ol>
-</li>
-<li>
-<p>Find the \(\threevec{R}{G}{B}\) coordinates for the following colors and check, using the diagrams above, that the two representations agree.</p>
-<ol class="lower-roman">
-<li><p>\(\threevec{Y}{C_b}{C_r}=\threevec{128}{0}{0}\text{.}\)</p></li>
-<li><p>\(\threevec{Y}{C_b}{C_r}=\threevec{128}{60}{0}\text{.}\)</p></li>
-<li><p>\(\threevec{Y}{C_b}{C_r}=\threevec{128}{0}{60}\text{.}\)</p></li>
-</ol>
-</li>
-<li>
-<p>Write an expression for</p>
-<ol class="lower-roman">
-<li><p>The luminance \(Y\) as it depends on \(R\text{,}\) \(G\text{,}\) and \(B\text{.}\)</p></li>
-<li><p>The blue chrominance \(C_b\) as it depends on \(R\text{,}\) \(G\text{,}\) and \(B\text{.}\)</p></li>
-<li><p>The red chrominance \(C_r\) as it depends on \(R\text{,}\) \(G\text{,}\) and \(B\text{.}\)</p></li>
-</ol>
-<p>Explain how these quantities can be roughly interpreted by stating that</p>
-<ol class="lower-roman">
-<li><p>the luminance represents the brightness of the color.</p></li>
-<li><p>the blue chrominance measures the amount of blue in the color.</p></li>
-<li><p>the red chrominance measures the amount of red in the color.</p></li>
-</ol>
-</li>
-</ol></article><span class="incontext"><a href="sec-jpeg.html#activity-33">in-context</a></span>
+<p>Readers who are familiar with calculus may recognize that this change of basis converts a vector <span class="process-math">\(\xvec\)</span> into <span class="process-math">\(\coords{\xvec}{\bcal}\text{,}\)</span> the set of changes in <span class="process-math">\(\xvec\text{.}\)</span>  This process is similar to differentiation in calculus.  Similarly, the process of converting <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> into the vector <span class="process-math">\(\xvec\)</span> adds together the changes in a process similar to integration.  As a result, this change of basis represents a linear algebraic version of the Fundamental Theorem of Calculus.</p></article><span class="incontext"><a href="sec-bases.html#activity-33" class="internal">in-context</a></span>
 </body>
 </html>

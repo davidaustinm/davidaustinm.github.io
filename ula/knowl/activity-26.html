@@ -1,99 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:00-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="project-like"><h6 class="heading">
-<span class="type">Activity</span> <span class="codenumber">2.6.4</span>.</h6>
-<p>In this activity, we will use homogeneous coordinates and matrix transformations to move our character into a variety of poses.</p>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
+</h4>
+<p>In this activity, we seek to describe various matrix transformations by finding the matrix that gives the desired transformation.  All of the transformations that we study here have the form <span class="process-math">\(T:\real^2\to\real^2\text{.}\)</span></p>
 <ol class="lower-alpha">
+<li><p>Find the matrix of the transformation that has no effect on vectors;  that is, <span class="process-math">\(T(\xvec) = \xvec\text{.}\)</span></p></li>
+<li><p>Find the matrix of the transformation that reflects vectors in <span class="process-math">\(\real^2\)</span> across the line <span class="process-math">\(y=x\text{.}\)</span></p></li>
+<li><p>What is the result of composing the reflection you found in the previous part with itself;  that is, what is the effect of reflecting across the line <span class="process-math">\(y=x\)</span> and then reflecting across this line again?  Provide a geometric explanation for your result as well as an algebraic one obtained by multiplying matrices.</p></li>
+<li><p>Find the matrix that rotates vectors counterclockwise in the plane by <span class="process-math">\(90^\circ\text{.}\)</span></p></li>
+<li><p>Compare the result of rotating by <span class="process-math">\(90^\circ\)</span> and then reflecting in the line <span class="process-math">\(y=x\)</span> to the result of first reflecting in <span class="process-math">\(y=x\)</span> and then rotating <span class="process-math">\(90^\circ\text{.}\)</span></p></li>
+<li><p>Find the matrix that results from composing a <span class="process-math">\(90^\circ\)</span> rotation with itself four times; that is, if <span class="process-math">\(T\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{,}\)</span> find the matrix for <span class="process-math">\(T\circ T\circ T \circ
+T\text{.}\)</span>  Explain why your result makes sense geometrically.</p></li>
 <li>
-<p>Since we regard our character as living in \(\real^3\text{,}\) we will consider matrix transformations defined by matrices</p>
-<div class="displaymath">
+<p>Explain why the matrix that rotates vectors counterclockwise by an angle <span class="process-math">\(\theta\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\left[\begin{array}{rrr}
-a \amp b \amp c \\
-d \amp e \amp f \\
-0 \amp 0 \amp 1 \\
+\left[\begin{array}{rr}
+\cos\theta \amp -\sin\theta \\
+\sin\theta \amp \cos\theta \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<p>Verify that such a matrix transformation transforms points in the plane \(z=1\) into other points in this plane; that is, verify that</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rrr}
-a \amp b \amp c \\
-d \amp e \amp f \\
-0 \amp 0 \amp 1 \\
-\end{array}\right]
-\threevec{x}{y}{1} = \threevec{x'}{y'}{1}\text{.}
-\end{equation*}
-</div>
-<p>Express the coordinates of the resulting point \(x'\) and \(y'\) in terms of the coordinates of the original point \(x\) and \(y\text{.}\)</p>
-<p>ANIMATE</p>
 </li>
-<li>
-<p>Find the matrix transformation that translates our character to a new position in the plane, as shown in <a data-knowl="./knowl/fig-animate-translate-2.html" title="Figure 2.6.13">Figure 2.6.13</a></p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-translate.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.13.</span> Translating to a new position.</figcaption></figure>
-</li>
-<li>
-<p>As originally drawn, our character is waving with one of their hands. In one of the movie's scenes, we would like her to wave with their other hand, as shown in <a data-knowl="./knowl/fig-animate-reflect.html" title="Figure 2.6.14">Figure 2.6.14</a>. Find the matrix transformation that moves them into this pose.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-reflect.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.14.</span> Waving with the other hand.</figcaption></figure>
-</li>
-<li>
-<p>Later, our chracter performs a cartwheel by moving through the sequence of poses shown in <a data-knowl="./knowl/fig-animate-rotate.html" title="Figure 2.6.15">Figure 2.6.15</a>. Find the matrix transformations that create these poses.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-a.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-b.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-c.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-rotate-d.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.15.</span> Performing a cartwheel.</figcaption></figure>
-</li>
-<li>
-<p>Next, we would like to find the transformations that zoom in on our character's face, as shown in <a data-knowl="./knowl/fig-animate-closeup.html" title="Figure 2.6.16">Figure 2.6.16</a>. To do this, you should think about composing matrix transformations.  This can be accomplished in the diagram by using the <em class="emphasis">Compose</em> button, which makes the current pose, displayed on the right, the new beginning pose, displayed on the left.  What is the matrix transformation that moves the character from the original pose, shown in the upper left, to the final pose, shown in the lower right?</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-closeup-a.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-closeup-b.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-closeup-c.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.16.</span> Zooming in on our characters' face.</figcaption></figure>
-</li>
-<li>
-<p>We would also like to create our character's shadow, shown in the sequence of poses in <a data-knowl="./knowl/fig-animate-shadow.html" title="Figure 2.6.17">Figure 2.6.17</a>. Find the sequence of matrix transformations that achieves this.  In particular, find the matrix transformation that take our character from their original pose to their shadow in the lower right.</p>
-<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-char.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-shadow-a.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-shadow-b.svg" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/animate-shadow-c.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.6.17.</span> Casting a shadow.</figcaption></figure>
-</li>
-<li><p>Write a final scene to the movie and describe how to construct a sequence of matrix transformations that create your scene.</p></li>
-</ol></article><span class="incontext"><a href="sec-transforms-geom.html#activity-26">in-context</a></span>
+</ol></article><span class="incontext"><a href="sec-transforms-geom.html#activity-26" class="internal">in-context</a></span>
 </body>
 </html>

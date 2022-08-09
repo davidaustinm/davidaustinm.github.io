@@ -1,150 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:46-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:57:15-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">5.1.4.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.5.5.4.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li>
-<p>Sage gives us the matrices</p>
-<div class="displaymath">
-\begin{equation*}
-P=\left[\begin{array}{rrr}
-0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \\
-1 \amp 0 \amp 0
-\end{array}\right],
-L=\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
--\frac{2}{3} \amp 1 \amp 0 \\
-\frac{1}{3} \amp -\frac{1}{5} \amp 1
-\end{array}\right],
-U=\left[\begin{array}{rrr}
-3 \amp 7 \amp 4 \\
-0 \amp \frac{5}{3} \amp \frac{2}{3} \\
-0 \amp 0 \amp -\frac{1}{5}
-\end{array}\right]
-\end{equation*}
-</div>
-</li>
-<li><p>We find \(P\bvec=\threevec{12}{-7}4\text{.}\)</p></li>
-<li><p>Solving \(L\cvec=P\bvec\text{,}\) we have \(\cvec=\threevec{12}{1}{\frac15}\text{.}\)  Finally, solving \(U\xvec=\cvec\text{,}\) we obtain \(\xvec=\threevec31{-1}\text{.}\)</p></li>
-<li>
-<p>We find</p>
-<div class="displaymath">
-\begin{equation*}
-P\bvec=\threevec{35}{-17}{11},
-\cvec=\threevec{35}{\frac{19}3}{\frac35},
-\xvec=\threevec{4}{5}{-3}\text{.}
-\end{equation*}
-</div>
-</li>
-<li><p>Because \(P\text{,}\) \(L\text{,}\) and \(U\) are invertible, it follows that \(\det A = (\det 
-L \det U)/\det P\neq 0\text{,}\) which means that \(A\) is invertible.</p></li>
-<li>
-<p>Sage tells us that</p>
-<div class="displaymath">
-\begin{equation*}
-P = \left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0
-\end{array}\right],
-L = 
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
-\frac{2}{3} \amp 1 \amp 0 \\
-\frac{2}{3} \amp -\frac{1}{5} \amp 1
-\end{array}\right],
-U= 
-\left[\begin{array}{rrr}
-3 \amp -1 \amp 2 \\
-0 \amp \frac{5}{3} \amp \frac{5}{3} \\
-0 \amp 0 \amp 0
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>Because \(U\) is not invertible, we see that \(\det A =
-(\det L\det U)/\det P = 0\) so \(A\) is not invertible.</p>
-</li>
-<li>
-<p>We have</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{c}
-P=
-\left[\begin{array}{rrr}
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-1 \amp 0 \amp 0
-\end{array}\right],
-L=
-\left[\begin{array}{rrr}
-1 \amp 0 \amp 0 \\
--\frac{2}{3} \amp 1 \amp 0 \\
-\frac{1}{3} \amp -\frac{5}{7} \amp 1
-\end{array}\right], \\
-U= \left[\begin{array}{rrrr}
-3 \amp 2 \amp -1 \amp 0 \\
-0 \amp \frac{7}{3} \amp \frac{4}{3} \amp -1 \\
-0 \amp 0 \amp \frac{9}{7} \amp \frac{9}{7}
-\end{array}\right]\text{.}
-\end{array}
-\end{equation*}
-</div>
-<p>We may rewrite \(PA=LU\) as \(A=PLU\) so if \(A\xvec=PLU\xvec=\zerovec\text{,}\) then \(U\xvec=\zerovec\) because \(P\) and \(L\) are invertible.</p>
-<p>Notice that \(U\) is upper triangular, which means that it is easy to find its reduced row echelon form:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{rcl}
-U=
-\left[\begin{array}{rrrr}
-3 \amp 2 \amp -1 \amp 0 \\
-0 \amp \frac{7}{3} \amp \frac{4}{3} \amp -1 \\
-0 \amp 0 \amp \frac{9}{7} \amp \frac{9}{7}
-\end{array}\right]
-\amp
-\sim
-\amp
-\left[\begin{array}{rrrr}
-3 \amp 2 \amp -1 \amp 0 \\
-0 \amp 7 \amp 4 \amp -3 \\
-0 \amp 0 \amp 1 \amp 1
-\end{array}\right] \\
-\amp
-\sim
-\amp
-\left[\begin{array}{rrrr}
-3 \amp 2 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \amp -1 \\
-0 \amp 0 \amp 1 \amp 1
-\end{array}\right] \\
-\amp
-\sim
-\amp
-\left[\begin{array}{rrrr}
-1 \amp 0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \amp -1 \\
-0 \amp 0 \amp 1 \amp 1
-\end{array}\right]\text{.} \\
-\end{array}
-\end{equation*}
-</div>
-<p>This shows that a basis for \(\nul(A)=\nul(U)\) is \(\fourvec{-1}1{-1}1\text{.}\)</p>
-</li>
+<li><p>The eigenvalues are <span class="process-math">\(\lambda_1=1\text{,}\)</span> <span class="process-math">\(\lambda_2=0.8\text{,}\)</span> and <span class="process-math">\(\lambda_3=0.4\)</span> with associated eigenvectors <span class="process-math">\(\vvec_1=\threevec100\text{,}\)</span> <span class="process-math">\(\vvec_2=\threevec{-2}11\text{,}\)</span> and <span class="process-math">\(\vvec_3=\threevec01{-1}\text{.}\)</span></p></li>
+<li><p>The conditions of the Perron-Frobenius theorem do not apply because the matrix is not positive.  The first column of any power of <span class="process-math">\(A\)</span> will be <span class="process-math">\(\threevec100\text{.}\)</span></p></li>
+<li><p>Since <span class="process-math">\(\lambda_1=1\)</span> has multiplicity <span class="process-math">\(1\text{,}\)</span> we know that <span class="process-math">\(E_1\)</span> is one-dimensional.  There is, therefore, a unique steady-state vector <span class="process-math">\(\qvec=\threevec100\text{.}\)</span></p></li>
+<li><p>Any Markov chain will converge to <span class="process-math">\(\qvec\)</span> because the eigenvalues <span class="process-math">\(\lambda_2\)</span> and <span class="process-math">\(\lambda_2\)</span> are less than <span class="process-math">\(1\text{.}\)</span></p></li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-gaussian-revisited.html#solution-251">in-context</a></span>
+<span class="incontext"><a href="sec-stochastic.html#solution-251" class="internal">in-context</a></span>
 </body>
 </html>

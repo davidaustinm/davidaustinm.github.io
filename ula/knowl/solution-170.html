@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:11:17-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:53-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<div class="solution">
-<h6 class="heading">
-<span class="type">Solution</span> <span class="codenumber">3.5.5.6.1</span>.</h6>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.4.5.13.1</span><span class="period">.</span>
+</h4>
 <ol class="lower-alpha">
-<li><p>No.  There are more columns than rows so there must be at least one column without a pivot position.</p></li>
-<li><p>Remember that we have \(\dim~\col(A) + \dim~\nul(A) =
-4\text{.}\)  Therefore, we have \(\dim~\col(A) = 3\) in this case, which implies that \(\col(A) = \real^3\text{.}\)</p></li>
-<li><p>Here, \(\dim~\col(A) = 2\) so \(\col(A)\) is a plane in \(\real^3\text{.}\)</p></li>
-<li><p>Here, \(\dim~\col(A) = 1\) so \(\col(A)\) is a line in \(\real^3\text{.}\)</p></li>
-<li><p>Here, \(\dim~\col(A) = 0\) so \(\col(A)=\{\zerovec\}\text{.}\)</p></li>
+<li>
+<p>If <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are not distinct, we see that <span class="process-math">\(\det(V)=0\)</span> because two of the rows are identical. Therefore, we apply the following row operations, assuming <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are distinct:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{rl}
+V = \amp
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+1 \amp b \amp b^2 \\
+1 \amp c \amp c^2 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+0 \amp b-a \amp b^2-a^2 \\
+0 \amp c-a \amp c^2-a^2 \\
+\end{array}\right] \\
+\sim \amp
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+0 \amp 1 \amp b+a \\
+0 \amp 1 \amp c+a \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp a \amp a^2 \\
+0 \amp 1 \amp b+a \\
+0 \amp 0 \amp c-b \\
+\end{array}\right]\text{.}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">Because of the scalings by <span class="process-math">\(b-a\)</span> and <span class="process-math">\(c-a\text{,}\)</span> we have <span class="process-math">\(\det(V) = (b-a)(c-a)(c-b)\text{.}\)</span></p>
+</li>
+<li><p>If <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> are distinct, then <span class="process-math">\(\det(V) \neq 0\text{,}\)</span> which implies that <span class="process-math">\(V\)</span> is invertible.</p></li>
+<li>
+<p>In the <span class="process-math">\(4\times4\)</span> case, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\det\left[\begin{array}{rrrr}
+1 \amp a \amp a^2 \amp a^3 \\
+1 \amp b \amp b^2 \amp b^3 \\
+1 \amp c \amp c^2 \amp c^3 \\
+1 \amp d \amp d^2 \amp d^3 \\
+\end{array}\right]
+= (d-a)(d-b)(d-c)(c-a)(c-b)(b-a)\text{.}
+\end{equation*}
+</div>
+</li>
 </ol>
 </div>
-<span class="incontext"><a href="sec-subspaces.html#solution-170">in-context</a></span>
+<span class="incontext"><a href="sec-determinants.html#solution-170" class="internal">in-context</a></span>
 </body>
 </html>

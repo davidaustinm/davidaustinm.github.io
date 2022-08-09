@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-26T11:10:57-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-08T13:56:41-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution"><ol class="lower-alpha">
-<li>
-<p>We construct the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{rrr}
-2 \amp 4 \amp 0 \\
-0 \amp -2 \amp 2 \\
-1 \amp -1 \amp k \\
-\end{array}\right]
-\sim
-\left[\begin{array}{rrr}
-1 \amp 2 \amp 0 \\
-0 \amp 1 \amp -1 \\
-0 \amp 0 \amp k-3 \\
-\end{array}\right]\text{.}
-\end{equation*}
-</div>
-<p>If the vectors are linearly dependent, we cannot have a pivot position in the third column.  This means that \(k=3\text{.}\)</p>
-</li>
-<li><p>If the vectors span \(\real^3\text{,}\) there must be a pivot in the third row, which means that \(k\neq 3\text{.}\)</p></li>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>False.  We only know that one vector can be written as a linear combination of the others.</p></li>
+<li><p>True.  If we put the vectors into a matrix, there are more columns than rows.  Therefore, there must be a column without a pivot position so the vectors form a linearly dependent set.</p></li>
+<li><p>False.  They could form a linearly independent set, but we cannot guarantee it.  We would have to look at the location of the pivot positions in the associated <span class="process-math">\(10\times5\)</span> matrix.</p></li>
+<li><p>True.  In this case, <span class="process-math">\(\vvec_2\)</span> can be written as a linear combination of the other vectors so the set is linearly dependent.</p></li>
+<li><p>True.  Since the vectors are linearly independent, <span class="process-math">\(A\)</span> has a pivot position in every column.  Therefore, there is not a free variable in the description of the solution space to the equation <span class="process-math">\(A\xvec=\bvec\text{.}\)</span> Therefore, the solution is unique.</p></li>
 </ol></div></body>
 </html>
