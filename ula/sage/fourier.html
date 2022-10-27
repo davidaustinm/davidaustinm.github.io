@@ -49,8 +49,15 @@ x = luminance.column(0)
 def double_fourier(A):
     return N( (P.inverse()* (P.inverse()*A).T).T, digits=3)
 def round(A, scale):
-    A = matrix(RDF, A)
-    return scale*(1/scale*A).round(0)
+    entries = []
+    for r in range(8):
+        for c in range(8):
+            e = round(A[r][c])
+            if abs(e) < scale:
+                 e = 0
+            entries.append(e)
+    return matrix(8, 8, entries)
+			
 def double_inverse_fourier(A):
     return N( P * (P*A.T).T, digits=3)
 print("Finished!")
