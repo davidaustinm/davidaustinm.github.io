@@ -22,6 +22,13 @@ var ycbcr2rgb = function(y,cb,cr) {
     return [rs,gs,bs];
 }
 
+var ycbcr2rgb = function(y,cb,cr) {
+    var rs = y + 1.402*cr;
+    var gs = y - 0.34413*cb - 0.71444*cr;
+    var bs = y + 1.772*cb;
+    return [rs,gs,bs];
+}
+
 var ycbcrsliders = new Canvas("ycbcr", [0,0,1.5,3]);
 
 ycbcrsliders.margins = [20,5,10,5];
