@@ -38,10 +38,9 @@
     <p>
       There is also a command
       <pre>
-	modified_google_matrix(G, alpha)
+	modified_google_matrix(G)
       </pre>
-      that returns the modified Google matrix G' with a tuning
-      parameter <code>alpha</code>.
+      that returns the modified Google matrix G'.
     </p>
 
     <div class="mycell">
@@ -57,7 +56,8 @@ def markov(A, x0, n):
         x0 = A*x0
         print(N(x0, digits=4))
 
-def modified_google_matrix(G, alpha):
+def modified_google_matrix(G):
+    alpha = 0.85
     n = G.nrows()
     constant = 1/n*matrix(n, n, [1]*(n*n))
     return alpha*G + (1-alpha)*constant
