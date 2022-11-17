@@ -52,10 +52,10 @@
 
     <div class="compute">
       <script type="text/x-sage">
-def markov(A, x0, N):
-    for i in range(N):
+def markov(A, x0, n):
+    for i in range(n):
         x0 = A*x0
-        print(x0)
+        print(N(x0, digits=4))
 
 def modified_google_matrix(G, alpha):
     n = G.nrows()
