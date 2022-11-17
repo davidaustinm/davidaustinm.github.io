@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SageMathCell</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+    evalButtonText: 'Activate',
+    });
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute', linked:true,
+    evalButtonText: 'Evaluate'});
+    </script>
+  </head>
+  <body>
+    <h1>Sage Cells and Google PageRank</h1>
+
+    <p>
+      The first sage cell on this page will load in some commands that
+      will be useful for studying Google's PageRank algorithm.
+    </p>
+
+    <p>
+      Evaluate the first cell, and you will have a
+      command
+      <pre>
+	markov(A, x0, N)
+      </pre>
+      If $A$ is a stochastic matrix and ${\mathbf x}_0$ an initial
+      state vector, then this command will print the resulting state
+      vectors ${\mathbf x}_1, {\mathbf x}_2, \ldots, {\mathbf x}_N$.
+    </p>
+
+    <p>
+      There is also a command
+      <pre>
+	modified_google_matrix(G, alpha)
+      </pre>
+      that returns the modified Google matrix G' with a tuning
+      parameter <code>alpha</code>.
+    </p>
+
+    <div class="mycell">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+def markov(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print(x0)
+
+def modified_google_matrix(G, alpha):
+    n = G.nrows()
+    constant = 1/n*matrix(n, n, [1]*(n*n))
+    return alpha*G + (1-alpha)*constant
+      </script>
+    </div> 
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+  </body>
+</html>
