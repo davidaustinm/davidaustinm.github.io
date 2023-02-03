@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Probability Density Functions </title>
+    <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+  </head>
+
+  <body>
+    <center>
+      <h2> Probability Density Functions </h2>
+
+      <table width=500>
+	<tr>
+	  <td>
+	    <p>
+	      There are two histograms on this page representing the same
+	      dataset in two different ways.  At the top, the height of each
+	      bar represents the number of data points in that bin.
+	    </p>
+	  </td>
+	</tr>
+
+	<tr>
+	  <td width=400 align=center>
+	    <canvas id="slider-counts" width="350" height="50">
+	    </canvas>
+	  </td>
+	</tr>					      
+	<tr>
+	  <td width=400 align=center>
+            <canvas id="pdf-counts" width="400" height="320">
+	      Your browser does not support HTML5 Canvas.
+            </canvas>
+	  </td>
+	</tr>
+        <script type='text/javascript' src='../jslibrary/figures.js'></script>
+        <script type='text/javascript' src='data.js'></script>
+        <script type='text/javascript' src='pdf.js'></script>
+
+	<tr>
+	  <td>
+	    <hr />
+	  </td>
+	</tr>
+
+	<tr>
+	  <td>
+	    <p>
+	      In the second diagram, the height is chosen so that
+	      the <em> area </em> of the bar represents the fraction
+	      of data in that bin.  For instance, if 10% of the data
+	      is contained in one bin, then the area of the bar above
+	      that bin will be 0.10.
+	    </p>
+	  </td>
+	</tr>
+	    
+	<tr>
+	  <td width=400 align=center>
+	    <canvas id="slider" width="350" height="50">
+	    </canvas>
+	  </td>
+	</tr>					      
+	<tr>
+	  <td width=400 align=center>
+            <canvas id="pdf" width="400" height="320">
+	      Your browser does not support HTML5 Canvas.
+            </canvas>
+	  </td>
+	</tr>
+        <script type='text/javascript' src='../../library/figures.js'></script>
+        <script type='text/javascript' src='data.js'></script>
+        <script type='text/javascript' src='pdf.js'></script>
+	</td></tr>
+      </table>
+</center>
+
+
+  </body>
+</html>
