@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SageMathCell</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+    evalButtonText: 'Activate',
+    });
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute', linked:true,
+    evalButtonText: 'Evaluate'});
+    </script>
+  </head>
+  <body>
+    <h1>Sage Cells and Markov chains</h1>
+
+    <p>
+      Here's a page with several Sage cells, including a command to
+      create Markov chains.  Sage code entered into a
+      cell can be evaluated by pressing the <b>Evaluate</b> button or
+      by holding the control key and pressing the <b>Enter</b> key.
+      Results that are obtained in one cell will be available in
+      another until the page is reloaded.
+    </p>
+
+    <p>
+      Evaluate the first cell, and you will have a
+      command
+      <pre>
+	markov(A, x0, N)
+      </pre>
+      If $A$ is a stochastic matrix and ${\mathbf x}_0$ an initial
+      state vector, then this command will print the resulting state
+      vectors ${\mathbf x}_1, {\mathbf x}_2, \ldots, {\mathbf x}_N$.
+    </p>
+
+    <div class="mycell">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+import numpy as np
+import pandas as pd
+
+def projection(b, basis):
+    if len(basis) == 0: return vector([0] * len(b))
+    return sum([ (b*v)/(v*v)*v for v in basis ])
+
+def unit(v):
+    return 1/v.norm() * v
+
+def gs(basis):
+    onbasis = []
+    for b in basis:
+        onbasis.append(unit(b - projection(b, onbasis)))
+    return onbasis
+
+def QR(A):
+    Q = matrix(gs(A.columns())).T
+    return Q, Q.T*A
+
+def onesvec(n):
+    return vector([1] * n)
+
+def demean(v):
+    return vector(v - np.mean(v.coefficients())*onesvec(len(v)))
+
+def vandermonde(data, k):
+    rows = [[datum**j for j in range(k+1)] for datum in data]
+    return matrix(rows)
+
+def plot_model(xhat, data, domain = None):
+    xmax = data[0][0]
+    xmin = data[0][1]
+    k = len(xhat)-1
+    for d in data:
+        if d[0] > xmax: xmax = d[0]
+        if d[0] < xmin: xmin = d[0]
+    if domain == None: domain = (xmin, xmax)
+    return list_plot(data, size=40, color='blue') + plot(xhat*vector([x**j for j in range(k+1)]), (x, domain[0], domain[1]), color='red') 
+    
+
+      </script>
+    </div> 
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+  </body>
+</html>
