@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sage and PCA</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+    evalButtonText: 'Activate',
+    });
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute', linked:true,
+    evalButtonText: 'Evaluate'});
+    </script>
+  </head>
+  <body>
+    <h1>Sage Cells and Principal Component Analysis </h1>
+
+    <p>
+      Here are some Sage cells to help apply principal component
+      analysis on the dietary habits of residents of the United
+      Kingdom.  Be sure to evaluate the first cell to define a
+      matrix <code>diets</code> and a function <code>demean(A)</code>, which will
+      return the demeaned matrix.
+    </p>
+
+    <div class="mycell">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+diets = matrix([
+[375, 135, 458, 475],
+[57, 47, 53, 73],
+[245, 267, 242, 227],
+[1472, 1494, 1462, 1582],
+[105, 66, 103, 103],
+[54, 41, 62, 64],
+[193, 209, 184, 235],
+[147, 93, 122, 160], 
+[1102, 674, 957, 1137],
+[720, 1033, 566, 874],
+[253, 143, 171, 265],
+[685, 586, 750, 803],
+[488, 355, 418, 570],
+[198, 187, 220, 203],
+[360, 334, 337, 365],
+[1374, 1506, 1572, 1256],
+[156, 139, 147, 175]])
+
+def demean(A):
+    mean = 1/A.ncols() * A * vector([1] * A.ncols())
+    return matrix([c - mean for c in A.columns()]).T
+      </script>
+    </div> 
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+  </body>
+</html>
