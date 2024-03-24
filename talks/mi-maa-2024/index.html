@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2023-12-29T15:32:32-05:00       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Accessible mathematical diagrams</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,
+			       maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.0/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.0/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.0/theme/simple.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.0/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.0/plugin/math/math.js"></script>
+-->
+<script>
+function resetSlideScrolling(slide) {
+    $(slide).removeClass('scrollable-slide');
+}
+
+function handleSlideScrolling(slide) {
+    if ($(slide).height() >= 800) {
+        $(slide).addClass('scrollable-slide');
+    }
+}
+
+Reveal.addEventListener('ready', function (event) {
+    handleSlideScrolling(event.currentSlide);
+});
+
+Reveal.addEventListener('slidechanged', function (event) {
+    resetSlideScrolling(event.previousSlide)
+    handleSlideScrolling(event.currentSlide);
+});
+
+</script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+a:link, a:visited, a:hover, a:active {
+    color:#0066b2
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+
+.section {
+    background-color:#eeeeff;
+    height: inherit;
+    overflow-y: auto !important;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="./diagcess.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="lunr-pretext-search-index.js" async=""></script>
+<script src="https://pretextbook.org/js/0.2/pretext_search.js"></script>
+<link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script>
+</head>
+<body>
+  <div class="reveal pretext-content"> 
+    <div class="slides">
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>Accessible mathematical diagrams</h3>
+	    <hr/>
+	  </div>
+
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:60%;vertical-align:top;">
+		<p>
+		  <a href="https://davidaustinm.github.io" target=_blank> 
+		    David Austin</a>
+		  (austind at gvsu dot edu)
+		</p>
+		<p>
+		  <a href="https://gvsu.edu/math" target=_blank>
+		    Grand Valley State University
+		  </a>
+		</p>
+		<p>Michigan MAA meeting</p>
+		<p>April 6, 2024</p> 
+	      </div>
+	    </div>
+	  </div>
+
+	</div>
+      </section>
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>Accessible matematical diagrams
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<p>
+		  Goals:
+		  <ul>
+		    <li>
+		      <p>
+			Facilitate the creation of high-quality
+			mathematical diagrams to include in scholarly
+			documents
+		      </p>
+		    </li>
+		    <li class="fragment">
+		      <p>
+			Accessible to all readers
+		      </p>
+		    </li>
+		    <li class="fragment">
+		      <p>
+			Straightforward for all authors to create
+		      </p>
+		    </li>
+		</ul></p>
+	      </div>
+	      <div style="display:table-cell;width:40%;vertical-align:top;">
+		<img src="tangent.svg"
+		     width="400" height="400"
+		     alt="Sample image from a calculus text"> 
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+<!--      
+      <section class="section">
+	<div style="padding:20px">
+	<div align="left">
+	  <h3>Who am I?</h3>
+	  <hr/>
+	</div>
+	<div align="left">
+	  <p>
+	    <ul class="disc">
+	      <li><p>Professor
+		  of <a href="https://gvsu.edu/math" target=_blank>mathematics</a>,
+		  Grand Valley State University</p></li> 
+	      <li><p>Director, <a href="https://aimath.org/textbooks/"
+				  target=_blank>Open
+		    Textbook Intiative</a>, sponsored by  
+		  the American Institute of Mathematics</p></li>  
+	      <li><p>Author, <a href="https://understandinglinearalgebra.org/home.html"
+				target=_blank>
+		  <em class="emphasis">Understanding Linear Algebra</em></a>,
+		  an open textbook written in PreTeXt.</p></li> 
+	      <li><p>Developer, software to facilitate accessible
+		  mathematical diagrams</p></li> 
+	    </ul>
+	  </p>
+	</div>
+	</div>
+      </section>
+-->
+      
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>PreTeXt -- <a href="https://pretextbook.org/" target=_blank>pretextbook.org</a></h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<p>
+		  <ul>
+		    <li>
+		      <p>
+			An open-source authoring and publishing system
+			for authors of textbooks, research articles,
+			worksheets, and more
+		      </p>
+		    </li> 
+		    <li class="fragment">
+		      <p>Write once: Documents are written as structured
+			XML</p></li>
+		</ul></p>
+	      </div>
+	      <div style="display:table-cell;width:40%;vertical-align:top;">
+		<img src="pretext-input.png"
+		     alt="Sample XML in a pretext document">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>PreTeXt -- <a href="https://pretextbook.org/" target=_blank>pretextbook.org</a></h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<p><ul>
+		    <li>
+		      <p>
+			Read anywhere: HTML, PDF, braille, …
+		      </p>
+		    </li>
+		    <li class="fragment">
+		      <p>Accessibility is built in </p>
+		    </li> 
+		    <li class="fragment">
+		      <p>Future proof</p>
+		    </li>
+		    <li class="fragment">
+		      <p>Vibrant and growing community of users</p>
+		    </li>
+		  </ul></p>
+	      </div>
+	      <div style="display:table-cell;width:40%;vertical-align:top;">
+		<img src="pretext-output.png"
+		     alt="HTML output from the input XML">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>PreFigure</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<p><ul>
+		    <li>
+		      <p>
+			Write once:  Diagrams are described as
+			structured XML
+		      </p>
+		    </li>
+		    <li class="fragment">
+		      <p>
+			Default choices for attributes to enhance
+			accessibility 
+		      </p>
+		    </li> 
+		    <li class="fragment">
+		      <p>
+			Labels processed by MathJax
+		      </p>
+		    </li> 
+		  </ul></p>
+	      </div>
+	      <div style="display:table-cell;width:40%;vertical-align:top;">
+		<img src="prefig-input-scale.png"
+		     alt="XML description of the sample image">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>PreFigure</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<p>
+		  Read anywhere:  XML description converted to
+		  SVG, PDF, or tactile format
+		</p>
+
+		<figure style="text-align:center">
+		  <img src="tactile.jpg" width="800"
+		       alt="Tactile version of a sample image"/>
+		  <figcaption style="font-size:16px">
+		    Photo credit: Alexei Kolesnikov
+		  </figcaption>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>PreFigure</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<p>
+		  Annotations describe how to navigate the diagram
+		  with a screen reader.
+		</p>
+
+		<p style="align:center">
+		  <img src="annotations.png" style="width:80%"
+		       alt="Annotations of a sample image">
+		</p>
+
+		<p class="fragment">
+		  <a href="https://githubraw.com/zorkow/pretext/w4a2023/w4a2023/frontmatter-1.html"
+		     target=_blank>
+		    Authoring Web-accessible Mathematical Diagrams
+		  </a>
+		  <br/>
+		  with Volker Sorge (Birmingham, IIT)
+		</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>An anecdote</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<ul>
+		  <li>
+		    <p> Disability Resources contacted the GVSU math
+		      department last year.
+		      A visually-impaired student would be enrolled in our
+		      precalculus class in Fall 2023.
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      The textbook publisher wanted $40,000 for a
+		      braille edition of the textbook.
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      Rob Beezer, the founder of PreTeXt, converted
+		      Matt Boelkins' open precalculus
+		      textbook
+		      <em>
+			<a href="https://activecalculus.org/" target=_blank>
+			  Active Prelude
+			</a>
+		      </em> to braille.
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      I created tactile versions of (almost) all the
+		      diagrams. 
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      Total cost:  $0.
+		    </p>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>Next steps</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<ul>
+		  <li>
+		    <p>
+		      Finish illustrating
+		      <em>
+			<a href="https://activecalculus.org/" target=_blank>
+			  Active Calculus
+			</a>
+		      </em>
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      Lots of development work:
+		      <ul>
+			<li> expand capabilities</li>
+			<li> error handling </li>
+			<li> documentation</li>
+		      </ul>
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      Integrate into PreTeXt
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      Build community
+		    </p>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>Accessibility</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<ul>
+		  <li>
+		    <p>
+		      We want mathematics to be accessible to everyone.
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      It's also the law.
+		    </p>
+		  </li>
+		  <li class="fragment">
+		    <p>
+		      "The future of mathematics is online."
+		    </p>
+		  </li>
+		  <li class="fragment"> 
+		    <p>
+		      <a href="https://www.technologyreview.com/2023/06/28/1074350/future-is-disabled/" target=_blank>
+			The future is disabled,
+		      </a> Ashley Shaw, MIT Technology Review:
+		      <blockquote>
+			We need more ways to be. Part of that involves
+			looking to alternative ways of sensing,
+			processing, moving, understanding, and
+			communicating, and seeing those ways as good
+			and worthwhile. Opening ourselves up to
+			all-access thinking and disabled expertise
+			will mean a more livable world—one that we all
+			can inhabit.
+		      </blockquote>
+		    </p>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      <section class="section">
+	<div style="padding:20px">
+	  <div align="left">
+	    <h3>Thank you!</h3>
+	    <hr/>
+	  </div>
+	  <div align="left">
+	    <div style="display:table;margin-left:0%;margin-right:0%;">
+	      <div style="display:table-cell;width:50%;vertical-align:top;">
+		<ul>
+		  <li>
+		    <p>
+		      Slides available at
+		      <a href="https://gvsu.edu/s/2Fn" target=_blank>
+			gvsu.edu/s/2Fn
+		      </a>
+		    </p>
+		  </li>
+		  <li>
+		    <p>
+		      <a href="http://raisedmathematics.org/" target=_blank>
+			Raised Mathematics,
+		      </a>
+		      Research and dissemination for accessible STEM
+		      materials 
+		    </p>
+		  </li>
+		  <li> 
+		    <p>
+		      <a href="https://pretextbook.org/" target=_blank>
+			PreTeXt
+		      </a>
+		    </p>
+		  </li>
+		  <li>
+		    <p>
+		      Complaints?  David Austin (austind at gvsu dot edu)
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+    </div>
+  </div>
+  <script>diagcess.Base.init()</script>
+</body>
+<script>
+  Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'linear',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
