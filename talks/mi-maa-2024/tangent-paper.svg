@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="figure" width="620" height="620">
+<svg xmlns="http://www.w3.org/2000/svg" id="figure" width="310" height="310">
   <defs>
     <clipPath id="clip-to-bounding-box">
       <rect x="5" y="5" width="300" height="300"/>
     </clipPath>
   </defs>
-  <g transform="scale(2,2)">
-  <rect id="rect-0" x="0.0" y="0.0" width="300.0" height="300.0" fill="white" type="rectangle"/>
-
   <g id="grid-axes">
     <g id="axes" stroke-width="1" fill="None" stroke="#000">
       <line id="line-18" x1="5.0" y1="155.0" x2="305.0" y2="155.0" type="horizontal axis"/>
@@ -260,6 +257,5 @@
       </g>
       <circle type="point" cx="192.5" cy="126.7" r="4" fill="red" stroke="black" stroke-width="2"/>
     </g>
-  </g>
   </g>
 </svg>
