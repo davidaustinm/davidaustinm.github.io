@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SVD and the Supreme Court</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+    evalButtonText: 'Activate',
+    });
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute', linked:true,
+    evalButtonText: 'Evaluate'});
+    </script>
+  </head>
+  <body>
+    <h1>SVD and the Supreme Court</h1>
+
+    <p>
+      Evaluate the first cell below will load a 9x9 matrix <code>A</code>
+      that shows the percentage of times that the 9 justices on the
+      Supreme Court during the 2nd Rehnquist era agreed with one
+      another.  There are also some additional functions:
+      <ul>
+	<li> <code> outer(u,v)</code>, which computes the outer product
+	  of vectors <code>u</code> and <code>v</code>.
+	</li>
+	<li> <code>plot_sv(A)</code> shows a plot of the singular values
+	  of <code>A</code>.
+	</li>
+	<li> <code>display_matrix(A)</code> shows a visual
+	representation of the matrix.  Red is -1, black is 0, and
+	white is 1 with intermediate values a combination of those.
+	For instance, light gray is close to 1 while dark red is
+	  negative and close to 0.
+	</li>
+	<li><code>A</code> is defined so that <code>U, S, V =
+	    A.SVD()</code> works well.
+	</li>
+	<li>Also, <code>A.singular_values()</code> gives the singular
+	  values of <code>A</code>.
+	</li>
+      </ul>
+
+    </p>
+
+    <div class="compute">
+      <script type="text/x-sage">
+sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/svd_supreme.py', globals())
+def outer(u, v):
+    return matrix([u]).T * matrix([v])
+A = 1/100*matrix(RDF, agreement.values)
+agreement
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div> 
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+  </body>
+</html>
