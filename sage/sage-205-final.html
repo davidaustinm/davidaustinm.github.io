@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MTH 205 final</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+    evalButtonText: 'Activate',
+    });
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute', linked:true,
+    evalButtonText: 'Evaluate'});
+    </script>
+  </head>
+  <body>
+    <h1>MTH 205 final</h1>
+
+    <p>
+      Here are some Sage cells you can use for the final exam along
+      with a couple of cells that are designed specifically for some
+      of the problems.
+    </p>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <h2> Problem 2 </h2>
+
+    <div class="compute">
+      <script type="text/x-sage">
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/variance-data.csv', header=None)
+data = [vector(row) for row in df.values]
+A = matrix(data).T
+df.T
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <h2> Problem 5 </h2>
+
+    <div class="compute">
+      <script type="text/x-sage">
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/MTH205-W20/master/data/college_data.csv', index_col=0)
+df = df[df.columns[1:]]
+normalized = (df - df.mean())/df.std()
+A = matrix(normalized.values.T)
+df.T
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+    <div class="compute">
+      <script type="text/x-sage">
+
+      </script>
+    </div>
+
+  </body>
+</html>
