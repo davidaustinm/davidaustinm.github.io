@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="300" height="150">
+  <defs>
+    <clipPath id="clipPath-0">
+      <rect x="0.0" y="0.0" width="300.0" height="150.0"/>
+    </clipPath>
+    <clipPath id="clipPath-1">
+      <rect x="0.0" y="0.0" width="300.0" height="150.0"/>
+    </clipPath>
+  </defs>
+  <rect id="rect-0" x="0.0" y="0.0" width="300.0" height="150.0" stroke="none" stroke-width="2" fill="#6666ff" type="rectangle"/>
+  <rect id="rect-1" x="41.2" y="41.2" width="67.5" height="67.5" stroke="none" stroke-width="2" fill="red" fill-opacity="1.0" type="rectangle"/>
+  <rect id="rect-2" x="116.2" y="41.2" width="67.5" height="67.5" stroke="none" stroke-width="2" fill="red" fill-opacity="0.6" type="rectangle"/>
+  <rect id="rect-3" x="191.2" y="41.2" width="67.5" height="67.5" stroke="none" stroke-width="2" fill="red" fill-opacity="0.2" type="rectangle"/>
+</svg>

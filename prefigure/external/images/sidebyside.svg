@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="420" height="210">
+  <defs>
+    <clipPath id="clip-to-bounding-box">
+      <rect x="5" y="5" width="410" height="200"/>
+    </clipPath>
+  </defs>
+  <rect id="rect-0" x="5.0" y="5.0" width="200.0" height="200.0" stroke="none" stroke-width="2" fill="blue" type="rectangle"/>
+  <rect id="rect-1" x="215.0" y="5.0" width="200.0" height="200.0" stroke="none" stroke-width="2" fill="red" type="rectangle"/>
+</svg>

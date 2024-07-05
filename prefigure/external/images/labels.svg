@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="290" height="260">
+  <defs>
+    <clipPath id="clipPath-0">
+      <rect x="20.0" y="5.0" width="250.0" height="250.0"/>
+    </clipPath>
+    <clipPath id="clipPath-1">
+      <rect x="20.0" y="5.0" width="250.0" height="250.0"/>
+    </clipPath>
+  </defs>
+  <g id="g-0" type="labeled-point">
+    <g id="label-0" transform="translate(79.5,195.5) translate(-71.9,-0.0)" type="label">
+      <g id="g-9">
+        <text x="-0.8" font-family="sans" font-size="14" y="10.6">southwest</text>
+      </g>
+    </g>
+    <circle id="circle-0" cx="82.5" cy="192.5" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-1" type="labeled-point">
+    <g id="label-1" transform="translate(145.0,198.5) translate(-19.5,-0.0)" type="label">
+      <g id="g-10">
+        <text x="-0.8" font-family="sans" font-size="14" y="10.6">south</text>
+      </g>
+    </g>
+    <circle id="circle-1" cx="145.0" cy="192.5" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-2" type="labeled-point">
+    <g id="label-2" transform="translate(210.5,195.5) translate(0.0,-0.0)" type="label">
+      <g id="g-11">
+        <text x="-0.8" font-family="sans" font-size="14" y="10.6">southeast</text>
+      </g>
+    </g>
+    <circle id="circle-2" cx="207.5" cy="192.5" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-3" type="labeled-point">
+    <g id="label-3" transform="translate(76.5,130.0) translate(-32.8,-5.0)" type="label">
+      <g id="g-12">
+        <text x="-0.6" font-family="sans" font-size="14" y="9.8">west</text>
+      </g>
+    </g>
+    <circle id="circle-3" cx="82.5" cy="130.0" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-4" type="labeled-point">
+    <g id="label-4" transform="translate(145.0,130.0) translate(-22.5,-5.0)" type="label">
+      <g id="g-13">
+        <text x="-0.8" font-family="sans" font-size="14" y="9.8">center</text>
+      </g>
+    </g>
+    <circle id="circle-4" cx="145.0" cy="130.0" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-5" type="labeled-point">
+    <g id="label-5" transform="translate(213.5,130.0) translate(0.0,-5.0)" type="label">
+      <g id="g-14">
+        <text x="-0.8" font-family="sans" font-size="14" y="9.8">east</text>
+      </g>
+    </g>
+    <circle id="circle-5" cx="207.5" cy="130.0" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-6" type="labeled-point">
+    <g id="label-6" transform="translate(79.5,64.5) translate(-70.4,-10.8)" type="label">
+      <g id="g-15">
+        <text x="-1.3" font-family="sans" font-size="14" y="10.6">northwest</text>
+      </g>
+    </g>
+    <circle id="circle-6" cx="82.5" cy="67.5" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-7" type="labeled-point">
+    <g id="label-7" transform="translate(145.0,61.5) translate(-18.8,-10.8)" type="label">
+      <g id="g-16">
+        <text x="-1.3" font-family="sans" font-size="14" y="10.6">north</text>
+      </g>
+    </g>
+    <circle id="circle-7" cx="145.0" cy="67.5" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+  <g id="g-8" type="labeled-point">
+    <g id="label-8" transform="translate(210.5,64.5) translate(0.0,-10.8)" type="label">
+      <g id="g-17">
+        <text x="-1.3" font-family="sans" font-size="14" y="10.6">northeast</text>
+      </g>
+    </g>
+    <circle id="circle-8" cx="207.5" cy="67.5" r="2" stroke="black" stroke-width="2" fill="white" type="point"/>
+  </g>
+</svg>

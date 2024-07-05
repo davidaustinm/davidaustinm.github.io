@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="300" height="300">
+  <defs>
+    <clipPath id="clip-to-bounding-box">
+      <rect x="0" y="0" width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="grid" stroke="#ccc" stroke-width="10">
+    <line id="line-0" x1="0.0" y1="300.0" x2="0.0" y2="0.0" type="vertical grid"/>
+    <line id="line-1" x1="37.5" y1="300.0" x2="37.5" y2="0.0" type="vertical grid"/>
+    <line id="line-2" x1="75.0" y1="300.0" x2="75.0" y2="0.0" type="vertical grid"/>
+    <line id="line-3" x1="112.5" y1="300.0" x2="112.5" y2="0.0" type="vertical grid"/>
+    <line id="line-4" x1="150.0" y1="300.0" x2="150.0" y2="0.0" type="vertical grid"/>
+    <line id="line-5" x1="187.5" y1="300.0" x2="187.5" y2="0.0" type="vertical grid"/>
+    <line id="line-6" x1="225.0" y1="300.0" x2="225.0" y2="0.0" type="vertical grid"/>
+    <line id="line-7" x1="262.5" y1="300.0" x2="262.5" y2="0.0" type="vertical grid"/>
+    <line id="line-8" x1="300.0" y1="300.0" x2="300.0" y2="0.0" type="vertical grid"/>
+    <line id="line-9" x1="0.0" y1="300.0" x2="300.0" y2="300.0" type="horizontal grid"/>
+    <line id="line-10" x1="0.0" y1="262.5" x2="300.0" y2="262.5" type="horizontal grid"/>
+    <line id="line-11" x1="0.0" y1="225.0" x2="300.0" y2="225.0" type="horizontal grid"/>
+    <line id="line-12" x1="0.0" y1="187.5" x2="300.0" y2="187.5" type="horizontal grid"/>
+    <line id="line-13" x1="0.0" y1="150.0" x2="300.0" y2="150.0" type="horizontal grid"/>
+    <line id="line-14" x1="0.0" y1="112.5" x2="300.0" y2="112.5" type="horizontal grid"/>
+    <line id="line-15" x1="0.0" y1="75.0" x2="300.0" y2="75.0" type="horizontal grid"/>
+    <line id="line-16" x1="0.0" y1="37.5" x2="300.0" y2="37.5" type="horizontal grid"/>
+    <line id="line-17" x1="0.0" y1="0.0" x2="300.0" y2="0.0" type="horizontal grid"/>
+  </g>
+</svg>

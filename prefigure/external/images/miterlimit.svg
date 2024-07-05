@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="300" height="120">
+  <defs>
+    <clipPath id="clipPath-0">
+      <rect x="0.0" y="0.0" width="300.0" height="120.0"/>
+    </clipPath>
+    <clipPath id="clipPath-1">
+      <rect x="0.0" y="0.0" width="300.0" height="120.0"/>
+    </clipPath>
+  </defs>
+  <path id="path-0" d="M 56.2 93.3 L 75.0 26.7 L 93.8 93.3" stroke="blue" stroke-width="10" stroke-miterlimit="4" fill="none" type="polygon" clip-path="url(#clipPath-1)"/>
+  <g id="label-0" transform="translate(75.0,104.0) translate(-50.8,-0.0)" type="label">
+    <g id="g-0">
+      <text x="-1.3" font-family="sans" font-size="14" y="10.6">miterlimit="4"</text>
+    </g>
+  </g>
+  <path id="path-1" d="M 187.5 93.3 L 206.2 26.7 L 225.0 93.3" stroke="blue" stroke-width="10" stroke-miterlimit="1" fill="none" type="polygon" clip-path="url(#clipPath-1)"/>
+  <g id="label-1" transform="translate(206.2,104.0) translate(-50.8,-0.0)" type="label">
+    <g id="g-1">
+      <text x="-1.3" font-family="sans" font-size="14" y="10.6">miterlimit="1"</text>
+    </g>
+  </g>
+</svg>

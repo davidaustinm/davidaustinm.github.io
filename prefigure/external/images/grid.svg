@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="310" height="310">
+  <defs>
+    <clipPath id="clipPath-0">
+      <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
+    </clipPath>
+    <clipPath id="clipPath-1">
+      <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
+    </clipPath>
+  </defs>
+  <g id="grid" stroke="blue" stroke-width="2">
+    <line id="line-0" x1="5.0" y1="305.0" x2="5.0" y2="5.0" type="vertical grid"/>
+    <line id="line-1" x1="35.0" y1="305.0" x2="35.0" y2="5.0" type="vertical grid"/>
+    <line id="line-2" x1="65.0" y1="305.0" x2="65.0" y2="5.0" type="vertical grid"/>
+    <line id="line-3" x1="95.0" y1="305.0" x2="95.0" y2="5.0" type="vertical grid"/>
+    <line id="line-4" x1="125.0" y1="305.0" x2="125.0" y2="5.0" type="vertical grid"/>
+    <line id="line-5" x1="155.0" y1="305.0" x2="155.0" y2="5.0" type="vertical grid"/>
+    <line id="line-6" x1="185.0" y1="305.0" x2="185.0" y2="5.0" type="vertical grid"/>
+    <line id="line-7" x1="215.0" y1="305.0" x2="215.0" y2="5.0" type="vertical grid"/>
+    <line id="line-8" x1="245.0" y1="305.0" x2="245.0" y2="5.0" type="vertical grid"/>
+    <line id="line-9" x1="275.0" y1="305.0" x2="275.0" y2="5.0" type="vertical grid"/>
+    <line id="line-10" x1="305.0" y1="305.0" x2="305.0" y2="5.0" type="vertical grid"/>
+    <line id="line-11" x1="5.0" y1="305.0" x2="305.0" y2="305.0" type="horizontal grid"/>
+    <line id="line-12" x1="5.0" y1="290.0" x2="305.0" y2="290.0" type="horizontal grid"/>
+    <line id="line-13" x1="5.0" y1="275.0" x2="305.0" y2="275.0" type="horizontal grid"/>
+    <line id="line-14" x1="5.0" y1="260.0" x2="305.0" y2="260.0" type="horizontal grid"/>
+    <line id="line-15" x1="5.0" y1="245.0" x2="305.0" y2="245.0" type="horizontal grid"/>
+    <line id="line-16" x1="5.0" y1="230.0" x2="305.0" y2="230.0" type="horizontal grid"/>
+    <line id="line-17" x1="5.0" y1="215.0" x2="305.0" y2="215.0" type="horizontal grid"/>
+    <line id="line-18" x1="5.0" y1="200.0" x2="305.0" y2="200.0" type="horizontal grid"/>
+    <line id="line-19" x1="5.0" y1="185.0" x2="305.0" y2="185.0" type="horizontal grid"/>
+    <line id="line-20" x1="5.0" y1="170.0" x2="305.0" y2="170.0" type="horizontal grid"/>
+    <line id="line-21" x1="5.0" y1="155.0" x2="305.0" y2="155.0" type="horizontal grid"/>
+    <line id="line-22" x1="5.0" y1="140.0" x2="305.0" y2="140.0" type="horizontal grid"/>
+    <line id="line-23" x1="5.0" y1="125.0" x2="305.0" y2="125.0" type="horizontal grid"/>
+    <line id="line-24" x1="5.0" y1="110.0" x2="305.0" y2="110.0" type="horizontal grid"/>
+    <line id="line-25" x1="5.0" y1="95.0" x2="305.0" y2="95.0" type="horizontal grid"/>
+    <line id="line-26" x1="5.0" y1="80.0" x2="305.0" y2="80.0" type="horizontal grid"/>
+    <line id="line-27" x1="5.0" y1="65.0" x2="305.0" y2="65.0" type="horizontal grid"/>
+    <line id="line-28" x1="5.0" y1="50.0" x2="305.0" y2="50.0" type="horizontal grid"/>
+    <line id="line-29" x1="5.0" y1="35.0" x2="305.0" y2="35.0" type="horizontal grid"/>
+    <line id="line-30" x1="5.0" y1="20.0" x2="305.0" y2="20.0" type="horizontal grid"/>
+    <line id="line-31" x1="5.0" y1="5.0" x2="305.0" y2="5.0" type="horizontal grid"/>
+  </g>
+</svg>

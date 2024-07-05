@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="310" height="310">
+  <defs>
+    <clipPath id="clipPath-0">
+      <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
+    </clipPath>
+    <clipPath id="clipPath-1">
+      <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
+    </clipPath>
+    <marker id="arrow-head-end-4" markerWidth="18.0" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="13.1" refY="8.0">
+      <path d="M 18.0 8.0L 0.0 16.0L 3.5 10.0L 3.5 6.0L 0.0 0.0Z" fill="context-stroke" stroke="context-none"/>
+    </marker>
+    <marker id="arrow-head-end-4-outline" markerWidth="22.0" markerHeight="20.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="15.1" refY="10.0">
+      <path d="M 20.8 11.8 L 2.8 19.8 A 2 2 0 0 1 0.0 18.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 20.8 8.2 A 2 2 0 0 1 20.8 11.8 Z" fill="context-stroke" stroke="context-none"/>
+    </marker>
+    <marker id="arrow-head-mid-4" markerWidth="19.5" markerHeight="17.3" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="14.6" refY="8.7">
+      <path d="M 19.5 8.7L 0.0 17.3L 3.8 10.7L 3.8 6.7L 0.0 0.0Z" fill="context-stroke" stroke="context-none"/>
+    </marker>
+    <marker id="arrow-head-mid-4-outline" markerWidth="23.5" markerHeight="21.3" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="16.6" refY="10.7">
+      <path d="M 22.3 12.5 L 2.8 21.2 A 2 2 0 0 1 0.0 19.3 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 22.3 8.8 A 2 2 0 0 1 22.3 12.5 Z" fill="context-stroke" stroke="context-none"/>
+    </marker>
+  </defs>
+  <g id="grid-axes">
+    <g id="grid" stroke="#ccc" stroke-width="1">
+      <line id="line-0" x1="5.0" y1="305.0" x2="5.0" y2="5.0" type="vertical grid"/>
+      <line id="line-1" x1="55.0" y1="305.0" x2="55.0" y2="5.0" type="vertical grid"/>
+      <line id="line-2" x1="105.0" y1="305.0" x2="105.0" y2="5.0" type="vertical grid"/>
+      <line id="line-3" x1="155.0" y1="305.0" x2="155.0" y2="5.0" type="vertical grid"/>
+      <line id="line-4" x1="205.0" y1="305.0" x2="205.0" y2="5.0" type="vertical grid"/>
+      <line id="line-5" x1="255.0" y1="305.0" x2="255.0" y2="5.0" type="vertical grid"/>
+      <line id="line-6" x1="305.0" y1="305.0" x2="305.0" y2="5.0" type="vertical grid"/>
+      <line id="line-7" x1="5.0" y1="305.0" x2="305.0" y2="305.0" type="horizontal grid"/>
+      <line id="line-8" x1="5.0" y1="255.0" x2="305.0" y2="255.0" type="horizontal grid"/>
+      <line id="line-9" x1="5.0" y1="205.0" x2="305.0" y2="205.0" type="horizontal grid"/>
+      <line id="line-10" x1="5.0" y1="155.0" x2="305.0" y2="155.0" type="horizontal grid"/>
+      <line id="line-11" x1="5.0" y1="105.0" x2="305.0" y2="105.0" type="horizontal grid"/>
+      <line id="line-12" x1="5.0" y1="55.0" x2="305.0" y2="55.0" type="horizontal grid"/>
+      <line id="line-13" x1="5.0" y1="5.0" x2="305.0" y2="5.0" type="horizontal grid"/>
+    </g>
+    <g id="axes" stroke="black" stroke-width="2">
+      <line id="line-14" x1="5.0" y1="255.0" x2="305.0" y2="255.0" type="horizontal axis" stroke-width="2"/>
+      <line id="line-15" x1="55.0" y1="305.0" x2="55.0" y2="5.0" type="vertical axis" stroke-width="2"/>
+      <g type="horizontal ticks" id="g-0"/>
+      <g type="vertical ticks" id="g-1"/>
+    </g>
+  </g>
+  <path id="path-0" stroke="black" stroke-width="4" fill="none" d="M 55.0 255.0 L 205.0 55.0" marker-end="url(#arrow-head-end-4)" type="vector"/>
+  <path id="path-1" stroke="blue" stroke-width="4" fill="none" d="M 155.0 205.0 L 255.0 55.0" marker-end="url(#arrow-head-end-4)" type="vector"/>
+  <path id="path-2" stroke="black" stroke-width="4" fill="none" d="M 230.0 205.0 L 270.0 85.0 L 280.0 55.0" marker-mid="url(#arrow-head-mid-4)" type="vector"/>
+</svg>

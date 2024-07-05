@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="diagram" width="310" height="310">
+  <defs>
+    <clipPath id="clipPath-0">
+      <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
+    </clipPath>
+    <clipPath id="clipPath-1">
+      <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
+    </clipPath>
+  </defs>
+  <g id="grid-axes">
+    <g id="grid" stroke="#ccc" stroke-width="1">
+      <line id="line-0" x1="5.0" y1="305.0" x2="5.0" y2="5.0" type="vertical grid"/>
+      <line id="line-1" x1="35.0" y1="305.0" x2="35.0" y2="5.0" type="vertical grid"/>
+      <line id="line-2" x1="65.0" y1="305.0" x2="65.0" y2="5.0" type="vertical grid"/>
+      <line id="line-3" x1="95.0" y1="305.0" x2="95.0" y2="5.0" type="vertical grid"/>
+      <line id="line-4" x1="125.0" y1="305.0" x2="125.0" y2="5.0" type="vertical grid"/>
+      <line id="line-5" x1="155.0" y1="305.0" x2="155.0" y2="5.0" type="vertical grid"/>
+      <line id="line-6" x1="185.0" y1="305.0" x2="185.0" y2="5.0" type="vertical grid"/>
+      <line id="line-7" x1="215.0" y1="305.0" x2="215.0" y2="5.0" type="vertical grid"/>
+      <line id="line-8" x1="245.0" y1="305.0" x2="245.0" y2="5.0" type="vertical grid"/>
+      <line id="line-9" x1="275.0" y1="305.0" x2="275.0" y2="5.0" type="vertical grid"/>
+      <line id="line-10" x1="305.0" y1="305.0" x2="305.0" y2="5.0" type="vertical grid"/>
+      <line id="line-11" x1="5.0" y1="305.0" x2="305.0" y2="305.0" type="horizontal grid"/>
+      <line id="line-12" x1="5.0" y1="275.0" x2="305.0" y2="275.0" type="horizontal grid"/>
+      <line id="line-13" x1="5.0" y1="245.0" x2="305.0" y2="245.0" type="horizontal grid"/>
+      <line id="line-14" x1="5.0" y1="215.0" x2="305.0" y2="215.0" type="horizontal grid"/>
+      <line id="line-15" x1="5.0" y1="185.0" x2="305.0" y2="185.0" type="horizontal grid"/>
+      <line id="line-16" x1="5.0" y1="155.0" x2="305.0" y2="155.0" type="horizontal grid"/>
+      <line id="line-17" x1="5.0" y1="125.0" x2="305.0" y2="125.0" type="horizontal grid"/>
+      <line id="line-18" x1="5.0" y1="95.0" x2="305.0" y2="95.0" type="horizontal grid"/>
+      <line id="line-19" x1="5.0" y1="65.0" x2="305.0" y2="65.0" type="horizontal grid"/>
+      <line id="line-20" x1="5.0" y1="35.0" x2="305.0" y2="35.0" type="horizontal grid"/>
+      <line id="line-21" x1="5.0" y1="5.0" x2="305.0" y2="5.0" type="horizontal grid"/>
+    </g>
+    <g id="axes" stroke="black" stroke-width="2">
+      <line id="line-22" x1="5.0" y1="155.0" x2="305.0" y2="155.0" type="horizontal axis" stroke-width="2"/>
+      <line id="line-23" x1="155.0" y1="305.0" x2="155.0" y2="5.0" type="vertical axis" stroke-width="2"/>
+      <g type="horizontal ticks" id="g-0"/>
+      <g type="vertical ticks" id="g-1"/>
+    </g>
+  </g>
+  <polyline id="graph-0" stroke="blue" stroke-width="2" fill="none" points="5.0,398.8 8.0,375.7 11.0,353.7 14.0,332.8 17.0,313.0 20.0,294.2 23.0,276.4 26.0,259.7 29.0,243.8 32.0,229.0 35.0,215.0 38.0,201.9 41.0,189.8 44.0,178.4 47.0,168.0 50.0,158.3 53.0,149.4 56.0,141.3 59.0,133.9 62.0,127.2 65.0,121.3 68.0,116.0 71.0,111.3 74.0,107.3 77.0,103.9 80.0,101.1 83.0,98.8 86.0,97.1 89.0,95.9 92.0,95.2 95.0,95.0 98.0,95.2 101.0,95.9 104.0,96.9 107.0,98.4 110.0,100.2 113.0,102.3 116.0,104.7 119.0,107.5 122.0,110.5 125.0,113.7 128.0,117.2 131.0,120.9 134.0,124.8 137.0,128.8 140.0,133.0 143.0,137.2 146.0,141.6 149.0,146.0 152.0,150.5 155.0,155.0 158.0,159.5 161.0,164.0 164.0,168.4 167.0,172.8 170.0,177.0 173.0,181.2 176.0,185.2 179.0,189.1 182.0,192.8 185.0,196.2 188.0,199.5 191.0,202.5 194.0,205.3 197.0,207.7 200.0,209.8 203.0,211.6 206.0,213.1 209.0,214.1 212.0,214.8 215.0,215.0 218.0,214.8 221.0,214.1 224.0,212.9 227.0,211.2 230.0,208.9 233.0,206.1 236.0,202.7 239.0,198.7 242.0,194.0 245.0,188.8 248.0,182.8 251.0,176.1 254.0,168.7 257.0,160.6 260.0,151.7 263.0,142.0 266.0,131.6 269.0,120.2 272.0,108.1 275.0,95.0 278.0,81.0 281.0,66.2 284.0,50.3 287.0,33.6 290.0,15.8 293.0,-3.0 296.0,-22.8 299.0,-43.7 302.0,-65.7 305.0,-88.7" type="function-graph" clip-path="url(#clipPath-1)"/>
+  <line id="line-24" x1="5.0" y1="31.3" x2="305.0" y2="228.1" stroke="red" stroke-width="2" fill="none" type="tangent line" clip-path="url(#clipPath-1)"/>
+  <line id="line-25" x1="155.0" y1="180.3" x2="245.0" y2="239.4" stroke="green" stroke-width="2" fill="none" type="tangent line" clip-path="url(#clipPath-1)"/>
+</svg>
