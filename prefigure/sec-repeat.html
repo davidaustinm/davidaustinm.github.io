@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Grid and Axes</title>
+<title>The <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -109,7 +109,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-outlining.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-graphical.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-labels.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-diffeqs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-graphical.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
@@ -161,7 +161,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-outlining.html#sec-outlining-4" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Groups</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-grid-axes.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Grid and Axes</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-grid-axes.html#subsec-grid-axes" class="internal"><span class="codenumber">3.3.1</span> <span class="title"><code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code></span></a></div></li>
@@ -205,75 +205,138 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diffeqs.html#subsec-de-solutions" class="internal"><span class="codenumber">3.8.2</span> <span class="title">Solutions to differential equations</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-repeat.html" class="internal"><span class="codenumber">3.9</span> <span class="title">The <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-repeat.html" class="internal"><span class="codenumber">3.9</span> <span class="title">The <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-grid-axes"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Grid and Axes</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-repeat"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.9</span><span class="space"> </span><span class="title">The <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element</span>
 </h2>
-<section class="introduction" id="sec-grid-axes-2"><div class="para" id="sec-grid-axes-2-1">We’ll begin our discussion of graphical elements by looking at grids and axes, which will typically be in the background of a diagram.  Since these are commonly used elements, there are many features that can be customized by an author.</div></section><section class="subsection" id="subsec-grid-axes"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="space"> </span><span class="title"><code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code></span>
-</h3>
-<div class="para" id="subsec-grid-axes-2">The simplest way to include a grid and axes in a diagram is with the <code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code> element, which is demonstrated in <a href="sec-grid-axes.html#diagram-grid-axes" class="xref" data-knowl="./knowl/xref/diagram-grid-axes.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.1">Figure 3.3.1</a>.</div>
-<figure class="figure figure-like" id="diagram-grid-axes"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/grid-axes.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>The use of a <code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code> element.</figcaption></figure><figure class="listing figure-like" id="subsec-grid-axes-4"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">&lt;diagram dimensions="(300,300)" margins="5"&gt;
-  &lt;coordinates bbox="(-2,-2,5,5)"&gt;
-    &lt;grid-axes xlabel="x" ylabel="y"/&gt;
+<div class="para" id="sec-repeat-2">Some diagrams contain a number of components that are similar and differ only in a few attributes.  For example, <a href="sec-repeat.html#diagram-diffeq-repeat" class="xref" data-knowl="./knowl/xref/diagram-diffeq-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.9.1">Figure 3.9.1</a> shows several solutions to a differential equation with different initial values.</div>
+<figure class="figure figure-like" id="diagram-diffeq-repeat"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/diffeqs.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.1<span class="period">.</span></span><span class="space"> </span>Several solutions to a differential equation.</figcaption></figure><div class="para" id="sec-repeat-4">Of course, we could simply include a <code class="code-inline tex2jax_ignore">&lt;plot-de-solution&gt;</code> element for each one, but this could be difficult to maintain if we decide to make some small change.  Instead, PreFigure offers a <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element that can streamline this process, as illustrated by the PreFigure source code in <a href="sec-repeat.html#listing-diffeq-repeat" class="xref" data-knowl="./knowl/xref/listing-diffeq-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Listing 3.9.2">Listing 3.9.2</a>.</div>
+<figure class="listing figure-like" id="listing-diffeq-repeat"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-none">&lt;diagram width="300" height="300" margins="10"&gt;
+  &lt;definition&gt;f(t,y) = t-y&lt;/definition&gt;
+  &lt;coordinates bbox="[-4,-4,4,4]"&gt;
+    &lt;grid at="grid"/&gt;
+    &lt;axes at="axes" xlabel="t" ylabel="y"/&gt;
+    &lt;slope-field at="slope-field" function="f"/&gt;
+    &lt;repeat parameter="k=-4..4"&gt;
+      &lt;plot-de-solution at="solution" function="f" t0="0" y0="k"
+			domain="[0,4]" stroke="orange" /&gt;
+      &lt;point at="initial-value" p="(0,k)" size="4" fill="orange" /&gt;
+    &lt;/repeat&gt;
   &lt;/coordinates&gt;
+
+  &lt;annotations&gt;
+    &lt;annotation ref="figure"
+		text="Solutions to the differential equation dy dt = t - y"&gt;
+      &lt;annotation ref="grid" text="The coordinate grid"/&gt;
+      &lt;annotation ref="axes" text="The coordinate axes"/&gt;
+      &lt;annotation ref="slope-field" text="The slope field"/&gt;
+      &lt;annotation ref="solutions" text="A collection of solution curves"&gt;
+	&lt;annotation ref="solution-k=-4"
+		    text="The solution with initial value -4"/&gt;
+	&lt;annotation ref="solution-k=-3"
+		    text="The solution with initial value -3"/&gt;
+	&lt;annotation ref="solution-k=-2"
+		    text="The solution with initial value -2"/&gt;
+	&lt;annotation ref="solution-k=-1"
+		    text="The solution with initial value -1"/&gt;
+	&lt;annotation ref="solution-k=0"
+		    text="The solution with initial value 0"/&gt;
+	&lt;annotation ref="solution-k=1"
+		    text="The solution with initial value 1"/&gt;
+	&lt;annotation ref="solution-k=2"
+		    text="The solution with initial value 2"/&gt;
+	&lt;annotation ref="solution-k=3"
+		    text="The solution with initial value 3"/&gt;
+	&lt;annotation ref="solution-k=4"
+		    text="The solution with initial value 4"/&gt;
+      &lt;/annotation&gt;
+    &lt;/annotation&gt;
+  &lt;/annotations&gt;
+
 &lt;/diagram&gt;
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>The PreFigure source for <a href="sec-grid-axes.html#diagram-grid-axes" class="xref" data-knowl="./knowl/xref/diagram-grid-axes.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.1">Figure 3.3.1</a>.</figcaption></figure><div class="para" id="subsec-grid-axes-5">Notice that PreFigure makes choices about the spacing of the grid lines and the locations at which labels are added to the axes.  All of these features can be modified as will be described in the next two subsections, <a href="sec-grid-axes.html#subsec-grid" class="internal" title="Subsection 3.3.2: Grids">Subsection 3.3.2</a> and <a href="sec-grid-axes.html#subsec-axes" class="internal" title="Subsection 3.3.3: Axes">Subsection 3.3.3</a>.</div>
-<div class="para" id="subsec-grid-axes-6">The <code class="code-inline tex2jax_ignore">@xlabel</code> and <code class="code-inline tex2jax_ignore">@ylabel</code> tags are optional but provide a simple way to label the axes.  We will have a lot more to say about labels later, but these particular labels will be processed by MathJax as if they were contained in an <code class="code-inline tex2jax_ignore">@m</code> element.</div>
-<div class="para" id="subsec-grid-axes-7">We will also discuss annotations in more depth later, but it is worth mentioning now that a <code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code> element will automatically annotate itself as the first component in the annotation tree.</div></section><section class="subsection" id="subsec-grid"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="space"> </span><span class="title">Grids</span>
-</h3>
-<div class="para" id="subsec-grid-2">The <code class="code-inline tex2jax_ignore">&lt;grid&gt;</code> element provides a grid without adding axes.  Without any attributes, this element will choose horizontal and vertical spacings and draw the grid lines <code class="code-inline tex2jax_ignore">@stroke="lightgray"</code> and <code class="code-inline tex2jax_ignore">@thickness="1"</code>. The stroke attributes can be modified as can the spacings using the <code class="code-inline tex2jax_ignore">@spacings</code> attribute.  The value of the <code class="code-inline tex2jax_ignore">@spacings</code> consists of two lists, one for each of the horizontal  and vertical grid lines, with each list having the form <code class="code-inline tex2jax_ignore">(start, space, end)</code>. <a href="sec-grid-axes.html#diagram-grid" class="xref" data-knowl="./knowl/xref/diagram-grid.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.3">Figure 3.3.3</a> provides an example.</div>
-<figure class="figure figure-like" id="diagram-grid"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/grid.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>The attributes of a <code class="code-inline tex2jax_ignore">&lt;grid&gt;</code> element.</figcaption></figure><figure class="listing figure-like" id="subsec-grid-4"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">&lt;diagram dimensions="(300,300)" margins="5"&gt;
-  &lt;coordinates bbox="(0,0,10,10)"&gt;
-    &lt;grid spacings="((0,1,10),(0,1/2,10))" stroke="blue"
-	  thickness="2"/&gt;
-  &lt;/coordinates&gt;
-&lt;/diagram&gt;
-</code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>The PreFigure source for <a href="sec-grid-axes.html#diagram-grid" class="xref" data-knowl="./knowl/xref/diagram-grid.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.3">Figure 3.3.3</a>.</figcaption></figure><div class="para" id="subsec-grid-5">Including a <code class="code-inline tex2jax_ignore">@basis</code> attribute will produce a grid drawn in the given basis, as shown in <a href="sec-grid-axes.html#diagram-grid-basis" class="xref" data-knowl="./knowl/xref/diagram-grid-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.5">Figure 3.3.5</a>.</div>
-<figure class="figure figure-like" id="diagram-grid-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/grid-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>The result of <code class="code-inline tex2jax_ignore">@basis="((2,1),(1,2))"</code>.</figcaption></figure><div class="para" id="subsec-grid-7">When included in a <code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code> element, these attributes will be inherited by the resulting grid.</div></section><section class="subsection" id="subsec-axes"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="space"> </span><span class="title">Axes</span>
-</h3>
-<div class="para" id="subsec-axes-2">Axes are a bit more involved since there is a wider range of properties they possess.  For instance, an <code class="code-inline tex2jax_ignore">&lt;axes&gt;</code> tag with no attributes will produce axes similar to those seen in <a href="sec-grid-axes.html#diagram-axes" class="xref" data-knowl="./knowl/xref/diagram-axes.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.6">Figure 3.3.6</a>.  In addition to the axes, we see that there are tick marks and labels as well.  The positions of the tick marks and labels are automatically generated.</div>
-<figure class="figure figure-like" id="diagram-axes"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/axes.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>An <code class="code-inline tex2jax_ignore">&lt;axes&gt;</code> element without attributes.</figcaption></figure><div class="para logical" id="subsec-axes-4">
-<div class="para">There are attributes that may be used to change this default behavior.</div>
-<dl class="description-list">
-<dt id="subsec-axes-4-1-1">decorations</dt>
-<dd><div class="para" id="subsec-axes-4-1-1-2">Setting <code class="code-inline tex2jax_ignore">@decorations="no"</code> suppresses the automatic inclusion of tick marks and labels and produces unadorned axes.  Regardless of the value of this attribute, features may be customized and added to the axes by including some of the following attributes.</div></dd>
-<dt id="subsec-axes-4-1-2">xlabel and ylabel</dt>
-<dd><div class="para" id="subsec-axes-4-1-2-2">As we have seen <code class="code-inline tex2jax_ignore">@xlabel="t"</code> and <code class="code-inline tex2jax_ignore">@ylabel="f(t)"</code> will place labels on the horizontal and vertical axes.  These labels will be automatically wrapped in <code class="code-inline tex2jax_ignore">&lt;m&gt;</code> elements and processed as <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> by MathJax.</div></dd>
-<dt id="subsec-axes-4-1-3">hticks and vticks</dt>
-<dd><div class="para" id="subsec-axes-4-1-3-2">These attributes specify the position of tick marks on the axes.  For instance, <code class="code-inline tex2jax_ignore">@hticks="(-2,2,4)"</code> will place tick marks on the horizontal axis beginning at -2 and ending at 4 with a spacing of two units.</div></dd>
-<dt id="subsec-axes-4-1-4">hlabels and vlabels</dt>
-<dd><div class="para" id="subsec-axes-4-1-4-2">These attributes are similar to <code class="code-inline tex2jax_ignore">@hticks</code> and <code class="code-inline tex2jax_ignore">@vticks</code> except they specify the position of labels on the axes.</div></dd>
-<dt id="subsec-axes-4-1-5">arrows</dt>
-<dd><div class="para" id="subsec-axes-4-1-5-2">Arrows may be placed on ends of the axes by setting the <code class="code-inline tex2jax_ignore">@arrows</code> attribute.  If <code class="code-inline tex2jax_ignore">@arrows="1"</code>, then arrows will be included in the direction of increasing coordinates.  <code class="code-inline tex2jax_ignore">@arrows="2"</code> includes arrows at each end of the axes.</div></dd>
-</dl>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.9.2<span class="period">.</span></span><span class="space"> </span>The PreFigure source for <a href="sec-repeat.html#diagram-diffeq-repeat" class="xref" data-knowl="./knowl/xref/diagram-diffeq-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.9.1">Figure 3.9.1</a>.</figcaption></figure><div class="para" id="sec-repeat-6">Line 7 contains a <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element with the attribute <code class="code-inline tex2jax_ignore">@parameter="k=-4..4"</code>.  This places the parameter name <code class="code-inline tex2jax_ignore">k</code> into the user namespace with the value of -4 and adds the <code class="code-inline tex2jax_ignore">&lt;plot-de-solution&gt;</code> and <code class="code-inline tex2jax_ignore">&lt;point&gt;</code> elements contained within the <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element.  This repeats with the values <span class="process-math">\(k=-4,-3,-2,\ldots,3,4\text{.}\)</span>
 </div>
-<div class="para" id="subsec-axes-5">
-<a href="sec-grid-axes.html#diagram-axes-example" class="xref" data-knowl="./knowl/xref/diagram-axes-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.7">Figure 3.3.7</a> illustrates the use of some of these attributes.</div>
-<figure class="figure figure-like" id="diagram-axes-example"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/axes-example.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>The effect of some attributes of an <code class="code-inline tex2jax_ignore">&lt;axes&gt;</code> element.</figcaption></figure><figure class="listing figure-like" id="subsec-axes-7"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-none">&lt;diagram dimensions="(300,300)" margins="5"&gt;
-  &lt;coordinates bbox="(-2,-2,5,5)"&gt;
-    &lt;axes xlabel="\alpha" ylabel="g(\alpha)"
-	  hticks="(-2,1,5)" hlabels="(-2,1,5)"
-	  arrows="1"/&gt;
+<div class="para" id="sec-repeat-7">The annotations included in <a href="sec-repeat.html#listing-diffeq-repeat" class="xref" data-knowl="./knowl/xref/listing-diffeq-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Listing 3.9.2">Listing 3.9.2</a> show how the handles within the <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element are generated.  If an element inside a repeat element has a handle <code class="code-inline tex2jax_ignore">@at="handle"</code>, then the graphical component generated when the parameter is, say, <code class="code-inline tex2jax_ignore">param=value</code> is given the handle <code class="code-inline tex2jax_ignore">@at="handle-param=value"</code>.  For example, when <code class="code-inline tex2jax_ignore">k=2</code>, the solution has the handle <code class="code-inline tex2jax_ignore">@at="solution-k=2"</code>.  There is not yet a repeat feature for annotations.</div>
+<div class="para" id="sec-repeat-8">A second example, given in <a href="sec-repeat.html#diagram-unity" class="xref" data-knowl="./knowl/xref/diagram-unity.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.9.3">Figure 3.9.3</a>, shows how labels can be managed within a <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> element.</div>
+<figure class="figure figure-like" id="diagram-unity"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/roots_of_unity.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.3<span class="period">.</span></span><span class="space"> </span>The <span class="process-math">\(8^{th}\)</span> roots of unity.</figcaption></figure><figure class="listing figure-like" id="listing-unity"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-none">&lt;diagram width="300" height="300" margins="5"&gt;
+  &lt;definition&gt;
+    alignments=['ne','ne','ne','nw','nw','sw','se','se']
+  &lt;/definition&gt;
+  &lt;definition substitution="no"&gt;
+    labels=['1','\omega','i','\omega^3','-1','\omega^5','-i','\omega^7']
+  &lt;/definition&gt;
+  &lt;definition&gt;f(t)=(cos(pi*t/4),sin(pi*t/4))&lt;/definition&gt;
+  &lt;coordinates bbox="[-1.4,-1.4,1.4,1.4]"&gt;
+    &lt;grid at="grid" /&gt;
+    &lt;axes at="axes" labels="no" /&gt;
+    &lt;circle at="unit-circle" center="(0,0)" radius="1" stroke="blue"/&gt;
+    &lt;repeat parameter="k=0..7"&gt;
+      &lt;point at="point" p="f(k)" alignment="alignments[k]"&gt;
+        &lt;m&gt;${labels[k]}&lt;/m&gt;
+      &lt;/point&gt;
+    &lt;/repeat&gt;
+  &lt;/coordinates&gt;
+
+  &lt;annotations&gt;
+    &lt;annotation id="figure" text="The eighth roots of unity"&gt;
+      &lt;annotation id="axes" text="The coordinate axes" /&gt;
+      &lt;annotation id="grid" text="The coordinate grid" /&gt;
+      &lt;annotation id="unit-circle" text="The unit circle" circular="true"&gt;
+        &lt;annotation id="point-k=0"
+		    text="The primitive eighth root of unity to the power zero"
+		    speech="one"/&gt;
+        &lt;annotation id="point-k=1"
+		    text="The primitive eighth root of unity"
+		    speech="omega"/&gt;
+        &lt;annotation id="point-k=2"
+		    text="The primitive eighth root of unity squared"
+		    speech="i"/&gt;
+        &lt;annotation id="point-k=3"
+		    text="The primitive eighth root of unity cubed"
+		    speech="omega cubed"/&gt;
+        &lt;annotation id="point-k=4"
+		    text="The primitive eighth root of unity to the fourth"
+		    speech="minus one"/&gt;
+        &lt;annotation id="point-k=5"
+		    text="The primitive eighth root of unity to the fifth"
+		    speech="omega to the fifth"/&gt;
+        &lt;annotation id="point-k=6"
+		    text="The primitive eighth root of unity to the sixth"
+		    speech="minus i"/&gt;
+        &lt;annotation id="point-k=7"
+		    text="The primitive eighth root of unity to the seventh"
+		    speech="omega to the seventh"/&gt;
+      &lt;/annotation&gt;
+    &lt;/annotation&gt;
+  &lt;/annotations&gt;
+
+&lt;/diagram&gt;
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.9.4<span class="period">.</span></span><span class="space"> </span>The PreFigure source for <a href="sec-repeat.html#diagram-unity" class="xref" data-knowl="./knowl/xref/diagram-unity.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.9.3">Figure 3.9.3</a>.</figcaption></figure><div class="para" id="sec-repeat-11">Lines 5 through 7 define a set of labels, one for each of the eight points.  Remember that ^ is usually interpreted as the numerical exponentiation operator.  Since we wish to preserve this character for the label, we include the attribute <code class="code-inline tex2jax_ignore">@substitution="no"</code> to prevent ^ being reinterpreted. Notice that the label is given as <code class="code-inline tex2jax_ignore">${labels[k]}</code> since anything inside <code class="code-inline tex2jax_ignore">${...}</code> is evaluated in the user namespace.</div>
+<div class="para" id="sec-repeat-12">We can also nest <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> elements as illustrated in <a href="sec-repeat.html#diagram-nested-repeat" class="xref" data-knowl="./knowl/xref/diagram-nested-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.9.5">Figure 3.9.5</a> and PreFigure source <a href="sec-repeat.html#listing-nested-repeat" class="xref" data-knowl="./knowl/xref/listing-nested-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Listing 3.9.6">Listing 3.9.6</a>.</div>
+<figure class="figure figure-like" id="diagram-nested-repeat"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/nested-repeat.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.9.5<span class="period">.</span></span><span class="space"> </span>A <code class="code-inline tex2jax_ignore">&lt;repeat&gt;</code> nested inside another.</figcaption></figure><figure class="listing figure-like" id="listing-nested-repeat"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-none">&lt;diagram dimensions="(300,300)" margins="5"&gt;
+  &lt;coordinates bbox="[-1,-1,5,5]"&gt;
+    &lt;grid/&gt;
+    &lt;repeat parameter="row=0..4"&gt;
+      &lt;repeat parameter="col=0..4"&gt;
+        &lt;rectangle at="rectangle" center="(col, row)"
+                   dimensions="(3/4,3/4)" fill="blue"/&gt;
+      &lt;/repeat&gt;
+    &lt;/repeat&gt;
   &lt;/coordinates&gt;
 &lt;/diagram&gt;
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>The PreFigure source for <a href="sec-grid-axes.html#diagram-axes-example" class="xref" data-knowl="./knowl/xref/diagram-axes-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.7">Figure 3.3.7</a>.</figcaption></figure><div class="para" id="subsec-axes-8">As with grids, these attributes may be included in a <code class="code-inline tex2jax_ignore">&lt;grid-axes&gt;</code> element and inherited by the resulting axes.</div></section></section></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.9.6<span class="period">.</span></span><span class="space"> </span>The PreFigure source for <a href="sec-repeat.html#diagram-nested-repeat" class="xref" data-knowl="./knowl/xref/diagram-nested-repeat.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.9.5">Figure 3.9.5</a>.</figcaption></figure><div class="para" id="sec-repeat-15">A typical handle for one of these rectangles is <code class="code-inline tex2jax_ignore">@at="rectangle-row=2-col=1"</code>.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-outlining.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-labels.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-diffeqs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
