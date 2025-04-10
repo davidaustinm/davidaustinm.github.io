@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-04-10T08:26:38-04:00       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="./reset.css" rel="stylesheet">
+<link href="./reveal.css" rel="stylesheet">
+<link href="./theme/simple.css" rel="stylesheet">
+<script src="./reveal.js"></script><script src="./plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.reveal pre {
+  box-shadow: none;
+  line-height: 1;
+  font-size: inherit;
+  width: auto;
+  margin: inherit;
+}
+.reveal pre code {
+  display: block;
+  padding: 0;
+  overflow: unset;
+  max-height: unset;
+  word-wrap: normal;
+}
+.definition-like,.theorem-like,.project-like {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: var(--r-block-margin);
+}
+.definition-like {
+  background: #006080;
+  background: color-mix(in srgb, var(--r-background-color) 75%, #006080);
+}
+.theorem-like {
+  background: #ff000010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, #aa0000);
+}
+.proof-like {
+  background: #ffffff;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, #aaaaaa);
+}
+.project-like {
+  background: #60800010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, #608000);
+}
+.code-inline {
+  background: #60800010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, var(--r-link-color));
+  padding: 0 3px;
+  border: 1px solid;
+  margin: 3px;
+  display: inline-block;
+}
+.sagecell_sessionOutput {
+  background: white;
+  color: black;
+  border: 0.5px solid var(--r-main-color);
+}
+
+.program {
+  background: #60800010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, var(--r-link-color));
+  max-height: 450px;
+  overflow: auto;
+  border: 0.5px solid var(--r-main-color);
+}
+.ptx-sagecell, .reveal .program {
+  font-size: calc(var(--r-main-font-size) * 0.6);
+}
+
+
+.ptx-content :is(.image-box, .audio-box, .video-box, .asymptote-box) {
+  position: relative;
+}
+
+.ptx-content iframe.asymptote, .ptx-content iframe.asymptote, .ptx-content .video-box .video, .ptx-content .video-box .video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+code[class*="language-"], pre[class*="language-"] {
+  padding: 0;
+  line-height: 1.2;
+}
+
+dfn {
+  font-weight: bold;
+}
+.ptx-content ol.no-marker,
+.ptx-content ul.no-marker,
+.ptx-content li.no-marker {
+    list-style-type: none;
+}
+
+.ptx-content ol.decimal {
+    list-style-type: decimal;
+}
+.ptx-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.ptx-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.ptx-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.ptx-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.ptx-content ul.disc {
+    list-style-type: disc;
+}
+.ptx-content ul.square {
+    list-style-type: square;
+}
+.ptx-content ul.circle {
+    list-style-type: circle;
+}
+.ptx-content ol.no-marker,
+.ptx-content ul.no-marker {
+    list-style-type: none;
+}
+.ptx-content .cols1 li,
+.ptx-content .cols2 li,
+.ptx-content .cols3 li,
+.ptx-content .cols4 li,
+.ptx-content .cols5 li,
+.ptx-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+
+/* make small images full-width in #sidebyside */
+/* could improve with a .sidebyside class */
+div[style*="display:table-cell"] img {
+    width: 100%;
+}
+          </style>
+</head>
+<body><div class="reveal ptx-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><h3>Creating accessible documents in PreTeXt</h3>
+<div align="left"><div style="display:table;margin-left:5%;margin-right:5% 20%;" class="sidebyside">
+<div style="display:table-cell;width:44.4444444444444%;vertical-align:middle;"><section class="paragraphs" id="root-1-2-1-2-1"><p>David Austin</p>
+<p>Grand Valley State University</p>
+<p>April 11, 2025</p>
+<p></p>
+<p>These slides are at <a class="external" href="https://gvsu.edu/s/39C" target="_blank">gvsu.edu/s/39C</a></p></section></div>
+<div style="display:table-cell;width:33.3333333333333%;vertical-align:top;"><img src="external/images/phone2-4.png" class="contained"></div>
+</div></div></section><section><h3>How do we accessibly share our work with others?</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-2-2-1">
+<li class="fragment"><p>MS Word<ul class="circle" id="root-1-2-2-2-1-1-1-1"><li><p>Accessibility requires some expert knowledge and additional steps</p></li></ul></p></li>
+<li class="fragment"><p><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span><ul class="circle" id="root-1-2-2-2-1-2-1-2">
+<li><p>Accessibility is difficult, even with tagged PDFs</p></li>
+<li><p>Doesn’t support modern features, such as interactive content</p></li>
+</ul></p></li>
+<li class="fragment"><p>HTML is better<ul class="circle" id="root-1-2-2-2-1-3-1-1">
+<li><p>Accessibility requires well-structured HTML</p></li>
+<li><p>Conversion from <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> is problematic</p></li>
+</ul></p></li>
+</ul></p></div></section><section><h3>What is PreTeXt?</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-3-2-1">
+<li class="fragment"><p>An authoring system for scholarly documents: books, articles, teaching materials, slideshows, ...</p></li>
+<li class="fragment"><p>A markup language for describing the structure of a scholarly document</p></li>
+<li class="fragment"><p>Originally known as <code class="code-inline tex2jax_ignore">mathbook.xml</code> but is now used in many disciplines: math, computer science, physics, engineering, music theory, economics, college writing, children’s books, and more</p></li>
+<li class="fragment"><p>Open source and freely available</p></li>
+<li class="fragment"><p>A vibrant community of users, developers, researchers, and instructors</p></li>
+</ul></p></div></section><section><h3>PreTeXt philosophy</h3>
+<div align="left">
+<p>“Write once, read anywhere”</p>
+<p><ul class="disc" id="root-1-2-4-3-1">
+<li class="fragment"><p>From a single source, a document can be rendered in<ul class="circle" id="root-1-2-4-3-1-1-1-1">
+<li><p>HTML, fully accessible with a screenreader and is responsive</p></li>
+<li><p>PDF</p></li>
+<li><p>EPUB</p></li>
+<li><p>Embossed braille and more</p></li>
+</ul></p></li>
+<li class="fragment"><p>An author focuses on the content and structure of the document rather than presentation</p></li>
+</ul></p>
+</div></section><section><h3>Interactivity</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-5-2-1">
+<li class="fragment">
+<p>Code fragments</p>
+<div id="root-1-2-5-2-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def collatz(n):            
+    if n % 2 == 0: return n / 2
+    return 3*n+1
+collatz(5)
+</script></div>
+</li>
+<li class="fragment"><p>Desmos and Geogebra applets</p></li>
+<li class="fragment"><p>Interactive questions:  WeBWorK, MyOpenMath, ..., natively authored in PreTeXt</p></li>
+<li class="fragment"><p>Student work in PreTeXt books hosted on <a class="external" href="https://landing.runestone.academy/" target="_blank">Runestone Academy</a> can be auto-graded and scores recorded.</p></li>
+</ul></p></div></section><section><h3>Interactivity</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-6-2-1"><li><p>Embedded videos <div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/XYj2IWgZm-k?&amp;modestbranding=1&amp;rel=0" id="root-1-2-6-2-1-1-1-1"></iframe></div></p></li></ul></p></div></section><section><h3>Writing PreTeXt source</h3>
+<div align="left">
+<p>PreTeXt source is written in XML.  All content is contained in nested tags, with attributes, that describe the document’s structure and how elements relate to one another.</p>
+<div class="code-box"><pre class="program"><code class="language-none">&lt;theorem xml:id="theorem-pythagoras"&gt;
+  &lt;title&gt;Pythagorean theorem&lt;/title&gt;
+  &lt;statement&gt;
+    &lt;p&gt;In a right triangle &lt;m&gt;\triangle ABC&lt;/m&gt;, the lengths of the sides satisfy
+    &lt;me&gt;
+      a^2 + b^2 = c^2
+    &lt;/me&gt;.
+    &lt;/p&gt;
+  &lt;/statement&gt;
+  &lt;proof&gt;
+    &lt;p&gt;
+      See Euclid
+    &lt;/p&gt;
+  &lt;/proof&gt;
+&lt;/theorem&gt;
+</code></pre></div>
+</div></section><section><h3>Writing PreTeXt source</h3>
+<div align="left">
+<article class="theorem theorem-like" id="theorem-pythagoras"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span><span class="space"> </span><span class="title">Pythagorean theorem.</span>
+</h3>
+<p>In a right triangle <span class="process-math">\(\triangle ABC\text{,}\)</span> the lengths of the sides satisfy<div class="displaymath process-math">
+\begin{equation*}
+a^2 + b^2 = c^2\text{.}
+\end{equation*}
+</div></p></article><article class="hiddenproof" id="theorem-pythagoras-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<p>See Euclid</p></article>
+</div></section><section><h3>Project workflow</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-9-2-1">
+<li class="fragment">
+<p>Initialize a project: <code class="code-inline tex2jax_ignore">pretext new [project]</code> where project = book, article, course, slideshow, ...</p>
+<p>This will create several files and directories</p>
+</li>
+<li class="fragment"><p>Write, edit, build: <code class="code-inline tex2jax_ignore">pretext build [target]</code> where target = web, print, ...</p></li>
+<li class="fragment"><p>View with <code class="code-inline tex2jax_ignore">pretext view [target]</code></p></li>
+<li class="fragment"><p>Publish online: <code class="code-inline tex2jax_ignore">pretext deploy</code></p></li>
+</ul></p></div></section><section><h3>Anatomy of a PreTeXt project</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-10-2-1">
+<li class="fragment"><p>Source files in <code class="code-inline tex2jax_ignore">source</code> folder</p></li>
+<li class="fragment">
+<p>The project file</p>
+<div class="code-box"><pre class="program"><code class="language-none">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;project ptx-version="2"&gt;
+  &lt;targets&gt;
+    &lt;target name="web" format="html" deploy-dir="docs"/&gt;
+    &lt;target name="print" format="pdf" /&gt;
+  &lt;/targets&gt;
+&lt;/project&gt;
+</code></pre></div>
+<p>Place to declare targets and provide some details about building them.</p>
+</li>
+</ul></p></div></section><section><h3>Anatomy of a PreTeXt project</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-11-2-1"><li>
+<p>One or more publication files in <code class="code-inline tex2jax_ignore">publication</code> folder provide some control over appearance</p>
+<div class="code-box"><pre class="program"><code class="language-none">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;publication&gt;
+  &lt;source&gt;
+    &lt;directories external="../assets" generated="../generated-assets"/&gt;
+  &lt;/source&gt;
+  &lt;revealjs&gt;
+    &lt;appearance theme="simple"/&gt;
+    &lt;resources host="local"/&gt;
+    &lt;controls display="yes" tutorial="yes"
+              layout="bottom-right" backarrows="faded"/&gt;
+    &lt;navigation mode="linear"/&gt;
+  &lt;/revealjs&gt;
+&lt;/publication&gt;
+</code></pre></div>
+</li></ul></p></div></section><section><h3>Mathematical diagrams</h3>
+<div align="left">
+<p><ul class="disc" id="root-1-2-12-2-1">
+<li><p><a class="external" href="https://prefigure.org/" target="_blank">PreFigure</a> is an authoring system (markup language) for accessible mathematical diagrams.  PreFigure is to figures what PreTeXt is to text.</p></li>
+<li><p>Standalone software yet fully integrated into PreTeXt.</p></li>
+</ul></p>
+<figure class="figure figure-like" id="root-1-2-12-3"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/prefigure/prefigure-tangent.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span>A PreFigure diagram</figcaption></figure>
+</div></section><section><h3>Stages of PreTeXt authoring</h3>
+<div align="left">
+<p>Remember:  concentrate on what you want to say, not how you want it to look</p>
+<p><ol class="decimal" id="root-1-2-13-3-1">
+<li class="fragment"><p>“I’m frustruated: This is confusing and new”</p></li>
+<li class="fragment"><p>“This is starting to make sense, but I want this word to be in bold, not italics”</p></li>
+<li class="fragment"><p>“Actually, it’s kind of liberating to not worry about spacing and formatting”</p></li>
+<li class="fragment"><p>“This final product is a lot better than it would have been otherwise.”</p></li>
+</ol></p>
+</div></section><section><h3>Accessibility</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-14-2-1">
+<li class="fragment"><p>Student Accessibilty Office contacted the GVSU math department in the summer of 2023. A visually-impaired student would be enrolled in our precalculus class in Fall 2023.</p></li>
+<li class="fragment"><p>The textbook publisher wanted $40,000 for a braille edition of the textbook.</p></li>
+<li class="fragment"><p>Rob Beezer, the founder of PreTeXt, converted Matt Boelkins’ open precalculus textbook <a class="external" href="https://activecalculus.org/prelude/book-1.html" target="_blank">Active Prelude to Calculus</a> into braille.</p></li>
+<li class="fragment"><p>I recreated all the diagrams in PreFigure and embossed tactile versions.</p></li>
+<li class="fragment"><p>Total cost:  $0</p></li>
+</ul></p></div></section><section><h3>How to use PreTeXt</h3>
+<div align="left"><p>You will want an XML-aware text editor.<ul class="disc" id="root-1-2-15-2-1">
+<li class="fragment">
+<p>Local installation of PreTeXt</p>
+<ul class="circle" id="root-1-2-15-2-1-1-2">
+<li><p><code class="code-inline tex2jax_ignore">pip install pretext</code></p></li>
+<li><p>Issue commands from a terminal</p></li>
+</ul>
+</li>
+<li class="fragment"><p>With a local version of Python, install the <code class="code-inline tex2jax_ignore">PreTeXt-tools</code> extension within VSCode.</p></li>
+<li class="fragment"><p><a class="external" href="https://github.com/PreTeXtBook/pretext-codespace" target="_blank">GitHub codespace</a>, a cloud environment used by many newcomers</p></li>
+<li class="fragment"><p>A WYSIWYG editor will be here soon as well as better collaborative tools in the spirit of Overleaf.</p></li>
+</ul></p></div></section><section><h3>Resources (these slides are at gvsu.edu/s/39C)</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-16-2-1">
+<li><p><a class="external" href="https://pretextbook.org/" target="_blank">PreTeXt home page</a>, with documentation</p></li>
+<li><p><a class="external" href="https://pretextbook.org/examples/sample-article/html/derivatives.html" target="_blank">PreTeXt Sample article</a>, including demonstrations of most features with sample PreTeXt source.</p></li>
+<li><p><a class="external" href="https://mathtech.org" target="_blank">MathTech.org</a>, including Oscar Levin’s talk about <a class="external" href="https://mathtech.org/2025/02/16/slides-and-courses.html" target="_blank">managing a course with PreTeXt</a> (e.g., syllabus, worksheets)</p></li>
+<li><p><a class="external" href="https://learn.linfield.edu/bbcswebdav/users/jfirkins/INQS125/web/INQS_syllabus.html" target="_blank">Jennifer Nordstrom’s syllabus</a></p></li>
+<li><p>Google groups (from low volume to high): pretext-announce, pretext-support, pretext-dev</p></li>
+<li><p>Tuesday, Thursday, Friday <a class="external" href="https://prose.runestone.academy/#upcoming-events" target="_blank">virtual dropins</a></p></li>
+</ul></p></div></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'linear',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
