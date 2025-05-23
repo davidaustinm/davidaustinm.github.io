@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-05-23T06:35:10-04:00       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link href="./reset.css" rel="stylesheet">
+<link href="./reveal.css" rel="stylesheet">
+<link href="./theme/simple.css" rel="stylesheet">
+<script src="./reveal.js"></script><script src="./plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.reveal pre {
+  box-shadow: none;
+  line-height: 1;
+  font-size: inherit;
+  width: auto;
+  margin: inherit;
+}
+.reveal pre code {
+  display: block;
+  padding: 0;
+  overflow: unset;
+  max-height: unset;
+  word-wrap: normal;
+}
+.definition-like,.theorem-like,.project-like {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: var(--r-block-margin);
+}
+.definition-like {
+  background: #006080;
+  background: color-mix(in srgb, var(--r-background-color) 75%, #006080);
+}
+.theorem-like {
+  background: #ff000010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, #aa0000);
+}
+.proof-like {
+  background: #ffffff;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, #aaaaaa);
+}
+.project-like {
+  background: #60800010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, #608000);
+}
+.code-inline {
+  background: #60800010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, var(--r-link-color));
+  padding: 0 3px;
+  border: 1px solid;
+  margin: 3px;
+  display: inline-block;
+}
+.sagecell_sessionOutput {
+  background: white;
+  color: black;
+  border: 0.5px solid var(--r-main-color);
+}
+
+.program {
+  background: #60800010;
+  background:  color-mix(in srgb, var(--r-background-color) 75%, var(--r-link-color));
+  max-height: 450px;
+  overflow: auto;
+  border: 0.5px solid var(--r-main-color);
+}
+.ptx-sagecell, .reveal .program {
+  font-size: calc(var(--r-main-font-size) * 0.6);
+}
+
+
+.ptx-content :is(.image-box, .audio-box, .video-box, .asymptote-box) {
+  position: relative;
+}
+
+.ptx-content iframe.asymptote, .ptx-content iframe.asymptote, .ptx-content .video-box .video, .ptx-content .video-box .video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+code[class*="language-"], pre[class*="language-"] {
+  padding: 0;
+  line-height: 1.2;
+}
+
+dfn {
+  font-weight: bold;
+}
+.ptx-content ol.no-marker,
+.ptx-content ul.no-marker,
+.ptx-content li.no-marker {
+    list-style-type: none;
+}
+
+.ptx-content ol.decimal {
+    list-style-type: decimal;
+}
+.ptx-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.ptx-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.ptx-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.ptx-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.ptx-content ul.disc {
+    list-style-type: disc;
+}
+.ptx-content ul.square {
+    list-style-type: square;
+}
+.ptx-content ul.circle {
+    list-style-type: circle;
+}
+.ptx-content ol.no-marker,
+.ptx-content ul.no-marker {
+    list-style-type: none;
+}
+.ptx-content .cols1 li,
+.ptx-content .cols2 li,
+.ptx-content .cols3 li,
+.ptx-content .cols4 li,
+.ptx-content .cols5 li,
+.ptx-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+
+/* make small images full-width in #sidebyside */
+/* could improve with a .sidebyside class */
+div[style*="display:table-cell"] img {
+    width: 100%;
+}
+          </style>
+<script src="_static/pretext/js/diagcess/diagcess.js"></script>
+</head>
+<body>
+<div class="reveal ptx-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><h3>PreTeXt, PreFigure, and the production of braille math books</h3>
+<div align="left">
+<p>David Austin, Grand Valley State University</p>
+<p>Alexei Kolesnikov, Towson University</p>
+<p>Tactile Reading and Graphics Conference</p>
+<p>June 2, 2025</p>
+</div></section><section><h3>What is PreTeXt?</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-2-2-1">
+<li><p>An authoring system for scholarly documents: books, articles, teaching materials, slideshows, …</p></li>
+<li><p>Open source and freely available</p></li>
+<li><p>Originates in the mathematics community but now used in many disciplines, such as computer science, physics, engineering, music theory, economics, college writing, and children’s books</p></li>
+<li><p>A vibrant community of authors, developers, researchers, and instructors</p></li>
+</ul></p></div></section><section><h3>PreTeXt philosophy</h3>
+<div align="left">
+<p>“Write once, read anywhere”</p>
+<p><ul class="disc" id="root-1-2-3-3-1">
+<li><p>From a single source, a document can be rendered in<ul class="circle" id="root-1-2-3-3-1-1-1-1">
+<li><p>HTML, fully accessible with a screenreader,</p></li>
+<li><p>PDF (with possible intermediate LaTeX source),</p></li>
+<li><p>EPUB (with math rendered as images, or MathML, or speech),</p></li>
+<li><p>BRF (paginated or for refreshable displays).</p></li>
+</ul></p></li>
+<li><p>An author focuses on the content and structure of the document rather than presentation.</p></li>
+<li><p>No accessibility expertise is required of the author.</p></li>
+</ul></p>
+</div></section><section><h3>Writing PreTeXt source</h3>
+<div align="left">
+<p>PreTeXt source is written in XML.  All content is contained in nested tags, with attributes, that describe the document’s structure.</p>
+<div class="code-box"><pre class="program"><code class="language-none">&lt;theorem xml:id="theorem-pythagoras"&gt;
+  &lt;title&gt;Pythagorean theorem&lt;/title&gt;
+  &lt;statement&gt;
+    &lt;p&gt;
+      Let &lt;m&gt;\triangle ABC&lt;/m&gt; be a right triangle. Suppose that &lt;m&gt;c&lt;/m&gt; is the length of the side
+      opposite the right angle and &lt;m&gt;a&lt;/m&gt;, &lt;m&gt;b&lt;/m&gt; are the lengths of two other sides. Then
+      &lt;me&gt;
+        a^2 + b^2 = c^2
+      &lt;/me&gt;.
+    &lt;/p&gt;
+  &lt;/statement&gt;
+  &lt;proof&gt;
+    &lt;p&gt;
+      See Euclid.
+    &lt;/p&gt;
+  &lt;/proof&gt;
+&lt;/theorem&gt;
+</code></pre></div>
+</div></section><section><h3>Appearance in a slideshow</h3>
+<div align="left">
+<article class="theorem theorem-like" id="theorem-pythagoras"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span><span class="space"> </span><span class="title">Pythagorean theorem.</span>
+</h3>
+<p>Let <span class="process-math">\(\triangle ABC\)</span> be a right triangle. Suppose that <span class="process-math">\(c\)</span> is the length of the side opposite the right angle and <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> are the lengths of two other sides. Then<div class="displaymath process-math">
+\begin{equation*}
+a^2 + b^2 = c^2\text{.}
+\end{equation*}
+</div></p></article><article class="hiddenproof" id="theorem-pythagoras-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<p>See Euclid</p></article>
+</div></section><section><h3>Mathematical diagrams</h3>
+<div align="left">
+<p><ul class="disc" id="root-1-2-6-2-1">
+<li><p><a class="external" href="https://prefigure.org/" target="_blank">PreFigure,</a> an authoring system for accessible mathematical diagrams, is to figures what PreTeXt is to text. (Workshop tomorrow at noon!)</p></li>
+<li><p>Standalone software yet fully integrated into PreTeXt.</p></li>
+<li><p>From a single source, an author can create annotated SVGs, PDFs, and tactile diagrams.</p></li>
+</ul></p>
+<figure class="figure figure-like" id="root-1-2-6-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-tangent.svg" data-cml="generated/prefigure/prefigure-tangent-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span>An annotated PreFigure diagram</figcaption></figure>
+</div></section><section><h3>Tactile graphics</h3>
+<div align="left"><div style="display:table;margin-left:5%;margin-right:5%;" class="sidebyside">
+<div style="display:table-cell;width:44.4444444444444%;vertical-align:top;"><img src="external/images/tangent.png" class="contained"></div>
+<div style="display:table-cell;width:44.4444444444444%;vertical-align:top;"><p><ul class="disc" id="root-1-2-7-2-2-1">
+<li><p>Foreground components have a clear outline.</p></li>
+<li><p>MathJax produces mathematics in Nemeth Braille.</p></li>
+<li><p>Labels are rendered in the Braille29 font to facilitate embossing.</p></li>
+</ul></p></div>
+</div></div></section><section><h3>Braille conversions</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-8-2-1">
+<li><p>Conversion of PreTeXt source into BRF is automated.</p></li>
+<li><p>Mathematics is processed by MathJax so that math is rendered in Nemeth braille and navigable with a screenreader.</p></li>
+<li><p><div class="code-box"><pre class="program"><code class="language-none">7777777777777777777777777777777777777777
+,!orem #a ,py?agor1n !orem4
+  ,9 a "r triangle _% $t ,a,b,c _:1 !
+l5g?s ( ! sides satisfy
+_%
+
+a~2"+b~2 .k c~2
+
+_:4
+
+,pro(4 ,see ,euclid
+gggggggggggggggggggggggggggggggggggggggg
+</code></pre></div></p></li>
+</ul></p></div></section><section><h3>Braille conversions to date</h3>
+<div align="left">
+<p><ul class="disc" id="root-1-2-9-2-1">
+<li><p>Tom Judson, <a class="external" href="https://judsonbooks.org/aata/" target="_blank">Abstract Algebra and Applications.</a></p></li>
+<li><p>Matt Boelkins, <a class="external" href="https://activecalculus.org/prelude/book-1.html" target="_blank">Active Prelude to Calculus.</a></p></li>
+<li><p>David Austin, <a class="external" href="https://understandinglinearalgebra.org/home.html" target="_blank">Understanding Linear Algebra.</a></p></li>
+</ul></p>
+<p>Use case: screen reader, refreshable Braille display, tactile graphics</p>
+</div></section><section><h3>Resources</h3>
+<div align="left"><p><ul class="disc" id="root-1-2-10-2-1">
+<li><p><a class="external" href="https://github.com/PreTeXtBook/pretext-codespace" target="_blank">GitHub codespace</a>, a cloud environment used by many newcomers to PreTeXt.</p></li>
+<li><p><a class="external" href="https://pretextbook.org/" target="_blank">PreTeXt home page</a>, with documentation and samples.</p></li>
+<li><p><a class="external" href="https://pretextbook.org/examples/sample-article/html/derivatives.html" target="_blank">PreTeXt Sample article</a>, including demonstrations of most features with sample PreTeXt source.</p></li>
+<li><p><a class="external" href="https://mathtech.org" target="_blank">MathTech.org</a>, a blog about uses of PreTeXt and its accessibility features</p></li>
+<li><p>Google groups (from low volume to high): pretext-announce, pretext-support, pretext-dev</p></li>
+<li><p>Monday, Tuesday, Thursday <a class="external" href="https://prose.runestone.academy/#upcoming-events" target="_blank">virtual dropins</a></p></li>
+</ul></p></div></section>
+</div>
+</div>
+<script>diagcess.Base.init()</script>
+</body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'linear',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
