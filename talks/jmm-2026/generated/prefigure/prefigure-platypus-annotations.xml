@@ -1,0 +1,216 @@
+<diagram>
+  <annotations>
+    <annotation id="figure" speech2="Picasso the platypus travels between three ponds with transition probabilities described in this diagram.">
+      <grouped>figure</grouped>
+      <position>1</position>
+      <children>
+        <active>platypus</active>
+        <active>nodes</active>
+      </children>
+      <components>
+        <active>platypus</active>
+        <active>nodes</active>
+      </components>
+    </annotation>
+    <annotation id="platypus" speech2="The loveable platypus Picasso">
+      <active>platypus</active>
+      <position>1</position>
+      <parents>
+        <grouped>figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="nodes" speech2="There are three ponds labelled one, two, and three">
+      <grouped>nodes</grouped>
+      <position>2</position>
+      <children>
+        <active>node-1</active>
+        <active>node-2</active>
+        <active>node-3</active>
+      </children>
+      <components>
+        <active>node-1</active>
+        <active>node-2</active>
+        <active>node-3</active>
+      </components>
+      <parents>
+        <grouped>figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-1" speech2="The first pond labelled one">
+      <grouped>node-1</grouped>
+      <position>1</position>
+      <children>
+        <active>loop-1</active>
+        <active>edge-1-2</active>
+      </children>
+      <components>
+        <active>loop-1</active>
+        <active>edge-1-2</active>
+      </components>
+      <parents>
+        <grouped>nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="loop-1" speech2="There is a 60 percent chance that Picasso stays at pond one.">
+      <active>loop-1</active>
+      <position>1</position>
+      <parents>
+        <grouped>node-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="edge-1-2" speech2="There is a 40 percent chance that Picasso moves to pond two from pond one.">
+      <grouped>edge-1-2</grouped>
+      <position>2</position>
+      <components>
+        <passive>node-1-empty</passive>
+        <passive>node-2-empty</passive>
+      </components>
+      <parents>
+        <grouped>node-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-1-empty">
+      <passive>node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-1-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-2-empty">
+      <passive>node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-1-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-2" speech2="The second pond labelled two">
+      <grouped>node-2</grouped>
+      <position>2</position>
+      <children>
+        <active>edge-2-1</active>
+        <active>loop-2</active>
+        <active>edge-2-3</active>
+      </children>
+      <components>
+        <active>edge-2-1</active>
+        <active>loop-2</active>
+        <active>edge-2-3</active>
+      </components>
+      <parents>
+        <grouped>nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="edge-2-1" speech2="There is a 20 percent chance that Picasso moves to pond one from pond two">
+      <grouped>edge-2-1</grouped>
+      <position>1</position>
+      <components>
+        <passive>node-1-empty</passive>
+        <passive>node-2-empty</passive>
+      </components>
+      <parents>
+        <grouped>node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-1-empty">
+      <passive>node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-2-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-2-empty">
+      <passive>node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-2-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="loop-2" speech2="There is a 60 percent chance that Picasso stays at pond two">
+      <active>loop-2</active>
+      <position>2</position>
+      <parents>
+        <grouped>node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="edge-2-3" speech2="There is a 20 percent chance that Picasso moves to pond three from pond two">
+      <grouped>edge-2-3</grouped>
+      <position>3</position>
+      <components>
+        <passive>node-2-empty</passive>
+        <passive>node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-2-empty">
+      <passive>node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-2-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-3-empty">
+      <passive>node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-2-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-3" speech2="The third pond labelled three">
+      <grouped>node-3</grouped>
+      <position>3</position>
+      <children>
+        <active>edge-3-1</active>
+        <active>loop-3</active>
+      </children>
+      <components>
+        <active>edge-3-1</active>
+        <active>loop-3</active>
+        <passive>node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="edge-3-1" speech2="There is a 40 percent chance that Picasso moves to pond one from pond three">
+      <grouped>edge-3-1</grouped>
+      <position>1</position>
+      <components>
+        <passive>node-1-empty</passive>
+        <passive>node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>node-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-1-empty">
+      <passive>node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-3-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-3-empty">
+      <passive>node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>edge-3-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="loop-3" speech2="There is a 60 percent chance that Picasso stays at pond three">
+      <active>loop-3</active>
+      <position>2</position>
+      <parents>
+        <grouped>node-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="node-3-empty">
+      <passive>node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>node-3</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
