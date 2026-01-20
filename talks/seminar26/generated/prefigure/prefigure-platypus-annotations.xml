@@ -1,0 +1,216 @@
+<diagram>
+  <annotations>
+    <annotation id="pf__figure" speech2="Picasso the platypus travels between three ponds with transition probabilities described in this diagram.">
+      <grouped>pf__figure</grouped>
+      <position>1</position>
+      <children>
+        <active>pf__platypus</active>
+        <active>pf__nodes</active>
+      </children>
+      <components>
+        <active>pf__platypus</active>
+        <active>pf__nodes</active>
+      </components>
+    </annotation>
+    <annotation id="pf__platypus" speech2="The loveable platypus Picasso">
+      <active>pf__platypus</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf__figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__nodes" speech2="There are three ponds labelled one, two, and three">
+      <grouped>pf__nodes</grouped>
+      <position>2</position>
+      <children>
+        <active>pf__node-1</active>
+        <active>pf__node-2</active>
+        <active>pf__node-3</active>
+      </children>
+      <components>
+        <active>pf__node-1</active>
+        <active>pf__node-2</active>
+        <active>pf__node-3</active>
+      </components>
+      <parents>
+        <grouped>pf__figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-1" speech2="The first pond labelled one">
+      <grouped>pf__node-1</grouped>
+      <position>1</position>
+      <children>
+        <active>pf__loop-1</active>
+        <active>pf__edge-1-2</active>
+      </children>
+      <components>
+        <active>pf__loop-1</active>
+        <active>pf__edge-1-2</active>
+      </components>
+      <parents>
+        <grouped>pf__nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__loop-1" speech2="There is a 60 percent chance that Picasso stays at pond one.">
+      <active>pf__loop-1</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf__node-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__edge-1-2" speech2="There is a 40 percent chance that Picasso moves to pond two from pond one.">
+      <grouped>pf__edge-1-2</grouped>
+      <position>2</position>
+      <components>
+        <passive>pf__node-1-empty</passive>
+        <passive>pf__node-2-empty</passive>
+      </components>
+      <parents>
+        <grouped>pf__node-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-1-empty">
+      <passive>pf__node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-1-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-2-empty">
+      <passive>pf__node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-1-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-2" speech2="The second pond labelled two">
+      <grouped>pf__node-2</grouped>
+      <position>2</position>
+      <children>
+        <active>pf__edge-2-1</active>
+        <active>pf__loop-2</active>
+        <active>pf__edge-2-3</active>
+      </children>
+      <components>
+        <active>pf__edge-2-1</active>
+        <active>pf__loop-2</active>
+        <active>pf__edge-2-3</active>
+      </components>
+      <parents>
+        <grouped>pf__nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__edge-2-1" speech2="There is a 20 percent chance that Picasso moves to pond one from pond two">
+      <grouped>pf__edge-2-1</grouped>
+      <position>1</position>
+      <components>
+        <passive>pf__node-1-empty</passive>
+        <passive>pf__node-2-empty</passive>
+      </components>
+      <parents>
+        <grouped>pf__node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-1-empty">
+      <passive>pf__node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-2-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-2-empty">
+      <passive>pf__node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-2-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__loop-2" speech2="There is a 60 percent chance that Picasso stays at pond two">
+      <active>pf__loop-2</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf__node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__edge-2-3" speech2="There is a 20 percent chance that Picasso moves to pond three from pond two">
+      <grouped>pf__edge-2-3</grouped>
+      <position>3</position>
+      <components>
+        <passive>pf__node-2-empty</passive>
+        <passive>pf__node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>pf__node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-2-empty">
+      <passive>pf__node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-2-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-3-empty">
+      <passive>pf__node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-2-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-3" speech2="The third pond labelled three">
+      <grouped>pf__node-3</grouped>
+      <position>3</position>
+      <children>
+        <active>pf__edge-3-1</active>
+        <active>pf__loop-3</active>
+      </children>
+      <components>
+        <active>pf__edge-3-1</active>
+        <active>pf__loop-3</active>
+        <passive>pf__node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>pf__nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__edge-3-1" speech2="There is a 40 percent chance that Picasso moves to pond one from pond three">
+      <grouped>pf__edge-3-1</grouped>
+      <position>1</position>
+      <components>
+        <passive>pf__node-1-empty</passive>
+        <passive>pf__node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>pf__node-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-1-empty">
+      <passive>pf__node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-3-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-3-empty">
+      <passive>pf__node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__edge-3-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__loop-3" speech2="There is a 60 percent chance that Picasso stays at pond three">
+      <active>pf__loop-3</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf__node-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf__node-3-empty">
+      <passive>pf__node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>pf__node-3</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
