@@ -1,0 +1,216 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-platypus-figure" speech2="Picasso the platypus travels between three ponds with transition probabilities described in this diagram.">
+      <grouped>prefigure-platypus-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-platypus-platypus</active>
+        <active>prefigure-platypus-nodes</active>
+      </children>
+      <components>
+        <active>prefigure-platypus-platypus</active>
+        <active>prefigure-platypus-nodes</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-platypus-platypus" speech2="The loveable platypus Picasso">
+      <active>prefigure-platypus-platypus</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-platypus-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-nodes" speech2="There are three ponds labelled one, two, and three">
+      <grouped>prefigure-platypus-nodes</grouped>
+      <position>2</position>
+      <children>
+        <active>prefigure-platypus-node-1</active>
+        <active>prefigure-platypus-node-2</active>
+        <active>prefigure-platypus-node-3</active>
+      </children>
+      <components>
+        <active>prefigure-platypus-node-1</active>
+        <active>prefigure-platypus-node-2</active>
+        <active>prefigure-platypus-node-3</active>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-1" speech2="The first pond labelled one">
+      <grouped>prefigure-platypus-node-1</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-platypus-loop-1</active>
+        <active>prefigure-platypus-edge-1-2</active>
+      </children>
+      <components>
+        <active>prefigure-platypus-loop-1</active>
+        <active>prefigure-platypus-edge-1-2</active>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-loop-1" speech2="There is a 60 percent chance that Picasso stays at pond one.">
+      <active>prefigure-platypus-loop-1</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-platypus-node-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-edge-1-2" speech2="There is a 40 percent chance that Picasso moves to pond two from pond one.">
+      <grouped>prefigure-platypus-edge-1-2</grouped>
+      <position>2</position>
+      <components>
+        <passive>prefigure-platypus-node-1-empty</passive>
+        <passive>prefigure-platypus-node-2-empty</passive>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-node-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-1-empty">
+      <passive>prefigure-platypus-node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-1-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-2-empty">
+      <passive>prefigure-platypus-node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-1-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-2" speech2="The second pond labelled two">
+      <grouped>prefigure-platypus-node-2</grouped>
+      <position>2</position>
+      <children>
+        <active>prefigure-platypus-edge-2-1</active>
+        <active>prefigure-platypus-loop-2</active>
+        <active>prefigure-platypus-edge-2-3</active>
+      </children>
+      <components>
+        <active>prefigure-platypus-edge-2-1</active>
+        <active>prefigure-platypus-loop-2</active>
+        <active>prefigure-platypus-edge-2-3</active>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-edge-2-1" speech2="There is a 20 percent chance that Picasso moves to pond one from pond two">
+      <grouped>prefigure-platypus-edge-2-1</grouped>
+      <position>1</position>
+      <components>
+        <passive>prefigure-platypus-node-1-empty</passive>
+        <passive>prefigure-platypus-node-2-empty</passive>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-1-empty">
+      <passive>prefigure-platypus-node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-2-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-2-empty">
+      <passive>prefigure-platypus-node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-2-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-loop-2" speech2="There is a 60 percent chance that Picasso stays at pond two">
+      <active>prefigure-platypus-loop-2</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-platypus-node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-edge-2-3" speech2="There is a 20 percent chance that Picasso moves to pond three from pond two">
+      <grouped>prefigure-platypus-edge-2-3</grouped>
+      <position>3</position>
+      <components>
+        <passive>prefigure-platypus-node-2-empty</passive>
+        <passive>prefigure-platypus-node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-node-2</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-2-empty">
+      <passive>prefigure-platypus-node-2-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-2-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-3-empty">
+      <passive>prefigure-platypus-node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-2-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-3" speech2="The third pond labelled three">
+      <grouped>prefigure-platypus-node-3</grouped>
+      <position>3</position>
+      <children>
+        <active>prefigure-platypus-edge-3-1</active>
+        <active>prefigure-platypus-loop-3</active>
+      </children>
+      <components>
+        <active>prefigure-platypus-edge-3-1</active>
+        <active>prefigure-platypus-loop-3</active>
+        <passive>prefigure-platypus-node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-nodes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-edge-3-1" speech2="There is a 40 percent chance that Picasso moves to pond one from pond three">
+      <grouped>prefigure-platypus-edge-3-1</grouped>
+      <position>1</position>
+      <components>
+        <passive>prefigure-platypus-node-1-empty</passive>
+        <passive>prefigure-platypus-node-3-empty</passive>
+      </components>
+      <parents>
+        <grouped>prefigure-platypus-node-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-1-empty">
+      <passive>prefigure-platypus-node-1-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-3-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-3-empty">
+      <passive>prefigure-platypus-node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-edge-3-1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-loop-3" speech2="There is a 60 percent chance that Picasso stays at pond three">
+      <active>prefigure-platypus-loop-3</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-platypus-node-3</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-platypus-node-3-empty">
+      <passive>prefigure-platypus-node-3-empty</passive>
+      <position>0</position>
+      <parents>
+        <grouped>prefigure-platypus-node-3</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
