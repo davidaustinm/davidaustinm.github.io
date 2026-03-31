@@ -7,5 +7,6 @@
       <rect x="0.0" y="0.0" width="300.0" height="300.0"/>
     </clipPath>
   </defs>
-  <line id="zoom-line" x1="150.0" y1="300.0" x2="150.0" y2="0.0" stroke="black" stroke-width="2" fill="none"/>
+  <path id="zoom-path-0" d="M 0.0 300.0 L 300.0 300.0 L 300.0 0.0 L 0.0 0.0 Z" stroke="none" stroke-width="2" fill="#ccc"/>
+  <line id="zoom-line" x1="150.0" y1="150.0" x2="150.0" y2="0.0" stroke="black" stroke-width="2" fill="none"/>
 </svg>
