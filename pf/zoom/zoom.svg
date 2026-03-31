@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="zoom-figure" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="zoom-clipPath-0">
+      <rect x="0.0" y="0.0" width="300.0" height="300.0"/>
+    </clipPath>
+    <clipPath id="zoom-clipPath-1">
+      <rect x="0.0" y="0.0" width="300.0" height="300.0"/>
+    </clipPath>
+  </defs>
+  <line id="zoom-line" x1="150.0" y1="300.0" x2="150.0" y2="0.0" stroke="black" stroke-width="2" fill="none"/>
+</svg>
