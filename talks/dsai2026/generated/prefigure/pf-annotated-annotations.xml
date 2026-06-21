@@ -1,0 +1,83 @@
+<diagram>
+  <annotations>
+    <annotation id="pf-annotated-figure" speech2="The graph of a function and its tangent line">
+      <grouped>pf-annotated-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-annotated-grid-axes</active>
+        <active>pf-annotated-group</active>
+      </children>
+      <components>
+        <active>pf-annotated-grid-axes</active>
+        <active>pf-annotated-group</active>
+      </components>
+    </annotation>
+    <annotation id="pf-annotated-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>pf-annotated-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>pf-annotated-grid</active>
+        <active>pf-annotated-axes</active>
+      </children>
+      <components>
+        <active>pf-annotated-grid</active>
+        <active>pf-annotated-axes</active>
+      </components>
+      <parents>
+        <grouped>pf-annotated-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-annotated-grid" speech2="The coordinate grid">
+      <active>pf-annotated-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-annotated-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-annotated-axes" speech2="The coordinate axes">
+      <active>pf-annotated-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-annotated-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-annotated-group" speech2="The graph of the function and the                   tangent line at a specified point">
+      <grouped>pf-annotated-group</grouped>
+      <position>2</position>
+      <children>
+        <active>pf-annotated-graph</active>
+        <active>pf-annotated-point</active>
+        <active>pf-annotated-tangent</active>
+      </children>
+      <components>
+        <active>pf-annotated-graph</active>
+        <active>pf-annotated-point</active>
+        <active>pf-annotated-tangent</active>
+      </components>
+      <parents>
+        <grouped>pf-annotated-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-annotated-graph" speech2="The graph of the function">
+      <active>pf-annotated-graph</active>
+      <position>1</position>
+      <parents>
+        <grouped>pf-annotated-group</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-annotated-point" speech2="The point a f of a">
+      <active>pf-annotated-point</active>
+      <position>2</position>
+      <parents>
+        <grouped>pf-annotated-group</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pf-annotated-tangent" speech2="The tangent line">
+      <active>pf-annotated-tangent</active>
+      <position>3</position>
+      <parents>
+        <grouped>pf-annotated-group</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2026-06-21T00:47:40-04:00       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Supporting VI Readers and Authors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="./reset.css" rel="stylesheet">
+<link href="./reveal.css" rel="stylesheet">
+<link href="./theme/simple.css" rel="stylesheet">
+<script src="./reveal.js"></script><script src="./plugin/math/math.js"></script><link href="_static/pretext/css/pretext-reveal.css" rel="stylesheet">
+<style></style>
+<script src="_static/pretext/js/diagcess/diagcess.js"></script>
+</head>
+<body>
+<div class="reveal ptx-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>Supporting VI Readers and Authors</h1>
+<h2>Accessible Mathematical Diagrams Created in PreFigure</h2>
+<table>
+<tr>
+<th align="center" style="border-bottom: 0px;">David Austin</th>
+<th align="center" style="border-bottom: 0px;">Neha Jadhav</th>
+<th align="center" style="border-bottom: 0px;">Alexei Kolesnikov</th>
+<th align="center" style="border-bottom: 0px;">Jason Siefken</th>
+<th align="center" style="border-bottom: 0px;">Volker Sorge</th>
+</tr>
+<tr>
+<td align="center" style="border-bottom: 0px;">Grand Valley State University</td>
+<td align="center" style="border-bottom: 0px;">Progressive Accessibility Solutions</td>
+<td align="center" style="border-bottom: 0px;">Towson University</td>
+<td align="center" style="border-bottom: 0px;">University of Toronto</td>
+<td align="center" style="border-bottom: 0px;">University of Birmingham</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+<h3><div class="date">DSAI 2026 – Alexandroupolis, Greece</div></h3></section></section><section><h2>Motivation</h2>
+<div align="left">
+<p>Mathematical diagrams are central to communication in STEM.</p>
+<ul class="disc" id="sec-motivation-3">
+<li class="fragment"><p>There is considerable work to support <em class="alert">reading</em> diagrams, but little support for <em class="alert">authoring</em> diagrams. </p></li>
+<li class="fragment"><p>PreFigure is an authoring system that prioritizes the creation of accessible diagrams by all authors.</p></li>
+<li class="fragment"><p>PreFigure diagrams can be authored inside the <a class="external" href="https://pretextbook.org" target="_blank">PreTeXt authoring system</a> for an accessible workflow.</p></li>
+</ul>
+</div></section><section><h2>PreFigure</h2>
+<div align="left"><p>An author writes a high-level description of the diagram.
+<ul class="disc" id="sec-prefigure-2-1">
+<li class="fragment"><p>One description, many outputs:
+<ul class="circle" id="sec-prefigure-2-1-1-1-1">
+<li><p>annotated SVG for the web,</p></li>
+<li><p>PDF for print,</p></li>
+<li><p>tactile embossing.</p></li>
+</ul></p></li>
+<li class="fragment"><p>Semantic markup: high-level descriptions encourage authors to focus on the ideas they wish to express.</p></li>
+</ul></p></div></section><section><h2>An annotated SVG</h2>
+<div align="left">
+<figure class="figure figure-like" id="fig-annotated"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/pf-annotated-diagcess.svg" data-cml="generated/prefigure/pf-annotated-annotations.xml"></div>
+<details class="instructions diagcess__instructions"><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Annotations read by the <code class="code-inline tex2jax_ignore">diagcess</code> library created by Volker Sorge</figcaption>
+</figure>
+</div></section><section><h2>The PreFigure Playground</h2>
+<div align="left">
+<p>An online environment for authoring and exploring PreFigure diagrams.</p>
+<p>Available at <a class="external" href="https://gvsu.edu/s/35f" target="_blank"><code class="code-inline tex2jax_ignore">https://gvsu.edu/s/35f</code></a>.</p>
+</div></section><section><h2>User study</h2>
+<div align="left">
+<ul class="disc" id="sec-study-2">
+<li class="fragment">Stage 1 of the study, at the Devnar School for the Blind, Hyderabad.</li>
+<li class="fragment">18 Grade 10 students (17 blind, 1 low vision), over three days: baseline, training, evaluation.</li>
+<li class="fragment">15 students participated all three days; the remaining 3 are in a follow-up study.</li>
+<li class="fragment">Day 3, a side-by-side observation: tactile media vs the PreFigure Playground with a screen reader.</li>
+</ul>
+<figure class="figure figure-like" id="sec-study-3"><div class="fragment"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/study-environment.jpg" class="contained" alt="Student working with study authors and the teacher during the study session at the school."></div></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span></figcaption>
+</figure>
+</div></section><section><h2>Observations: tactile materials</h2>
+<div align="left">
+<ul class="disc" id="slide-tactile-barriers-2">
+<li class="fragment">Warped paper distorted judgments of side length.</li>
+<li class="fragment">2-D / 3-D confusion: an ellipse felt like a sphere.</li>
+<li class="fragment">Braille labels misinterpreted, especially when omitted at intersections.</li>
+<li class="fragment">Diagram questions are often exam-exempted — so diagrams get under-taught.</li>
+</ul>
+<figure class="figure figure-like" id="slide-tactile-barriers-3"><div class="image-box" style="width: 42%; margin-left: 29%; margin-right: 29%;"><img src="external/images/tactile-diagrams.jpg" class="contained" alt="One of the diagrams used with students in the study."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A diagram from the study.</figcaption>
+</figure>
+</div></section><section><h2>Observations: the Playground</h2>
+<div align="left">
+<ul class="disc" id="slide-playground-findings-2">
+<li class="fragment">The keys were learnable: all but one student navigated easily.</li>
+<li class="fragment">Self-reported strong comfort with computers; reading diagrams on a computer mostly manageable.</li>
+<li class="fragment">One student was notably stronger on digital than tactile.</li>
+<li class="fragment">Diagcess audio overlapped with NVDA; focus did not always land on the diagram.</li>
+</ul>
+<figure class="figure figure-like" id="slide-playground-findings-3"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/triangle-in-circle-diagcess.svg" data-cml="generated/prefigure/triangle-in-circle-annotations.xml"></div>
+<details class="instructions diagcess__instructions"><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>One of the diagrams explored in the Playground.</figcaption>
+</figure>
+</div></section><section><h2>Conclusions, and what’s next</h2>
+<div align="left">
+<p>Design lessons for accessible-diagram tools:</p>
+<ul class="disc" id="slide-takeaways-close-3">
+<li class="fragment">Predictable conventions, with explicit confirmation of actions and rendering.</li>
+<li class="fragment">Clearer communication of measurements, and robust error feedback.</li>
+<li class="fragment">Screen-reader coordination: focus management and non-overlapping audio.</li>
+</ul>
+<p class="fragment">Accessibility must support creation, not only consumption. Computer-based exploration complements tactile materials; it does not replace them. Next: refine the Playground, and test authoring by VI users.</p>
+<p class="fragment">Thanks to the Devnar School for the Blind and Dr. Saibaba Goud; the Raised Line Foundation; and NSF DUE-2334768.</p>
+</div></section>
+</div>
+</div>
+<script>diagcess.Base.init()</script>
+</body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'linear',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
